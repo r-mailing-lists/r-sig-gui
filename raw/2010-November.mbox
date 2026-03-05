@@ -1,0 +1,791 @@
+From ilhami.visne at gmail.com  Fri Nov  5 16:57:50 2010
+From: ilhami.visne at gmail.com (ilhami visne)
+Date: Fri, 05 Nov 2010 16:57:50 +0100
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+Message-ID: <4CD4297E.60902@gmail.com>
+
+Hi,
+
+Try this one here http://speedr.r-forge.r-project.org. You can use it to 
+view, filter and import new datas.
+
+If you like it or find a bug (in beta), please write on the forum.
+
+best wishes,
+ilhami visne
+
+project is at
+On 10/26/2010 7:13 AM, Liviu Andronic wrote:
+> Dear all
+> I've been looking for a solution to this problem ever since I started
+> learning R, and I still haven't found one I'm comfortable with. And I
+> would rather avoid exporting and importing into a spreadsheet just for
+> this. I am looking for a data viewer/editor that could, among other
+> things:
+> - have a 'view' mode (not an 'edit only' mode, to avoid bugs or
+> unintended modifications)
+> - have a 'filter' view mode (not a data-modifying subset)
+> - have a 'sort' view mode (not a data-modifying sort operation)
+> - select multiple rows/cols
+> - select multiple individual cells
+>
+> Here's a list of what I've found sofar:
+> - View()/Edit(): rudimentary interface; don't interact very well with
+> tcltk (Rcmdr) on Linux
+> - relimp::showData(): nice viewer, but too often too unstable; lacks
+> most of the features above
+> - tcltk2::tk2edit(): allows multiple row/col/cell selections; has no
+> 'view' mode nor 'filter' or 'sort', and pops up scary errors whenever
+> 'cancelling' changes
+> - rdataviewer: the interface is too exotic for my habits, and lacks
+> most of the features above
+> - RGtk2Extras::dfedit(): allows multiple cell selections and can
+> perform a 'sort' and displays several features in the c-menu; it is
+> quite slow on my system with 'iris', no 'view' mode; since it uses
+> RGtk2 it interacts very badly with tcltk (Rcmdr)
+> - playwith: features a nice viewer hidden in Labels>  Select from
+> table, but it is awkwardly located, with no advanced features, and
+> RGtk2 based
+> - JGR/Deducer::data.viewer(): includes a nifty data editor, perhaps my
+> favourite from this list, but it is a bit awkward to use when using an
+> editor different than JGR (console monopolization); it also lacks a
+> 'view' and 'filter' mode as well well as select multiple rows/cols; it
+> can sort, but not easily when outside JGR
+>
+>
+> Anything that I've missed? Regards
+> Liviu
+>
+>
+>
+
+
+From david at davidkatzconsulting.com  Fri Nov  5 21:23:23 2010
+From: david at davidkatzconsulting.com (David Katz)
+Date: Fri, 5 Nov 2010 13:23:23 -0700
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <4CD4297E.60902@gmail.com>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+	<4CD4297E.60902@gmail.com>
+Message-ID: <AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101105/56b171fc/attachment.pl>
+
+From ian.fellows at stat.ucla.edu  Fri Nov  5 21:48:18 2010
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Fri, 5 Nov 2010 13:48:18 -0700
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+	<4CD4297E.60902@gmail.com>
+	<AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>
+Message-ID: <8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+
+David,
+
+rforge does not keep up to date builds of packages for R versions that are out of date. You are using R 2.10.x. I suggest you install from the source with:
+
+install.packages("speedR", repos="http://R-Forge.R-project.org",type="source")
+
+you will need to have RTools ( http://www.murdoch-sutherland.com/Rtools/ ) installed.
+
+Ian
+
+
+On Nov 5, 2010, at 1:23 PM, David Katz wrote:
+
+> I got an error trying to install speedR (after the preliminary installs went
+> ok):
+> 
+> install.packages(c("rJava","iplots"))
+> Warning in install.packages(c("rJava", "iplots")) :
+>  'lib = "c:/PROGRA~2/R/R-210~1.1/library"' is not writable
+> --- Please select a CRAN mirror for use in this session ---
+> trying URL 'http://cran.fhcrc.org/bin/windows/contrib/2.10/rJava_0.8-6.zip'
+> Content type 'application/zip' length 579833 bytes (566 Kb)
+> opened URL
+> downloaded 566 Kb
+> 
+> trying URL 'http://cran.fhcrc.org/bin/windows/contrib/2.10/iplots_1.1-3.zip'
+> Content type 'application/zip' length 415231 bytes (405 Kb)
+> opened URL
+> downloaded 405 Kb
+> 
+> package 'rJava' successfully unpacked and MD5 sums checked
+> package 'iplots' successfully unpacked and MD5 sums checked
+> 
+> The downloaded packages are in
+> C:\Users\dk\AppData\Local\Temp\RtmpjCVkHj\downloaded_packages
+>> install.packages("speedR", repos="http://R-Forge.R-project.org")
+> Warning in install.packages("speedR", repos = "http://R-Forge.R-project.org")
+> :
+>  argument 'lib' is missing: using 'C:\Users\dk/R/win-library/2.10'
+> Warning: unable to access index for repository
+> http://R-Forge.R-project.org/bin/windows/contrib/2.10
+> Warning message:
+> In getDependencies(pkgs, dependencies, available, lib) :
+>  package 'speedR' is not available
+>> install.packages("speedR")
+> Warning in install.packages("speedR") :
+>  argument 'lib' is missing: using 'C:\Users\dk/R/win-library/2.10'
+> Warning message:
+> In getDependencies(pkgs, dependencies, available, lib) :
+>  package 'speedR' is not available
+>> 
+> 
+> Thanks for any help.
+> Regards,
+> David
+> 
+> On Fri, Nov 5, 2010 at 8:57 AM, ilhami visne <ilhami.visne at gmail.com> wrote:
+> 
+>> Hi,
+>> 
+>> Try this one here http://speedr.r-forge.r-project.org. You can use it to
+>> view, filter and import new datas.
+>> 
+>> If you like it or find a bug (in beta), please write on the forum.
+>> 
+>> best wishes,
+>> ilhami visne
+>> 
+>> project is at
+>> 
+>> On 10/26/2010 7:13 AM, Liviu Andronic wrote:
+>> 
+>>> Dear all
+>>> I've been looking for a solution to this problem ever since I started
+>>> learning R, and I still haven't found one I'm comfortable with. And I
+>>> would rather avoid exporting and importing into a spreadsheet just for
+>>> this. I am looking for a data viewer/editor that could, among other
+>>> things:
+>>> - have a 'view' mode (not an 'edit only' mode, to avoid bugs or
+>>> unintended modifications)
+>>> - have a 'filter' view mode (not a data-modifying subset)
+>>> - have a 'sort' view mode (not a data-modifying sort operation)
+>>> - select multiple rows/cols
+>>> - select multiple individual cells
+>>> 
+>>> Here's a list of what I've found sofar:
+>>> - View()/Edit(): rudimentary interface; don't interact very well with
+>>> tcltk (Rcmdr) on Linux
+>>> - relimp::showData(): nice viewer, but too often too unstable; lacks
+>>> most of the features above
+>>> - tcltk2::tk2edit(): allows multiple row/col/cell selections; has no
+>>> 'view' mode nor 'filter' or 'sort', and pops up scary errors whenever
+>>> 'cancelling' changes
+>>> - rdataviewer: the interface is too exotic for my habits, and lacks
+>>> most of the features above
+>>> - RGtk2Extras::dfedit(): allows multiple cell selections and can
+>>> perform a 'sort' and displays several features in the c-menu; it is
+>>> quite slow on my system with 'iris', no 'view' mode; since it uses
+>>> RGtk2 it interacts very badly with tcltk (Rcmdr)
+>>> - playwith: features a nice viewer hidden in Labels>  Select from
+>>> table, but it is awkwardly located, with no advanced features, and
+>>> RGtk2 based
+>>> - JGR/Deducer::data.viewer(): includes a nifty data editor, perhaps my
+>>> favourite from this list, but it is a bit awkward to use when using an
+>>> editor different than JGR (console monopolization); it also lacks a
+>>> 'view' and 'filter' mode as well well as select multiple rows/cols; it
+>>> can sort, but not easily when outside JGR
+>>> 
+>>> 
+>>> Anything that I've missed? Regards
+>>> Liviu
+>>> 
+>>> 
+>>> 
+>>> 
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>> 
+> 
+> 
+> 
+> -- 
+> David Katz
+> 
+> www.davidkatzconsulting.com
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+
+From ggrothendieck at gmail.com  Fri Nov  5 23:56:22 2010
+From: ggrothendieck at gmail.com (Gabor Grothendieck)
+Date: Fri, 5 Nov 2010 18:56:22 -0400
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+	<4CD4297E.60902@gmail.com>
+	<AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>
+	<8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+Message-ID: <AANLkTimCKGWd9Txw7SE_=p+SOBvMHbQFP_V9n8a-_ca8@mail.gmail.com>
+
+On Fri, Nov 5, 2010 at 4:48 PM, Ian Fellows <ian.fellows at stat.ucla.edu> wrote:
+> David,
+>
+> rforge does not keep up to date builds of packages for R versions that are out of date. You are using R 2.10.x. I suggest you install from the source with:
+>
+> install.packages("speedR", repos="http://R-Forge.R-project.org",type="source")
+>
+> you will need to have RTools ( http://www.murdoch-sutherland.com/Rtools/ ) installed.
+>
+> Ian
+>
+>
+
+I can also confirm that I was able to install it from source on
+Windows R 2.11 but not otherwise.
+
+-- 
+Statistics & Software Consulting
+GKX Group, GKX Associates Inc.
+tel: 1-877-GKX-GROUP
+email: ggrothendieck at gmail.com
+
+
+From ilhami.visne at gmail.com  Sat Nov  6 13:30:44 2010
+From: ilhami.visne at gmail.com (ilhami visne)
+Date: Sat, 06 Nov 2010 13:30:44 +0100
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+	<4CD4297E.60902@gmail.com>
+	<AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>
+	<8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+Message-ID: <4CD54A74.1010608@gmail.com>
+
+Hi David,
+
+As Ian's suggested, you can install the latest version of R or you can 
+download speedR package to your local disk 
+(https://r-forge.r-project.org/bin/windows/contrib/latest/speedR_1.0.zip) and 
+install it by using the menu  "Install package(s) from local zip file...".
+
+You will get a warning saying "package 'speedR' was built under R 
+version 2.12.0" that you can ignore.
+
+best wishes,
+ilhami visne
+
+P.S.: By mistake first i've uploaded a test version, which is fixed but 
+maybe not rebuild yet by r-forge. Be sure you get the last one.
+
+On 11/5/2010 9:48 PM, Ian Fellows wrote:
+> David,
+>
+> rforge does not keep up to date builds of packages for R versions that are out of date. You are using R 2.10.x. I suggest you install from the source with:
+>
+> install.packages("speedR", repos="http://R-Forge.R-project.org",type="source")
+>
+> you will need to have RTools ( http://www.murdoch-sutherland.com/Rtools/ ) installed.
+>
+> Ian
+>
+>
+> On Nov 5, 2010, at 1:23 PM, David Katz wrote:
+>
+>> I got an error trying to install speedR (after the preliminary installs went
+>> ok):
+>>
+>> install.packages(c("rJava","iplots"))
+>> Warning in install.packages(c("rJava", "iplots")) :
+>>   'lib = "c:/PROGRA~2/R/R-210~1.1/library"' is not writable
+>> --- Please select a CRAN mirror for use in this session ---
+>> trying URL 'http://cran.fhcrc.org/bin/windows/contrib/2.10/rJava_0.8-6.zip'
+>> Content type 'application/zip' length 579833 bytes (566 Kb)
+>> opened URL
+>> downloaded 566 Kb
+>>
+>> trying URL 'http://cran.fhcrc.org/bin/windows/contrib/2.10/iplots_1.1-3.zip'
+>> Content type 'application/zip' length 415231 bytes (405 Kb)
+>> opened URL
+>> downloaded 405 Kb
+>>
+>> package 'rJava' successfully unpacked and MD5 sums checked
+>> package 'iplots' successfully unpacked and MD5 sums checked
+>>
+>> The downloaded packages are in
+>> C:\Users\dk\AppData\Local\Temp\RtmpjCVkHj\downloaded_packages
+>>> install.packages("speedR", repos="http://R-Forge.R-project.org")
+>> Warning in install.packages("speedR", repos = "http://R-Forge.R-project.org")
+>> :
+>>   argument 'lib' is missing: using 'C:\Users\dk/R/win-library/2.10'
+>> Warning: unable to access index for repository
+>> http://R-Forge.R-project.org/bin/windows/contrib/2.10
+>> Warning message:
+>> In getDependencies(pkgs, dependencies, available, lib) :
+>>   package 'speedR' is not available
+>>> install.packages("speedR")
+>> Warning in install.packages("speedR") :
+>>   argument 'lib' is missing: using 'C:\Users\dk/R/win-library/2.10'
+>> Warning message:
+>> In getDependencies(pkgs, dependencies, available, lib) :
+>>   package 'speedR' is not available
+>> Thanks for any help.
+>> Regards,
+>> David
+>>
+>> On Fri, Nov 5, 2010 at 8:57 AM, ilhami visne<ilhami.visne at gmail.com>  wrote:
+>>
+>>> Hi,
+>>>
+>>> Try this one here http://speedr.r-forge.r-project.org. You can use it to
+>>> view, filter and import new datas.
+>>>
+>>> If you like it or find a bug (in beta), please write on the forum.
+>>>
+>>> best wishes,
+>>> ilhami visne
+>>>
+>>> project is at
+>>>
+>>> On 10/26/2010 7:13 AM, Liviu Andronic wrote:
+>>>
+>>>> Dear all
+>>>> I've been looking for a solution to this problem ever since I started
+>>>> learning R, and I still haven't found one I'm comfortable with. And I
+>>>> would rather avoid exporting and importing into a spreadsheet just for
+>>>> this. I am looking for a data viewer/editor that could, among other
+>>>> things:
+>>>> - have a 'view' mode (not an 'edit only' mode, to avoid bugs or
+>>>> unintended modifications)
+>>>> - have a 'filter' view mode (not a data-modifying subset)
+>>>> - have a 'sort' view mode (not a data-modifying sort operation)
+>>>> - select multiple rows/cols
+>>>> - select multiple individual cells
+>>>>
+>>>> Here's a list of what I've found sofar:
+>>>> - View()/Edit(): rudimentary interface; don't interact very well with
+>>>> tcltk (Rcmdr) on Linux
+>>>> - relimp::showData(): nice viewer, but too often too unstable; lacks
+>>>> most of the features above
+>>>> - tcltk2::tk2edit(): allows multiple row/col/cell selections; has no
+>>>> 'view' mode nor 'filter' or 'sort', and pops up scary errors whenever
+>>>> 'cancelling' changes
+>>>> - rdataviewer: the interface is too exotic for my habits, and lacks
+>>>> most of the features above
+>>>> - RGtk2Extras::dfedit(): allows multiple cell selections and can
+>>>> perform a 'sort' and displays several features in the c-menu; it is
+>>>> quite slow on my system with 'iris', no 'view' mode; since it uses
+>>>> RGtk2 it interacts very badly with tcltk (Rcmdr)
+>>>> - playwith: features a nice viewer hidden in Labels>   Select from
+>>>> table, but it is awkwardly located, with no advanced features, and
+>>>> RGtk2 based
+>>>> - JGR/Deducer::data.viewer(): includes a nifty data editor, perhaps my
+>>>> favourite from this list, but it is a bit awkward to use when using an
+>>>> editor different than JGR (console monopolization); it also lacks a
+>>>> 'view' and 'filter' mode as well well as select multiple rows/cols; it
+>>>> can sort, but not easily when outside JGR
+>>>>
+>>>>
+>>>> Anything that I've missed? Regards
+>>>> Liviu
+>>>>
+>>>>
+>>>>
+>>>>
+>>> _______________________________________________
+>>> R-SIG-GUI mailing list
+>>> R-SIG-GUI at stat.math.ethz.ch
+>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>>
+>>
+>>
+>> -- 
+>> David Katz
+>>
+>> www.davidkatzconsulting.com
+>>
+>> 	[[alternative HTML version deleted]]
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+>
+
+
+From david at davidkatzconsulting.com  Sat Nov  6 18:59:01 2010
+From: david at davidkatzconsulting.com (David Katz)
+Date: Sat, 6 Nov 2010 10:59:01 -0700
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+	<4CD4297E.60902@gmail.com>
+	<AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>
+	<8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+Message-ID: <AANLkTi=srOAHmj+8AXL34ineJFTpM3Q01UiZYkRXWwLe@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101106/94e4175d/attachment.pl>
+
+From ilhami.visne at gmail.com  Wed Nov 10 23:01:57 2010
+From: ilhami.visne at gmail.com (ilhami visne)
+Date: Wed, 10 Nov 2010 23:01:57 +0100
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <AANLkTi=srOAHmj+8AXL34ineJFTpM3Q01UiZYkRXWwLe@mail.gmail.com>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>	<4CD4297E.60902@gmail.com>	<AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>	<8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+	<AANLkTi=srOAHmj+8AXL34ineJFTpM3Q01UiZYkRXWwLe@mail.gmail.com>
+Message-ID: <4CDB1655.4030807@gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101110/b1cce647/attachment.pl>
+
+From valerop at uv.es  Thu Nov 11 12:28:16 2010
+From: valerop at uv.es (Pedro Valero-Mora)
+Date: Thu, 11 Nov 2010 12:28:16 +0100
+Subject: [R-gui] Reminder Special issue of the JSS on Graphical User
+ Interfaces for R
+Message-ID: <4CDBD350.70500@uv.es>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101111/59700b54/attachment.pl>
+
+From tom.aldenberg at rivm.nl  Thu Nov 11 12:39:16 2010
+From: tom.aldenberg at rivm.nl (Tom Aldenberg)
+Date: Thu, 11 Nov 2010 12:39:16 +0100
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <mailman.15.1289473204.17294.r-sig-gui@stat.math.ethz.ch>
+References: <mailman.15.1289473204.17294.r-sig-gui@stat.math.ethz.ch>
+Message-ID: <OF4BB0E77E.10A9B252-ONC12577D8.003F9B8F-C12577D8.00400504@notesmail.rivm.nl>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101111/bff3dada/attachment.pl>
+
+From pdalgd at gmail.com  Thu Nov 11 13:38:43 2010
+From: pdalgd at gmail.com (peter dalgaard)
+Date: Thu, 11 Nov 2010 13:38:43 +0100
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <OF4BB0E77E.10A9B252-ONC12577D8.003F9B8F-C12577D8.00400504@notesmail.rivm.nl>
+References: <mailman.15.1289473204.17294.r-sig-gui@stat.math.ethz.ch>
+	<OF4BB0E77E.10A9B252-ONC12577D8.003F9B8F-C12577D8.00400504@notesmail.rivm.nl>
+Message-ID: <0E0BE0C4-0FBB-4499-9F65-D5D5F87F8E74@gmail.com>
+
+
+On Nov 11, 2010, at 12:39 , Tom Aldenberg wrote:
+
+> Hi,
+> 
+> Having watched this discussion for some time, I would think RExcel, 
+> through RExcelInstaller, is the definitive, as well as most reliable, 
+> answer to the question. Or do I miss the point?
+> 
+
+Only to the extent that you believe that Excel provides the definitive and reliable approach to data handling. There are people who disagree with that, e.g. those who have accidentally gotten the student number included in the grade point average, overwritten a formula cell with a constant, etc. 
+
+Notice that other systems with "spreadsheet-like" viewers/editors, quite deliberately do not include full spreadsheet functionality. E.g., rather than have users enter a formula cell and replicate it along a column, SAS JMP allows you to attach a "formula property" to a column, which (other advantages and disadvantages of that system untold) strikes me as a considerably more sane approach to data transformations. 
+
+Also, of course, RExcel is Windows-only and requires that you have Excel installed.
+
+
+
+-- 
+Peter Dalgaard
+Center for Statistics, Copenhagen Business School
+Solbjerg Plads 3, 2000 Frederiksberg, Denmark
+Phone: (+45)38153501
+Email: pd.mes at cbs.dk  Priv: PDalgd at gmail.com
+
+
+From f.harrell at Vanderbilt.Edu  Thu Nov 11 14:06:33 2010
+From: f.harrell at Vanderbilt.Edu (Frank Harrell)
+Date: Thu, 11 Nov 2010 07:06:33 -0600
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <OF4BB0E77E.10A9B252-ONC12577D8.003F9B8F-C12577D8.00400504@notesmail.rivm.nl>
+References: <mailman.15.1289473204.17294.r-sig-gui@stat.math.ethz.ch>
+	<OF4BB0E77E.10A9B252-ONC12577D8.003F9B8F-C12577D8.00400504@notesmail.rivm.nl>
+Message-ID: <20101111130633.GC2615@harrelfe-desktop>
+
+On Thu, Nov 11, 2010 at 05:39:16AM -0600, Tom Aldenberg wrote:
+> Hi,
+> 
+> Having watched this discussion for some time, I would think RExcel, 
+> through RExcelInstaller, is the definitive, as well as most reliable, 
+> answer to the question. Or do I miss the point?
+
+Yes; that's an overkill for this situation.
+Frank
+
+> 
+> Regards,
+> Tom Aldenberg
+> RIVM
+> PO Box 1
+> Bilthoven NL-3720BA
+> Netherlands
+> T: +31 30 2743137
+> F: +31 30 2744401
+> 
+> 
+> Disclaimer RIVM 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Frank E Harrell Jr Professor and Chairman      School of Medicine
+                   Department of Biostatistics Vanderbilt University
+
+
+From ian.fellows at stat.ucla.edu  Thu Nov 11 22:12:29 2010
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Thu, 11 Nov 2010 13:12:29 -0800
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <4CDB1655.4030807@gmail.com>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>	<4CD4297E.60902@gmail.com>	<AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>	<8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+	<AANLkTi=srOAHmj+8AXL34ineJFTpM3Q01UiZYkRXWwLe@mail.gmail.com>
+	<4CDB1655.4030807@gmail.com>
+Message-ID: <DFB64A2C-BEB6-4996-A7DD-16FA8ED86A29@stat.ucla.edu>
+
+Ilhami,
+
+You have done a great job with this package. After the update, it works very smoothly under JGR. Keep up the good work.
+
+Some things I liked:
+
+1. I really like the ability to filter columns to obtain subsets. It works much more smoothly and intuitively than Deducer Subset dialog.
+2. The ability to import .xls and .xlsx files is key and great.
+3. I liked seeing the R code behind the data import/filter
+
+A few thoughts/suggestions:
+
+1. I couldn't find any documentation about which file types are supported by the data import panel (i.e. speedR.importany).
+
+2. The following code appears at the beginning of the Filer Code block:
+
+installed.pkgs = installed.packages()
+required.pkgs = c("rJava","iplots")
+toBeInstalled = required.pkgs[!(required.pkgs %in% installed.pkgs[,1])]
+if (length(toBeInstalled) != 0){
+	install.packages(toBeInstalled)
+}
+
+This code is more book keeping than user relevant. Perhaps you should hide it from the user.
+
+3. Since this is a Java based project, it can be nicely integrated in with JGR and Deducer. You can add menu integration with:
+
+if(exists(".jgr") && .jgr){
+	jgr.insertMenuItem("Packages & Data","Filtering Data Editor","speedR()",2)
+}
+
+if(exists(".deducer") && !is.null(.deducer) ){
+       deducer.addMenuItem("Filtering Data Editor",,"speedR()","Data")
+}
+
+4. It would be nice if the Filter Code was executed in the console as if the user typed it in when finnish is clicked. This can be accomplished (when Deducer is loaded) with something like:
+
+engine.parseAndEval("J(\"org.rosuda.deducer.Deducer\")$execute(\"2+2\")");
+
+Where engine is your REngine and 2+2 is what you want to execute in the console.
+
+
+
+At one point I did get the following stack trace after I hit finish, though everything still worked fine:
+
+Exception in thread "AWT-EventQueue-0" java.lang.ArrayIndexOutOfBoundsException: 7 >= 0
+	at java.util.Vector.elementAt(Vector.java:427)
+	at javax.swing.table.DefaultTableColumnModel.getColumn(DefaultTableColumnModel.java:277)
+	at sun.swing.SwingUtilities2.convertColumnIndexToModel(SwingUtilities2.java:1778)
+	at javax.swing.JTable.convertColumnIndexToModel(JTable.java:2551)
+	at javax.swing.JTable.isCellEditable(JTable.java:2734)
+	at org.jdesktop.swingx.JXTable.isCellEditable(JXTable.java:1473)
+	at org.jdesktop.swingx.JXTable.setValueAt(JXTable.java:1439)
+	at at.ac.arcs.tablefilter.cell.FilterCellEditor$1.actionPerformed(FilterCellEditor.java:62)
+	at javax.swing.JTextField.fireActionPerformed(JTextField.java:492)
+	at at.ac.arcs.tablefilter.cell.JXFilterField.stopTimer(JXFilterField.java:140)
+	at at.ac.arcs.tablefilter.cell.JXFilterField$2.actionPerformed(JXFilterField.java:111)
+	at javax.swing.Timer.fireActionPerformed(Timer.java:271)
+	at javax.swing.Timer$DoPostEvent.run(Timer.java:201)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:633)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:296)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:211)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:196)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:188)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+
+
+I tried to open an unsupported file type and got:
+
+ov 11, 2010 12:49:34 PM at.ac.ait.speedr.importwizard.steps.CSVDataImportWizardStep$StreamFeeder run
+SEVERE: Un-terminated quoted (") field at end of CSV line
+java.io.IOException: Un-terminated quoted (") field at end of CSV line
+	at au.com.bytecode.opencsv.CSVParser.parseLine(CSVParser.java:255)
+	at au.com.bytecode.opencsv.CSVParser.parseLine(CSVParser.java:168)
+	at au.com.bytecode.opencsv.CSVReader.readNext(CSVReader.java:237)
+	at at.ac.ait.speedr.importwizard.steps.CSVDataImportWizardStep$StreamFeeder.run(CSVDataImportWizardStep.java:338)
+
+
+
+Ian
+
+
+From erich.neuwirth at univie.ac.at  Fri Nov 12 10:17:10 2010
+From: erich.neuwirth at univie.ac.at (Erich Neuwirth)
+Date: Fri, 12 Nov 2010 10:17:10 +0100
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <0E0BE0C4-0FBB-4499-9F65-D5D5F87F8E74@gmail.com>
+References: <mailman.15.1289473204.17294.r-sig-gui@stat.math.ethz.ch>
+	<OF4BB0E77E.10A9B252-ONC12577D8.003F9B8F-C12577D8.00400504@notesmail.rivm.nl>
+	<0E0BE0C4-0FBB-4499-9F65-D5D5F87F8E74@gmail.com>
+Message-ID: <817215EA-3018-4876-AAD3-9E520CCE5981@univie.ac.at>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101112/482c944d/attachment.pl>
+
+From landronimirc at gmail.com  Fri Nov 12 16:54:48 2010
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Fri, 12 Nov 2010 16:54:48 +0100
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <817215EA-3018-4876-AAD3-9E520CCE5981@univie.ac.at>
+References: <mailman.15.1289473204.17294.r-sig-gui@stat.math.ethz.ch>
+	<OF4BB0E77E.10A9B252-ONC12577D8.003F9B8F-C12577D8.00400504@notesmail.rivm.nl>
+	<0E0BE0C4-0FBB-4499-9F65-D5D5F87F8E74@gmail.com>
+	<817215EA-3018-4876-AAD3-9E520CCE5981@univie.ac.at>
+Message-ID: <AANLkTimiVyTmxPFxEowE734bLfSjkyKrRBLK=gkq=ERt@mail.gmail.com>
+
+On Fri, Nov 12, 2010 at 10:17 AM, Erich Neuwirth
+<erich.neuwirth at univie.ac.at> wrote:
+> Regarding Peter's comment:
+> One of the lesser known facilities in Excel is array formulas.
+> Array formulas are formulas with results taking up a range, e.g. a column,
+> and not only a cell. That way, you can do vector and matrix operations.
+> Using this mechanism essentially allows you to do what you want, create one formula
+> for a whole column, without the need to copy the formula.
+> One of the problems many statisticians have with Excel that they do not know
+> the more advanced features and judge the software based on their
+> somewhat limited knowledge.
+>
+There are other reasons [1] why one may want to avoid doing statistics
+in Excel, or even trusting it with one's data. My favourite one is the
+properties of unary minus. In R,
+> -3^2
+[1] -9
+> -(3)^2
+[1] -9
+> -(3^2)
+[1] -9
+
+Try the same expressions in OOo or Excel, and you may be surprised by
+getting different results: sometimes positive and others negative.
+There's even a fortune:
+> fortune('unary')
+
+Thomas Lumley: The precedence of ^ is higher than that of unary minus. It may
+be surprising, [...]
+Herv? Pag?s: No, it's not surprising. At least to me... In the country where I
+grew up, I've been teached that -x^2 means -(x^2) not (-x)^2.
+   -- Thomas Lumley and Herv? Pag?s (both explaining that operator precedence
+      is working perfectly well)
+      R-devel (January 2006)
+
+Another turn-off is the potential loss of precision just from passing
+your data through Excel.
+
+Anyways, for more detailed discussion read Patrick's document.
+Personally I'm hopping off this potentially flamy wagon. Regards
+Liviu
+
+[1] http://lib.stat.cmu.edu/S/Spoetry/Tutor/spreadsheet_addiction.html
+
+
+From david at davidkatzconsulting.com  Fri Nov 12 17:10:49 2010
+From: david at davidkatzconsulting.com (David Katz)
+Date: Fri, 12 Nov 2010 08:10:49 -0800
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <4CDB1655.4030807@gmail.com>
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+	<4CD4297E.60902@gmail.com>
+	<AANLkTimPtxs7yuGujnGrWKncB3Qa=uUkG+vO_QdxBiJC@mail.gmail.com>
+	<8724A1A8-5481-449D-A864-7CA61E8BDB1F@stat.ucla.edu>
+	<AANLkTi=srOAHmj+8AXL34ineJFTpM3Q01UiZYkRXWwLe@mail.gmail.com>
+	<4CDB1655.4030807@gmail.com>
+Message-ID: <AANLkTin=VOgpxzJtvjtjqSnxbDED1-ebS_273MqEcNih@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101112/6a233434/attachment.pl>
+
+From erich.neuwirth at univie.ac.at  Fri Nov 12 18:14:40 2010
+From: erich.neuwirth at univie.ac.at (Erich Neuwirth)
+Date: Fri, 12 Nov 2010 18:14:40 +0100
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+In-Reply-To: <AANLkTimiVyTmxPFxEowE734bLfSjkyKrRBLK=gkq=ERt@mail.gmail.com>
+References: <mailman.15.1289473204.17294.r-sig-gui@stat.math.ethz.ch>
+	<OF4BB0E77E.10A9B252-ONC12577D8.003F9B8F-C12577D8.00400504@notesmail.rivm.nl>
+	<0E0BE0C4-0FBB-4499-9F65-D5D5F87F8E74@gmail.com>
+	<817215EA-3018-4876-AAD3-9E520CCE5981@univie.ac.at>
+	<AANLkTimiVyTmxPFxEowE734bLfSjkyKrRBLK=gkq=ERt@mail.gmail.com>
+Message-ID: <4CDD7600.3010200@univie.ac.at>
+
+I have to answer again, and again partially because of a misleading
+argument.
+
+Let me state first that I think it is a matter of taste what kind of
+software one wants to use in research. If a researcher dislikes Excel,
+of course he can refuse to use it.
+The situation is slightly different for academic teachers.
+Not talking about spreadsheets and some of the statistics
+they can do when Excel is installed on practically every
+desktop in professional environments is dangerous
+because you are implicitly telling your students
+"we are so smart that we only are going to use software
+which is not accessible to dumber people".
+
+Not for your arguments (and I know Patrick's paper
+and I disagree with quite a few - but not all - of his points).
+
+-22 is indeed surprising, and people should be warned about it.
+But by itself it is not a reason to refuse to use it.
+If let Java compute 1234567788*2 you get -1825831720
+No error message, no warning!
+I think this is much worse, and still we have
+rJava and many more R extensions based on Java.
+
+You also mention the possible loss of precision when you pass data
+through Excel. This is true if you use a character based transfer
+(e.g. csv-files). One of the reasons Thomas and I developed
+statconn and RExcel is that we wanted a transfer facility
+retaining precision.
+
+In fact, RExcel was written to overcome quite of the few shortcomings
+Patrick mentions in his paper.
+
+For academic teachers, I still think it is important to
+know the shortcomings of Excel and also know which ones
+can be alleviated by using RExcel.
+
+
+From marcelodamasceno at gmail.com  Wed Nov 24 03:23:43 2010
+From: marcelodamasceno at gmail.com (Marcelo Damasceno de Melo)
+Date: Tue, 23 Nov 2010 18:23:43 -0800 (PST)
+Subject: [R-gui] Marcelo Damasceno de Melo wants to stay in touch on LinkedIn
+Message-ID: <2117446609.2818548.1290565423819.JavaMail.app@ech3-cdn06.prod>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101123/7f70ce86/attachment.pl>
+

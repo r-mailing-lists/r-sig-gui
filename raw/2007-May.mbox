@@ -1,0 +1,127 @@
+From bhavana.belsare at gmail.com  Tue May  1 15:12:49 2007
+From: bhavana.belsare at gmail.com (Bhavana Belsare)
+Date: Tue, 1 May 2007 18:42:49 +0530
+Subject: [R-gui] query regarding jri
+In-Reply-To: <29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>
+References: <29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>
+Message-ID: <29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070501/ab19444e/attachment.pl 
+
+From lawremi at iastate.edu  Wed May  2 12:35:43 2007
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Wed, 2 May 2007 05:35:43 -0500
+Subject: [R-gui] query regarding jri
+In-Reply-To: <29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>
+References: <29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>
+	<29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>
+Message-ID: <509e0620705020335n667586f1qeefbd3a7923d727a@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070502/221689e1/attachment.pl 
+
+From murdoch at stats.uwo.ca  Wed May 16 17:14:03 2007
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Wed, 16 May 2007 11:14:03 -0400
+Subject: [R-gui] Configuring tools in Tinn-R
+Message-ID: <464B1FBB.8000206@stats.uwo.ca>
+
+Currently Tinn-R has the latex command line hard coded.  I'd like to 
+change it (to add --src-specials) but it seems this is kind of tricky now.
+
+Is there an easy way to do this?
+
+Duncan Murdoch
+
+
+From joseclaudio.faria at terra.com.br  Fri May 18 18:31:09 2007
+From: joseclaudio.faria at terra.com.br (terra)
+Date: Fri, 18 May 2007 13:31:09 -0300
+Subject: [R-gui] Configuring tools in Tinn-R
+Message-ID: <464DD4CD.8090709@terra.com.br>
+
+Dear Duncan,
+
+Sorry, for while it is not possible inside of Tinn-R, only in the DOS 
+console.
+
+In the next version we intend to make these options more flexible, also 
+another thinks related with LaTeX.
+
+Regards,
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+  Jose Claudio Faria
+  Brasil/Bahia/UESC/DCET
+  Estatistica Experimental/Prof. Titular
+    joseclaudio.faria at terra.com.br
+    joseclaudio.faria at oi.com.br
+    jc_faria at uesc.br
+    jc_faria at uol.com.br
+  Tel: 73-3634.2779 (res)
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+From mike.prager at noaa.gov  Mon May 21 20:21:50 2007
+From: mike.prager at noaa.gov (Mike Prager)
+Date: Mon, 21 May 2007 14:21:50 -0400
+Subject: [R-gui] Configuring tools in Tinn-R
+References: <464DD4CD.8090709@terra.com.br>
+Message-ID: <jio353hjpb87ehnnku3nlo012b74oqpb70@4ax.com>
+
+terra <joseclaudio.faria at terra.com.br> wrote:
+
+> Sorry, for while it is not possible inside of Tinn-R, only in the DOS 
+> console.
+> 
+> In the next version we intend to make these options more flexible, also 
+> another thinks related with LaTeX.
+> 
+> Regards,
+> 
+> /////\\\\\/////\\\\\/////\\\\\/////\\\\\
+>   Jose Claudio Faria
+>   Brasil/Bahia/UESC/DCET
+>   Estatistica Experimental/Prof. Titular
+> /////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+Jose Claudio--
+
+It would be helpful to let the user change the entire command
+line associated with (pdf)tex.  I use VTeX, and the command line
+I use to get PDF output is
+
+d:\vtex\bin\vtex3h.exe -$p(f=cf,c=9,g=f,t=f -ov -ox2 -n1
+@latexcm %$
+
+where %$ is replaced by the file name.
+
+A similar command is used to get DVI, and to view DVI, I use
+
+d:\vtex\bin\vtexwd.exe %$
+
+So in my case at least, more flexibility is needed than an
+option change for "latex".
+
+Regards,
+...Mike
+
+-- 
+Mike Prager, NOAA, Beaufort, NC
+* Opinions expressed are personal and not represented otherwise.
+* Any use of tradenames does not constitute a NOAA endorsement.
+
+
+From bhavana.belsare at gmail.com  Wed May 30 19:51:49 2007
+From: bhavana.belsare at gmail.com (Bhavana Belsare)
+Date: Wed, 30 May 2007 23:21:49 +0530
+Subject: [R-gui] regarding graph plots..
+Message-ID: <29cba4c60705301051o18838398j3d4306f9e078b871@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070530/1c091c77/attachment.pl 
+

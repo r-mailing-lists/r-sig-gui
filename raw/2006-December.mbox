@@ -1,0 +1,111 @@
+From thomas.friedrichsmeier at ruhr-uni-bochum.de  Mon Dec  4 18:05:36 2006
+From: thomas.friedrichsmeier at ruhr-uni-bochum.de (Thomas Friedrichsmeier)
+Date: Mon, 4 Dec 2006 18:05:36 +0100
+Subject: [R-gui] RKWard 0.4.2
+Message-ID: <200612041805.40468.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+
+Dear R-SIG-GUI subscribers,
+
+I have not announced any new versions of RKWard on this list for quite a long 
+time (in fact, a far as I can see, the last time was more than two years ago, 
+for version 0.2.0).
+
+For those, who have never seen it: RKWard is a KDE GUI for R. As such, it is 
+currently a Linux/BSD/... only application. Once KDE 4 will be released, it 
+will be portable to Windows, too.
+
+For those, who have not tried it during the past few months: We'd like to 
+encourage you to give it a try. As signified by the version number, RKWard is 
+still far from finished, but we feel it is already highly useful as an 
+advanced IDE for R.
+
+Current features include:
+* An auto-updating object browser, allowing you to explore the entire R 
+workspace, including loading packages
+* An R console (actually an emulation) including syntax highlighting, Tab code 
+completion, and function argument hinting
+* A script editor based on the powerful and feature rich Kate. Also with 
+syntax hightlighting, code completion, and argument hinting, as well as code 
+folding
+* Integrated editor for data.frames
+* Integrated help browser and help search
+* X11 device windows are managed by the GUI
+* Multiple document interface: Several data editor, script editors, help 
+windows can be opened at the same time
+* Asynchronous command execution: Run lengthy calculations in R, and continue 
+working on your data / scripts at the same time
+* Log of all R commands
+* R library management
+* Extensible using plugins, and shipped with plugins providing basic data 
+import / export, data analysis, plotting and distribution functions
+
+Regards
+Thomas Friedrichsmeier
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061204/1dbf195c/attachment.bin 
+
+From thomas.friedrichsmeier at ruhr-uni-bochum.de  Mon Dec  4 18:19:24 2006
+From: thomas.friedrichsmeier at ruhr-uni-bochum.de (Thomas Friedrichsmeier)
+Date: Mon, 4 Dec 2006 18:19:24 +0100
+Subject: [R-gui] RKWard 0.4.2
+In-Reply-To: <200612041805.40468.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+References: <200612041805.40468.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+Message-ID: <200612041819.27588.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+
+On Monday 04 December 2006 18:05, Thomas Friedrichsmeier wrote:
+> I have not announced any new versions of RKWard on this list for quite a
+> long time (in fact, a far as I can see, the last time was more than two
+> years ago, for version 0.2.0).
+
+...which might explain, why I forgot the most important part of the 
+announcement: RKWard can be found at http://rkward.sourceforge.net . Quick 
+link to the download page: 
+http://sourceforge.net/project/showfiles.php?group_id=50231 .
+
+Regards
+Thomas Friedrichsmeier
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 189 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061204/43d19922/attachment.bin 
+
+From joseclaudio.faria at terra.com.br  Wed Dec  6 00:39:42 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Tue, 05 Dec 2006 20:39:42 -0300
+Subject: [R-gui] Tinn-R 1.19.0.14 released
+Message-ID: <4576033E.9060700@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.19.0.14) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows and we thinking no more release new 
+versions in the current year.
+
+Changes:
+1.19.0.14 (Dec/06/2006)
+
+- 'Search text' and 'Replace text' interface were reworked.
+
+- Some parts of the source code were optimized.
+
+- It is now possible to increase and decrease (nonpermanent) the font size of
+   any individual file easily:
+
+   SHIFT + CTRL + (plus  (+) on the numeric keypad): INCREASE (limit is 50)
+   SHIFT + CTRL + (minus (-) on the numeric keypad): DECREASE (limit is  1)
+
+Regards,
+Tinn-R team
+
+

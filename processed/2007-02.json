@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2007-02",
+  "messages": [
+    {
+      "id": "msg-bd54a2b2a745",
+      "message_id": "<576452c40702191029l6218dc08gd5e7e78631d2515d@mail.gmail.com>",
+      "from_name": "j verzani",
+      "from_email_hash": "a029675bf9462719f336b4ef9bb1441ceba180f1ffd7e0365f6802832a6ad84e",
+      "date": "2007-02-19T13:29:04-05:00",
+      "subject": "[R-gui] New versions of gWidgets, gWidgetsRGtk2, pmg, and a new package gWidgetsrJava",
+      "subject_clean": "[R-gui] New versions of gWidgets, gWidgetsRGtk2, pmg, and a new package gWidgetsrJava",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear GUI-list readers,\n\nI uploaded to CRAN today updated packages for gWidgets (0-12),\ngWidgetsRGtk2 (0-12) and pmg (9-28). As well, I added a new package\ngWidgetsrJava (0-1).\n\nThe gWidgets package sets up an API for interacting with graphical\ntoolkits within R to create GUIs. An accompanying vignette has many\nexamples of its usage. This package needs a further package\nintegrating the API with a specific graphical toolkit.\n\nThe gWidgetsRGtk2 package allows the RGtk2 package to be used within\nthis framework. The new gWidgetsrJava package does a similar thing for\nrJava.\n\nThe gWidgetsrJava package is not nearly as complete as the one for\nRGtk2, but might be of interest. It must run from within the JGR\nenvironment to be interactive.   This package borrows heavily from\nSimon's iWidgets package, but adds some more features.\n\nThe pmg package provides a lightweight GUI for R, similar to RCmdr,\nwhich uses gWidgetsRGtk2 to provide drag and drop and other features\nto the GUI. Some of the dialogs are quite interactive, others\nbasically collect arguments to pass along to an R function.\n\nThe pmg package has an accompanying vignette documenting its usage.\n\nSome installation details are found at www.math.csi.cuny.edu/pmg. If\nthe GTK libraries are installed (a big if under windows!) then this\nwill install pmg, and the others:\n\ninstall.packages(\"pmg\", dep=T)\n\nInstallation of the GTK libraries varies. Within windows there is a\nself-extracting installer at http://gladewin32.sourceforge.net/ For OS\nX and Linux there are various ways. A 2.8 or newer version is needed\nfor RGtk2. The RGtk2 website (www.ggobi.org/rgtk2) has some extra\ninfo.\n\nThis will install gWidgetsrJava (and likely JGR too)\n\ninstall.packages(\"gWidgetsrJava\", dep=T)\n\nTo see if you installed pmg correctly, you can try\n\nlibrary(pmg)\n\nThe GUI should pop up.\n\nTo test if gWidgets is installed properly, try\n\nlibrary(gWidgets)\nglabel(\"hello world\", cont=T)\n\na window should appear, perhaps after you are  asked to select a toolkit.\n\n\n--John",
+      "body_snippet": "Dear GUI-list readers,\n\nI uploaded to CRAN today updated packages for gWidgets (0-12),\ngWidgetsRGtk2 (0-12) and pmg (9-28). As well, I added a new package\ngWidgetsrJava (0-1).\n\nThe gWidgets package se",
+      "thread_id": "thread-bd54a2b2a745",
+      "thread_depth": 0,
+      "month": "2007-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-bd54a2b2a745",
+      "subject": "[R-gui] New versions of gWidgets, gWidgetsRGtk2, pmg, and a new package gWidgetsrJava",
+      "message_count": 1,
+      "participants": [
+        "j verzani"
+      ],
+      "started": "2007-02-19T13:29:04-05:00",
+      "last_reply": "2007-02-19T13:29:04-05:00",
+      "root_message_id": "msg-bd54a2b2a745"
+    }
+  ]
+}

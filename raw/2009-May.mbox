@@ -1,0 +1,908 @@
+From david at davidkatzconsulting.com  Fri May  1 23:07:05 2009
+From: david at davidkatzconsulting.com (David Katz)
+Date: Fri, 1 May 2009 14:07:05 -0700
+Subject: [R-gui] tktable or similar - highlight selected cells using color
+	background
+Message-ID: <bcaa950d0905011407o2a6dea4au668ca5fe7f89d2e3@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090501/a9dcc567/attachment.pl>
+
+From p.dalgaard at biostat.ku.dk  Fri May  1 23:23:18 2009
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Fri, 01 May 2009 23:23:18 +0200
+Subject: [R-gui] tktable or similar - highlight selected cells using
+ color background
+In-Reply-To: <bcaa950d0905011407o2a6dea4au668ca5fe7f89d2e3@mail.gmail.com>
+References: <bcaa950d0905011407o2a6dea4au668ca5fe7f89d2e3@mail.gmail.com>
+Message-ID: <49FB6846.5080907@biostat.ku.dk>
+
+David Katz wrote:
+> I'm trying to use tktable or tablelist to display a data frame and
+> highlighting certain cells using the background color.
+> 
+> I found this in the archives, but cannot translate it to use tcl as
+> suggested by the error msg:
+> 
+> require(tcltk)
+> tclRequire("Tktable")
+> tt <- tktoplevel()
+> table1 <- tkwidget(tt,"table")
+> tkpack(table1)
+> tkcmd(.Tk.ID(table1),"tag","celltag","ZeroZero","0,0")
+> tkcmd(.Tk.ID(table1),"tag","celltag","ZeroOne","0,1")
+> tkcmd(.Tk.ID(table1),"tag","configure","ZeroZero",bg="red")
+> tkcmd(.Tk.ID(table1),"tag","configure","ZeroOne",bg="blue")
+> 
+> Error: 'tkcmd' is defunct.
+> Use 'tcl' instead.
+> See help("Defunct")
+> 
+
+I think it's just
+
+tcl(table1, "tag", "celltag", "ZeroZero", "0,0")
+etc.
+
+
+-- 
+    O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+   c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+  (*) \(*) -- University of Copenhagen   Denmark      Ph:  (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)              FAX: (+45) 35327907
+
+
+From groemping at bht-berlin.de  Mon May  4 14:45:34 2009
+From: groemping at bht-berlin.de (=?ISO-8859-15?Q?Ulrike_Gr=F6mping?=)
+Date: Mon, 04 May 2009 14:45:34 +0200
+Subject: [R-gui] Simple way to ask user for text string with R-commander
+	plugin ?
+Message-ID: <49FEE36E.30307@bht-berlin.de>
+
+Dear all,
+
+I am just making my first steps in Rcmdr plugin programming and tcltk, 
+please bear with me, this may be a very basic question.
+
+My problem: From within a larger interface within R-commander (tk 
+notebook with several pages, where the user can make many inputs), I 
+want to allow interim storage of inputs (as a list within the R 
+workspace). I want to allow the user to specify a name for this list. As 
+this is something people shouldn't have to bother with unless they 
+decide on storing, I would like the name to be asked in some popup 
+dialogue.
+
+I haven't found any standard widgets that are intended for this purpose, 
+are there really none ?
+
+I have therefore written a little dialogue with only one text entry box 
+and OK and Cancel button. I have so far managed to store the text 
+entered there (using assign and a fixed storage name), but I haven't 
+managed to make the dialog return the text or at least an indicator 
+whether the user pressed Cancel or OK. Rather, the return value from the 
+dialogue is always FALSE. 
+
+Any help is appreciated.
+
+Regards, Ulrike
+
+
+From Greg.Snow at imail.org  Mon May  4 21:55:16 2009
+From: Greg.Snow at imail.org (Greg Snow)
+Date: Mon, 4 May 2009 13:55:16 -0600
+Subject: [R-gui] Simple way to ask user for text string with
+	R-commander	plugin ?
+In-Reply-To: <49FEE36E.30307@bht-berlin.de>
+References: <49FEE36E.30307@bht-berlin.de>
+Message-ID: <B37C0A15B8FB3C468B5BC7EBC7DA14CC61D19A18B6@LP-EXMBVS10.CO.IHC.COM>
+
+Can you show some minimal code showing what you have tried?
+
+One possibility is that you are not waiting for the pop-up box to close but returning the (empty) string value immediately, but there could be others.  Some code would help us to help you.
+
+-- 
+Gregory (Greg) L. Snow Ph.D.
+Statistical Data Center
+Intermountain Healthcare
+greg.snow at imail.org
+801.408.8111
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> bounces at stat.math.ethz.ch] On Behalf Of Ulrike Gr?mping
+> Sent: Monday, May 04, 2009 6:46 AM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] Simple way to ask user for text string with R-
+> commander plugin ?
+> 
+> Dear all,
+> 
+> I am just making my first steps in Rcmdr plugin programming and tcltk,
+> please bear with me, this may be a very basic question.
+> 
+> My problem: From within a larger interface within R-commander (tk
+> notebook with several pages, where the user can make many inputs), I
+> want to allow interim storage of inputs (as a list within the R
+> workspace). I want to allow the user to specify a name for this list.
+> As
+> this is something people shouldn't have to bother with unless they
+> decide on storing, I would like the name to be asked in some popup
+> dialogue.
+> 
+> I haven't found any standard widgets that are intended for this
+> purpose,
+> are there really none ?
+> 
+> I have therefore written a little dialogue with only one text entry box
+> and OK and Cancel button. I have so far managed to store the text
+> entered there (using assign and a fixed storage name), but I haven't
+> managed to make the dialog return the text or at least an indicator
+> whether the user pressed Cancel or OK. Rather, the return value from
+> the
+> dialogue is always FALSE.
+> 
+> Any help is appreciated.
+> 
+> Regards, Ulrike
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From groemping at bht-berlin.de  Mon May  4 22:21:23 2009
+From: groemping at bht-berlin.de (=?ISO-8859-1?Q?Ulrike_Gr=F6mping?=)
+Date: Mon, 04 May 2009 22:21:23 +0200
+Subject: [R-gui] Simple way to ask user for text string with R-commander
+ plugin ?
+In-Reply-To: <B37C0A15B8FB3C468B5BC7EBC7DA14CC61D19A18B6@LP-EXMBVS10.CO.IHC.COM>
+References: <49FEE36E.30307@bht-berlin.de>
+	<B37C0A15B8FB3C468B5BC7EBC7DA14CC61D19A18B6@LP-EXMBVS10.CO.IHC.COM>
+Message-ID: <49FF4E43.7070407@bht-berlin.de>
+
+Greg Snow schrieb:
+> Can you show some minimal code showing what you have tried?
+>
+> One possibility is that you are not waiting for the pop-up box to close but returning the (empty) string value immediately, but there could be others.  Some code would help us to help you.
+>
+>   
+Greg,
+
+thanks for the offer, I hope it holds up for my next more difficult 
+question :-)
+With this one, I've now resorted to initializing the string to NULL, so 
+that I get a NULL returned if the user cancels. So this question can be 
+considered solved. (I just thought that I must have overlooked a 
+standard input box widget, it seems like such a frequently-needed thing.)
+
+Now, I'm stuck with this next topic, and I'll send that one to the list 
+in a few minutes. I think that that one is more difficult, but hope that 
+this list's expertise may have the right pointer for me.
+
+Regards, Ulrike
+
+
+From groemping at bht-berlin.de  Mon May  4 22:27:23 2009
+From: groemping at bht-berlin.de (=?ISO-8859-15?Q?Ulrike_Gr=F6mping?=)
+Date: Mon, 04 May 2009 22:27:23 +0200
+Subject: [R-gui] tcltk notebook question: Accessing tabs in ttknotebooks
+Message-ID: <49FF4FAB.3000900@bht-berlin.de>
+
+Dear all,
+(and John, please don't feel obliged to react, I know that you have no 
+time!),
+I am trying to figure out how to access individual tabs on a notebook. I 
+have six tabs, created with the following simple code (where topdes2 is 
+the top level window):
+
+tn <- ttknotebook(topdes2)
+
+tab1 <- ttkframe(tn)
+tab2 <- ttkframe(tn)
+tab3 <- ttkframe(tn)
+tab4 <- ttkframe(tn)
+tab5 <- ttkframe(tn)
+tab6 <- ttkframe(tn)
+
+tkadd(tn,tab1,text="Base Settings")   ### tabid=0
+tkadd(tn,tab2,text="Factor Details")  ### tabid=1
+tkadd(tn,tab3,text="Estimable Model") ### tabid=2
+tkadd(tn,tab4,text="Block & Split-Plot") ### tabid=3
+tkadd(tn,tab5,text="Special") ### tabid=4
+tkadd(tn,tab6,text="Export") ### tabid=5
+
+Now I want to disable or hide some tabs, if certain conditions are true. 
+I've been able to conditionally disable all kinds of non-tab controls, 
+but the tabs of the notebook so far resist my efforts. The TclTk help 
+for ttk::notebook lists the widget command "pathname tab tabid ?-option 
+?value ..." which I believe is the correct one, but I can't figure out 
+how to make R transfer that command to tcl. I believe that the tabid 
+values in the comments after tkadd are the correct ones for this 
+command, but I'm not even sure about that. Everyting I've tried doesn't 
+quite make sense to me, the last tries were along the lines of
+
+.Tcl(tn, "tab", paste(4, "-state","disabled",sep=" " )),
+
+after using .Tcl.args and other things failed. But no luck nowhere.
+
+Any ideas ?
+
+Regards, Ulrike
+
+
+From jverzani at gmail.com  Tue May  5 02:43:11 2009
+From: jverzani at gmail.com (jverzani)
+Date: Tue, 5 May 2009 00:43:11 +0000 (UTC)
+Subject: [R-gui] tcltk notebook question: Accessing tabs in ttknotebooks
+References: <49FF4FAB.3000900@bht-berlin.de>
+Message-ID: <loom.20090505T004109-176@post.gmane.org>
+
+Ulrike Gr?mping <groemping <at> bht-berlin.de> writes:
+
+.. snip ..
+
+> Now I want to disable or hide some tabs, if certain conditions are true. 
+> I've been able to conditionally disable all kinds of non-tab controls, 
+> but the tabs of the notebook so far resist my efforts. The TclTk help 
+> for ttk::notebook lists the widget command "pathname tab tabid ?-option 
+> ?value ..." which I believe is the correct one, but I can't figure out 
+> how to make R transfer that command to tcl. I believe that the tabid 
+> values in the comments after tkadd are the correct ones for this 
+> command, but I'm not even sure about that. Everyting I've tried doesn't 
+> quite make sense to me, the last tries were along the lines of
+> 
+> .Tcl(tn, "tab", paste(4, "-state","disabled",sep=" " )),
+> 
+> after using .Tcl.args and other things failed. But no luck nowhere.
+> 
+
+
+The tcl() function is what you want here. Use 0-based indexing. SO to hide tab 1
+and disable tab 2, you would have:
+
+tcl(tn, "tab", 0, state="hidden")
+tcl(tn, "tab", 1, state="disabled")
+
+--John
+
+
+> Any ideas ?
+> 
+> Regards, Ulrike
+>
+
+
+From groemping at bht-berlin.de  Tue May  5 19:33:14 2009
+From: groemping at bht-berlin.de (=?ISO-8859-1?Q?Ulrike_Gr=F6mping?=)
+Date: Tue, 05 May 2009 19:33:14 +0200
+Subject: [R-gui] tcltk notebook question: Accessing tabs in ttknotebooks
+In-Reply-To: <loom.20090505T004109-176@post.gmane.org>
+References: <49FF4FAB.3000900@bht-berlin.de>
+	<loom.20090505T004109-176@post.gmane.org>
+Message-ID: <4A00785A.7080502@bht-berlin.de>
+
+Dear John, dear all,
+
+while John's solution helped nicely for modifying the state of a tab, I 
+am again stuck with selecting a tab. I've managed to capture the tabs 
+numeric id (0-based). But using tkselect or tcl does not get me where I 
+want. The code below shows a simplified version of what I tried:
+
+        Rcmdr.new.FrF2()     ## displays a window that contains a 
+notebook (named tn) with 6 tabs
+                             ## and the first tab selected with one 
+widget having the focus
+        tcl(tn, "select", 1) ## for selecting the second tab; produces 
+an error and leaves first tab selected
+
+Error message:
+Error in structure(.External("dotTclObjv", objv, PACKAGE = "tcltk"), 
+class = "tclObj") :
+  [tcl] invalid command name ".179.1"
+
+What am I doing wrong ? Again, any help is appreciated!
+
+Regards, Ulrike
+
+
+From jverzani at gmail.com  Tue May  5 23:54:54 2009
+From: jverzani at gmail.com (jverzani)
+Date: Tue, 5 May 2009 21:54:54 +0000 (UTC)
+Subject: [R-gui] tcltk notebook question: Accessing tabs in ttknotebooks
+References: <49FF4FAB.3000900@bht-berlin.de>
+	<loom.20090505T004109-176@post.gmane.org>
+	<4A00785A.7080502@bht-berlin.de>
+Message-ID: <loom.20090505T215212-139@post.gmane.org>
+
+Ulrike Gr?mping <groemping <at> bht-berlin.de> writes:
+
+
+> 
+> Dear John, dear all,
+> 
+> while John's solution helped nicely for modifying the state of a tab, I 
+> am again stuck with selecting a tab. I've managed to capture the tabs 
+> numeric id (0-based). But using tkselect or tcl does not get me where I 
+> want. The code below shows a simplified version of what I tried:
+> 
+>         Rcmdr.new.FrF2()     ## displays a window that contains a 
+> notebook (named tn) with 6 tabs
+>                              ## and the first tab selected with one 
+> widget having the focus
+>         tcl(tn, "select", 1) ## for selecting the second tab; produces 
+> an error and leaves first tab selected
+> 
+> Error message:
+> Error in structure(.External("dotTclObjv", objv, PACKAGE = "tcltk"), 
+> class = "tclObj") :
+>   [tcl] invalid command name ".179.1"
+> 
+
+
+
+You have the right command: tcl(tn, "select", 1)
+The error suggests the tn "window" does not exist. Check it first with something
+like: tkwinfo(tn, "exists") to see what is happening. 
+
+Hope that helps,
+
+--John
+
+
+
+
+> What am I doing wrong ? Again, any help is appreciated!
+> 
+> Regards, Ulrike
+>
+
+
+From groemping at bht-berlin.de  Wed May  6 00:36:22 2009
+From: groemping at bht-berlin.de (groemping at bht-berlin.de)
+Date: Wed, 6 May 2009 00:36:22 +0200
+Subject: [R-gui] tcltk notebook question: Accessing tabs in ttknotebooks
+In-Reply-To: <loom.20090505T215212-139@post.gmane.org>
+References: <49FF4FAB.3000900@bht-berlin.de>
+	<loom.20090505T004109-176@post.gmane.org>
+	<4A00785A.7080502@bht-berlin.de>
+	<loom.20090505T215212-139@post.gmane.org>
+Message-ID: <20090505221935.M64033@beuth-hochschule.de>
+
+Thanks, John!
+
+tkwinfo(tn, "exists") yields the following error:
+
+Error in structure(.External("dotTclObjv", objv, PACKAGE = "tcltk"), class =
+"tclObj") : 
+? [tcl] bad option ".3.1": must be cells, children, class, colormapfull,
+depth, geometry, height, id, ismapped, manager, name, parent, pointerx,
+pointery, pointerxy, reqheight, reqwidth, rootx, rooty, screen, screencells,
+screendepth, screenheight, screenwidth, screenmmheight, screenmmwidth,
+screenvisual, server, toplevel, viewable, visual, visualid, vrootheight,
+vrootwidth, vrootx, vrooty, width, x, y, atom, atomname, containing, interps,
+pathname, exists, fpixels, pixels, rgb, or visualsavailable.
+
+An analogous error with a shorter bad option (e.g. ".7") is thrown, if I ask
+for existence of the top level window (which is called topdes2). 
+
+What really confuses me here: I obtained the numerical tab id by processing
+tclvalue(tcl(tn, "select")), i.e. tn did exist before. Then I destroyed the
+parent of tn and recreated it (and it is created OK). I don't see any reason
+whatsoever why the recreated menu should not have the same structure as before
+(I haven't changed any parameters), i.e. it should also have tn available. I
+have the feeling that something weird is happening with "."s, but I know too
+little about tcl to be sure about anything.
+
+Regards, Ulrike
+
+---------- Original Message ----------- 
+ From: jverzani <jverzani at gmail.com> 
+ To: r-sig-gui at stat.math.ethz.ch 
+ Sent: Tue, 5 May 2009 21:54:54 +0000 (UTC) 
+ Subject: Re: [R-gui] tcltk notebook question: Accessing tabs in ttknotebooks
+
+> Ulrike Gr?mping <groemping <at> bht-berlin.de> writes: 
+> 
+> > 
+> > Dear John, dear all, 
+> > 
+> > while John's solution helped nicely for modifying the state of a tab, I 
+> > am again stuck with selecting a tab. I've managed to capture the tabs 
+> > numeric id (0-based). But using tkselect or tcl does not get me where I 
+> > want. The code below shows a simplified version of what I tried: 
+> > 
+> > ? ? ? ? Rcmdr.new.FrF2() ? ? ## displays a window that contains a 
+> > notebook (named tn) with 6 tabs 
+> > ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?## and the first tab selected with one 
+> > widget having the focus 
+> > ? ? ? ? tcl(tn, "select", 1) ## for selecting the second tab; produces 
+> > an error and leaves first tab selected 
+> > 
+> > Error message: 
+> > Error in structure(.External("dotTclObjv", objv, PACKAGE = "tcltk"), 
+> > class = "tclObj") : 
+> > ? [tcl] invalid command name ".179.1" 
+> > 
+> 
+> You have the right command: tcl(tn, "select", 1) 
+> The error suggests the tn "window" does not exist. Check it first with
+something 
+> like: tkwinfo(tn, "exists") to see what is happening. 
+> 
+> Hope that helps, 
+> 
+> --John 
+> 
+> > What am I doing wrong ? Again, any help is appreciated! 
+> > 
+> > Regards, Ulrike 
+> > 
+> 
+> _______________________________________________ 
+> R-SIG-GUI mailing list 
+> R-SIG-GUI at stat.math.ethz.ch 
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui 
+------- End of Original Message -------
+
+
+From etiennelaliberte at gmail.com  Wed May  6 02:47:11 2009
+From: etiennelaliberte at gmail.com (=?ISO-8859-1?Q?Etienne_Lalibert=E9?=)
+Date: Wed, 6 May 2009 12:47:11 +1200
+Subject: [R-gui] problem with printing a question on R console after
+	plotting with JGR
+Message-ID: <554cd6450905051747l44a0e937rab48823eb4e69b6@mail.gmail.com>
+
+I'm using the JGR GUI on Ubuntu 9.04. The problem I'm running into is
+best illustrated by the following two functions, which in theory
+should be equivalent:
+
+useless1 <- function() {
+   plot(pressure)
+   answer <- readline("do you see the plot?\n")
+}
+
+In JGR calling useless1() plots a graph, and at the same time a
+question in the R console appears (hence I know what to answer).
+However, with the following function:
+
+useless2 <- function() {
+   plot(pressure)
+   cat("do you see the plot?\n")
+   answer <- readLines(n = 1)
+}
+
+
+In JGR the plot appears but I don't see the question on the R console.
+Only when I answer (without actually knowing what the question was!)
+then the question appears.
+
+This seems to be a problem with the JGR GUI, because I've never had
+this problems with the Windows GUI or when running R directly from the
+terminal. The problem is that some functions that I use frequently use
+a similar approach than useless2() to ask interactive questions after
+plotting.
+
+Does anyone have an idea how to solve this problem (besides suggesting
+another GUI)?
+
+Many thanks,
+
+
+--
+Etienne Lalibert?
+================================
+Rural Ecology Research Group
+School of Forestry
+University of Canterbury
+Private Bag 4800
+Christchurch 8140, New Zealand
+Phone: +64 3 366 7001 ext. 8365
+Fax: +64 3 364 2124
+www.elaliberte.info
+
+
+From david at davidkatzconsulting.com  Wed May  6 16:26:05 2009
+From: david at davidkatzconsulting.com (David Katz)
+Date: Wed, 6 May 2009 07:26:05 -0700
+Subject: [R-gui] vtcl
+Message-ID: <bcaa950d0905060726m1e16e220jc57dd24e3c46ea6c@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090506/72450605/attachment.pl>
+
+From jverzani at gmail.com  Wed May  6 22:14:42 2009
+From: jverzani at gmail.com (jverzani)
+Date: Wed, 6 May 2009 20:14:42 +0000 (UTC)
+Subject: [R-gui] vtcl
+References: <bcaa950d0905060726m1e16e220jc57dd24e3c46ea6c@mail.gmail.com>
+Message-ID: <loom.20090506T201239-849@post.gmane.org>
+
+David Katz <david <at> davidkatzconsulting.com> writes:
+
+> 
+> Has anyone had any experience integrating R with vtcl ( a gui for tcl/tk)?
+> Vtcl produces a whole script in tcl/tk, so it's not clear how to integrate
+> with R. Any suggestions will be much appreciated.
+> 
+
+
+I don't know about vtcl, but do now that you can source in tcl code within R. In
+the tkGUI.R code you will find this example:
+
+ tcl("source", file.path(.Library, "tcltk", "exec", "console.tcl"))
+
+This finds the path of the file console.tcl -- which contains tcl code -- and
+'sources' it in. Likely the same construct could be useful for you. I've used it
+with gWidgetstcltk.
+
+--John
+
+
+From ifellows at ucsd.edu  Thu May  7 01:41:47 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Wed, 6 May 2009 16:41:47 -0700
+Subject: [R-gui] problem with printing a question on R console
+	afterplotting with JGR
+In-Reply-To: <554cd6450905051747l44a0e937rab48823eb4e69b6@mail.gmail.com>
+Message-ID: <7B10A514B0D44803B25C5822467E1D3E@gpbdmx>
+
+Hi,
+
+The problem has to do with the console output text buffer. If the display
+text is too short it gets stuck in the buffer. I'm not sure what the most
+appropriate solution is, though as a dirty work around you can pad your
+output.
+
+On my machine the following works:
+
+useless2 <- function() {
+   plot(pressure)
+   cat(format(" do you see the plot?\n",width=120))
+   answer <- readLines(n = 1)
+}
+useless2()
+
+
+
+
+Ian
+
+p.s. I've cc'ed a relevant list
+
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Etienne Lalibert?
+Sent: Tuesday, May 05, 2009 5:47 PM
+To: r-sig-gui at stat.math.ethz.ch
+Subject: [R-gui] problem with printing a question on R console afterplotting
+with JGR
+
+I'm using the JGR GUI on Ubuntu 9.04. The problem I'm running into is
+best illustrated by the following two functions, which in theory
+should be equivalent:
+
+useless1 <- function() {
+   plot(pressure)
+   answer <- readline("do you see the plot?\n")
+}
+
+In JGR calling useless1() plots a graph, and at the same time a
+question in the R console appears (hence I know what to answer).
+However, with the following function:
+
+useless2 <- function() {
+   plot(pressure)
+   cat("do you see the plot?\n")
+   answer <- readLines(n = 1)
+}
+
+
+In JGR the plot appears but I don't see the question on the R console.
+Only when I answer (without actually knowing what the question was!)
+then the question appears.
+
+This seems to be a problem with the JGR GUI, because I've never had
+this problems with the Windows GUI or when running R directly from the
+terminal. The problem is that some functions that I use frequently use
+a similar approach than useless2() to ask interactive questions after
+plotting.
+
+Does anyone have an idea how to solve this problem (besides suggesting
+another GUI)?
+
+Many thanks,
+
+
+--
+Etienne Lalibert?
+================================
+Rural Ecology Research Group
+School of Forestry
+University of Canterbury
+Private Bag 4800
+Christchurch 8140, New Zealand
+Phone: +64 3 366 7001 ext. 8365
+Fax: +64 3 364 2124
+www.elaliberte.info
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From smootwy at u.washington.edu  Fri May  8 19:35:47 2009
+From: smootwy at u.washington.edu (Donovan Anderson)
+Date: Fri, 08 May 2009 10:35:47 -0700
+Subject: [R-gui] GUI error message (EXC_BAD_ACCESS (SIGBUS).
+In-Reply-To: <C6288215.575%smootwy@u.washington.edu>
+Message-ID: <C629BB83.5F8%smootwy@u.washington.edu>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090508/8a57db95/attachment.pl>
+
+From david at davidkatzconsulting.com  Sat May  9 15:39:57 2009
+From: david at davidkatzconsulting.com (David Katz)
+Date: Sat, 9 May 2009 06:39:57 -0700
+Subject: [R-gui] ttktreeview
+Message-ID: <bcaa950d0905090639s7138e244j3269617cf826ca06@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090509/9a79a608/attachment.pl>
+
+From dan.putler at sauder.ubc.ca  Sat May  9 20:37:18 2009
+From: dan.putler at sauder.ubc.ca (Dan Putler)
+Date: Sat, 09 May 2009 11:37:18 -0700
+Subject: [R-gui] GUI error message (EXC_BAD_ACCESS (SIGBUS).
+In-Reply-To: <6795_1241855515_1241855515_C629BB83.5F8%smootwy@u.washington.edu>
+References: <6795_1241855515_1241855515_C629BB83.5F8%smootwy@u.washington.edu>
+Message-ID: <1241894238.6776.3.camel@whitebox>
+
+Hi Donovan,
+
+Wrong list. You want the R-SIG-Mac list. This list relates to bindings
+to GUI toolkits and developing GUI applications in R. Although, a number
+of the folks who maintain R for Mac OS X are also on this list.
+
+Dan
+
+On Fri, 2009-05-08 at 10:35 -0700, Donovan Anderson wrote:
+> 
+> Folks,
+>     My GUI (5401: 1.28 Leopard build 32 bit) has just started having
+> problems.  When I double click on it, it tries to start, bounces for a while
+> and then closes.  I get a R unexpectedly quit error and Leopard asks me if
+> I want to restart.  When I check the report I get:
+> Process:         R [658]
+> Path:            
+> /Volumes/R-GUI-5401-2.9-leopard-Leopard/R.app/Contents/MacOS/R
+> Identifier:      org.R-project.R
+> Version:         R 2.9.0 GUI 1.28 Leopard build 32-bit (5401)
+> Code Type:       X86 (Native)
+> Parent Process:  launchd [87]
+> 
+> Date/Time:       2009-05-07 11:36:32.095 -0700
+> OS Version:      Mac OS X 10.5.6 (9G2030)
+> Report Version:  6
+> 
+> Exception Type:  EXC_BAD_ACCESS (SIGBUS)
+> Exception Codes: KERN_PROTECTION_FAILURE at 0x0000000000000000
+> Crashed Thread:  0
+> 
+> Thread 0 Crashed:
+> 0   com.apple.CoreFoundation          0x908c2e33
+> __CFStrConvertBytesToUnicode + 51
+> 1   com.apple.CoreFoundation          0x908c3c98 __CFStringEncodeByteStream
+> + 2712
+> 2   com.apple.Foundation              0x96bb58a7
+> -[NSString(NSStringOtherEncodings)
+> getBytes:maxLength:usedLength:encoding:options:range:remainingRange:] + 295
+> 3   com.apple.Foundation              0x96c07f45
+> -[NSString(NSStringOtherEncodings) cStringLength] + 133
+> 4   com.apple.Foundation              0x96bb5728 -[NSCFString cStringLength]
+> + 232
+> 5   com.apple.Foundation              0x96bb5318
+> _NSNewStringByAppendingStrings + 296
+> 6   com.apple.Foundation              0x96bb5150 -[NSString
+> stringByAppendingString:] + 192
+> 7   org.R-project.R                   0x00009fb8 -[RController
+> doLoadHistory:] + 808
+> 8   org.R-project.R                   0x000079c8 -[RController awakeFromNib]
+> + 2232
+> 9   com.apple.CoreFoundation          0x9091a915 -[NSSet
+> makeObjectsPerformSelector:] + 181
+> 10  com.apple.AppKit                  0x9309b45a -[NSIBObjectData
+> nibInstantiateWithOwner:topLevelObjects:] + 1533
+> 11  com.apple.AppKit                  0x93091686 loadNib + 264
+> 12  com.apple.AppKit                  0x93090fe8 +[NSBundle(NSNibLoading)
+> _loadNibFile:nameTable:withZone:ownerBundle:] + 946
+> 13  com.apple.AppKit                  0x93090c2b +[NSBundle(NSNibLoading)
+> loadNibFile:externalNameTable:withZone:] + 171
+> 14  com.apple.AppKit                  0x93090b69 +[NSBundle(NSNibLoading)
+> loadNibNamed:owner:] + 391
+> 15  org.R-project.R                   0x00002948 main + 296
+> 16  org.R-project.R                   0x000027e6 start + 54
+> 
+> Thread 1:
+> 0   libSystem.B.dylib                 0x92cbb1c6 mach_msg_trap + 10
+> 1   libSystem.B.dylib                 0x92cc29bc mach_msg + 72
+> 2   com.apple.CoreFoundation          0x908920ae CFRunLoopRunSpecific + 1790
+> 3   com.apple.CoreFoundation          0x90892cd8 CFRunLoopRunInMode + 88
+> 4   com.apple.CFNetwork               0x95f93ebe
+> CFURLCacheWorkerThread(void*) + 396
+> 5   libSystem.B.dylib                 0x92cec095 _pthread_start + 321
+> 6   libSystem.B.dylib                 0x92cebf52 thread_start + 34
+> 
+> Thread 2:
+> 0   libSystem.B.dylib                 0x92cbb1c6 mach_msg_trap + 10
+> 1   libSystem.B.dylib                 0x92cc29bc mach_msg + 72
+> 2   com.apple.CoreFoundation          0x908920ae CFRunLoopRunSpecific + 1790
+> 3   com.apple.CoreFoundation          0x90892cd8 CFRunLoopRunInMode + 88
+> 4   com.apple.Foundation              0x96bed64d -[NSConnection
+> sendInvocation:internal:] + 3005
+> 5   com.apple.Foundation              0x96bec7c9 -[NSDistantObject
+> forwardInvocation:] + 329
+> 6   com.apple.CoreFoundation          0x9091196a ___forwarding___ + 986
+> 7   com.apple.CoreFoundation          0x909119d2 _CF_forwarding_prep_0 + 50
+> 8   org.R-project.R                   0x0000dd35 -[RController readThread:]
+> + 245
+> 9   com.apple.Foundation              0x96bb67ed -[NSThread main] + 45
+> 10  com.apple.Foundation              0x96bb6394 __NSThread__main__ + 308
+> 11  libSystem.B.dylib                 0x92cec095 _pthread_start + 321
+> 12  libSystem.B.dylib                 0x92cebf52 thread_start + 34
+> 
+> Thread 0 crashed with X86 Thread State (32-bit):
+>   eax: 0xa00686e0  ebx: 0x908c2e14  ecx: 0x00000000  edx: 0x00000000
+>   edi: 0xbfffe6f8  esi: 0x00000200  ebp: 0xbfffe608  esp: 0xbfffe5f8
+>    ss: 0x0000001f  efl: 0x00010246  eip: 0x908c2e33   cs: 0x00000017
+>    ds: 0x0000001f   es: 0x0000001f   fs: 0x00000000   gs: 0x00000037
+>   cr2: 0x00000000
+> 
+> Session Info for R:
+> 
+> > sessionInfo()
+> R version 2.9.0 Patched (2009-05-05 r48465)
+> i386-apple-darwin9.6.0
+> 
+> locale:
+> en_US.UTF-8/en_US.UTF-8/C/C/en_US.UTF-8/en_US.UTF-8
+> 
+> attached base packages:
+> [1] stats     graphics  grDevices utils     datasets  methods   base
+> > 
+> 
+> 
+>     Has anyone seen this before.  R runs fine from the command line.  It is
+> just the GUI that is having problems.  This started happening after I used
+> the GUI to download the package CAR.  The read/write permissions look fine
+> for the GUI and reinstalling R (or the GUI) doesnt help.  Any help would be
+> greatly appreciated.
+> 
+>     Cheers,
+>     Donovan Anderson
+>     University of Washington
+> 
+> 
+> 
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+-- 
+Dan Putler
+Sauder School of Business
+University of British Columbia
+
+
+From david at davidkatzconsulting.com  Thu May 14 21:05:56 2009
+From: david at davidkatzconsulting.com (David Katz)
+Date: Thu, 14 May 2009 12:05:56 -0700
+Subject: [R-gui] glade with RGtk2 newbie question
+Message-ID: <bcaa950d0905141205ve97c7a7p2aefdfd12317827d@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090514/ac0e2f45/attachment.pl>
+
+From mflawren at fhcrc.org  Thu May 14 23:20:22 2009
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Thu, 14 May 2009 14:20:22 -0700
+Subject: [R-gui] glade with RGtk2 newbie question
+In-Reply-To: <bcaa950d0905141205ve97c7a7p2aefdfd12317827d@mail.gmail.com>
+References: <bcaa950d0905141205ve97c7a7p2aefdfd12317827d@mail.gmail.com>
+Message-ID: <509e0620905141420p106f9b47m5c8a608f9aab23a@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090514/cc522217/attachment.pl>
+
+From david at davidkatzconsulting.com  Fri May 15 18:43:22 2009
+From: david at davidkatzconsulting.com (David Katz)
+Date: Fri, 15 May 2009 09:43:22 -0700
+Subject: [R-gui] tktable topleft
+Message-ID: <bcaa950d0905150943v27dc6625x9b4fc12fa2279303@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090515/ae159a0d/attachment.pl>
+
+From jverzani at gmail.com  Sun May 17 17:24:42 2009
+From: jverzani at gmail.com (jverzani)
+Date: Sun, 17 May 2009 15:24:42 +0000 (UTC)
+Subject: [R-gui] tktable topleft
+References: <bcaa950d0905150943v27dc6625x9b4fc12fa2279303@mail.gmail.com>
+Message-ID: <loom.20090517T152259-373@post.gmane.org>
+
+David Katz <david <at> davidkatzconsulting.com> writes:
+
+> 
+> How can I access the row and column of  the tktable that is visible in the
+> top left corner of the display?
+> The docs mention an index called topleft but I don't know how to access it
+> from the tcltk package.
+> 
+
+The topleft index refers to the top left editable cell. Try the 0,0 index, as in
+the code below:
+
+library(tcltk)
+tclRequire("Tktable")
+a <- tclArray()
+m <- rbind(c("","h1","h2"),
+           c("r1", "1", "2"),
+           c("r2", "3", "4"))
+## col. headings
+sapply(2:ncol(m), function(j) 
+       a[[0,j-1]] <- as.tclObj(m[1,j]))
+## fill in row by row
+sapply(2:nrow(m), function(i)
+       sapply(1:ncol(m), function(j)
+              a[[i-1, j-1]] <- as.tclObj(m[i,j])))
+
+w <- tktoplevel()
+tbl <- tkwidget(w, "table", variable=a,
+                rows = nrow(m),
+                cols = ncol(m),
+                titlerows=1, titlecols=1)
+tkpack(tbl)
+
+
+## adjust upper cell
+tkset(tbl,"0,0","text")
+
+--John
+
+
+From david at davidkatzconsulting.com  Fri May 29 18:20:33 2009
+From: david at davidkatzconsulting.com (David Katz)
+Date: Fri, 29 May 2009 09:20:33 -0700
+Subject: [R-gui] rGtkDataFrame - determine selection
+Message-ID: <bcaa950d0905290920i712023b7s422a017ee0dcf234@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090529/9acf2fa7/attachment.pl>
+
+From mflawren at fhcrc.org  Fri May 29 19:49:42 2009
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Fri, 29 May 2009 10:49:42 -0700
+Subject: [R-gui] rGtkDataFrame - determine selection
+In-Reply-To: <bcaa950d0905290920i712023b7s422a017ee0dcf234@mail.gmail.com>
+References: <bcaa950d0905290920i712023b7s422a017ee0dcf234@mail.gmail.com>
+Message-ID: <509e0620905291049u5115a3d4i55d969e0a3bb1102@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090529/608c53f0/attachment.pl>
+

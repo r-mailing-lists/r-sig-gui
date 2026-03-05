@@ -1,0 +1,128 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2008-03",
+  "messages": [
+    {
+      "id": "msg-2dadb394b8ab",
+      "message_id": "<000301c87e19$3908a850$ab19f8f0$@com>",
+      "from_name": "Phil Rack",
+      "from_email_hash": "710120aeb1eda56678f108094acc3b951c58b9cc51e414b43c0932f7fb0ca478",
+      "date": "2008-03-04T12:00:16-05:00",
+      "subject": "[R-gui] Announcement: WPS to R Bridge",
+      "subject_clean": "[R-gui] Announcement: WPS to R Bridge",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080304/fae2619f/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080304/fae2619f/attachment.pl",
+      "thread_id": "thread-2dadb394b8ab",
+      "thread_depth": 0,
+      "month": "2008-03"
+    },
+    {
+      "id": "msg-39b5ccf7cf97",
+      "message_id": "<23277cfb0803141608t24addc05p3b14b93d04a36850@mail.gmail.com>",
+      "from_name": "eduardo san miguel",
+      "from_email_hash": "b9d7f59a5cdb39b0e8f2b5268c2ec5227bac869ebaee1d28b7e72ec774eb67ee",
+      "date": "2008-03-15T00:08:37+01:00",
+      "subject": "[R-gui] tk2menubutton command",
+      "subject_clean": "[R-gui] tk2menubutton command",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080315/25460e57/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080315/25460e57/attachment.pl",
+      "thread_id": "thread-39b5ccf7cf97",
+      "thread_depth": 0,
+      "month": "2008-03"
+    },
+    {
+      "id": "msg-85e822cfe9ec",
+      "message_id": "<47DB9CE2.9010905@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2008-03-15T10:54:42+01:00",
+      "subject": "[R-gui] tk2menubutton command",
+      "subject_clean": "[R-gui] tk2menubutton command",
+      "in_reply_to": "<23277cfb0803141608t24addc05p3b14b93d04a36850@mail.gmail.com>",
+      "references": [
+        "<23277cfb0803141608t24addc05p3b14b93d04a36850@mail.gmail.com>"
+      ],
+      "body_plain": "Hello,\n\nThis is not so easy (but still feasible), because you want to change the \ndefault behaviour of the MenuButton, which is to always show the menu \nwherever you click. Here is one solution. A better one would be to \ndefine a completely new class!\nBest,\n\nPhilippe Grosjean\n\nP.S.: in your example, use short English names for your variables: it \nhelps concentrate on the problem for non-Spanish speaking people. By the \nway, do the same for code you want to release publicly!\n\n\n\nrequire(tcltk2)\n\n# Create a new window\nwinTk <- tktoplevel()\ntktitle(winTk) <- \"tk2menubutton\"\n\n# Define the menubutton and its associated menu\nmbVar <-  tclVar('Black')\nmbBut <- tk2menubutton(winTk, textvariable = mbVar, width = 6)\n# The following is required to display plain Tk MenuButtons correctly\n# when tile is not available or not used\nif (as.character(.Tcl(paste(\"winfo class\", mbBut$ID))) == \"Menubutton\")\n     tkconfigure(mbBut, indicatoron = 1)\nmnButMenu <- tk2menu(mbBut, tearoff = FALSE)\n# Usually, selecting an entry in the menu of a menubutton also issues\n# the corresponding command (not the case is your code)\ntkadd(mnButMenu, 'command' , label = 'White',\n     command = function() { tclvalue(mbVar) <<- 'White'; mbButFun() })\ntkadd(mnButMenu, 'command' , label = 'Black',\n     command = function() { tclvalue(mbVar) <<- 'Black'; mbButFun() })\ntkconfigure(mbBut, menu = mnButMenu)\ntkpack(mbBut)\n\n# Redefine binding of mouse-1 click for this menubutton\nmbButClick <- function(x) {\n     wx <- as.numeric(.Tcl(paste(\"winfo rootx\", mbBut$ID)))\n     wy <- as.numeric(.Tcl(paste(\"winfo rooty\", mbBut$ID)))\n     width <- as.numeric(.Tcl(paste(\"winfo width\", mbBut$ID)))\n     height <- as.numeric(.Tcl(paste(\"winfo height\", mbBut$ID)))\n     # Determine if we click the arrow or the button\n     # 17 is only a guess for arrow width (good compromize for\n     # Menubutton and TMenubutton on most platforms!\n     isarrow <- ((width - as.numeric(x)) <= 17)\n     if (isarrow) {\t# Show the menu\n         tkpost(mnButMenu, wx, wy + height)\t\n     } else {\t\t# Execute mbButFun()\n         mbButFun()\n     }\n}\n# tkbind(mbBut, \"<1>\", mbButClick) cannot be used because it does not\n# cancel the event associated with the menubutton class\n# One must specify 'break' in the event binding to prevent this\n.Tcl(paste(\"bind \", mbBut$ID, \" <1> {\", .Tcl.callback(mbButClick),\n     \"; break}\", sep = \"\"))\n\n# Action for the menubutton (just a toy example)!\nmbButFun <- function(){\n     if (as.character(tclvalue(mbVar)) == 'White') {\n         cat(\"You selected 'White'!\\n\")\n     } else {\n         cat(\"You selected 'Black'!\\n\")\n     }\n}\n\n# A button to close the window\ntkpack(tk2button(winTk, text = \"Exit\",\n     command = function() tkdestroy(winTk)))\n\n\neduardo san miguel wrote:\n> Hello all,\n> \n> I?d like a tk2menubutton to display a menu when clicking the 'arrow' and to\n> trigger a function when clicking the text.\n> \n> I have the following:\n> \n> require(tcltk2)\n> widgetPrincipal <- tktoplevel()\n> tipo.busqueda.valores <-  tclVar('Single-Query')\n> tipo.busqueda.boton <- tk2menubutton(widgetPrincipal, textvariable =\n> tipo.busqueda.valores,\n>       width = 15 )\n> tipo.busqueda.menu <- tk2menu(tipo.busqueda.boton, tearoff = FALSE)\n> tkadd( tipo.busqueda.menu, 'command' , label = 'Tesauro',\n>  command = function() {tclvalue(tipo.busqueda.valores )<<- 'Tesauro'})\n> tkadd( tipo.busqueda.menu, 'command' , label = 'Single-Query',\n>  command = function() {tclvalue(tipo.busqueda.valores )<<- 'Single-Query'})\n> tkconfigure(tipo.busqueda.boton, menu = tipo.busqueda.menu)\n> tkpack(tipo.busqueda.boton)\n> \n> # this being the function I would like to trigger\n> \n> tipo.busqueda.accion = function(){\n>  if (as.character(tclvalue(tipo.busqueda.valores)) == 'Tesauro') {\n>   # do A\n>  }else{\n>   # do B\n>  }\n> }\n> \n> Any tips.\n> \n> Thanks\n> \n> \t[[alternative HTML version deleted]]\n> \n> \n> \n> ------------------------------------------------------------------------\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hello,\n\nThis is not so easy (but still feasible), because you want to change the \ndefault behaviour of the MenuButton, which is to always show the menu \nwherever you click. Here is one solution. A bet",
+      "thread_id": "thread-39b5ccf7cf97",
+      "thread_depth": 1,
+      "month": "2008-03"
+    },
+    {
+      "id": "msg-d5adb1be7254",
+      "message_id": "<23277cfb0803290822t78f839c2m6ee17e4563af7efa@mail.gmail.com>",
+      "from_name": "eduardo san miguel",
+      "from_email_hash": "b9d7f59a5cdb39b0e8f2b5268c2ec5227bac869ebaee1d28b7e72ec774eb67ee",
+      "date": "2008-03-29T16:22:00+01:00",
+      "subject": "[R-gui] one-column tk2mclistbox",
+      "subject_clean": "[R-gui] one-column tk2mclistbox",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080329/b3012eea/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080329/b3012eea/attachment.pl",
+      "thread_id": "thread-d5adb1be7254",
+      "thread_depth": 0,
+      "month": "2008-03"
+    },
+    {
+      "id": "msg-0d3a57dc906c",
+      "message_id": "<47EEC56D.1050006@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2008-03-29T23:40:45+01:00",
+      "subject": "[R-gui] one-column tk2mclistbox",
+      "subject_clean": "[R-gui] one-column tk2mclistbox",
+      "in_reply_to": "<23277cfb0803290822t78f839c2m6ee17e4563af7efa@mail.gmail.com>",
+      "references": [
+        "<23277cfb0803290822t78f839c2m6ee17e4563af7efa@mail.gmail.com>"
+      ],
+      "body_plain": "Hello Eduardo,\n\nRegarding the problem with a single column, your request of alternate \nrow background, and other limitations of the tk2mclistbox, I am \nconsidering to change for a better implementation of this widget in \nTcl/Tk: tablelist, see: \nhttp://www.davidmarshall.net/doc/tablelist-4.0/tablelist.html.\n\nEither, you wait for the next tcltk2 release (depending on my free \ntime), or you can anticipate. Just look in the tcltk2 code on how \ntk2mclistbox is implemented, and you should figure out how to replace it \nby tablelist, or better, tablelist_tile. Tablelist is written in pure \nTcl. So, you don't need to compile it and the code runs on all R \nsupported platforms.\n\nBest,\n\nPhilippe Grosjean\n\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Belgium\n( ( ( ( (\n..............................................................\n\neduardo san miguel wrote:\n> Hello,\n> \n> I have a tk2mclistbox displaying some data (a matrix).\n> It works OK while ncol(matrix) > 1; but when matrix is one-columned, only\n> the first row seems to be displayed.\n> what am I missing?\n> \n> And talking about tk2mclistbox, is there a way to display rows with\n> different (alternate) background colors?\n> \n> Thanks.\n>  Eduardo San Miguel\n> \n> \n> require(tcltk2)\n> \n> fillt <- function() {\n>    nCols =   as.numeric(tkget(tl.e1))\n>    nRows =   as.numeric(tkget(tl.e2))\n> \n>    # remove existing columns\n>    COLUMNS <- tclvalue(.Tcl( paste( tl.t, 'column names')))\n>    for (i in 1:length(COLUMNS)){\n>       .Tcl( paste( tl.t, 'column delete', COLUMNS[i]))\n>    }\n> \n>    # generate matrix\n>    data = matrix(rnorm(nRows*nCols), nc = nCols)\n> \n>    # tricky way to display one-column data\n> #   auxcol <- matrix(rep(0, dim(data)[1]), ncol = 1)\n> #   tk2column(tl.t, 'add', 'auxcol', label = 'auxcol',\n> #    width = 20)\n> #   tk2column(tl.t,'configure', 'auxcol', visible = 0)\n> \n>    # insert data\n>    for (i in 1:dim(data)[2]){\n>       tk2column(tl.t, 'add', paste('col_',i, sep =''),\n>                      label = paste('col_',i, sep =''),  width = 20)\n>    }\n> \n> \n>    # tricky way to display one-column data\n> #   data = cbind(auxcol, data)\n>    tk2insert.multi(tl.t, 'end', data)\n> \n>    tkconfigure(tl.t, columnborderwidth = 1)\n>    tkconfigure(tl.t, columnbd = 1)\n> }\n> \n> tl <- tktoplevel()\n> \n> tl.f1 <- tk2frame(tl)\n> tl.l1 <- tk2label(tl.f1, text = 'N Cols:')\n> tl.l2 <- tk2label(tl.f1, text = 'N Rows:')\n> tl.e1 <- tk2entry(tl.f1 ,'n Cols ', width = 5)\n> tl.e2 <- tk2entry(tl.f1 ,'n Rows ', width = 5)\n> tl.f1.b <- tk2button(tl.f1, ' ', text = 'Show Matrix',\n>      command = fillt)\n> tl.f1.b1 <- tk2button(tl.f1, ' ', text = 'Close',\n>      command = function() tkdestroy(tl))\n> \n> tl.f2 <- tk2frame(tl)\n> tl.t <- tk2mclistbox(tl.f2, width = 84, resizablecolumns = TRUE)\n> tl.scr_1 <- tk2scrollbar(tl.f2, orient = 'vertical')\n> tl.scr_2 <- tk2scrollbar(tl.f2, orient = 'horizontal')\n> \n> tkconfigure(tl.t, yscrollcommand = function(...) tkset(tl.scr_1, ...))\n> tkconfigure(tl.scr_1, command = function(...) tkyview(tl.t, ...))\n> tkconfigure(tl.t, xscrollcommand = function(...) tkset(tl.scr_2, ...))\n> tkconfigure(tl.scr_2, command = function(...) tkxview(tl.t, ...))\n> \n> tkpack(tl.scr_2, side = 'bottom', fill = 'x')\n> tkpack(tl.scr_1, side = 'right', fill = 'y')\n> tkpack(tl.t, fill = 'both', expand = 1)\n> \n> tkgrid(tl.f1)\n> tkgrid(tl.l1, row = 0, column = 0)\n> tkgrid(tl.e1, row = 0, column = 1)\n> tkgrid(tl.l2, row = 0, column = 2)\n> tkgrid(tl.e2, row = 0, column = 3)\n> tkgrid(tl.f1.b, row = 0, column = 4)\n> tkgrid(tl.f1.b1, row = 0, column = 5)\n> tkgrid(tl.f2)\n> \n> tkconfigure(tl.t, relief = 'sunk')\n> tkbind(tl.t,'<Enter>',function() tkfocus(tl.t))\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Hello Eduardo,\n\nRegarding the problem with a single column, your request of alternate \nrow background, and other limitations of the tk2mclistbox, I am \nconsidering to change for a better implementatio",
+      "thread_id": "thread-d5adb1be7254",
+      "thread_depth": 1,
+      "month": "2008-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-2dadb394b8ab",
+      "subject": "[R-gui] Announcement: WPS to R Bridge",
+      "message_count": 1,
+      "participants": [
+        "Phil Rack"
+      ],
+      "started": "2008-03-04T12:00:16-05:00",
+      "last_reply": "2008-03-04T12:00:16-05:00",
+      "root_message_id": "msg-2dadb394b8ab"
+    },
+    {
+      "id": "thread-39b5ccf7cf97",
+      "subject": "[R-gui] tk2menubutton command",
+      "message_count": 2,
+      "participants": [
+        "Philippe Grosjean",
+        "eduardo san miguel"
+      ],
+      "started": "2008-03-15T00:08:37+01:00",
+      "last_reply": "2008-03-15T10:54:42+01:00",
+      "root_message_id": "msg-39b5ccf7cf97"
+    },
+    {
+      "id": "thread-d5adb1be7254",
+      "subject": "[R-gui] one-column tk2mclistbox",
+      "message_count": 2,
+      "participants": [
+        "Philippe Grosjean",
+        "eduardo san miguel"
+      ],
+      "started": "2008-03-29T16:22:00+01:00",
+      "last_reply": "2008-03-29T23:40:45+01:00",
+      "root_message_id": "msg-d5adb1be7254"
+    }
+  ]
+}

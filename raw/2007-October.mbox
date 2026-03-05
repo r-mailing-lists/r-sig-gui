@@ -1,0 +1,720 @@
+From jbarnier at ens-lsh.fr  Mon Oct  1 09:18:57 2007
+From: jbarnier at ens-lsh.fr (Julien Barnier)
+Date: Mon, 01 Oct 2007 09:18:57 +0200
+Subject: [R-gui] build your own gui
+References: <6699922FABDD9145A5C94569C2B438EB01163A72@MA-EXCL02.konzern.mvvcorp.de>
+	<D8C95B444AD6EE4AAD638D818A9CFD34BFFBD4@RINNYCSE000.rth.ad.rothschild.com>
+Message-ID: <87y7eni9pa.fsf@ens-lsh.fr>
+
+Hi,
+
+> Also have a look at www.rpad.org
+
+Presently the website seems to have some trouble. Or has it moved to
+somewhere else ?
+
+Sincerely,
+
+-- 
+Julien Barnier
+Groupe de recherche sur la socialisation
+ENS-LSH - Lyon, France
+
+
+From klatta2 at cox.com  Mon Oct  1 13:11:25 2007
+From: klatta2 at cox.com (Ken Latta)
+Date: Mon, 1 Oct 2007 07:11:25 -0400
+Subject: [R-gui] R-SIG-GUI Digest, Vol 52, Issue 1
+References: <mailman.13.1191232802.25853.r-sig-gui@stat.math.ethz.ch>
+Message-ID: <001101c8041b$ce85ea50$1401a8c0@nostalgia>
+
+Julien,
+They appear to have just turned on a new web server. I'm seeing what looks 
+like a new install of Apache web server running on top of Debian linux.
+> ----------------------------------------------------------------------
+>
+> Message: 1
+> Date: Mon, 01 Oct 2007 09:18:57 +0200
+> From: Julien Barnier <jbarnier at ens-lsh.fr>
+> Subject: Re: [R-gui] build your own gui
+> To: r-sig-gui at stat.math.ethz.ch
+> Message-ID: <87y7eni9pa.fsf at ens-lsh.fr>
+> Content-Type: text/plain; charset=us-ascii
+>
+> Hi,
+>
+>> Also have a look at www.rpad.org
+>
+> Presently the website seems to have some trouble. Or has it moved to
+> somewhere else ?
+>
+> Sincerely,
+>
+> -- 
+> Julien Barnier
+> Groupe de recherche sur la socialisation
+> ENS-LSH - Lyon, France
+>
+
+
+From TShort at epri.com  Mon Oct  1 14:01:19 2007
+From: TShort at epri.com (Short, Tom)
+Date: Mon, 1 Oct 2007 08:01:19 -0400
+Subject: [R-gui] R-SIG-GUI Digest, Vol 52, Issue 1
+In-Reply-To: <001101c8041b$ce85ea50$1401a8c0@nostalgia>
+References: <mailman.13.1191232802.25853.r-sig-gui@stat.math.ethz.ch>
+	<001101c8041b$ce85ea50$1401a8c0@nostalgia>
+Message-ID: <1F724548E253BD49BA9BB000E9525F79682BEB@usknxex01.epri.com>
+
+Is anyone still having a problem accessing www.rpad.org?
+
+>From here, I can connect fine (and could last week too). Please contact
+me offline if you're still having trouble.
+
+- Tom 
+
+Tom Short
+Electric Power Research Institute (EPRI)
+ 
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Ken Latta
+Sent: Monday, October 01, 2007 07:11
+To: r-sig-gui at stat.math.ethz.ch
+Cc: jbarnier at ens-lsh.fr
+Subject: Re: [R-gui] R-SIG-GUI Digest, Vol 52, Issue 1
+
+Julien,
+They appear to have just turned on a new web server. I'm seeing what
+looks like a new install of Apache web server running on top of Debian
+linux.
+> ----------------------------------------------------------------------
+>
+> Message: 1
+> Date: Mon, 01 Oct 2007 09:18:57 +0200
+> From: Julien Barnier <jbarnier at ens-lsh.fr>
+> Subject: Re: [R-gui] build your own gui
+> To: r-sig-gui at stat.math.ethz.ch
+> Message-ID: <87y7eni9pa.fsf at ens-lsh.fr>
+> Content-Type: text/plain; charset=us-ascii
+>
+> Hi,
+>
+>> Also have a look at www.rpad.org
+>
+> Presently the website seems to have some trouble. Or has it moved to 
+> somewhere else ?
+>
+> Sincerely,
+>
+> --
+> Julien Barnier
+> Groupe de recherche sur la socialisation ENS-LSH - Lyon, France
+>
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From albmont at centroin.com.br  Tue Oct 23 22:08:17 2007
+From: albmont at centroin.com.br (Alberto Vieira Ferreira Monteiro)
+Date: Tue, 23 Oct 2007 20:08:17 +0000
+Subject: [R-gui] tcltk: help with tkmenubutton
+Message-ID: <200710232008.18463.albmont@centroin.com.br>
+
+[I sent this message to the R-help list, without success. Is this
+the right place to ask?]
+
+I am struck here. What magic inchantation is required with tkmenubutton?
+
+I am converting the examples of Perl/Tk from page...
+http://gd.tuwien.ac.at/languages/perl/Hajji-Perlkurs/part4/tkperl.html
+... to R's tcltk.
+
+But I don't know how to convert one line in this example:
+
+library(tcltk) 
+
+# create a main window 
+mw <- tktoplevel()
+
+# a menu consists of a horizontal menubar, 
+# with associated submenus 
+
+##### first create the horizontal menubar 
+mb <- tkframe(mw, relief = 'raised', bd = 2)
+
+# now put in the menubar some menubuttons 
+m_file <- tkmenubutton(mb, text = "File", underline = 0)
+
+# pack everything from the menubar 
+tkpack(mb, side = "top", fill = "x")
+tkpack(m_file, side = "left")
+
+#### now create the submenus 
+# the file menus 
+#
+# ?HERE!!! What is the magic inchantation that I must use here?
+#
+# $m_file->command(-label => "New", -command => [\&file, "new"]);
+#
+#
+
+Alberto Monteiro
+
+
+From keith at wehi.EDU.AU  Wed Oct 24 02:13:48 2007
+From: keith at wehi.EDU.AU (Keith Satterley)
+Date: Wed, 24 Oct 2007 10:13:48 +1000
+Subject: [R-gui] tcltk: help with tkmenubutton
+In-Reply-To: <200710232008.18463.albmont@centroin.com.br>
+References: <200710232008.18463.albmont@centroin.com.br>
+Message-ID: <471E8E3C.7040307@wehi.edu.au>
+
+You might find James Wettenhall's TclTk Examples useful. They are at:
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+
+cheers,
+
+Keith
+
+========================
+Keith Satterley
+Bioinformatics Division
+The Walter and Eliza Hall Institute of Medical Research
+Parkville, Melbourne,
+Victoria, Australia
+=======================
+
+Alberto Vieira Ferreira Monteiro wrote:
+> [I sent this message to the R-help list, without success. Is this
+> the right place to ask?]
+> 
+> I am struck here. What magic inchantation is required with tkmenubutton?
+> 
+> I am converting the examples of Perl/Tk from page...
+> http://gd.tuwien.ac.at/languages/perl/Hajji-Perlkurs/part4/tkperl.html
+> ... to R's tcltk.
+> 
+> But I don't know how to convert one line in this example:
+> 
+> library(tcltk) 
+> 
+> # create a main window 
+> mw <- tktoplevel()
+> 
+> # a menu consists of a horizontal menubar, 
+> # with associated submenus 
+> 
+> ##### first create the horizontal menubar 
+> mb <- tkframe(mw, relief = 'raised', bd = 2)
+> 
+> # now put in the menubar some menubuttons 
+> m_file <- tkmenubutton(mb, text = "File", underline = 0)
+> 
+> # pack everything from the menubar 
+> tkpack(mb, side = "top", fill = "x")
+> tkpack(m_file, side = "left")
+> 
+> #### now create the submenus 
+> # the file menus 
+> #
+> #  HERE!!! What is the magic inchantation that I must use here?
+> #
+> # $m_file->command(-label => "New", -command => [\&file, "new"]);
+> #
+> #
+> 
+> Alberto Monteiro
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From albmont at centroin.com.br  Wed Oct 24 02:33:30 2007
+From: albmont at centroin.com.br (Alberto Vieira Ferreira Monteiro)
+Date: Wed, 24 Oct 2007 00:33:30 +0000
+Subject: [R-gui] tcltk: help with tkmenubutton
+In-Reply-To: <471E8E3C.7040307@wehi.edu.au>
+References: <200710232008.18463.albmont@centroin.com.br>
+	<471E8E3C.7040307@wehi.edu.au>
+Message-ID: <200710240033.31062.albmont@centroin.com.br>
+
+Keith Satterley wrote:
+>
+> You might find James Wettenhall's TclTk Examples useful. They are at:
+>
+> http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+>
+I already did; but there's a problem - see the code below. There's
+no way I can place the "Help" menu in the right of the screen,
+which I can do using tkmenubutton (but then I can't add commands).
+
+Alberto Monteiro
+
+#
+# Translation of menu example from...
+# http://gd.tuwien.ac.at/languages/perl/Hajji-Perlkurs/part4/tkperl.html
+# ... but using the techniques from...
+# http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/menus.html
+#
+
+library(tcltk)
+
+# create a main window 
+mw <- tktoplevel()
+
+# a menu consists of a horizontal menubar, 
+# with associated submenus 
+
+##### first create the horizontal menubar 
+mb <- tkmenu(mw)
+tkconfigure(mw, menu = mb)
+
+# now put in the menubar some menubuttons 
+# (this works in Perl/Tk but not in R - using tkmenu)
+m_file <- tkmenu(mb)
+m_edit <- tkmenu(mb)
+m_opts <- tkmenu(mb)
+m_help <- tkmenu(mb)
+
+# pack everything from the menubar 
+# (in Perl/Tk but not in R)
+
+#### now create the submenus 
+
+# the file menus 
+tkadd(m_file, "command", label = "New", command = function() { file("new") })
+tkadd(m_file, "command", label = "Open", command = function() { 
+file("open") })
+
+#### continue the creation of the horizontal menubar
+tkadd(mb, "cascade", label = "File", menu = m_file)
+tkadd(mb, "cascade", label = "Edit", menu = m_edit)
+tkadd(mb, "cascade", label = "Options", menu = m_opts)
+tkadd(mb, "cascade", label = "Help", menu = m_help)  # there's no way to place 
+in the right side
+
+##### finally, call the main event collecting loop 
+# MainLoop; 
+tkfocus(mw)
+
+#### the callbacks 
+file <- function(arg)
+{
+  cat("file: ", arg, "\n", sep="")
+}
+
+
+From albmont at centroin.com.br  Wed Oct 24 03:56:27 2007
+From: albmont at centroin.com.br (Alberto Vieira Ferreira Monteiro)
+Date: Wed, 24 Oct 2007 01:56:27 +0000
+Subject: [R-gui] Combination of menu and checkbox
+Message-ID: <200710240156.27185.albmont@centroin.com.br>
+
+I am trying to combine the example of tkmenu...
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/menus.html
+... with the example of checkbox...
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/checkboxes.html
+... but without success.
+
+What is my mistake? The code runs, but nothing is displayed if I click in
+"The Checkbox":
+
+
+require(tcltk)
+mw <- tktoplevel()
+
+mb <- tkmenu(mw)
+tkconfigure(mw, menu=mb)
+
+tt <- tkmenu(mb)
+
+cb <- tkcheckbutton(tt)
+cbValue <- tclVar("0")
+tkconfigure(cb,variable=cbValue)
+tkgrid(tklabel(tt,text="I like R TclTk "),cb)
+OnOK <- function()
+{
+    cbVal <- as.character(tclvalue(cbValue))
+    tkdestroy(tt)
+    if (cbVal=="1")
+        tkmessageBox(message="So do I!")
+    if (cbVal=="0")
+        tkmessageBox(message="You forgot to check the box to say that you like 
+R TclTk!",icon="warning")
+}
+OK.but <- tkbutton(tt,text="OK",command=OnOK)
+tkgrid(OK.but)
+
+tkadd(mb, "cascade", label = "The Checkbox", menu = tt)
+
+tkfocus(mw)
+
+Alberto Monteiro
+
+
+From iqbaljamal at shaw.ca  Wed Oct 24 02:02:26 2007
+From: iqbaljamal at shaw.ca (Iqbal Jamal)
+Date: Tue, 23 Oct 2007 18:02:26 -0600
+Subject: [R-gui] RPad and Security
+Message-ID: <cfcfdb9e33482.471e3732@shaw.ca>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071023/af6bfdff/attachment.pl 
+
+From h.wickham at gmail.com  Wed Oct 24 15:30:06 2007
+From: h.wickham at gmail.com (hadley wickham)
+Date: Wed, 24 Oct 2007 08:30:06 -0500
+Subject: [R-gui] RPad and Security
+In-Reply-To: <cfcfdb9e33482.471e3732@shaw.ca>
+References: <cfcfdb9e33482.471e3732@shaw.ca>
+Message-ID: <f8e6ff050710240630g4a0c2f8fid7b3ad31ddda714a@mail.gmail.com>
+
+It's difficult to provide much security from within R due to the
+extreme difficulty of restricting potentially dangerous activities -
+and an experienced R user can usually get around any arbitrary
+restrictions you put it.  A more general technique is to make sure
+that the user running the rpad process has minimal security access
+(good practice anyway).
+
+Hadley
+
+On 10/23/07, Iqbal Jamal <iqbaljamal at shaw.ca> wrote:
+> Greetings:
+>
+> I am looking at using Rpad but concerned about security and access to files on our server.
+> Any suggestions/pointers/experiences from the list would be very helpful.
+>
+> Iqbal Jamal
+>
+>
+>         [[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+-- 
+http://had.co.nz/
+
+
+From TShort at epri.com  Wed Oct 24 15:50:54 2007
+From: TShort at epri.com (Short, Tom)
+Date: Wed, 24 Oct 2007 09:50:54 -0400
+Subject: [R-gui] RPad and Security
+In-Reply-To: <f8e6ff050710240630g4a0c2f8fid7b3ad31ddda714a@mail.gmail.com>
+References: <cfcfdb9e33482.471e3732@shaw.ca>
+	<f8e6ff050710240630g4a0c2f8fid7b3ad31ddda714a@mail.gmail.com>
+Message-ID: <1F724548E253BD49BA9BB000E9525F797271C4@usknxex01.epri.com>
+
+Iqbal,
+
+I agree with Hadley. If you're concerned about security with Rpad or
+with any server technology that allows you to remotely run R code, you
+need to lock down your server (locking down R itself is almost
+impossible). That means only giving the apache user access to files it
+is supposed to access. To lock down servers even more, you can explore
+running processes in chroot jails, something like OpenVZ, or even
+full-blown VMWare machines (I haven't found the need for any of these,
+yet). Security systems like SELinux may also help restrict what the
+remote user can do. You could also explore requiring usernames and
+passwords to access your site (this is relatively easy with apache).
+
+Data lockdown is another issue. Write access is relatively easy, because
+you can handle that with file or database permissions. It is impossible
+to restrict read access remotely if the Rpad page can access the same
+data. If you need to shut out read access to data, then you need a
+server-oriented system like Jeffrey Horner's rapache. 
+
+- Tom
+
+
+Tom Short
+Electric Power Research Institute (EPRI)
+ 
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of hadley wickham
+Sent: Wednesday, October 24, 2007 09:30
+To: Iqbal Jamal
+Cc: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] RPad and Security
+
+It's difficult to provide much security from within R due to the extreme
+difficulty of restricting potentially dangerous activities - and an
+experienced R user can usually get around any arbitrary restrictions you
+put it.  A more general technique is to make sure that the user running
+the rpad process has minimal security access (good practice anyway).
+
+Hadley
+
+On 10/23/07, Iqbal Jamal <iqbaljamal at shaw.ca> wrote:
+> Greetings:
+>
+> I am looking at using Rpad but concerned about security and access to
+files on our server.
+> Any suggestions/pointers/experiences from the list would be very
+helpful.
+>
+> Iqbal Jamal
+>
+>
+>         [[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+--
+http://had.co.nz/
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From iqbaljamal at shaw.ca  Thu Oct 25 19:00:11 2007
+From: iqbaljamal at shaw.ca (Iqbal Jamal)
+Date: Thu, 25 Oct 2007 11:00:11 -0600
+Subject: [R-gui] RPad and Security
+In-Reply-To: <1F724548E253BD49BA9BB000E9525F797271C4@usknxex01.epri.com>
+References: <cfcfdb9e33482.471e3732@shaw.ca>
+	<f8e6ff050710240630g4a0c2f8fid7b3ad31ddda714a@mail.gmail.com>
+	<1F724548E253BD49BA9BB000E9525F797271C4@usknxex01.epri.com>
+Message-ID: <0JQH00CR28EN7C10@l-daemon>
+
+Thank you both for your comments.
+We're using apache for our reporting website
+and will take a look at rapache. We are looking
+at building this in the next month and will talk
+with our network and server security folks.
+
+We may have other followup questions.
+
+Thanks, Iqbal
+
+At 07:50 AM 24/10/2007, Short, Tom wrote:
+>Iqbal,
+>
+>I agree with Hadley. If you're concerned about security with Rpad or
+>with any server technology that allows you to remotely run R code, you
+>need to lock down your server (locking down R itself is almost
+>impossible). That means only giving the apache user access to files it
+>is supposed to access. To lock down servers even more, you can explore
+>running processes in chroot jails, something like OpenVZ, or even
+>full-blown VMWare machines (I haven't found the need for any of these,
+>yet). Security systems like SELinux may also help restrict what the
+>remote user can do. You could also explore requiring usernames and
+>passwords to access your site (this is relatively easy with apache).
+>
+>Data lockdown is another issue. Write access is relatively easy, because
+>you can handle that with file or database permissions. It is impossible
+>to restrict read access remotely if the Rpad page can access the same
+>data. If you need to shut out read access to data, then you need a
+>server-oriented system like Jeffrey Horner's rapache.
+>
+>- Tom
+>
+>
+>Tom Short
+>Electric Power Research Institute (EPRI)
+>
+>-----Original Message-----
+>From: r-sig-gui-bounces at stat.math.ethz.ch
+>[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of hadley wickham
+>Sent: Wednesday, October 24, 2007 09:30
+>To: Iqbal Jamal
+>Cc: r-sig-gui at stat.math.ethz.ch
+>Subject: Re: [R-gui] RPad and Security
+>
+>It's difficult to provide much security from within R due to the extreme
+>difficulty of restricting potentially dangerous activities - and an
+>experienced R user can usually get around any arbitrary restrictions you
+>put it.  A more general technique is to make sure that the user running
+>the rpad process has minimal security access (good practice anyway).
+>
+>Hadley
+>
+>On 10/23/07, Iqbal Jamal <iqbaljamal at shaw.ca> wrote:
+> > Greetings:
+> >
+> > I am looking at using Rpad but concerned about security and access to
+>files on our server.
+> > Any suggestions/pointers/experiences from the list would be very
+>helpful.
+> >
+> > Iqbal Jamal
+> >
+> >
+> >         [[alternative HTML version deleted]]
+> >
+> > _______________________________________________
+> > R-SIG-GUI mailing list
+> > R-SIG-GUI at stat.math.ethz.ch
+> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> >
+>
+>
+>--
+>http://had.co.nz/
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI at stat.math.ethz.ch
+>https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From sschavan at ualr.edu  Sat Oct 27 17:01:17 2007
+From: sschavan at ualr.edu (sschavan at ualr.edu)
+Date: Sat, 27 Oct 2007 08:01:17 -0700
+Subject: [R-gui] function for user input
+Message-ID: <f658d8d97762.4722f04d@ualr.edu>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071027/4c936850/attachment.pl 
+
+From dusa.adrian at gmail.com  Sat Oct 27 17:33:44 2007
+From: dusa.adrian at gmail.com (Adrian Dusa)
+Date: Sat, 27 Oct 2007 18:33:44 +0300
+Subject: [R-gui] function for user input
+In-Reply-To: <f658d8d97762.4722f04d@ualr.edu>
+References: <f658d8d97762.4722f04d@ualr.edu>
+Message-ID: <200710271833.45131.dusa.adrian@gmail.com>
+
+Hello Shweta,
+
+On Saturday 27 October 2007, sschavan at ualr.edu wrote:
+> Hi,
+>
+> I was working on R-gui and I was wondering if there is any way to take
+> input from user the way we take in perl using <STDIN>.
+> All I need is to get the user input from a R-gui and save/process the
+> data values entered by the user.
+>
+> I will be glad if anyone can let me know about taking user input in R.
+
+I have no idea about perl and/or <STDIN>, but if you need input from the user 
+in the R session you could look at these functions:
+?scan
+?readLines
+?readline
+
+I hope this helps,
+Adrian
+
+
+-- 
+Adrian Dusa
+Romanian Social Data Archive
+1, Schitu Magureanu Bd
+050025 Bucharest sector 5
+Romania
+Tel./Fax: +40 21 3126618 \
+          +40 21 3120210 / int.101
+
+
+From roger.bos at us.rothschild.com  Fri Oct 26 16:03:19 2007
+From: roger.bos at us.rothschild.com (Bos, Roger)
+Date: Fri, 26 Oct 2007 10:03:19 -0400
+Subject: [R-gui] How to remove non-UTF-8 characters from a string
+Message-ID: <D8C95B444AD6EE4AAD638D818A9CFD34C00506@RINNYCSE000.rth.ad.rothschild.com>
+
+All,
+
+I am trying to post text from an XLS spread to my wiki and I need to
+remove any characters that are not UTF-8.  Is there an easy gsub command
+that can do this?
+
+Thanks, Roger J. Bos
+
+********************************************************************** * 
+This message is for the named person's use only. It may 
+contain confidential, proprietary or legally privileged 
+information. No right to confidential or privileged treatment 
+of this message is waived or lost by any error in 
+transmission. If you have received this message in error, 
+please immediately notify the sender by e-mail, 
+delete the message and all copies from your system and destroy 
+any hard copies. You must not, directly or indirectly, use, 
+disclose, distribute, print or copy any part of this message 
+if you are not the intended recipient. 
+
+
+From sschavan at ualr.edu  Fri Oct 26 22:17:30 2007
+From: sschavan at ualr.edu (shweta)
+Date: Fri, 26 Oct 2007 15:17:30 -0500
+Subject: [R-gui] Taking user input in R
+Message-ID: <47224B5A.5070208@ualr.edu>
+
+Hi,
+
+I was working on R-gui and I was wondering if there is any way to take 
+input from user the way we take in perl using <STDIN>.
+All I need is to get the user input from a R-gui and save/process the 
+data values entered by the user.
+
+I will be glad if anyone can let me know about taking user input in R.
+
+Thanks,
+Shweta.
+
+
+From lawremi at iastate.edu  Sun Oct 28 00:31:23 2007
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Sat, 27 Oct 2007 17:31:23 -0500
+Subject: [R-gui] Taking user input in R
+In-Reply-To: <47224B5A.5070208@ualr.edu>
+References: <47224B5A.5070208@ualr.edu>
+Message-ID: <509e0620710271531rd3ae02es575daf9a4285b69e@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071027/fffa8cf2/attachment.pl 
+
+From dusa.adrian at gmail.com  Sun Oct 28 02:31:44 2007
+From: dusa.adrian at gmail.com (Adrian Dusa)
+Date: Sun, 28 Oct 2007 03:31:44 +0300
+Subject: [R-gui] function for user input
+In-Reply-To: <4723C7BD.5020202@ualr.edu>
+References: <f658d8d97762.4722f04d@ualr.edu>
+	<200710271833.45131.dusa.adrian@gmail.com> <4723C7BD.5020202@ualr.edu>
+Message-ID: <be5487e70710271731g3ce49f8ex8255380aa956cf72@mail.gmail.com>
+
+On 10/28/07, shweta <sschavan at ualr.edu> wrote:
+>
+>  Hi Adrian,
+>
+>  Thanks, I think readline function can work for me. Is it that scan and
+> readLines function can read only from files or take input dynamically also?
+>
+>  Regards,
+>  Shweta.
+
+Oh, but the scan() function can also be used to accept dynamic input...
+
+Example:
+
+myobj <- scan()
+
+R waits for the user to input some data, simpy press Enter after the
+last entry was entered.
+
+Best,
+Adrian
+
+

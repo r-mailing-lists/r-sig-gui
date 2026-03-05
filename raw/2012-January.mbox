@@ -1,0 +1,292 @@
+From magillb at sbcglobal.net  Tue Jan  3 07:54:00 2012
+From: magillb at sbcglobal.net (Brett Magill)
+Date: Tue, 3 Jan 2012 00:54:00 -0600
+Subject: [R-gui] R Model Building and Evaluation Tool
+Message-ID: <CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>
+
+Hello all,
+
+To anyone who is interested, I'm trying to learn a bit more about
+developing applications in R with user interfaces. I've been playing
+around with gWidgets to develop a model building interface.
+
+I'd appreciate any comments, suggestions, or guidance on how to better
+structure my R code and organize the programming task. In addition,
+any suggestions for features and improvement to this fledgling project
+would be welcomed.
+
+The code and some screenshots are available here...
+
+http://r-rime.blogspot.com/
+
+Thanks!
+
+
+From ian.fellows at stat.ucla.edu  Tue Jan  3 08:33:55 2012
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Mon, 2 Jan 2012 23:33:55 -0800
+Subject: [R-gui] R Model Building and Evaluation Tool
+In-Reply-To: <CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>
+References: <CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>
+Message-ID: <418D4C3D-569C-4554-B424-F32D5ABA616E@stat.ucla.edu>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120102/6bd8a4e3/attachment.pl>
+
+From yvonnick.noel at free.fr  Wed Jan  4 10:14:06 2012
+From: yvonnick.noel at free.fr (Yvonnick Noel)
+Date: Wed, 04 Jan 2012 10:14:06 +0100
+Subject: [R-gui] R Model Building and Evaluation Tool
+In-Reply-To: <mailman.13.1325588404.12217.r-sig-gui@r-project.org>
+References: <mailman.13.1325588404.12217.r-sig-gui@r-project.org>
+Message-ID: <4F04185E.2040101@free.fr>
+
+Hi Brett,
+
+> To anyone who is interested, I'm trying to learn a bit more about
+> developing applications in R with user interfaces. I've been playing
+> around with gWidgets to develop a model building interface.
+>
+> I'd appreciate any comments, suggestions, or guidance on how to better
+> structure my R code and organize the programming task. In addition,
+> any suggestions for features and improvement to this fledgling project
+> would be welcomed.
+
+I found the proto package to be most useful in structuring the code 
+while developing my R2STATS interface for GLM and GLMM.
+
+Proto uses a prototype approach, as you would infer from the name, but 
+can be used in an object-oriented approach as well.
+
+HTH,
+
+Yvonnick Noel
+University of Britanny at Rennes
+Department of Psychology
+France
+
+
+From r.m.krug at gmail.com  Tue Jan 24 11:42:04 2012
+From: r.m.krug at gmail.com (Rainer M Krug)
+Date: Tue, 24 Jan 2012 11:42:04 +0100
+Subject: [R-gui] Looking for specific GUI - know it exists but can't
+ remember the name....
+Message-ID: <4F1E8AFC.3050606@gmail.com>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Hi
+
+I remember seeing a GUI for R, which used graphical modeler approach
+to build the analysis - similar to stella. But I can't find the name
+at the moment.
+
+Could somebody point me in the right direction? I googled, but got all
+other stuff, but not what I am looking for.
+
+Cheers,
+
+Rainer
+
+
+- -- 
+Rainer M. Krug, PhD (Conservation Ecology, SUN), MSc (Conservation
+Biology, UCT), Dipl. Phys. (Germany)
+
+Centre of Excellence for Invasion Biology
+Stellenbosch University
+South Africa
+
+Tel :       +33 - (0)9 53 10 27 44
+Cell:       +33 - (0)6 85 62 59 98
+Fax :       +33 - (0)9 58 10 27 44
+
+Fax (D):    +49 - (0)3 21 21 25 22 44
+
+email:      Rainer at krugs.de
+
+Skype:      RMkrug
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+Comment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/
+
+iEYEARECAAYFAk8eivwACgkQoYgNqgF2egr8HACfUbEqTeHHiKngBs7agaitCqzZ
+2uwAoIAlHlOWvnIOV/CSAMdszmKLFMeh
+=GXc6
+-----END PGP SIGNATURE-----
+
+
+From r.m.krug at gmail.com  Tue Jan 24 12:37:24 2012
+From: r.m.krug at gmail.com (Rainer M Krug)
+Date: Tue, 24 Jan 2012 12:37:24 +0100
+Subject: [R-gui] Looking for specific GUI - know it exists but can't
+ remember the name....
+In-Reply-To: <4F1E9249.8060605@univie.ac.at>
+References: <4F1E8AFC.3050606@gmail.com> <4F1E9249.8060605@univie.ac.at>
+Message-ID: <4F1E97F4.2050002@gmail.com>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+On 24/01/12 12:13, Erich Neuwirth wrote:
+> Are you looking for this: http://www.red-r.org/
+
+Thanks - exactly that one.
+
+Cheers,
+
+Rainer
+
+> 
+> 
+> On 1/24/2012 11:42 AM, Rainer M Krug wrote:
+>> Hi
+>> 
+>> I remember seeing a GUI for R, which used graphical modeler 
+>> approach to build the analysis - similar to stella. But I can't 
+>> find the name at the moment.
+>> 
+>> Could somebody point me in the right direction? I googled, but
+>> got all other stuff, but not what I am looking for.
+>> 
+>> Cheers,
+>> 
+>> Rainer
+>> 
+>> 
+>> 
+>> _______________________________________________ R-SIG-GUI mailing
+>>  list R-SIG-GUI at r-project.org 
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+
+- -- 
+Rainer M. Krug, PhD (Conservation Ecology, SUN), MSc (Conservation
+Biology, UCT), Dipl. Phys. (Germany)
+
+Centre of Excellence for Invasion Biology
+Stellenbosch University
+South Africa
+
+Tel :       +33 - (0)9 53 10 27 44
+Cell:       +33 - (0)6 85 62 59 98
+Fax :       +33 - (0)9 58 10 27 44
+
+Fax (D):    +49 - (0)3 21 21 25 22 44
+
+email:      Rainer at krugs.de
+
+Skype:      RMkrug
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+Comment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/
+
+iEYEARECAAYFAk8el/QACgkQoYgNqgF2egqthQCdEiKtW9KFo5uQgwI8ImUSDmQZ
+lPYAni+h1CV+NDRPui/6mNmHjcXdgK/0
+=uHLk
+-----END PGP SIGNATURE-----
+
+
+From William.Alpert at barrons.com  Tue Jan 24 15:17:59 2012
+From: William.Alpert at barrons.com (Alpert, William)
+Date: Tue, 24 Jan 2012 09:17:59 -0500
+Subject: [R-gui] R-SIG-GUI Digest, Vol 95, Issue 3
+In-Reply-To: <mailman.15.1327402804.19300.r-sig-gui@r-project.org>
+References: <mailman.15.1327402804.19300.r-sig-gui@r-project.org>
+Message-ID: <02BF89F8F8F5434281FB674D2BC513C3742238D192@SBKMXSMB09.win.dowjones.net>
+
+Red-R ?
+
+Bill Alpert
+Barron's
+
+-----Original Message-----
+From: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-project.org] On Behalf Of r-sig-gui-request at r-project.org
+Sent: Tuesday, January 24, 2012 6:00 AM
+To: r-sig-gui at r-project.org
+Subject: R-SIG-GUI Digest, Vol 95, Issue 3
+
+Send R-SIG-GUI mailing list submissions to
+	r-sig-gui at r-project.org
+
+To subscribe or unsubscribe via the World Wide Web, visit
+	https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+or, via email, send a message with subject or body 'help' to
+	r-sig-gui-request at r-project.org
+
+You can reach the person managing the list at
+	r-sig-gui-owner at r-project.org
+
+When replying, please edit your Subject line so it is more specific than "Re: Contents of R-SIG-GUI digest..."
+
+
+Today's Topics:
+
+   1. Looking for specific GUI - know it exists but can't remember
+      the name.... (Rainer M Krug)
+
+
+----------------------------------------------------------------------
+
+Message: 1
+Date: Tue, 24 Jan 2012 11:42:04 +0100
+From: Rainer M Krug <r.m.krug at gmail.com>
+To: r-sig-gui at r-project.org
+Subject: [R-gui] Looking for specific GUI - know it exists but can't
+	remember the name....
+Message-ID: <4F1E8AFC.3050606 at gmail.com>
+Content-Type: text/plain; charset=ISO-8859-1
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Hi
+
+I remember seeing a GUI for R, which used graphical modeler approach to build the analysis - similar to stella. But I can't find the name at the moment.
+
+Could somebody point me in the right direction? I googled, but got all other stuff, but not what I am looking for.
+
+Cheers,
+
+Rainer
+
+
+- --
+Rainer M. Krug, PhD (Conservation Ecology, SUN), MSc (Conservation Biology, UCT), Dipl. Phys. (Germany)
+
+Centre of Excellence for Invasion Biology Stellenbosch University South Africa
+
+Tel :       +33 - (0)9 53 10 27 44
+Cell:       +33 - (0)6 85 62 59 98
+Fax :       +33 - (0)9 58 10 27 44
+
+Fax (D):    +49 - (0)3 21 21 25 22 44
+
+email:      Rainer at krugs.de
+
+Skype:      RMkrug
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+Comment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/
+
+iEYEARECAAYFAk8eivwACgkQoYgNqgF2egr8HACfUbEqTeHHiKngBs7agaitCqzZ
+2uwAoIAlHlOWvnIOV/CSAMdszmKLFMeh
+=GXc6
+-----END PGP SIGNATURE-----
+
+
+
+------------------------------
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at r-project.org
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+End of R-SIG-GUI Digest, Vol 95, Issue 3
+
+

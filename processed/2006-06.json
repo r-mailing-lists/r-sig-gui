@@ -1,0 +1,236 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-06",
+  "messages": [
+    {
+      "id": "msg-0bc89477fe75",
+      "message_id": "<576452c40606061110i74ee9ad2ja53c1033c12974dc@mail.gmail.com>",
+      "from_name": "j verzani",
+      "from_email_hash": "a029675bf9462719f336b4ef9bb1441ceba180f1ffd7e0365f6802832a6ad84e",
+      "date": "2006-06-06T14:10:56-04:00",
+      "subject": "[R-gui] New versions of pmg and iWIdgetsRGtk",
+      "subject_clean": "[R-gui] New versions of pmg and iWIdgetsRGtk",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060606/1311f26e/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060606/1311f26e/attachment.pl",
+      "thread_id": "thread-0bc89477fe75",
+      "thread_depth": 0,
+      "month": "2006-06"
+    },
+    {
+      "id": "msg-53e1d4f78f50",
+      "message_id": "<448B923E.30801@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-06-11T00:47:10-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.5.5 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.5.5 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.5) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help//English/Readme/HTML'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.5) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-53e1d4f78f50",
+      "thread_depth": 0,
+      "month": "2006-06"
+    },
+    {
+      "id": "msg-2fada0b31bf0",
+      "message_id": "<449B5720.9010009@iastate.edu>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2006-06-22T21:51:12-05:00",
+      "subject": "[R-gui] rgtk2 on cran",
+      "subject_clean": "[R-gui] rgtk2 on cran",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I am pleased to announce that RGtk2 (version 2.8.5) is now on CRAN. \nCurrently it is only the source package, but I am hoping that the CRAN \nmaintainers will put the Windows version up there soon.\n\nAlso, unless any major issues arise, this is probably the last release \nof the 2.8.x series. Development has already progressed to the \n2.9.x/2.10.x series which will bind to the GTK/GDK/GdkPixbuf 2.10.x, ATK \n1.12.x, Pango 1.14.x, and cairo 1.2.x API's.\n\nThanks for your interest,\nMichael",
+      "body_snippet": "I am pleased to announce that RGtk2 (version 2.8.5) is now on CRAN. \nCurrently it is only the source package, but I am hoping that the CRAN \nmaintainers will put the Windows version up there soon.\n\nAl",
+      "thread_id": "thread-2fada0b31bf0",
+      "thread_depth": 0,
+      "month": "2006-06"
+    },
+    {
+      "id": "msg-3c2256bc8b22",
+      "message_id": "<pan.2006.06.23.07.49.31.906568@troefpunt.nl>",
+      "from_name": "JeeBee",
+      "from_email_hash": "258eec85a12bdf27abe681a2799ab393351db65e04cd56007245b4b7cf1de7f7",
+      "date": "2006-06-23T09:49:31+02:00",
+      "subject": "[R-gui] Some R-Tcl/Tk-BWidget newbie questions.",
+      "subject_clean": "[R-gui] Some R-Tcl/Tk-BWidget newbie questions.",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "This is a modified repost of a post I did in r.general (think this is a\nbetter place)\n\n\nDear list,\n\n1) Does someone know why, in my below code, tkpack can hang (consuming\n100% cpu)? It also hangs without the fill=\"both\",expand=T. Then, if I\nreplace it by tkgrid, it works!\n2) After replacing by tkgrid, I tried to add sticky=\"news\", but that does\nnot help at all, notebook is not resized when the window is. (and it did\nnot help to add fill/expand to packing of tbw.algemeen/tab.algemeen etc.)\n3) If I do not raise all of the tabs in the notebook, they are all\ndisplayed on the first tab initially (also if I raise only once). As you\ncan see below, I found an ugly hack, but I would like to know why this\ngoes wrong and how to solve it.\n\nThanks very much,\nJeeBee.\n\n\nrequire(tcltk) || stop(\"Package tcltk is not available.\")\n# Add path to BWidgets\naddTclPath(\".\")\nversion.BWidget <<- tclvalue(tclRequire(\"BWidget\"))\n\nstart.gui <- function() {\n  # Toplevel\n  tt <- tktoplevel()\n  tkwm.title(tt, \"MyTitle\")\n\n  # Notebook\n### --> The following line makes R hang with 100% cpu forever\n  #tkpack(tn <- tkwidget(tt, \"NoteBook\"), fill=\"both\", expand=TRUE)\n### --> This works, but not sticky=\"news\",\n### --> the notebook does not resize together with the window\n  tn <- tkwidget(tt, \"NoteBook\")\n  tkgrid(tn, sticky=\"news\")\n\n  tbn <- tclvalue(tkinsert(tn, \"end\", \"Algemeen\", \"-text\", \"Algemeen\"))\n  tkpack(tbw.algemeen <- .Tk.newwin(tbn))\n  tkpack(tab.algemeen <- tkframe(tbw.algemeen))\n  tbn <- tclvalue(tkinsert(tn, \"end\", \"Relaties\", \"-text\", \"Relaties\"))\n  tkpack(tbw.relaties <- .Tk.newwin(tbn))\n  tkpack(tab.relaties <- tkframe(tbw.relaties))\n  tbn <- tclvalue(tkinsert(tn, \"end\", \"Posten\", \"-text\", \"Posten\"))\n  tkpack(tbw.posten <- .Tk.newwin(tbn))\n  tkpack(tab.posten <- tkframe(tbw.posten))\n  tbn <- tclvalue(tkinsert(tn, \"end\", \"Instellingen\", \"-text\", \"Instellingen\"))\n  tkpack(tbw.instellingen <- .Tk.newwin(tbn))\n  tkpack(tab.instellingen <- tkframe(tbw.instellingen))\n\n  gui.maak.tab(tab.algemeen)\n  gui.maak.tab(tab.relaties)\n  gui.maak.tab(tab.posten)\n  gui.maak.tab(tab.instellingen)\n\n  tkgrid(tkbutton(tt, text=\"GUI bijwerken\", \n    command=function() verwerk.button(\"GUIBijwerken\", tt)))\n\n  # FIXME: add cleanup handler?\n  #tkbind(tt, \"<Destroy>\", function() tkdestroy(tn))\n\n### --> Don't understand this ... if I do the last \"raise\" only,\n### --> then I see all tabs in the first tab, until I go to another\n### --> tab and back. With all these \"raises\", it works\n  tcl(tn, \"raise\", \"Instellingen\")\n  tcl(tn, \"raise\", \"Posten\")\n  tcl(tn, \"raise\", \"Relaties\")\n  tcl(tn, \"raise\", \"Algemeen\")\n}\n\ngui.maak.tab <- function(tt) {\n  tkgrid(tklabel(tt, text=\"Instellingen\"), sticky=\"news\")\n  test.button <- tclVar(\"one two\") \n  tkgrid(tkcheckbutton(tt,variable=test.button))\n}",
+      "body_snippet": "This is a modified repost of a post I did in r.general (think this is a\nbetter place)\n\n\nDear list,\n\n1) Does someone know why, in my below code, tkpack can hang (consuming\n100% cpu)? It also hangs with",
+      "thread_id": "thread-3c2256bc8b22",
+      "thread_depth": 0,
+      "month": "2006-06"
+    },
+    {
+      "id": "msg-fb19b9153c08",
+      "message_id": "<6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>",
+      "from_name": "Gunther Maier",
+      "from_email_hash": "dba85fabd69b20401e90a168981333318f02eec9349f04ef49e01bc52df6104d",
+      "date": "2006-06-23T12:48:28+02:00",
+      "subject": "[R-gui] SimpleR, a Windows GUI to R",
+      "subject_clean": "[R-gui] SimpleR, a Windows GUI to R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear colleagues,\nI would like to inform you that SimpleR, a Windows-based GUI for R is available for inspection and testing now at http://www-sre.wu-wien.ac.at/SimpleR . I have presented SimpleR at the useR! conference last week in Vienna, Austria. You can find the slides from this presentation, a short handbook and the installable program at the url given above. Please note that SimpleR is in very early development and that it does NOT intend to cover all of R nor to be OS independent.\nYour suggestions and comments will be welcome. If you are interested in joining the development of SimpleR, please let me know.\n\nKind regards\nGunther Maier\n<gunther.maier at wu-wien.ac.at>\n\n-----------------------------------------------------------------------\n*  Gunther Maier, University of Economics and Business Administration *\n*     Augasse 2-6, Vienna, Austria. (Gunther.Maier at wu-wien.ac.at)     *\n*      Newsletter Editor, European Regional Science Association       *",
+      "body_snippet": "Dear colleagues,\nI would like to inform you that SimpleR, a Windows-based GUI for R is available for inspection and testing now at http://www-sre.wu-wien.ac.at/SimpleR . I have presented SimpleR at th",
+      "thread_id": "thread-fb19b9153c08",
+      "thread_depth": 0,
+      "month": "2006-06"
+    },
+    {
+      "id": "msg-21625c5c0f5d",
+      "message_id": "<15f8e67d0606230357p30a6f684id1c6fc3b8322e370@mail.gmail.com>",
+      "from_name": "Xiaohua Dai",
+      "from_email_hash": "65c983421f7a572226a98aa3e149f474e06d608a5e5d710e95a0fd14533602ea",
+      "date": "2006-06-23T12:57:24+02:00",
+      "subject": "[R-gui] SimpleR, a Windows GUI to R",
+      "subject_clean": "[R-gui] SimpleR, a Windows GUI to R",
+      "in_reply_to": "<6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>",
+      "references": [
+        "<6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060623/31dd2278/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060623/31dd2278/attachment.pl",
+      "thread_id": "thread-fb19b9153c08",
+      "thread_depth": 1,
+      "month": "2006-06"
+    },
+    {
+      "id": "msg-eb5b1633f730",
+      "message_id": "<44A014F6.2060308@statistik.uni-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "2d61b878ddbd8cb498eaad13e213f45e20da358dea7c063799b1b3934f86a26c",
+      "date": "2006-06-26T19:10:14+02:00",
+      "subject": "[R-gui] rgtk2 on cran",
+      "subject_clean": "[R-gui] rgtk2 on cran",
+      "in_reply_to": "<449B5720.9010009@iastate.edu>",
+      "references": [
+        "<449B5720.9010009@iastate.edu>"
+      ],
+      "body_plain": "Michael Lawrence wrote:\n\n> I am pleased to announce that RGtk2 (version 2.8.5) is now on CRAN. \n> Currently it is only the source package, but I am hoping that the CRAN \n> maintainers will put the Windows version up there soon.\n\nHope too -- within the next 24 hours on CRAN.\nDue to the Windows binary package maintainer was travelling, he was not \nable to fix a little bug that caused a hang up of the build process \nsince June 22nd.\n\nUwe Ligges\n\n> \n> Also, unless any major issues arise, this is probably the last release \n> of the 2.8.x series. Development has already progressed to the \n> 2.9.x/2.10.x series which will bind to the GTK/GDK/GdkPixbuf 2.10.x, ATK \n> 1.12.x, Pango 1.14.x, and cairo 1.2.x API's.\n> \n> Thanks for your interest,\n> Michael\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Michael Lawrence wrote:\n\n> I am pleased to announce that RGtk2 (version 2.8.5) is now on CRAN. \n> Currently it is only the source package, but I am hoping that the CRAN \n> maintainers will put the Win",
+      "thread_id": "thread-2fada0b31bf0",
+      "thread_depth": 1,
+      "month": "2006-06"
+    },
+    {
+      "id": "msg-71b4606de98c",
+      "message_id": "<44A10897.5010709@umh.ac.be>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "59ba6d77954f91c1a4c44c37f8744ecd38bec50e93323a77f525e96f2cf31206",
+      "date": "2006-06-27T12:29:43+02:00",
+      "subject": "[R-gui] New developers section on the R Wiki",
+      "subject_clean": "[R-gui] New developers section on the R Wiki",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello all,\n\nThere is a new section on the R Wiki (hhtp://wiki.r-project.org) \ndedicated to discussions around various R developments \n(http://wiki.r-project.org/rwiki/doku.php?id=developers:developers).\n\nAny R developer is free to create a page, or a whole subsection to \ndiscuss particular R developement aspects. This is of course purely \noptional. In particular, R Core Team members use to maintain their own \ndevelopment section at http://developer.r-project.org/.\n\nNote also that, if you create a page on the R Wiki, it is to share a \ndiscussion about your developements with other useRs/developeRs. If your \nintention is just to inform people about your own developments, you \nshould better write an HTML page on your own Web site (read-only for the \nother useRs/developeRs).\nBest,\n\nPhilippe Grosjean\n\n(Sorry for possible cross-posting)\n-- \n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Belgium\n( ( ( ( (\n..............................................................",
+      "body_snippet": "Hello all,\n\nThere is a new section on the R Wiki (hhtp://wiki.r-project.org) \ndedicated to discussions around various R developments \n(http://wiki.r-project.org/rwiki/doku.php?id=developers:developers",
+      "thread_id": "thread-71b4606de98c",
+      "thread_depth": 0,
+      "month": "2006-06"
+    },
+    {
+      "id": "msg-3bfc90691fa7",
+      "message_id": "<p06210200c0c992ffbac5@[134.214.34.24]>",
+      "from_name": "Jean Thioulouse",
+      "from_email_hash": "b20a674eb42804a87b064b390e04515db85d2871dd7105ba54500899f94dfe16",
+      "date": "2006-06-30T16:40:25+02:00",
+      "subject": "[R-gui] ade4 package GUI",
+      "subject_clean": "[R-gui] ade4 package GUI",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI have written a tcltk GUI for some basic functions of the ade4 package\n(multivariate data analysis package, on CRAN), and I am looking for GUI-\nknowledgeable people to look at it and tell me what they think about it.\n\nOf course it would be better if they know the bases of multivariate\nanalysis, and even better if they know at least a little about ade4\nand the duality diagram. But any suggestion or help on improving this\ninterface would be most welcome.\n\nThe source package can be downloaded here :\n\nhttp://pbil.univ-lyon1.fr/JTHome/ade4TkGUI_0.1-2.tar.gz\n\nThank you,\nJean\n-- \nJean Thioulouse - Labo Biometrie et Biologie Evolutive, UMR CNRS 5558\nUniversite Lyon 1, Batiment Mendel,  43 Boulevard du 11 Novembre 1918\n69622 Villeurbanne Cedex,  France.       Tel/Fax : (33) 4 72 43 27 56\n                http://pbil.univ-lyon1.fr/JTHome.html",
+      "body_snippet": "Hello,\n\nI have written a tcltk GUI for some basic functions of the ade4 package\n(multivariate data analysis package, on CRAN), and I am looking for GUI-\nknowledgeable people to look at it and tell me ",
+      "thread_id": "thread-3bfc90691fa7",
+      "thread_depth": 0,
+      "month": "2006-06"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0bc89477fe75",
+      "subject": "[R-gui] New versions of pmg and iWIdgetsRGtk",
+      "message_count": 1,
+      "participants": [
+        "j verzani"
+      ],
+      "started": "2006-06-06T14:10:56-04:00",
+      "last_reply": "2006-06-06T14:10:56-04:00",
+      "root_message_id": "msg-0bc89477fe75"
+    },
+    {
+      "id": "thread-53e1d4f78f50",
+      "subject": "[R-gui] Tinn-R 1.18.5.5 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-06-11T00:47:10-03:00",
+      "last_reply": "2006-06-11T00:47:10-03:00",
+      "root_message_id": "msg-53e1d4f78f50"
+    },
+    {
+      "id": "thread-2fada0b31bf0",
+      "subject": "[R-gui] rgtk2 on cran",
+      "message_count": 2,
+      "participants": [
+        "Michael Lawrence",
+        "Uwe Ligges"
+      ],
+      "started": "2006-06-22T21:51:12-05:00",
+      "last_reply": "2006-06-26T19:10:14+02:00",
+      "root_message_id": "msg-2fada0b31bf0"
+    },
+    {
+      "id": "thread-3c2256bc8b22",
+      "subject": "[R-gui] Some R-Tcl/Tk-BWidget newbie questions.",
+      "message_count": 1,
+      "participants": [
+        "JeeBee"
+      ],
+      "started": "2006-06-23T09:49:31+02:00",
+      "last_reply": "2006-06-23T09:49:31+02:00",
+      "root_message_id": "msg-3c2256bc8b22"
+    },
+    {
+      "id": "thread-fb19b9153c08",
+      "subject": "[R-gui] SimpleR, a Windows GUI to R",
+      "message_count": 2,
+      "participants": [
+        "Gunther Maier",
+        "Xiaohua Dai"
+      ],
+      "started": "2006-06-23T12:48:28+02:00",
+      "last_reply": "2006-06-23T12:57:24+02:00",
+      "root_message_id": "msg-fb19b9153c08"
+    },
+    {
+      "id": "thread-71b4606de98c",
+      "subject": "[R-gui] New developers section on the R Wiki",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2006-06-27T12:29:43+02:00",
+      "last_reply": "2006-06-27T12:29:43+02:00",
+      "root_message_id": "msg-71b4606de98c"
+    },
+    {
+      "id": "thread-3bfc90691fa7",
+      "subject": "[R-gui] ade4 package GUI",
+      "message_count": 1,
+      "participants": [
+        "Jean Thioulouse"
+      ],
+      "started": "2006-06-30T16:40:25+02:00",
+      "last_reply": "2006-06-30T16:40:25+02:00",
+      "root_message_id": "msg-3bfc90691fa7"
+    }
+  ]
+}

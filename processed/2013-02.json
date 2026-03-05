@@ -1,0 +1,159 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2013-02",
+  "messages": [
+    {
+      "id": "msg-c0dbf35cc439",
+      "message_id": "<CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>",
+      "from_name": "Nicholas Crookston",
+      "from_email_hash": "6b3b1e2dec9160c3e8f9124b8db76bc8ff9adfcd39b267a768cc35898e42c6ed",
+      "date": "2013-02-14T16:14:26-08:00",
+      "subject": "[R-gui] Building a R-application using gWidgets",
+      "subject_clean": "[R-gui] Building a R-application using gWidgets",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/a366b519/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/a366b519/attachment.pl>",
+      "thread_id": "thread-c0dbf35cc439",
+      "thread_depth": 0,
+      "month": "2013-02"
+    },
+    {
+      "id": "msg-20e32777d2c4",
+      "message_id": "<CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2013-02-14T16:22:01-08:00",
+      "subject": "[R-gui] Building a R-application using gWidgets",
+      "subject_clean": "[R-gui] Building a R-application using gWidgets",
+      "in_reply_to": "<CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>",
+      "references": [
+        "<CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/35672bcc/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/35672bcc/attachment.pl>",
+      "thread_id": "thread-c0dbf35cc439",
+      "thread_depth": 1,
+      "month": "2013-02"
+    },
+    {
+      "id": "msg-361d35336924",
+      "message_id": "<CAAk+MXxd=_WX3XvZqhUwMiVqAmSm4vzn+JCr3LCgFEUMgk5V9g@mail.gmail.com>",
+      "from_name": "Nicholas Crookston",
+      "from_email_hash": "6b3b1e2dec9160c3e8f9124b8db76bc8ff9adfcd39b267a768cc35898e42c6ed",
+      "date": "2013-02-14T16:38:03-08:00",
+      "subject": "[R-gui] Building a R-application using gWidgets",
+      "subject_clean": "[R-gui] Building a R-application using gWidgets",
+      "in_reply_to": "<CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>",
+      "references": [
+        "<CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>",
+        "<CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/ce8c981d/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/ce8c981d/attachment.pl>",
+      "thread_id": "thread-c0dbf35cc439",
+      "thread_depth": 2,
+      "month": "2013-02"
+    },
+    {
+      "id": "msg-436578552c44",
+      "message_id": "<CAOQ5Nyf=q1zfRSKrdYju2+RS8JsX+XSvo+ePmFT5Axu+DMSsYw@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2013-02-14T16:44:55-08:00",
+      "subject": "[R-gui] Building a R-application using gWidgets",
+      "subject_clean": "[R-gui] Building a R-application using gWidgets",
+      "in_reply_to": "<CAAk+MXxd=_WX3XvZqhUwMiVqAmSm4vzn+JCr3LCgFEUMgk5V9g@mail.gmail.com>",
+      "references": [
+        "<CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>",
+        "<CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>",
+        "<CAAk+MXxd=_WX3XvZqhUwMiVqAmSm4vzn+JCr3LCgFEUMgk5V9g@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/36750f32/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/36750f32/attachment.pl>",
+      "thread_id": "thread-c0dbf35cc439",
+      "thread_depth": 3,
+      "month": "2013-02"
+    },
+    {
+      "id": "msg-c3889fd28745",
+      "message_id": "<CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>",
+      "from_name": "Nicholas Crookston",
+      "from_email_hash": "6b3b1e2dec9160c3e8f9124b8db76bc8ff9adfcd39b267a768cc35898e42c6ed",
+      "date": "2013-02-21T16:37:19-08:00",
+      "subject": "[R-gui] Changing default fonts in gwidgets",
+      "subject_clean": "[R-gui] Changing default fonts in gwidgets",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130221/057138a0/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130221/057138a0/attachment.pl>",
+      "thread_id": "thread-c3889fd28745",
+      "thread_depth": 0,
+      "month": "2013-02"
+    },
+    {
+      "id": "msg-6b29729874ee",
+      "message_id": "<CAAk+MXwSxtk8docSobaV4u3E4oZCB_LFsyWUuSH7XY=A=Y7+Ow@mail.gmail.com>",
+      "from_name": "Nicholas Crookston",
+      "from_email_hash": "6b3b1e2dec9160c3e8f9124b8db76bc8ff9adfcd39b267a768cc35898e42c6ed",
+      "date": "2013-02-22T11:37:56-08:00",
+      "subject": "[R-gui] Changing default fonts in gwidgets",
+      "subject_clean": "[R-gui] Changing default fonts in gwidgets",
+      "in_reply_to": "<CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>",
+      "references": [
+        "<CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130222/ff7a7a82/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130222/ff7a7a82/attachment.pl>",
+      "thread_id": "thread-c3889fd28745",
+      "thread_depth": 1,
+      "month": "2013-02"
+    },
+    {
+      "id": "msg-747d0712c2b5",
+      "message_id": "<loom.20130225T025608-899@post.gmane.org>",
+      "from_name": "jverzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2013-02-25T01:58:05Z",
+      "subject": "[R-gui] Changing default fonts in gwidgets",
+      "subject_clean": "[R-gui] Changing default fonts in gwidgets",
+      "in_reply_to": null,
+      "references": [
+        "<CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>",
+        "<CAAk+MXwSxtk8docSobaV4u3E4oZCB_LFsyWUuSH7XY=A=Y7+Ow@mail.gmail.com>"
+      ],
+      "body_plain": "Nicholas Crookston <ncrookston.fs <at> gmail.com> writes:\n\n> \n> A bit more information:\n> \n> Lets add a text or label (here is a label:\n> \n> lb <- glabel(container=gw,text=\"Label\")\n> \n> This works fine on a label or text object (and I knew before I posted my\n> question):\n> \n> font(lb) <- c(family=\"times\",size=24,weight=\"bold\",style=\"italic\")\n> \n\n\nTry using a list instead of \"c\", otherwise everything is coerced to character:\n\nfont(btn) <- list(family=\"times\",size=24,weight=\"bold\",style=\"italic\")\n\n\n\n> When the font() function is called on the \"button\" object, it has no\n> effect. In addition, setting additional options as in:\n> bt <- gbutton (container=gw,text=\"Button\", fg=\"red\")\n\nNope, ... is passed to the parent container, not a font call,",
+      "body_snippet": "Nicholas Crookston <ncrookston.fs <at> gmail.com> writes:\n\n> \n> A bit more information:\n> \n> Lets add a text or label (here is a label:\n> \n> lb <- glabel(container=gw,text=\"Label\")\n> \n> This works fin",
+      "thread_id": "thread-c3889fd28745",
+      "thread_depth": 2,
+      "month": "2013-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-c0dbf35cc439",
+      "subject": "[R-gui] Building a R-application using gWidgets",
+      "message_count": 4,
+      "participants": [
+        "Michael Lawrence",
+        "Nicholas Crookston"
+      ],
+      "started": "2013-02-14T16:14:26-08:00",
+      "last_reply": "2013-02-14T16:44:55-08:00",
+      "root_message_id": "msg-c0dbf35cc439"
+    },
+    {
+      "id": "thread-c3889fd28745",
+      "subject": "[R-gui] Changing default fonts in gwidgets",
+      "message_count": 3,
+      "participants": [
+        "Nicholas Crookston",
+        "jverzani"
+      ],
+      "started": "2013-02-21T16:37:19-08:00",
+      "last_reply": "2013-02-25T01:58:05+00:00",
+      "root_message_id": "msg-c3889fd28745"
+    }
+  ]
+}

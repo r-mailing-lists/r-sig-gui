@@ -1,0 +1,453 @@
+From david.whiting at ncl.ac.uk  Fri Feb 13 10:59:46 2004
+From: david.whiting at ncl.ac.uk (david.whiting@ncl.ac.uk)
+Date: Fri Feb 13 08:00:01 2004
+Subject: RJython? [was Re: [R-gui] [RGUI] Where do you start?]
+In-Reply-To: <20040119203201.GC6916@wald.ucdavis.edu>
+References: <200401171855.i0HIt4529518@gator.dt.uh.edu>
+	<MABBLJDICACNFOLGIHJOAEAGEBAA.phgrosjean@sciviews.org>
+	<20040119203201.GC6916@wald.ucdavis.edu>
+Message-ID: <20040213095946.GE3021@192.168.57.2>
+
+I'm more than a little late joining this thread, but ...
+
+On Mon, Jan 19, 2004 at 12:32:01PM -0800, Duncan Lang wrote:
+
+[...]
+
+> The tcltk package was put into the R distribution as a matter of
+> convenience rather than a formal decision to advocate or support the
+> use of Tcl/Tk as the main toolkit.  This bundling has given it a
+> status that was never discussed.  Iit does run on all of the primary
+> platforms which is very helpful.  However, it is an old toolkit that
+> is not used for any large application.  This is in contrast with Gtk,
+> Qt, Swing, which have richer widgets, more activity in development and
+> are the bases for numerous applications. Why the latter is important
+> is that we have been succesful in embedding R into other applications
+> and using and extending their GUIs.  
+
+[...]
+
+First some caveats: I have dabbled with Java (and felt totally
+intimidated by the code required to make a GUI using swing), and have
+dabbled even less with Python, am aware of RSpython and SJava, but know
+very little about their internal workings.
+
+I have, however, recently had need to quickly create a GUI that
+integrates with an application written in Java. I found Jython, a Java
+implementation of Python.  This combines the scripting language
+capabilities of Python with the rich libraries of Java.  There are some
+neat tricks built into Jython that take away much of what intimidated me
+when looking at using swing directly.  Jython is a Java *implementation*
+of Python, so it *is* Python (the 'normal' python can be considered
+Cpython).  This means that Jython can run python scripts.  What Jython
+cannot do is use modules written in C - they would need to be migrated
+to Java.
+
+I wonder if some combination of SJava and RSpython code, probably
+implemented in Java,  could provide a library that gives R users access
+to swing, via jython, from R.  
+
+I note that the FAQ says "...for technical reasons, currently the best
+way to integrate Java and R is to run Java and have it load R"  in which
+case it might be easier to think about using R from within Jython.  I
+remember that someone posted a list of similarities between R and Python
+to the main R-help mailing list and during my quick use of Jython I have
+seen that the 'feel' is certainly very similar.  I think R-users should
+be able to make useful things happen with Jython without having to go
+though too much of learning curve. 
+
+To give you a feel of what Jython code for creating a GUI looks like I
+have a very simple example below:
+
+
+## File: simpleJythonGui.py
+
+## Load the Swing library (the Java GUI toolkit) into Jython 
+## This is like using library() in R.
+
+import javax.swing as swing
+
+
+## Create a function.  This will be called when the button is 
+## pressed (see below).  All it does is import another library 
+## and make the application exit.  The parameter passed to the 
+## function is the event that takes place when the button 
+## is pressed.
+
+def do_quit(event=None):
+    import sys
+    sys.exit(0)
+
+
+## Create a window ('frame' in Java-speak) and specify its size.  
+## In Java this would require several lines of code and I don't 
+## think that the size can be specified as simply as it can in
+## Jython.  The title is set by the first parameter.
+
+f = swing.JFrame("This is the main window", size = (400, 200))
+
+
+## Now create a panel.  Panels go inside frames/windows.  There
+## can be more than one panel in a frame and the positions of the
+## panels can be controlled by various layout managers.  In this simple
+## example I will not use a layout manager (at least not explicitly - I 
+## don't know if  there is some  implicit use of a layout manager going 
+## behind the scenes).
+
+p = swing.JPanel()
+
+
+## Now I want to create a button.  For Java programmers: Jython does 
+## some very neat things with Java beans and converts methods like 
+## setSomeProperty() and getSomeProperty() to attributes that can 
+## be assigned to, named someProperty (note the change of case of 
+## the first letter).  This greatly simplifies the use of event 
+## listeners (and other things).  
+## When the button is pressed, the function do_quit will be called. 
+
+b = swing.JButton("Press me to exit", actionPerformed=do_quit)
+
+
+## Now add the button to the panel
+
+p.add(b)
+
+
+## Now add the panel to the frame/window.
+f.contentPane.add(p)
+
+
+## And finally show the window 
+f.show()
+
+### End of File: simpleJythonGui.py
+
+
+So, 10 lines of code, including the import statement and the function,
+to create a GUI with a button that performs an action when the button is
+pressed. 
+
+I mostly hack around with scripts to get my work done and don't think
+that I have the experience or training to be able to implement something
+that might be 'Rjython', so all I can do is offer this idea without
+being able to offer to attempt to implement it.  At least, not yet.
+Perhaps others on list have more experience of Java and R to know whether
+this could work.
+
+Dave
+
+-- 
+Dave Whiting
+Dar es Salaam, Tanzania
+
+From feh3k at spamcop.net  Fri Feb 13 12:53:29 2004
+From: feh3k at spamcop.net (Frank E Harrell Jr)
+Date: Fri Feb 13 12:55:30 2004
+Subject: RJython? [was Re: [R-gui] [RGUI] Where do you start?]
+In-Reply-To: <20040213095946.GE3021@192.168.57.2>
+References: <200401171855.i0HIt4529518@gator.dt.uh.edu>
+	<MABBLJDICACNFOLGIHJOAEAGEBAA.phgrosjean@sciviews.org>
+	<20040119203201.GC6916@wald.ucdavis.edu>
+	<20040213095946.GE3021@192.168.57.2>
+Message-ID: <20040213065329.52829fdd.feh3k@spamcop.net>
+
+On Fri, 13 Feb 2004 09:59:46 +0000
+david.whiting@ncl.ac.uk wrote:
+
+> I'm more than a little late joining this thread, but ...
+> 
+> On Mon, Jan 19, 2004 at 12:32:01PM -0800, Duncan Lang wrote:
+> 
+> [...]
+> 
+> > The tcltk package was put into the R distribution as a matter of
+> > convenience rather than a formal decision to advocate or support the
+> > use of Tcl/Tk as the main toolkit.  This bundling has given it a
+> > status that was never discussed.  Iit does run on all of the primary
+> > platforms which is very helpful.  However, it is an old toolkit that
+> > is not used for any large application.  This is in contrast with Gtk,
+> > Qt, Swing, which have richer widgets, more activity in development and
+> > are the bases for numerous applications. Why the latter is important
+> > is that we have been succesful in embedding R into other applications
+> > and using and extending their GUIs.  
+> 
+> [...]
+> 
+> First some caveats: I have dabbled with Java (and felt totally
+> intimidated by the code required to make a GUI using swing), and have
+> dabbled even less with Python, am aware of RSpython and SJava, but know
+> very little about their internal workings.
+> 
+> I have, however, recently had need to quickly create a GUI that
+> integrates with an application written in Java. I found Jython, a Java
+> implementation of Python.  This combines the scripting language
+> capabilities of Python with the rich libraries of Java.  There are some
+> neat tricks built into Jython that take away much of what intimidated me
+> when looking at using swing directly.  Jython is a Java *implementation*
+> of Python, so it *is* Python (the 'normal' python can be considered
+> Cpython).  This means that Jython can run python scripts.  What Jython
+> cannot do is use modules written in C - they would need to be migrated
+> to Java.
+> 
+> I wonder if some combination of SJava and RSpython code, probably
+> implemented in Java,  could provide a library that gives R users access
+> to swing, via jython, from R.  
+
+Please let's not pursue this as a GUI interface for R for replacing tcltk.
+ We need something fast, light, and that does not use a huge amount of
+memory.
+
+Frank
+
+
+---
+Frank E Harrell Jr   Professor and Chair           School of Medicine
+                     Department of Biostatistics   Vanderbilt University
+
+From madrid at linuxmeeting.net  Fri Feb 13 13:20:17 2004
+From: madrid at linuxmeeting.net (Daniele Medri)
+Date: Fri Feb 13 13:20:01 2004
+Subject: RJython? [was Re: [R-gui] [RGUI] Where do you start?]
+In-Reply-To: <20040213065329.52829fdd.feh3k@spamcop.net>
+References: <200401171855.i0HIt4529518@gator.dt.uh.edu>
+	<20040213095946.GE3021@192.168.57.2>
+	<20040213065329.52829fdd.feh3k@spamcop.net>
+Message-ID: <200402131320.17261.madrid@linuxmeeting.net>
+
+
+> > I wonder if some combination of SJava and RSpython code, probably
+> > implemented in Java,  could provide a library that gives R users access
+> > to swing, via jython, from R.
+>
+> Please let's not pursue this as a GUI interface for R for replacing tcltk.
+>  We need something fast, light, and that does not use a huge amount of
+> memory.
+
+Why don't devel the actually gtk interface?
+GTk is portable (win, macos, linux)...
+There are some binding (java, python, ecc..)
+Is fast a lot.
+
+Do you know Gretl? Take a look at gretl.sf.net for example and think about GTK 
+for your scope.
+
+Bye
+-- 
+Daniele Medri <madrid AT linuxmeeting.net>
+homepage: http://www.linux.it/~madrid/
+
+"Le cose pi? grandi, nel mondo, vengono compiute attraverso altre cui
+non prestiamo nessuna attenzione, piccole cause su cui sorvoliamo e
+che alla fine si accumulano." -- Georg Christoph Lichtenberg
+
+From phgrosjean at sciviews.org  Mon Feb 16 12:03:44 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon Feb 16 12:04:19 2004
+Subject: RJython? [was Re: [R-gui] [RGUI] Where do you start?]
+In-Reply-To: <200402131320.17261.madrid@linuxmeeting.net>
+Message-ID: <MABBLJDICACNFOLGIHJOEEDGECAA.phgrosjean@sciviews.org>
+
+>GTk is portable (win, macos, linux)...
+>There are some binding (java, python, ecc..)
+>Is fast a lot.
+
+OK, that is just blablabla... Here is an example:
+http://wiener.math.csi.cuny.edu/pmg Poor Man's GUI, a GUI for R that uses
+GTk (I don't want to critisize it: it is a nice project, really). But... is
+it faster than R Commander (http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/),
+which is similar but uses tcl/tk and runs under Unix/Linux, Windows and
+MacOS? Not on my computer. Could it be improved to become faster? Probably.
+Does it run on Windows? No. Could it run on Windows in the future? This is
+possible.
+
+I think the key is here: currently, there is a tcl/tk interface in R that is
+fully operational (although, it can certainly be improved), and there are
+several other possible interfaces (most of them are contributed by OmegaHat,
+and in particular by Duncan Temple Lang). Are they completely operational?
+Well, *almost*. And that is the problem. I really would enjoy to have the
+same facility to access Gtk, Java or other than it is currently the case for
+tcl/tk from R, on *all* platforms. DTL, could you update the various GTKxxx
+packages and make them compatible with the latest versions of R on all
+platforms? Is it a huge work? Or is it still not compatible with some
+platforms?
+
+Otherwise, I agree: tcl/tk is quite old, lack many features and widgets
+compared to other graphical toolkits... But we already had such a discussion
+TWO YEARS ago. And there is not much new today.
+
+I have set up a developer's page in
+http://www.sciviews.org/_rgui/rgui/devel.html, after an idea from Thomas
+Friedrichmeier that was followed by a long discussion about wether it should
+be possible, and how to make code independent from a particular graphical
+toolkit (the idea is to describe the dialog boxes and then to use an
+separate engine to implement it in Gtk or in tcl/tk, or wathever...).
+Obviously a huge and ambitious task, but at least we could have tried it.
+This is a good way to content everybody, because every particular user could
+choose its favorite graphical toolkit. Well, Thomas and I started to draft
+it,... and nobody followed. So, I gave up because I need time to develop
+SciViews (and other projects), and I have very limited time remaining for
+continuing endless discussions that lead to nothing concrete.
+
+Best,
+
+Philippe Grosjean
+
+.......................................................<?}))><....
+ ) ) ) ) )
+( ( ( ( (   Prof. Philippe Grosjean
+\  ___   )
+ \/ECO\ (   Numerical Ecology of Aquatic Systems
+ /\___/  )  Mons-Hainaut University, Pentagone
+/ ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium
+ /NUM\/  )
+ \___/\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+       \ )  email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (
+...................................................................
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of Daniele Medri
+Sent: Friday, 13 February, 2004 13:20
+To: r-sig-gui@stat.math.ethz.ch
+Subject: Re: RJython? [was Re: [R-gui] [RGUI] Where do you start?]
+
+
+
+> > I wonder if some combination of SJava and RSpython code, probably
+> > implemented in Java,  could provide a library that gives R users access
+> > to swing, via jython, from R.
+>
+> Please let's not pursue this as a GUI interface for R for replacing tcltk.
+>  We need something fast, light, and that does not use a huge amount of
+> memory.
+
+Why don't devel the actually gtk interface?
+GTk is portable (win, macos, linux)...
+There are some binding (java, python, ecc..)
+Is fast a lot.
+
+Do you know Gretl? Take a look at gretl.sf.net for example and think about
+GTK
+for your scope.
+
+Bye
+--
+Daniele Medri <madrid AT linuxmeeting.net>
+homepage: http://www.linux.it/~madrid/
+
+"Le cose pi? grandi, nel mondo, vengono compiute attraverso altre cui
+non prestiamo nessuna attenzione, piccole cause su cui sorvoliamo e
+che alla fine si accumulano." -- Georg Christoph Lichtenberg
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From madrid at linuxmeeting.net  Mon Feb 16 12:09:42 2004
+From: madrid at linuxmeeting.net (Daniele Medri)
+Date: Mon Feb 16 12:09:28 2004
+Subject: RJython? [was Re: [R-gui] [RGUI] Where do you start?]
+In-Reply-To: <MABBLJDICACNFOLGIHJOEEDGECAA.phgrosjean@sciviews.org>
+References: <MABBLJDICACNFOLGIHJOEEDGECAA.phgrosjean@sciviews.org>
+Message-ID: <200402161209.43995.madrid@linuxmeeting.net>
+
+> Otherwise, I agree: tcl/tk is quite old, lack many features and widgets
+> compared to other graphical toolkits... But we already had such a
+> discussion TWO YEARS ago. And there is not much new today.
+
+probably because discussion was "blablabla" too. :))
+
+-- 
+Daniele Medri <madrid AT linuxmeeting.net>
+homepage: http://www.linux.it/~madrid/
+
+"Le cose pi? grandi, nel mondo, vengono compiute attraverso altre cui
+non prestiamo nessuna attenzione, piccole cause su cui sorvoliamo e
+che alla fine si accumulano." -- Georg Christoph Lichtenberg
+
+From hodgess at gator.uhd.edu  Tue Feb 17 17:23:08 2004
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Tue Feb 17 17:22:18 2004
+Subject: [R-gui] RGUI help on a dialog box
+Message-ID: <200402171623.i1HGN8L24604@gator.dt.uh.edu>
+
+Dear R-Gui People:
+
+I'm back again with more questions.  Thank you for your patience.
+
+My project:  Open R.  Have a nice "Box" appear for people to enter some
+text.  Also in that box, an extra line for a probability distribution.
+Then, R will do some calculations, and a new text file will be generated.
+
+What would be the best way to create the dialog box, please?
+
+Thanks again!
+
+Sincerely,
+Erin Hodgess
+Associate Professor
+Department of Computer and Mathematical Sciences
+University of Houston - Downtown
+mailto: hodgess@gator.uhd.edu
+
+From hodgess at gator.uhd.edu  Wed Feb 18 01:23:30 2004
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Wed Feb 18 01:23:48 2004
+Subject: [R-gui] R GUI TCL/Tk
+Message-ID: <200402180023.i1I0NUv18807@gator.dt.uh.edu>
+
+Hello again!
+
+I picked up a nice book on Tcl/Tk by J. Adrian Zimmer.
+Also I've been messing with the commands in the Tcl/Tk library.
+
+I'm starting to make some tiny progress!!!!!!!!!!!
+
+Thanks for listening!
+Sincerely,
+Erin
+
+From wettenhall at wehi.edu.au  Thu Feb 26 07:31:05 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Feb 26 07:30:55 2004
+Subject: [R-gui] Tcl/Tk examples update
+Message-ID: <Pine.LNX.4.44.0402261646490.30701-100000@unix28.alpha.wehi.edu.au>
+
+Hi,
+
+Last year I put some examples of creating Tk widgets 
+in R (using Peter Dalgaard's tcltk package) on a webpage:
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+
+Since R 1.8.0, it has become possible to interact with the Tktable 
+widget extension in a new way (through the new tclArray 
+interface in tcltk), and it has become easier to create Tcl lists 
+from R vectors (useful in combo-boxes).  So I have finally 
+cleaned up the some of the messy code on that webpage, particularly
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/tktable.html
+and
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/DropDown.html
+
+Creating a (drop-down) combo box from an R vector is now easy if 
+you have the BWidget extension:
+Rvector <- c("one","two","three")
+tt <- tktoplevel()
+tclRequire("BWidget")
+comboBox <- tkwidget(tt,"ComboBox",values=Rvector)
+tkpack(comboBox)
+
+Also I removed a few instances of .Tcl(paste(...)) which is more 
+prone to "quoting hell" problems than tkcmd(...) and tkwidget(...) 
+and possibly slower too.
+
+Sorry to people on this list who are already R-Tcl/Tk experts or 
+who aren't interested.  
+
+Feel free to point out errors etc.
+
+Regards,
+James
+

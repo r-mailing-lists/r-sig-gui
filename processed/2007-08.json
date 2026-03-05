@@ -1,0 +1,153 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2007-08",
+  "messages": [
+    {
+      "id": "msg-e37cf128fbd2",
+      "message_id": "<46B05BCE.8080000@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2007-08-01T12:09:18+02:00",
+      "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "subject_clean": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "in_reply_to": "<46AF5B35.30404@biostat.ku.dk>",
+      "references": [
+        "<072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>",
+        "<509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>",
+        "<46AF5B35.30404@biostat.ku.dk>"
+      ],
+      "body_plain": "Just my 0.02$ added to this discussion: tcl/tk could be automatically \ninstalled under Windows (if the option is checked), and tile is readily \nusable once the tcltk2 package is installed. Also, using tcltk2, you \nhave more Windows look&feel than with Gtk2. There are also a couple of \nother advantages of tcltk on specific tasks, mainly thanks to nice \naspects in the underlying tcl language readily available. So, under \nWindows, tcltk (+ tcltk2) solution is much more easily in operation on \nany users computer than a solution based on RGtk2.\n\nFor Linux, Gtk2 is certainly at home, although there is special tile \nversion in development to support Qt widgets, I think.\n\nFor MacOS X neither provide the appropriate look&feel. There a special \nTcl/Tk distro installed on all MacOS X (at least on Tiger), but the \nregular R distribution with the AQUA GUI cannot use it. It is possible \nto compile R to use it and then, you got an excellent tcltk + tcltk2 \nsolution with MacOS X look&feel that is almost perfect. However, this is \nsomething only for experienced users, while most GUIs target beginners.\n\nFor the rest, I pretty much agree that Gtk2 is much more powerful, but I \nam not sure we need all its power for 99% of the simple GUIs stuff \nrequired on top of R.\n\nWe should end the widgets war, and start looking at gWidgets by John \nVezani, which intend to provide an interface to GUI widgets from R \nindependent from a particular implementation. At the moment, there is \nonly an implementation of gWidgets interface for RGtk2 (and one for \nJava?),... but an implementation for tcltk (/tcltk2) should not be too \ndifficult to do. I may work on it once I have some time, that certainly \nnot in the near future!!!\n\nAnyway, I will continue to improve tcl/tk support through tcltk2 when \ntime permit, and since I have now a Mac with MacOS X + Windows + Linux \ninstalled on it, I will work on more portable code than before (I was \nonly working under Windows).\n\nReally, the effort should be targetted to make R GUIs independent from a \nparticular GUI widget and start coding or recoding stuff using gWidgets \nand work on both RGtk2 and tcltk/tcltk2 implementations. Currently, I \nshould consider this, personnally:\n- Linux: RGtk2 for sure,\n- Windows: tcltk+tcltk2 for ease of installation and better Windows \ninstallation, or RGtk2 if you need more features than those provided by \ntcltk/tcltk2,\n- MacOS X: nothing really satisfying currently.\n\nBest,\n\nPhilippe\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Belgium\n( ( ( ( (\n..............................................................\n\nPeter Dalgaard wrote:\n> Michael Lawrence wrote:\n>> GTK+ has many more features than tcl/tk (tile included), though tcl/tk does\n>> have some features that GTK+ lacks, like a canvas widget.\n>>\n>> The API of the underlying toolkits, as well as the R interfaces, are quite\n>> different. I've heard many people say that they prefer the GTK+/RGtk2 style,\n>> though there are probably many people that feel the opposite. The tcltk\n>> package is a binding to the Tcl language, while RGtk2 is a binding to a\n>> collection of C libraries.\n>>   \n> Minor quibble: tcltk (mostly) binds directly to the Tcl *engine*, \n> bypassing the parsing layer, $-substitution, quoting hell, etc. The \n> Tcl/Tk engine is just another collection of C libraries. The major \n> difference to Gtk+ is that the Tcl/Tk engine was designed to support \n> interpreted languages (mainly, of course, Tcl).\n> \n> Apart from that, I pretty much agree that RGtk2 could well be the \n> toolkit of the future. It's main detraction at this point is that it is, \n> at the tutorial level, mainly documented by demos and that it seems to \n> be a bit sensitive to changes in the underlying toolkit and have a \n> couple of rough edges in general. But it can certainly do amazing stuff; \n> all it needs is a dedicated effort to take care of a number of little \n> issues (esp. portability). That and an introductory document that covers \n> the concepts involved.\n> \n> (It needs to be no secret that I have been approached about the \n> possibility of a book on R/tcltk, and ended up resolving that there \n> would certainly be a market, but of the 3 or 4 candidates to write it, \n> probably none would want to. However, in due course, when the obvious \n> author completes his academic obligations, a book on RGtk2 should be a \n> very interesting prospect.)\n> \n>> RGtk2 also binds libglade, meaning that one can design a GUI graphically\n>> using the Glade tool and display it using R. Glade may or may not be useful,\n>> depending on the application. The Rattle tool seems to have used Glade\n>> effectively, but I personally prefer to construct the interfaces\n>> dynamically.\n>>\n>> Since GTK+ is object-oriented, RGtk2 is able to support the creation of new\n>> widget classes that override the functionality of their parents. This is a\n>> neat feature, but is rarely necessary.\n>>\n>> For graphics, RGtk2 binds several useful libraries, including Cairo (vector\n>> graphics) and GdkPixbuf (image manipulation).\n>>\n>> You might also consider the gWidgets package. It is a convenient API for\n>> creating simple GUIs in R. It abstracts away the underlying toolkit.\n>> Implementations exist using RGtk2 and rJava (swing). You could always start\n>> using a GUI this way and then convert to RGtk2 or some other toolkit later\n>> if necessary.\n>>\n>> I hope this helps,\n>> Michael\n>>\n>> On 7/28/07, morphwj at comcast.net <morphwj at comcast.net> wrote:\n>>   \n>>> Why use R tcltk/tcltk2 instead of R GTk2, or why use R GTk2 instead of R\n>>> tcltk/tcltk2?\n>>> Bill Morphet\n>>>         [[alternative HTML version deleted]]\n>>>\n>>> _______________________________________________\n>>> R-SIG-GUI mailing list\n>>> R-SIG-GUI at stat.math.ethz.ch\n>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>>\n>>>     \n>> \t[[alternative HTML version deleted]]\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at stat.math.ethz.ch\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Just my 0.02$ added to this discussion: tcl/tk could be automatically \ninstalled under Windows (if the option is checked), and tile is readily \nusable once the tcltk2 package is installed. Also, using",
+      "thread_id": "thread-e37cf128fbd2",
+      "thread_depth": 0,
+      "month": "2007-08"
+    },
+    {
+      "id": "msg-ac0a2cd4afc7",
+      "message_id": "<1185990257.5915.13.camel@whitebox>",
+      "from_name": "Dan Putler",
+      "from_email_hash": "9a2942c99196d0544b3517efc9390a2ad9988031ef34a782b6be64725b046bd4",
+      "date": "2007-08-01T10:44:17-07:00",
+      "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "subject_clean": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "in_reply_to": "<46B05BCE.8080000@sciviews.org>",
+      "references": [
+        "<072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>",
+        "<509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>",
+        "<46AF5B35.30404@biostat.ku.dk>",
+        "<46B05BCE.8080000@sciviews.org>"
+      ],
+      "body_plain": "Hi Phillipe,\n\nAn excellent and well argued post. One thing I'm curious about is where\ndoes the RwxWidgets package (http://www.omegahat.org/RwxWidgets) fit\ninto the mix? This seems to potentially deal with some of the OS X\nissues. In any event, I completely agree that the gWidgets approach of\ncreating an interface that is both \"R like\" and separates R from the\nunderlying widget tool kit is the correct one.\n\nDan\n\nOn Wed, 2007-01-08 at 12:09 +0200, Philippe Grosjean wrote:\n> Just my 0.02$ added to this discussion: tcl/tk could be automatically \n> installed under Windows (if the option is checked), and tile is readily \n> usable once the tcltk2 package is installed. Also, using tcltk2, you \n> have more Windows look&feel than with Gtk2. There are also a couple of \n> other advantages of tcltk on specific tasks, mainly thanks to nice \n> aspects in the underlying tcl language readily available. So, under \n> Windows, tcltk (+ tcltk2) solution is much more easily in operation on \n> any users computer than a solution based on RGtk2.\n> \n> For Linux, Gtk2 is certainly at home, although there is special tile \n> version in development to support Qt widgets, I think.\n> \n> For MacOS X neither provide the appropriate look&feel. There a special \n> Tcl/Tk distro installed on all MacOS X (at least on Tiger), but the \n> regular R distribution with the AQUA GUI cannot use it. It is possible \n> to compile R to use it and then, you got an excellent tcltk + tcltk2 \n> solution with MacOS X look&feel that is almost perfect. However, this is \n> something only for experienced users, while most GUIs target beginners.\n> \n> For the rest, I pretty much agree that Gtk2 is much more powerful, but I \n> am not sure we need all its power for 99% of the simple GUIs stuff \n> required on top of R.\n> \n> We should end the widgets war, and start looking at gWidgets by John \n> Vezani, which intend to provide an interface to GUI widgets from R \n> independent from a particular implementation. At the moment, there is \n> only an implementation of gWidgets interface for RGtk2 (and one for \n> Java?),... but an implementation for tcltk (/tcltk2) should not be too \n> difficult to do. I may work on it once I have some time, that certainly \n> not in the near future!!!\n> \n> Anyway, I will continue to improve tcl/tk support through tcltk2 when \n> time permit, and since I have now a Mac with MacOS X + Windows + Linux \n> installed on it, I will work on more portable code than before (I was \n> only working under Windows).\n> \n> Really, the effort should be targetted to make R GUIs independent from a \n> particular GUI widget and start coding or recoding stuff using gWidgets \n> and work on both RGtk2 and tcltk/tcltk2 implementations. Currently, I \n> should consider this, personnally:\n> - Linux: RGtk2 for sure,\n> - Windows: tcltk+tcltk2 for ease of installation and better Windows \n> installation, or RGtk2 if you need more features than those provided by \n> tcltk/tcltk2,\n> - MacOS X: nothing really satisfying currently.\n> \n> Best,\n> \n> Philippe\n> ..............................................<?}))><........\n>   ) ) ) ) )\n> ( ( ( ( (    Prof. Philippe Grosjean\n>   ) ) ) ) )\n> ( ( ( ( (    Numerical Ecology of Aquatic Systems\n>   ) ) ) ) )   Mons-Hainaut University, Belgium\n> ( ( ( ( (\n> ..............................................................\n> \n> Peter Dalgaard wrote:\n> > Michael Lawrence wrote:\n> >> GTK+ has many more features than tcl/tk (tile included), though tcl/tk does\n> >> have some features that GTK+ lacks, like a canvas widget.\n> >>\n> >> The API of the underlying toolkits, as well as the R interfaces, are quite\n> >> different. I've heard many people say that they prefer the GTK+/RGtk2 style,\n> >> though there are probably many people that feel the opposite. The tcltk\n> >> package is a binding to the Tcl language, while RGtk2 is a binding to a\n> >> collection of C libraries.\n> >>   \n> > Minor quibble: tcltk (mostly) binds directly to the Tcl *engine*, \n> > bypassing the parsing layer, $-substitution, quoting hell, etc. The \n> > Tcl/Tk engine is just another collection of C libraries. The major \n> > difference to Gtk+ is that the Tcl/Tk engine was designed to support \n> > interpreted languages (mainly, of course, Tcl).\n> > \n> > Apart from that, I pretty much agree that RGtk2 could well be the \n> > toolkit of the future. It's main detraction at this point is that it is, \n> > at the tutorial level, mainly documented by demos and that it seems to \n> > be a bit sensitive to changes in the underlying toolkit and have a \n> > couple of rough edges in general. But it can certainly do amazing stuff; \n> > all it needs is a dedicated effort to take care of a number of little \n> > issues (esp. portability). That and an introductory document that covers \n> > the concepts involved.\n> > \n> > (It needs to be no secret that I have been approached about the \n> > possibility of a book on R/tcltk, and ended up resolving that there \n> > would certainly be a market, but of the 3 or 4 candidates to write it, \n> > probably none would want to. However, in due course, when the obvious \n> > author completes his academic obligations, a book on RGtk2 should be a \n> > very interesting prospect.)\n> > \n> >> RGtk2 also binds libglade, meaning that one can design a GUI graphically\n> >> using the Glade tool and display it using R. Glade may or may not be useful,\n> >> depending on the application. The Rattle tool seems to have used Glade\n> >> effectively, but I personally prefer to construct the interfaces\n> >> dynamically.\n> >>\n> >> Since GTK+ is object-oriented, RGtk2 is able to support the creation of new\n> >> widget classes that override the functionality of their parents. This is a\n> >> neat feature, but is rarely necessary.\n> >>\n> >> For graphics, RGtk2 binds several useful libraries, including Cairo (vector\n> >> graphics) and GdkPixbuf (image manipulation).\n> >>\n> >> You might also consider the gWidgets package. It is a convenient API for\n> >> creating simple GUIs in R. It abstracts away the underlying toolkit.\n> >> Implementations exist using RGtk2 and rJava (swing). You could always start\n> >> using a GUI this way and then convert to RGtk2 or some other toolkit later\n> >> if necessary.\n> >>\n> >> I hope this helps,\n> >> Michael\n> >>\n> >> On 7/28/07, morphwj at comcast.net <morphwj at comcast.net> wrote:\n> >>   \n> >>> Why use R tcltk/tcltk2 instead of R GTk2, or why use R GTk2 instead of R\n> >>> tcltk/tcltk2?\n> >>> Bill Morphet\n> >>>         [[alternative HTML version deleted]]\n> >>>\n> >>> _______________________________________________\n> >>> R-SIG-GUI mailing list\n> >>> R-SIG-GUI at stat.math.ethz.ch\n> >>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> >>>\n> >>>     \n> >> \t[[alternative HTML version deleted]]\n> >>\n> >> _______________________________________________\n> >> R-SIG-GUI mailing list\n> >> R-SIG-GUI at stat.math.ethz.ch\n> >> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> >>\n> > \n> > _______________________________________________\n> > R-SIG-GUI mailing list\n> > R-SIG-GUI at stat.math.ethz.ch\n> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> >\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n-- \nDan Putler\nSauder School of Business\nUniversity of British Columbia",
+      "body_snippet": "Hi Phillipe,\n\nAn excellent and well argued post. One thing I'm curious about is where\ndoes the RwxWidgets package (http://www.omegahat.org/RwxWidgets) fit\ninto the mix? This seems to potentially deal ",
+      "thread_id": "thread-e37cf128fbd2",
+      "thread_depth": 1,
+      "month": "2007-08"
+    },
+    {
+      "id": "msg-00985b2d3ed6",
+      "message_id": "<509e0620708011312i65c4d43cob95b3ed63e440e53@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2007-08-01T15:12:08-05:00",
+      "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "subject_clean": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "in_reply_to": "<46B05BCE.8080000@sciviews.org>",
+      "references": [
+        "<072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>",
+        "<509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>",
+        "<46AF5B35.30404@biostat.ku.dk>",
+        "<46B05BCE.8080000@sciviews.org>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070801/661795cb/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070801/661795cb/attachment.pl",
+      "thread_id": "thread-e37cf128fbd2",
+      "thread_depth": 1,
+      "month": "2007-08"
+    },
+    {
+      "id": "msg-17d425752f9b",
+      "message_id": "<loom.20070803T230130-982@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2007-08-03T21:04:10Z",
+      "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "subject_clean": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "in_reply_to": null,
+      "references": [
+        "<072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>",
+        "<509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>",
+        "<46AF5B35.30404@biostat.ku.dk>",
+        "<46B05BCE.8080000@sciviews.org>",
+        "<509e0620708011312i65c4d43cob95b3ed63e440e53@mail.gmail.com>"
+      ],
+      "body_plain": "Michael Lawrence <lawremi <at> iastate.edu> writes:\n\n> \n> On 8/1/07, Philippe Grosjean <phgrosjean <at> sciviews.org> wrote:\n> >\n> > Just my 0.02$ added to this discussion: tcl/tk could be automatically\n> > installed under Windows (if the option is checked), and tile is readily\n> > usable once the tcltk2 package is installed. Also, using tcltk2, you\n> > have more Windows look&feel than with Gtk2.\n> \n> This is a little debatable.  I've never used tcl/tk on Windows to compare,\n> but the GTK+ windows theme engine is fairly mature and constantly improving.\n> There are some differences, eg with the file chooser, but in my experience\n> this has not caused any trouble. The fact that tcl/tk is included with\n> windows is a valid point, yet a simple R script can download GTK+ and\n> install it. Most users of my software are non-technical biologists, and they\n> have had success with this method.\n> \n> There are also a couple of\n> > other advantages of tcltk on specific tasks, mainly thanks to nice\n> > aspects in the underlying tcl language readily available. So, under\n> > Windows, tcltk (+ tcltk2) solution is much more easily in operation on\n> > any users computer than a solution based on RGtk2.\n> >\n> > For Linux, Gtk2 is certainly at home, although there is special tile\n> > version in development to support Qt widgets, I think.\n> >\n> > For MacOS X neither provide the appropriate look&feel. There a special\n> > Tcl/Tk distro installed on all MacOS X (at least on Tiger), but the\n> > regular R distribution with the AQUA GUI cannot use it. It is possible\n> > to compile R to use it and then, you got an excellent tcltk + tcltk2\n> > solution with MacOS X look&feel that is almost perfect. However, this is\n> > something only for experienced users, while most GUIs target beginners.\n> \n> There is a native Mac port of GTK+ based on Aqua that is under active\n> development and should be released soon.\n> \n> For the rest, I pretty much agree that Gtk2 is much more powerful, but I\n> > am not sure we need all its power for 99% of the simple GUIs stuff\n> > required on top of R.\n> >\n> > We should end the widgets war, and start looking at gWidgets by John\n> > Vezani, which intend to provide an interface to GUI widgets from R\n> > independent from a particular implementation. At the moment, there is\n> > only an implementation of gWidgets interface for RGtk2 (and one for\n> > Java?),... but an implementation for tcltk (/tcltk2) should not be too\n> > difficult to do. I may work on it once I have some time, that certainly\n> > not in the near future!!!\n> \n> I agree that gWidgets is the way to go for simple to even complex GUIs.\n> Besides portability, its API has been designed from the ground up for R.\n> John just told me that he has the tcltk port mostly finished.\n> \n\n\nAs Michael points out, I recently posted gWidgetstcltk to CRAN. This allows much\nof gWidgets to be used with tcl/tk. I didn't want to rely on any outside tcl/tk\nlibraries for this. Mostly I was lazy, but I also wanted it to be used without\nany fussing by end users. Anyways, if any one tries it out, I would be\ninterested in comments. There are some things about layout that I obviously\nhaven't learn well enough yet and other bugs to find.\n\nIf the original poster is willing to install some software, this might show a\nfew differences between the two toolkits:\n\n\neg = function() {\n  win = gwindow(\"example\")\n  g = ggroup(horizontal=FALSE, cont=win)\n  gbutton(\"Look\", cont=g)\n  glabel(\"Ma.\", cont=g)\n  glabel(\"I\", editable=TRUE, cont=g)\n  gdroplist(c(\"just\",\"JUST\"), cont=g)\n  gradio(c(\"Made\",\"a\"), cont=g)\n  gcheckboxgroup(c(\"G\",\"U\",\"I\",\".\"), cont=g)\n}\n\noptions(\"guiToolkit\"=\"tcltk\")\neg()\noptions(\"guiToolkit\"=\"RGtk2\")\neg()\n\n(And wouldn't you know it I found a bug in glabel under tcltk with the\neditable=TRUE part.)\n\n--John\n\n--- snip ---",
+      "body_snippet": "Michael Lawrence <lawremi <at> iastate.edu> writes:\n\n> \n> On 8/1/07, Philippe Grosjean <phgrosjean <at> sciviews.org> wrote:\n> >\n> > Just my 0.02$ added to this discussion: tcl/tk could be automatical",
+      "thread_id": "thread-e37cf128fbd2",
+      "thread_depth": 2,
+      "month": "2007-08"
+    },
+    {
+      "id": "msg-1c3f59f35cc0",
+      "message_id": "<5ca5b4270708031711g11ebeb84m8da01db98f8cb942@mail.gmail.com>",
+      "from_name": "William J. West",
+      "from_email_hash": "dc95811486fb6919d188b8a30496fe46725aee8e782b68fb4f7e2f8ebb150094",
+      "date": "2007-08-03T20:11:09-04:00",
+      "subject": "[R-gui] Is it possible to run a RGtk2 script in batch mode?",
+      "subject_clean": "[R-gui] Is it possible to run a RGtk2 script in batch mode?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I have built a small interface to a function using gWidgets. I am\nusing Windows XP.  Is it possible to run this in batch mode?  Ideally,\nthe users of the script would be able to run it from a desktop\nshortcut.\nBill",
+      "body_snippet": "I have built a small interface to a function using gWidgets. I am\nusing Windows XP.  Is it possible to run this in batch mode?  Ideally,\nthe users of the script would be able to run it from a desktop\n",
+      "thread_id": "thread-1c3f59f35cc0",
+      "thread_depth": 0,
+      "month": "2007-08"
+    },
+    {
+      "id": "msg-b580aa6186b8",
+      "message_id": "<509e0620708032004t1e65c680m2ff2252b726a0a27@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2007-08-03T22:04:53-05:00",
+      "subject": "[R-gui] Is it possible to run a RGtk2 script in batch mode?",
+      "subject_clean": "[R-gui] Is it possible to run a RGtk2 script in batch mode?",
+      "in_reply_to": "<5ca5b4270708031711g11ebeb84m8da01db98f8cb942@mail.gmail.com>",
+      "references": [
+        "<5ca5b4270708031711g11ebeb84m8da01db98f8cb942@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070803/c13750f6/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070803/c13750f6/attachment.pl",
+      "thread_id": "thread-1c3f59f35cc0",
+      "thread_depth": 1,
+      "month": "2007-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-e37cf128fbd2",
+      "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "message_count": 4,
+      "participants": [
+        "Dan Putler",
+        "Michael Lawrence",
+        "Philippe Grosjean",
+        "john verzani"
+      ],
+      "started": "2007-08-01T12:09:18+02:00",
+      "last_reply": "2007-08-03T21:04:10+00:00",
+      "root_message_id": "msg-e37cf128fbd2"
+    },
+    {
+      "id": "thread-1c3f59f35cc0",
+      "subject": "[R-gui] Is it possible to run a RGtk2 script in batch mode?",
+      "message_count": 2,
+      "participants": [
+        "Michael Lawrence",
+        "William J. West"
+      ],
+      "started": "2007-08-03T20:11:09-04:00",
+      "last_reply": "2007-08-03T22:04:53-05:00",
+      "root_message_id": "msg-1c3f59f35cc0"
+    }
+  ]
+}

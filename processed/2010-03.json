@@ -1,0 +1,200 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2010-03",
+  "messages": [
+    {
+      "id": "msg-9fc556205aad",
+      "message_id": "<20100302184228.aa8924c5d28ca71e2a043bb294e795eb.893346b4ea.wbe@email.secureserver.net>",
+      "from_name": "sue at xlsolutions-corp.com",
+      "from_email_hash": "83b03cf4c7189b037a71645b6a2b812e376c4a3259e7206d8e5d6f136948677b",
+      "date": "2010-03-02T18:42:28-07:00",
+      "subject": "[R-gui] R / R+ Webminar *** R-PLUS Rocks: Interactive, Comprehensible and Highly Visual. March 12th @ 12PM ET (USA Time)",
+      "subject_clean": "[R-gui] R / R+ Webminar *** R-PLUS Rocks: Interactive, Comprehensible and Highly Visual. March 12th @ 12PM ET (USA Time)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Welcome to R/ R-PLUS Webminar Series. R-PLUS 3.3 Rocks: Interactive,\nComprehensible and Highly Visual. \nhttp://www.xlsolutions-corp.com/webminar.asp. \n\nMarch 12th @ 12PM ET (USA Time)\n\nIncrease your productivity with R-PLUS 3.3 by attending the webminar and\nlearning how to:\n\n1. Interactively clicking your way through your favorite statisticals\nmodels without the need of programming.\n2. Use state-of-the-art R-PLUS tools to produce Publication Quality\nGraphics and Reports at a click\n3. Edit your Graphics\n4. Take advantage of the new R-PLUS 64-bit on windows for larger data\nsets\n5. For SAS users, our new app R+SAS2R lets you see at a click exactly\nwhich R function (syntax included) is equivalent to a given SAS Proc!\n\nCome learn about R-PLUS 3.3 new cool features and suggest improvements.\n\nSpace is limited. Reserve your webminar seat now at:\nhttp://www.xlsolutions-corp.com/webminar.asp. \nYou can also email Ms Jennifer McDonald ( jen at  xlsolutions-corp.com)\nto register or request the free webminar video.\n\nOur March-April R training courses are available at:  \nwww.xlsolutions-corp.com/rcourses\n\n Regards -\n\n Sue Turner\n Senior Account Manager\n XLSolutions Corporation\n North American Division\n 1700 7th Ave\n Suite 2100\n Seattle, WA 98101\n Phone: 206-686-1578\n Email: sue at xlsolutions-corp.com\n web: www.xlsolutions-corp.com/rcourses",
+      "body_snippet": "Welcome to R/ R-PLUS Webminar Series. R-PLUS 3.3 Rocks: Interactive,\nComprehensible and Highly Visual. \nhttp://www.xlsolutions-corp.com/webminar.asp. \n\nMarch 12th @ 12PM ET (USA Time)\n\nIncrease your p",
+      "thread_id": "thread-9fc556205aad",
+      "thread_depth": 0,
+      "month": "2010-03"
+    },
+    {
+      "id": "msg-9aeceed1326d",
+      "message_id": "<24019E41-3EE3-4951-994A-FDE29489EDED@stat.ucla.edu>",
+      "from_name": "ian fellows",
+      "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
+      "date": "2010-03-14T23:55:20-07:00",
+      "subject": "[R-gui] Deducer 0.2-3 and DeducerPlugInExample released",
+      "subject_clean": "[R-gui] Deducer 0.2-3 and DeducerPlugInExample released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I would like to announce the release of Deducer 0.2-3 and the new  \npackage DeducerPlugInExample.\n\n-----------------------------------\n\nDeducer is designed to be a free easy to use alternative to  \nproprietary data analysis software such as SPSS, JMP, and Minitab. It  \nhas a menu system to do common data manipulation and analysis tasks,  \nand an excel-like spreadsheet in which to view and edit data frames.\n\nThis new version of Deducer includes an easy to use API for creating  \nnew GUI dialogs for statistical analysis. These dialogs can be  \ncreated using either Java, or purely in R. Documentation, which is  \ncurrently under construction, is available at: http://www.deducer.org/ \npmwiki/pmwiki.php?n=Main.Development\n\n-----------------------------------\n\nDeducerPlugInExample is a simple plug-in package illustrating dialog  \ncreation both from within R and from Java. It aims to be a good  \nstarting place for future plug-in projects.\n\n-----------------------------------\n\nI am very interested in community feedback regarding the API and  \nDeducer in general. If you have a suggestion or question please feel  \nfree to join the discussion group at http://groups.google.com/group/ \ndeducer\n\nAll the best,\nIan Fellows",
+      "body_snippet": "I would like to announce the release of Deducer 0.2-3 and the new  \npackage DeducerPlugInExample.\n\n-----------------------------------\n\nDeducer is designed to be a free easy to use alternative to  \npr",
+      "thread_id": "thread-9aeceed1326d",
+      "thread_depth": 0,
+      "month": "2010-03"
+    },
+    {
+      "id": "msg-35c0832f3164",
+      "message_id": "<B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>",
+      "from_name": "Mark D. Habana",
+      "from_email_hash": "60f9c76b4cc6e7a6e9cb83da9dfd828c8851398354691ca0c9a6aa2df21a5cdd",
+      "date": "2010-03-17T11:51:37-06:00",
+      "subject": "[R-gui] \"Print\" Widget",
+      "subject_clean": "[R-gui] \"Print\" Widget",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/8c289130/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/8c289130/attachment.pl>",
+      "thread_id": "thread-35c0832f3164",
+      "thread_depth": 0,
+      "month": "2010-03"
+    },
+    {
+      "id": "msg-5d0d036c3107",
+      "message_id": "<B0E6AF197EEBA9488CA99E67DB73B5EA1668631D@denexmb01.venocoinc.local>",
+      "from_name": "Mark D. Habana",
+      "from_email_hash": "60f9c76b4cc6e7a6e9cb83da9dfd828c8851398354691ca0c9a6aa2df21a5cdd",
+      "date": "2010-03-17T11:56:03-06:00",
+      "subject": "[R-gui] \"Print\" Widget",
+      "subject_clean": "[R-gui] \"Print\" Widget",
+      "in_reply_to": "<B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>",
+      "references": [
+        "<B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/d0c0f88a/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/d0c0f88a/attachment.pl>",
+      "thread_id": "thread-35c0832f3164",
+      "thread_depth": 1,
+      "month": "2010-03"
+    },
+    {
+      "id": "msg-366705a1d749",
+      "message_id": "<89b6b8c91003202132y73169196td26ed5cf020aaea7@mail.gmail.com>",
+      "from_name": "Yihui Xie",
+      "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
+      "date": "2010-03-20T23:32:17-05:00",
+      "subject": "[R-gui] Font specification of gtext() in gWidgets",
+      "subject_clean": "[R-gui] Font specification of gtext() in gWidgets",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\nIt seems that we can only specify fonts for the selected texts in\ngtext() (by font()<-). Is there any way to specify fonts for all texts\nin the text widget without selecting texts? Thanks!\n\nRegards,\nYihui\n--\nYihui Xie <xieyihui at gmail.com>\nPhone: 515-294-6609 Web: http://yihui.name\nDepartment of Statistics, Iowa State University\n3211 Snedecor Hall, Ames, IA",
+      "body_snippet": "Hi all,\n\nIt seems that we can only specify fonts for the selected texts in\ngtext() (by font()<-). Is there any way to specify fonts for all texts\nin the text widget without selecting texts? Thanks!\n\nR",
+      "thread_id": "thread-366705a1d749",
+      "thread_depth": 0,
+      "month": "2010-03"
+    },
+    {
+      "id": "msg-391d5ea02417",
+      "message_id": "<loom.20100322T033400-415@post.gmane.org>",
+      "from_name": "j verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-03-22T03:01:49Z",
+      "subject": "[R-gui] Font specification of gtext() in gWidgets",
+      "subject_clean": "[R-gui] Font specification of gtext() in gWidgets",
+      "in_reply_to": null,
+      "references": [
+        "<89b6b8c91003202132y73169196td26ed5cf020aaea7@mail.gmail.com>"
+      ],
+      "body_plain": "Yihui Xie <xie <at> yihui.name> writes:\n\n> \n> Hi all,\n> \n> It seems that we can only specify fonts for the selected texts in\n> gtext() (by font()<-). Is there any way to specify fonts for all texts\n> in the text widget without selecting texts? Thanks!\n> \n\n\nWhen you add text, you should also be able to add font attributes as in:\n\n add(g,\"mono blue large\", font.attr=c(\n   style=\"monospace\", \n   color=\"blue\", \n   size=\"x-large\"))\n\nI should have a means to set the text properties for the whole buffer though.\n\n--John\n\n\n> Regards,\n> Yihui\n> --\n> Yihui Xie <xieyihui <at> gmail.com>\n> Phone: 515-294-6609 Web: http://yihui.name\n> Department of Statistics, Iowa State University\n> 3211 Snedecor Hall, Ames, IA\n>",
+      "body_snippet": "Yihui Xie <xie <at> yihui.name> writes:\n\n> \n> Hi all,\n> \n> It seems that we can only specify fonts for the selected texts in\n> gtext() (by font()<-). Is there any way to specify fonts for all texts\n> ",
+      "thread_id": "thread-366705a1d749",
+      "thread_depth": 1,
+      "month": "2010-03"
+    },
+    {
+      "id": "msg-3cf13d2a6bed",
+      "message_id": "<89b6b8c91003281408w7ac44379ia17a782a833c6665@mail.gmail.com>",
+      "from_name": "Yihui Xie",
+      "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
+      "date": "2010-03-28T16:08:26-05:00",
+      "subject": "[R-gui] ghelp() and ghelpbrowser() under R 2.10.1",
+      "subject_clean": "[R-gui] ghelp() and ghelpbrowser() under R 2.10.1",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\nI'm wondering if ghelp() really works under R 2.10.1. I tried it under\nWindows but it does not work...\n\n> library(gWidgets)\n> ghelpbrowser()\nSelect a GUI toolkit\n\n1: gWidgetsRGtk2\n2: gWidgetsrJava\n3: gWidgetstcltk\n4: gWidgetsWWW\n\nSelection: 1\nLoading required package: gWidgetsRGtk2\nguiWidget of type: gHelpbrowserRGtk for toolkit: guiWidgetsToolkitRGtk2\nError in gzfile(file, \"r\") : cannot open the connection\nIn addition: Warning message:\nIn gzfile(file, \"r\") :\n  cannot open compressed file '', probable reason 'No such file or directory'\n> traceback()\n5: gzfile(file, \"r\")\n4: read.dcf(system.file(\"CONTENTS\", package = package))\n3: getContentsOfPackage(package)\n2: handler(...)\n1: function (...)\n   {\n       val <- handler(...)\n       if (!is.logical(val))\n           return(TRUE)\n       else return(val)\n   }(list(obj = <S4 object of class \"gGridRGtk\">), <pointer: 0x026dd248>,\n       <pointer: 0x02781fd8>, <pointer: 0x01ae3940>)\n\n> obj <- ghelp(container=TRUE)\n>        add(obj,\"base:::mean\")\nError in file(con, \"r\") : cannot open the connection\nIn addition: Warning message:\nIn file(con, \"r\") :\n  cannot open file 'C:/PROGRA~1/R/library/base/help/mean': No such\nfile or directory\n\n> sessionInfo()\nR version 2.10.1 (2009-12-14)\ni386-pc-mingw32\n\nlocale:\n[1] LC_COLLATE=Chinese_People's Republic of China.936\nLC_CTYPE=Chinese_People's Republic of China.936\n[3] LC_MONETARY=Chinese_People's Republic of China.936 LC_NUMERIC=C\n[5] LC_TIME=Chinese_People's Republic of China.936\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base\n\nother attached packages:\n[1] gWidgetsRGtk2_0.0-64 gWidgets_0.0-40      animation_1.1-2\nMASS_7.3-5\n\nloaded via a namespace (and not attached):\n[1] RGtk2_2.12.18 tools_2.10.1\n\nRegards,\nYihui\n--\nYihui Xie <xieyihui at gmail.com>\nPhone: 515-294-6609 Web: http://yihui.name\nDepartment of Statistics, Iowa State University\n3211 Snedecor Hall, Ames, IA",
+      "body_snippet": "Hi all,\n\nI'm wondering if ghelp() really works under R 2.10.1. I tried it under\nWindows but it does not work...\n\n> library(gWidgets)\n> ghelpbrowser()\nSelect a GUI toolkit\n\n1: gWidgetsRGtk2\n2: gWidgets",
+      "thread_id": "thread-3cf13d2a6bed",
+      "thread_depth": 0,
+      "month": "2010-03"
+    },
+    {
+      "id": "msg-2c3229bf6759",
+      "message_id": "<loom.20100329T022447-843@post.gmane.org>",
+      "from_name": "j verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-03-29T00:28:50Z",
+      "subject": "[R-gui] ghelp() and ghelpbrowser() under R 2.10.1",
+      "subject_clean": "[R-gui] ghelp() and ghelpbrowser() under R 2.10.1",
+      "in_reply_to": null,
+      "references": [
+        "<89b6b8c91003281408w7ac44379ia17a782a833c6665@mail.gmail.com>"
+      ],
+      "body_plain": "Yihui Xie <xie <at> yihui.name> writes:\n\n> \n> Hi all,\n> \n> I'm wondering if ghelp() really works under R 2.10.1. I tried it under\n> Windows but it does not work...\n> \n> > library(gWidgets)\n> > ghelpbrowser()\n> Select a GUI toolkit\n> \n> 1: gWidgetsRGtk2\n> 2: gWidgetsrJava\n> 3: gWidgetstcltk\n> 4: gWidgetsWWW\n> \n\nI think I need to update ghelp to reflect the changes to the help system\nintroduced by the dynamic help pages. (It may never have worked well with\nwindows.) I noticed that index.search is now soon to be deprecated -- and ghelp\nrelied on that. In the short term -- and maybe best for the long term -- I'd\ndirect help pages to those displayed in the browser.\n\n--John",
+      "body_snippet": "Yihui Xie <xie <at> yihui.name> writes:\n\n> \n> Hi all,\n> \n> I'm wondering if ghelp() really works under R 2.10.1. I tried it under\n> Windows but it does not work...\n> \n> > library(gWidgets)\n> > ghelpbr",
+      "thread_id": "thread-3cf13d2a6bed",
+      "thread_depth": 1,
+      "month": "2010-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-9fc556205aad",
+      "subject": "[R-gui] R / R+ Webminar *** R-PLUS Rocks: Interactive, Comprehensible and Highly Visual. March 12th @ 12PM ET (USA Time)",
+      "message_count": 1,
+      "participants": [
+        "sue at xlsolutions-corp.com"
+      ],
+      "started": "2010-03-02T18:42:28-07:00",
+      "last_reply": "2010-03-02T18:42:28-07:00",
+      "root_message_id": "msg-9fc556205aad"
+    },
+    {
+      "id": "thread-9aeceed1326d",
+      "subject": "[R-gui] Deducer 0.2-3 and DeducerPlugInExample released",
+      "message_count": 1,
+      "participants": [
+        "ian fellows"
+      ],
+      "started": "2010-03-14T23:55:20-07:00",
+      "last_reply": "2010-03-14T23:55:20-07:00",
+      "root_message_id": "msg-9aeceed1326d"
+    },
+    {
+      "id": "thread-35c0832f3164",
+      "subject": "[R-gui] \"Print\" Widget",
+      "message_count": 2,
+      "participants": [
+        "Mark D. Habana"
+      ],
+      "started": "2010-03-17T11:51:37-06:00",
+      "last_reply": "2010-03-17T11:56:03-06:00",
+      "root_message_id": "msg-35c0832f3164"
+    },
+    {
+      "id": "thread-366705a1d749",
+      "subject": "[R-gui] Font specification of gtext() in gWidgets",
+      "message_count": 2,
+      "participants": [
+        "Yihui Xie",
+        "j verzani"
+      ],
+      "started": "2010-03-20T23:32:17-05:00",
+      "last_reply": "2010-03-22T03:01:49+00:00",
+      "root_message_id": "msg-366705a1d749"
+    },
+    {
+      "id": "thread-3cf13d2a6bed",
+      "subject": "[R-gui] ghelp() and ghelpbrowser() under R 2.10.1",
+      "message_count": 2,
+      "participants": [
+        "Yihui Xie",
+        "j verzani"
+      ],
+      "started": "2010-03-28T16:08:26-05:00",
+      "last_reply": "2010-03-29T00:28:50+00:00",
+      "root_message_id": "msg-3cf13d2a6bed"
+    }
+  ]
+}

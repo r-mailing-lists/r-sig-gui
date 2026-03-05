@@ -1,0 +1,123 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2010-08",
+  "messages": [
+    {
+      "id": "msg-de8e4384c90f",
+      "message_id": "<1282570811.4c727a3b8dd90@webmail.dnet.it>",
+      "from_name": "Thomas Tschager",
+      "from_email_hash": "8111d7fc8cb8dcbea804e069e3dd14299c559b4be6deef3ffcdc846b05d27b1d",
+      "date": "2010-08-23T15:40:11+02:00",
+      "subject": "[R-gui] ttkentry background doesnt work",
+      "subject_clean": "[R-gui] ttkentry background doesnt work",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI'm trying to change the background color of a ttkentry-object. With\ntkentry-objects it works fine:\n\n  library(tcltk)\n  tt <- tktoplevel()\n  test1 <- tkentry(tt)\n  test2 <- ttkentry(tt)\n  tkgrid(test1,test2)\n  tkconfigure(test1, background=\"yellow\") #working\n  tkconfigure(test2, background=\"yellow\") #not working\n\nI used different styles and tried suggestions from other mailing lists\n(http://coding.derkeiler.com/Archive/Tcl/comp.lang.tcl/2006-11/msg00528.html),\nbut nothing worked for me... (I'm using WinXP)\n\nThanks,\nThomas Tschager\n\n\n\n----------------------------------------------------\nThis mail has been sent using Alpikom webmail system\nhttp://www.alpikom.it",
+      "body_snippet": "Hello,\n\nI'm trying to change the background color of a ttkentry-object. With\ntkentry-objects it works fine:\n\n  library(tcltk)\n  tt <- tktoplevel()\n  test1 <- tkentry(tt)\n  test2 <- ttkentry(tt)\n  tkgr",
+      "thread_id": "thread-de8e4384c90f",
+      "thread_depth": 0,
+      "month": "2010-08"
+    },
+    {
+      "id": "msg-b43dfefa31dc",
+      "message_id": "<loom.20100824T165754-331@post.gmane.org>",
+      "from_name": "jverzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-08-24T14:59:50Z",
+      "subject": "[R-gui] ttkentry background doesnt work",
+      "subject_clean": "[R-gui] ttkentry background doesnt work",
+      "in_reply_to": null,
+      "references": [
+        "<1282570811.4c727a3b8dd90@webmail.dnet.it>"
+      ],
+      "body_plain": "Thomas Tschager <thomastschager <at> dnet.it> writes:\n\n> \n> Hello,\n> \n> I'm trying to change the background color of a ttkentry-object. With\n> tkentry-objects it works fine:\n> \n>   library(tcltk)\n>   tt <- tktoplevel()\n>   test1 <- tkentry(tt)\n>   test2 <- ttkentry(tt)\n>   tkgrid(test1,test2)\n>   tkconfigure(test1, background=\"yellow\") #working\n>   tkconfigure(test2, background=\"yellow\") #not working\n> \n\n\nYou can use styles. Here is an example:\n\nw <- tktoplevel()\n.Tcl(paste(\"ttk::style layout styled.entry {\",\n           \"  Entry.field -sticky nswe -border 0 -children {\",\n           \"    Entry.padding -sticky nswe -children {\",\n           \"      Entry.textarea -sticky nswe\",\n           \"      }\",\n           \"   }\",\n           \"}\",\n           sep=\"\\n\"))\ntcl(\"ttk::style\", \"configure\",\"styled.entry\", background=\"#b2b2b2\")\n\ne <- ttkentry(w,  style=\"styled.entry\")\n\ntkpack(e)\n\n\n\n\n> I used different styles and tried suggestions from other mailing lists\n> (http://coding.derkeiler.com/Archive/Tcl/comp.lang.tcl/2006-11/msg00528.html),\n> but nothing worked for me... (I'm using WinXP)\n> \n> Thanks,\n> Thomas Tschager\n> \n> ----------------------------------------------------\n> This mail has been sent using Alpikom webmail system\n> http://www.alpikom.it\n>",
+      "body_snippet": "Thomas Tschager <thomastschager <at> dnet.it> writes:\n\n> \n> Hello,\n> \n> I'm trying to change the background color of a ttkentry-object. With\n> tkentry-objects it works fine:\n> \n>   library(tcltk)\n>   ",
+      "thread_id": "thread-de8e4384c90f",
+      "thread_depth": 1,
+      "month": "2010-08"
+    },
+    {
+      "id": "msg-81eb0a199fe6",
+      "message_id": "<4C7401AE.6030002@gmail.com>",
+      "from_name": "Peter Dalgaard",
+      "from_email_hash": "d2573f0c0a474184a9d96c815fc6bf37ff7c6392082069d810139c562d5a6f71",
+      "date": "2010-08-24T19:30:22+02:00",
+      "subject": "[R-gui] ttkentry background doesnt work",
+      "subject_clean": "[R-gui] ttkentry background doesnt work",
+      "in_reply_to": "<loom.20100824T165754-331@post.gmane.org>",
+      "references": [
+        "<1282570811.4c727a3b8dd90@webmail.dnet.it>",
+        "<loom.20100824T165754-331@post.gmane.org>"
+      ],
+      "body_plain": "On 08/24/2010 04:59 PM, jverzani wrote:\n\nw <- tktoplevel()\n.Tcl(paste(\"ttk::style layout styled.entry {\",\n           \"  Entry.field -sticky nswe -border 0 -children {\",\n           \"    Entry.padding -sticky nswe -children {\",\n           \"      Entry.textarea -sticky nswe\",\n           \"      }\",\n           \"   }\",\n           \"}\",\n           sep=\"\\n\"))\ntcl(\"ttk::style\", \"configure\",\"styled.entry\", background=\"#b2b2b2\")\n\ne <- ttkentry(w,  style=\"styled.entry\")\n\ntkpack(e)\n\n----\n\n\nThanks John,\n\nThe whole thing indicates some rather glaring gaps in the interface.\nPasting large stretches of Tcl code together like that _should_ be\nunnecessary, but for now, that's probably what you have to do.\n\nWhat is probably needed is coercion between R list-like structures and\nTcl lists. With that in place, I'd conjecture that we could write\nsomething like\n\n\nttkstyle.layout(\"mystyle\",\n  list(\"Entry.field\", sticky=\"nswe\", border=0,\n       children=list(\"Entry.padding\", sticky=\"nswe\",\n           children=list(\"Entry.textarea\", sticky=\"nswe))))\n\nor maybe\n\nttkstyle.layout(\"mystyle\", expression(\n Entry.field(sticky=\"nswe\", children=\n Entry.padding(sticky=\"nswe\", children=\n Entry.textarea(sticky=\"nswe\"))))\n\n...if you catch my drift. The exact design probably requires a bit more\nthought.\n\n-- \nPeter Dalgaard\nCenter for Statistics, Copenhagen Business School\nPhone: (+45)38153501\nEmail: pd.mes at cbs.dk  Priv: PDalgd at gmail.com",
+      "body_snippet": "On 08/24/2010 04:59 PM, jverzani wrote:\n\nw <- tktoplevel()\n.Tcl(paste(\"ttk::style layout styled.entry {\",\n           \"  Entry.field -sticky nswe -border 0 -children {\",\n           \"    Entry.padding -",
+      "thread_id": "thread-de8e4384c90f",
+      "thread_depth": 2,
+      "month": "2010-08"
+    },
+    {
+      "id": "msg-dd0c2aeaa217",
+      "message_id": "<AANLkTinFWu1-63=8tMsf527eADPfq0gZXLOn4DRC_d5k@mail.gmail.com>",
+      "from_name": "Gabor Grothendieck",
+      "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
+      "date": "2010-08-24T20:31:34-04:00",
+      "subject": "[R-gui] ttkentry background doesnt work",
+      "subject_clean": "[R-gui] ttkentry background doesnt work",
+      "in_reply_to": "<4C7401AE.6030002@gmail.com>",
+      "references": [
+        "<1282570811.4c727a3b8dd90@webmail.dnet.it>",
+        "<loom.20100824T165754-331@post.gmane.org>",
+        "<4C7401AE.6030002@gmail.com>"
+      ],
+      "body_plain": "On Tue, Aug 24, 2010 at 1:30 PM, Peter Dalgaard <pdalgd at gmail.com> wrote:\n> On 08/24/2010 04:59 PM, jverzani wrote:\n>\n> w <- tktoplevel()\n> .Tcl(paste(\"ttk::style layout styled.entry {\",\n> ? ? ? ? ? \" ?Entry.field -sticky nswe -border 0 -children {\",\n> ? ? ? ? ? \" ? ?Entry.padding -sticky nswe -children {\",\n> ? ? ? ? ? \" ? ? ?Entry.textarea -sticky nswe\",\n> ? ? ? ? ? \" ? ? ?}\",\n> ? ? ? ? ? \" ? }\",\n> ? ? ? ? ? \"}\",\n> ? ? ? ? ? sep=\"\\n\"))\n> tcl(\"ttk::style\", \"configure\",\"styled.entry\", background=\"#b2b2b2\")\n>\n> e <- ttkentry(w, ?style=\"styled.entry\")\n>\n> tkpack(e)\n>\n> The whole thing indicates some rather glaring gaps in the interface.\n> Pasting large stretches of Tcl code together like that _should_ be\n> unnecessary, but for now, that's probably what you have to do.\n\nYou can do this which does not use paste:\n\nw <- tktoplevel()\n.Tcl(\"ttk::style layout styled.entry {\n   Entry.field -sticky nswe -border 0 -children {\n      Entry.padding -sticky nswe -children {\n         Entry.textarea -sticky nswe\n      }\n    }\n  }\",\n sep=\"\\n\")\ntcl(\"ttk::style\", \"configure\",\"styled.entry\", background=\"#b2b2b2\")\n\ne <- ttkentry(w,  style=\"styled.entry\")\n\ntkpack(e)",
+      "body_snippet": "On Tue, Aug 24, 2010 at 1:30 PM, Peter Dalgaard <pdalgd at gmail.com> wrote:\n> On 08/24/2010 04:59 PM, jverzani wrote:\n>\n> w <- tktoplevel()\n> .Tcl(paste(\"ttk::style layout styled.entry {\",\n> ? ? ? ? ",
+      "thread_id": "thread-de8e4384c90f",
+      "thread_depth": 3,
+      "month": "2010-08"
+    },
+    {
+      "id": "msg-2766265ce8f1",
+      "message_id": "<1282833208.4c767b38b7bfb@webmail.dnet.it>",
+      "from_name": "Thomas Tschager",
+      "from_email_hash": "8111d7fc8cb8dcbea804e069e3dd14299c559b4be6deef3ffcdc846b05d27b1d",
+      "date": "2010-08-26T16:33:28+02:00",
+      "subject": "[R-gui] ttkentry background doesnt work",
+      "subject_clean": "[R-gui] ttkentry background doesnt work",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Thanks for your advices!\nThomas Tschager\n\nOn Tue, Aug 24, 2010 at 1:30 PM, Peter Dalgaard <pdalgd at gmail.com> wrote:\n> On 08/24/2010 04:59 PM, jverzani wrote:\n>\n> w <- tktoplevel()\n> .Tcl(paste(\"ttk::style layout styled.entry {\",\n>           \"  Entry.field -sticky nswe -border 0 -children {\",\n>           \"    Entry.padding -sticky nswe -children {\",\n>           \"      Entry.textarea -sticky nswe\",\n>           \"      }\",\n>           \"   }\",\n>           \"}\",\n>           sep=\"\\n\"))\n> tcl(\"ttk::style\", \"configure\",\"styled.entry\", background=\"#b2b2b2\")\n>\n> e <- ttkentry(w,  style=\"styled.entry\")\n>\n> tkpack(e)\n>\n> The whole thing indicates some rather glaring gaps in the interface.\n> Pasting large stretches of Tcl code together like that _should_ be\n> unnecessary, but for now, that's probably what you have to do.\n\nYou can do this which does not use paste:\n\nw <- tktoplevel()\n.Tcl(\"ttk::style layout styled.entry {\n   Entry.field -sticky nswe -border 0 -children {\n      Entry.padding -sticky nswe -children {\n         Entry.textarea -sticky nswe\n      }\n    }\n  }\",\n sep=\"\\n\")\ntcl(\"ttk::style\", \"configure\",\"styled.entry\", background=\"#b2b2b2\")\n\ne <- ttkentry(w,  style=\"styled.entry\")\n\ntkpack(e)\n\n\n\n----------------------------------------------------\nThis mail has been sent using Alpikom webmail system\nhttp://www.alpikom.it",
+      "body_snippet": "Thanks for your advices!\nThomas Tschager\n\nOn Tue, Aug 24, 2010 at 1:30 PM, Peter Dalgaard <pdalgd at gmail.com> wrote:\n> On 08/24/2010 04:59 PM, jverzani wrote:\n>\n> w <- tktoplevel()\n> .Tcl(paste(\"ttk",
+      "thread_id": "thread-2766265ce8f1",
+      "thread_depth": 0,
+      "month": "2010-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-de8e4384c90f",
+      "subject": "[R-gui] ttkentry background doesnt work",
+      "message_count": 4,
+      "participants": [
+        "Gabor Grothendieck",
+        "Peter Dalgaard",
+        "Thomas Tschager",
+        "jverzani"
+      ],
+      "started": "2010-08-23T15:40:11+02:00",
+      "last_reply": "2010-08-24T20:31:34-04:00",
+      "root_message_id": "msg-de8e4384c90f"
+    },
+    {
+      "id": "thread-2766265ce8f1",
+      "subject": "[R-gui] ttkentry background doesnt work",
+      "message_count": 1,
+      "participants": [
+        "Thomas Tschager"
+      ],
+      "started": "2010-08-26T16:33:28+02:00",
+      "last_reply": "2010-08-26T16:33:28+02:00",
+      "root_message_id": "msg-2766265ce8f1"
+    }
+  ]
+}

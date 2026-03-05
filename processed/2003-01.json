@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-01",
+  "messages": [
+    {
+      "id": "msg-93df76757728",
+      "message_id": "<EAB1A589-20D5-11D7-9038-000393BB6D36@stat.ucla.edu>",
+      "from_name": "Jan de Leeuw",
+      "from_email_hash": "59a1e3d24a4d17014651921c954560da2e7ad5132d0ea3d38e11e0c3e1dd9a92",
+      "date": "2003-01-05T09:48:36-08:00",
+      "subject": "[R-gui] Rpy in Pycrust/Pyshell",
+      "subject_clean": "[R-gui] Rpy in Pycrust/Pyshell",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "This refers to earlier emails about the MacPython-2.3 build (with\npyobjc, Rpy, wxPython) on http://gifi.stat.ucla.edu/pub\n\nIf you want to use Rpy (R from Python) in Pycrust or Pyshell (the\nPython GUI's that come with wxPython) then you have to recompile\nlibR.dylib by commenting out the two lines in src/main/dounzip.c\nthat use the variable unz_copyright (just put // at the beginning of the\nline). This solves the problem that unz_copyright is already\ndefined in the wxWindows dynamic libraries. Now Rpy loads fine\nand you can R away from Pycrust (including X11 plotting).\n\nSome of you may wonder why it is good to R from Python. The\nbrief answer is that you can also Python from Python -- i.e. you\ncan do many other things from the same GUI that you cannot do\nin R (Cocoa programming, wxWindows programming), and\nyou can also combine all this in Python scripts. And you\nbasically get a bunch of new GUI's for R for free: on OS X these are\nIDLE, PythonIDE, Pycrust/Pyshell, and the command-line\ninterfaces provided by python and pythonw.\n\n===\nJan de Leeuw; Professor and Chair, UCLA Department of Statistics;\nEditor: Journal of Multivariate Analysis, Journal of Statistical  \nSoftware\nUS mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554\nphone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu\nhomepage: http://gifi.stat.ucla.edu\n   \n------------------------------------------------------------------------ \n-------------------------\n           No matter where you go, there you are. --- Buckaroo Banzai\n                    http://gifi.stat.ucla.edu/sounds/nomatter.au\n   \n------------------------------------------------------------------------ \n-------------------------",
+      "body_snippet": "This refers to earlier emails about the MacPython-2.3 build (with\npyobjc, Rpy, wxPython) on http://gifi.stat.ucla.edu/pub\n\nIf you want to use Rpy (R from Python) in Pycrust or Pyshell (the\nPython GUI'",
+      "thread_id": "thread-93df76757728",
+      "thread_depth": 0,
+      "month": "2003-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-93df76757728",
+      "subject": "[R-gui] Rpy in Pycrust/Pyshell",
+      "message_count": 1,
+      "participants": [
+        "Jan de Leeuw"
+      ],
+      "started": "2003-01-05T09:48:36-08:00",
+      "last_reply": "2003-01-05T09:48:36-08:00",
+      "root_message_id": "msg-93df76757728"
+    }
+  ]
+}

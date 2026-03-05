@@ -1,0 +1,88 @@
+From SALAMERO at clinic.ub.es  Wed May  8 15:01:11 2013
+From: SALAMERO at clinic.ub.es (SALAMERO at clinic.ub.es)
+Date: Wed, 8 May 2013 13:01:11 +0000
+Subject: [R-gui] Tktable colours
+Message-ID: <F9C83CCA5A739048B168C5AFDF627A6B2B51791F@cscmlbe4.csc.es>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130508/25493558/attachment.pl>
+
+From pdalgd at gmail.com  Sat May 11 14:36:09 2013
+From: pdalgd at gmail.com (peter dalgaard)
+Date: Sat, 11 May 2013 14:36:09 +0200
+Subject: [R-gui] Tktable colours
+In-Reply-To: <F9C83CCA5A739048B168C5AFDF627A6B2B51791F@cscmlbe4.csc.es>
+References: <F9C83CCA5A739048B168C5AFDF627A6B2B51791F@cscmlbe4.csc.es>
+Message-ID: <68D81175-6283-4B7A-840A-EF2FD5DF7835@gmail.com>
+
+
+On May 8, 2013, at 15:01 , <SALAMERO at clinic.ub.es> <SALAMERO at clinic.ub.es> wrote:
+
+> Dear list,
+> 
+> Is some way to change the default font color when a cell is selected? By default the font turns to white, which is difficult to see against a pale background.
+
+You need to consult the help for the underlying Tk widget. Offhand, my guess would be something like tkconfigure(tbl, highlightcolor="red")
+-- 
+Peter Dalgaard, Professor,
+Center for Statistics, Copenhagen Business School
+Solbjerg Plads 3, 2000 Frederiksberg, Denmark
+Phone: (+45)38153501
+Email: pd.mes at cbs.dk  Priv: PDalgd at gmail.com
+
+
+From Chandra.Thames at frx.com  Tue May 14 17:13:59 2013
+From: Chandra.Thames at frx.com (Thames, Chandra)
+Date: Tue, 14 May 2013 15:13:59 +0000
+Subject: [R-gui] Creating a DataFrame object when you open a file
+Message-ID: <8DE1414EF7543642ADDDC14F7BAEB47B0CB534DC@SPMBMR006.frxntnyc.frx2.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/8a156cdf/attachment.pl>
+
+From lawrence.michael at gene.com  Tue May 14 22:28:56 2013
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Tue, 14 May 2013 13:28:56 -0700
+Subject: [R-gui] Creating a DataFrame object when you open a file
+In-Reply-To: <8DE1414EF7543642ADDDC14F7BAEB47B0CB534DC@SPMBMR006.frxntnyc.frx2.com>
+References: <8DE1414EF7543642ADDDC14F7BAEB47B0CB534DC@SPMBMR006.frxntnyc.frx2.com>
+Message-ID: <CAOQ5Nyc3opo4GGAkWA0c-dUC-POCYHEAh392J2MJtB37aCtAdg@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/ce50cffc/attachment.pl>
+
+From Chandra.Thames at frx.com  Tue May 14 23:10:57 2013
+From: Chandra.Thames at frx.com (Thames, Chandra)
+Date: Tue, 14 May 2013 21:10:57 +0000
+Subject: [R-gui] Creating a DataFrame object when you open a file
+Message-ID: <8DE1414EF7543642ADDDC14F7BAEB47B0CB53605@SPMBMR006.frxntnyc.frx2.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7b0147b1/attachment.pl>
+
+From lawrence.michael at gene.com  Tue May 14 23:21:10 2013
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Tue, 14 May 2013 14:21:10 -0700
+Subject: [R-gui] Creating a DataFrame object when you open a file
+In-Reply-To: <8DE1414EF7543642ADDDC14F7BAEB47B0CB53605@SPMBMR006.frxntnyc.frx2.com>
+References: <8DE1414EF7543642ADDDC14F7BAEB47B0CB53605@SPMBMR006.frxntnyc.frx2.com>
+Message-ID: <CAOQ5NyfBp7pR7tB=3D2VS53fOBM7XDfAd-GVqt1Xre6X0t7B-A@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7d01b817/attachment.pl>
+
+From Chandra.Thames at frx.com  Tue May 14 23:51:39 2013
+From: Chandra.Thames at frx.com (Thames, Chandra)
+Date: Tue, 14 May 2013 21:51:39 +0000
+Subject: [R-gui] Creating a DataFrame object when you open a file
+Message-ID: <8DE1414EF7543642ADDDC14F7BAEB47B0CB53642@SPMBMR006.frxntnyc.frx2.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/31878a77/attachment.pl>
+

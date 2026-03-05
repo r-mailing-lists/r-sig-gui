@@ -1,0 +1,414 @@
+From hanas at uw.edu  Sat Oct  9 00:51:57 2010
+From: hanas at uw.edu (Hana Sevcikova)
+Date: Fri, 08 Oct 2010 15:51:57 -0700
+Subject: [R-gui] Preventing gdf from adding rows and columns to a data frame
+Message-ID: <4CAFA08D.4010900@uw.edu>
+
+Hello everyone,
+
+Is it possible to restrict gdf (from gwidgets) in a way that it adds 
+neither rows nor columns (and possibly doesn't allow to change row and 
+column names)?
+I'd like a widget where the user can only edit the values of a data 
+frame, not change its dimensions. I really like gdf but the feature of 
+adding rows and columns would be quite confusing in my specific application.
+
+Thanks a lot,
+
+Hana
+
+
+From jverzani at gmail.com  Sat Oct  9 02:01:37 2010
+From: jverzani at gmail.com (jverzani)
+Date: Sat, 9 Oct 2010 00:01:37 +0000 (UTC)
+Subject: [R-gui] Preventing gdf from adding rows and columns to a data
+	frame
+References: <4CAFA08D.4010900@uw.edu>
+Message-ID: <loom.20101009T015828-314@post.gmane.org>
+
+Hana Sevcikova <hanas <at> uw.edu> writes:
+
+> 
+> Hello everyone,
+> 
+> Is it possible to restrict gdf (from gwidgets) in a way that it adds 
+> neither rows nor columns (and possibly doesn't allow to change row and 
+> column names)?
+> I'd like a widget where the user can only edit the values of a data 
+> frame, not change its dimensions. I really like gdf but the feature of 
+> adding rows and columns would be quite confusing in my specific application.
+> 
+> Thanks a lot,
+> 
+> Hana
+> 
+
+Dear Hana,
+
+Not really. However, you can get a start on what you want by modifying the
+following. It uses a nifty one liner by Michael Lawrence to add the cell
+renders. The model variable has the usual data frame methods to access the data.
+
+Hope this helps. --J
+
+
+library(RGtk2) ## need this
+library(gWidgets)
+options(guiToolkit="RGtk2")
+
+
+
+model <- rGtkDataFrame(mtcars)
+view <- gtkTreeView(model)
+## Michael Lawrence's trick to add cell renderer's
+mapply(view$insertColumnWithAttributes,  -1, colnames(model), 
+       list(gtkCellRendererText()), text = seq_len(ncol(model)) - 1)
+
+sw <- gtkScrolledWindow()
+sw$add(view)
+
+sapply(1:ncol(model), function(j) {
+  cr <- view$getColumn(j-1)$getCellRenderers()[[1]]
+  cr['editable'] <- TRUE
+  gSignalConnect(cr, "edited", 
+                 f=function(cr, path, newtext, user.data) {
+                   curRow <- as.numeric(path) + 1
+                   curCol <- user.data$column
+                   model <- user.data$model
+                   ## coerce newtext from character to desired type
+                   ## otherwise this coerces to character
+                   model[curRow, curCol] <- as.numeric(newtext)
+                 }, data=list(model=model, column=j))
+})
+
+## How to add within a gWidgets GUI
+w <- gwindow("test")
+g <- ggroup(cont=w)
+add(g, sw, expand=TRUE)
+
+
+From hanas at uw.edu  Sat Oct  9 22:49:18 2010
+From: hanas at uw.edu (Hana Sevcikova)
+Date: Sat, 09 Oct 2010 13:49:18 -0700
+Subject: [R-gui] Preventing gdf from adding rows and columns to a data
+ frame
+In-Reply-To: <loom.20101009T015828-314@post.gmane.org>
+References: <4CAFA08D.4010900@uw.edu> <loom.20101009T015828-314@post.gmane.org>
+Message-ID: <4CB0D54E.1080708@uw.edu>
+
+Thank you very much, John! That's what I need.
+
+Hana
+
+On 10/8/10 5:01 PM, jverzani wrote:
+> Hana Sevcikova<hanas<at>  uw.edu>  writes:
+>
+>    
+>> Hello everyone,
+>>
+>> Is it possible to restrict gdf (from gwidgets) in a way that it adds
+>> neither rows nor columns (and possibly doesn't allow to change row and
+>> column names)?
+>> I'd like a widget where the user can only edit the values of a data
+>> frame, not change its dimensions. I really like gdf but the feature of
+>> adding rows and columns would be quite confusing in my specific application.
+>>
+>> Thanks a lot,
+>>
+>> Hana
+>>
+>>      
+> Dear Hana,
+>
+> Not really. However, you can get a start on what you want by modifying the
+> following. It uses a nifty one liner by Michael Lawrence to add the cell
+> renders. The model variable has the usual data frame methods to access the data.
+>
+> Hope this helps. --J
+>
+>
+> library(RGtk2) ## need this
+> library(gWidgets)
+> options(guiToolkit="RGtk2")
+>
+>
+>
+> model<- rGtkDataFrame(mtcars)
+> view<- gtkTreeView(model)
+> ## Michael Lawrence's trick to add cell renderer's
+> mapply(view$insertColumnWithAttributes,  -1, colnames(model),
+>         list(gtkCellRendererText()), text = seq_len(ncol(model)) - 1)
+>
+> sw<- gtkScrolledWindow()
+> sw$add(view)
+>
+> sapply(1:ncol(model), function(j) {
+>    cr<- view$getColumn(j-1)$getCellRenderers()[[1]]
+>    cr['editable']<- TRUE
+>    gSignalConnect(cr, "edited",
+>                   f=function(cr, path, newtext, user.data) {
+>                     curRow<- as.numeric(path) + 1
+>                     curCol<- user.data$column
+>                     model<- user.data$model
+>                     ## coerce newtext from character to desired type
+>                     ## otherwise this coerces to character
+>                     model[curRow, curCol]<- as.numeric(newtext)
+>                   }, data=list(model=model, column=j))
+> })
+>
+> ## How to add within a gWidgets GUI
+> w<- gwindow("test")
+> g<- ggroup(cont=w)
+> add(g, sw, expand=TRUE)
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From landronimirc at gmail.com  Tue Oct 26 07:13:03 2010
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Tue, 26 Oct 2010 07:13:03 +0200
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+Message-ID: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+
+Dear all
+I've been looking for a solution to this problem ever since I started
+learning R, and I still haven't found one I'm comfortable with. And I
+would rather avoid exporting and importing into a spreadsheet just for
+this. I am looking for a data viewer/editor that could, among other
+things:
+- have a 'view' mode (not an 'edit only' mode, to avoid bugs or
+unintended modifications)
+- have a 'filter' view mode (not a data-modifying subset)
+- have a 'sort' view mode (not a data-modifying sort operation)
+- select multiple rows/cols
+- select multiple individual cells
+
+Here's a list of what I've found sofar:
+- View()/Edit(): rudimentary interface; don't interact very well with
+tcltk (Rcmdr) on Linux
+- relimp::showData(): nice viewer, but too often too unstable; lacks
+most of the features above
+- tcltk2::tk2edit(): allows multiple row/col/cell selections; has no
+'view' mode nor 'filter' or 'sort', and pops up scary errors whenever
+'cancelling' changes
+- rdataviewer: the interface is too exotic for my habits, and lacks
+most of the features above
+- RGtk2Extras::dfedit(): allows multiple cell selections and can
+perform a 'sort' and displays several features in the c-menu; it is
+quite slow on my system with 'iris', no 'view' mode; since it uses
+RGtk2 it interacts very badly with tcltk (Rcmdr)
+- playwith: features a nice viewer hidden in Labels > Select from
+table, but it is awkwardly located, with no advanced features, and
+RGtk2 based
+- JGR/Deducer::data.viewer(): includes a nifty data editor, perhaps my
+favourite from this list, but it is a bit awkward to use when using an
+editor different than JGR (console monopolization); it also lacks a
+'view' and 'filter' mode as well well as select multiple rows/cols; it
+can sort, but not easily when outside JGR
+
+
+Anything that I've missed? Regards
+Liviu
+
+
+
+-- 
+Do you know how to read?
+http://www.alienetworks.com/srtest.cfm
+http://goodies.xfce.org/projects/applications/xfce4-dict#speed-reader
+Do you know how to write?
+http://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail
+
+
+From thomas.friedrichsmeier at ruhr-uni-bochum.de  Tue Oct 26 10:47:02 2010
+From: thomas.friedrichsmeier at ruhr-uni-bochum.de (Thomas Friedrichsmeier)
+Date: 26 Oct 2010 10:47:02 +0200
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+Message-ID: <201010261047.07310.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+
+On Tuesday 26 October 2010, Liviu Andronic wrote:
+> Anything that I've missed?
+
+You can try RKWard (http://rkward.sf.net). Uncheck Edit->Enable editing for a 
+"view" mode. Allows to select multiple rows/columns/cells, but no 
+discontiguous ranges. No dynamic filter or sort modes. The editor can only be 
+used inside an RKWard-session, but you can run Rcmdr inside of that.
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part.
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101026/20a81673/attachment.bin>
+
+From jverzani at gmail.com  Tue Oct 26 22:29:29 2010
+From: jverzani at gmail.com (j verzani)
+Date: Tue, 26 Oct 2010 20:29:29 +0000 (UTC)
+Subject: [R-gui] your favourite spreadsheet-like data viewer or editor?
+References: <AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>
+Message-ID: <loom.20101026T221840-144@post.gmane.org>
+
+Liviu Andronic <landronimirc <at> gmail.com> writes:
+
+> 
+> Dear all
+> I've been looking for a solution to this problem ever since I started
+> learning R, and I still haven't found one I'm comfortable with. And I
+> would rather avoid exporting and importing into a spreadsheet just for
+> this. I am looking for a data viewer/editor that could, among other
+> things:
+> - have a 'view' mode (not an 'edit only' mode, to avoid bugs or
+> unintended modifications)
+> - have a 'filter' view mode (not a data-modifying subset)
+> - have a 'sort' view mode (not a data-modifying sort operation)
+> - select multiple rows/cols
+> - select multiple individual cells
+> 
+> Here's a list of what I've found sofar:
+> - View()/Edit(): rudimentary interface; don't interact very well with
+> tcltk (Rcmdr) on Linux
+> - relimp::showData(): nice viewer, but too often too unstable; lacks
+> most of the features above
+> - tcltk2::tk2edit(): allows multiple row/col/cell selections; has no
+> 'view' mode nor 'filter' or 'sort', and pops up scary errors whenever
+> 'cancelling' changes
+> - rdataviewer: the interface is too exotic for my habits, and lacks
+> most of the features above
+> - RGtk2Extras::dfedit(): allows multiple cell selections and can
+> perform a 'sort' and displays several features in the c-menu; it is
+> quite slow on my system with 'iris', no 'view' mode; since it uses
+> RGtk2 it interacts very badly with tcltk (Rcmdr)
+> - playwith: features a nice viewer hidden in Labels > Select from
+> table, but it is awkwardly located, with no advanced features, and
+> RGtk2 based
+> - JGR/Deducer::data.viewer(): includes a nifty data editor, perhaps my
+> favourite from this list, but it is a bit awkward to use when using an
+> editor different than JGR (console monopolization); it also lacks a
+> 'view' and 'filter' mode as well well as select multiple rows/cols; it
+> can sort, but not easily when outside JGR
+> 
+> Anything that I've missed? Regards
+> Liviu
+> 
+
+The following uses gWidgets to create something close to what you want. I didn't
+add in the editing feature, but that can be had with gdf in place of gtable. (as
+well, the filter and sort dialogs could be much improved) The gdf widget isn't
+nearly as nice as the Deducer one or the RGtk2Extras one though.
+
+
+liviu <- function(df,
+                  container=gwindow(sprintf("Viewing %s", deparse(substitute(df)))),
+                  ...) {
+
+  ##' return logical of length x
+  filterFun <- function(x, expr, ...) UseMethod("filterFun")
+  filterFun.default <- function(x, expr, ...) x %in% expr
+  filterFun.numeric <- function(x, expr, ...) x < as.numeric(expr) # modify
+  
+  filterDialog <- function() {
+    dlg <- gbasicdialog("Filter by:", handler=function(h,...) {
+      val <- svalue(filterExpression)
+      var <- svalue(variableSelector)
+      if(var == "") {
+        ## evaluate expression within df
+        ind <- with(tbl[], eval(parse(text=val)))
+      } else {
+        ind <- filterFun(tbl[][[var]], val)
+      }
+      if(is.logical(ind) && !any(is.na(ind)))
+        visible(tbl) <- ind
+      updateTbl()
+    })
+    ## layout
+    gp <- ggroup(cont=dlg) 
+    filterExpression <- gedit("", cont=gp)
+    variableSelector <- gcombobox(c("",names(df)), cont=gp)
+    ## show
+    visible(dlg, set=TRUE)
+  }
+
+  sortDialog <- function() {
+    dlg <- gbasicdialog("Sort by:", handler=function(h,...) {
+      vars <- sortVars[,1]
+      if(length(vars) && !any(is.na(vars))) {
+        ind <- order(subset(df, select=vars), 
+            decreasing=!svalue(sortOrder))
+        tbl[,] <- df[ind,]
+        visible(tbl) <- rep(TRUE, dim(tbl)[1])
+        updateTbl()
+      }
+    })
+    ## layout
+    size(dlg) <- c(400,400)
+    nms <- data.frame(Variables=names(df), stringsAsFactors=FALSE)
+    nms1 <- data.frame("Sort by"=character(0), stringsAsFactors=FALSE)
+    ind <- c()
+
+    gp <- ggroup(cont=dlg)
+    allVars <- gtable(nms, cont=gp, expand=TRUE)
+    bg <- ggroup(horizontal=FALSE, cont=gp)
+    lbutton <- gbutton("<", cont=bg)
+    rbutton <- gbutton(">", cont=bg)
+    sortOrder <- gcheckbox("Increasing", checked=TRUE, 
+          use.togglebutton=TRUE, cont=bg)
+    sortVars <- gtable(nms1, cont=gp, expand=TRUE)
+
+    addHandlerClicked(rbutton, function(h,...) {
+      vars <- svalue(allVars, index=TRUE)
+      if(!is.null(vars)) {
+        ind <<- c(ind, vars)
+        sortVars[,] <- nms[ind,]
+      }
+    })
+    addHandlerClicked(lbutton, function(h,...) {
+      vars <- svalue(sortVars, index=TRUE)
+      if(!is.null(vars)) {
+        ind <<- setdiff(ind, vars)
+         sortVars[,] <- nms[ind,]
+      }
+    })
+
+    ## show
+    visible(dlg, set=TRUE)
+  }
+
+  ## layout
+  g <- ggroup(cont=container, horizontal=FALSE)
+  tbl <- gtable(df,  cont=g, expand=TRUE, multiple=TRUE, 
+     filter.FUN="manual")
+  gp <- ggroup(cont=g)
+  gbutton("Filter", cont=gp, handler=function(h,...) {
+    filterDialog()
+  })
+  gbutton("Sort...", cont=gp, handler=function(h,...) {
+    sortDialog()
+  })
+  addSpring(gp)
+  caseLabel <- glabel("", cont=gp)
+  
+  updateTbl <- function() {
+    ## update label for no cases, ...
+    svalue(caseLabel) <- sprintf("%s cases", sum(visible(tbl)))
+    
+  }
+
+  updateTbl()
+
+
+
+  
+  tbl
+}
+
+## test it
+tbl <- liviu(mtcars)
+
+

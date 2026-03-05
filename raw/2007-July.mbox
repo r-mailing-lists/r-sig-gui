@@ -1,0 +1,428 @@
+From S.C.Robson at warwick.ac.uk  Tue Jul  3 19:14:30 2007
+From: S.C.Robson at warwick.ac.uk (Robson, Samuel)
+Date: Tue, 3 Jul 2007 18:14:30 +0100
+Subject: [R-gui] tkbutton() function call problem
+Message-ID: <AA321E76FB83BF4ABF4AA55E30540C1412BBC3@HOLLY.ads.warwick.ac.uk>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070703/8901ec62/attachment.pl 
+
+From P.Dalgaard at biostat.ku.dk  Tue Jul  3 20:06:44 2007
+From: P.Dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Tue, 03 Jul 2007 20:06:44 +0200
+Subject: [R-gui] tkbutton() function call problem
+In-Reply-To: <AA321E76FB83BF4ABF4AA55E30540C1412BBC3@HOLLY.ads.warwick.ac.uk>
+References: <AA321E76FB83BF4ABF4AA55E30540C1412BBC3@HOLLY.ads.warwick.ac.uk>
+Message-ID: <468A9034.50607@biostat.ku.dk>
+
+Robson, Samuel wrote:
+> Dear all,
+>
+> I have run into a small problem with a GUI that I have been writing in R using the tcltk package, and I was hoping that somebody on this forum may be able to shed some light on it for me. The problem that I have is that when the main function is called by a tkbutton() widget, the GUI window goes a bit funny; all non-widget areas turn see-through. On top of this, a counter that should be updating constantly will only update if the GUI window is moved. It appears that the window is not loading fully, so even though the counter is increasing correctly, it does not update on the window until you manually force it by moving it. 
+>
+> However, if the function is called from the command line instead of linking it to a button press, everything works fine. This leads me to believe that the problem lies with the tkbutton(..., command=foo) command.
+>
+> As an example, consider the following code:
+>
+> tt <- tktoplevel()
+> frameOverall <- tkframe(tt)
+> counter <- tclVar("0")
+>
+> ## Top frame to contain counter
+> topFrame <- tkframe(frameOverall)
+>     progressLabel <- tklabel(topFrame, text=as.character(tclvalue(counter)))
+>     tkgrid(tklabel(topFrame, text="	"))
+>     tkgrid(progressLabel)
+>     tkgrid(tklabel(topFrame, text="	"))
+> tkgrid(topFrame)
+>
+> ## Function that makes the counter increase from 1 to 1000 when you press OK
+> foo <- function() {
+>     for (i in 1:1000) {
+>         counter <- tclVar(as.character(as.numeric(tclvalue(counter))+1))
+>         tkconfigure(progressLabel, textvariable=counter)
+>     }	
+> }
+>
+> ## Bottom frame to contain OK button
+> botFrame <- tkframe(frameOverall)
+>     tkgrid(tkbutton(botFrame, text="OK", command=foo))
+> tkgrid(botFrame)
+>
+> tkgrid(frameOverall)
+>
+> Pressing the button should cause the counter to increase. However the problem mentioned above occurs (move the window about to see the counter change. You may also see the window turn see-through). Now run the script again, but instead of pressing OK, run foo() manually in the command line. Everything works fine.
+>
+> Is anybody able to tell me what is going wrong here? And more importantly, is there a way around it?
+>
+>   
+It's not happening for me (SuSE Linux 10.2). I don't see anything until
+the loop is finished, though, which is as it should be since nothing
+allows the event loop to process events (a tcl("update","idletasks") in
+the loop fixes that) .
+
+The coding is a bit odd in that you regenerate the counter variable on
+each iteration, which is not the Intended Way. Rather, it is
+
+foo <- function() {
+    counter <- tclVar(0)
+    tkconfigure(progressLabel, textvariable=counter)
+
+   for (i in 1:1000) {
+        tclvalue(counter) <- as.character(as.numeric(tclvalue(counter))+1)
+     }	
+}
+
+
+
+
+
+
+> Many thanks for your assistance,
+>
+> Sam Robson
+> MOAC Doctoral Training Center
+> Coventry House
+> University of Warwick
+> Coventry
+> CV4 7AL
+>
+>
+>
+>
+>
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>   
+
+
+-- 
+   O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+  c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+ (*) \(*) -- University of Copenhagen   Denmark          Ph:  (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)                  FAX: (+45) 35327907
+
+
+From alexander.wurzer at fin4cast.com  Thu Jul 26 09:05:40 2007
+From: alexander.wurzer at fin4cast.com (Alexander Wurzer)
+Date: Thu, 26 Jul 2007 09:05:40 +0200
+Subject: [R-gui] TCLTK Radiobutton-Problem
+Message-ID: <000401c7cf53$600e3ed0$ad04d30a@backoffice>
+
+Hi everybody,
+
+I'm currently working on my first tcl-Interface and now I have troubles with
+radiobuttons. Everything works fine with a static set of radiobuttons.
+But I need a dynamic solution. 
+
+Here is a simplified example what I mean:
+
+# static solution works fine
+require(tcltk)
+tt <- tktoplevel()
+rb1 <- tkradiobutton(tt)
+rb2 <- tkradiobutton(tt)
+rbValue <- tclVar("oranges")
+tkconfigure(rb1,variable=rbValue,value="apples")
+tkconfigure(rb2,variable=rbValue,value="oranges")
+tkgrid(tklabel(tt,text="Which do you prefer?"))
+tkgrid(tklabel(tt,text="Apples "),rb1)
+tkgrid(tklabel(tt,text="Oranges "),rb2)
+
+# troubles with dynamic version 
+require(tcltk)
+tt <- tktoplevel()
+fruits=c("Apple","Orange","Banana")
+tkgrid(tklabel(tt,text="Which do you prefer?"))
+myenv <<- new.env() # I thought this help, but it doesn't change anything...
+
+for(i in 1:length(fruits))
+{  eval(parse(text=paste("rb",i,"=tkradiobutton(tt)",sep="")),env=myenv)
+   rbValue <- tclVar("Orange")
+ 
+eval(parse(text=paste("tkconfigure(rb",i,",variable=rbValue,value=fruits[i])
+",sep="")),env=myenv)
+ 
+eval(parse(text=paste("tkgrid(tklabel(tt,text=fruits[i]),rb",i,")",sep="")),
+env=myenv)
+}
+tkfocus(tt)
+
+The Problem is, that in the dynamic version each radiobutton can be selected
+and I don't know why.
+
+Has anybody an idea what to do to solve this problem?
+
+Many thanks for your support!
+
+Regards,
+Alex
+
+
+From alexander.wurzer at fin4cast.com  Thu Jul 26 10:39:18 2007
+From: alexander.wurzer at fin4cast.com (Alexander Wurzer)
+Date: Thu, 26 Jul 2007 10:39:18 +0200
+Subject: [R-gui] FW: TCLTK Radiobutton-Problem
+Message-ID: <000901c7cf60$74d49f50$ad04d30a@backoffice>
+
+Hi again,
+
+in the meantime I found the mistake I made. "variable" had not the same
+identifier.
+
+Regards,
+Alex
+
+-----Original Message-----
+From: Alexander Wurzer [mailto:alexander.wurzer at fin4cast.com] 
+Sent: Thursday, 26. July 2007 09:06
+To: (r-sig-gui at stat.math.ethz.ch)
+Subject: TCLTK Radiobutton-Problem
+
+
+Hi everybody,
+
+I'm currently working on my first tcl-Interface and now I have troubles with
+radiobuttons. Everything works fine with a static set of radiobuttons. But I
+need a dynamic solution. 
+
+Here is a simplified example what I mean:
+
+# static solution works fine
+require(tcltk)
+tt <- tktoplevel()
+rb1 <- tkradiobutton(tt)
+rb2 <- tkradiobutton(tt)
+rbValue <- tclVar("oranges")
+tkconfigure(rb1,variable=rbValue,value="apples")
+tkconfigure(rb2,variable=rbValue,value="oranges")
+tkgrid(tklabel(tt,text="Which do you prefer?"))
+tkgrid(tklabel(tt,text="Apples "),rb1) tkgrid(tklabel(tt,text="Oranges
+"),rb2)
+
+# troubles with dynamic version 
+require(tcltk)
+tt <- tktoplevel()
+fruits=c("Apple","Orange","Banana")
+tkgrid(tklabel(tt,text="Which do you prefer?"))
+myenv <<- new.env() # I thought this help, but it doesn't change anything...
+
+for(i in 1:length(fruits))
+{  eval(parse(text=paste("rb",i,"=tkradiobutton(tt)",sep="")),env=myenv)
+   rbValue <- tclVar("Orange")
+ 
+eval(parse(text=paste("tkconfigure(rb",i,",variable=rbValue,value=fruits[i])
+",sep="")),env=myenv)
+ 
+eval(parse(text=paste("tkgrid(tklabel(tt,text=fruits[i]),rb",i,")",sep="")),
+env=myenv)
+}
+tkfocus(tt)
+
+The Problem is, that in the dynamic version each radiobutton can be selected
+and I don't know why.
+
+Has anybody an idea what to do to solve this problem?
+
+Many thanks for your support!
+
+Regards,
+Alex
+
+
+From morphwj at comcast.net  Sat Jul 28 16:06:24 2007
+From: morphwj at comcast.net (morphwj at comcast.net)
+Date: Sat, 28 Jul 2007 14:06:24 +0000
+Subject: [R-gui] R tcltk/tcltk2 vs. R GTk2
+Message-ID: <072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070728/a072b560/attachment.pl 
+
+From morphwj at comcast.net  Sat Jul 28 16:06:24 2007
+From: morphwj at comcast.net (morphwj at comcast.net)
+Date: Sat, 28 Jul 2007 14:06:24 +0000
+Subject: [R-gui] R tcltk/tcltk2 vs. R GTk2
+Message-ID: <072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070728/a072b560/attachment-0001.pl 
+
+From lawremi at iastate.edu  Mon Jul 30 20:12:50 2007
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Mon, 30 Jul 2007 13:12:50 -0500
+Subject: [R-gui] R tcltk/tcltk2 vs. R GTk2
+In-Reply-To: <072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>
+References: <072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>
+Message-ID: <509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070730/d57bd04f/attachment.pl 
+
+From f.harrell at vanderbilt.edu  Tue Jul 31 03:29:12 2007
+From: f.harrell at vanderbilt.edu (Frank E Harrell Jr)
+Date: Mon, 30 Jul 2007 20:29:12 -0500
+Subject: [R-gui] RKWard 0.4.2
+In-Reply-To: <200612041805.40468.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+References: <200612041805.40468.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+Message-ID: <46AE9068.1060201@vanderbilt.edu>
+
+On ubuntu-feisty linux rkward does not work for me after apt-get install 
+rkward:
+
+~ harrelfe:rkward
+/usr/bin/rkward.bin: symbol lookup error: /usr/bin/rkward.bin: undefined 
+symbol: R_Visible
+
+Frank
+
+
+
+Thomas Friedrichsmeier wrote:
+> Dear R-SIG-GUI subscribers,
+> 
+> I have not announced any new versions of RKWard on this list for quite a long 
+> time (in fact, a far as I can see, the last time was more than two years ago, 
+> for version 0.2.0).
+> 
+> For those, who have never seen it: RKWard is a KDE GUI for R. As such, it is 
+> currently a Linux/BSD/... only application. Once KDE 4 will be released, it 
+> will be portable to Windows, too.
+> 
+> For those, who have not tried it during the past few months: We'd like to 
+> encourage you to give it a try. As signified by the version number, RKWard is 
+> still far from finished, but we feel it is already highly useful as an 
+> advanced IDE for R.
+> 
+> Current features include:
+> * An auto-updating object browser, allowing you to explore the entire R 
+> workspace, including loading packages
+> * An R console (actually an emulation) including syntax highlighting, Tab code 
+> completion, and function argument hinting
+> * A script editor based on the powerful and feature rich Kate. Also with 
+> syntax hightlighting, code completion, and argument hinting, as well as code 
+> folding
+> * Integrated editor for data.frames
+> * Integrated help browser and help search
+> * X11 device windows are managed by the GUI
+> * Multiple document interface: Several data editor, script editors, help 
+> windows can be opened at the same time
+> * Asynchronous command execution: Run lengthy calculations in R, and continue 
+> working on your data / scripts at the same time
+> * Log of all R commands
+> * R library management
+> * Extensible using plugins, and shipped with plugins providing basic data 
+> import / export, data analysis, plotting and distribution functions
+> 
+> Regards
+> Thomas Friedrichsmeier
+> 
+> 
+> ------------------------------------------------------------------------
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+-- 
+Frank E Harrell Jr   Professor and Chair           School of Medicine
+                      Department of Biostatistics   Vanderbilt University
+
+
+From p.dalgaard at biostat.ku.dk  Tue Jul 31 17:54:29 2007
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Tue, 31 Jul 2007 17:54:29 +0200
+Subject: [R-gui] R tcltk/tcltk2 vs. R GTk2
+In-Reply-To: <509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>
+References: <072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>
+	<509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>
+Message-ID: <46AF5B35.30404@biostat.ku.dk>
+
+Michael Lawrence wrote:
+> GTK+ has many more features than tcl/tk (tile included), though tcl/tk does
+> have some features that GTK+ lacks, like a canvas widget.
+>
+> The API of the underlying toolkits, as well as the R interfaces, are quite
+> different. I've heard many people say that they prefer the GTK+/RGtk2 style,
+> though there are probably many people that feel the opposite. The tcltk
+> package is a binding to the Tcl language, while RGtk2 is a binding to a
+> collection of C libraries.
+>   
+Minor quibble: tcltk (mostly) binds directly to the Tcl *engine*, 
+bypassing the parsing layer, $-substitution, quoting hell, etc. The 
+Tcl/Tk engine is just another collection of C libraries. The major 
+difference to Gtk+ is that the Tcl/Tk engine was designed to support 
+interpreted languages (mainly, of course, Tcl).
+
+Apart from that, I pretty much agree that RGtk2 could well be the 
+toolkit of the future. It's main detraction at this point is that it is, 
+at the tutorial level, mainly documented by demos and that it seems to 
+be a bit sensitive to changes in the underlying toolkit and have a 
+couple of rough edges in general. But it can certainly do amazing stuff; 
+all it needs is a dedicated effort to take care of a number of little 
+issues (esp. portability). That and an introductory document that covers 
+the concepts involved.
+
+(It needs to be no secret that I have been approached about the 
+possibility of a book on R/tcltk, and ended up resolving that there 
+would certainly be a market, but of the 3 or 4 candidates to write it, 
+probably none would want to. However, in due course, when the obvious 
+author completes his academic obligations, a book on RGtk2 should be a 
+very interesting prospect.)
+
+> RGtk2 also binds libglade, meaning that one can design a GUI graphically
+> using the Glade tool and display it using R. Glade may or may not be useful,
+> depending on the application. The Rattle tool seems to have used Glade
+> effectively, but I personally prefer to construct the interfaces
+> dynamically.
+>
+> Since GTK+ is object-oriented, RGtk2 is able to support the creation of new
+> widget classes that override the functionality of their parents. This is a
+> neat feature, but is rarely necessary.
+>
+> For graphics, RGtk2 binds several useful libraries, including Cairo (vector
+> graphics) and GdkPixbuf (image manipulation).
+>
+> You might also consider the gWidgets package. It is a convenient API for
+> creating simple GUIs in R. It abstracts away the underlying toolkit.
+> Implementations exist using RGtk2 and rJava (swing). You could always start
+> using a GUI this way and then convert to RGtk2 or some other toolkit later
+> if necessary.
+>
+> I hope this helps,
+> Michael
+>
+> On 7/28/07, morphwj at comcast.net <morphwj at comcast.net> wrote:
+>   
+>> Why use R tcltk/tcltk2 instead of R GTk2, or why use R GTk2 instead of R
+>> tcltk/tcltk2?
+>> Bill Morphet
+>>         [[alternative HTML version deleted]]
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+>>     
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+

@@ -1,0 +1,138 @@
+From hodgess at gator.uhd.edu  Tue Mar  1 02:50:07 2005
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Tue Mar  1 02:50:17 2005
+Subject: [R-gui] [R] Iwidgets
+Message-ID: <200503010150.j211o7O23799@gator.dt.uh.edu>
+
+Are Iwidgets available for use withinTcl/Tk, please?
+
+If so, how does it work, please?
+
+Thanks,
+Erin Hodgess
+mailto: hodgess@gator.uhd.edu
+
+From edd at debian.org  Tue Mar  1 04:37:55 2005
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Tue Mar  1 04:38:16 2005
+Subject: [R-gui] [R] Iwidgets
+In-Reply-To: <200503010150.j211o7O23799@gator.dt.uh.edu>
+References: <200503010150.j211o7O23799@gator.dt.uh.edu>
+Message-ID: <16931.58259.258026.953096@basebud.nulle.part>
+
+
+On 28 February 2005 at 19:50, Erin Hodgess wrote:
+| Are Iwidgets available for use withinTcl/Tk, please?
+
+Yes. You may need to add Iwidgets to your OS, though. I have used them on
+Windows (via an extra package from ActiveTcl), and Debian (via a binary .deb).
+ 
+| If so, how does it work, please?
+
+A Google search for 'r-help Iwidgets' brings up 42 references, including
+working examples.
+
+As for many things tcl/tk, the best reference is still James' site. One
+example is
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/TabbedNotebook.html
+
+Hth, Dirk
+
+-- 
+Better to have an approximate answer to the right question than a precise 
+answer to the wrong question.  --  John Tukey as quoted by John Chambers
+
+From hodgess at gator.uhd.edu  Tue Mar  1 07:40:30 2005
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Tue Mar  1 07:40:42 2005
+Subject: [R-gui] [R] More on Iwidgets
+Message-ID: <200503010640.j216eUL10516@gator.dt.uh.edu>
+
+Thank you VERY MUCH for the help on Iwidgets.  
+
+But I have 2 other questions, please:  What are the R "translations" of
+reset and step, please?
+
+Thanks again,
+Erin Hodgess
+R 2.0.1 Windows
+mailto: hodgess@gator.uhd.edu
+
+From hillview at paradise.net.nz  Mon Mar  7 00:09:02 2005
+From: hillview at paradise.net.nz (Ian Laurenson)
+Date: Sun Mar  6 23:52:56 2005
+Subject: [R-gui] OpenOffice.org and R
+In-Reply-To: <FC4627EC695CD71180280003477108C501BBB8DE@exchange.epripeac.com>
+References: <FC4627EC695CD71180280003477108C501BBB8DE@exchange.epripeac.com>
+Message-ID: <1110150542.2393.57.camel@localhost>
+
+On Fri, 2005-02-25 at 03:35, Short, Tom wrote:
+> This topic has come up before, and others have expressed interest in making
+> the connection. Here's one I found:
+> 
+> https://stat.ethz.ch/pipermail/r-devel/2003-July/027039.html
+> 
+I have contacted Harry Mangalam and have offered to help their work. I
+have received a reply from Harry expressing interest but at this stage
+have nothing else to report.
+
+My message created a series of discussions about GUI widgets. For the
+OpenOffice.org and R integration I suspect that the best approach is to
+use widgets provided by OpenOffice.org.
+
+I really appreciated the discussion about the form the integration
+between OpenOffice.org and R could take. I hope that when I hear some
+more from Harry (so that I don't reinvent the wheel) that I can help
+implement them.
+
+Thanks, Ian Laurenson
+
+From verzani at math.csi.cuny.edu  Fri Mar 18 00:21:46 2005
+From: verzani at math.csi.cuny.edu (verzani@math.csi.cuny.edu)
+Date: Fri Mar 18 00:21:57 2005
+Subject: [R-gui] pmg -- another try
+Message-ID: <16954.4362.651342.351802@markov.math.csi.cuny.edu>
+
+
+For some reason, I found myself with some free nights and decided to
+spend them rewriting my seemingly aborted pmg package. 
+
+This package is an alternative to the RCmdr project using the RGtk
+package instead of the tcltk package for its widgets. It's basic goal
+is to give students a "simpler" way to learn and interact with R,
+although it may be helpful to more knowledgeable users.
+
+The main features of the newer version:
+
+* only uses RGtk and asGtkDevice. So its much easier to install, and
+  might possibly work under windows. (It was tested under gentoo linux
+  and Mac OS X under 2.0.1 of R.) This version runs much faster as the
+  dependency on OOP was dropped.
+* the interface takes advantage of GTK's drag and drop abilities
+* adds a plot notebook interface to X11 that allows one to store
+  multiple graphs.
+* the menu bar is easily extendable by the user. New menus can be
+  "automagically" generated with a single command. (YMMV)
+
+The current set of dialogs is not as complete as those for RCmdr, but
+adding  your desired one is not really that difficult if you are
+satisfied with the way they are easily created.
+
+
+Instructions for installation are at
+http://www.math.csi.cuny.edu/pmg. 
+
+[i.e.,
+> install.packages("pmg",contriburl="http://www.math.csi.cuny.edu/pmg")
+]
+
+Screenshots are in the manual
+http://www.math.csi.cuny.edu/pmg/pmg.manual.pdf 
+
+
+Although there aren't any really compelling reasons to use pmg over
+RCmdr, some may appreciate the variety. I'd be interested to hear any
+feedback about the package, especially notice of bugs. The package
+hasn't had much testing, but seems to be behaving properly.
+

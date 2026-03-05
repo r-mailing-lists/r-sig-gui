@@ -1,0 +1,2714 @@
+From bellis at hsph.harvard.edu  Wed Apr  2 17:39:50 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Wed Apr  2 23:40:02 2003
+Subject: [R-gui] Interfaces between GUIs and R
+Message-ID: <A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+
+Hi folks, this is a question for all you GUI developers out there 
+though, in particular, to those who work on SciViews and RKward (though 
+anyone else is certainly welcome to chime in). Presently, my StatPaper 
+app (which will have a website soon, I've just been busy this week) and 
+AFAIK RKward employ a "kernel"-type interaction method (SciViews 
+mentions a kernel, but I haven't been able to test it to see how it 
+works) with R, that is R itself runs as a separate process and 
+communication takes place over either the STDIN/STDOUT associated with 
+the process or through some other means (say, UNIX sockets).  This 
+works fine if we're just passing text back and forth, but when we want 
+to start passing objects or graphics device information things start to 
+do downhill pretty quickly.
+
+My question: Is there any interest in developing a general kernel 
+interaction protocol for R GUIs? This would most likely include the 
+following:
+	* Representation of data objects
+	* Execution of R statements
+	* Returning graphics of the kernel link
+	* ???
+
+Recently, I've been looking at the OpenMath protocol 
+(http://www.openmath.org) for use in StatPaper and it seems fairly 
+simple and robust. It bears a great deal of resemblance to the MathLink 
+protocol employed by Mathematica. At the moment I think this entire 
+thing could be done as an R package, possibly using the REventLoop 
+mechanism for the server (though I don't know that it would be 
+necessary) and also providing client access so that two R installations 
+could communicate (I know that Rpvm and Rmpi already exist, though they 
+have a somewhat different goal) in a standard fashion if desired.
+
+
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From thomas.baier at kirchnersoft.com  Thu Apr  3 10:49:52 2003
+From: thomas.baier at kirchnersoft.com (TB)
+Date: Thu Apr  3 09:50:00 2003
+Subject: AW: [R-gui] Interfaces between GUIs and R
+Message-ID: <E0AC11CC93B7D21185FD0060080B65523FAC9D@WWW>
+
+Byron,
+
+> My question: Is there any interest in developing a general kernel 
+> interaction protocol for R GUIs? This would most likely include the 
+> following:
+> 	* Representation of data objects
+> 	* Execution of R statements
+> 	* Returning graphics of the kernel link
+> 	* ???
+
+If working on Windows, maybe there already is what you have mentioned:
+
+a COM server for R on http://cran.r-project.org/ in section "Other" (sorry,
+can't provide the concrete URL, can't reach CRAN at the monent)
+
+Even for non-windows platforms there are some alternatives available:
+
+http://www.ci.tuwien.ac.at/Conferences/DSC-2003/Drafts/Urbanek.txt
+
+and there's also an R/soap interface available.
+
+Best,
+Thomas
+
+From phgrosjean at sciviews.org  Thu Apr  3 11:11:25 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Apr  3 10:11:59 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+Message-ID: <MABBLJDICACNFOLGIHJOEEHODFAA.phgrosjean@sciviews.org>
+
+Hi Byron,
+
+Indeed, yes, SciViews uses --ess mode of R with redirection of stdin and
+stdout in RTerm.exe... but it provides even much more, including control of
+the native Graph devices (using Windows API, which is probably difficult to
+transpose to Unix/Linux). The SciViews plugs offers also some control over
+child windows of the R process, like tcl/tk, Java, RGL,... windows/dialog
+boxes. Functions to exchange matrices are planned, but not finalized yet.
+
+By the way, you say that you were not able to test SciViews. Is it because
+you have not PC with Windows, or because SciViews did not install correctly
+on your test machine? If it is the second answer, please, give me some
+feedback.
+
+There is a COM server for R by Thomas Baier that offers a different way to
+connect to R, and proposes a Graph device and direct matrices exchange.
+However, you should be aware of a big difference between the SciViews R plug
+(which is another COM server), and Thomas Baier's R COM server: the first
+one uses asynchronous communication while the second one uses synchronous
+communication. This has a major impact on what you can do with them. Here is
+quick summary of differences:
+
+				R COM Server	SciViews R Plug
+communication		synchronous		asynchronous
+client implementation	easy (5 methods)	more difficult (callbacks,...)
+speed of execution	++			+
+interruptible calc	no			yes
+friezes the client(*)	yes			no
+concurrent kernels(**)	no			yes
+
+(*)  A single threaded client must wait for the completion of the
+calculation with synchronous evaluation, while it can process other code
+during evaluation with an asynchronous evaluation
+(**) As a consequence, an asynchronous evaluation allows simultaneous
+evaluation in different kernels (some kind of parallelization), while with a
+synchronous evaluation one can connect to several kernels, but must
+serialize evaluations in these different kernels.
+
+As a conclusion, I consider R COM Server as a fast and simple interface to
+R, but it has some limitations, like client friezing, uninterruptible
+calculations, and no concurrent evaluations in differents kernels that makes
+it less suitable for a complete GUI client. The SciViews R Plug is more
+designed towards this goal.
+
+There are many, many other ways to connect to R from a GUI client (see
+OmegaHat project, for instance). Simon Urbanek develops also a Rserver based
+on TCP/IP (http://stats.math.uni-augsburg.de/Rserve/), which is in this
+respect closer to MathLink.
+
+Concerning MathLink, yes, it is a nice interface for calculation kernels. I
+am working on the SciViews Mathematica Plug using this protocol, and it is a
+real pleasure! Although it is not open source, I think that Wolfram Research
+release it with a license that allows for freely implementing different
+clients and servers, outside of Mathematica.
+
+OpenMath is a standard to exchange mathematical objects, but it is not much
+focused on actually implementing the connection between the backend and the
+frontend, as far as I know. MathLink is an excellent implementation of such
+a backend/frontend communication protocol. If someone would like to code a
+MathLink connection (or something equivalent) for R, it should be wonderful.
+However, I suspect the task is not at all as easy as it could seem at first
+glance!
+
+Another remark: do not deconsider pipes or sockets: they work very well with
+R, and you are not restricted to exchange text. You can also pass images
+(graphs), numerical matrices,... However, if you want to share objects by
+reference between R and your GUI client, then, this is a different story!
+Note, however, that MathLink uses internally a single channel and serializes
+communication through it by passing text, images, numerical matrices, error
+messages in turn, using a custom protocol. This is why it can run a remote
+kernel so easily. If it had to share matrices by reference, it would be not
+possible or very difficult to work with remote kernels!
+
+Best,
+
+Philippe Grosjean
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oceanologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of Byron Ellis
+Sent: mercredi 2 avril 2003 11:40
+To: R-sig-gui@stat.math.ethz.ch
+Subject: [R-gui] Interfaces between GUIs and R
+
+
+Hi folks, this is a question for all you GUI developers out there
+though, in particular, to those who work on SciViews and RKward (though
+anyone else is certainly welcome to chime in). Presently, my StatPaper
+app (which will have a website soon, I've just been busy this week) and
+AFAIK RKward employ a "kernel"-type interaction method (SciViews
+mentions a kernel, but I haven't been able to test it to see how it
+works) with R, that is R itself runs as a separate process and
+communication takes place over either the STDIN/STDOUT associated with
+the process or through some other means (say, UNIX sockets).  This
+works fine if we're just passing text back and forth, but when we want
+to start passing objects or graphics device information things start to
+do downhill pretty quickly.
+
+My question: Is there any interest in developing a general kernel
+interaction protocol for R GUIs? This would most likely include the
+following:
+	* Representation of data objects
+	* Execution of R statements
+	* Returning graphics of the kernel link
+	* ???
+
+Recently, I've been looking at the OpenMath protocol
+(http://www.openmath.org) for use in StatPaper and it seems fairly
+simple and robust. It bears a great deal of resemblance to the MathLink
+protocol employed by Mathematica. At the moment I think this entire
+thing could be done as an R package, possibly using the REventLoop
+mechanism for the server (though I don't know that it would be
+necessary) and also providing client access so that two R installations
+could communicate (I know that Rpvm and Rmpi already exist, though they
+have a somewhat different goal) in a standard fashion if desired.
+
+
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From thomas.friedrichsmeier at ruhr-uni-bochum.de  Thu Apr  3 13:10:34 2003
+From: thomas.friedrichsmeier at ruhr-uni-bochum.de (Thomas Friedrichsmeier)
+Date: Thu Apr  3 12:13:28 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+References: <A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+Message-ID: <200304031210.34483.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+
+Hi!
+
+Since you explicitely mention RKward, I'll have to comment. In fact, RKward 
+runs R in a separate thread and communicates via STDIN/STDOUT. This was more 
+of a quick and dirty approach however, and I did not really think it was a 
+good design. The very vague idea I had on how to deal with graphics and the 
+like was to pass them via temporary files. Not very efficient, not very 
+elegant.
+By the way, however, RKward is on ice, and not likely to come back. Since I 
+failed to attract further developers, and did not feel, I could reasonably 
+get that program anywhere all alone, I went over to obversive (which BTW - 
+shameless plug - runs on MacOSX, among other platforms). Zed Shaw is 
+currently working on a CORBA-based backend for obversive, that might 
+potentially be of interest to other GUI-projects, too. Last thing he said, 
+he's close to having the basic functionality working.
+Now for obversive, I have not bothered myself with the backend at all, but it 
+would seem to me, like the functionality you mention would indeed come in 
+handy. Zed is obviously more qualified to comment on this in detail.
+Generally, I'd think it's a good idea to join forces on those problems, that 
+all of our projects will have to face sooner or later.
+
+Thomas
+
+On Wednesday 02 April 2003 23:39, Byron Ellis wrote:
+> Hi folks, this is a question for all you GUI developers out there
+> though, in particular, to those who work on SciViews and RKward (though
+> anyone else is certainly welcome to chime in). Presently, my StatPaper
+> app (which will have a website soon, I've just been busy this week) and
+> AFAIK RKward employ a "kernel"-type interaction method (SciViews
+> mentions a kernel, but I haven't been able to test it to see how it
+> works) with R, that is R itself runs as a separate process and
+> communication takes place over either the STDIN/STDOUT associated with
+> the process or through some other means (say, UNIX sockets).  This
+> works fine if we're just passing text back and forth, but when we want
+> to start passing objects or graphics device information things start to
+> do downhill pretty quickly.
+>
+> My question: Is there any interest in developing a general kernel
+> interaction protocol for R GUIs? This would most likely include the
+> following:
+> 	* Representation of data objects
+> 	* Execution of R statements
+> 	* Returning graphics of the kernel link
+> 	* ???
+>
+> Recently, I've been looking at the OpenMath protocol
+> (http://www.openmath.org) for use in StatPaper and it seems fairly
+> simple and robust. It bears a great deal of resemblance to the MathLink
+> protocol employed by Mathematica. At the moment I think this entire
+> thing could be done as an R package, possibly using the REventLoop
+> mechanism for the server (though I don't know that it would be
+> necessary) and also providing client access so that two R installations
+> could communicate (I know that Rpvm and Rmpi already exist, though they
+> have a somewhat different goal) in a standard fashion if desired.
+>
+>
+> Byron Ellis (bellis@hsph.harvard.edu)
+> "Oook" - The Librarian
+
+From murdoch at stats.uwo.ca  Thu Apr  3 09:54:16 2003
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Thu Apr  3 15:52:55 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+References: <A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+Message-ID: <cteo8v4t01as0qvmu70iui27shapc7a10d@4ax.com>
+
+On Wed, 2 Apr 2003 16:39:50 -0500, you wrote in message
+<A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>:
+
+>My question: Is there any interest in developing a general kernel 
+>interaction protocol for R GUIs? This would most likely include the 
+>following:
+>	* Representation of data objects
+>	* Execution of R statements
+>	* Returning graphics of the kernel link
+>	* ???
+
+I think there's definitely interest in that.  Before you start from
+scratch, you should look at Thomas Baier's DCOM interface (in
+http://www.cran.r-project.org/contrib/extra/dcom).  It does some of
+what you're looking for.
+
+Duncan Murdoch
+
+From duncan at research.bell-labs.com  Thu Apr  3 10:02:18 2003
+From: duncan at research.bell-labs.com (Duncan Temple Lang)
+Date: Thu Apr  3 16:02:40 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>;
+	from bellis@hsph.harvard.edu on Wed, Apr 02, 2003 at 04:39:50PM -0500
+References: <A1D6FFC0-6553-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+Message-ID: <20030403090217.B3452@jessie.research.bell-labs.com>
+
+As you know, I have been working on connecting many systems with R
+(e.g. Perl, Python, Java, Octave, XLisp, S-Plus, ...), and have been
+trying to get across that using strings across systems is quite
+limiting for general computations.  Direct embedding, COM/CORBA, SOAP
+or our own version of an XML format for Stat objects seems to be an
+obvious collection of approaches.  Robert and I put together much of
+an RSXMLObjects package which serializes and reads arbitrary S objects
+(including language objects, etc.) using an XML format.  The
+structures can be easily extended (in the XML sense) to support other
+languages.
+
+If the set of kernels is known and fixed, creating a new or
+non-standard protocol is fine.  If people are likely to want to add
+new kernels, they would then have to implement that protocol.  Using
+something like CORBA/COM, SOAP or embedding would increase the chances
+of that person being able to use existing facilities in that kernel.
+
+ D.
+
+Byron Ellis wrote:
+> Hi folks, this is a question for all you GUI developers out there 
+> though, in particular, to those who work on SciViews and RKward (though 
+> anyone else is certainly welcome to chime in). Presently, my StatPaper 
+> app (which will have a website soon, I've just been busy this week) and 
+> AFAIK RKward employ a "kernel"-type interaction method (SciViews 
+> mentions a kernel, but I haven't been able to test it to see how it 
+> works) with R, that is R itself runs as a separate process and 
+> communication takes place over either the STDIN/STDOUT associated with 
+> the process or through some other means (say, UNIX sockets).  This 
+> works fine if we're just passing text back and forth, but when we want 
+> to start passing objects or graphics device information things start to 
+> do downhill pretty quickly.
+> 
+> My question: Is there any interest in developing a general kernel 
+> interaction protocol for R GUIs? This would most likely include the 
+> following:
+> 	* Representation of data objects
+> 	* Execution of R statements
+> 	* Returning graphics of the kernel link
+> 	* ???
+> 
+> Recently, I've been looking at the OpenMath protocol 
+> (http://www.openmath.org) for use in StatPaper and it seems fairly 
+> simple and robust. It bears a great deal of resemblance to the MathLink 
+> protocol employed by Mathematica. At the moment I think this entire 
+> thing could be done as an R package, possibly using the REventLoop 
+> mechanism for the server (though I don't know that it would be 
+> necessary) and also providing client access so that two R installations 
+> could communicate (I know that Rpvm and Rmpi already exist, though they 
+> have a somewhat different goal) in a standard fashion if desired.
+> 
+> 
+> Byron Ellis (bellis@hsph.harvard.edu)
+> "Oook" - The Librarian
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+_______________________________________________________________
+
+Duncan Temple Lang                duncan@research.bell-labs.com
+Bell Labs, Lucent Technologies    office: (908)582-3217
+700 Mountain Avenue, Room 2C-259  fax:    (908)582-3340
+Murray Hill, NJ  07974-2070       
+         http://cm.bell-labs.com/stat/duncan
+
+From bellis at hsph.harvard.edu  Thu Apr  3 14:51:02 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Thu Apr  3 20:51:45 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <MABBLJDICACNFOLGIHJOEEHODFAA.phgrosjean@sciviews.org>
+Message-ID: <37A79446-6605-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+
+
+On Thursday, April 3, 2003, at 03:11  AM, Philippe Grosjean wrote:
+
+> Hi Byron,
+>
+> Indeed, yes, SciViews uses --ess mode of R with redirection of stdin 
+> and
+> stdout in RTerm.exe... but it provides even much more, including 
+> control of
+> the native Graph devices (using Windows API, which is probably 
+> difficult to
+> transpose to Unix/Linux). The SciViews plugs offers also some control 
+> over
+> child windows of the R process, like tcl/tk, Java, RGL,... 
+> windows/dialog
+> boxes. Functions to exchange matrices are planned, but not finalized 
+> yet.
+>
+I was curious how you were going to handle the graphics devices... Are 
+you somehow capturing the output from the devga device under the 
+Windows platform?
+
+> By the way, you say that you were not able to test SciViews. Is it 
+> because
+> you have not PC with Windows, or because SciViews did not install 
+> correctly
+> on your test machine? If it is the second answer, please, give me some
+> feedback.
+
+Its the first--- most of my computing is done on the OS X platform or 
+the Linux platform these days so I haven't gotten around to running it 
+on my Win2K installation.
+
+*snip*
+> Concerning MathLink, yes, it is a nice interface for calculation 
+> kernels. I
+> am working on the SciViews Mathematica Plug using this protocol, and 
+> it is a
+> real pleasure! Although it is not open source, I think that Wolfram 
+> Research
+> release it with a license that allows for freely implementing different
+> clients and servers, outside of Mathematica.
+>
+> OpenMath is a standard to exchange mathematical objects, but it is not 
+> much
+> focused on actually implementing the connection between the backend 
+> and the
+> frontend, as far as I know. MathLink is an excellent implementation of 
+> such
+> a backend/frontend communication protocol. If someone would like to 
+> code a
+> MathLink connection (or something equivalent) for R, it should be 
+> wonderful.
+> However, I suspect the task is not at all as easy as it could seem at 
+> first
+> glance!
+>
+
+As far as I can determine from working with the C APIs, the OpenMath 
+and MathLink protocols are quite similar, though they use a slightly 
+different protocol syntax you can generate a complete mapping from one 
+to the other:
+	MLPutInteger -> OMputInt32
+	MLPutReal     -> OMputFloat64
+	MLPutSymbol-> OMputSymbol (though OpenMath seems to suport a namespace 
+mechanism they call "CD"s for some reason)
+
+There's no function for MLPutFunction, rather they use a more open 
+ended mechanism (OMputApp,OMputSymbol,...,OMputEndApp) eliminating the 
+need to send an argument count. This is slightly more difficult to 
+serialize. There are also other elements for sending richer structures 
+(to simulate MathLink arrays and whatnot) via OMputObject and 
+OMputEndObject. This makes it pretty easy to build lists and arrays. 
+You can also send opaque byte objects much like MathLink.
+
+The API has mechanisms for socket transfer (*NIX,Win32) and *NIX 
+sockets (*NIX only, of course) with either binary or "XML" 
+serialization (though it doesn't produce a document that conforms to 
+the XML standard... it just happens to use an XML-like structure that 
+you could stick into an XML document)
+
+Admittedly, the website and most of the papers seem to talk about these 
+complex server set ups where various servers offer a variety of 
+services dispatched through a hub of some sort, but the reality of the 
+situation is the API is basically a MathLink clone (which is fine, 
+since it was exactly what I expected it to be :-))
+
+> Another remark: do not deconsider pipes or sockets: they work very 
+> well with
+> R, and you are not restricted to exchange text. You can also pass 
+> images
+> (graphs), numerical matrices,... However, if you want to share objects 
+> by
+> reference between R and your GUI client, then, this is a different 
+> story!
+> Note, however, that MathLink uses internally a single channel and 
+> serializes
+> communication through it by passing text, images, numerical matrices, 
+> error
+> messages in turn, using a custom protocol. This is why it can run a 
+> remote
+> kernel so easily. If it had to share matrices by reference, it would 
+> be not
+> possible or very difficult to work with remote kernels!
+
+At present I was only really thinking about a serial style 
+communication--- something like Rpvm would probably be more appropriate 
+if I wanted to share objects directly.
+
+>
+> Best,
+>
+> Philippe Grosjean
+>
+> ...........]<(({?<...............<?}))><...............................
+>  ) ) ) ) )
+> ( ( ( ( (       Dr. Philippe Grosjean
+>  ) ) ) ) )
+> ( ( ( ( (       LOV, UMR 7093
+>  ) ) ) ) )      Station Zoologique
+> ( ( ( ( (       Observatoire Oceanologique
+>  ) ) ) ) )      BP 28
+> ( ( ( ( (       06234 Villefranche sur mer cedex
+>  ) ) ) ) )      France
+> ( ( ( ( (
+>  ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+> ( ( ( ( (
+>  ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+> ( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+>  ) ) ) ) )
+> .......................................................................
+>
+>
+>
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of Byron Ellis
+> Sent: mercredi 2 avril 2003 11:40
+> To: R-sig-gui@stat.math.ethz.ch
+> Subject: [R-gui] Interfaces between GUIs and R
+>
+>
+> Hi folks, this is a question for all you GUI developers out there
+> though, in particular, to those who work on SciViews and RKward (though
+> anyone else is certainly welcome to chime in). Presently, my StatPaper
+> app (which will have a website soon, I've just been busy this week) and
+> AFAIK RKward employ a "kernel"-type interaction method (SciViews
+> mentions a kernel, but I haven't been able to test it to see how it
+> works) with R, that is R itself runs as a separate process and
+> communication takes place over either the STDIN/STDOUT associated with
+> the process or through some other means (say, UNIX sockets).  This
+> works fine if we're just passing text back and forth, but when we want
+> to start passing objects or graphics device information things start to
+> do downhill pretty quickly.
+>
+> My question: Is there any interest in developing a general kernel
+> interaction protocol for R GUIs? This would most likely include the
+> following:
+> 	* Representation of data objects
+> 	* Execution of R statements
+> 	* Returning graphics of the kernel link
+> 	* ???
+>
+> Recently, I've been looking at the OpenMath protocol
+> (http://www.openmath.org) for use in StatPaper and it seems fairly
+> simple and robust. It bears a great deal of resemblance to the MathLink
+> protocol employed by Mathematica. At the moment I think this entire
+> thing could be done as an R package, possibly using the REventLoop
+> mechanism for the server (though I don't know that it would be
+> necessary) and also providing client access so that two R installations
+> could communicate (I know that Rpvm and Rmpi already exist, though they
+> have a somewhat different goal) in a standard fashion if desired.
+>
+>
+> Byron Ellis (bellis@hsph.harvard.edu)
+> "Oook" - The Librarian
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+>
+>
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From bellis at hsph.harvard.edu  Thu Apr  3 15:27:49 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Thu Apr  3 21:28:06 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <20030403090217.B3452@jessie.research.bell-labs.com>
+Message-ID: <5AEBDF32-660A-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+
+On Thursday, April 3, 2003, at 09:02  AM, Duncan Temple Lang wrote:
+
+> As you know, I have been working on connecting many systems with R
+> (e.g. Perl, Python, Java, Octave, XLisp, S-Plus, ...), and have been
+> trying to get across that using strings across systems is quite
+> limiting for general computations.  Direct embedding, COM/CORBA, SOAP
+
+Yep, thats why I made sure you were on the R-gui roles when I sent the 
+message. otherwise you would have been CC'd  ;-)
+
+> or our own version of an XML format for Stat objects seems to be an
+> obvious collection of approaches.  Robert and I put together much of
+> an RSXMLObjects package which serializes and reads arbitrary S objects
+
+I had forgotten about RSXMLObjects
+
+> (including language objects, etc.) using an XML format.  The
+> structures can be easily extended (in the XML sense) to support other
+> languages.
+
+I saw that stuff as well as SSOAP, though I couldn't figure out if the 
+latter actually provided a server mechanism. The problem with 
+SOAP/XMLRPC that I see so far is a lack of state, since the kernel 
+paradigm is generally taken to be stateful and, I think, for good 
+reason: if you have some long running calculation you don't really want 
+to repeat the entire calculation because you forgot to change the title 
+of a graph (in Sweave, for install, anything long running I tend to run 
+separately to avoid having it run in the weave portion). Sure, we could 
+implement state using session IDs and whatnot, but it seems like an 
+awful lot of work just to use the current "hot" XML structure. An XML 
+stream would seem more appropriate, except that XML isn't really 
+conducive to streaming---it is a document format after all-- and is 
+awfully verbose, especially if we start passing complex graphs around 
+(isomorphic to the PS vs. PDF argument I guess)
+
+>
+> If the set of kernels is known and fixed, creating a new or
+> non-standard protocol is fine.  If people are likely to want to add
+> new kernels, they would then have to implement that protocol.  Using
+> something like CORBA/COM, SOAP or embedding would increase the chances
+> of that person being able to use existing facilities in that kernel.
+
+Well, in this case the kernel is R. :-) However, protocol aside (in 
+some sense the exact protocol is secondary) there are a variety of 
+things that are sort of general to the kernel execution universe. For 
+instance, separate execution spaces for sessions--- if I have two 
+documents I don't really want execution in one document to affect the 
+other documents because thats just weird and liable to trip people up 
+since they are visually separate documents. Having multiple 
+interpreters around would solve this since they would live in their own 
+spaces, but launching multiple copies of R (one for each document and 
+since the session has state R basically has to hang around for as long 
+as the document is open) is going to get really expensive. Multiple 
+interpreters within R would be nice (I'm not talking about 
+multithreading, just the ability to run multiple 
+interpreters---something I seem to recall Robert mentioning a year or 
+so ago) but would likely involve moving a goodly ways towards thread 
+safety--or at the very least passing the interpreter structure to all 
+the functions, breaking everything. :-) At the moment, there may be a 
+way to hack this behavior using environments, but I suspect people 
+could still break the paradigm (either intentionally or inadvertently) 
+with relative ease. I'm sure there are other issues as well :-) (like a 
+graphics device that exposes the display list to R s.t. it can be 
+serialized from whatever communication protocol you desire... except 
+for the font metrics, this would be fairly straightforward... would we 
+need the font metrics to just record the display list? I'm not sure)
+
+Basically, a lot of the same stuff you work on :-)
+
+>
+>  D.
+>
+> Byron Ellis wrote:
+>> Hi folks, this is a question for all you GUI developers out there
+>> though, in particular, to those who work on SciViews and RKward 
+>> (though
+>> anyone else is certainly welcome to chime in). Presently, my StatPaper
+>> app (which will have a website soon, I've just been busy this week) 
+>> and
+>> AFAIK RKward employ a "kernel"-type interaction method (SciViews
+>> mentions a kernel, but I haven't been able to test it to see how it
+>> works) with R, that is R itself runs as a separate process and
+>> communication takes place over either the STDIN/STDOUT associated with
+>> the process or through some other means (say, UNIX sockets).  This
+>> works fine if we're just passing text back and forth, but when we want
+>> to start passing objects or graphics device information things start 
+>> to
+>> do downhill pretty quickly.
+>>
+>> My question: Is there any interest in developing a general kernel
+>> interaction protocol for R GUIs? This would most likely include the
+>> following:
+>> 	* Representation of data objects
+>> 	* Execution of R statements
+>> 	* Returning graphics of the kernel link
+>> 	* ???
+>>
+>> Recently, I've been looking at the OpenMath protocol
+>> (http://www.openmath.org) for use in StatPaper and it seems fairly
+>> simple and robust. It bears a great deal of resemblance to the 
+>> MathLink
+>> protocol employed by Mathematica. At the moment I think this entire
+>> thing could be done as an R package, possibly using the REventLoop
+>> mechanism for the server (though I don't know that it would be
+>> necessary) and also providing client access so that two R 
+>> installations
+>> could communicate (I know that Rpvm and Rmpi already exist, though 
+>> they
+>> have a somewhat different goal) in a standard fashion if desired.
+>>
+>>
+>> Byron Ellis (bellis@hsph.harvard.edu)
+>> "Oook" - The Librarian
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI@stat.math.ethz.ch
+>> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+> -- 
+> _______________________________________________________________
+>
+> Duncan Temple Lang                duncan@research.bell-labs.com
+> Bell Labs, Lucent Technologies    office: (908)582-3217
+> 700 Mountain Avenue, Room 2C-259  fax:    (908)582-3340
+> Murray Hill, NJ  07974-2070
+>          http://cm.bell-labs.com/stat/duncan
+>
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From phgrosjean at sciviews.org  Fri Apr  4 12:31:39 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Fri Apr  4 11:32:13 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <37A79446-6605-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+Message-ID: <MABBLJDICACNFOLGIHJOIEIHDFAA.phgrosjean@sciviews.org>
+
+Byron Ellis wrote:
+>I was curious how you were going to handle the graphics devices... Are
+>you somehow capturing the output from the devga device under the
+>Windows platform?
+
+I capture the graph device window, i.e., I display it in my own application
+instead of in its original place but R is still responsible directly of
+(re)drawing its content. This way, I do not need to exchange large amounts
+of data between the backend and the frontend (indeed, there are no exchanges
+at all!) and all functionalities provided by the original R graph device are
+still available in SciViews, like copy metafile/bitmap to the clipboard,
+save the graphs directly in different formats, save and restore to and from
+a variable in the R user workspace and management of a graph history that is
+specific to the Windows version of R.
+
+>As far as I can determine from working with the C APIs, the OpenMath
+>and MathLink protocols are quite similar, though they use a slightly
+>different protocol syntax you can generate a complete mapping from one
+>to the other:
+>	MLPutInteger -> OMputInt32
+>	MLPutReal     -> OMputFloat64
+>	MLPutSymbol-> OMputSymbol (though OpenMath seems to suport a namespace
+>mechanism they call "CD"s for some reason)
+
+Then, as you suggest, OpenMath could be an excellent solution to interface
+R. However, R  being a statistical package there are few needs in
+representing complex mathematical notation. Even, R uses its own notation
+for statistical models (formulas). I wonder if and how this could be easily
+and automatically translated in a more traditional mathematical notation,...
+and even if this would be desirable?!
+
+>There's no function for MLPutFunction, rather they use a more open
+>ended mechanism (OMputApp,OMputSymbol,...,OMputEndApp) eliminating the
+>need to send an argument count. This is slightly more difficult to
+>serialize. There are also other elements for sending richer structures
+>(to simulate MathLink arrays and whatnot) via OMputObject and
+>OMputEndObject. This makes it pretty easy to build lists and arrays.
+>You can also send opaque byte objects much like MathLink.
+
+>The API has mechanisms for socket transfer (*NIX,Win32) and *NIX
+>sockets (*NIX only, of course) with either binary or "XML"
+>serialization (though it doesn't produce a document that conforms to
+>the XML standard... it just happens to use an XML-like structure that
+>you could stick into an XML document)
+
+Do you intend to initiate a project for making an OpenMath interface for R?
+If yes, I would like to take part of it, and ultimately include these
+features to the SciViews R plug.
+
+>Admittedly, the website and most of the papers seem to talk about these
+>complex server set ups where various servers offer a variety of
+>services dispatched through a hub of some sort, but the reality of the
+>situation is the API is basically a MathLink clone (which is fine,
+>since it was exactly what I expected it to be :-))
+
+I have looked a little closer to it, and indeed yes, it is closer to
+MathLink as it looks like when you first browse their web site.
+
+Best Regards,
+
+Philippe Grosjean
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oceanologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From thomas.baier at kirchnersoft.com  Fri Apr  4 14:49:00 2003
+From: thomas.baier at kirchnersoft.com (TB)
+Date: Fri Apr  4 13:49:07 2003
+Subject: AW: [R-gui] Interfaces between GUIs and R
+Message-ID: <E0AC11CC93B7D21185FD0060080B65523FACA6@WWW>
+
+Philippe,
+Byron,
+
+> -----Ursprüngliche Nachricht-----
+> Von: Philippe Grosjean [mailto:phgrosjean@sciviews.org]
+> Gesendet: Donnerstag, 03. April 2003 09:11
+> An: Byron Ellis
+> Cc: R-sig-gui@stat.math.ethz.ch
+> Betreff: RE: [R-gui] Interfaces between GUIs and R
+> 
+> 
+> 
+> 				R COM Server	SciViews R Plug
+> communication		synchronous		asynchronous
+> client implementation	easy (5 methods)	more difficult
+> (callbacks,...)
+> speed of execution	++			+
+> interruptible calc	no			yes
+> friezes the client(*)	yes			no
+> concurrent kernels(**)	no			yes
+> 
+> (*)  A single threaded client must wait for the completion of the
+> calculation with synchronous evaluation, while it can process other code
+> during evaluation with an asynchronous evaluation
+> (**) As a consequence, an asynchronous evaluation allows simultaneous
+> evaluation in different kernels (some kind of parallelization), while
+> with a
+> synchronous evaluation one can connect to several kernels, but must
+> serialize evaluations in these different kernels.
+
+Please let me add some clarifications:
+
+1. Concurrent kernels are also supported by R COM Server.
+2. Concurrent evaluation of different expressions in different kernels
+   is also supported, but one has to do the asynchronous processing by
+   using different threads/processes in the application program. While
+   on expression is evaluated, the COM server blocks. But the COM server
+   does not restrict your client application to a single thread.
+3. Different kernels on the same or on different machines can be utilized
+   the same time by the COM server. I assume, this also holds true for
+   SciViews.
+
+> As a conclusion, I consider R COM Server as a fast and simple interface
+> to
+> R, but it has some limitations, like client friezing, uninterruptible
+> calculations, and no concurrent evaluations in differents kernels that
+> makes
+> it less suitable for a complete GUI client. The SciViews R Plug is more
+> designed towards this goal.
+
+Philippe, as we discussed in Vienna, this depends on the requirements and
+is just where we are of different opinions. I prefer to have a
+multi-threaded
+client application, where I have full control over my parallel threads of
+execution and don't want to take care of asynchronously running R kernels.
+
+Best,
+Thomas
+
+From phgrosjean at sciviews.org  Fri Apr  4 15:24:01 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Fri Apr  4 14:24:39 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <E0AC11CC93B7D21185FD0060080B65523FACA6@WWW>
+Message-ID: <MABBLJDICACNFOLGIHJOMEIKDFAA.phgrosjean@sciviews.org>
+
+Thomas Baier wrote:
+>Philippe,
+>Byron,
+
+>> -----Ursprüngliche Nachricht-----
+>> Von: Philippe Grosjean [mailto:phgrosjean@sciviews.org]
+>> Gesendet: Donnerstag, 03. April 2003 09:11
+>> An: Byron Ellis
+>> Cc: R-sig-gui@stat.math.ethz.ch
+>> Betreff: RE: [R-gui] Interfaces between GUIs and R
+>>
+>>
+>>
+>> 				R COM Server	SciViews R Plug
+>> communication		synchronous		asynchronous
+>> client implementation	easy (5 methods)	more difficult
+>> (callbacks,...)
+>> speed of execution	++			+
+>> interruptible calc	no			yes
+>> friezes the client(*)	yes			no
+>> concurrent kernels(**)	no			yes
+>>
+>> (*)  A single threaded client must wait for the completion of the
+>> calculation with synchronous evaluation, while it can process other code
+>> during evaluation with an asynchronous evaluation
+>> (**) As a consequence, an asynchronous evaluation allows simultaneous
+>> evaluation in different kernels (some kind of parallelization), while
+>> with a
+>> synchronous evaluation one can connect to several kernels, but must
+>> serialize evaluations in these different kernels.
+
+>Please let me add some clarifications:
+>
+>1. Concurrent kernels are also supported by R COM Server.
+>2. Concurrent evaluation of different expressions in different kernels
+>   is also supported, but one has to do the asynchronous processing by
+>   using different threads/processes in the application program. While
+>   on expression is evaluated, the COM server blocks. But the COM server
+>   does not restrict your client application to a single thread.
+>3. Different kernels on the same or on different machines can be utilized
+>   the same time by the COM server. I assume, this also holds true for
+>   SciViews.
+
+We both agree. It is why I wrote "(*) A single threaded client..."
+There are two different options for parallelization: in the client, or in
+the server. It is nice to have both options available with:
+- R COM server: if you want parallelization, you need to program it yourself
+in your multithreaded client, and
+- SciViews R Plug: everything is already coded in the server, you can use
+single threaded client and still get parallelization, interruptible
+evaluation, etc... but the interface with the server is necessarily more
+complex.
+
+* snip *
+
+Best,
+
+Philippe
+
+From bellis at hsph.harvard.edu  Sat Apr  5 02:22:38 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Sat Apr  5 08:22:54 2003
+Subject: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <MABBLJDICACNFOLGIHJOIEIHDFAA.phgrosjean@sciviews.org>
+Message-ID: <FF53D9C0-672E-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+
+On Friday, April 4, 2003, at 04:31  AM, Philippe Grosjean wrote:
+
+> I capture the graph device window, i.e., I display it in my own 
+> application
+> instead of in its original place but R is still responsible directly of
+> (re)drawing its content. This way, I do not need to exchange large 
+> amounts
+> of data between the backend and the frontend (indeed, there are no 
+> exchanges
+> at all!) and all functionalities provided by the original R graph 
+> device are
+> still available in SciViews, like copy metafile/bitmap to the 
+> clipboard,
+> save the graphs directly in different formats, save and restore to and 
+> from
+> a variable in the R user workspace and management of a graph history 
+> that is
+> specific to the Windows version of R.
+>
+Ah, slick :-)
+
+>
+> Then, as you suggest, OpenMath could be an excellent solution to 
+> interface
+> R. However, R  being a statistical package there are few needs in
+> representing complex mathematical notation. Even, R uses its own 
+> notation
+> for statistical models (formulas). I wonder if and how this could be 
+> easily
+> and automatically translated in a more traditional mathematical 
+> notation,...
+> and even if this would be desirable?!
+>
+
+Well, the nice thing about OpenMath is the namespacing (Content 
+Dictionaries) let you specify pretty much any structure you like so it 
+would be possible to completely serialize any R type using OpenMath in 
+a straightforward manner. So (to steal of pseudo-Mathematica for a 
+moment)
+x <- function(a,b) { a + b }
+
+R:Assign[Var(x),R:Function[{Var(a),Var(b)},{R:Sum[Var(a),Var(b)]}]]
+
+Whether or not we'd WANT to do this is up for grabs :-) My intent is 
+to, essentially, implement the equivalent of "Enter" from Mathematica 
+(for entering lines of code) initially as well as the code necessary to 
+transport graphics data across the link in a "display list" of some 
+sort (or at the very least as a set of OpenMath functions). I'd rather 
+have something simple that works at first rather than something complex 
+that never gets finished ;-)
+
+>
+> Do you intend to initiate a project for making an OpenMath interface 
+> for R?
+> If yes, I would like to take part of it, and ultimately include these
+> features to the SciViews R plug.
+>
+
+I have a *very* primitive OpenMath package for R that allows two R 
+instances to talk to each other at the moment (via UNIX and TCP 
+sockets). It can pass the primitives as well as Objects (lists with a 
+class attribute basically) and Applications (also a list, different 
+class attribute). It seems like this might eventually be a job for 
+REventLoop, but I haven't yet fathomed how to do away with stdin/stdout 
+entirely (since this I/O mechanism is message based, not data stream 
+based stdin/stdout type interfaces don't have much meaning... though I 
+would *like* Enter[Some Text] to simulate entering a line for managing 
+block generation (each output generating statement generates a new 
+block of text) and error reporting as its oh-so-much-more-useful to 
+have a "syntax error" attached to a particular line rather than an 
+arbitrarily large hunk of code).
+
+There isn't any documentation at all and little error handling, but 
+since you're interested I can start making that package available 
+through some mechanism relatively soon (I should really get this stuff 
+into a SourceForge project or something similar). The "StatPaper" side 
+of things is all ObjectiveC based and actually already supports the 
+notion of an "evaluator" where objects are set to handle a particular 
+namespace (for instance, there is a class that handles the "Plot" 
+namespace for mapping a prospective stream of ObjectMath data back into 
+an image representation, a PDF in this case, which is based on 
+devQuartz... though with different handling for font metrics and such)
+
+>
+> Best Regards,
+>
+> Philippe Grosjean
+>
+> ...........]<(({?<...............<?}))><...............................
+>  ) ) ) ) )
+> ( ( ( ( (       Dr. Philippe Grosjean
+>  ) ) ) ) )
+> ( ( ( ( (       LOV, UMR 7093
+>  ) ) ) ) )      Station Zoologique
+> ( ( ( ( (       Observatoire Oceanologique
+>  ) ) ) ) )      BP 28
+> ( ( ( ( (       06234 Villefranche sur mer cedex
+>  ) ) ) ) )      France
+> ( ( ( ( (
+>  ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+> ( ( ( ( (
+>  ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+> ( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+>  ) ) ) ) )
+> .......................................................................
+>
+>
+>
+>
+>
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From zedshaw at telus.net  Sat Apr  5 02:04:25 2003
+From: zedshaw at telus.net (Zed A. Shaw)
+Date: Sat Apr  5 11:04:39 2003
+Subject: [R-gui] RBackend (GUI to R communication)
+Message-ID: <995B8236-6745-11D7-BFFF-00039391E298@telus.net>
+
+Hi,
+
+I got into this conversation early as I've had lots of problems with my  
+old e-mail address.  I'm now back on and thought I'd tell everyone  
+about the RBackend I'm writing for the Obversive project  
+(http://obversive.sourceforge.net).
+
+The RBackend is basically a CORBA based server that embeds the R  
+interpreter and provides a completely CORBA based way of interfacing  
+with it that is the minimum necessary to get R to process code.  The  
+main advantage of it is the simplicity and that the interface provides  
+a sanitizing interface for working with R which keeps R from messing  
+with your program.  By keeping the interface very small and controlled,  
+it's easier to port the backend to our target platforms.  I also found  
+that this is the best way to keep the viral R code from mucking up the  
+Obversive process.  So far, I'm not too impressed with R's C interface  
+as it assumes it is in total control and takes over your program.
+
+I currently have the RBackend processing R code, and I'm just now  
+struggling with getting the variables and passing them back and forth.   
+I'm also contemplating writing a little parser that will give much  
+better error messages on errors in the R code.  If you're interested in  
+the IDL so far, check out:
+
+http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/obversive/obversive/src/ 
+backend/Attic/RBackend.idl?rev=1.1.2.2&content-type=text/vnd.viewcvs- 
+markup
+
+Let me know what you think.
+
+-----
+Zed A. Shaw
+http://www.zedshaw.com/
+
+From phgrosjean at sciviews.org  Mon Apr  7 14:07:29 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon Apr  7 13:18:59 2003
+Subject: ARE: [R-gui] Interfaces between GUIs and R
+In-Reply-To: <cteo8v4t01as0qvmu70iui27shapc7a10d@4ax.com>
+Message-ID: <MABBLJDICACNFOLGIHJOCEKHDFAA.phgrosjean@sciviews.org>
+
+Byron Ellis wrote:
+>My question: Is there any interest in developing a general kernel
+>interaction protocol for R GUIs? This would most likely include the
+>following:
+>	* Representation of data objects
+>	* Execution of R statements
+>	* Returning graphics of the kernel link
+>	* ???
+
+... and in another message:
+>I'd rather have something simple that works at first rather than
+>something complex that never gets finished ;-)
+
+It is exactly my point of view. That is the reason why I use --ess mode of R
+today (because it works right now and it is simple). I have:
+
+Today's SciViews R Plug:  frontend (GUI client) <-> R Plug (COM) <-> R
+using --ess
+And in the future:        frontend              <-> R Plug (COM) <-> R using
+?OpenMath / MathLink / RSXMLObjects? with better integration between R and
+the R Plug.
+
+In other words, I am ready to use better technologies when they will be
+available. The design of the SciViews R Plug, with an intermediary COM layer
+allows me to concentrate on the GUI Client that "sees" only an (almost)
+definitive COM interface, and it leaves me the opportunity to change the
+internals of the R Plug, that is, to replace the simple but rudimental --ess
+mode by something else when the technology will be there. Of course, I
+encourage all developments and initiatives for enhancing connectivity of R.
+However, I am also waiting for features that are not found commonly in most
+current interfaces.
+
+For instance, I am curious which interface allows interruptible calculation:
+- --ess mode, using Ctrl-C, and consequently the current SciViews R Plug
+does,
+- and then ???
+
+Best,
+
+Philippe Grosjean
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oceanologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From bellis at hsph.harvard.edu  Tue Apr  8 20:01:32 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Wed Apr  9 01:01:41 2003
+Subject: [R-gui] StatPaper Update
+Message-ID: <0A138840-6A16-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+
+So, I'm very close to releasing a "Tech Test 2" for StatPaper (which is 
+sticking I guess... Its not used by anyone else according to Google 
+:-)). If features inlined graphics and interaction via an OpenMath 
+interface. The OpenMath package implements a graphics device and 
+primitives for sending/receiving OpenMath primitives. The kernel is 
+implemented using the R package in R over UNIX sockets. It could use 
+TCP/IP just as easily but that hasn't been tested. Running 
+demo(graphics) isn't the speediest thing in the world, but I'm also 
+very early in development.
+
+In the meantime, you can feast your eyes on a couple of screenshots 
+over at 
+http://www.people.fas.harvard.edu/~bcellis/StatPaper/index.shtml 
+showing off the newest functionality.
+
+Comments are, of course, always welcome.
+
+
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From bellis at hsph.harvard.edu  Wed Apr  9 02:04:09 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Wed Apr  9 07:04:24 2003
+Subject: [R-gui] StatPaper Tech Test 2 Posted
+Message-ID: <B28B1424-6A48-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+
+Ok, I went ahead an posted TT2 for StatPaper. I mostly delayed from 
+this afternoon to see if I could get plotmath working properly. While 
+the metrics are OK, the glyphs are all screwed up (so while it doesn't 
+generate an error, it doesn't look right either. On the other hand it 
+is MORE successful than pdf() when viewing with Reader under OS X :-)).
+
+NB: If you run demo(graphics) it generally takes about 30-40 seconds on 
+my iBook (700MHz, 384MB RAM) so be patient. That said, it SOMETIMES 
+crashes the kernel so if it sits for too long you've got problems. Like 
+I said in TechTest 1, I'll be more surprised if it works than if it 
+doesn't ;-)
+
+You can get it at (as previously mentioned) 
+http://www.people.fas.harvard.edu/~bcellis/StatPaper
+
+If you want to compile the OpenMath package yourself you'll have to get 
+and install the OpenMath C library from http://www.openmath.org (the 
+INRIA implementation). 'make install' was broken under my copy of bash 
+so you may have more luck with tcsh. It also installs in /lib and 
+/include (?!) by default so make sure you check it. I built a version 
+of the OpenMath package and included it (the OpenMath libraries know 
+not this "dynamic linking" technology so you won't need them if you use 
+the binary package)
+
+People not using Macs may also be interested in the OpenMath package. 
+It occurs to me that I should have posted a source package separately. 
+I'll do so in the morning (I need to be up in 4.5 hours to go row so 
+I'm going to sleep now)
+
+Good luck and comments are always welcome
+
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From deleeuw at stat.ucla.edu  Wed Apr  9 00:05:50 2003
+From: deleeuw at stat.ucla.edu (Jan de Leeuw)
+Date: Wed Apr  9 08:06:12 2003
+Subject: [R-gui] Re: [R-SIG-Mac]StatPaper Tech Test 2 Posted
+In-Reply-To: <B28B1424-6A48-11D7-B170-000393BDE1EC@hsph.harvard.edu>
+Message-ID: <50AE1523-6A51-11D7-94EC-000393BB6D36@stat.ucla.edu>
+
+Works great (and fast on a DP 1.25). I am not sure which problem
+you have with pdf(). Do you set the encoding to MacRoman ?
+
+On Tuesday, Apr 8, 2003, at 22:04 US/Pacific, Byron Ellis wrote:
+
+> Ok, I went ahead an posted TT2 for StatPaper. I mostly delayed from  
+> this afternoon to see if I could get plotmath working properly. While  
+> the metrics are OK, the glyphs are all screwed up (so while it doesn't  
+> generate an error, it doesn't look right either. On the other hand it  
+> is MORE successful than pdf() when viewing with Reader under OS X > :-)).
+>
+===
+Jan de Leeuw; Professor and Chair, UCLA Department of Statistics;
+Editor: Journal of Multivariate Analysis, Journal of Statistical  
+Software
+US mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554
+phone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu
+homepage: http://gifi.stat.ucla.edu
+   
+------------------------------------------------------------------------ 
+-------------------------
+           No matter where you go, there you are. --- Buckaroo Banzai
+                    http://gifi.stat.ucla.edu/sounds/nomatter.au
+   
+------------------------------------------------------------------------ 
+-------------------------
+
+From phgrosjean at sciviews.org  Tue Apr 29 10:56:22 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Apr 29 09:58:25 2003
+Subject: [R-gui] Feedback about SciViews?
+Message-ID: <MABBLJDICACNFOLGIHJOMEIIDGAA.phgrosjean@sciviews.org>
+
+Hello,
+
+This message is little off-topic in R-help. Sorry for that, but not all
+interested people are wired yet to r-sig-gui
+(http://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui). Thanks for your
+comprehension.
+
+A preview version of SciViews (a Graphical User Interface for R under
+Windows, http://www.sciviews.org) was released a few weeks ago. Since then,
+the Web site recorded several thousands of downloads. I would really
+appreciate your feedback:
+- What you like,
+- What you don't like,
+- Wich features you would like to get in the next release.
+
+I got already some comments. I will post a summary in a while in r-sig-gui.
+
+Best,
+
+Philippe Grosjean
+
+P.S.: we are working now mainly on features like a complete object explorer
+and "libraries" (that is, graphical menus in the form of graph galleries,
+electronic reference cards, assistants,...).
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oc?anologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From maechler at stat.math.ethz.ch  Tue Apr 29 12:31:44 2003
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Tue Apr 29 11:31:55 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <MABBLJDICACNFOLGIHJOMEIIDGAA.phgrosjean@sciviews.org>
+References: <MABBLJDICACNFOLGIHJOMEIIDGAA.phgrosjean@sciviews.org>
+Message-ID: <16046.18048.201681.890183@gargle.gargle.HOWL>
+
+>>>>> "PhGr" == Philippe Grosjean <phgrosjean@sciviews.org>
+>>>>>     on Tue, 29 Apr 2003 09:56:22 +0200 writes:
+
+    PhGr> Hello, This message is little off-topic in
+    PhGr> R-help. Sorry for that, but not all interested people
+    PhGr> are wired yet to r-sig-gui
+    PhGr> (http://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui). Thanks
+    PhGr> for your comprehension.
+
+    PhGr> A preview version of SciViews 
+    PhGr> (a Graphical User Interface for R under Windows,
+					    =============
+
+    PhGr> http://www.sciviews.org)  was released a few weeks ago.
+
+R for Windows already comes with a (simple) GUI.
+Many of the R developers would rather think mostly about GUI
+efforts that are platform INDEPENDENT, such as the standard Tcl/Tk
+package (try "library(tcltk)" and the demos from "demo(package =
+"tcltk")" in R), and the RGtk (http://www.omegahat.org/RGtk/) one.
+
+For that reason, in the Bioconductor project (http://www.bioconductor.org),
+the  "tkWidgets" package has been developed (built on top of R's
+standard "tcltk" package -- which from 1.7.0 on does not need
+extra efforts for installation on Windows).
+
+Excuse that this sounds a bit negative, but platform independence
+is one of the strengths of R.
+
+Martin Maechler <maechler@stat.math.ethz.ch>	http://stat.ethz.ch/~maechler/
+Seminar fuer Statistik, ETH-Zentrum  LEO C16	Leonhardstr. 27
+ETH (Federal Inst. Technology)	8092 Zurich	SWITZERLAND
+phone: x-41-1-632-3408		fax: ...-1228			<><
+
+From dmurdoch at pair.com  Tue Apr 29 08:13:12 2003
+From: dmurdoch at pair.com (Duncan Murdoch)
+Date: Tue Apr 29 13:13:40 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <16046.18048.201681.890183@gargle.gargle.HOWL>
+References: <MABBLJDICACNFOLGIHJOMEIIDGAA.phgrosjean@sciviews.org>
+	<16046.18048.201681.890183@gargle.gargle.HOWL>
+Message-ID: <r5nsavsd74t9rnlnpcnkd8mut67h1bivoa@4ax.com>
+
+On Tue, 29 Apr 2003 11:31:44 +0200, you wrote:
+
+>R for Windows already comes with a (simple) GUI.
+>Many of the R developers would rather think mostly about GUI
+>efforts that are platform INDEPENDENT, such as the standard Tcl/Tk
+>package (try "library(tcltk)" and the demos from "demo(package =
+>"tcltk")" in R), and the RGtk (http://www.omegahat.org/RGtk/) one.
+
+That's true, but as the Windows maintainer, I would *love* to have an
+alternative to Rgui.  The Graphapp package that underlies it is not
+easy to work with.
+
+I think the best long term strategy is to have a clean division
+between the user interface aspects of R (which are necessarily
+platform dependent) and the underlying computing engine (which should
+be platform independent).  It should be as easy to experiment with the
+user interface as it is to experiment with other aspects of
+statistical computing.  TCL/TK is one way to realize this, but should
+not be the only one.
+
+Duncan Murdoch
+
+From phgrosjean at sciviews.org  Tue Apr 29 15:01:27 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Apr 29 14:02:17 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <16046.18048.201681.890183@gargle.gargle.HOWL>
+Message-ID: <MABBLJDICACNFOLGIHJOCEJEDGAA.phgrosjean@sciviews.org>
+
+
+>>>>> "PhGr" == Philippe Grosjean <phgrosjean@sciviews.org>
+>>>>>     on Tue, 29 Apr 2003 09:56:22 +0200 writes:
+
+    PhGr> Hello, This message is little off-topic in
+    PhGr> R-help. Sorry for that, but not all interested people
+    PhGr> are wired yet to r-sig-gui
+    PhGr> (http://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui). Thanks
+    PhGr> for your comprehension.
+
+    PhGr> A preview version of SciViews
+    PhGr> (a Graphical User Interface for R under Windows,
+					    =============
+
+    PhGr> http://www.sciviews.org)  was released a few weeks ago.
+
+Martin Maechler answered:
+
+>R for Windows already comes with a (simple) GUI.
+>Many of the R developers would rather think mostly about GUI
+>efforts that are platform INDEPENDENT, such as the standard Tcl/Tk
+>package (try "library(tcltk)" and the demos from "demo(package =
+>"tcltk")" in R), and the RGtk (http://www.omegahat.org/RGtk/) one.
+
+>For that reason, in the Bioconductor project (http://www.bioconductor.org),
+>the  "tkWidgets" package has been developed (built on top of R's
+>standard "tcltk" package -- which from 1.7.0 on does not need
+>extra efforts for installation on Windows).
+
+>Excuse that this sounds a bit negative, but platform independence
+>is one of the strengths of R.
+
+No problem, I am aware of this. I place platform independence high in the
+wish list. However, do not condamn SciViews just because it does not match
+this constraint, or because it does not use tools provided by the R Core
+Team. Believe me, if I would be able to develop SciViews today with RAD
+tools using platform independent toolkits, I would do so! Remember that the
+current implementation is rather a prototype for testing various concepts. I
+believe that early testing of concepts is very important in order to design
+an efficient GUI for R (according to various discussions, there is still
+much work to do for prototyping good GUIs in statistics / data analysis).
+
+Tcl/Tk and library(tcltk) is nice and I will use it as much as possible in
+SciViews... for what it is currently capable within R: dialog boxes. For
+several reasons, it is not yet capable of handling all the features proposed
+in SciViews. However, there are a few complete GUIs written in Tcl/Tk around
+there, and I am pretty much confident that Peter Dalgaard will enhance the
+tcltk library to a level that will allow replicating SciViews with it.
+Active development of more sophisticated widgets thanks to bioconductor
+people and others also contribute to this feeling.
+
+RGtk and co currently suffers from two big problem: (1) it is not the
+fastest, and (2) it is not yet Windows-compatible (according to some
+discussions in r-sig-gui, Windows users are currently the priority target
+for a R GUI). Yet, I look with much interest towards projects like Poor
+Man's GUI of John Verzani, and I encourage it. Also, Gtk is much more OO
+than Tcl/Tk, and this is a strong advantage for large projects.
+
+ObveRsive is platform independent, and it explores various technical
+solutions to be it. SciViews is not, but it is dedicated to explores various
+GUI concepts. Do you see now the complementarity and interest of SciViews in
+this context?
+
+Thank you for your feedback.
+Best,
+
+Philippe
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oceanologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From duncan at research.bell-labs.com  Tue Apr 29 09:26:34 2003
+From: duncan at research.bell-labs.com (Duncan Temple Lang)
+Date: Tue Apr 29 14:27:20 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <MABBLJDICACNFOLGIHJOCEJEDGAA.phgrosjean@sciviews.org>;
+	from phgrosjean@sciviews.org on Tue, Apr 29, 2003 at 02:01:27PM +0200
+References: <16046.18048.201681.890183@gargle.gargle.HOWL>
+	<MABBLJDICACNFOLGIHJOCEJEDGAA.phgrosjean@sciviews.org>
+Message-ID: <20030429082634.A24228@jessie.research.bell-labs.com>
+
+Philippe Grosjean wrote:
+> 
+> >>>>> "PhGr" == Philippe Grosjean <phgrosjean@sciviews.org>
+> >>>>>     on Tue, 29 Apr 2003 09:56:22 +0200 writes:
+> 
+
+> RGtk and co currently suffers from two big problem: (1) it is not the
+> fastest, and (2) it is not yet Windows-compatible (according to some
+> discussions in r-sig-gui, Windows users are currently the priority target
+> for a R GUI).
+
+Hi Philippe.
+
+ Can you tell us how you came to these conclusions? I haven't done any
+performance measurements on RGtk or tcltk, but I would be startled if
+there was any discernible difference in their response times for
+callbacks. If there is some other way in which it is slow I'd be very
+happy to look into it. We haven't experienced any problems with it in
+using it in Berkeley for teaching (www.statdocs.org).  And we can use
+S functions as callbacks in GGobi for identifying points, brushing
+regions, etc.
+
+One issue might be the integration of the event loop and that is
+something quite different from RGtk itself.  If the speed is being
+measured from John Verzani's pmg, you may want to identify whether
+this lack of speed is in the loading of the package, the running of
+the GUI, or the method dispatch in the OOP mechanism.
+
+The core gtk library and hence RGtk is windows-compatible and indeed
+there is a binary on the Omegahat web site for RGtk.  What are not
+necessarily windows compatible are the additional libraries such as
+gtkhtml, etc. that use Gnome.  Since some of these widgets are not
+available for Tk, the platform-dependency is a different issue.
+
+ So if you have any examples where RGtk is slow, I'd be
+grateful if you could point me at them so I can find out if
+it can be fixed.
+
+ Thanks,
+   D.
+ 
+
+
+> Yet, I look with much interest towards projects like Poor
+> Man's GUI of John Verzani, and I encourage it. Also, Gtk is much more OO
+> than Tcl/Tk, and this is a strong advantage for large projects.
+> 
+> ObveRsive is platform independent, and it explores various technical
+> solutions to be it. SciViews is not, but it is dedicated to explores various
+> GUI concepts. Do you see now the complementarity and interest of SciViews in
+> this context?
+> 
+> Thank you for your feedback.
+> Best,
+> 
+> Philippe
+> 
+> ...........]<(({?<...............<?}))><...............................
+>  ) ) ) ) )
+> ( ( ( ( (       Dr. Philippe Grosjean
+>  ) ) ) ) )
+> ( ( ( ( (       LOV, UMR 7093
+>  ) ) ) ) )      Station Zoologique
+> ( ( ( ( (       Observatoire Oceanologique
+>  ) ) ) ) )      BP 28
+> ( ( ( ( (       06234 Villefranche sur mer cedex
+>  ) ) ) ) )      France
+> ( ( ( ( (
+>  ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+> ( ( ( ( (
+>  ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+> ( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+>  ) ) ) ) )
+> .......................................................................
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+_______________________________________________________________
+
+Duncan Temple Lang                duncan@research.bell-labs.com
+Bell Labs, Lucent Technologies    office: (908)582-3217
+700 Mountain Avenue, Room 2C-259  fax:    (908)582-3340
+Murray Hill, NJ  07974-2070       
+         http://cm.bell-labs.com/stat/duncan
+
+From dmurdoch at pair.com  Tue Apr 29 09:28:31 2003
+From: dmurdoch at pair.com (Duncan Murdoch)
+Date: Tue Apr 29 14:28:42 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <20030429075540.7f7cc94e.fharrell@virginia.edu>
+References: <MABBLJDICACNFOLGIHJOMEIIDGAA.phgrosjean@sciviews.org>
+	<16046.18048.201681.890183@gargle.gargle.HOWL>
+	<r5nsavsd74t9rnlnpcnkd8mut67h1bivoa@4ax.com>
+	<20030429075540.7f7cc94e.fharrell@virginia.edu>
+Message-ID: <8kqsav4d35osg6lfftt33915ada2iag70s@4ax.com>
+
+On Tue, 29 Apr 2003 07:55:40 -0400, you wrote:
+
+>I think that platform independence is extremely important.  You did not say otherwise, but I was hoping you would stress that point.  -Frank Harrell
+
+I don't know if I agree with you or not.  I think it's extremely
+important at the level of computations that don't involve the user
+interface.  If you're doing a statistical computation, your functions
+and scripts and packages should work on every platform.
+
+However, I think it's a hindrance to progress if platform independence
+is enforced in the user interface.  
+
+Different platforms support different user interface elements.  If we
+aim for platform independence in the user interface, then we will
+necessarily be limited in what can be done there.  For a simple
+example, the use of the mouse for copying and pasting varies from
+system to system.  I think it's obvious that we should not impose
+common rules on the use of the mouse (how do you copy, paste, etc.)  
+
+There needs to be a level of abstraction (e.g. all platforms should
+support copy & paste, but in their native way), but there also needs
+to be the possibility of using features that are available on one
+platform that aren't on others.  If they turn out to be good, then
+someone will write them for the other platform.  If they turn out to
+be bad, then we'll find that out without wasting all the time of
+writing them portably.
+
+For example, right now ESS does things that aren't available to people
+not using Emacs, e.g. Rgui users.  This is good:  it encourages people
+to find ways to do those things, either by adopting Emacs, or by
+putting them into Rgui, or by writing a new front end like Philippe is
+doing.  If Philippe invents something that looks useful (and from his
+presentation in Vienna, I think he is doing that), then a similar
+propagation will happen.
+
+Duncan Murdoch
+
+From fharrell at virginia.edu  Tue Apr 29 10:20:36 2003
+From: fharrell at virginia.edu (Frank E Harrell Jr)
+Date: Tue Apr 29 15:20:13 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <8kqsav4d35osg6lfftt33915ada2iag70s@4ax.com>
+References: <MABBLJDICACNFOLGIHJOMEIIDGAA.phgrosjean@sciviews.org>
+	<16046.18048.201681.890183@gargle.gargle.HOWL>
+	<r5nsavsd74t9rnlnpcnkd8mut67h1bivoa@4ax.com>
+	<20030429075540.7f7cc94e.fharrell@virginia.edu>
+	<8kqsav4d35osg6lfftt33915ada2iag70s@4ax.com>
+Message-ID: <20030429092036.06cf14b6.fharrell@virginia.edu>
+
+On Tue, 29 Apr 2003 08:28:31 -0400
+Duncan Murdoch <dmurdoch@pair.com> wrote:
+
+> On Tue, 29 Apr 2003 07:55:40 -0400, you wrote:
+> 
+> >I think that platform independence is extremely important.  You did not say otherwise, but I was hoping you would stress that point.  -Frank Harrell
+> 
+> I don't know if I agree with you or not.  I think it's extremely
+> important at the level of computations that don't involve the user
+> interface.  If you're doing a statistical computation, your functions
+> and scripts and packages should work on every platform.
+> 
+> However, I think it's a hindrance to progress if platform independence
+> is enforced in the user interface.  
+> 
+> Different platforms support different user interface elements.  If we
+> aim for platform independence in the user interface, then we will
+> necessarily be limited in what can be done there.  For a simple
+> example, the use of the mouse for copying and pasting varies from
+> system to system.  I think it's obvious that we should not impose
+> common rules on the use of the mouse (how do you copy, paste, etc.)  
+> 
+> There needs to be a level of abstraction (e.g. all platforms should
+> support copy & paste, but in their native way), but there also needs
+> to be the possibility of using features that are available on one
+> platform that aren't on others.  If they turn out to be good, then
+> someone will write them for the other platform.  If they turn out to
+> be bad, then we'll find that out without wasting all the time of
+> writing them portably.
+> 
+> For example, right now ESS does things that aren't available to people
+> not using Emacs, e.g. Rgui users.  This is good:  it encourages people
+> to find ways to do those things, either by adopting Emacs, or by
+> putting them into Rgui, or by writing a new front end like Philippe is
+> doing.  If Philippe invents something that looks useful (and from his
+> presentation in Vienna, I think he is doing that), then a similar
+> propagation will happen.
+> 
+> Duncan Murdoch
+> 
+
+Thanks for your note Duncan.  I think that to the extent possible it is good to keep enhancing generic cross-platform tools to accomplish these goals.  One ulterior motive I have is for people to be able to jump from Micro$oft to Linux easily.  A more noble goal is that I encounter great difficulty as a teacher when different students use different looking GUIs.
+
+Regards,
+
+Frank
+
+
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+---
+Frank E Harrell Jr              Prof. of Biostatistics & Statistics
+Div. of Biostatistics & Epidem. Dept. of Health Evaluation Sciences
+U. Virginia School of Medicine  http://hesweb1.med.virginia.edu/biostat
+
+From phgrosjean at sciviews.org  Tue Apr 29 16:23:30 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Apr 29 15:25:02 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <20030429082634.A24228@jessie.research.bell-labs.com>
+Message-ID: <MABBLJDICACNFOLGIHJOKEJJDGAA.phgrosjean@sciviews.org>
+
+Duncan Temple Lang wrote:
+
+>Hi Philippe.
+
+> Can you tell us how you came to these conclusions? I haven't done any
+>performance measurements on RGtk or tcltk, but I would be startled if
+>there was any discernible difference in their response times for
+>callbacks. If there is some other way in which it is slow I'd be very
+>happy to look into it. We haven't experienced any problems with it in
+>using it in Berkeley for teaching (www.statdocs.org).  And we can use
+>S functions as callbacks in GGobi for identifying points, brushing
+>regions, etc.
+
+Hmmm, looks like I should include a link to StatDocs in
+http://www.r-project.org/GUI! By the way, most links in this site refer to
+pages I cannot download. Is this site under construction, or reorganization?
+
+>One issue might be the integration of the event loop and that is
+>something quite different from RGtk itself.  If the speed is being
+>measured from John Verzani's pmg, you may want to identify whether
+>this lack of speed is in the loading of the package, the running of
+>the GUI, or the method dispatch in the OOP mechanism.
+
+I apologize. My conclusions were drawn from PMG use, which was my last
+experience with RGtk and related packages. Indeed yes, I also use GGobi and
+I am pretty happy with its speed and also with its compatibility with
+Windows.
+
+>The core gtk library and hence RGtk is windows-compatible and indeed
+>there is a binary on the Omegahat web site for RGtk.  What are not
+>necessarily windows compatible are the additional libraries such as
+>gtkhtml, etc. that use Gnome.  Since some of these widgets are not
+>available for Tk, the platform-dependency is a different issue.
+
+... but yet! It is one of the reasons why I was unable to develop SciViews
+with Tk.
+
+> So if you have any examples where RGtk is slow, I'd be
+>grateful if you could point me at them so I can find out if
+>it can be fixed.
+
+> Thanks,
+>   D.
+
+Best,
+
+Philippe
+
+From bellis at hsph.harvard.edu  Tue Apr 29 10:30:48 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Tue Apr 29 16:08:27 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <r5nsavsd74t9rnlnpcnkd8mut67h1bivoa@4ax.com>
+Message-ID: <C9DFD144-7A46-11D7-9CA5-000393BDE1EC@hsph.harvard.edu>
+
+
+On Tuesday, April 29, 2003, at 07:13  AM, Duncan Murdoch wrote:
+
+> On Tue, 29 Apr 2003 11:31:44 +0200, you wrote:
+>
+>> R for Windows already comes with a (simple) GUI.
+>> Many of the R developers would rather think mostly about GUI
+>> efforts that are platform INDEPENDENT, such as the standard Tcl/Tk
+>> package (try "library(tcltk)" and the demos from "demo(package =
+>> "tcltk")" in R), and the RGtk (http://www.omegahat.org/RGtk/) one.
+>
+> That's true, but as the Windows maintainer, I would *love* to have an
+> alternative to Rgui.  The Graphapp package that underlies it is not
+> easy to work with.
+>
+> I think the best long term strategy is to have a clean division
+> between the user interface aspects of R (which are necessarily
+> platform dependent) and the underlying computing engine (which should
+
+Precisely. I would actually say that R is -not- platform independent in 
+that it expects a certain type of GUI--- a shell process living on 
+STDIN and STDOUT that talks to an out-of-process Window Server of some 
+sort. Most of the work done in the Windows GUI is spent faking that 
+environment to make R think its still running on a X Server somewhere 
+and similar work was done for the Mac/Carbon port (obviously, Darwin R 
+can happily use Apple's X server). REventLoop takes some steps as does 
+the work on embedding, but its still safer to run the "GUI" stuff 
+out-of-process and even then not foolproof.
+
+If you want true platform independence you really have to consider 
+independence in terms of style of interaction as well as operating 
+system. Some people really dig on ESS, some like to click things. 
+Personally, I like my plots inline with my code. All should be able to 
+first-class GUI citizens if they so desire.
+
+
+> be platform independent).  It should be as easy to experiment with the
+> user interface as it is to experiment with other aspects of
+> statistical computing.  TCL/TK is one way to realize this, but should
+> not be the only one.
+>
+> Duncan Murdoch
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From phgrosjean at sciviews.org  Tue Apr 29 17:20:47 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Apr 29 16:21:32 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <20030429092036.06cf14b6.fharrell@virginia.edu>
+Message-ID: <MABBLJDICACNFOLGIHJOAEKADGAA.phgrosjean@sciviews.org>
+
+Duncan Murdoch <dmurdoch@pair.com> wrote:
+
+> On Tue, 29 Apr 2003 07:55:40 -0400, you wrote:
+>
+> >I think that platform independence is extremely important.  You did not
+say otherwise, but I was hoping you would stress that point.  -Frank Harrell
+>
+> I don't know if I agree with you or not.  I think it's extremely
+> important at the level of computations that don't involve the user
+> interface.  If you're doing a statistical computation, your functions
+> and scripts and packages should work on every platform.
+>
+> However, I think it's a hindrance to progress if platform independence
+> is enforced in the user interface.
+>
+
+<...>
+
+Frank E. Harrell Jr answered:
+
+>Thanks for your note Duncan.  I think that to the extent possible it is goo
+>to keep enhancing generic cross-platform tools to accomplish these goals.
+>One ulterior motive I have is for people to be able to jump from Micro$oft
+>to Linux easily.  A more noble goal is that I encounter great difficulty as
+>a teacher when different students use different looking GUIs.
+
+>Regards,
+
+>Frank
+
+So, this is the problem! Platform independence is desirable, but it is a
+major limitation in current GUI development. So what, should we limit to a
+tiny set of common features in order to provide same look-and-feel on all
+platforms? Netscape, Matlab, Mathematica,... are good example of similar GUI
+look-and-feel in different platforms. However, what the story does not tell
+is: what was really the effort required to the programmers to archieve this
+goal compared to different implementations on different platforms? Matlab
+6.x is Java... is this the secret? I have many difficulties to run SJava
+under Windows. Once I successfully compile and run it in one machine, once
+it fails and I cannot spot the problem. I really wish to get it working
+consistently...
+
+Current developments in SciViews involve more platform independent tools by
+using:
+1) Web pages. They are platform independent by nature. In the next version,
+we will implement electronic reference cards, graph galleries, code
+libraries, course and training session asssitant... using web pages and
+JavaScript.
+
+2) R code. Moving as much code as possible in R ensures execution on all
+platforms supported by R. The next version will be indissociable of a
+specific SciViews R package, while the current one is managing everything
+outside of R. This will have a cost: it will be more difficult to adapt
+SciViews to other calculation kernels (Octave, Mathematica,...).
+
+Does the solution go through a mixed GUI with a part of it using platform
+independent features, and another part making optimal use of platform
+specificities (and thus probably different from one platform to the other)?
+This does not solve the question of teaching a course with students using
+different looking GUIs... or perhaps different OSes... Kudos to those who
+are able to do that (Frank?). I remember the half day I spend to install
+S-Plus 6.1 on 25 different computers under Win 98, NT, 2000 or XP. In
+comparison, installing R in another course session was sssooo easy, although
+some participants were using Windows, other MacOS and one was using Red Hat!
+So, I know deceptions that originate from non-platform independent software,
+but for GUI, I feel we have no choice currently.
+
+Best,
+
+Philippe Grosjean
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oceanologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From bellis at hsph.harvard.edu  Tue Apr 29 17:37:12 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Tue Apr 29 22:38:57 2003
+Subject: [R-gui] ANN: StatPaper Tech Test 3
+Message-ID: <5B2FAD8C-7A82-11D7-B7D6-000393BDE1EC@hsph.harvard.edu>
+
+First off, I've released a third technology test for StatPaper. A brief 
+list of changes:
+
+	* Automatically detect Darwin or Fink installations of R (preference 
+in that order)
+	* The OpenMath package is part of the application and bootstrapped 
+during the local kernel launch process (read: you don't have to do 
+anything except launch StatPaper)
+	* Backend cleaned up and modified to allow for pagination. There are 
+still some gotchas but it does a much better job now. It also has much 
+better caret tracking and should always keep the caret in view.
+	* The ability to delete blocks (yay!)
+	* You can save files as a "package" (similar to Keynote), which 
+contains an XML file and the PDF files used for plots.
+	* Internally the notion of linking blocks is supported. This will 
+become important when drag-n-drop rearrangement of blocks is supported 
+so that code execution will update the appropriate set of blocks
+	* A smarter plot layout (that will eventually be attached to a plot 
+management panel)
+
+I'm sure I've missed other things so I encourage y'all to check it out 
+at its new home http://statpaper.sf.net
+You can also check out a copy from CVS in the usual SourceForge manner 
+(the OpenMath package is also in CVS)
+
+Feedback is, as always, welcome.
+
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From zedshaw at zedshaw.com  Tue Apr 29 18:31:11 2003
+From: zedshaw at zedshaw.com (Zed Shaw)
+Date: Wed Apr 30 02:31:24 2003
+Subject: [R-gui] Feedback about SciViews?
+Message-ID: <E19AfV9-000145-00@s216-232-85-43.bc.hsia.telus.net>
+
+Hi Phileppe,
+
+Wow, SciViews looks pretty good.  I downloaded it and played with it, 
+and took notes while I was doing it.  I hope you'll do the same when 
+Obversive comes out in a couple of weeks.  Here's what I came up with:
+
+
+FIRST IMPRESSIONS
+1.  Nice web site.  Well laid out, good colors.  Very ambitious 
+project.
+2.  It was a little hard to figure out how to download it.  It took me 
+a while to find the "Click here to download it." portion of the first 
+page among all the other text.  Maybe a link at the top 
+saying "Downloads"?
+3.  It's kind of a slow download.  You should find some mirrors.
+4.  Installed quickly and easily.  No problems there.
+
+USING
+1.  Your RPlug wizard takes over the entire screen, so it was really 
+hard for me to open other windows while trying to find my R install.
+2.  I didn't have the right version installed, so I had to quit, but 
+your RPlug wizard does not have a Cancel button.
+3.  After installing R and re-running SciViews, it doesn't show me the 
+RPlug wizard again.  I have to use the initial window, run something, 
+then it gives me the RPlug wizard.
+4.  The initial SciViews window (with "New","Open","Install",etc.) 
+seems a little confusing.  It took me a while to figure out how to 
+actually get to SciViews.  Maybe some short instructions as a first 
+tab?
+
+INSIDER
+1.  I like the R shortcuts thing.  It took me a little while to figure 
+out what the "^" meant.
+2.  It would be nice to be able to do a "list vars", then highlite one 
+of the vars in the output and click one of the other "^" shortcuts and 
+have the selected var put in.
+3.  I tried clicking on the, then on the pull down in the top left 
+with "R #1" listed, and then I tried clicking into the text entry to 
+the right, but when I did I got an "Unspecified error" and SciViews 
+crashed.  I could repeat it though.
+4.  What's the Xchanger for?
+5.  When I open a Code window, and type some code in I want to run, 
+how do I run it?
+6.  Doing "New Graph" from the Open icon's pulldown pops open a window 
+really quick and then closes it.  Is this working yet?
+
+LOOK AND FEEL
+1.  It looks good.  People are going to think we stole your GUI when 
+they see the new Obversive (we just added MDI also, maybe).
+2.  The icons in the bottom left corner (where the Pi is) seem to take 
+up a lot of space and are not clearly visible.  You should consider 
+moving them to the top of that panel like a mini-toolbar.  That would 
+follow what people are used to with buttons and take up less space.
+3.  Your "Messages Toolbar" is a little confusing.  Is that "(I) 
+bubble" icon in the left text panel always there?  It seems to take up 
+a lot of space and provide little information value.
+4.  The right text panel of the Messages Toolbar (last output?) seems 
+nice, but limited in that I can't go back.  It basically shows me 
+what's already in my R output window.  What would be nicer is if you 
+had a pulldown that let me go back and see previous outputs in the 
+past.
+5.  Better yet, I think previous outputs are not nearly as useful as 
+previous inputs.  Maybe turn it into a kind of scrolling previous 
+inputs panel, or add a pulldown to your input field at the top so I 
+can just grab stuff I've entered in the past and edit it.
+6.  Icons are good, no complaints there.
+7.  Can I add shortcuts?
+
+That's about all I could find Philippe.  Really good so far, and I 
+hope you'll review Obversive the same way when we release it.  We can 
+use all the feedback we can get.
+
+Talk to you soon.
+
+Zed
+
+
+> A preview version of SciViews (a Graphical User Interface for R under
+> Windows, http://www.sciviews.org) was released a few weeks ago. 
+Since then,
+> the Web site recorded several thousands of downloads. I would really
+> appreciate your feedback:
+> - What you like,
+> - What you don't like,
+> - Wich features you would like to get in the next release.
+
+-----
+Zed A. Shaw
+http://www.zedshaw.com/
+
+From zedshaw at zedshaw.com  Tue Apr 29 19:10:23 2003
+From: zedshaw at zedshaw.com (Zed Shaw)
+Date: Wed Apr 30 03:10:22 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <16046.18048.201681.890183@gargle.gargle.HOWL>
+Message-ID: <852D8761-7AA8-11D7-A683-00039391E298@zedshaw.com>
+
+Martin,
+
+I hate to rain on your parade, but being someone who has had to 
+struggle with R for the last three years, I have to disagree with you 
+here.  I know you really like R, and I'm sure it is possible to produce 
+an interface with it, but "possible" is completely different from 
+"reasonable" when it comes to development.  Statements like your's are 
+basically what caused people like myself to look outside R for their 
+development needs.  Rather than saying, "Hey, what are we doing wrong?" 
+  You wold rather ignore the problem and say, "Idiots.  They should use 
+R for development."
+
+I think that maybe you should listen to what people have to say about 
+their experience trying to write these GUIs.  Maybe if you started to 
+hear things like what Philippe and myself continue to complain about, 
+and started to fix them, then you might find that even your own 
+development projects improve.  Basically, start listening to your users 
+more and don't assume that you can impose your way of doing things on 
+other people.  A classic example is how the R code insists on checking 
+to see it is connected to a pty, and if not it aborts on any errors.  
+Or that R uses jumps to maintain the event loop, but doesn't provide a 
+convenient way to override this behavior.  Simple things like this 
+cause others tons of headaches, but are so simple to fix.
+
+I won't go into specific complaints about R as a large scale 
+development language as I don't think anyone working on R is interested 
+in hearing them (that's called "industrial autism" BTW).  All I can say 
+is, if you want people to use R to write their programs, maybe you 
+should make R behave more like every other scripting language on the 
+planet.  Take a look at how Python, Perl, Lua, Ruby, Tcl, Java, and 
+others do things.  Try to find out from people what features of these 
+languages they like and then try to emulate those features.  I think if 
+you just adopted a few really simple features from these languages, 
+you'd improve R tremendously.
+
+Anyway, enjoy your day.
+
+Zed A. Shaw
+http://www.zedshaw.com/
+
+
+On Tuesday, April 29, 2003, at 02:31 AM, Martin Maechler wrote:
+
+>
+> R for Windows already comes with a (simple) GUI.
+> Many of the R developers would rather think mostly about GUI
+> efforts that are platform INDEPENDENT, such as the standard Tcl/Tk
+> package (try "library(tcltk)" and the demos from "demo(package =
+> "tcltk")" in R), and the RGtk (http://www.omegahat.org/RGtk/) one.
+>
+> For that reason, in the Bioconductor project 
+> (http://www.bioconductor.org),
+> the  "tkWidgets" package has been developed (built on top of R's
+> standard "tcltk" package -- which from 1.7.0 on does not need
+> extra efforts for installation on Windows).
+>
+> Excuse that this sounds a bit negative, but platform independence
+> is one of the strengths of R.
+
+From bellis at hsph.harvard.edu  Tue Apr 29 23:32:39 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Wed Apr 30 04:32:51 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <852D8761-7AA8-11D7-A683-00039391E298@zedshaw.com>
+Message-ID: <02D39AD7-7AB4-11D7-89AC-000393BDE1EC@hsph.harvard.edu>
+
+I'm probably setting myself up for a nice long flame session, but here 
+we go:
+
+On Tuesday, April 29, 2003, at 09:10  PM, Zed Shaw wrote:
+
+>
+> I think that maybe you should listen to what people have to say about 
+> their experience trying to write these GUIs.  Maybe if you started to 
+> hear things like what Philippe and myself continue to complain about, 
+> and started to fix them, then you might find that even your own 
+> development projects improve.  Basically, start listening to your 
+> users more and don't assume that you can impose your way of doing 
+> things on other people.  A classic example is how the R code insists 
+> on checking to see it is connected to a pty, and if not it aborts on 
+> any errors.  Or that R uses jumps to maintain the event loop, but 
+> doesn't provide a convenient way to override this behavior.  Simple 
+> things like this cause others tons of headaches, but are so simple to 
+> fix.
+>
+
+Well the pty thing I'll give you---irritating as hell---but as for R's 
+exception handling and its ease of repair, your statements somewhat 
+disingenuous. R's exception handling mechanism is simply How It is Done 
+in C. Go look at the Python source code sometime, what do you find? 
+That's right. setjmp()/longjmp() for exception handling. Just like R. 
+Just like Objective-C and AFAIK Perl as well.
+
+This is, of course, the point where the C++ people jump in and proudly 
+point to their exception handling and boldly claim that THEY don't have 
+these problems. On Windows using VC++ they're right---exception 
+handling is actually provided by the OS kernel rather than being a 
+userspace thing (the so-called Structured Exception Handling services) 
+and VC++ takes advantage of those capabilities. G++ used to use 
+setjmp()/longjmp() to implement exceptions (offering no advantage other 
+than C++ vs Macros) but my understanding is they now use something else 
+far more complex. My understanding is also that it is far buggier so 
+advantage: push.
+
+All that said, it would be nice if TRY { } CATCH { } was available 
+(throw is already available in the form of error(), though it is less 
+formal than most exception mechanisms). BUT, I disagree completely with 
+your assertion that it is a "simple fix." To survive an exception there 
+is a great deal of work that needs to get done, especially in the 
+memory manager, to ensure the environment is in a defined state---to 
+let people willy-nilly override exception handling is just going to 
+cause massive headaches as would the conditional header file required 
+to harmonize R's exception handling with the myriad of other exception 
+handlers would also induce much pain (setjmp()/longjmp() is standard, 
+but what actually goes on the heap isn't). Having a context argument (a 
+la Java) might help to some degree but that would involve changing 
+literally every single R function as well as every function in every R 
+package. The change itself probably wouldn't be complex, but it is by 
+no means a trivial task.
+
+> I won't go into specific complaints about R as a large scale 
+> development language as I don't think anyone working on R is 
+> interested in hearing them (that's called "industrial autism" BTW).  
+> All I can say is, if you want people to use R to write their programs, 
+> maybe you should make R behave more like every other
+
+More likely, they've heard them before, squinted, scratched their heads 
+and asked "so, tell me again why you want to implement Tetris in R?" R 
+_isn't_ a scripting language. It shares many features with scripting 
+languages, high level constructions, automatic memory management, etc 
+but its a data analysis language. More importantly, an interactive data 
+analysis language (which is where the pty weirdness comes from). It's 
+purpose (near as I've been able to fathom) is to make the manipulation 
+of real data as much like pushing symbols around on a piece of paper in 
+Inference 101 as possible. In this regard it is fundamentally different 
+in philosophy from the languages you name below.
+
+Does that mean we should ignore the other languages? Hell no. There's 
+some good implementation ideas there---if the extensible SEXP idea ever 
+gets off the ground I hope it looks something like Python's new object 
+implementation. Its pretty clean and a joy to work with. There's also 
+some good object lessons there--Perl's "What Was I Smoking" XS for 
+instance. Most of the stuff is pretty sophisticated though, not simple 
+features at all.
+
+In fact, I'm not sure what simple features you have in mind? I suppose 
+the first thing to come to mind is the memory manager, its what I 
+thought of when I started messing around with R's underbelly---it 
+becomes especially problematic when datasets get large (something I 
+work with, "unable to allocate vector of size xxxx" is a familiar face 
+these days). The first thought is "hey, Look at Python! Reference 
+Counting! Yes." Well, no. R objects are like strings and tuples in 
+Python--semantically (and literally) immutable objects so the reference 
+counting scheme doesn't really help since you always have to make a 
+copy anyways (this is mark-and-sweep right? I'm too lazy to walk across 
+the room and look it up). Ideally we'd want (well, I'd want) a 
+copy-on-write scheme, but it seems those are difficult to implement and 
+probably even harder to shoehorn into an existing system. There are 
+other things: R in Databases for instance. This seems like a good idea 
+(I still like it), but how to do it? First we have to find and 
+implement an entirely new class of algorithms. Most of your standard 
+algorithms assume uniform access to all observations and covariates 
+(via matrix multiplication or whatever), which is definitely not true 
+of a database where your access to data is anything but uniform. So, 
+this necessitates the development of some set of online algorithms, 
+which may or may not exist for an arbitrary algorithm. Next there's the 
+question of Security. Java has a lot to say about this, and it would be 
+nice if we could do similar things in R as the DB server process is 
+almost definitely running as a user who is not the one accessing the 
+server. And so on, but I digress as these aren't really simple features 
+from languages and all of the languages you've mentioned (except maybe 
+Tcl) aren't terribly well suited for that sort of duty either.
+
+> scripting language on the planet.  Take a look at how Python, Perl, 
+> Lua, Ruby, Tcl, Java, and others do things.  Try to find out from 
+> people what features of these languages they like and then try to 
+> emulate those features.  I think if you just adopted a few really 
+> simple features from these languages, you'd improve R tremendously.
+>
+> Anyway, enjoy your day.
+>
+> Zed A. Shaw
+> http://www.zedshaw.com/
+>
+>
+> On Tuesday, April 29, 2003, at 02:31 AM, Martin Maechler wrote:
+>
+>>
+>> R for Windows already comes with a (simple) GUI.
+>> Many of the R developers would rather think mostly about GUI
+>> efforts that are platform INDEPENDENT, such as the standard Tcl/Tk
+>> package (try "library(tcltk)" and the demos from "demo(package =
+>> "tcltk")" in R), and the RGtk (http://www.omegahat.org/RGtk/) one.
+>>
+>> For that reason, in the Bioconductor project 
+>> (http://www.bioconductor.org),
+>> the  "tkWidgets" package has been developed (built on top of R's
+>> standard "tcltk" package -- which from 1.7.0 on does not need
+>> extra efforts for installation on Windows).
+>>
+>> Excuse that this sounds a bit negative, but platform independence
+>> is one of the strengths of R.
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+
+From zedshaw at zedshaw.com  Tue Apr 29 20:57:58 2003
+From: zedshaw at zedshaw.com (Zed Shaw)
+Date: Wed Apr 30 04:57:51 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <02D39AD7-7AB4-11D7-89AC-000393BDE1EC@hsph.harvard.edu>
+Message-ID: <8CA5E0BE-7AB7-11D7-A683-00039391E298@zedshaw.com>
+
+Hi Byron,
+
+With regard to your comments on exception handling, I say I have to 
+agree, but I'm not quite sure where you got that I was critiquing R's 
+exception handling.  It's no better or worse than others, although I 
+agree that try/catch would be nice.  Actually, I'm using try() to get 
+around my real complaint:  jump_now handling.
+
+Read the "Handling Errors" section of:
+
+http://developer.r-project.org/embedded.html
+
+For details on what is wrong.  Now, they recommend that you actually 
+create a function that overrides the jump_now found in the libR.so 
+file.  The problem with that is when you are on other platforms (like, 
+Mac OSX) the libR.so jump_now overrides the one you write.  If they 
+created a global variable like "R_JumpNowFunc" which you could set to 
+your own jump_now handler, then the problem would go away.
+
+I went into fits for about a week trying just about everything I could 
+to get my version of jump_now to work.  Eventually I just backed out of 
+it and now wrap everything in a try({}) call to keep R from crashing.  
+This is what I mean when I complain about how jumps are used to 
+maintain the event loop.
+
+Just a quick clarification, otherwise I pretty much agree with what you 
+say.  The main things I'd like added to R are too long to mention, and 
+I doubt anyone who could make the changes would care.
+
+Zed A. Shaw
+http://www.zedshaw.com/
+
+
+On Tuesday, April 29, 2003, at 07:32 PM, Byron Ellis wrote:
+
+>
+> Well the pty thing I'll give you---irritating as hell---but as for R's 
+> exception handling and its ease of repair, your statements somewhat 
+> disingenuous. R's exception handling mechanism is simply How It is 
+> Done in C. Go look at the Python source code sometime, what do you 
+> find? That's right. setjmp()/longjmp() for exception handling. Just 
+> like R. Just like Objective-C and AFAIK Perl as well.
+
+From phgrosjean at sciviews.org  Wed Apr 30 13:15:46 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Wed Apr 30 12:16:40 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+Message-ID: <MABBLJDICACNFOLGIHJOIELDDGAA.phgrosjean@sciviews.org>
+
+Zed, Byron,
+
+As moderator of this mailing list, I have no intention to censurate this
+very interesting discussion. However, I have no objection on the subject but
+I ask you to behave a little bit more respectfully with the work or ideas of
+other people.
+
+I understand pretty much your feeling, Zed, about the million of things that
+are not programmed as it should be in R for being the perfect backend, or
+scripting language. I have the same feeling, and I certainly share with you
+hundred of hours lost in finding a solution to such or such damn ill
+behaviour in R... However, Byron and Zed, you should keep in mind that:
+
+1) R is designed and developed as a high level data analysis language to be
+accessed at the command line, and it is excellent for that, otherwise it
+would never get the success it has. It is thus normal that its behavious is
+far from perfect for what it is not designed for: GUI and scripting
+language.
+
+2) Making a GUI on top of R is not such an easy task. Either, the GUI must
+adapt to the particular behaviour of R or R must be redesigned to be a nicer
+backend (answer is probably in the middle at the long-term if there is a
+real willing in R-core team to promote the development of R GUIs).
+
+Please, convert your doleances into constructive suggestions and avoid
+direct attacks of persons. Most R developers are very competent and
+recognized statisticians and/or programmers and they would not tolerate it.
+
+Best,
+
+Philippe Grosjean
+
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oc?anologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From zedshaw at zedshaw.com  Wed Apr 30 04:36:37 2003
+From: zedshaw at zedshaw.com (Zed Shaw)
+Date: Wed Apr 30 12:36:29 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <MABBLJDICACNFOLGIHJOIELDDGAA.phgrosjean@sciviews.org>
+Message-ID: <9F16D3B6-7AF7-11D7-A652-00039391E298@zedshaw.com>
+
+Hmm, I didn't think I was directly attacking any one individual in the 
+"R priesthood", but if I did, they can e-mail me and I'll appologize 
+for hurting their feelings.
+
+Zed
+
+
+On Wednesday, April 30, 2003, at 03:15 AM, Philippe Grosjean wrote:
+
+> Zed, Byron,
+>
+> As moderator of this mailing list, I have no intention to censurate 
+> this
+> very interesting discussion. However, I have no objection on the 
+> subject but
+> I ask you to behave a little bit more respectfully with the work or 
+> ideas of
+> other people.
+>
+> I understand pretty much your feeling, Zed, about the million of 
+> things that
+> are not programmed as it should be in R for being the perfect backend, 
+> or
+> scripting language. I have the same feeling, and I certainly share 
+> with you
+> hundred of hours lost in finding a solution to such or such damn ill
+> behaviour in R... However, Byron and Zed, you should keep in mind that:
+>
+> 1) R is designed and developed as a high level data analysis language 
+> to be
+> accessed at the command line, and it is excellent for that, otherwise 
+> it
+> would never get the success it has. It is thus normal that its 
+> behavious is
+> far from perfect for what it is not designed for: GUI and scripting
+> language.
+>
+> 2) Making a GUI on top of R is not such an easy task. Either, the GUI 
+> must
+> adapt to the particular behaviour of R or R must be redesigned to be a 
+> nicer
+> backend (answer is probably in the middle at the long-term if there is 
+> a
+> real willing in R-core team to promote the development of R GUIs).
+>
+> Please, convert your doleances into constructive suggestions and avoid
+> direct attacks of persons. Most R developers are very competent and
+> recognized statisticians and/or programmers and they would not 
+> tolerate it.
+>
+> Best,
+>
+> Philippe Grosjean
+>
+>
+> ...........]<(({?<...............<?}))><...............................
+>  ) ) ) ) )
+> ( ( ( ( (       Dr. Philippe Grosjean
+>  ) ) ) ) )
+> ( ( ( ( (       LOV, UMR 7093
+>  ) ) ) ) )      Station Zoologique
+> ( ( ( ( (       Observatoire Oc?anologique
+>  ) ) ) ) )      BP 28
+> ( ( ( ( (       06234 Villefranche sur mer cedex
+>  ) ) ) ) )      France
+> ( ( ( ( (
+>  ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+> ( ( ( ( (
+>  ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+> ( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+>  ) ) ) ) )
+> .......................................................................
+>
+>
+>
+
+From fharrell at virginia.edu  Wed Apr 30 07:45:32 2003
+From: fharrell at virginia.edu (Frank E Harrell Jr)
+Date: Wed Apr 30 12:45:44 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <9F16D3B6-7AF7-11D7-A652-00039391E298@zedshaw.com>
+References: <MABBLJDICACNFOLGIHJOIELDDGAA.phgrosjean@sciviews.org>
+	<9F16D3B6-7AF7-11D7-A652-00039391E298@zedshaw.com>
+Message-ID: <20030430064532.5e8bdfb4.fharrell@virginia.edu>
+
+On Wed, 30 Apr 2003 03:36:37 -0700
+Zed Shaw <zedshaw@zedshaw.com> wrote:
+
+> Hmm, I didn't think I was directly attacking any one individual in the 
+> "R priesthood", but if I did, they can e-mail me and I'll appologize 
+> for hurting their feelings.
+> 
+> Zed
+> 
+
+The language you just used above Zed is still not very sensitive in my humble opinion.  I think that Philippe's request for moderation of tone is an excellent one.
+
+Just my $.02  -Frank
+
+---
+Frank E Harrell Jr              Prof. of Biostatistics & Statistics
+Div. of Biostatistics & Epidem. Dept. of Health Evaluation Sciences
+U. Virginia School of Medicine  http://hesweb1.med.virginia.edu/biostat
+
+From duncan at research.bell-labs.com  Wed Apr 30 10:19:16 2003
+From: duncan at research.bell-labs.com (Duncan Temple Lang)
+Date: Wed Apr 30 15:21:17 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <8CA5E0BE-7AB7-11D7-A683-00039391E298@zedshaw.com>;
+	from zedshaw@zedshaw.com on Tue, Apr 29, 2003 at 07:57:58PM -0700
+References: <02D39AD7-7AB4-11D7-89AC-000393BDE1EC@hsph.harvard.edu>
+	<8CA5E0BE-7AB7-11D7-A683-00039391E298@zedshaw.com>
+Message-ID: <20030430091916.A22273@jessie.research.bell-labs.com>
+
+
+The embedded.html file on developer.r-project.org has a date of August
+2000 and it is an RFC rather than part of the R-extensions manual.  It
+is out of date and I need to put something into the R extensions
+manual to give the "best" approach for handling R errors at the C
+level. Ironically, I was chatting with David James on Monday about
+this and noted that it wasn't in the extensions manual.
+
+R_jump_now was a left over because of the way the header files did not
+export low-level data structures needed for error handling in C.
+Luke and I have provided the R_tryEval() routine which one can use
+to evaluate an R expression and guarantee returning to that point
+in the C code whether there was an error or not.
+
+While it would be better if it was documented in a manual, it
+currently isn't. However, many packages illustrate its use.  For
+example, almost all of the inter-system interface packages in
+Omegahat.  Since there are relatively few people working with
+embedding R, documenting them hasn't been impertaive. I find it works
+better to have people ask questions about how to do things or why they
+are they way they are and then build a FAQ and then documentation from
+that rather than just accepting they are this way.
+ 
+
+Luke, Robert, and I discussed S-level exceptions many years ago and
+they are still very much on the todo list. (I raise the issue probably
+once every 2 or 3 weeks.)  Regular/exiting exceptions as in Java, C++, ...
+are relatively straight forward (especially _now_ that we a more formal
+class system (S4).)  Robert and Luke have plans for calling exceptions.
+
+
+ D.
+
+
+Zed Shaw wrote:
+> Hi Byron,
+> 
+> With regard to your comments on exception handling, I say I have to 
+> agree, but I'm not quite sure where you got that I was critiquing R's 
+> exception handling.  It's no better or worse than others, although I 
+> agree that try/catch would be nice.  Actually, I'm using try() to get 
+> around my real complaint:  jump_now handling.
+> 
+> Read the "Handling Errors" section of:
+> 
+> http://developer.r-project.org/embedded.html
+> 
+> For details on what is wrong.  Now, they recommend that you actually 
+> create a function that overrides the jump_now found in the libR.so 
+> file.  The problem with that is when you are on other platforms (like, 
+> Mac OSX) the libR.so jump_now overrides the one you write.  If they 
+> created a global variable like "R_JumpNowFunc" which you could set to 
+> your own jump_now handler, then the problem would go away.
+> 
+> I went into fits for about a week trying just about everything I could 
+> to get my version of jump_now to work.  Eventually I just backed out of 
+> it and now wrap everything in a try({}) call to keep R from crashing.  
+> This is what I mean when I complain about how jumps are used to 
+> maintain the event loop.
+> 
+> Just a quick clarification, otherwise I pretty much agree with what you 
+> say.  The main things I'd like added to R are too long to mention, and 
+> I doubt anyone who could make the changes would care.
+> 
+> Zed A. Shaw
+> http://www.zedshaw.com/
+> 
+> 
+> On Tuesday, April 29, 2003, at 07:32 PM, Byron Ellis wrote:
+> 
+> >
+> > Well the pty thing I'll give you---irritating as hell---but as for R's 
+> > exception handling and its ease of repair, your statements somewhat 
+> > disingenuous. R's exception handling mechanism is simply How It is 
+> > Done in C. Go look at the Python source code sometime, what do you 
+> > find? That's right. setjmp()/longjmp() for exception handling. Just 
+> > like R. Just like Objective-C and AFAIK Perl as well.
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+_______________________________________________________________
+
+Duncan Temple Lang                duncan@research.bell-labs.com
+Bell Labs, Lucent Technologies    office: (908)582-3217
+700 Mountain Avenue, Room 2C-259  fax:    (908)582-3340
+Murray Hill, NJ  07974-2070       
+         http://cm.bell-labs.com/stat/duncan
+
+From fharrell at virginia.edu  Wed Apr 30 21:24:14 2003
+From: fharrell at virginia.edu (Frank E Harrell Jr)
+Date: Thu May  1 02:24:26 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <p05210606bad602c92a85@[128.115.153.6]>
+References: <Pine.LNX.4.21.0304301716310.22965-100000@dollis-hill.inpharmatica.co.uk>
+	<p05210606bad602c92a85@[128.115.153.6]>
+Message-ID: <20030430202414.44f1cafc.fharrell@virginia.edu>
+
+On Wed, 30 Apr 2003 15:53:43 -0700
+Don MacQueen <macq@llnl.gov> wrote:
+
+> At 5:29 PM +0100 4/30/03, Luke Whitaker wrote:
+> >On Tue, 29 Apr 2003, Byron Ellis wrote:
+> >
+> >>  On Tuesday, April 29, 2003, at 07:13  AM, Duncan Murdoch wrote:
+> >
+> >>  > I think the best long term strategy is to have a clean division
+> >>  > between the user interface aspects of R (which are necessarily
+> >>  > platform dependent) and the underlying computing engine (which should
+> >>
+> >>  Precisely. I would actually say that R is -not- platform independent in
+> >>  that it expects a certain type of GUI--- a shell process living on
+> >>  STDIN and STDOUT that talks to an out-of-process Window Server of some
+> >>  sort. Most of the work done in the Windows GUI is spent faking that
+> >>  environment to make R think its still running on a X Server somewhere
+> >>  and similar work was done for the Mac/Carbon port (obviously, Darwin R
+> >>  can happily use Apple's X server). REventLoop takes some steps as does
+> >>  the work on embedding, but its still safer to run the "GUI" stuff
+> >>  out-of-process and even then not foolproof.
+> >
+> >At the risk of starting a religous war, isn't java the obvious choice
+> >for a platform independent GUI ? I know java suffered a lot from
+> >early over hypeing when it wasn't really ready, but in the last year
+> >or two I've seen some very impressive platform independent GUI's
+> >built with java.
+> 
+> Not unless it's a whole lot better than Insightful's initial effort on Solaris.
+> 
+> The GUI itself (i.e., how it operated, what menus were where, etc.) 
+> was fine, but it was completely useless for anyone sitting at a 
+> remote host, due to dreadful image quality and poor performance when 
+> displaying anywhere other than on the console of the machine on which 
+> SPlus was actually running.
+> 
+> (maybe it was ok displayed on a remote host of the same architecture; 
+> I don't remember; but neither I nor any of the potential additional 
+> users was)
+> 
+> -Don
+
+It didn't work especially well on a local host on Linux either.  I have used one other Java GUI which was even more unsatisfactory (bad graphics), so I would avoid Java all almost all cost.  -Frank Harrell
+
+---
+Frank E Harrell Jr              Prof. of Biostatistics & Statistics
+Div. of Biostatistics & Epidem. Dept. of Health Evaluation Sciences
+U. Virginia School of Medicine  http://hesweb1.med.virginia.edu/biostat
+
+From bellis at hsph.harvard.edu  Wed Apr 30 21:39:10 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Thu May  1 02:39:21 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <20030430202414.44f1cafc.fharrell@virginia.edu>
+Message-ID: <52CFA4E5-7B6D-11D7-9F47-000393BDE1EC@hsph.harvard.edu>
+
+I seem to be missing these interim messages, very odd... anyways
+
+On Wednesday, April 30, 2003, at 08:24  PM, Frank E Harrell Jr wrote:
+
+> On Wed, 30 Apr 2003 15:53:43 -0700
+> Don MacQueen <macq@llnl.gov> wrote:
+>
+>> At 5:29 PM +0100 4/30/03, Luke Whitaker wrote:
+>>
+
+>> *snip*
+
+>>> At the risk of starting a religous war, isn't java the obvious choice
+>>> for a platform independent GUI ? I know java suffered a lot from
+>>> early over hypeing when it wasn't really ready, but in the last year
+>>> or two I've seen some very impressive platform independent GUI's
+>>> built with java.
+>>
+>> Not unless it's a whole lot better than Insightful's initial effort 
+>> on Solaris.
+>>
+>> The GUI itself (i.e., how it operated, what menus were where, etc.)
+>> was fine, but it was completely useless for anyone sitting at a
+>> remote host, due to dreadful image quality and poor performance when
+>> displaying anywhere other than on the console of the machine on which
+>> SPlus was actually running.
+
+I bet they were passing images around and not display lists. I couldn't 
+really say since I never used it though.
+
+>>
+>> (maybe it was ok displayed on a remote host of the same architecture;
+>> I don't remember; but neither I nor any of the potential additional
+>> users was)
+>>
+>> -Don
+>
+> It didn't work especially well on a local host on Linux either.  I 
+> have used one other Java GUI which was even more unsatisfactory (bad 
+> graphics), so I would avoid Java all almost all cost.  -Frank Harrell
+
+Java on the client side hasn't really worked out well for anyone. Java 
+on the server side works but AFAIK is dreadfully inefficient. In any 
+case, I'm not a fan of cross-platform GUIs in general--be they Java, 
+Tcl/Tk, Gtk, whatever. They're a fact of life, but never the optimal 
+solution as they, on at least one platform (which changes depending on 
+where the project originated) break the native GUI paradigm which sort 
+of defeats the purpose of having a GUI in the first place (that being 
+employing muscle memory and diverse visual cues, not hand-holding 
+users).
+
+>
+> ---
+> Frank E Harrell Jr              Prof. of Biostatistics & Statistics
+> Div. of Biostatistics & Epidem. Dept. of Health Evaluation Sciences
+> U. Virginia School of Medicine  http://hesweb1.med.virginia.edu/biostat
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+

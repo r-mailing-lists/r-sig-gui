@@ -1,0 +1,147 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2010-10",
+  "messages": [
+    {
+      "id": "msg-be95a71150a8",
+      "message_id": "<4CAFA08D.4010900@uw.edu>",
+      "from_name": "Hana Sevcikova",
+      "from_email_hash": "fb682fb5a0b5dfea1eeacf5a8cbb2579e779cfa608f18329f1e361d748ccfe14",
+      "date": "2010-10-08T15:51:57-07:00",
+      "subject": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
+      "subject_clean": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello everyone,\n\nIs it possible to restrict gdf (from gwidgets) in a way that it adds \nneither rows nor columns (and possibly doesn't allow to change row and \ncolumn names)?\nI'd like a widget where the user can only edit the values of a data \nframe, not change its dimensions. I really like gdf but the feature of \nadding rows and columns would be quite confusing in my specific application.\n\nThanks a lot,\n\nHana",
+      "body_snippet": "Hello everyone,\n\nIs it possible to restrict gdf (from gwidgets) in a way that it adds \nneither rows nor columns (and possibly doesn't allow to change row and \ncolumn names)?\nI'd like a widget where th",
+      "thread_id": "thread-be95a71150a8",
+      "thread_depth": 0,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-ddec5207c742",
+      "message_id": "<loom.20101009T015828-314@post.gmane.org>",
+      "from_name": "jverzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-10-09T00:01:37Z",
+      "subject": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
+      "subject_clean": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
+      "in_reply_to": null,
+      "references": [
+        "<4CAFA08D.4010900@uw.edu>"
+      ],
+      "body_plain": "Hana Sevcikova <hanas <at> uw.edu> writes:\n\n> \n> Hello everyone,\n> \n> Is it possible to restrict gdf (from gwidgets) in a way that it adds \n> neither rows nor columns (and possibly doesn't allow to change row and \n> column names)?\n> I'd like a widget where the user can only edit the values of a data \n> frame, not change its dimensions. I really like gdf but the feature of \n> adding rows and columns would be quite confusing in my specific application.\n> \n> Thanks a lot,\n> \n> Hana\n> \n\nDear Hana,\n\nNot really. However, you can get a start on what you want by modifying the\nfollowing. It uses a nifty one liner by Michael Lawrence to add the cell\nrenders. The model variable has the usual data frame methods to access the data.\n\nHope this helps. --J\n\n\nlibrary(RGtk2) ## need this\nlibrary(gWidgets)\noptions(guiToolkit=\"RGtk2\")\n\n\n\nmodel <- rGtkDataFrame(mtcars)\nview <- gtkTreeView(model)\n## Michael Lawrence's trick to add cell renderer's\nmapply(view$insertColumnWithAttributes,  -1, colnames(model), \n       list(gtkCellRendererText()), text = seq_len(ncol(model)) - 1)\n\nsw <- gtkScrolledWindow()\nsw$add(view)\n\nsapply(1:ncol(model), function(j) {\n  cr <- view$getColumn(j-1)$getCellRenderers()[[1]]\n  cr['editable'] <- TRUE\n  gSignalConnect(cr, \"edited\", \n                 f=function(cr, path, newtext, user.data) {\n                   curRow <- as.numeric(path) + 1\n                   curCol <- user.data$column\n                   model <- user.data$model\n                   ## coerce newtext from character to desired type\n                   ## otherwise this coerces to character\n                   model[curRow, curCol] <- as.numeric(newtext)\n                 }, data=list(model=model, column=j))\n})\n\n## How to add within a gWidgets GUI\nw <- gwindow(\"test\")\ng <- ggroup(cont=w)\nadd(g, sw, expand=TRUE)",
+      "body_snippet": "Hana Sevcikova <hanas <at> uw.edu> writes:\n\n> \n> Hello everyone,\n> \n> Is it possible to restrict gdf (from gwidgets) in a way that it adds \n> neither rows nor columns (and possibly doesn't allow to ch",
+      "thread_id": "thread-be95a71150a8",
+      "thread_depth": 1,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-a066b860a757",
+      "message_id": "<4CB0D54E.1080708@uw.edu>",
+      "from_name": "Hana Sevcikova",
+      "from_email_hash": "fb682fb5a0b5dfea1eeacf5a8cbb2579e779cfa608f18329f1e361d748ccfe14",
+      "date": "2010-10-09T13:49:18-07:00",
+      "subject": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
+      "subject_clean": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
+      "in_reply_to": "<loom.20101009T015828-314@post.gmane.org>",
+      "references": [
+        "<4CAFA08D.4010900@uw.edu>",
+        "<loom.20101009T015828-314@post.gmane.org>"
+      ],
+      "body_plain": "Thank you very much, John! That's what I need.\n\nHana\n\nOn 10/8/10 5:01 PM, jverzani wrote:\n> Hana Sevcikova<hanas<at>  uw.edu>  writes:\n>\n>    \n>> Hello everyone,\n>>\n>> Is it possible to restrict gdf (from gwidgets) in a way that it adds\n>> neither rows nor columns (and possibly doesn't allow to change row and\n>> column names)?\n>> I'd like a widget where the user can only edit the values of a data\n>> frame, not change its dimensions. I really like gdf but the feature of\n>> adding rows and columns would be quite confusing in my specific application.\n>>\n>> Thanks a lot,\n>>\n>> Hana\n>>\n>>      \n> Dear Hana,\n>\n> Not really. However, you can get a start on what you want by modifying the\n> following. It uses a nifty one liner by Michael Lawrence to add the cell\n> renders. The model variable has the usual data frame methods to access the data.\n>\n> Hope this helps. --J\n>\n>\n> library(RGtk2) ## need this\n> library(gWidgets)\n> options(guiToolkit=\"RGtk2\")\n>\n>\n>\n> model<- rGtkDataFrame(mtcars)\n> view<- gtkTreeView(model)\n> ## Michael Lawrence's trick to add cell renderer's\n> mapply(view$insertColumnWithAttributes,  -1, colnames(model),\n>         list(gtkCellRendererText()), text = seq_len(ncol(model)) - 1)\n>\n> sw<- gtkScrolledWindow()\n> sw$add(view)\n>\n> sapply(1:ncol(model), function(j) {\n>    cr<- view$getColumn(j-1)$getCellRenderers()[[1]]\n>    cr['editable']<- TRUE\n>    gSignalConnect(cr, \"edited\",\n>                   f=function(cr, path, newtext, user.data) {\n>                     curRow<- as.numeric(path) + 1\n>                     curCol<- user.data$column\n>                     model<- user.data$model\n>                     ## coerce newtext from character to desired type\n>                     ## otherwise this coerces to character\n>                     model[curRow, curCol]<- as.numeric(newtext)\n>                   }, data=list(model=model, column=j))\n> })\n>\n> ## How to add within a gWidgets GUI\n> w<- gwindow(\"test\")\n> g<- ggroup(cont=w)\n> add(g, sw, expand=TRUE)\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Thank you very much, John! That's what I need.\n\nHana\n\nOn 10/8/10 5:01 PM, jverzani wrote:\n> Hana Sevcikova<hanas<at>  uw.edu>  writes:\n>\n>    \n>> Hello everyone,\n>>\n>> Is it possible to restrict gdf (",
+      "thread_id": "thread-be95a71150a8",
+      "thread_depth": 2,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-638f1b57d79f",
+      "message_id": "<AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2010-10-26T07:13:03+02:00",
+      "subject": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
+      "subject_clean": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all\nI've been looking for a solution to this problem ever since I started\nlearning R, and I still haven't found one I'm comfortable with. And I\nwould rather avoid exporting and importing into a spreadsheet just for\nthis. I am looking for a data viewer/editor that could, among other\nthings:\n- have a 'view' mode (not an 'edit only' mode, to avoid bugs or\nunintended modifications)\n- have a 'filter' view mode (not a data-modifying subset)\n- have a 'sort' view mode (not a data-modifying sort operation)\n- select multiple rows/cols\n- select multiple individual cells\n\nHere's a list of what I've found sofar:\n- View()/Edit(): rudimentary interface; don't interact very well with\ntcltk (Rcmdr) on Linux\n- relimp::showData(): nice viewer, but too often too unstable; lacks\nmost of the features above\n- tcltk2::tk2edit(): allows multiple row/col/cell selections; has no\n'view' mode nor 'filter' or 'sort', and pops up scary errors whenever\n'cancelling' changes\n- rdataviewer: the interface is too exotic for my habits, and lacks\nmost of the features above\n- RGtk2Extras::dfedit(): allows multiple cell selections and can\nperform a 'sort' and displays several features in the c-menu; it is\nquite slow on my system with 'iris', no 'view' mode; since it uses\nRGtk2 it interacts very badly with tcltk (Rcmdr)\n- playwith: features a nice viewer hidden in Labels > Select from\ntable, but it is awkwardly located, with no advanced features, and\nRGtk2 based\n- JGR/Deducer::data.viewer(): includes a nifty data editor, perhaps my\nfavourite from this list, but it is a bit awkward to use when using an\neditor different than JGR (console monopolization); it also lacks a\n'view' and 'filter' mode as well well as select multiple rows/cols; it\ncan sort, but not easily when outside JGR\n\n\nAnything that I've missed? Regards\nLiviu\n\n\n\n-- \nDo you know how to read?\nhttp://www.alienetworks.com/srtest.cfm\nhttp://goodies.xfce.org/projects/applications/xfce4-dict#speed-reader\nDo you know how to write?\nhttp://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail",
+      "body_snippet": "Dear all\nI've been looking for a solution to this problem ever since I started\nlearning R, and I still haven't found one I'm comfortable with. And I\nwould rather avoid exporting and importing into a s",
+      "thread_id": "thread-638f1b57d79f",
+      "thread_depth": 0,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-11bf04f8b691",
+      "message_id": "<201010261047.07310.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "5788a71988abb9472ec6ea7525cade7538b3cb3d32178ced51c7b1e82ef11760",
+      "date": "2010-10-26T10:47:02+02:00",
+      "subject": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
+      "subject_clean": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "On Tuesday 26 October 2010, Liviu Andronic wrote:\n> Anything that I've missed?\n\nYou can try RKWard (http://rkward.sf.net). Uncheck Edit->Enable editing for a \n\"view\" mode. Allows to select multiple rows/columns/cells, but no \ndiscontiguous ranges. No dynamic filter or sort modes. The editor can only be \nused inside an RKWard-session, but you can run Rcmdr inside of that.\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 198 bytes\nDesc: This is a digitally signed message part.\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20101026/20a81673/attachment.bin>",
+      "body_snippet": "On Tuesday 26 October 2010, Liviu Andronic wrote:\n> Anything that I've missed?\n\nYou can try RKWard (http://rkward.sf.net). Uncheck Edit->Enable editing for a \n\"view\" mode. Allows to select multiple ro",
+      "thread_id": "thread-11bf04f8b691",
+      "thread_depth": 0,
+      "month": "2010-10"
+    },
+    {
+      "id": "msg-a05473feb75a",
+      "message_id": "<loom.20101026T221840-144@post.gmane.org>",
+      "from_name": "j verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-10-26T20:29:29Z",
+      "subject": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
+      "subject_clean": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
+      "in_reply_to": null,
+      "references": [
+        "<AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>"
+      ],
+      "body_plain": "Liviu Andronic <landronimirc <at> gmail.com> writes:\n\n> \n> Dear all\n> I've been looking for a solution to this problem ever since I started\n> learning R, and I still haven't found one I'm comfortable with. And I\n> would rather avoid exporting and importing into a spreadsheet just for\n> this. I am looking for a data viewer/editor that could, among other\n> things:\n> - have a 'view' mode (not an 'edit only' mode, to avoid bugs or\n> unintended modifications)\n> - have a 'filter' view mode (not a data-modifying subset)\n> - have a 'sort' view mode (not a data-modifying sort operation)\n> - select multiple rows/cols\n> - select multiple individual cells\n> \n> Here's a list of what I've found sofar:\n> - View()/Edit(): rudimentary interface; don't interact very well with\n> tcltk (Rcmdr) on Linux\n> - relimp::showData(): nice viewer, but too often too unstable; lacks\n> most of the features above\n> - tcltk2::tk2edit(): allows multiple row/col/cell selections; has no\n> 'view' mode nor 'filter' or 'sort', and pops up scary errors whenever\n> 'cancelling' changes\n> - rdataviewer: the interface is too exotic for my habits, and lacks\n> most of the features above\n> - RGtk2Extras::dfedit(): allows multiple cell selections and can\n> perform a 'sort' and displays several features in the c-menu; it is\n> quite slow on my system with 'iris', no 'view' mode; since it uses\n> RGtk2 it interacts very badly with tcltk (Rcmdr)\n> - playwith: features a nice viewer hidden in Labels > Select from\n> table, but it is awkwardly located, with no advanced features, and\n> RGtk2 based\n> - JGR/Deducer::data.viewer(): includes a nifty data editor, perhaps my\n> favourite from this list, but it is a bit awkward to use when using an\n> editor different than JGR (console monopolization); it also lacks a\n> 'view' and 'filter' mode as well well as select multiple rows/cols; it\n> can sort, but not easily when outside JGR\n> \n> Anything that I've missed? Regards\n> Liviu\n> \n\nThe following uses gWidgets to create something close to what you want. I didn't\nadd in the editing feature, but that can be had with gdf in place of gtable. (as\nwell, the filter and sort dialogs could be much improved) The gdf widget isn't\nnearly as nice as the Deducer one or the RGtk2Extras one though.\n\n\nliviu <- function(df,\n                  container=gwindow(sprintf(\"Viewing %s\", deparse(substitute(df)))),\n                  ...) {\n\n  ##' return logical of length x\n  filterFun <- function(x, expr, ...) UseMethod(\"filterFun\")\n  filterFun.default <- function(x, expr, ...) x %in% expr\n  filterFun.numeric <- function(x, expr, ...) x < as.numeric(expr) # modify\n  \n  filterDialog <- function() {\n    dlg <- gbasicdialog(\"Filter by:\", handler=function(h,...) {\n      val <- svalue(filterExpression)\n      var <- svalue(variableSelector)\n      if(var == \"\") {\n        ## evaluate expression within df\n        ind <- with(tbl[], eval(parse(text=val)))\n      } else {\n        ind <- filterFun(tbl[][[var]], val)\n      }\n      if(is.logical(ind) && !any(is.na(ind)))\n        visible(tbl) <- ind\n      updateTbl()\n    })\n    ## layout\n    gp <- ggroup(cont=dlg) \n    filterExpression <- gedit(\"\", cont=gp)\n    variableSelector <- gcombobox(c(\"\",names(df)), cont=gp)\n    ## show\n    visible(dlg, set=TRUE)\n  }\n\n  sortDialog <- function() {\n    dlg <- gbasicdialog(\"Sort by:\", handler=function(h,...) {\n      vars <- sortVars[,1]\n      if(length(vars) && !any(is.na(vars))) {\n        ind <- order(subset(df, select=vars), \n            decreasing=!svalue(sortOrder))\n        tbl[,] <- df[ind,]\n        visible(tbl) <- rep(TRUE, dim(tbl)[1])\n        updateTbl()\n      }\n    })\n    ## layout\n    size(dlg) <- c(400,400)\n    nms <- data.frame(Variables=names(df), stringsAsFactors=FALSE)\n    nms1 <- data.frame(\"Sort by\"=character(0), stringsAsFactors=FALSE)\n    ind <- c()\n\n    gp <- ggroup(cont=dlg)\n    allVars <- gtable(nms, cont=gp, expand=TRUE)\n    bg <- ggroup(horizontal=FALSE, cont=gp)\n    lbutton <- gbutton(\"<\", cont=bg)\n    rbutton <- gbutton(\">\", cont=bg)\n    sortOrder <- gcheckbox(\"Increasing\", checked=TRUE, \n          use.togglebutton=TRUE, cont=bg)\n    sortVars <- gtable(nms1, cont=gp, expand=TRUE)\n\n    addHandlerClicked(rbutton, function(h,...) {\n      vars <- svalue(allVars, index=TRUE)\n      if(!is.null(vars)) {\n        ind <<- c(ind, vars)\n        sortVars[,] <- nms[ind,]\n      }\n    })\n    addHandlerClicked(lbutton, function(h,...) {\n      vars <- svalue(sortVars, index=TRUE)\n      if(!is.null(vars)) {\n        ind <<- setdiff(ind, vars)\n         sortVars[,] <- nms[ind,]\n      }\n    })\n\n    ## show\n    visible(dlg, set=TRUE)\n  }\n\n  ## layout\n  g <- ggroup(cont=container, horizontal=FALSE)\n  tbl <- gtable(df,  cont=g, expand=TRUE, multiple=TRUE, \n     filter.FUN=\"manual\")\n  gp <- ggroup(cont=g)\n  gbutton(\"Filter\", cont=gp, handler=function(h,...) {\n    filterDialog()\n  })\n  gbutton(\"Sort...\", cont=gp, handler=function(h,...) {\n    sortDialog()\n  })\n  addSpring(gp)\n  caseLabel <- glabel(\"\", cont=gp)\n  \n  updateTbl <- function() {\n    ## update label for no cases, ...\n    svalue(caseLabel) <- sprintf(\"%s cases\", sum(visible(tbl)))\n    \n  }\n\n  updateTbl()\n\n\n\n  \n  tbl\n}\n\n## test it\ntbl <- liviu(mtcars)",
+      "body_snippet": "Liviu Andronic <landronimirc <at> gmail.com> writes:\n\n> \n> Dear all\n> I've been looking for a solution to this problem ever since I started\n> learning R, and I still haven't found one I'm comfortable ",
+      "thread_id": "thread-638f1b57d79f",
+      "thread_depth": 1,
+      "month": "2010-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-be95a71150a8",
+      "subject": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
+      "message_count": 3,
+      "participants": [
+        "Hana Sevcikova",
+        "jverzani"
+      ],
+      "started": "2010-10-08T15:51:57-07:00",
+      "last_reply": "2010-10-09T13:49:18-07:00",
+      "root_message_id": "msg-be95a71150a8"
+    },
+    {
+      "id": "thread-638f1b57d79f",
+      "subject": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
+      "message_count": 2,
+      "participants": [
+        "Liviu Andronic",
+        "j verzani"
+      ],
+      "started": "2010-10-26T07:13:03+02:00",
+      "last_reply": "2010-10-26T20:29:29+00:00",
+      "root_message_id": "msg-638f1b57d79f"
+    },
+    {
+      "id": "thread-11bf04f8b691",
+      "subject": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
+      "message_count": 1,
+      "participants": [
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2010-10-26T10:47:02+02:00",
+      "last_reply": "2010-10-26T10:47:02+02:00",
+      "root_message_id": "msg-11bf04f8b691"
+    }
+  ]
+}

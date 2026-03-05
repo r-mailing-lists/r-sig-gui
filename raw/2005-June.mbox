@@ -1,0 +1,166 @@
+From nehasinha30 at gmail.com  Thu Jun  9 17:54:11 2005
+From: nehasinha30 at gmail.com (Neha Sinha)
+Date: Thu Jun  9 17:54:20 2005
+Subject: [R-gui] Plots not generating or running in web-browser
+Message-ID: <80b75b6f05060908547c50d438@mail.gmail.com>
+
+Hi,
+
+I am a beginner in R (using it for about 2-3 days now) and I have a couple 
+of problems I am encountering.
+
+I am working on a windows machine and using putty to ssh into the "box" 
+where R is installed (I think Unix is running on the box I ssh into). The 
+problem I am facing is that when I try to plot using the plot function in R 
+(after invoking x11), nothing shows up - no window pops up with the plot. 
+But when I use the startx command in cygwin and ssh, the graph pops up.
+
+My project is to graph a couple of points and display it on the web, so that 
+other users in my group can view it. The code I am using just to generate a 
+graph of random numbers is as follows:
+
+#! /bin/sh /usr/bin/setR
+
+cat("Content-type: text/html", '\n\n')
+
+library(grDevices)
+library(graphics)
+
+cat("<html><head><title> 1st test page </title></head>",'\n')
+cat("<body>",'\n')
+
+r <- sample(1:20, 5)
+cat("Random plot: ", r,'<br/>\n')
+
+x11("192.9.200.232:0 <http://192.9.200.232:0>.0")
+png(file="/tmp/R-web/random.png")
+plot( r, type="b" )
+dev.off()
+cat("<img src='http://splustest/plots/random.png'/>",'\n')
+
+cat("</body>",'\n')
+q(save="no")
+
+Now when I open a webbrowser on my machine and load this html/.R code, the 
+graph is not generated (as I checked in the random.png file) nor does it 
+show up. Clearly, this is happening because some x11 settings on my machine 
+is missing. I am stuck at a point where I do not know how to fix this 
+problem. I would be thankful for some helpful advice.
+
+Regards,
+
+Neha Sinha
+
+	[[alternative HTML version deleted]]
+
+From phgrosjean at sciviews.org  Fri Jun 10 06:15:03 2005
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Fri Jun 10 06:15:34 2005
+Subject: [R-gui] Plots not generating or running in web-browser
+In-Reply-To: <80b75b6f05060908547c50d438@mail.gmail.com>
+References: <80b75b6f05060908547c50d438@mail.gmail.com>
+Message-ID: <42A913C7.6030904@sciviews.org>
+
+
+Neha Sinha wrote:
+> Hi,
+> 
+> I am a beginner in R (using it for about 2-3 days now) and I have a couple 
+> of problems I am encountering.
+> 
+> I am working on a windows machine and using putty to ssh into the "box" 
+> where R is installed (I think Unix is running on the box I ssh into). The 
+> problem I am facing is that when I try to plot using the plot function in R 
+> (after invoking x11), nothing shows up - no window pops up with the plot. 
+> But when I use the startx command in cygwin and ssh, the graph pops up.
+
+Well, the X11 graph device needs a graphic system that you start with 
+startx... isn't it logical?
+
+> My project is to graph a couple of points and display it on the web, so that 
+> other users in my group can view it. The code I am using just to generate a 
+> graph of random numbers is as follows:
+> 
+> #! /bin/sh /usr/bin/setR
+> 
+> cat("Content-type: text/html", '\n\n')
+> 
+> library(grDevices)
+> library(graphics)
+> 
+> cat("<html><head><title> 1st test page </title></head>",'\n')
+> cat("<body>",'\n')
+> 
+> r <- sample(1:20, 5)
+> cat("Random plot: ", r,'<br/>\n')
+> 
+> x11("192.9.200.232:0 <http://192.9.200.232:0>.0")
+> png(file="/tmp/R-web/random.png")
+> plot( r, type="b" )
+> dev.off()
+> cat("<img src='http://splustest/plots/random.png'/>",'\n')
+> 
+> cat("</body>",'\n')
+> q(save="no")
+> 
+> Now when I open a webbrowser on my machine and load this html/.R code, the 
+> graph is not generated (as I checked in the random.png file) nor does it 
+> show up. Clearly, this is happening because some x11 settings on my machine 
+> is missing. I am stuck at a point where I do not know how to fix this 
+> problem. I would be thankful for some helpful advice.
+> 
+> Regards,
+
+I work on a Windows system. So, I cannot check this. I though that png() 
+was independent from X11, i.e., it generates graphs on files directly?
+
+If you don't have better answer on this list, you should better post it 
+to R-help. This is a general question, not related with GUI aspects.
+Best,
+
+Philippe Grosjean
+
+> Neha Sinha
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+From hodgess at gator.dt.uh.edu  Mon Jun 20 21:59:11 2005
+From: hodgess at gator.dt.uh.edu (Erin Hodgess)
+Date: Mon, 20 Jun 2005 14:59:11 -0500
+Subject: [R-gui] [RGui] Iwidget feedback
+Message-ID: <200506201959.j5KJxB5L001194@gator.dt.uh.edu>
+
+Dear R Gui People:
+
+Has anyone ever used the Iwidget "feedback" tool, please?
+
+I've tried to put it together into R and am having a 
+terrible time.
+
+Any help would be much appreciated!
+
+
+R Version 2.1.0 Windows, Iwidgets 4
+
+Sincerely,
+Erin Hodgess
+Associate Professor
+Department of Computer and Mathematical Sciences
+University of Houston - Downtown
+mailto: hodgess at gator.uhd.edu
+
+
+From f.lyazrhi at envt.fr  Thu Jun 23 11:30:45 2005
+From: f.lyazrhi at envt.fr (Faouzi LYAZRHI)
+Date: Thu, 23 Jun 2005 11:30:45 +0200
+Subject: [R-gui] (pas de sujet)
+Message-ID: <42BA8145.2090805@envt.fr>
+
+

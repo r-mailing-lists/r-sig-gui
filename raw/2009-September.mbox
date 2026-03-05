@@ -1,0 +1,289 @@
+From hana at cs.washington.edu  Wed Sep  9 02:54:19 2009
+From: hana at cs.washington.edu (Hana Sevcikova)
+Date: Tue, 08 Sep 2009 17:54:19 -0700
+Subject: [R-gui] gfilebrowse questions
+Message-ID: <4AA6FCBB.7020502@cs.washington.edu>
+
+Hello,
+
+I have a few questions about gWidgets' gfilebrowse:
+
+1. Pressing the Cancel button updates the text widget to the value NA. 
+What can I do to leave the text widget unchanged when using Cancel.
+
+2. The size of the file browser switches between 2 sizes (I cannot 
+figure out the logic behind it - maybe after a value is changed, but not 
+always). Sometimes it appears very small. How can I avoid it?
+
+3. This problem has something to do with Gtk or Mac: By pressing either 
+OK or Cancel, I get the following in the R console:
+
+(R:1145): Gtk-WARNING **: Unable to find default local directory monitor 
+type
+
+(R:1145): GLib-GObject-CRITICAL **: g_object_unref: assertion 
+`G_IS_OBJECT (object)' failed
+2009-09-08 17:15:05.561 R[1145] tossing reply message sequence 116 on 
+thread 0x22a40d0
+
+
+This code should help to reproduce it:
+
+mw <- gwindow('Filebrowser test', height=20)
+g <- ggroup(cont=mw)
+gfilebrowse(type='selectdir', quote=FALSE, cont=g)
+
+
+Any help would be appreciated.
+
+Thank you very much,
+
+Hana
+
+
+From jverzani at gmail.com  Wed Sep  9 03:50:31 2009
+From: jverzani at gmail.com (jverzani)
+Date: Wed, 9 Sep 2009 01:50:31 +0000 (UTC)
+Subject: [R-gui] gfilebrowse questions
+References: <4AA6FCBB.7020502@cs.washington.edu>
+Message-ID: <loom.20090909T031732-945@post.gmane.org>
+
+Hana Sevcikova <hana <at> cs.washington.edu> writes:
+
+> 
+> Hello,
+> 
+> I have a few questions about gWidgets' gfilebrowse:
+> 
+> 1. Pressing the Cancel button updates the text widget to the value NA. 
+> What can I do to leave the text widget unchanged when using Cancel.
+> 
+> 2. The size of the file browser switches between 2 sizes (I cannot 
+> figure out the logic behind it - maybe after a value is changed, but not 
+> always). Sometimes it appears very small. How can I avoid it?
+> 
+> 3. This problem has something to do with Gtk or Mac: By pressing either 
+> OK or Cancel, I get the following in the R console:
+> 
+> (R:1145): Gtk-WARNING **: Unable to find default local directory monitor 
+> type
+> 
+> (R:1145): GLib-GObject-CRITICAL **: g_object_unref: assertion 
+> `G_IS_OBJECT (object)' failed
+> 2009-09-08 17:15:05.561 R[1145] tossing reply message sequence 116 on 
+> thread 0x22a40d0
+> 
+
+Dear Hana,
+
+Thanks for the report. When I get get time during the next week I can fix 1. I
+don't get the error in 3, but do get an error about fonts so perhaps that is
+what is going on. I'll look into it. As for 2, can you email me an example (it
+probably has something to do with the ggroup container and the expand argument,
+but I'll have to investigate.
+
+--John
+
+.. snip ...
+> 
+> Thank you very much,
+> 
+> Hana
+>
+
+
+From ilhami.visne at gmail.com  Wed Sep  9 14:54:44 2009
+From: ilhami.visne at gmail.com (Ilhami Visne)
+Date: Wed, 9 Sep 2009 14:54:44 +0200
+Subject: [R-gui] RGG help
+In-Reply-To: <4A95300F.DFDF.006E.0@resbank.co.za>
+References: <4A95300F.DFDF.006E.0@resbank.co.za>
+Message-ID: <ce6b4d120909090554k799d2842j379c4a1c1c945acf@mail.gmail.com>
+
+Hello,
+
+I'm the developer of RGG. In the docs there is a typo
+accepted-extension. Actually it must be accepted-extensions (corrected
+the docs). Please add an 's' to the end. Second, no point before
+extension, write only RData.
+
+Here is the corrected version of yours:
+
+<rgg>
+ #### First test of RGG. setwd and load .R file
+ <filechooser label="Path:" var="path" accepted-extensions="RData"/>
+ source("C:/Documents and Settings/p176435/My
+Documents/gev_application/rgg_test01.R")
+ dir = tstDir(path)
+ setFun(path, dir = dir)
+ if(!dir) load(path)
+ getwd()
+ ls()
+</rgg>
+
+i'll submit a patch so in the future accepted-extension will be accepted too.
+
+Best wishes,
+Ilhami Visne
+
+On Wed, Aug 26, 2009 at 12:52 PM, Stefan
+JansevanRensburg<Stefan.JansevanRensburg at resbank.co.za> wrote:
+> ----------------------- *** Disclaimer *** -----------------------
+> This e-mail and its contents are subject to the SA Reserve Bank's
+> Disclaimer and Confidentiality Clause, which can be viewed at:
+> http://www.reservebank.co.za/disclaimer
+> Should you be unable to access the link provided, please send a
+> blank e-mail to Disclaimer at resbank.co.za
+> ----------------------- *** Disclaimer *** -----------------------
+>
+>
+> Hi,
+>
+> Apart from experimenting with gWidgets, I'm also experimenting with RGG. Very impressed with it so far, especially considering it's pre-alpha status. I have, however, found that the accepted-extensions attribute of filechooser doesn't behave as expected. Despite setting accepted-extension=".RData", any file can still be selected.
+>
+> Here is the basic script I am busy with. It is meant to select the working directory and load the .RData file if that file is selected.
+>
+> Note that the R script is in a separate file, which the .rgg sourcing that file.
+>
+> RGG FILE:
+>
+> <rgg>
+> ?#### First test of RGG. setwd and load .R file
+> ?<filechooser label="Path:" var="path" accepted-extension=".RData"/>
+> ?source("C:/Documents and Settings/p176435/My Documents/gev_application/rgg_test01.R")
+> ?dir = tstDir(path)
+> ?setFun(path, dir = dir)
+> ?if(!dir) load(path)
+> ?getwd()
+> ?ls()
+> </rgg>
+>
+> THE R SCRIPT rgg_test01.R:
+>
+> #### Function to paste togeth characters
+> pCh <- function(ch){
+> ?x <- ""
+> ?for(i in ch){
+> ?x <- paste(x, i, sep = "")
+> ?}
+> ?return(x)
+> ?}
+>
+> #### Function to test if file or directory
+> tstDir <- function(path){
+> ?lch <- unlist(strsplit(path, NULL))
+> ?sq <- seq(length(lch)-5, length(lch))
+> ?lch <- pCh(lch[sq])
+> ?print(lch)
+> ?dir <- ifelse(lch == ".RData", FALSE, TRUE)
+> ?return(dir)
+> ?}
+>
+> #### Function to set workspace and / or load prev session.
+> setFun <- function(path, dir = TRUE){
+> ?ifelse(dir, setwd(path), setwd(dirname(path)))
+> ?}
+>
+> Any help or suggestions whatsoever, would be most appreciated.
+>
+> Kind regards,
+>
+>
+>
+>
+> Stefan Janse van Rensburg
+> Macroprudential Division
+> Financial Stability Department
+> SARB
+> Tel : 012-313 4687
+> Fax : 012 313 4772
+>
+> ? ? ? ?[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From meral.yay at gmail.com  Fri Sep 11 10:15:34 2009
+From: meral.yay at gmail.com (MERAL YAY)
+Date: Fri, 11 Sep 2009 12:45:34 +0430
+Subject: [R-gui] (no subject)
+Message-ID: <c0fbb8790909110115w15bfc393m2bf11be0711694ee@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/f95c7f90/attachment.pl>
+
+From meral.yay at gmail.com  Fri Sep 11 10:18:31 2009
+From: meral.yay at gmail.com (MERAL YAY)
+Date: Fri, 11 Sep 2009 12:48:31 +0430
+Subject: [R-gui] header intact
+Message-ID: <c0fbb8790909110118m42d6f4a5uf6624cb95c077702@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/4046ea8c/attachment.pl>
+
+From phgrosjean at sciviews.org  Fri Sep 11 10:21:51 2009
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Fri, 11 Sep 2009 10:21:51 +0200
+Subject: [R-gui] (no subject)
+In-Reply-To: <c0fbb8790909110115w15bfc393m2bf11be0711694ee@mail.gmail.com>
+References: <c0fbb8790909110115w15bfc393m2bf11be0711694ee@mail.gmail.com>
+Message-ID: <4AAA089F.2030008@sciviews.org>
+
+Hello,
+
+I think you are on the wrong list. You may have more luck if you post 
+your message on R-Help. R-SIG-GUI is for discussing GUIs (Graphical User 
+Interfaces). And you increase the chance to get aznswer if you use a 
+mainingful title on your mail.
+Best,
+
+Philippe Grosjean
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Belgium
+( ( ( ( (
+..............................................................
+
+MERAL YAY wrote:
+> Hello,
+> 
+> I have a question about "ipred" package. I am working on a data set which
+> contains 1000 individual swho came from 588 regions.
+> 
+> I calculated misclassification error rate with cross validation and its
+> smooted version "bootstrap 632" for different sample sizes in LDF. I am
+> doubting whether error rate and low variance are enough to explain my data.
+> 
+> Thanks
+> 
+> Meral
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+
+From anup.parikh at gmail.com  Fri Sep 25 15:46:12 2009
+From: anup.parikh at gmail.com (Anup Parikh)
+Date: Fri, 25 Sep 2009 08:46:12 -0500
+Subject: [R-gui] Red-R: a visual interface for R
+Message-ID: <5c8bd49c0909250646v471978e4g1fe287f30ff39d1d@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090925/999876f9/attachment.pl>
+

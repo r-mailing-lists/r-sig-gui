@@ -1,0 +1,369 @@
+From joseclaudio.faria at terra.com.br  Tue Apr  4 10:50:45 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Tue, 04 Apr 2006 05:50:45 -0300
+Subject: [R-gui] Tinn-R 1.18.4.4 released
+Message-ID: <44323365.3080804@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.4.4) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under *OS Windows*.
+
+To see the changes, please, read: 'Help/English/Changes/HTML'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From wvdgraaf at dds.nl  Tue Apr 18 12:00:14 2006
+From: wvdgraaf at dds.nl (wvdgraaf at dds.nl)
+Date: Tue, 18 Apr 2006 12:00:14 +0200
+Subject: [R-gui] Installing SciViews
+Message-ID: <1145354414.4444b8aede542@webmail.dds.nl>
+
+Hi,
+
+What do I need to install the latest package of SciViews? I already have R
+v.2.2.1 installed on my WinXP machine.
+
+On http://www.sciviews.org/SciViews-R/index.html I read that required components
+are:
+ - SciViews-R version 0.8-9            (exe: 12,334 kb)
+ - SciViews R bundle version 0.8-9     (zip:    442 kb)
+ - R2HTML R package (>= 1.54)          (zip:    527 kb)
+ - Manual
+Then, on http://cran.r-project.org/src/contrib/Descriptions/SciViews.html I find
+a newer version of SciViews-R: 0.9-4 (zip: 550kb). Also, I have found a version
+1.56 of the R2HTML package (zip: 524 kb)on the web.
+
+Looking at the contents of the zip files and their sizes, I would say that the
+0.9-4 zip from CRAN is a newer version of the bundle version 0.8-9 on
+sciviews.org.
+
+This leaves me with the question what I need for a new install:
+ - do I need to get a newer version of the 12 Mb installer to use together with
+the 0.9-4 bundle and 1.56 R2HTML package? If so, where can I get it?
+ - can I use the old installer with the newer bundle and package?, or
+ - should I stick to the 0.8-9 installer and bundle, together with the 1.54
+package, in order to avoid clashes?
+
+Thanks,
+
+Wim van der Graaf
+
+
+From phgrosjean at sciviews.org  Wed Apr 19 11:44:43 2006
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Wed, 19 Apr 2006 11:44:43 +0200
+Subject: [R-gui] Installing SciViews
+Message-ID: <4446068B.3050209@sciviews.org>
+
+wvdgraaf at dds.nl wrote:
+> Hi,
+> 
+> What do I need to install the latest package of SciViews? I already have R
+> v.2.2.1 installed on my WinXP machine.
+> 
+> On http://www.sciviews.org/SciViews-R/index.html I read that required components
+> are:
+>  - SciViews-R version 0.8-9            (exe: 12,334 kb)
+>  - SciViews R bundle version 0.8-9     (zip:    442 kb)
+>  - R2HTML R package (>= 1.54)          (zip:    527 kb)
+>  - Manual
+
+When you install all those packages under R 2.2.X, you are sure that
+they will work with each other.
+
+
+> Then, on http://cran.r-project.org/src/contrib/Descriptions/SciViews.html I find
+> a newer version of SciViews-R: 0.9-4 (zip: 550kb). Also, I have found a version
+> 1.56 of the R2HTML package (zip: 524 kb)on the web.
+
+Yes, SciViews 0.9-4 is newer, and it is compatible with SciViews-R
+version 0.8-9 (the first item in the list hereabove). It was necessary
+to put this version on CRAN because they push always to be conpatible
+with the development version of R (2.3.0). This is the same for R2HTML,
+although, I don't know if its newest version 1.56 is fully compatible
+with the rest.
+
+Now, R 2.3.0 is planned to be released for next week. And I will have
+the opportunity to move SciViews/SciViews-R entirely to version 0.9-X
+and check further compatibility with the other pacakges on CRAN (R2HTML,
+RCmdr, etc.).
+
+The problem is the following one: R and R packages on CRAN are changing
+very rapidly (a new version of at least one CRAN package every day or
+so)! Those changes are never checked against compatibility with
+SciViews-R (developers almost exclusively use Emacs-ESS, not SciViews)!
+So, it is a huge work for me to recherck everything, make changes and
+fix compatibility issues everytime a package changes.
+
+So, my policy is the following: everything R makes a major update (like
+2.2.X to 2.3.0), I recheck everything and propose a coherent suite of
+packages on the SciViews-R web site. Then, eventually, some packages
+become outdated. You have either the possibility to install everytrhing
+from SciViews-R, so that oyu are sure of maximum compatibility... but
+perhaps not everything up-to-date. Or, you update with latest versions
+on CRAN... but take the risk to raise some compatibility issues.
+
+That's the best I can do, given the voluntary nature of my work on
+SciViews-R and the limited time I have to maintain it.
+
+> Looking at the contents of the zip files and their sizes, I would say that the
+> 0.9-4 zip from CRAN is a newer version of the bundle version 0.8-9 on
+> sciviews.org.
+> 
+> This leaves me with the question what I need for a new install:
+>  - do I need to get a newer version of the 12 Mb installer to use together with
+> the 0.9-4 bundle and 1.56 R2HTML package? If so, where can I get it?
+>  - can I use the old installer with the newer bundle and package?, or
+>  - should I stick to the 0.8-9 installer and bundle, together with the 1.54
+> package, in order to avoid clashes?
+
+Please, let me something like one more month after the release of R
+2.3.0 to check everything and to update the SciViews-R web site with
+version 0.9-X.
+
+Best,
+
+Philippe Grosjean
+
+> Thanks,
+> 
+> Wim van der Graaf
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> 
+
+
+-- 
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Pentagone (3D08)
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+  ) ) ) ) )   8, av du Champ de Mars, 7000 Mons, Belgium
+( ( ( ( (
+  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.30.54
+( ( ( ( (    email: Philippe.Grosjean at umh.ac.be
+  ) ) ) ) )
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+  ) ) ) ) )          http://www.sciviews.org
+( ( ( ( (
+..............................................................
+
+
+From nklepeis at sbcglobal.net  Mon Apr 24 11:09:55 2006
+From: nklepeis at sbcglobal.net (Neil E. Klepeis)
+Date: Mon, 24 Apr 2006 02:09:55 -0700
+Subject: [R-gui] Automatic Widget Creation and Callbacks in RGtk
+In-Reply-To: <mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>
+References: <mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>
+Message-ID: <444C95E3.4020805@sbcglobal.net>
+
+Hi,
+
+I apologize if this is not the proper forum.
+
+I am writing a package to automatically create RGtk GUI's with an 
+arbitrary number of widgets to act as a "control panel" front end for a 
+user-specified plotting or simulation function.      The widgets are 
+specified in a list argument to a function and associated with specific 
+parameter values for the user function (FUN), which is called whenever a 
+widget value is modified.   For example, a call to:
+
+makegui <- function (w=list(x=100, y=200, FUN)) {...}
+
+would result in a GUI with slider widgets for parameters "x" and "y". 
+Whenever the sliders are changed, the function FUN is called with the 
+new value of "x" or "y" -- possibly drawing a plot or something else.
+
+MY PROBLEM IS THIS:    I want to make callbacks for each widget that 
+automatically send new parameter values to the function FUN, but I can't 
+find a way to do this with arbitrary numbers of widgets/parameters and 
+arbitrary names for the widgets.    For convenience, I set the parameter 
+names to be the same as the widget names.
+
+First I store all initial parameter values in an array, e.g., params <- 
+list(x=100, y=200).   widget.names <- c("x", "y")
+
+I create each widget with something like:
+
+assign(widget.name, gtkWidget(...))
+
+Then I add a callback:
+
+get(widget.name)$AddCallback("value-changed", function(w) 
+{callbackFUN(...)})
+
+I want the callbackFUN() function to be able to get the widget's value 
+with something like w$GetValue() and put it into the "params" list, and 
+then finally to send the parameter list to the FUN function.
+
+I can't seem to find any way to send a character string of the 
+appropriate arbitrary widget name to the callback function so that I can 
+put the widget value into the parameter list.   I've tried setting an 
+attribute of the widget with its associated parameter name when I create 
+the callback, but the attribute seems to disappear when the callback is 
+called.
+
+I can get around all this whole problem by simply looping through all of 
+the widgets at once by name:
+
+for (i in widget.names) params[[i]] <- get(i)$GetValue()
+
+but this approach is inefficient when only one parameter is changed at a 
+time.
+
+Am I missing something easy?
+
+TIA for any ideas.
+
+--Neil Klepeis
+
+
+From lawremi at iastate.edu  Mon Apr 24 13:00:19 2006
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Mon, 24 Apr 2006 06:00:19 -0500
+Subject: [R-gui] Automatic Widget Creation and Callbacks in RGtk
+In-Reply-To: <444C95E3.4020805@sbcglobal.net>
+References: <mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>
+	<444C95E3.4020805@sbcglobal.net>
+Message-ID: <444CAFC3.2060900@iastate.edu>
+
+
+
+> I can't seem to find any way to send a character string of the 
+> appropriate arbitrary widget name to the callback function so that I can 
+> put the widget value into the parameter list.   I've tried setting an 
+> attribute of the widget with its associated parameter name when I create 
+> the callback, but the attribute seems to disappear when the callback is 
+> called.
+>
+>   
+How about passing the parameter name as the "user data" to the callback.
+Like:
+
+gSignalConnect(widget, "value-changed", fun, parameter_name)
+
+Then that string is passed as the last parameter to 'fun'.
+Then you can update your global data structure.
+
+Note: the code above is for RGtk2, but it looks like you're using the 
+old RGtk for GTK+ 1.2.
+Why not upgrade? http://www.ggobi.org/rgtk2
+
+You could also use gObjectSetData() like widget$setData("param-name", 
+param_name)
+Then widget$getData("param-name") to get it back out.
+> I can get around all this whole problem by simply looping through all of 
+> the widgets at once by name:
+>
+> for (i in widget.names) params[[i]] <- get(i)$GetValue()
+>
+> but this approach is inefficient when only one parameter is changed at a 
+> time.
+>
+>   
+Are you sure this is that inefficient? How many widgets do you have per 
+GUI? This would be the simplest way to do it.
+
+Michael
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From nklepeis at sbcglobal.net  Mon Apr 24 22:50:28 2006
+From: nklepeis at sbcglobal.net (Neil E. Klepeis)
+Date: Mon, 24 Apr 2006 13:50:28 -0700
+Subject: [R-gui] Automatic Widget Creation and Callbacks in RGtk
+In-Reply-To: <444CAFC3.2060900@iastate.edu>
+References: <mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>
+	<444C95E3.4020805@sbcglobal.net> <444CAFC3.2060900@iastate.edu>
+Message-ID: <444D3A14.9010505@sbcglobal.net>
+
+Thanks Michael,
+
+I'd switch to RGtk2 except I recall the dependency is Gtk 2.8.0.
+
+Even though the Gtk 1.2 API states that gtkObjectSetData/GetData are 
+available, I can't get them to work with Scale widgets in RGtk, e.g. 
+with w$SetData("key", value).   Are these only available with RGtk2?
+
+Anyway, I guess I'll stick with looping over all the widgets until I can 
+upgrade to RGtk2.    You're right that it probably won't be too bad.
+
+Thanks for RGtk2!
+
+Neil
+
+
+Michael Lawrence wrote:
+> 
+> 
+>> I can't seem to find any way to send a character string of the 
+>> appropriate arbitrary widget name to the callback function so that I 
+>> can put the widget value into the parameter list.   I've tried setting 
+>> an attribute of the widget with its associated parameter name when I 
+>> create the callback, but the attribute seems to disappear when the 
+>> callback is called.
+>>
+>>   
+> 
+> How about passing the parameter name as the "user data" to the callback.
+> Like:
+> 
+> gSignalConnect(widget, "value-changed", fun, parameter_name)
+> 
+> Then that string is passed as the last parameter to 'fun'.
+> Then you can update your global data structure.
+> 
+> Note: the code above is for RGtk2, but it looks like you're using the 
+> old RGtk for GTK+ 1.2.
+> Why not upgrade? http://www.ggobi.org/rgtk2
+> 
+> You could also use gObjectSetData() like widget$setData("param-name", 
+> param_name)
+> Then widget$getData("param-name") to get it back out.
+> 
+>> I can get around all this whole problem by simply looping through all 
+>> of the widgets at once by name:
+>>
+>> for (i in widget.names) params[[i]] <- get(i)$GetValue()
+>>
+>> but this approach is inefficient when only one parameter is changed at 
+>> a time.
+>>
+
+> 
+> Are you sure this is that inefficient? How many widgets do you have per 
+> GUI? This would be the simplest way to do it.
+> 
+> Michael
+
+
+From jverzani at gmail.com  Tue Apr 25 17:38:18 2006
+From: jverzani at gmail.com (j verzani)
+Date: Tue, 25 Apr 2006 11:38:18 -0400
+Subject: [R-gui]  Automatic Widget Creation and Callbacks in RGtk
+Message-ID: <b1a669cc0604250838j78803107tf6510d9c675ecf6b@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060425/f1bd3ce5/attachment.pl 
+

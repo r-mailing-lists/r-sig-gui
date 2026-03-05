@@ -1,0 +1,157 @@
+From mcaj at tci.ufal.br  Wed Nov 12 20:19:20 2003
+From: mcaj at tci.ufal.br (mcaj@tci.ufal.br)
+Date: Wed Nov 12 20:16:31 2003
+Subject: [R-gui] Using tcltk language with R system
+Message-ID: <1068664760.3fb287b83d64a@webmail.tci.ufal.br>
+
+
+
+  Hello, Does anybody know how can i call a R function in a tcltk file? I made 
+a tcltk file, but I need call functions in R. i.e: in R I can put .Tcl("tcltk 
+statement"). There are a same command to call R in a tcltk file?
+
+  I want to make a R Gui using tcltk language, do you recommend use a tcltk or 
+a R pack tcltk and don't use tcltk language?
+
+  Thanks for your attention.
+
+
+  Marcos Cerqueira J?nior
+ Alagoas University - Brazil
+
+-------------------------------------------------
+This mail sent through IMP: http://horde.org/imp/
+
+From wettenhall at wehi.edu.au  Thu Nov 13 00:30:29 2003
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Nov 13 00:29:29 2003
+Subject: [R-gui] Using tcltk language with R system
+In-Reply-To: <1068664760.3fb287b83d64a@webmail.tci.ufal.br>
+Message-ID: <Pine.LNX.4.44.0311131015550.19842-100000@unix28.alpha.wehi.edu.au>
+
+Marcos,
+
+Do you really want to call R from Tcl?  Which features of 
+the Tcl scripting language appeal to you?  Or is it just easier 
+to find examples of Tk widgets written in Tcl?
+
+I have put together some examples of creating widgets with the 
+tcltk package in R:
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+
+If you want to call R functions from another language, have a 
+look in the R-admin document that comes with R, in particular, 
+see:
+build R as a shared library
+
+And the R-exts document may be useful as well, if you want to 
+see how to interface R functions with C code.
+
+To allow Tcl/Tk to be called from R, Peter Dalgaard has done 
+some clever stuff in interfacing the two event loops.  Would you 
+have to reinvent some of this if you call R from Tcl?  I don't 
+know.
+
+Regards,
+James
+
+On Wed, 12 Nov 2003 mcaj@tci.ufal.br wrote:
+
+> 
+> 
+>   Hello, Does anybody know how can i call a R function in a tcltk file? I made 
+> a tcltk file, but I need call functions in R. i.e: in R I can put .Tcl("tcltk 
+> statement"). There are a same command to call R in a tcltk file?
+> 
+>   I want to make a R Gui using tcltk language, do you recommend use a tcltk or 
+> a R pack tcltk and don't use tcltk language?
+> 
+>   Thanks for your attention.
+> 
+> 
+>   Marcos Cerqueira J?nior
+>  Alagoas University - Brazil
+> 
+> -------------------------------------------------
+> This mail sent through IMP: http://horde.org/imp/
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+-- 
+--------------------------------------------------------------------------
+James Wettenhall                                  Tel: (+61 3) 9345 2629
+Division of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852
+The Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au
+ of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    
+1G Royal Parade,
+Parkville, Vic 3050, Australia
+http://www.wehi.edu.au
+
+From phgrosjean at sciviews.org  Thu Nov 13 11:29:36 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Nov 13 11:29:21 2003
+Subject: [R-gui] Using tcltk language with R system
+Message-ID: <MABBLJDICACNFOLGIHJOKELHDOAA.phgrosjean@sciviews.org>
+
+A good starting point for making a tcltk GUI for R is by looking at existing
+ones. Rcmdr (R Commander, a R package you will find in CRAN) comes to mind
+first. It is a very neat interface, with menus, a script/log window and
+several other good ideas (default data frame/formula, loading of menus from
+file, ...). If we could all use R Cmdr as a reference for tcltk GUI in R, we
+will certainly tend towards homogeneous implementations.
+Best,
+
+Philippe Grosjean
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of
+mcaj@tci.ufal.br
+Sent: Wednesday, 12 November, 2003 20:19
+To: r-sig-gui@stat.math.ethz.ch
+Subject: [R-gui] Using tcltk language with R system
+
+
+
+
+  Hello, Does anybody know how can i call a R function in a tcltk file? I
+made
+a tcltk file, but I need call functions in R. i.e: in R I can put
+.Tcl("tcltk
+statement"). There are a same command to call R in a tcltk file?
+
+  I want to make a R Gui using tcltk language, do you recommend use a tcltk
+or
+a R pack tcltk and don't use tcltk language?
+
+  Thanks for your attention.
+
+
+  Marcos Cerqueira J?nior
+ Alagoas University - Brazil
+
+-------------------------------------------------
+This mail sent through IMP: http://horde.org/imp/
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From saavedra_62 at hotmail.com  Sat Nov 22 00:05:54 2003
+From: saavedra_62 at hotmail.com (bladimir Saavedra)
+Date: Sat Nov 22 00:04:36 2003
+Subject: [R-gui] confirm my susbscription
+Message-ID: <Law15-F4Oh1pMuBeZVo000050f1@hotmail.com>
+
+Hello I want to confirm my subscription to your list. Bladimir Saavedra
+
+_________________________________________________________________
+
+http://messenger.latam.msn.com/
+

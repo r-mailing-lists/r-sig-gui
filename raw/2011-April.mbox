@@ -1,0 +1,66 @@
+From klebyn at yahoo.com.br  Mon Apr  4 15:05:31 2011
+From: klebyn at yahoo.com.br (Cleber N. Borges)
+Date: Mon, 04 Apr 2011 10:05:31 -0300
+Subject: [R-gui] RGtk2: How to populate an GtkListStore data model?
+Message-ID: <4D99C21B.10307@yahoo.com.br>
+
+hello all
+I am trying to learn how to use the RGtk2 package...
+so, my first problem is: I don't get the right way for populate my 
+gtkListStore object!
+any help is welcome... because I am trying several day to mount the code...
+Thanks in advanced
+Cleber N. Borges
+---------------------------
+# my testing code
+
+library(RGtk2)
+win <- gtkWindowNew()
+datamodel <- gtkListStoreNew('gchararray')
+treeview <- gtkTreeViewNew()
+renderer <- gtkCellRendererText()
+col_0 <- gtkTreeViewColumnNewWithAttributes(title="TitleXXX", 
+cell=renderer, "text"="Bar")
+nc_next <- gtkTreeViewInsertColumn(object=treeview, column=col_0, 
+position=0)
+gtkTreeViewSetModel( treeview, datamodel )
+win$add( treeview ) # is there an alternative function for this?
+
+# iter <- gtkTreeModelGetIterFirst( datamodel )[[2]]
+# this function don't give VALID iter
+# gtkListStoreIterIsValid( datamodel, iter )  result in FALSE
+iter <- gtkListStoreInsert( datamodel, position=0 )[[2]]
+gtkListStoreIterIsValid( datamodel, iter )
+
+# the help of this function say to terminated in -1 value
+# but -1 crash the R-pckage (or the gtk)...
+gtkListStoreSet(object=datamodel, iter=iter, 0, "textFoo")
+# don't make any difference in the window... :-(
+
+
+----
+R version 2.13.0 alpha (2011-03-27 r55091)
+Platform: i386-pc-mingw32/i386 (32-bit)
+
+locale:
+[1] LC_COLLATE=Portuguese_Brazil.1252
+[2] LC_CTYPE=Portuguese_Brazil.1252
+[3] LC_MONETARY=Portuguese_Brazil.1252
+[4] LC_NUMERIC=C
+[5] LC_TIME=Portuguese_Brazil.1252
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods
+[7] base
+
+other attached packages:
+[1] RGtk2_2.20.8
+
+loaded via a namespace (and not attached):
+[1] tools_2.13.0
+>
+
+
+my gtk version == 2.16.2
+
+

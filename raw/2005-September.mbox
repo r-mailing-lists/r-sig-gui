@@ -1,0 +1,655 @@
+From jhallman at frb.gov  Tue Sep 20 18:31:23 2005
+From: jhallman at frb.gov (jhallman@frb.gov)
+Date: Tue, 20 Sep 2005 12:31:23 -0400
+Subject: [R-gui] tkEditMatrix()
+Message-ID: <20050920163123.D8B2753583@mail.rsma.frb.gov>
+
+Philippe,
+
+I wrote this matrix editor that uses Tktable and sent it to James Wettenhall,
+suggesting that he might want to add it to his tcltk examples web page. James
+replied that he was no longer maintaining those pages, but that you had
+volunteered to take them over.  James also suggested I send it to the
+R-SIG-GUI list, so I'm doing that as well.
+
+The code is public domain, so feel free to do anything you like with it.
+
+Jeff Hallman
+
+dim.tclArray <- function(ta){
+  nms <- grep(",", names(ta), value = T)
+  if(length(nms) == 0) return(c(0,0))
+  c(max(as.numeric(gsub(",.*", "", nms))),
+    max(as.numeric(gsub(".*,", "", nms)))) + 1
+}
+
+tkEditMatrix <- function(x, title="Matrix Editor",
+                         header = NULL,
+                         maxHeight = 600, maxWidth = 800,
+						 fontsize = 17,
+                         ...){
+  tclRequire("Tktable")
+  .Tcl(paste("option add *Table.font {courier", fontsize, "bold}"))
+  old <- options(scipen = 7)
+  on.exit(options(old))
+  
+  makeCharMat <- function(x){
+    ## make sure it's a character matrix
+    mat <- matrix(unlist(x), nrow = nrow(as.matrix(x)))
+    dm <- dim(mat)
+    
+    ## check for row and column names
+    hasRownames <- length(rn <- rownames(x)) > 0
+    hasColnames <- length(cn <- colnames(x)) > 0
+    ## fake row and column names if they aren't there
+    if(!hasRownames) rn <- paste("[", 1:nrow(x), ",]", sep = "")
+    if(!hasColnames) cn <- paste("[,", 1:ncol(x), "]", sep = "")
+    
+    ## format the columns 
+    mat[] <- apply(unclass(mat), 2, format, justify = "right")
+    mat <- rbind(cn, mat)
+    mat <- cbind(c("", rn), mat)
+    mat
+  }
+  
+  fillTclArrayFromCharMat <- function(ta, cm){
+    ## cm[,1] contains column names, while cm[1,] has rownames
+    ## cm[1,1] is ignored
+    for(j in 2:ncol(cm)) ta[[0, j-1]] <- as.tclObj(cm[1, j], drop = T)
+    for(i in 2:nrow(cm))
+      for(j in 1:ncol(cm))
+        ta[[i-1, j-1]] <- as.tclObj(cm[i, j], drop = T)
+  }
+  
+  tA <- tclArray()
+  cmat <- makeCharMat(x)
+  fillTclArrayFromCharMat(tA, cmat)
+
+  tt <- tktoplevel()
+  tkwm.title(tt,title)
+
+  colwidths <- apply(cmat, 2, function(x) max(nchar(x)) + 1 )
+  nTableCols <- ncol(cmat)
+  if((moreWidth <- 60 - sum(colwidths)) > 0){
+    addEach <- moreWidth %/% length(colwidths)
+    if(addEach < 5) colwidths <- colwidths + addEach + 1
+    else nTableCols <- nTableCols + ceiling(moreWidth/10)
+  }
+
+  tktable <- tkwidget(tt, "table",
+                      variable = tA,
+                      rows = nrow(cmat), cols = nTableCols,
+                      titlerows = 1, titlecols = 1, selecttitle = 1,
+                      anchor = "e", multiline = 0,
+                      selectmode = "extended",
+                      rowseparator = dQuote("\n"),
+                      colseparator = dQuote("\t"),
+                      background = "white",
+                      maxheight = maxHeight, maxwidth = maxWidth,
+                      xscrollcommand = function(...) tkset(xscr,...),
+                      yscrollcommand = function(...) tkset(yscr,...))
+  xscr <-tkscrollbar(tt, orient = "horizontal",
+                     command = function(...)tkxview(tktable,...))
+  yscr <- tkscrollbar(tt, command = function(...)tkyview(tktable,...))
+
+  ## set column widths
+  for(i in 1:ncol(cmat)) tcl(tktable, "width", i-1, colwidths[i])
+  
+  ## rebind the Backspace key, which somehow gets messed up
+  string <- "bind Table <BackSpace> {
+    set ::tk::table::Priv(junk) [%W icursor]
+    if {[string compare {} $::tk::table::Priv(junk)] && $::tk::table::Priv(junk)} {
+	%W delete active [expr {$::tk::table::Priv(junk)-1}]
+    }}"
+  .Tcl(string)
+  
+  ## internal functions for buttons
+  activeRow <- function() as.numeric(tkindex(tktable, "active", "row"))
+  activeCol <- function() as.numeric(tkindex(tktable, "active", "col"))
+  undoEdits <- function(){
+    ta <- tclArray()
+    fillTclArrayFromCharMat(ta, cmat)
+    assign("tA", ta, inherits = T)
+    tkconfigure(tktable, variable = tA)
+  }
+  finish    <- function() tkdestroy(tt)
+  cancel    <- function(){
+    undoEdits()
+    tkdestroy(tt)
+  }
+  insertRow <- function(){
+    row <- activeRow()
+    col <- activeCol()
+    tkinsert(tktable, "rows", row, 1)
+    newCell <- paste(row + 1, col, sep = ",")
+    tkactivate(tktable, newCell)
+    tksee(tktable, newCell)
+  }
+  insertCol <- function(){
+    row <- activeRow()
+    col <- activeCol()
+    tkinsert(tktable, "cols", col, 1)
+    newCell <- paste(row, col + 1, sep = ",")
+    tkactivate(tktable, newCell)
+    tksee(tktable, newCell)
+  }
+  deleteRow <- function(){
+    if((row <- activeRow()) != 0)
+      tkdelete(tktable, "rows", row, 1)
+  }
+  deleteCol <- function(){
+    if((col <- activeCol()) != 0)
+      tkdelete(tktable, "cols", col, 1)
+  }
+  copyRow <- function(){
+    src <- activeRow()
+    if(src != 0){
+      insertRow()
+      dst <- activeRow()
+      for(j in 0:(ncol(tA)-1)) tA[[dst,j]] <- tA[[src, j]]
+    }
+  }
+  copyCol <- function(){
+    src <- activeCol()
+    if(src != 0){
+      insertCol()
+      dst <- activeCol()
+      for(i in 0:(nrow(tA)-1)) tA[[i,dst]] <- tA[[i,src]]
+    }
+  }
+
+  finishButton    <- tkbutton(tt, text = "Finish",     command = finish)
+  cancelButton    <- tkbutton(tt, text = "Cancel",     command = cancel)
+  undoEditsButton <- tkbutton(tt, text = "Undo Edits", command = undoEdits)
+  insertRowButton <- tkbutton(tt, text = "Insert Row", command = insertRow)
+  copyRowButton   <- tkbutton(tt, text = "Copy Row",   command = copyRow)
+  deleteRowButton <- tkbutton(tt, text = "Delete Row", command = deleteRow)
+  insertColButton <- tkbutton(tt, text = "Insert Col", command = insertCol)
+  copyColButton   <- tkbutton(tt, text = "Copy Col",   command = copyCol)
+  deleteColButton <- tkbutton(tt, text = "Delete Col", command = deleteCol)
+
+  ## Layout
+  if(length(header) > 0){
+    for(label in header)
+      tkgrid(tklabel(tt, text = label), columnspan = 7, sticky = "nw")
+  }
+  tkgrid(tktable, yscr, columnspan = 8)
+  tkgrid.configure(tktable, sticky = "news")
+  tkgrid.configure(yscr, sticky = "nsw")
+  tkgrid(xscr, sticky = "new", columnspan = 8)
+  tkgrid(insertRowButton, copyRowButton, deleteRowButton, sticky = "news")
+  tkgrid(insertColButton, copyColButton, deleteColButton,
+         "x", cancelButton, undoEditsButton, finishButton, sticky = "news")
+  tkgrid.columnconfigure(tt, 3, weight = 1)
+  tkgrid.rowconfigure(tt, length(header), weight = 1)
+  tkactivate(tktable, "0,0")
+  tktag.configure(tktable, "active", background = "lightyellow2")
+  tktag.configure(tktable, "title", state = "normal")
+
+  tkgrab.set(tt)
+  tkfocus(tt)
+  tkwait.window(tt)
+
+  outMat <- matrix("", nrow = nrow(tA), ncol = ncol(tA))
+                   
+  for(i in 1:nrow(outMat))
+    for(j in 1:ncol(outMat)){
+      val <- tA[[i-1,j-1]]
+      if(is.null(val)) val <- ""
+      else             val <- tclvalue(val)
+      outMat[i,j] <- val
+    }
+
+  ## recover row and column names
+  rn <- outMat[,1][-1]
+  cn <- outMat[1,][-1]
+  outMat <- outMat[-1, -1, drop = F]
+
+  ## ignore badd and/or NA row and column names
+  badRownames <- c(grep("\\[.*\\]", rn), (1:length(rn))[is.na(rn)])
+  if(length(badRownames) != length(rn)){
+    rn[badRownames] <- ""
+    rownames(outMat) <- rn
+  }
+  badColnames <- c(grep("\\[.*\\]", cn), (1:length(cn))[is.na(cn)])
+  if(length(badColnames) != length(cn)){
+    cn[badColnames] <- ""
+    colnames(outMat) <- cn
+  }
+  mode(outMat) <- mode(x)
+  Sys.sleep(0.1)
+  return(outMat)
+}
+
+
+From phgrosjean at sciviews.org  Tue Sep 20 19:58:51 2005
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue, 20 Sep 2005 19:58:51 +0200
+Subject: [R-gui] tkEditMatrix()
+In-Reply-To: <20050920163123.D8B2753583@mail.rsma.frb.gov>
+References: <20050920163123.D8B2753583@mail.rsma.frb.gov>
+Message-ID: <43304DDB.40208@sciviews.org>
+
+Thank you. I'll integrate this to the tcl/tk web page... and also, if 
+you like in the tcltk2 package in preparation (see 
+http://www.sciviews.org/SciViews-R).
+Best,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Pentagone (3D08)
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+  ) ) ) ) )   8, av du Champ de Mars, 7000 Mons, Belgium
+( ( ( ( (
+  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.30.54
+( ( ( ( (    email: Philippe.Grosjean at umh.ac.be
+  ) ) ) ) )
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+  ) ) ) ) )          http://www.sciviews.org
+( ( ( ( (
+..............................................................
+
+jhallman at frb.gov wrote:
+> Philippe,
+> 
+> I wrote this matrix editor that uses Tktable and sent it to James Wettenhall,
+> suggesting that he might want to add it to his tcltk examples web page. James
+> replied that he was no longer maintaining those pages, but that you had
+> volunteered to take them over.  James also suggested I send it to the
+> R-SIG-GUI list, so I'm doing that as well.
+> 
+> The code is public domain, so feel free to do anything you like with it.
+> 
+> Jeff Hallman
+> 
+> dim.tclArray <- function(ta){
+>   nms <- grep(",", names(ta), value = T)
+>   if(length(nms) == 0) return(c(0,0))
+>   c(max(as.numeric(gsub(",.*", "", nms))),
+>     max(as.numeric(gsub(".*,", "", nms)))) + 1
+> }
+> 
+> tkEditMatrix <- function(x, title="Matrix Editor",
+>                          header = NULL,
+>                          maxHeight = 600, maxWidth = 800,
+> 						 fontsize = 17,
+>                          ...){
+>   tclRequire("Tktable")
+>   .Tcl(paste("option add *Table.font {courier", fontsize, "bold}"))
+>   old <- options(scipen = 7)
+>   on.exit(options(old))
+>   
+>   makeCharMat <- function(x){
+>     ## make sure it's a character matrix
+>     mat <- matrix(unlist(x), nrow = nrow(as.matrix(x)))
+>     dm <- dim(mat)
+>     
+>     ## check for row and column names
+>     hasRownames <- length(rn <- rownames(x)) > 0
+>     hasColnames <- length(cn <- colnames(x)) > 0
+>     ## fake row and column names if they aren't there
+>     if(!hasRownames) rn <- paste("[", 1:nrow(x), ",]", sep = "")
+>     if(!hasColnames) cn <- paste("[,", 1:ncol(x), "]", sep = "")
+>     
+>     ## format the columns 
+>     mat[] <- apply(unclass(mat), 2, format, justify = "right")
+>     mat <- rbind(cn, mat)
+>     mat <- cbind(c("", rn), mat)
+>     mat
+>   }
+>   
+>   fillTclArrayFromCharMat <- function(ta, cm){
+>     ## cm[,1] contains column names, while cm[1,] has rownames
+>     ## cm[1,1] is ignored
+>     for(j in 2:ncol(cm)) ta[[0, j-1]] <- as.tclObj(cm[1, j], drop = T)
+>     for(i in 2:nrow(cm))
+>       for(j in 1:ncol(cm))
+>         ta[[i-1, j-1]] <- as.tclObj(cm[i, j], drop = T)
+>   }
+>   
+>   tA <- tclArray()
+>   cmat <- makeCharMat(x)
+>   fillTclArrayFromCharMat(tA, cmat)
+> 
+>   tt <- tktoplevel()
+>   tkwm.title(tt,title)
+> 
+>   colwidths <- apply(cmat, 2, function(x) max(nchar(x)) + 1 )
+>   nTableCols <- ncol(cmat)
+>   if((moreWidth <- 60 - sum(colwidths)) > 0){
+>     addEach <- moreWidth %/% length(colwidths)
+>     if(addEach < 5) colwidths <- colwidths + addEach + 1
+>     else nTableCols <- nTableCols + ceiling(moreWidth/10)
+>   }
+> 
+>   tktable <- tkwidget(tt, "table",
+>                       variable = tA,
+>                       rows = nrow(cmat), cols = nTableCols,
+>                       titlerows = 1, titlecols = 1, selecttitle = 1,
+>                       anchor = "e", multiline = 0,
+>                       selectmode = "extended",
+>                       rowseparator = dQuote("\n"),
+>                       colseparator = dQuote("\t"),
+>                       background = "white",
+>                       maxheight = maxHeight, maxwidth = maxWidth,
+>                       xscrollcommand = function(...) tkset(xscr,...),
+>                       yscrollcommand = function(...) tkset(yscr,...))
+>   xscr <-tkscrollbar(tt, orient = "horizontal",
+>                      command = function(...)tkxview(tktable,...))
+>   yscr <- tkscrollbar(tt, command = function(...)tkyview(tktable,...))
+> 
+>   ## set column widths
+>   for(i in 1:ncol(cmat)) tcl(tktable, "width", i-1, colwidths[i])
+>   
+>   ## rebind the Backspace key, which somehow gets messed up
+>   string <- "bind Table <BackSpace> {
+>     set ::tk::table::Priv(junk) [%W icursor]
+>     if {[string compare {} $::tk::table::Priv(junk)] && $::tk::table::Priv(junk)} {
+> 	%W delete active [expr {$::tk::table::Priv(junk)-1}]
+>     }}"
+>   .Tcl(string)
+>   
+>   ## internal functions for buttons
+>   activeRow <- function() as.numeric(tkindex(tktable, "active", "row"))
+>   activeCol <- function() as.numeric(tkindex(tktable, "active", "col"))
+>   undoEdits <- function(){
+>     ta <- tclArray()
+>     fillTclArrayFromCharMat(ta, cmat)
+>     assign("tA", ta, inherits = T)
+>     tkconfigure(tktable, variable = tA)
+>   }
+>   finish    <- function() tkdestroy(tt)
+>   cancel    <- function(){
+>     undoEdits()
+>     tkdestroy(tt)
+>   }
+>   insertRow <- function(){
+>     row <- activeRow()
+>     col <- activeCol()
+>     tkinsert(tktable, "rows", row, 1)
+>     newCell <- paste(row + 1, col, sep = ",")
+>     tkactivate(tktable, newCell)
+>     tksee(tktable, newCell)
+>   }
+>   insertCol <- function(){
+>     row <- activeRow()
+>     col <- activeCol()
+>     tkinsert(tktable, "cols", col, 1)
+>     newCell <- paste(row, col + 1, sep = ",")
+>     tkactivate(tktable, newCell)
+>     tksee(tktable, newCell)
+>   }
+>   deleteRow <- function(){
+>     if((row <- activeRow()) != 0)
+>       tkdelete(tktable, "rows", row, 1)
+>   }
+>   deleteCol <- function(){
+>     if((col <- activeCol()) != 0)
+>       tkdelete(tktable, "cols", col, 1)
+>   }
+>   copyRow <- function(){
+>     src <- activeRow()
+>     if(src != 0){
+>       insertRow()
+>       dst <- activeRow()
+>       for(j in 0:(ncol(tA)-1)) tA[[dst,j]] <- tA[[src, j]]
+>     }
+>   }
+>   copyCol <- function(){
+>     src <- activeCol()
+>     if(src != 0){
+>       insertCol()
+>       dst <- activeCol()
+>       for(i in 0:(nrow(tA)-1)) tA[[i,dst]] <- tA[[i,src]]
+>     }
+>   }
+> 
+>   finishButton    <- tkbutton(tt, text = "Finish",     command = finish)
+>   cancelButton    <- tkbutton(tt, text = "Cancel",     command = cancel)
+>   undoEditsButton <- tkbutton(tt, text = "Undo Edits", command = undoEdits)
+>   insertRowButton <- tkbutton(tt, text = "Insert Row", command = insertRow)
+>   copyRowButton   <- tkbutton(tt, text = "Copy Row",   command = copyRow)
+>   deleteRowButton <- tkbutton(tt, text = "Delete Row", command = deleteRow)
+>   insertColButton <- tkbutton(tt, text = "Insert Col", command = insertCol)
+>   copyColButton   <- tkbutton(tt, text = "Copy Col",   command = copyCol)
+>   deleteColButton <- tkbutton(tt, text = "Delete Col", command = deleteCol)
+> 
+>   ## Layout
+>   if(length(header) > 0){
+>     for(label in header)
+>       tkgrid(tklabel(tt, text = label), columnspan = 7, sticky = "nw")
+>   }
+>   tkgrid(tktable, yscr, columnspan = 8)
+>   tkgrid.configure(tktable, sticky = "news")
+>   tkgrid.configure(yscr, sticky = "nsw")
+>   tkgrid(xscr, sticky = "new", columnspan = 8)
+>   tkgrid(insertRowButton, copyRowButton, deleteRowButton, sticky = "news")
+>   tkgrid(insertColButton, copyColButton, deleteColButton,
+>          "x", cancelButton, undoEditsButton, finishButton, sticky = "news")
+>   tkgrid.columnconfigure(tt, 3, weight = 1)
+>   tkgrid.rowconfigure(tt, length(header), weight = 1)
+>   tkactivate(tktable, "0,0")
+>   tktag.configure(tktable, "active", background = "lightyellow2")
+>   tktag.configure(tktable, "title", state = "normal")
+> 
+>   tkgrab.set(tt)
+>   tkfocus(tt)
+>   tkwait.window(tt)
+> 
+>   outMat <- matrix("", nrow = nrow(tA), ncol = ncol(tA))
+>                    
+>   for(i in 1:nrow(outMat))
+>     for(j in 1:ncol(outMat)){
+>       val <- tA[[i-1,j-1]]
+>       if(is.null(val)) val <- ""
+>       else             val <- tclvalue(val)
+>       outMat[i,j] <- val
+>     }
+> 
+>   ## recover row and column names
+>   rn <- outMat[,1][-1]
+>   cn <- outMat[1,][-1]
+>   outMat <- outMat[-1, -1, drop = F]
+> 
+>   ## ignore badd and/or NA row and column names
+>   badRownames <- c(grep("\\[.*\\]", rn), (1:length(rn))[is.na(rn)])
+>   if(length(badRownames) != length(rn)){
+>     rn[badRownames] <- ""
+>     rownames(outMat) <- rn
+>   }
+>   badColnames <- c(grep("\\[.*\\]", cn), (1:length(cn))[is.na(cn)])
+>   if(length(badColnames) != length(cn)){
+>     cn[badColnames] <- ""
+>     colnames(outMat) <- cn
+>   }
+>   mode(outMat) <- mode(x)
+>   Sys.sleep(0.1)
+>   return(outMat)
+> }
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+
+From Fay.Hosking at bristol.ac.uk  Mon Sep 26 14:06:56 2005
+From: Fay.Hosking at bristol.ac.uk (F. J. Hosking)
+Date: Mon, 26 Sep 2005 13:06:56 +0100
+Subject: [R-gui] Tcl\Tk help needed for time-consuming calculations
+Message-ID: <DB53AA926EDA9EF636B7D39B@math-pc100.maths.bris.ac.uk>
+
+Hi,
+
+I am using R2.0.1 (under Windows) and using Tcl\Tk to produce a GUI for 
+some R code. My main problem is that reading in the types of files and 
+doing a lot of the calculations is quite time consuming. So I would like 
+some way of showing that the computer is still busy - either a wait cursor, 
+animated giff or somesuch, on a window which stays in focus.
+
+I've tried using tkconfigure(tt,cursor="watch"), but it only appears at the 
+end of the loading. For the calculations, ideally, I would like a window to 
+appear and then as the calculations are finished the results appear on the 
+same window in order and in correct place; but am unsure of how to 
+"refresh" the window each time. I have looked at various Tcl and R:Tcl/Tk 
+commands and am unsure how to achieve this, without (I hope) needing 
+threads but any advice on how best to proceed would be greatly appreciated.
+
+Thanks
+Fay
+
+----------------------
+F J Hosking
+PhD Student, Statistics
+Department of Mathematics
+University of Bristol
+Email: fay.hosking at bristol.ac.uk
+Webpage: http://www.maths.bris.ac.uk/~mafjh/
+
+
+From wettenhall at wehi.EDU.AU  Tue Sep 27 05:45:41 2005
+From: wettenhall at wehi.EDU.AU (James Wettenhall)
+Date: Tue, 27 Sep 2005 13:45:41 +1000 (EST)
+Subject: [R-gui] Tcl\Tk help needed for time-consuming calculations
+In-Reply-To: <DB53AA926EDA9EF636B7D39B@math-pc100.maths.bris.ac.uk>
+References: <DB53AA926EDA9EF636B7D39B@math-pc100.maths.bris.ac.uk>
+Message-ID: <3048.138.217.40.89.1127792741.squirrel@homebase.wehi.edu.au>
+
+Hi Fay,
+
+> I've tried using tkconfigure(tt,cursor="watch"), but it only appears at
+> the end of the loading.
+
+Maybe try focusing the window you've applied the watch cursor to:
+tkfocus(tt)
+after setting the cursor, but before doing the time-consuming calculation.
+
+I have found that the Tcl/Tk watch cursor doesn't do what I expect on
+MacOSX (with X11 Tcl/Tk) - sometimes I still see an arrow, or a different
+arrow, rather than wait/watch/hourglass cursor.  But you should be OK on
+Windows.
+
+> but am unsure of how to
+> "refresh" the window each time.
+
+Maybe use tkdelete to delete the components you want to update (e.g. a
+tkframe or a tkrplot image), then recreate them and pack them or place
+them on the window with tkpack or tkgrid or whatever.  Of course you may
+want to consider tkdeleting the whole window and recreating it from
+scratch.
+
+Best wishes,
+James
+
+
+From Soren.Hojsgaard at agrsci.dk  Wed Sep 28 23:34:56 2005
+From: Soren.Hojsgaard at agrsci.dk (=?iso-8859-1?Q?S=F8ren_H=F8jsgaard?=)
+Date: Wed, 28 Sep 2005 23:34:56 +0200
+Subject: [R-gui] After resizing a tkwidget,
+	how do I get the size of the widget??
+Message-ID: <C83C5E3DEEE97E498B74729A33F6EAEC03877FEB@DJFPOST01.djf.agrsci.dk>
+
+Dear all,
+I am trying make a small tcltk thing for drawing graphs with vertices, edges etc. I can draw the graph in a window. 
+ 
+- I would like it so that if I resize the window, the graph will also be resized. To do this, I guess I need the size of the window, so that I can calculate the new coordinates. 
+- I would also like to be able to save the graph as e.g. a jpg/ps file.
+Can anyone help on this? 
+ 
+I find the documentation of the tcltk package difficult to comprehend so I have used the examples on http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/. Can anyone point me to other sources of examples/doc of the tcltk package?
+Thanks in advance
+S?ren
+
+
+From crendon at gmail.com  Thu Sep 29 00:40:26 2005
+From: crendon at gmail.com (Carlos Rendon)
+Date: Wed, 28 Sep 2005 15:40:26 -0700
+Subject: [R-gui] After resizing a tkwidget,
+	how do I get the size of the widget??
+In-Reply-To: <C83C5E3DEEE97E498B74729A33F6EAEC03877FEB@DJFPOST01.djf.agrsci.dk>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC03877FEB@DJFPOST01.djf.agrsci.dk>
+Message-ID: <5a33f11c05092815406a5d0d4e@mail.gmail.com>
+
+This should help a little bit:
+
+jpeg(fileName)
+someFunctionThatDrawsTheGraph()
+dev.off()
+
+you can also use:
+
+fileName<-tclvalue(tkgetSaveFile(initialfile=".jpg",filetypes="{{JPEG
+File} {.jpeg .jpg}}"))
+
+to get the name of the file to save.
+
+On 9/28/05, S?ren H?jsgaard <Soren.Hojsgaard at agrsci.dk> wrote:
+> Dear all,
+> I am trying make a small tcltk thing for drawing graphs with vertices, edges etc. I can draw the graph in a window.
+>
+> - I would like it so that if I resize the window, the graph will also be resized. To do this, I guess I need the size of the window, so that I can calculate the new coordinates.
+> - I would also like to be able to save the graph as e.g. a jpg/ps file.
+> Can anyone help on this?
+>
+> I find the documentation of the tcltk package difficult to comprehend so I have used the examples on http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/. Can anyone point me to other sources of examples/doc of the tcltk package?
+> Thanks in advance
+> S?ren
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+--
+Carlos Rendon
+
+
+From wettenhall at wehi.EDU.AU  Thu Sep 29 04:06:09 2005
+From: wettenhall at wehi.EDU.AU (James Wettenhall)
+Date: Thu, 29 Sep 2005 12:06:09 +1000 (EST)
+Subject: [R-gui] After resizing a tkwidget,
+ how do I get the size of the widget??
+In-Reply-To: <C83C5E3DEEE97E498B74729A33F6EAEC03877FEB@DJFPOST01.djf.agrsci.dk>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC03877FEB@DJFPOST01.djf.agrsci.dk>
+Message-ID: <1340.138.217.40.89.1127959569.squirrel@homebase.wehi.edu.au>
+
+Hi S?ren,
+
+> Dear all,
+> I am trying make a small tcltk thing for drawing graphs with vertices,
+> edges etc. I can draw the graph in a window.
+> - I would like it so that if I resize the window, the graph will also be
+> resized.
+
+Are you using tkrplot?  If so, I have tried implementing ways to allow
+dragging the corner of a tk window with a plot in it and have it
+automatically resize, but I have found it to be quite difficult.  So my
+two solutions are either 1. Just use the regular R graphics device (not
+tkrplot), or 2. Have a pull-down (or pop-up) menu from your tkrplot window
+which allows the user to enter horizontal and vertical scaling factors for
+the plot (in a dialog box) so they can resize it, even if it's not by
+dragging the corner of the plot window.  Or even have the entry boxes for
+horizontal and vertical scaling factors on the same tk window as the plot
+(beside the plot or above it or whatever), so that the user can instantly
+see how to resize the plot, e.g. by replacing a horizontal scaling factor
+of 1.5 by 1.6.  A bit ugly?  Yes.  But I've never found a really nice
+solution to this problem.
+
+If you are using Windows, then in my opinion, using the regular R graphics
+device in an R-Tcl/Tk application is quite ugly if you are running R in
+MDI (Multiple Document Interface) mode.  BUT it looks fine if you are
+running R in SDI (Single Document Interface) mode.
+
+Hope this helps,
+James
+
+

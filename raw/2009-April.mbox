@@ -1,0 +1,164 @@
+From procaccianti.claudio at gmail.com  Tue Apr 21 10:04:50 2009
+From: procaccianti.claudio at gmail.com (Claudio82)
+Date: Tue, 21 Apr 2009 01:04:50 -0700 (PDT)
+Subject: [R-gui]  Tinn-R and JGR issues under Vista
+Message-ID: <1240301090982-2668568.post@n2.nabble.com>
+
+
+Hi all
+I'm kinda new to R and everything else, so please be kind :P
+I have some issues running Tinn-R 2.2.0.2 and JGR (latest version) on my
+laptop (Windows Vista 64bit)
+1) As long as I use R 2.8.1 it works just fine
+2) If I run Tinn-R, the "Send Line" command works fine, while the "Send
+Selection" works but it gives me always the same answer
+"source(.trPaths[5])". I know it works 'cos my script generates a .txt file
+in the working directory. Nevertheless, in the R Console no display is shown
+(even dir() shows nothing). I don't think it's related to the auth policy of
+Vista, as the problem didn't disappear after giving free access to the temp
+folder and running Tinn-R as Administrator
+3) I installed JGR, loadad the packages (as Admin), installed them,
+everything went smooth...but when I launch JGR it opens and then closes one
+second after. I tried with the "-debug" option but the debug window closes
+too, so I'm kinda stuck...
+I hope someone can help me :)
+See you all guys! Tnx!
+
+Claudio
+-- 
+View this message in context: http://n2.nabble.com/Tinn-R-and-JGR-issues-under-Vista-tp2668568p2668568.html
+Sent from the R Sig Gui mailing list archive at Nabble.com.
+
+
+From ibtesam_al_sagaf at hotmail.com  Sat Apr 25 23:02:23 2009
+From: ibtesam_al_sagaf at hotmail.com (ibtesam al_sagaf)
+Date: Sun, 26 Apr 2009 00:02:23 +0300
+Subject: [R-gui] rank function problem
+Message-ID: <COL102-W383BDF6D980E13DBDE682D5730@phx.gbl>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090426/b7901604/attachment.pl>
+
+From groemping at bht-berlin.de  Sun Apr 26 18:14:23 2009
+From: groemping at bht-berlin.de (=?ISO-8859-1?Q?Ulrike_Gr=F6mping?=)
+Date: Sun, 26 Apr 2009 18:14:23 +0200
+Subject: [R-gui] rank function problem
+In-Reply-To: <COL102-W383BDF6D980E13DBDE682D5730@phx.gbl>
+References: <COL102-W383BDF6D980E13DBDE682D5730@phx.gbl>
+Message-ID: <49F4885F.4070709@bht-berlin.de>
+
+Ibtesam,
+
+you are using the wrong mailing list, you should be using R-help, not 
+the GUI list.
+
+Anyway, if you execute "print(z,digits=20)", you see that the reason for 
+your different ranks is in numerical accuracy of representations of the 
+numbers.
+
+Regards,
+Ulrike
+
+ibtesam al_sagaf schrieb:
+> Dear all
+>
+>  
+>
+> I'm Ibtesam. 
+>
+> I use R program in my studded.
+> I have been seeing  problem in rank function. It works as a wrong way from vector to other.
+>  
+> I run this code many times, in every time I obtained this result;
+>  
+> 1-     When I enter this data vector manually, I obtain the correct ranking. It gives the same rank for equal values.  
+> Example from the following data: rank(abs(0.2,0.2,-0.2))= 4  4 4
+>  
+>   
+>> k=c(-.9,.2,-1.1,.5,-.8,.3,-1,.6,-1.3,-.2,-1.5,.1,-1.2,-.1,-1.4,.2,-.6,.5,-.8,.8)
+>> rank(abs(k))
+>>     
+>  [1] 14.0  4.0 16.0  7.5 12.0  6.0 15.0  9.5 18.0  4.0 20.0  1.5 17.0  1.5 19.0
+> [16]  4.0  9.5  7.5 12.0 12.0
+> 2-     When I obtain the same data vector from some operations, I obtain a wrong ranking. It gives the different ranks for equal values.  
+> Example from the following data: rank(abs(0.2,-0.2,0.2))= 3  4.5  4.5
+>  
+>
+>
+>   
+>> x=c(2.9,3,2.5,2.6,3.2)
+>> y=c(3.8,2.7,4,2.4)
+>> z=rep(0,length(x)*length(y))
+>>       sizez=1
+>>       for(i in 1:length(x))
+>>     
+> +          for(j in 1:length(y))
+> +      {z[sizez]=x[i]-y[j];  sizez=sizez+1;}
+>   
+>> z
+>>     
+>  [1] -0.9  0.2 -1.1  0.5 -0.8  0.3 -1.0  0.6 -1.3 -0.2 -1.5  0.1 -1.2 -0.1 -1.4
+> [16]  0.2 -0.6  0.5 -0.8  0.8
+>   
+>>  R=rank(abs(z)) 
+>> R
+>>     
+>  [1] 14.0  3.0 16.0  7.5 11.5  6.0 15.0 10.0 18.0  4.5 20.0  1.5 17.0  1.5 19.0
+> [16]  4.5  9.0  7.5 11.5 13.0
+>
+>  
+>
+>  
+>
+> I try many times but I have not known what is the mistake.
+> Can you kindly help me to solve this problem?
+>  
+> Thank you.
+> Ibtesam.
+>
+>
+>
+>  
+>
+> _________________________________________________________________
+>
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From adrian at waddell.ch  Wed Apr 29 00:00:54 2009
+From: adrian at waddell.ch (Adrian Waddell)
+Date: Tue, 28 Apr 2009 18:00:54 -0400
+Subject: [R-gui] tcltk: change the parent of a widget
+Message-ID: <49F77C96.3020600@waddell.ch>
+
+Dear R-SIG-GUI list readers,
+
+If I have two canvas objects (canvas1 and canvas2), both containing 
+items and event bindings:
+
+tt <- tktoplevel()
+canvas1 <- tkcanvas(tt, ...)
+canvas2 <- tkcanvas(tt, ...)
+## ... tkcreate(...); tkitembind(...); ...
+
+and I'd like to display either one canvas in the toplevel window tt, or 
+display both, canvas1 and canvas2, in two different toplevel windows 
+(say, tt and tt1).
+
+Is there a way to pack canvas1 or canvas2 into another toplevel window 
+than the tt window (for which it was defined)? It's important that all 
+event bindings stay preserved.
+
+Sincerely,
+
+Adrian Waddell
+
+

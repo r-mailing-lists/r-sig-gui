@@ -1,0 +1,67 @@
+From pmgrgui at gmail.com  Mon Feb 19 19:29:04 2007
+From: pmgrgui at gmail.com (j verzani)
+Date: Mon, 19 Feb 2007 13:29:04 -0500
+Subject: [R-gui] New versions of gWidgets, gWidgetsRGtk2, pmg,
+	and a new package gWidgetsrJava
+Message-ID: <576452c40702191029l6218dc08gd5e7e78631d2515d@mail.gmail.com>
+
+Dear GUI-list readers,
+
+I uploaded to CRAN today updated packages for gWidgets (0-12),
+gWidgetsRGtk2 (0-12) and pmg (9-28). As well, I added a new package
+gWidgetsrJava (0-1).
+
+The gWidgets package sets up an API for interacting with graphical
+toolkits within R to create GUIs. An accompanying vignette has many
+examples of its usage. This package needs a further package
+integrating the API with a specific graphical toolkit.
+
+The gWidgetsRGtk2 package allows the RGtk2 package to be used within
+this framework. The new gWidgetsrJava package does a similar thing for
+rJava.
+
+The gWidgetsrJava package is not nearly as complete as the one for
+RGtk2, but might be of interest. It must run from within the JGR
+environment to be interactive.   This package borrows heavily from
+Simon's iWidgets package, but adds some more features.
+
+The pmg package provides a lightweight GUI for R, similar to RCmdr,
+which uses gWidgetsRGtk2 to provide drag and drop and other features
+to the GUI. Some of the dialogs are quite interactive, others
+basically collect arguments to pass along to an R function.
+
+The pmg package has an accompanying vignette documenting its usage.
+
+Some installation details are found at www.math.csi.cuny.edu/pmg. If
+the GTK libraries are installed (a big if under windows!) then this
+will install pmg, and the others:
+
+install.packages("pmg", dep=T)
+
+Installation of the GTK libraries varies. Within windows there is a
+self-extracting installer at http://gladewin32.sourceforge.net/ For OS
+X and Linux there are various ways. A 2.8 or newer version is needed
+for RGtk2. The RGtk2 website (www.ggobi.org/rgtk2) has some extra
+info.
+
+This will install gWidgetsrJava (and likely JGR too)
+
+install.packages("gWidgetsrJava", dep=T)
+
+To see if you installed pmg correctly, you can try
+
+library(pmg)
+
+The GUI should pop up.
+
+To test if gWidgets is installed properly, try
+
+library(gWidgets)
+glabel("hello world", cont=T)
+
+a window should appear, perhaps after you are  asked to select a toolkit.
+
+
+--John
+
+

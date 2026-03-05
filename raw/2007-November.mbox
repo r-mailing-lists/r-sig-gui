@@ -1,0 +1,341 @@
+From sschavan at ualr.edu  Thu Nov  8 18:07:11 2007
+From: sschavan at ualr.edu (shweta)
+Date: Thu, 08 Nov 2007 11:07:11 -0600
+Subject: [R-gui] runif function
+Message-ID: <4733423F.2030803@ualr.edu>
+
+Hi ,
+
+I was trying to generate random data in R using the runif function. But 
+I am not sure how do I combine the x and y to get a 2d array/matrix in a 
+variable z.
+As seen below I am getting the same numbers in x as 1 and in y as 2.1 
+respectively. I would like to get different & random numbers in x & y.
+
+Please let me know.
+
+x <- array(runif(N,1),dim=c(N,1))
+ > x
+     [,1]
+[1,]    1
+[2,]    1
+[3,]    1
+[4,]    1
+[5,]    1
+[6,]    1
+[7,]    1
+[8,]    1
+[9,]    1
+[10,]    1
+ > y <- array(2*x + runif(N,1)/10)
+ > y
+[1] 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1
+
+Thanks & Regards,
+Shweta.
+
+
+From cskiadas at gmail.com  Thu Nov  8 23:47:09 2007
+From: cskiadas at gmail.com (Charilaos Skiadas)
+Date: Thu, 8 Nov 2007 17:47:09 -0500
+Subject: [R-gui] runif function
+In-Reply-To: <4733423F.2030803@ualr.edu>
+References: <4733423F.2030803@ualr.edu>
+Message-ID: <8D934154-3BFE-4FA6-914B-3887426A553F@gmail.com>
+
+
+On Nov 8, 2007, at 12:07 PM, shweta wrote:
+
+> Hi ,
+>
+> I was trying to generate random data in R using the runif function.  
+> But
+> I am not sure how do I combine the x and y to get a 2d array/matrix  
+> in a
+> variable z.
+> As seen below I am getting the same numbers in x as 1 and in y as 2.1
+> respectively. I would like to get different & random numbers in x & y.
+>
+> Please let me know.
+
+Looking at ?runif, you can see that the syntax for runif is: runif(n,  
+min=0, max=1)
+
+So when you call runif(N,1), what you really call is runif 
+(N,min=1,max=1), so you are asking R to generate random numbers  
+between 1 and 1. Of course they will all be equal to 1. Try runif(N),  
+or specify both a min and a max.
+
+PS: Not sure what this has to do with GUI though, isn't that more  
+appropriate to R-help instead of r-sig-gui?
+
+> x <- array(runif(N,1),dim=c(N,1))
+>> x
+>      [,1]
+> [1,]    1
+> [2,]    1
+> [3,]    1
+> [4,]    1
+> [5,]    1
+> [6,]    1
+> [7,]    1
+> [8,]    1
+> [9,]    1
+> [10,]    1
+>> y <- array(2*x + runif(N,1)/10)
+>> y
+> [1] 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1
+>
+> Thanks & Regards,
+> Shweta.
+
+Haris Skiadas
+Department of Mathematics and Computer Science
+Hanover College
+
+
+From sschavan at ualr.edu  Thu Nov  8 18:43:40 2007
+From: sschavan at ualr.edu (shweta)
+Date: Thu, 08 Nov 2007 11:43:40 -0600
+Subject: [R-gui] Using runif function in R
+Message-ID: <47334ACC.6050707@ualr.edu>
+
+Hi ,
+
+I was trying to generate random data in R using the runif function. But 
+I am not sure how do I combine the x and y to get a 2d array/matrix in a 
+variable z.
+As seen below I am getting the same numbers in x as 1 and in y as 2.1 
+respectively. I would like to get different & random numbers in x & y.
+
+Please let me know.
+
+x <- array(runif(N,1),dim=c(N,1))
+ > x
+    [,1]
+[1,]    1
+[2,]    1
+[3,]    1
+[4,]    1
+[5,]    1
+[6,]    1
+[7,]    1
+[8,]    1
+[9,]    1
+[10,]    1
+ > y <- array(2*x + runif(N,1)/10)
+ > y
+[1] 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1
+
+Thanks & Regards,
+Shweta.
+
+
+From edd at debian.org  Sun Nov 11 18:04:16 2007
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sun, 11 Nov 2007 11:04:16 -0600
+Subject: [R-gui] Using runif function in R
+In-Reply-To: <47334ACC.6050707@ualr.edu>
+References: <47334ACC.6050707@ualr.edu>
+Message-ID: <18231.13840.92362.529835@ron.nulle.part>
+
+
+Shweta,
+
+Just three days ago, in a random act of kindness, Charilaos told you in no
+uncertain terms 
+
+   PS: Not sure what this has to do with GUI though, isn't that more  
+   appropriate to R-help instead of r-sig-gui?
+
+Which part of this was unclear?
+
+Charilaos also told you what you were doing wrong with your call to runif.
+You are still making the same mistake.
+
+Please go back and read his reply.  And please stop posting material that has
+nothing to do with R and GUIs to the list devoted to R and GUIs.  
+
+Thanks, Dirk
+
+-- 
+Three out of two people have difficulties with fractions.
+
+
+From sschavan at ualr.edu  Mon Nov 12 04:27:48 2007
+From: sschavan at ualr.edu (shweta)
+Date: Sun, 11 Nov 2007 21:27:48 -0600
+Subject: [R-gui] Using runif function in R
+In-Reply-To: <18231.13840.92362.529835@ron.nulle.part>
+References: <47334ACC.6050707@ualr.edu>
+	<18231.13840.92362.529835@ron.nulle.part>
+Message-ID: <4737C834.4060602@ualr.edu>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071111/b5265ddb/attachment.pl 
+
+From phgrosjean at sciviews.org  Mon Nov 12 10:41:34 2007
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon, 12 Nov 2007 10:41:34 +0100
+Subject: [R-gui] Using runif function in R
+In-Reply-To: <4737C834.4060602@ualr.edu>
+References: <47334ACC.6050707@ualr.edu>	<18231.13840.92362.529835@ron.nulle.part>
+	<4737C834.4060602@ualr.edu>
+Message-ID: <47381FCE.3000600@sciviews.org>
+
+Hello All,
+
+Sorry, this is my fault! But anyway, please, do post general questions 
+to R-Help mailing list, and reserve R-SIG-GUI for GUI-specific questions 
+on R.
+Have a nice day,
+
+Philippe
+
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Belgium
+( ( ( ( (
+..............................................................
+
+shweta wrote:
+> Dirk,
+> 
+> The first time I sent the mail , I got a mail saying that the list 
+> moderator has to review it for approval and was not posted. Thats the 
+> reason why I sent the mail again (3 days ago) which was posted (and I 
+> did get a answer from Charilaos and I also replied apologizing for 
+> sending it to R-GUI list instead of a R-general list).
+> 
+> But now, it seems that after 3 days the moderator has approved the 
+> earlier mail and posted it. I guess I should have canceled the previous 
+> posting to avoid this.
+> 
+> I hope that now it is clear that I am not making the same mistake again 
+> and its the same mail send 3 days ago that is being posted now.
+> 
+> Also, I would like to apologize to the members in the R-GUI mailing 
+> list, since they all must be getting the same mail 2 times and causing a 
+> inconvenience.
+> 
+> 
+> Regards,
+> Shweta.
+> 
+> 
+> Dirk Eddelbuettel wrote:
+>> Shweta,
+>>
+>> Just three days ago, in a random act of kindness, Charilaos told you in no
+>> uncertain terms 
+>>
+>>    PS: Not sure what this has to do with GUI though, isn't that more  
+>>    appropriate to R-help instead of r-sig-gui?
+>>
+>> Which part of this was unclear?
+>>
+>> Charilaos also told you what you were doing wrong with your call to runif.
+>> You are still making the same mistake.
+>>
+>> Please go back and read his reply.  And please stop posting material that has
+>> nothing to do with R and GUIs to the list devoted to R and GUIs.  
+>>
+>> Thanks, Dirk
+>>
+>>   
+> 
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From joseclaudio.faria at gmail.com  Sat Nov 17 16:05:49 2007
+From: joseclaudio.faria at gmail.com (Jose Claudio Faria)
+Date: Sat, 17 Nov 2007 13:05:49 -0200
+Subject: [R-gui] Tinn-R 1.19.3.1 released
+Message-ID: <c86bda880711170705n2ea3736wfe697680e4e6eab2@mail.gmail.com>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.19.3.1) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+Regards,
+Tinn-R team
+-- 
+///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\
+Jose Claudio Faria
+Estatistica - prof. Titular
+UESC/DCET/Brasil
+joseclaudio.faria at gmail.com
+joseclaudio.faria at terra.com.br
+///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\
+
+
+From Toby.Marthews at lsce.ipsl.fr  Fri Nov 30 14:38:35 2007
+From: Toby.Marthews at lsce.ipsl.fr (T. Marthews)
+Date: Fri, 30 Nov 2007 14:38:35 +0100 (CET)
+Subject: [R-gui] Something odd about Windows GUI with the menu command
+Message-ID: <2264.132.166.74.140.1196429915.squirrel@webmail.lsce.ipsl.fr>
+
+Dear R-sig-gui,
+
+I'm using R 2.5.1 for Windows. Here's an interesting one (perhaps!):
+
+If I have the Console window about 80 characters wide, I can do the
+following commands:
+
+
+>
+> a=c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+> menu(a)
+
+ 1: Jan   2: Feb   3: Mar   4: Apr   5: May   6: Jun   7: Jul   8: Aug
+ 9: Sep  10: Oct  11: Nov  12: Dec
+
+Selection: 13
+Enter an item from the menu, or 0 to exit
+Selection: 3
+[1] 3
+>
+>
+
+...which is pretty much what one would expect. However, if I make the
+Console window about twice as wide and do the same commands, I get:
+
+>
+>
+> a=c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+> menu(a)
+
+ 1: Jan   2: Feb   3: Mar   4: Apr   5: May   6: Jun   7: Jul   8: Aug  
+9: Sep  10: Oct  11: Nov  12: Dec   1: Jan   2: Feb   3: Mar   4: Apr  
+5: May   6: Jun   7: Jul   8: Aug
+
+
+Selection: 13
+Enter an item from the menu, or 0 to exit
+Selection: 3
+[1] 3
+>
+>
+
+My question is: where do those extra non-existent menu options come from?
+
+Thanks to anyone who has time to look at this.
+
+Toby
+
+

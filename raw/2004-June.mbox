@@ -1,0 +1,1982 @@
+From a.e.d.plantinga at med.rug.nl  Fri Jun  4 16:23:47 2004
+From: a.e.d.plantinga at med.rug.nl (Edo Plantinga)
+Date: Fri Jun  4 16:23:58 2004
+Subject: [R-gui] Directing R output to a text window
+Message-ID: <001201c44a3f$8de7cbb0$323ea8c0@edo>
+
+Dear all,
+
+I have made some scripts in R that take quite a long time to run. I have
+implemented a simple user interface to run these scripts in tcl/tk. Since
+some of the users that use the program do not know R, I would like to run
+the program without the Rgui, but this way the users do not get feedback
+about what the program is doing. To resolve this, I would like to direct the
+R output the scripts generate to a text window. Does anyone know how to do
+this?
+
+Kind regards,
+
+Edo Plantinga
+
+From wettenhall at wehi.edu.au  Fri Jun  4 16:51:08 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Jun  4 16:51:27 2004
+Subject: [R-gui] Directing R output to a text window
+In-Reply-To: <001201c44a3f$8de7cbb0$323ea8c0@edo>
+Message-ID: <Pine.LNX.4.44.0406050040190.10291-100000@unix24.alpha.wehi.edu.au>
+
+Edo,
+
+> about what the program is doing. To resolve this, I would like to direct the
+> R output the scripts generate to a text window. Does anyone know how to do
+
+You may run into some of the problems described by Luke 
+Tierney's "Threading and GUI Issues for R" :
+http://www.stat.uiowa.edu/~luke/R/thrgui/thrgui.pdf
+
+But you can do something like this:
+
+data(airquality)
+txt <- capture.output(print.data.frame(airquality))
+
+# See ?capture.output for more details.
+
+library(tcltk)
+tt <- tktoplevel()
+txtWidget <- tktext(tt)
+tkpack(txtWidget)
+tkinsert(txtWidget,"end",paste(txt,collapse="\n"))
+
+i.e. the output of print.data.frame(airquality) which would 
+normally be directed to the R console is now directed into the 
+text widget.
+
+If the reason you don't want to use the R Console for output is 
+that you are using Windows and you find that RGui "steals the 
+focus" from Tcl/Tk, then you can solve this by selecting :
+Edit, GUI Preferences, SDI (Single Document Interface mode),
+then click Save to save your RGui configuration preferences 
+and then restart R.
+
+Regards,
+James
+
+--------------------------------------------------------------------------
+James Wettenhall                                  Tel: (+61 3) 9345 2629
+Division of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852
+The Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au
+ of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    
+1G Royal Parade,
+Parkville, Vic 3050, Australia
+http://www.wehi.edu.au
+
+From phgrosjean at sciviews.org  Fri Jun  4 16:52:08 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Fri Jun  4 16:53:21 2004
+Subject: [R-gui] Directing R output to a text window
+Message-ID: <MABBLJDICACNFOLGIHJOCEAAEIAA.phgrosjean@sciviews.org>
+
+Hi,
+Have a look at the latest R Commander (version 0.9-9, see
+http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/index.html): it is doing
+exactly this.
+Best,
+
+Philippe Grosjean
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of Edo Plantinga
+Sent: Friday, 04 June, 2004 16:24
+To: r-sig-gui@stat.math.ethz.ch
+Subject: [R-gui] Directing R output to a text window
+
+
+Dear all,
+
+I have made some scripts in R that take quite a long time to run. I have
+implemented a simple user interface to run these scripts in tcl/tk. Since
+some of the users that use the program do not know R, I would like to run
+the program without the Rgui, but this way the users do not get feedback
+about what the program is doing. To resolve this, I would like to direct the
+R output the scripts generate to a text window. Does anyone know how to do
+this?
+
+Kind regards,
+
+Edo Plantinga
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From jfox at mcmaster.ca  Fri Jun  4 17:33:57 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Fri Jun  4 17:34:01 2004
+Subject: [R-gui] Directing R output to a text window
+In-Reply-To: <001201c44a3f$8de7cbb0$323ea8c0@edo>
+Message-ID: <20040604153357.WBRL26030.tomts20-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear Edo,
+
+The development version of the Rcmdr package does what you propose -- see
+http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/index.html. 
+
+At this point, most things work properly, but there are some bugs.
+
+I hope that this helps,
+ John 
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of Edo 
+> Plantinga
+> Sent: Friday, June 04, 2004 9:24 AM
+> To: r-sig-gui@stat.math.ethz.ch
+> Subject: [R-gui] Directing R output to a text window
+> 
+> Dear all,
+> 
+> I have made some scripts in R that take quite a long time to 
+> run. I have implemented a simple user interface to run these 
+> scripts in tcl/tk. Since some of the users that use the 
+> program do not know R, I would like to run the program 
+> without the Rgui, but this way the users do not get feedback 
+> about what the program is doing. To resolve this, I would 
+> like to direct the R output the scripts generate to a text 
+> window. Does anyone know how to do this?
+> 
+> Kind regards,
+> 
+> Edo Plantinga
+
+From mpiktas at delfi.lt  Mon Jun 14 06:41:37 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Mon Jun 14 06:41:40 2004
+Subject: [R-gui] Sciviews-R requirements
+Message-ID: <20040614044137.DC0D1170F9@wind.delfi.lt>
+
+Hi,
+
+What are OS requirement for Sciviews-R? I know that Win98 is not
+supported, since I tried to install it on Win98. Is Win2k enough, or
+it has to be WinXP?
+
+Vaidotas Zemlys
+<--------------------===================================-------------------->
+						   DELFI Webmail pa?to sistema http://webmail.delfi.lt
+
+From lecoutre at stat.ucl.ac.be  Mon Jun 14 08:51:27 2004
+From: lecoutre at stat.ucl.ac.be (Eric Lecoutre)
+Date: Mon Jun 14 08:52:59 2004
+Subject: [R-gui] Sciviews-R requirements
+In-Reply-To: <20040614044137.DC0D1170F9@wind.delfi.lt>
+References: <20040614044137.DC0D1170F9@wind.delfi.lt>
+Message-ID: <6.0.1.1.2.20040614084740.0220fec0@stat4ux.stat.ucl.ac.be>
+
+
+Hi,
+
+Win2K should be enough (if you have all upgrades).
+Philippe is working on WinXP and me on Win2k and our development version is 
+working on both computers.
+
+If you really need Win98, this should also be possible: for the moment, 
+Philippe did cancel at the installation process, as we know lot's of stuff 
+are OCX/DLL not shipped with basic Win98.
+For the installtion, please keep the default dirctory. Also, you may 
+encounter some problems to launch it from the created shortcut. If so, 
+please contact again: I will tell you the procedure to have a good starting 
+icon.
+
+Eric
+
+
+At 06:41 14/06/2004, you wrote:
+>Hi,
+>
+>What are OS requirement for Sciviews-R? I know that Win98 is not
+>supported, since I tried to install it on Win98. Is Win2k enough, or
+>it has to be WinXP?
+>
+>Vaidotas Zemlys
+
+Eric Lecoutre
+UCL /  Institut de Statistique
+Voie du Roman Pays, 20
+1348 Louvain-la-Neuve
+Belgium
+
+tel: (+32)(0)10473050
+lecoutre@stat.ucl.ac.be
+http://www.stat.ucl.ac.be/ISpersonnel/lecoutre
+
+If the statistics are boring, then you've got the wrong numbers. -Edward 
+Tufte
+
+From mpiktas at delfi.lt  Mon Jun 14 09:06:05 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Mon Jun 14 09:06:07 2004
+Subject: [R-gui] Sciviews-R requirements
+Message-ID: <20040614070605.C9E1B170E7@wind.delfi.lt>
+
+Hi,
+>
+>Win2K should be enough (if you have all upgrades).
+What upgrades are these?
+
+>Philippe is working on WinXP and me on Win2k and our development
+version is 
+>working on both computers.
+>
+>If you really need Win98, this should also be possible: for the moment, 
+>Philippe did cancel at the installation process, as we know lot's of
+stuff 
+>are OCX/DLL not shipped with basic Win98.
+
+Could you tell me how can I install Sciviews-R in Win98, and where do
+I get these dll? I would also like to know, what tools are necessary
+for building Sciviews-R from source.
+
+Sorry, for dumb questions, I'm Linux user for 2 years now, so my
+Windows knowledge is a bit stale.
+
+Vaidotas Zemlys
+<--------------------===================================-------------------->
+						   DELFI Webmail pa?to sistema http://webmail.delfi.lt
+
+From wettenhall at wehi.edu.au  Mon Jun 14 09:12:59 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Mon Jun 14 09:13:07 2004
+Subject: [R-gui] R-wxPython
+Message-ID: <Pine.LNX.4.44.0406141452210.26669-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+I've been playing with an R-inteface to wxPython which has 
+potential to be more powerful than Tcl/Tk.  Currently it works 
+on Windows, but so far, I haven't succeeded in getting it to 
+work on Linux.  I haven't tried MacOS X.
+
+http://bioinf.wehi.edu.au/folders/james/wxPython/
+
+After I got back from useR!2004, I thought rather than 
+emailing out straight away to let people know that my R-wxPython 
+talk slides are available on the web, I would just wait until I 
+got R-wxPython working on Linux (as well as Windows).  
+"It should only take a day or two", I thought.  
+
+Now, a few weeks later, I feel like I am still making 
+progress, but it is very slow progress, so if there are any 
+Linux-minded people out there who feel like collaborating, I 
+would be very happy to work with you.
+
+On Windows, you can just install Python, wxPython and RSPython 
+from binaries, but it's a different story on Linux :-(
+
+Here's how to get as far as I've got to date on Linux for 
+R-wxPython:
+
+1. Install R with the shared library enabled.  (This can be 
+    done with "configure --enable-shlib" when installing R 
+    from source.  The shared library will normally appear in
+    /usr/local/lib/R/bin/libR.so)
+
+2. Install Python 2.2.x from source.  (RSPython doesn't seem to 
+    like 2.3.x, so don't install that.  The reason I say to 
+    install from source, is that you will need to create a 
+    python shared library: libpython2.2.so, and this doesn't 
+    seem to be distributed in the python RPM.)
+
+3. Install RSPython 0.5-3 or later, being careful to link it 
+    with the shared Python library, not a static library.
+    Check that RSPython.so depends on libpython2.2.so using
+    "ldd RSPython.so", and check that you have an 
+    RSInternal.so symbolic link to RSPython.so in the 
+    R/library/RSPython/libs/ directory.  To get RSPython
+    to link to libpython2.2.so, you may have to override the 
+    automatic configure script, e.g. 
+    "mv configure DONTconfigure" and manually edit Makefile, 
+    Makevars, src/Makevars etc.
+
+4. Build wxPython 2.5.x from source (by first building 
+     wxWidgets, distributed with wxPythonSrc).  You need to modify 
+     wxPython/config.py as follows:
+       (i) Change self.root = "" to self.root = None
+       (ii) Change newLFLAGS=[] to 
+              newLFLAGS = ['libpython2.2.so']
+     Copy libpython2.2.so to the wxPythonSrc/wxPython directory.
+     Note that you probably don't need all of the 
+     optional-extras like OpenGL support, so you can build with 
+     "python setup.py build CORE_ONLY=1" or 
+     "python setup.py install CORE_ONLY=1" to just install the 
+     essentials.
+
+5. Make sure that the new shared libraries are included in 
+     LD_LIBRARY_PATH and have been registered with 
+     /sbin/ldconfig.  Some Linux systems allow you to do this 
+     without root privileges, while others don't.  I don't 
+     have a root password, so I work mostly in my home area: 
+     ~/usr/ etc. but occasionally I need to ask for help from 
+     root.  
+
+6. Run ldd on the wxPython shared libraries in
+     /usr/local/lib/python2.2/site-packages/wx/ or wherever,
+     to check that they depend on libpython2.2.so, otherwise you 
+     will get errors like "Undefined symbol PyExc_IOError".
+
+In R, type:
+library(RSPython)
+
+Ignore the following warning:
+"the Python callback manager has been registered implicitly 
+using the defaults (referenceManager())!"
+
+[We will use the wxPython 2.4.x method of importing the wx 
+module. In order understand the difference between 
+importPythonModule("wxPython.wx") and importPythonModule("wx"), 
+please read:
+http://www.wxpython.org/migrationguide.php ]
+
+Try importing the wxPython.wx module:
+
+importPythonModule("wxPython.wx")
+
+If it returns NULL with no errors, then it succeeded.  If it 
+cannot be found, check your PYTHONPATH environment variable, 
+and if necessary, modify the Python search path within R
+as follows:
+importPythonModule("sys")
+.Python("path",.module="sys") # Check the current Python path.
+path <- "/usr/local/lib/python2.2/site-packages/wx"
+.PythonEval(paste("path.append('",path,"')",sep=""),.module="sys")
+# Repeat for other paths you want to add.
+
+Now create a simple wxPython module, testRwxPy.py :
+-----------------------------
+import wxPython.wx
+from wxPython.wx import *
+
+def wxRPyApp():
+        app = wxApp()
+        return app
+-----------------------------
+
+Make sure testRwxPy.py can be found in your Python search path, 
+(using the technique above) and try:
+
+.Python("wxRPyApp",.module="testRwxPy")
+
+When running under R -d gdb, I get a segmentation fault which 
+appears to come from gdk_init_check().  :-(
+
+A few clues from Googling "gdk_init_check segmentation fault" 
+and from running strace on R, suggested that it could make a 
+difference whether I am running X11 from a remote Linux machine 
+or actually sitting in front of the Linux machine.
+
+I normally run Linux with XWin32 from Windows.  I am also trying 
+to do some testing on a Linux machine which I am actually 
+sitting in front of directly, but haven't been able to run ldconfig 
+without root access.  I will ask my administrator to do it when 
+he has a chance.
+
+I hope this is of interest to a least some people on the list.
+
+Regards,
+James
+ 
+--------------------------------------------------------------------------
+James Wettenhall                                  Tel: (+61 3) 9345 2629
+Division of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852
+The Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au
+ of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    
+1G Royal Parade,
+Parkville, Vic 3050, Australia
+http://www.wehi.edu.au
+
+From phgrosjean at sciviews.org  Mon Jun 14 15:11:56 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon Jun 14 15:12:45 2004
+Subject: [R-gui] Sciviews-R requirements
+In-Reply-To: <20040614070605.C9E1B170E7@wind.delfi.lt>
+Message-ID: <MABBLJDICACNFOLGIHJOAEICEIAA.phgrosjean@sciviews.org>
+
+Hello,
+
+I just locked the possibility to *install* SciViews-R on an older system
+than Win98SE (Second Edition). If you have the first release of Win 98, I
+think you can upgrade to Win98SE "for free" from the Microsoft Web site (I
+am little supprised to speak about something "free" from Micro$$$osft).
+Otherwise, if you really want to test it under the first Win98 release, I
+can unlock the installer for you. However, I am afraid that you will have to
+upgrade several libraries, and it is more painful than to upgrade to Win98SE
+that does all the job at once! Just consider, however, that we only tested
+SciViews-R on Win XP or 2000... I am amazed that people still want to use
+advanced statistical systems with operation systems that are more than five
+years old (is the computer as old too?)... but since you are a Linux-person,
+it make sense that you just keep an old PC in the corner of the room with an
+old Windows,... just in case ;-)
+
+If you really want to test SciViews-R on Win98, the first thing you need is
+to upgrade Internet Explorer to version 5.5 or higher. Then, ask me for the
+unlocked version of the installer.
+
+To compile SciViews-R yourself, you need the sources (distributed on the Web
+site), Visual Basic Pro 6 (to be upgraded to SP5 from the Microsoft web
+site), and a few additional tools. I still have not written a page that
+explains clearly which tools you have to install (like the nice page
+explaining how to compile R from sources under Windows)... so, it may turn
+to be a very frustrating trial and error session without it!
+
+Please, note also that we are in the process of rewritting most of SciViews
+to make it platform independent. Thus, I hope that next year we will be able
+to supply a version that runs on Linux.. but it is very dependent on the
+progress made on wxPython (see another thread in this mailing list), and on
+the tcltk package.
+
+Best,
+
+Philippe Grosjean
+
+.......................................................<?}))><....
+ ) ) ) ) )
+( ( ( ( (   Prof. Philippe Grosjean
+\  ___   )
+ \/ECO\ (   Numerical Ecology of Aquatic Systems
+ /\___/  )  Mons-Hainaut University, Pentagone
+/ ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium
+ /NUM\/  )
+ \___/\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+       \ )  email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (
+...................................................................
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of Vaidotas Zemlys
+Sent: Monday, 14 June, 2004 09:06
+To: r-sig-gui@stat.math.ethz.ch
+Subject: Re: [R-gui] Sciviews-R requirements
+
+
+Hi,
+>
+>Win2K should be enough (if you have all upgrades).
+What upgrades are these?
+
+>Philippe is working on WinXP and me on Win2k and our development
+version is
+>working on both computers.
+>
+>If you really need Win98, this should also be possible: for the moment,
+>Philippe did cancel at the installation process, as we know lot's of
+stuff
+>are OCX/DLL not shipped with basic Win98.
+
+Could you tell me how can I install Sciviews-R in Win98, and where do
+I get these dll? I would also like to know, what tools are necessary
+for building Sciviews-R from source.
+
+Sorry, for dumb questions, I'm Linux user for 2 years now, so my
+Windows knowledge is a bit stale.
+
+Vaidotas Zemlys
+<--------------------===================================--------------------
+>
+                                                   DELFI Webmail pa?to
+sistema http://webmail.delfi.lt
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From mpiktas at delfi.lt  Tue Jun 15 11:30:00 2004
+From: mpiktas at delfi.lt (Mpiktas)
+Date: Tue Jun 15 11:30:03 2004
+Subject: [R-gui] Sciviews-R requirements
+References: <MABBLJDICACNFOLGIHJOAEICEIAA.phgrosjean@sciviews.org>
+Message-ID: <20040615093000.GE1238@debian.vu.lt>
+
+Hi,
+
+ 
+> I just locked the possibility to *install* SciViews-R on an older system
+> than Win98SE (Second Edition). If you have the first release of Win 98, I
+> think you can upgrade to Win98SE "for free" from the Microsoft Web site (I
+> am little supprised to speak about something "free" from Micro$$$osft).
+> Otherwise, if you really want to test it under the first Win98 release, I
+> can unlock the installer for you. However, I am afraid that you will have to
+> upgrade several libraries, and it is more painful than to upgrade to Win98SE
+> that does all the job at once! Just consider, however, that we only tested
+> SciViews-R on Win XP or 2000... I am amazed that people still want to use
+> advanced statistical systems with operation systems that are more than five
+> years old (is the computer as old too?)... but since you are a Linux-person,
+> it make sense that you just keep an old PC in the corner of the room with an
+> old Windows,... just in case ;-)
+> 
+> If you really want to test SciViews-R on Win98, the first thing you need is
+> to upgrade Internet Explorer to version 5.5 or higher. Then, ask me for the
+> unlocked version of the installer.
+
+I found the machine with win2k, where I can install Sciviews-R, so no  
+problems.
+
+> To compile SciViews-R yourself, you need the sources (distributed on the Web
+> site), Visual Basic Pro 6 (to be upgraded to SP5 from the Microsoft web
+> site), and a few additional tools. I still have not written a page that
+> explains clearly which tools you have to install (like the nice page
+> explaining how to compile R from sources under Windows)... so, it may turn
+> to be a very frustrating trial and error session without it!
+> 
+> Please, note also that we are in the process of rewritting most of SciViews
+> to make it platform independent. Thus, I hope that next year we will be able
+> to supply a version that runs on Linux.. but it is very dependent on the
+> progress made on wxPython (see another thread in this mailing list), and on
+> the tcltk package.
+>
+
+I asked about compiling, because I want to find out how SciViews-R works. I'm  
+planing to implement something like Sciviews-R in Linux using Rgtk, gtk and  
+possibly gnome libraries. I've dowloaded the sources and I'm looking around,  
+to see what code is platform dependent, which should be reimplemented and how  
+does that code interacts with R code.  I figured that if I could compile it  
+would be easier to find which is which.
+
+Vaidotas Zemlys
+
+PS I'm resending this letter to list, since it did not appear on it.
+
+From mpiktas at delfi.lt  Tue Jun 15 15:41:17 2004
+From: mpiktas at delfi.lt (Mpiktas)
+Date: Tue Jun 15 15:41:22 2004
+Subject: [R-gui] R-wxPython
+In-Reply-To: <Pine.LNX.4.44.0406141452210.26669-100000@unix24.alpha.wehi.edu.au>
+	(from wettenhall@wehi.edu.au on Pr, Bir 14,
+	2004 at 10:12:59 +0300)
+References: <Pine.LNX.4.44.0406141452210.26669-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <20040615134117.GG1238@debian.vu.lt>
+
+Hi,
+
+> 
+> 1. Install R with the shared library enabled.  (This can be
+>     done with "configure --enable-shlib" when installing R
+>     from source.  The shared library will normally appear in
+>     /usr/local/lib/R/bin/libR.so)
+>
+In Debian this library comes with R package.
+
+> 2. Install Python 2.2.x from source.  (RSPython doesn't seem to
+>     like 2.3.x, so don't install that.  The reason I say to
+>     install from source, is that you will need to create a
+>     python shared library: libpython2.2.so, and this doesn't
+>     seem to be distributed in the python RPM.)
+
+I'm running Debian Sid and on my system python2.1, python2.2 and python2.3 are  
+installed with their respective so libraries.
+
+> 
+> 3. Install RSPython 0.5-3 or later, being careful to link it
+>     with the shared Python library, not a static library.
+>     Check that RSPython.so depends on libpython2.2.so using
+>     "ldd RSPython.so", and check that you have an
+>     RSInternal.so symbolic link to RSPython.so in the
+>     R/library/RSPython/libs/ directory.  To get RSPython
+>     to link to libpython2.2.so, you may have to override the
+>     automatic configure script, e.g.
+>     "mv configure DONTconfigure" and manually edit Makefile,
+>     Makevars, src/Makevars etc.
+
+Fortunately I didn't have to change anything, except changing symlin /usr/bin/ 
+python to point to /usr/bin/python2.2.
+
+> 
+> 4. Build wxPython 2.5.x from source (by first building
+>      wxWidgets, distributed with wxPythonSrc).  You need to modify
+>      wxPython/config.py as follows:
+>        (i) Change self.root = "" to self.root = None
+>        (ii) Change newLFLAGS=[] to
+>               newLFLAGS = ['libpython2.2.so']
+>      Copy libpython2.2.so to the wxPythonSrc/wxPython directory.
+>      Note that you probably don't need all of the
+>      optional-extras like OpenGL support, so you can build with
+>      "python setup.py build CORE_ONLY=1" or
+>      "python setup.py install CORE_ONLY=1" to just install the
+>      essentials.
+I've installed everything by using
+python2.2 setup.py install --root=/usr/local/  WX_CONFIG=$WX_CONFIG  
+WXPORT=gtk2 UNICODE=1
+
+and then copying respective files to /usr/local/lib/python2.2/site-packages/,
+because contrary to manual in
+http://www.wxpython.org/INSTALL.html
+everything was installed in directory /usr/local/usr/ instead of /usr/local.
+
+> 
+> 5. Make sure that the new shared libraries are included in
+>      LD_LIBRARY_PATH and have been registered with
+>      /sbin/ldconfig.  Some Linux systems allow you to do this
+>      without root privileges, while others don't.  I don't
+>      have a root password, so I work mostly in my home area:
+>      ~/usr/ etc. but occasionally I need to ask for help from
+>      root.
+> 
+> 6. Run ldd on the wxPython shared libraries in
+>      /usr/local/lib/python2.2/site-packages/wx/ or wherever,
+>      to check that they depend on libpython2.2.so, otherwise you
+>      will get errors like "Undefined symbol PyExc_IOError".
+> 
+> In R, type:
+> library(RSPython)
+> 
+> Ignore the following warning:
+> "the Python callback manager has been registered implicitly
+> using the defaults (referenceManager())!"
+> 
+> [We will use the wxPython 2.4.x method of importing the wx
+> module. In order understand the difference between
+> importPythonModule("wxPython.wx") and importPythonModule("wx"),
+> please read:
+> http://www.wxpython.org/migrationguide.php ]
+> 
+> Try importing the wxPython.wx module:
+> 
+> importPythonModule("wxPython.wx")
+> 
+> If it returns NULL with no errors, then it succeeded.  If it
+> cannot be found, check your PYTHONPATH environment variable,
+> and if necessary, modify the Python search path within R
+> as follows:
+> importPythonModule("sys")
+> .Python("path",.module="sys") # Check the current Python path.
+> path <- "/usr/local/lib/python2.2/site-packages/wx"
+> .PythonEval(paste("path.append('",path,"')",sep=""),.module="sys")
+> # Repeat for other paths you want to add.
+
+In my case .Python("path",.module="sys") produced
+ [1] "/usr/local/lib/R/site-library/RSPython/Python"
+ [2] "/usr/local/lib/R/site-library/RSPython/libs"
+ [3] "/usr/lib/python2.2"
+ [4] "/usr/lib/python2.2/plat-linux2"
+ [5] "/usr/lib/python2.2/lib-tk"
+ [6] "/usr/lib/python2.2/lib-dynload"
+ [7] "/usr/local/lib/python2.2/site-packages"
+ [8] "/usr/lib/python2.2/site-packages"
+ [9] "/usr/lib/python2.2/site-packages/Numeric"
+[10] "/usr/lib/python2.2/site-packages/gtk-2.0"
+[11] "/usr/lib/site-python"
+
+and importPythonModule("wxPython.wx") worked, without changing anything.
+
+> 
+> Now create a simple wxPython module, testRwxPy.py :
+> -----------------------------
+> import wxPython.wx
+> from wxPython.wx import *
+> 
+> def wxRPyApp():
+>         app = wxApp()
+>         return app
+> -----------------------------
+> 
+> Make sure testRwxPy.py can be found in your Python search path,
+> (using the technique above) and try:
+> 
+> .Python("wxRPyApp",.module="testRwxPy")
+> 
+> When running under R -d gdb, I get a segmentation fault which
+> appears to come from gdk_init_check().  :-(
+
+I got
+Failing in conversion from Python object: Unhandled case!
+NULL
+
+and no segmentation fault. Is this suppose to happen or not? Feel free to ask  
+for any details. Hope this report helps somehow.
+
+Vaidotas Zemlys
+
+From wettenhall at wehi.edu.au  Wed Jun 16 15:38:50 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jun 16 15:39:07 2004
+Subject: [R-gui] R-wxPython
+In-Reply-To: <20040615134117.GG1238@debian.vu.lt>
+Message-ID: <Pine.LNX.4.44.0406162334180.3000-100000@unix24.alpha.wehi.edu.au>
+
+Hi Vaidotas,
+
+Thanks very much for your report about installing R, wxPython 
+etc. on Debian.  I should mention that I have also been 
+discussing this on the wxPython-users mailing list.  I've 
+included a recent post by Robin Dunn below.  I'll definitely 
+follow this up soon, but I'm a little busy at the moment, 
+preparing for a microarray workshop at IBC in Cairns.
+
+Best regards,
+James
+
+Date: Tue, 15 Jun 2004 12:32:25 -0700
+To: wxPython-users@lists.wxwidgets.org
+From: Robin Dunn <robin@alldunn.com>
+Subject: Re: [wxPython-users] R-wxPython, gdk_init_check() seg. 
+fault
+Message-ID: <40CF4EC9.5070805@alldunn.com>
+
+James Wettenhall wrote:
+
+> Now I can import the Python module wxPython.wx (or wx) without
+> errors, but when I try to run a trivial application which just
+> starts a wxApp() and does nothing else, I get a segmentation 
+fault.
+>
+> import wxPython.wx
+> from wxPython.wx import *
+>
+> def wxRPyApp():
+>         app = wxApp()
+>         return app
+>
+> Running R in debug mode (R -d gdb) reveals that 
+gdk_init_check()
+> from libgdk-1.2.so.0 is crashing with a segmentation fault.
+
+I have an idea of what the problem may be, but I need you to 
+confirm it since I can't duplicate the symptom here.  Please 
+place a debugger breakpoint in the wxPyApp::_BootstrapApp 
+function and step down to the call to wxEntryStart.  Is the 
+value of argv NULL?
+
+--
+Robin Dunn
+Software Craftsman
+http://wxPython.org  Java give you jitters?  Relax with wxPython!
+
+From wettenhall at wehi.edu.au  Sun Jun 20 15:51:09 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Sun Jun 20 15:51:22 2004
+Subject: [R-gui] R-wxPython Linux progress!
+In-Reply-To: <Pine.LNX.4.44.0406162334180.3000-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+
+Hi guys,
+
+I'm making very small progress with R-wxPython on Linux, but I 
+think my latest progression is quite significant - I can now
+load:
+library(wxPython)
+which initializes a wxPython application and a wxPython frame,
+and I can then create wx message boxes from the R command line, 
+from e.g.
+wxMessageBox("Hello!")
+
+The problem I was having before appears to be a bug in 
+wxPythonSrc-2.5.1.5/wxPython/src/helpers.cpp
+
+In the function 
+wxPyApp::_BootstrapApp()
+the value of argv passed to wxEntryStart was NULL.
+
+A quick and dirty fix which worked for me was:
+    //PyObject* sysargv = PySys_GetObject("argv");
+    PyObject* sysargv = Py_BuildValue("[s]", "");
+
+All I can do is message boxes so far.  I'm getting some other 
+errors, but I should start making more rapid progress now!
+
+Best regards,
+James
+
+From edd at debian.org  Sun Jun 20 16:35:25 2004
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sun Jun 20 16:35:29 2004
+Subject: [R-gui] R-wxPython Linux progress!
+In-Reply-To: <Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+References: <Pine.LNX.4.44.0406162334180.3000-100000@unix24.alpha.wehi.edu.au>
+	<Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <20040620143525.GA6348@sonny.eddelbuettel.com>
+
+
+James,
+
+On Sun, Jun 20, 2004 at 11:51:09PM +1000, James Wettenhall wrote:
+> Hi guys,
+> 
+> I'm making very small progress with R-wxPython on Linux, but I 
+> think my latest progression is quite significant - I can now
+> load:
+> library(wxPython)
+> which initializes a wxPython application and a wxPython frame,
+> and I can then create wx message boxes from the R command line, 
+> from e.g.
+> wxMessageBox("Hello!")
+> 
+> The problem I was having before appears to be a bug in 
+> wxPythonSrc-2.5.1.5/wxPython/src/helpers.cpp
+> 
+> In the function 
+> wxPyApp::_BootstrapApp()
+> the value of argv passed to wxEntryStart was NULL.
+> 
+> A quick and dirty fix which worked for me was:
+>     //PyObject* sysargv = PySys_GetObject("argv");
+>     PyObject* sysargv = Py_BuildValue("[s]", "");
+> 
+> All I can do is message boxes so far.  I'm getting some other 
+> errors, but I should start making more rapid progress now!
+
+Very, very nice. 
+
+I'd love to help but am quite tied up. I also saw Vaidotas email regarding
+some success on Debian. Keep it coming, hopefully I'll have some more time
+to help with tests at some point.
+
+Dirk
+
+-- 
+FEATURE:  VW Beetle license plate in California
+
+From mpiktas at delfi.lt  Tue Jun 22 17:26:51 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Tue Jun 22 17:26:53 2004
+Subject: [R-gui] R-wxPython Linux progress!
+In-Reply-To: <Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+	(from wettenhall@wehi.edu.au on Sk, Bir 20,
+	2004 at 16:51:09 +0300)
+References: <Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <20040622152651.GU12135@debian.vu.lt>
+
+Hi,
+> 
+> I'm making very small progress with R-wxPython on Linux, but I
+> think my latest progression is quite significant - I can now
+> load:
+> library(wxPython)
+> which initializes a wxPython application and a wxPython frame,
+> and I can then create wx message boxes from the R command line,
+> from e.g.
+> wxMessageBox("Hello!")
+> 
+> The problem I was having before appears to be a bug in
+> wxPythonSrc-2.5.1.5/wxPython/src/helpers.cpp
+> 
+> In the function
+> wxPyApp::_BootstrapApp()
+> the value of argv passed to wxEntryStart was NULL.
+> 
+> A quick and dirty fix which worked for me was:
+>     //PyObject* sysargv = PySys_GetObject("argv");
+>     PyObject* sysargv = Py_BuildValue("[s]", "");
+> 
+> All I can do is message boxes so far.  I'm getting some other
+> errors, but I should start making more rapid progress now!
+>
+
+I've applied your patch recompiled and reinstalled wxPython (only wxPython,  
+not wx library). This time I used debug support:
+
+python2.2 setup.py build_ext --inplace --debug  WX_CONFIG=/usr/local/share/ 
+wx/2.5/bin/wx-config WXPORT=gtk2 UNICODE=1
+
+Now
+> .Python("wxRPyApp",.module="testRwxPy")
+
+in R results in
+
+18:20:39: Debug: Adding duplicate image handler for 'Windows bitmap file'
+18:20:39: Debug: Adding duplicate image handler for 'Windows bitmap file'
+Failing in conversion from Python object: Unhandled case!
+NULL
+
+Is this suppose to happen?
+
+Vaidotas
+
+From duncan at wald.ucdavis.edu  Tue Jun 22 17:42:26 2004
+From: duncan at wald.ucdavis.edu (Duncan Temple Lang)
+Date: Tue Jun 22 17:42:34 2004
+Subject: [R-gui] R-wxPython Linux progress!
+In-Reply-To: <20040622152651.GU12135@debian.vu.lt>
+References: <Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+	<20040622152651.GU12135@debian.vu.lt>
+Message-ID: <20040622154226.GA17850@wald.ucdavis.edu>
+
+Vaidotas Zemlys wrote:
+> Hi,
+> >
+> >I'm making very small progress with R-wxPython on Linux, but I
+> >think my latest progression is quite significant - I can now
+> >load:
+> >library(wxPython)
+> >which initializes a wxPython application and a wxPython frame,
+> >and I can then create wx message boxes from the R command line,
+> >from e.g.
+> >wxMessageBox("Hello!")
+> >
+> >The problem I was having before appears to be a bug in
+> >wxPythonSrc-2.5.1.5/wxPython/src/helpers.cpp
+> >
+> >In the function
+> >wxPyApp::_BootstrapApp()
+> >the value of argv passed to wxEntryStart was NULL.
+> >
+> >A quick and dirty fix which worked for me was:
+> >    //PyObject* sysargv = PySys_GetObject("argv");
+> >    PyObject* sysargv = Py_BuildValue("[s]", "");
+> >
+> >All I can do is message boxes so far.  I'm getting some other
+> >errors, but I should start making more rapid progress now!
+> >
+> 
+> I've applied your patch recompiled and reinstalled wxPython (only wxPython, 
+> not wx library). This time I used debug support:
+> 
+> python2.2 setup.py build_ext --inplace --debug  WX_CONFIG=/usr/local/share/ 
+> wx/2.5/bin/wx-config WXPORT=gtk2 UNICODE=1
+> 
+> Now
+> >.Python("wxRPyApp",.module="testRwxPy")
+> 
+> in R results in
+> 
+> 18:20:39: Debug: Adding duplicate image handler for 'Windows bitmap file'
+> 18:20:39: Debug: Adding duplicate image handler for 'Windows bitmap file'
+> Failing in conversion from Python object: Unhandled case!
+> NULL
+> 
+> Is this suppose to happen?
+
+Yes and no.
+It is happening in the interface between Python and R
+and it means that it is dealing with transferring
+a Python object back to R.  In this particular case,
+it is one of the "less usual" but basic types
+and the current  RSPython code says
+that it is not prepared to deal with that.
+
+Can either of you tell me the Python type of 
+the object being converted?
+(You can put  a break point in fromPython() in RPythonConverters.c
+at the appropriate line (116 in my version).) 
+That would help me a great deal as a I can probably easily add
+code for that case but want to know what it is and 
+I am in the middle of some other work right now so don't
+have the time to set this up to debug it.
+
+
+> 
+> Vaidotas
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Duncan Temple Lang                        duncan@wald.ucdavis.edu
+ 371, Kerr Hall
+ University of California at Davis
+
+Phone: (530) 752-4782
+FAX:   (530) 752-7099
+
+From mpiktas at delfi.lt  Tue Jun 22 20:33:45 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Tue Jun 22 20:33:47 2004
+Subject: [R-gui] R-wxPython Linux progress!
+In-Reply-To: <20040622154226.GA17850@wald.ucdavis.edu> (from
+	duncan@wald.ucdavis.edu on An, Bir 22, 2004 at 18:42:26 +0300)
+References: <Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+	<20040622152651.GU12135@debian.vu.lt>
+	<20040622154226.GA17850@wald.ucdavis.edu>
+Message-ID: <20040622183345.GA1019@debian.vu.lt>
+
+Hi,
+
+> Yes and no.
+> It is happening in the interface between Python and R
+> and it means that it is dealing with transferring
+> a Python object back to R.  In this particular case,
+> it is one of the "less usual" but basic types
+> and the current  RSPython code says
+> that it is not prepared to deal with that.
+> 
+> Can either of you tell me the Python type of
+> the object being converted?
+> (You can put  a break point in fromPython() in RPythonConverters.c
+> at the appropriate line (116 in my version).)
+> That would help me a great deal as a I can probably easily add
+> code for that case but want to know what it is and
+> I am in the middle of some other work right now so don't
+> have the time to set this up to debug it.
+> 
+>
+
+I set up the breakpoint and got to it. How do I check the Python type of the  
+object? I know nothing about Python.
+
+Vaidotas
+
+From mpiktas at delfi.lt  Tue Jun 22 20:37:50 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Tue Jun 22 20:37:52 2004
+Subject: [R-gui] R-wxPython Linux progress!
+In-Reply-To: <20040622154226.GA17850@wald.ucdavis.edu> (from
+	duncan@wald.ucdavis.edu on An, Bir 22, 2004 at 18:42:26 +0300)
+References: <Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+	<20040622152651.GU12135@debian.vu.lt>
+	<20040622154226.GA17850@wald.ucdavis.edu>
+Message-ID: <20040622183750.GC1019@debian.vu.lt>
+
+Hi,
+
+> Can either of you tell me the Python type of
+> the object being converted?
+> (You can put  a break point in fromPython() in RPythonConverters.c
+> at the appropriate line (116 in my version).)
+> That would help me a great deal as a I can probably easily add
+> code for that case but want to know what it is and
+> I am in the middle of some other work right now so don't
+> have the time to set this up to debug it.
+>
+
+Is this it?
+
+(gdb) print *pyobj
+$2 = {ob_refcnt = 3, ob_type = 0x92f9684}
+
+Vaidotas
+
+From mpiktas at delfi.lt  Tue Jun 22 20:56:31 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Tue Jun 22 20:56:33 2004
+Subject: [R-gui] R-wxPython Linux progress!
+In-Reply-To: <20040622183345.GA1019@debian.vu.lt> (from mpiktas@delfi.lt on An,
+	Bir 22, 2004 at 21:33:45 +0300)
+References: <Pine.LNX.4.44.0406202345510.28417-100000@unix24.alpha.wehi.edu.au>
+	<20040622152651.GU12135@debian.vu.lt>
+	<20040622154226.GA17850@wald.ucdavis.edu>
+	<20040622183345.GA1019@debian.vu.lt>
+Message-ID: <20040622185631.GG1019@debian.vu.lt>
+
+
+Hi,
+> 
+>> Yes and no.
+>> It is happening in the interface between Python and R
+>> and it means that it is dealing with transferring
+>> a Python object back to R.  In this particular case,
+>> it is one of the "less usual" but basic types
+>> and the current  RSPython code says
+>> that it is not prepared to deal with that.
+>> 
+>> Can either of you tell me the Python type of
+>> the object being converted?
+>> (You can put  a break point in fromPython() in RPythonConverters.c
+>> at the appropriate line (116 in my version).)
+>> That would help me a great deal as a I can probably easily add
+>> code for that case but want to know what it is and
+>> I am in the middle of some other work right now so don't
+>> have the time to set this up to debug it.
+>> 
+>>
+> 
+> I set up the breakpoint and got to it. How do I check the Python type of the  
+> object? I know nothing about Python.
+>
+
+For the poor souls googling out there, the answer is
+
+(gdb) print *(pyobj->ob_type)
+
+Vaidotas
+
+From wettenhall at wehi.edu.au  Wed Jun 23 04:53:07 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jun 23 04:53:23 2004
+Subject: [R-gui] Converting RSPython objects and R-TclTk analogy
+In-Reply-To: <20040622152651.GU12135@debian.vu.lt>
+Message-ID: <Pine.LNX.4.44.0406231245040.13810-100000@unix24.alpha.wehi.edu.au>
+
+Hi Vaidotas,
+
+Duncan may have answered your question already, but you should 
+be aware of the .convert argument of the .Python() function.
+Using .convert=FALSE in .Python() should help to avoid errors 
+from RSPython like "Failing in conversion..."
+
+An R-Tcl/Tk analogy is the following:
+result <- tkmessageBox(message="Hello")
+
+After clicking OK, result is an object of class "tclObj", and we 
+can find its value ("ok") using tclvalue(result). 
+
+So 
+result <- tkmessageBox(message="Hello")
+is similar to using .convert=FALSE in RSPython's .Python()
+
+and
+result <- tclvalue(tkmessgaeBox(message="Hello"))
+is similar to using .convert=TRUE in RSPython's .Python()
+
+Hope this helps,
+James
+
+P.S. I really should come up with a better "patch" to 
+helpers.cpp than then one I mentioned before.  Rather than 
+overwriting sysargv no matter what, I should only overwrite it 
+if its Python value is NULL.
+
+From wettenhall at wehi.edu.au  Wed Jun 23 04:57:25 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jun 23 04:57:29 2004
+Subject: [R-gui] R-wxPython and dynamic linking issues
+In-Reply-To: <20040620143525.GA6348@sonny.eddelbuettel.com>
+Message-ID: <Pine.LNX.4.44.0406231253380.13810-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+I've mentioned before that when trying to run R-wxPython in 
+Linux, you very quickly run up against some nasty dynamic 
+linking issues, where RSPython can't find certain Python symbols 
+in the wxPython shared libraries, so I had to rebuild wxPython 
+linking against a Python shared library libpython2.2.so.
+
+But then if you want to use shared libraries distributed with 
+Python, such as parser.so, you need to be aware that they are 
+not linked against a libpython2.2.so by default either, so it is 
+possible to get undefined Python symbols there as well.
+
+One workaround I am investigating is linking RSPython with:
+
+-Wl,-whole-archive -lpython -Wl,-no-whole-archive
+
+But I can't give R-wxPython much time this week, so I'd be happy 
+if anyone else wants to start playing around with this idea 
+before I do.
+
+Regards,
+James
+
+From wettenhall at wehi.edu.au  Wed Jun 23 05:15:08 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jun 23 05:15:12 2004
+Subject: [R-gui] wxPython patch
+In-Reply-To: <20040622183750.GC1019@debian.vu.lt>
+Message-ID: <Pine.LNX.4.44.0406231313180.13810-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+Just forwarding from the wxPython-users list, Robin Dunn's reply 
+to my confirmation that argv was NULl in wxPyApp::_BootstrapApp 
+in helpers.cpp, so he will work out the best way to handle this 
+case and possibly include a patch in the next version of 
+wxPython.
+
+Regards,
+James
+
+
+ ------------------------------
+
+Date: Tue, 22 Jun 2004 10:54:59 -0700
+To: wxPython-users@lists.wxwidgets.org
+From: Robin Dunn <robin@alldunn.com>
+Subject: Re: [wxPython-users] R-wxPython and gdk_init_check() 
+seg. fault
+Message-ID: <40D87273.2090408@alldunn.com>
+
+James Wettenhall wrote:
+> Hi Robin,
+>
+>
+>>place a debugger breakpoint in the wxPyApp::_BootstrapApp
+>>function and step down to the call to wxEntryStart.  Is the
+>>value of argv NULL?
+>
+>
+> Yes!  Thanks so much!
+
+Thanks for checking that for me.  I've added an item to my ToDo 
+to check for that situation and handle it properly.
+
+--
+Robin Dunn
+Software Craftsman
+http://wxPython.org  Java give you jitters?  Relax with 
+wxPython!
+
+From Vaidotas.Zemlys at maf.vu.lt  Wed Jun 23 06:40:19 2004
+From: Vaidotas.Zemlys at maf.vu.lt (Vaidotas Zemlys)
+Date: Wed Jun 23 06:40:22 2004
+Subject: [R-gui] R-wxPython and dynamic linking issues
+In-Reply-To: <Pine.LNX.4.44.0406231253380.13810-100000@unix24.alpha.wehi.edu.au>
+	(from wettenhall@wehi.edu.au on Tr, Bir 23,
+	2004 at 05:57:25 +0300)
+References: <Pine.LNX.4.44.0406231253380.13810-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <20040623044019.GC1464@debian.vu.lt>
+
+Hi,
+> 
+> I've mentioned before that when trying to run R-wxPython in
+> Linux, you very quickly run up against some nasty dynamic
+> linking issues, where RSPython can't find certain Python symbols
+> in the wxPython shared libraries, so I had to rebuild wxPython
+> linking against a Python shared library libpython2.2.so.
+
+Could you please provide an example when this situation arises? I would gladly  
+test it.
+
+Vaidotas
+
+From wettenhall at wehi.edu.au  Wed Jun 23 07:03:39 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jun 23 07:03:57 2004
+Subject: [R-gui] R-wxPython and dynamic linking issues
+In-Reply-To: <20040623044019.GC1464@debian.vu.lt>
+Message-ID: <Pine.LNX.4.44.0406231445260.13810-100000@unix24.alpha.wehi.edu.au>
+
+Hi Vaidotas,
+
+On Wed, 23 Jun 2004, Vaidotas Zemlys wrote:
+> Could you please provide an example when this situation arises? 
+> I would gladly  test it.
+
+After building wxPython 2.5.1.5 from source on Fedora Linux, 
+without editing config.py and adding libpython2.2.so to the 
+newLFLAGS, I got an error like:
+"Undefined Symbol: PyExc_IOError"
+when I tried to import the wx module when Python was embedded 
+within R.  I tried building RSPython with a shared (instead of 
+static) library, but this didn't seem to help, so I built 
+wxPython linking against libpython2.2.so as well (editing 
+config.py's newLFLAGS to inclue libpython2.2.so), and then I 
+could import wx into Python embedded in R without problems.
+
+But now, when I try to run some code from my preliminary 
+R-wxPython package at:
+http://bioinf.wehi.edu.au/folders/james/wxPython/
+
+I get undefined symbols errors when I try to import the parser 
+module, which is actually a shared library, see:
+rpm -ql python | grep "\\.so"
+/usr/lib/python2.2/lib-dynload/parsermodule.so
+
+OR I think it might be called "parser.so" rather than 
+"parsermodule.so", depending on your Python version.
+
+Currently in my R-wxPython package, the parser module is used by
+the wxDialogPython() function which is called by:
+getMethod("wxShow","wxDialog")
+
+When I use "import parser", I get errors like:
+Error in Python call: 
+/home/users/lab0605/wettenhall/usr/local/lib/python2.2/lib-dynload/parser.so: 
+undefined symbol: _Py_TrueStruct
+
+One solution is just to remove all instances of "import parser".  
+The only reason I use it is to use the Python 'exec' function to 
+try register widgets/controls in a way that R can later access 
+them, e.g. after creating a dialog, you might want to disable a 
+particular checkbox from within R.  Unfortunately, this 
+widget-registering mechanism is not working yet, maybe due to my 
+lack of understanding of RSPython and foreign object references, 
+so I could just remove all instances of "import parser", but it 
+would be nice to know why I get undefined symbol errors.
+
+I still haven't really had time to test building RSPython against 
+python statically but using the whole-archive options to include 
+as many symbols as possible in RSPython/libs/RSPython.so
+
+Regards,
+James
+
+
+On Wed, 23 Jun 2004, Vaidotas Zemlys wrote:
+> Hi,
+> > 
+> > I've mentioned before that when trying to run R-wxPython in
+> > Linux, you very quickly run up against some nasty dynamic
+> > linking issues, where RSPython can't find certain Python symbols
+> > in the wxPython shared libraries, so I had to rebuild wxPython
+> > linking against a Python shared library libpython2.2.so.
+> 
+> Could you please provide an example when this situation arises? I would gladly  
+> test it.
+> 
+> Vaidotas
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+-- 
+--------------------------------------------------------------------------
+James Wettenhall                                  Tel: (+61 3) 9345 2629
+Division of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852
+The Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au
+ of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    
+1G Royal Parade,
+Parkville, Vic 3050, Australia
+http://www.wehi.edu.au
+
+From mpiktas at delfi.lt  Wed Jun 23 08:21:05 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Wed Jun 23 08:21:07 2004
+Subject: [R-gui] R-wxPython and dynamic linking issues
+In-Reply-To: <Pine.LNX.4.44.0406231445260.13810-100000@unix24.alpha.wehi.edu.au>
+	(from wettenhall@wehi.edu.au on Tr, Bir 23,
+	2004 at 08:03:39 +0300)
+References: <Pine.LNX.4.44.0406231445260.13810-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <20040623062105.GC1713@debian.vu.lt>
+
+Hi,
+
+
+> But now, when I try to run some code from my preliminary
+> R-wxPython package at:
+> http://bioinf.wehi.edu.au/folders/james/wxPython/
+> 
+> I get undefined symbols errors when I try to import the parser
+> module, which is actually a shared library, see:
+> rpm -ql python | grep "\\.so"
+> /usr/lib/python2.2/lib-dynload/parsermodule.so
+> 
+> OR I think it might be called "parser.so" rather than
+> "parsermodule.so", depending on your Python version.
+> 
+> Currently in my R-wxPython package, the parser module is used by
+> the wxDialogPython() function which is called by:
+> getMethod("wxShow","wxDialog")
+>
+
+I've installed wxPython package and issued loaded wxPython library and called  
+aforementioned function, here is an output that R gave me:
+
+> library(wxPython)
+Creating a new generic function for "print" in "wxPython"
+Loading required package: RSPython
+Initialized R-Python interface package.
+
+Examples are available by typing: wxPythonUserManual()
+
+Warning message:
+the Python callback manager has been registered implicitly using the defaults  
+(referenceManager())!
+> getMethod("wxShow","wxDialog")
+Method Definition (Class "MethodDefinition"):
+
+function (frm, ...)
+{
+    .local <- function (frm, envir = parent.frame(n = 2))
+    {
+        frm <- wxDialogPython(frm, modal = FALSE)
+        wxRegisterWindow(frm, envir = envir)
+        return(frm)
+    }
+    .local(frm, ...)
+}
+<environment: 0x90a1d64>
+
+Signatures:
+        frm
+target  "wxDialog"
+defined "wxDialog"
+
+No errors. Or there shouldn't be any?
+
+> When I use "import parser", I get errors like:
+> Error in Python call:
+> /home/users/lab0605/wettenhall/usr/local/lib/python2.2/lib-dynload/parser. 
+> so:
+> 
+> undefined symbol: _Py_TrueStruct
+
+How do you use "import parser"? What should I type into R to issue such kind  
+of command?
+
+Vaidotas
+
+From mpiktas at delfi.lt  Wed Jun 23 08:33:20 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Wed Jun 23 08:33:22 2004
+Subject: [R-gui] R-wxPython and dynamic linking issues
+In-Reply-To: <20040623062105.GC1713@debian.vu.lt> (from mpiktas@delfi.lt on Tr,
+	Bir 23, 2004 at 09:21:05 +0300)
+References: <Pine.LNX.4.44.0406231445260.13810-100000@unix24.alpha.wehi.edu.au>
+	<20040623062105.GC1713@debian.vu.lt>
+Message-ID: <20040623063320.GE1713@debian.vu.lt>
+
+Hi,
+> 
+> 
+>> But now, when I try to run some code from my preliminary
+>> R-wxPython package at:
+>> http://bioinf.wehi.edu.au/folders/james/wxPython/
+>> 
+>> I get undefined symbols errors when I try to import the parser
+>> module, which is actually a shared library, see:
+>> rpm -ql python | grep "\\.so"
+>> /usr/lib/python2.2/lib-dynload/parsermodule.so
+>> 
+>> OR I think it might be called "parser.so" rather than
+>> "parsermodule.so", depending on your Python version.
+>> 
+>> Currently in my R-wxPython package, the parser module is used by
+>> the wxDialogPython() function which is called by:
+>> getMethod("wxShow","wxDialog")
+>>
+>
+
+Ok, I got some errors after all:) This excerpt from R-wxPython User Manual  
+gave me the error that you was talking about:
+
+> dlg <- wxDlg(size=wxSize(200,160))
+> dlg <- wxAdd(dlg,cb=wxCheckBox(label="Use wxPython",name="usewxPython", 
+> pos=wxPoint(40,50)))
+> dlg <- wxBind(dlg,"cb",function(checked)cbVal<<-checked,
++          event="EVT_CHECKBOX",eventMethod="Checked")
+> cbVal <- 0 # We haven't specified initial state of checkbox so by default it  
+> will be unchecked
+> dlg <- wxShow(dlg)
+Error in .PythonEval(paste("import ", dlg@PythonModule, "; reload(",  
+dlg@PythonModule,  :
+        Error in Python call: /usr/lib/python2.2/lib-dynload/parser.so:  
+undefined symbol: _Py_TrueStruct
+
+I'll try to recompile RSPython with the flags you suggested and report the  
+outcome.
+
+Vaidotas
+
+From wettenhall at wehi.edu.au  Wed Jun 23 09:47:48 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jun 23 09:47:58 2004
+Subject: [R-gui] R-wxPython and dynamic linking issues
+In-Reply-To: <20040623062105.GC1713@debian.vu.lt>
+Message-ID: <Pine.LNX.4.44.0406231743150.14702-100000@unix24.alpha.wehi.edu.au>
+
+On Wed, 23 Jun 2004, Vaidotas Zemlys wrote:
+> > getMethod("wxShow","wxDialog")
+<snip>
+> No errors. Or there shouldn't be any?
+
+No.  There shouldn't be any errors.  The only reason I mentioned 
+'getMethod' is that people on this list may not be familiar with 
+S4 object-oriented programming in R, using the methods package.  
+The R-wxPython interface I've been working on uses S4 methods, 
+so for example, when you type:
+
+wxShow(dlg)
+
+the method (i.e. function) called depends on the class of the 
+object "dlg".  If dlg is of class "wxDialog", then the method called 
+will be the one described by getMethod("wxShow","wxDialog").
+
+When you first start using S4 methods it can be difficult to 
+know how to see the code of an R method.  (Usually you can just 
+type a function name and press Enter to see its code in R.)  But 
+if it is an S4 method, then you have to use something like 
+'getMethod' to see the R code for that function.
+
+Hope this explains my last email a bit better.
+
+Regards,
+James
+
+From mpiktas at delfi.lt  Wed Jun 23 14:47:54 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Wed Jun 23 14:47:58 2004
+Subject: [R-gui] R-wxPython and dynamic linking issues
+In-Reply-To: <Pine.LNX.4.44.0406232215420.16586-100000@unix24.alpha.wehi.edu.au>
+	(from wettenhall@wehi.edu.au on Tr, Bir 23,
+	2004 at 15:27:20 +0300)
+References: <Pine.LNX.4.44.0406232215420.16586-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <20040623124754.GO1713@debian.vu.lt>
+
+Hi,
+
+> On Wed, 23 Jun 2004, Vaidotas Zemlys wrote:
+> > I'm not very good at changing configure and other files (I know because I
+> > tried), so could you please tell me, where should I insert some line to
+> link
+> > RSPython as you described.
+> > >
+> > > -Wl,-whole-archive -lpython -Wl,-no-whole-archive
+> 
+> Vaidotas,
+> 
+> You can unzip RSPython_0.5-3.tar.gz with:
+> tar zxvf RSPython_0.5-3.tar.gz
+> then
+> cd RSPython
+> then
+> grep "\-lpython" *
+> to find all instances of -lpython,
+> then replace them with:
+> -Wl,-whole-archive -lpython -Wl,-no-whole-archive
+>
+
+Ok, I did that and then installed RSPython. The options appeared when linking  
+in installation output, but that did not change a thing. I still get
+
+> dlg <- wxDlg(size=wxSize(200,160))
+> dlg <- wxAdd(dlg,cb=wxCheckBox(label="Use wxPython",name="usewxPython", 
+> pos=wxPoint(40,50)))
+> dlg <- wxBind(dlg,"cb",function(checked)cbVal<<-checked,
++          event="EVT_CHECKBOX",eventMethod="Checked")
+> cbVal <- 0 # We haven't specified initial state of checkbox so by default it  
+> will be unchecked
+> dlg <- wxShow(dlg)
+Error in .PythonEval(paste("import ", dlg@PythonModule, "; reload(",  
+dlg@PythonModule,  :
+        Error in Python call: /usr/lib/python2.2/lib-dynload/parser.so:  
+undefined symbol: _Py_TrueStruct
+
+Vaidotas
+
+From wettenhall at wehi.edu.au  Wed Jun 23 16:12:05 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jun 23 16:12:21 2004
+Subject: [R-gui] R-wxPython and dynamic linking issues
+In-Reply-To: <20040623124754.GO1713@debian.vu.lt>
+Message-ID: <Pine.LNX.4.44.0406232355130.16586-100000@unix24.alpha.wehi.edu.au>
+
+Vaidotas,
+
+On Wed, 23 Jun 2004, Vaidotas Zemlys wrote:
+> Ok, I did that and then installed RSPython. The options 
+> appeared when linking in installation output, but that did 
+> not change a thing. I still get
+>         Error in Python call: /usr/lib/python2.2/lib-dynload/parser.so:  
+> undefined symbol: _Py_TrueStruct
+
+OK, then this means that you have to build the Python 2.2.x 
+shared modules linked against libpython2.2.so
+i.e. in the Python 2.2.3 Makefile, you will see:
+
+# Build the shared modules
+sharedmods: $(BUILDPYTHON)
+        case $$MAKEFLAGS in \
+        *-s*) CC='$(CC)' LDSHARED='$(BLDSHARED)' OPT='$(OPT)' \
+./$(BUILDPYTHON) -E $(srcdir)/setup.py -q build;; \
+        *) CC='$(CC)' LDSHARED='$(BLDSHARED)' OPT='$(OPT)' \
+./$(BUILDPYTHON) -E $(srcdir)/setup.py build;; \
+        esac
+
+You somehow have to make sure that libpython2.2.so is used and 
+not libpython2.2.a 
+It might be as simple as adding libpython2.2.so after
+OPT='$(OPT)' or somewhere near there (remembering spaces on 
+either side of it and remembering that backslash (\) means a 
+continuation of the same line.  Hopefully you'll understand that 
+I have had to insert extra backslashes because of unwanted 
+line-wrapping in my email software.
+
+You should try to work out what all of the make variables above 
+are doing and in particular, you probably want change:
+LDLIBRARY=      libpython$(VERSION).a
+to:
+LDLIBRARY=      libpython$(VERSION).so
+
+and use "man gcc" to make sure you understand options like -E.
+
+
+I guess you know how to run a configure script, e.g. if you want 
+to customize the installation location, you can use --prefix, 
+e.g.
+./configure --prefix=/usr/local
+[Edit Makefile]
+make
+make install
+
+I have a feeling that I really should be telling you how to edit 
+the configure script not the Makefile, but I can't see how to do 
+that right now.
+
+After you have finished building Python and its modules with 
+libpython2.2.so, you can check that one of the modules depends 
+on libpython2.2.so with ldd, e.g.
+cd /usr/local/lib/python2.2/lib-dynload/
+ldd parser.so
+
+Hope this helps,
+James
+
+From wettenhall at wehi.edu.au  Wed Jun 23 19:00:34 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jun 23 19:00:38 2004
+Subject: [R-gui] R-wxPython no longer needs parser.so!
+In-Reply-To: <Pine.LNX.4.44.0406231313180.13810-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <Pine.LNX.4.44.0406240246120.17050-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+After a bit of discussion about how to build Python from source 
+so that parser.so etc. depend on libpython2.2.so, I now have
+a simpler next-step-forward for people interested in playing 
+with R-wxPython - I've removed all dependency to the Python 
+parser module in wxPython 2.2 at:
+http://bioinf.wehi.edu.au/folders/james/wxPython/
+
+(One other change - I've replaced the "print" generic functions 
+with "show".  "show" is more S4-style.)
+
+There are certainly still some problems, maybe partly due to the 
+fact that I'm trying to make an object-oriented GUI toolkit look 
+imperative from the R command-line user's perspective.   But 
+aside from the problems, there's also some interesting progress!
+
+With R-wxPython 2.2, now I can run the "Choose GUI toolkit" 
+example from the documentation, including a listbox with 
+scrollbars, and two buttons.  It doesn't actually appear 
+straight away, but when I issue another wxPython command 
+afterwards, like wxMessageBox("Hello"), then it appears (one 
+command too late), but the buttons don't work.  Same with the 
+"Text Editor" example - if I follow it with a call to 
+wxMessageBox() then it appears after the wxMessageBox() call, 
+but at least it appears, so that's something! 
+
+It's a bit hard to destroy these late-appearing windows/widgets 
+- wxClose, wxDestroy don't seem to work yet on R-wxPython with 
+Gtk/Linux, probably because of this 'delay' problem.  But for 
+me, running X11 from Windows via XWin32, there's always 
+"End Task" from the Windows Task Manager to kill a window, 
+(and similar for other OS's)! :)
+
+Regards,
+James
+
+--------------------------------------------------------------------------
+James Wettenhall                                  Tel: (+61 3) 9345 2629
+Division of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852
+The Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au
+ of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    
+1G Royal Parade,
+Parkville, Vic 3050, Australia
+http://www.wehi.edu.au
+
+From wettenhall at wehi.edu.au  Sat Jun 26 10:25:29 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Sat Jun 26 10:25:35 2004
+Subject: [R-gui] plot.new() within tkrplot, coplot
+In-Reply-To: <Pine.LNX.4.44.0406240246120.17050-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <Pine.LNX.4.44.0406261811560.1421-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+Does anyone know a good way to get rid of warnings like:
+Warning message: 
+calling par(new=) with no plot 
+
+when using an R plot function which calls plot.new() 
+(e.g. coplot) from within tkrplot?
+
+For example:
+
+library(tkrplot)
+tt <- tktoplevel()
+plotFun <- function() {
+  data(quakes)
+  coplot(lat ~ long | depth, data = quakes)
+}
+img <- tkrplot(tt,fun=plotFun)
+
+Warning message: 
+calling par(new=) with no plot 
+
+tkpack(img)
+
+The plot looks fine in the Tk window, but I'm just 
+wondering whether I can get rid of the warning message.
+
+On a similar subject, does anyone have any general advice on 
+whether it is best to pass main="Plot Title" directly to the 
+plot function or whether it is best to use title() for ploting
+within tkrplot?  Or doesn't it matter?  I'm having trouble 
+finding a reproducible example now, but I have experienced 
+errors like: 
+"Cannot set parameter main in high-level plot function", 
+
+and I wonder whether these errors are related to using tkrplot 
+and R2HTML's HTMLplot, rather than the regular R graphics device.
+
+Regards,
+James
+
+From p.dalgaard at biostat.ku.dk  Sat Jun 26 11:51:02 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Sat Jun 26 11:51:49 2004
+Subject: [R-gui] plot.new() within tkrplot, coplot
+In-Reply-To: <Pine.LNX.4.44.0406261811560.1421-100000@unix24.alpha.wehi.edu.au>
+References: <Pine.LNX.4.44.0406261811560.1421-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <x2lliay7eh.fsf@biostat.ku.dk>
+
+James Wettenhall <wettenhall@wehi.edu.au> writes:
+
+> Hi,
+> 
+> Does anyone know a good way to get rid of warnings like:
+> Warning message: 
+> calling par(new=) with no plot 
+> 
+> when using an R plot function which calls plot.new() 
+> (e.g. coplot) from within tkrplot?
+> 
+> For example:
+> 
+> library(tkrplot)
+> tt <- tktoplevel()
+> plotFun <- function() {
+>   data(quakes)
+>   coplot(lat ~ long | depth, data = quakes)
+> }
+> img <- tkrplot(tt,fun=plotFun)
+> 
+> Warning message: 
+> calling par(new=) with no plot 
+> 
+> tkpack(img)
+> 
+> The plot looks fine in the Tk window, but I'm just 
+> wondering whether I can get rid of the warning message.
+
+Hmm, the same wart appears if you just plot to a freshly opened X11
+device (X11(); coplot(....)), nothing specific to tkrplot. I think
+I've seen this reported before, but I have forgotten what the
+recommended action was.
+ 
+> On a similar subject, does anyone have any general advice on 
+> whether it is best to pass main="Plot Title" directly to the 
+> plot function or whether it is best to use title() for ploting
+> within tkrplot?  Or doesn't it matter?  I'm having trouble 
+> finding a reproducible example now, but I have experienced 
+> errors like: 
+> "Cannot set parameter main in high-level plot function", 
+
+Well, title just splats some text at a defined position on the plot,
+whereas main= requires cooperation from the high-level plot function.
+I can't recall examples of uncooperative plot functions either, but
+you should probably consider if there's a reason why those plots might
+not *want* to have a title...
+ 
+> and I wonder whether these errors are related to using tkrplot 
+> and R2HTML's HTMLplot, rather than the regular R graphics device.
+
+Both are generic, I think.
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From wettenhall at wehi.edu.au  Sun Jun 27 19:09:42 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Sun Jun 27 19:09:51 2004
+Subject: [R-gui] R-wxPython and Gtk event loop (small progress)
+In-Reply-To: <Pine.LNX.4.44.0406261811560.1421-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <Pine.LNX.4.44.0406280212450.12857-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+I just thought I'd mention that I haven't given up on R-wxPython 
+in Gtk/Linux, but I'm still finding it pretty tough.  I 
+mentioned recently that I had message boxes working in Gtk/Linux 
+but not much else.  That was because I was using ShowModal for 
+the message boxes so they had a valid event loop, but I didn't 
+have an "overall" valid wxGTK event loop, so the wxShow methods 
+didn't work.  For now, I've changed all of the dialog 
+examples in the documentation to use ShowModal instead of Show, 
+but of course this doesn't work for frames (and I have a few 
+dialogs in the documentation without Close/OK/Cancel buttons, 
+which needs to be fixed now that they are modal, i.e. I don't 
+have an R command-line cursor where I can type "wxClose(dlg)").
+
+0.2.4 is at
+http://bioinf.wehi.edu.au/folders/james/wxPython/
+
+Since my last post, I have progressed (in Gtk/Linux) from 
+only message boxes to only modal dialogs (including message 
+dialogs).  I now have working modal dialog examples 
+including list boxes, radio buttons and check boxes 
+(see the documentation).
+
+Of course this is so far avoiding the real solution.
+wxPython wants you to define all of your dialog and frame 
+classes and then run a MainLoop() method on a wxApp object, and 
+I have had some success with this on Windows, but not at all on 
+Gtk/Linux yet.  When I try to run my MainLoop, the R session 
+just seems to hang.
+
+The basic idea is that instead of typing R commands to say 
+"define frame", then "show frame" directly at the R 
+command-line, you would include them in an R function called 
+wxApp() which would be called by RSPython's RS.call from within 
+a Python application module.
+
+On Windows, I have succeeded in running an application module 
+like the one described with the same RS.call call to different 
+versions of a wxApp R function within the same R session, but on 
+Gtk/Linux, I have the feeling that I can only run one wx 
+application per R-wxPython session.
+
+If I avoid constructing a wx application in .First.lib and 
+postpone it to a call to a MainLoop method later on, then I'll 
+break all of the modal dialog code which is working now (they 
+will give errors about Gtk not being initialized).
+
+For some reason, wxPython on Windows allows you to use Show 
+methods on frames and dialogs even when there is no official wx 
+event loop running.  wxGTK is more strict about requiring an 
+official event loop.
+
+Hopefully, I'll be able to find a nice solution to these event 
+loop issues and report its success soon!
+
+Regards,
+James
+
+From elff at uni-mannheim.de  Mon Jun 28 01:21:20 2004
+From: elff at uni-mannheim.de (Martin Elff)
+Date: Mon Jun 28 01:19:15 2004
+Subject: [R-gui] R-wxPython and Gtk event loop (small progress)
+In-Reply-To: <Pine.LNX.4.44.0406280212450.12857-100000@unix24.alpha.wehi.edu.au>
+References: <Pine.LNX.4.44.0406280212450.12857-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <200406280121.20570.elff@uni-mannheim.de>
+
+Am Sonntag, 27. Juni 2004 19:09 schrieb James Wettenhall:
+> Hi,
+>
+> I just thought I'd mention that I haven't given up on R-wxPython
+> in Gtk/Linux, but I'm still finding it pretty tough.  I
+> mentioned recently that I had message boxes working in Gtk/Linux
+> but not much else.  That was because I was using ShowModal for
+> the message boxes so they had a valid event loop, but I didn't
+> have an "overall" valid wxGTK event loop, so the wxShow methods
+> didn't work.  For now, I've changed all of the dialog
+> examples in the documentation to use ShowModal instead of Show,
+> but of course this doesn't work for frames (and I have a few
+> dialogs in the documentation without Close/OK/Cancel buttons,
+> which needs to be fixed now that they are modal, i.e. I don't
+> have an R command-line cursor where I can type "wxClose(dlg)").
+>
+> 0.2.4 is at
+> http://bioinf.wehi.edu.au/folders/james/wxPython/
+>
+> Since my last post, I have progressed (in Gtk/Linux) from
+> only message boxes to only modal dialogs (including message
+> dialogs).  I now have working modal dialog examples
+> including list boxes, radio buttons and check boxes
+> (see the documentation).
+>
+> Of course this is so far avoiding the real solution.
+> wxPython wants you to define all of your dialog and frame
+> classes and then run a MainLoop() method on a wxApp object, and
+> I have had some success with this on Windows, but not at all on
+> Gtk/Linux yet.  When I try to run my MainLoop, the R session
+> just seems to hang.
+>
+> The basic idea is that instead of typing R commands to say
+> "define frame", then "show frame" directly at the R
+> command-line, you would include them in an R function called
+> wxApp() which would be called by RSPython's RS.call from within
+> a Python application module.
+>
+> On Windows, I have succeeded in running an application module
+> like the one described with the same RS.call call to different
+> versions of a wxApp R function within the same R session, but on
+> Gtk/Linux, I have the feeling that I can only run one wx
+> application per R-wxPython session.
+>
+> If I avoid constructing a wx application in .First.lib and
+> postpone it to a call to a MainLoop method later on, then I'll
+> break all of the modal dialog code which is working now (they
+> will give errors about Gtk not being initialized).
+>
+> For some reason, wxPython on Windows allows you to use Show
+> methods on frames and dialogs even when there is no official wx
+> event loop running.  
+Maybe these have their own event loops ...
+> wxGTK is more strict about requiring an 
+> official event loop.
+>
+> Hopefully, I'll be able to find a nice solution to these event
+> loop issues and report its success soon!
+
+I 've been playing around with an R-Python interface
+that doesn't segfault with Python 2.3 on Linux and also with
+an wxPython interface. I found the following
+trick from tcltk.c working ...
+
+Hope that helps ...
+
+Martin
+
+>
+> Regards,
+> James
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: wxRPyApp.py
+Type: application/x-python
+Size: 289 bytes
+Desc: not available
+Url : https://www.stat.math.ethz.ch/pipermail/r-sig-gui/attachments/20040628/cb50b3e7/wxRPyApp.bin
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: wxAppProc.c
+Type: text/x-csrc
+Size: 4559 bytes
+Desc: not available
+Url : https://www.stat.math.ethz.ch/pipermail/r-sig-gui/attachments/20040628/cb50b3e7/wxAppProc.bin
+From wettenhall at wehi.edu.au  Mon Jun 28 11:03:30 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Mon Jun 28 11:03:35 2004
+Subject: [R-gui] Re: R-wxPython volunteers
+In-Reply-To: <Pine.LNX.4.44.0406240246120.17050-100000@unix24.alpha.wehi.edu.au>
+References: <Pine.LNX.4.44.0406240246120.17050-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <Pine.GSO.4.58.0406281856290.5611@unix33.alpha.wehi.edu.au>
+
+Hi,
+
+On Mon, 14 Jun 2004, James Wettenhall wrote:
+> progress, but it is very slow progress, so if there are any
+> Linux-minded people out there who feel like collaborating, I
+
+It just occurred to me that after mentioning a desire for
+collaboration from "Linux-minded" people on the list, I got some
+very useful posts from Vaidotas Zemlys and Martin Elff, (and
+of course Robin Dunn on the wxPython-users mailing list).
+
+But now I have had a request for new features in R-wxPython on
+Windows (which is already quite advanced), but I've been
+spending all the time I have available for this project on
+porting to Linux (and eventually MacOS X?).
+
+So let me add that assistance is certainly welcome from
+"Windows-minded" people as well.  The Windows version is
+already quite advanced.  Would you like to help to add new
+features/documented examples such as Multiple Document
+Interfaces (MDI), or more advanced geometry management
+(widget layout) methods?
+
+I'm not worried about sharing credit for authoring the
+R-wxPython package.  If you send me some useful reliable-looking
+code or documented examples, I be happy to add the code to the
+package, add your name as an author, and look forward to
+receiving more code snippets from you.
+
+Regards,
+James
+

@@ -1,0 +1,158 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2007-05",
+  "messages": [
+    {
+      "id": "msg-0d9f26c75e9d",
+      "message_id": "<29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>",
+      "from_name": "Bhavana Belsare",
+      "from_email_hash": "1b27fdb647ec4aba2bed30e0846956a35030b5d5d0acdbcb14f55e3d6c2873d1",
+      "date": "2007-05-01T18:42:49+05:30",
+      "subject": "[R-gui] query regarding jri",
+      "subject_clean": "[R-gui] query regarding jri",
+      "in_reply_to": "<29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>",
+      "references": [
+        "<29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070501/ab19444e/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070501/ab19444e/attachment.pl",
+      "thread_id": "thread-0d9f26c75e9d",
+      "thread_depth": 0,
+      "month": "2007-05"
+    },
+    {
+      "id": "msg-051c4fb1bc72",
+      "message_id": "<509e0620705020335n667586f1qeefbd3a7923d727a@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2007-05-02T05:35:43-05:00",
+      "subject": "[R-gui] query regarding jri",
+      "subject_clean": "[R-gui] query regarding jri",
+      "in_reply_to": "<29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>",
+      "references": [
+        "<29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>",
+        "<29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070502/221689e1/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070502/221689e1/attachment.pl",
+      "thread_id": "thread-0d9f26c75e9d",
+      "thread_depth": 1,
+      "month": "2007-05"
+    },
+    {
+      "id": "msg-529978159453",
+      "message_id": "<464B1FBB.8000206@stats.uwo.ca>",
+      "from_name": "Duncan Murdoch",
+      "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
+      "date": "2007-05-16T11:14:03-04:00",
+      "subject": "[R-gui] Configuring tools in Tinn-R",
+      "subject_clean": "[R-gui] Configuring tools in Tinn-R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Currently Tinn-R has the latex command line hard coded.  I'd like to \nchange it (to add --src-specials) but it seems this is kind of tricky now.\n\nIs there an easy way to do this?\n\nDuncan Murdoch",
+      "body_snippet": "Currently Tinn-R has the latex command line hard coded.  I'd like to \nchange it (to add --src-specials) but it seems this is kind of tricky now.\n\nIs there an easy way to do this?\n\nDuncan Murdoch",
+      "thread_id": "thread-529978159453",
+      "thread_depth": 0,
+      "month": "2007-05"
+    },
+    {
+      "id": "msg-0972e2b0f7ac",
+      "message_id": "<464DD4CD.8090709@terra.com.br>",
+      "from_name": "terra",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2007-05-18T13:31:09-03:00",
+      "subject": "[R-gui] Configuring tools in Tinn-R",
+      "subject_clean": "[R-gui] Configuring tools in Tinn-R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Duncan,\n\nSorry, for while it is not possible inside of Tinn-R, only in the DOS \nconsole.\n\nIn the next version we intend to make these options more flexible, also \nanother thinks related with LaTeX.\n\nRegards,\n\n/////\\\\\\\\\\/////\\\\\\\\\\/////\\\\\\\\\\/////\\\\\\\\\\\n  Jose Claudio Faria\n  Brasil/Bahia/UESC/DCET\n  Estatistica Experimental/Prof. Titular\n    joseclaudio.faria at terra.com.br\n    joseclaudio.faria at oi.com.br\n    jc_faria at uesc.br\n    jc_faria at uol.com.br\n  Tel: 73-3634.2779 (res)\n/////\\\\\\\\\\/////\\\\\\\\\\/////\\\\\\\\\\/////\\\\\\\\\\",
+      "body_snippet": "Dear Duncan,\n\nSorry, for while it is not possible inside of Tinn-R, only in the DOS \nconsole.\n\nIn the next version we intend to make these options more flexible, also \nanother thinks related with LaTe",
+      "thread_id": "thread-0972e2b0f7ac",
+      "thread_depth": 0,
+      "month": "2007-05"
+    },
+    {
+      "id": "msg-d8f7d684780c",
+      "message_id": "<jio353hjpb87ehnnku3nlo012b74oqpb70@4ax.com>",
+      "from_name": "Mike Prager",
+      "from_email_hash": "7617f62e932d92ae8fb18467cd95630ee1a910d05df9ff7b5c7a508078124e40",
+      "date": "2007-05-21T14:21:50-04:00",
+      "subject": "[R-gui] Configuring tools in Tinn-R",
+      "subject_clean": "[R-gui] Configuring tools in Tinn-R",
+      "in_reply_to": null,
+      "references": [
+        "<464DD4CD.8090709@terra.com.br>"
+      ],
+      "body_plain": "terra <joseclaudio.faria at terra.com.br> wrote:\n\n> Sorry, for while it is not possible inside of Tinn-R, only in the DOS \n> console.\n> \n> In the next version we intend to make these options more flexible, also \n> another thinks related with LaTeX.\n> \n> Regards,\n> \n> /////\\\\\\\\\\/////\\\\\\\\\\/////\\\\\\\\\\/////\\\\\\\\\\\n>   Jose Claudio Faria\n>   Brasil/Bahia/UESC/DCET\n>   Estatistica Experimental/Prof. Titular\n> /////\\\\\\\\\\/////\\\\\\\\\\/////\\\\\\\\\\/////\\\\\\\\\\\n\nJose Claudio--\n\nIt would be helpful to let the user change the entire command\nline associated with (pdf)tex.  I use VTeX, and the command line\nI use to get PDF output is\n\nd:\\vtex\\bin\\vtex3h.exe -$p(f=cf,c=9,g=f,t=f -ov -ox2 -n1\n@latexcm %$\n\nwhere %$ is replaced by the file name.\n\nA similar command is used to get DVI, and to view DVI, I use\n\nd:\\vtex\\bin\\vtexwd.exe %$\n\nSo in my case at least, more flexibility is needed than an\noption change for \"latex\".\n\nRegards,\n...Mike\n\n-- \nMike Prager, NOAA, Beaufort, NC\n* Opinions expressed are personal and not represented otherwise.\n* Any use of tradenames does not constitute a NOAA endorsement.",
+      "body_snippet": "terra <joseclaudio.faria at terra.com.br> wrote:\n\n> Sorry, for while it is not possible inside of Tinn-R, only in the DOS \n> console.\n> \n> In the next version we intend to make these options more flex",
+      "thread_id": "thread-0972e2b0f7ac",
+      "thread_depth": 1,
+      "month": "2007-05"
+    },
+    {
+      "id": "msg-dd5d8072529c",
+      "message_id": "<29cba4c60705301051o18838398j3d4306f9e078b871@mail.gmail.com>",
+      "from_name": "Bhavana Belsare",
+      "from_email_hash": "1b27fdb647ec4aba2bed30e0846956a35030b5d5d0acdbcb14f55e3d6c2873d1",
+      "date": "2007-05-30T23:21:49+05:30",
+      "subject": "[R-gui] regarding graph plots..",
+      "subject_clean": "[R-gui] regarding graph plots..",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070530/1c091c77/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070530/1c091c77/attachment.pl",
+      "thread_id": "thread-dd5d8072529c",
+      "thread_depth": 0,
+      "month": "2007-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0d9f26c75e9d",
+      "subject": "[R-gui] query regarding jri",
+      "message_count": 2,
+      "participants": [
+        "Bhavana Belsare",
+        "Michael Lawrence"
+      ],
+      "started": "2007-05-01T18:42:49+05:30",
+      "last_reply": "2007-05-02T05:35:43-05:00",
+      "root_message_id": "msg-0d9f26c75e9d"
+    },
+    {
+      "id": "thread-529978159453",
+      "subject": "[R-gui] Configuring tools in Tinn-R",
+      "message_count": 1,
+      "participants": [
+        "Duncan Murdoch"
+      ],
+      "started": "2007-05-16T11:14:03-04:00",
+      "last_reply": "2007-05-16T11:14:03-04:00",
+      "root_message_id": "msg-529978159453"
+    },
+    {
+      "id": "thread-0972e2b0f7ac",
+      "subject": "[R-gui] Configuring tools in Tinn-R",
+      "message_count": 2,
+      "participants": [
+        "Mike Prager",
+        "terra"
+      ],
+      "started": "2007-05-18T13:31:09-03:00",
+      "last_reply": "2007-05-21T14:21:50-04:00",
+      "root_message_id": "msg-0972e2b0f7ac"
+    },
+    {
+      "id": "thread-dd5d8072529c",
+      "subject": "[R-gui] regarding graph plots..",
+      "message_count": 1,
+      "participants": [
+        "Bhavana Belsare"
+      ],
+      "started": "2007-05-30T23:21:49+05:30",
+      "last_reply": "2007-05-30T23:21:49+05:30",
+      "root_message_id": "msg-dd5d8072529c"
+    }
+  ]
+}

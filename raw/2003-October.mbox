@@ -1,0 +1,799 @@
+From gr3k at virginia.edu  Fri Oct  3 11:12:42 2003
+From: gr3k at virginia.edu (Greg Riddick)
+Date: Fri Oct  3 16:14:19 2003
+Subject: [R-gui] Interface for Edit-Plus Editor
+Message-ID: <001501c389b8$68c7faf0$2b138f80@ghandi>
+
+I'm trying to develop an interface between R and the Editplus editor (for Windows). http://www.editplus.com/
+Editplus can be customized to send files and selected text to an external program and capture the output.
+I've tried using batch commands to R etc. without much success. Does anyone have experience they could share with me about interfacing editors to R in windows?
+
+Thanks,
+Greg Riddick
+	[[alternative HTML version deleted]]
+
+From ernesto at ipimar.pt  Fri Oct  3 16:50:43 2003
+From: ernesto at ipimar.pt (Ernesto Jardim)
+Date: Fri Oct  3 16:51:33 2003
+Subject: [R-gui] Interface for Edit-Plus Editor
+In-Reply-To: <001501c389b8$68c7faf0$2b138f80@ghandi>
+References: <001501c389b8$68c7faf0$2b138f80@ghandi>
+Message-ID: <1065192642.21155.12.camel@gandalf.local>
+
+On Fri, 2003-10-03 at 15:12, Greg Riddick wrote:
+> I'm trying to develop an interface between R and the Editplus editor (for Windows). http://www.editplus.com/
+> Editplus can be customized to send files and selected text to an external program and capture the output.
+> I've tried using batch commands to R etc. without much success. Does anyone have experience they could share with me about interfacing editors to R in windows?
+> 
+> Thanks,
+> Greg Riddick
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+Have you tried the "usual" procedure ? 
+
+Do
+
+options(editor="editplus")
+
+And then try
+
+edit(fun)
+
+and see what happens.
+
+Maybe you don't need to do anything :)
+
+EJ
+
+From gr3k at virginia.edu  Fri Oct  3 14:32:19 2003
+From: gr3k at virginia.edu (Greg Riddick)
+Date: Fri Oct  3 19:33:51 2003
+Subject: [R-gui] Interface for Edit-Plus Editor
+Message-ID: <002501c389d4$4bf3b240$2b138f80@ghandi>
+
+I actually am trying to execute using a command passed to Rterm.exe.
+I get the following output back to the editor:
+
+
+---------- R-batch ----------
+
+R : Copyright 2002, The R Development Core Team
+Version 1.6.1  (2002-11-01)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+
+*** Error: getline(): not interactive, use stdio.
+Normal Termination
+Output completed (1 sec consumed).
+
+
+
+----- Original Message ----- 
+From: "Duncan Murdoch" <dmurdoch@pair.com>
+To: "Greg Riddick" <gr3k@virginia.edu>
+Sent: Friday, October 03, 2003 1:27 PM
+Subject: Re: [R-gui] Interface for Edit-Plus Editor
+
+
+> On Fri, 3 Oct 2003 10:12:42 -0400, "Greg Riddick" <gr3k@virginia.edu>
+> wrote :
+>
+> >I'm trying to develop an interface between R and the Editplus editor (for
+Windows). http://www.editplus.com/
+> >Editplus can be customized to send files and selected text to an external
+program and capture the output.
+> >I've tried using batch commands to R etc. without much success. Does
+anyone have experience they could share with me about interfacing editors to
+R in windows?
+>
+> I don't have any experience with that.  However, if they can work with
+> a console mode program, then rterm (not Rgui) is what you want to be
+> executing.
+>
+> Duncan Murdoch
+
+	[[alternative HTML version deleted]]
+
+From maechler at stat.math.ethz.ch  Sat Oct  4 12:48:27 2003
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Sat Oct  4 11:48:48 2003
+Subject: [R-gui] Interface for Edit-Plus Editor
+In-Reply-To: <1065192642.21155.12.camel@gandalf.local>
+References: <001501c389b8$68c7faf0$2b138f80@ghandi>
+	<1065192642.21155.12.camel@gandalf.local>
+Message-ID: <16254.38763.70822.852329@gargle.gargle.HOWL>
+
+>>>>> "Ernesto" == Ernesto Jardim <ernesto@ipimar.pt>
+>>>>>     on Fri, 03 Oct 2003 15:50:43 +0100 writes:
+
+    Ernesto> On Fri, 2003-10-03 at 15:12, Greg Riddick wrote:
+    >> I'm trying to develop an interface between R and the
+    >> Editplus editor (for Windows). http://www.editplus.com/
+    >> Editplus can be customized to send files and selected
+    >> text to an external program and capture the output.  I've
+    >> tried using batch commands to R etc. without much
+    >> success. Does anyone have experience they could share
+    >> with me about interfacing editors to R in windows?
+    >> 
+    >> Thanks, Greg Riddick
+
+    Ernesto> Have you tried the "usual" procedure ?
+
+"Usual" only for those who don't know better (please excuse..).
+
+(X)Emacs/ESS or (R)WinEDT e.g.  do know better and Greg wants to
+do better too, from what he's said above.
+
+- editor stays open "all the time"
+- you work with source (*.R) files and send commands / function
+  definitions / whole files to the R process.
+
+    Ernesto> Do
+
+    Ernesto> options(editor="editplus")
+
+    Ernesto> And then try
+
+    Ernesto> edit(fun)
+
+    Ernesto> and see what happens.
+
+    Ernesto> Maybe you don't need to do anything :)
+
+yes, he wants (and should try) to do much better.
+
+AFAIK, people working with ESS or RWinEDT  never use  edit() and
+the like ...
+
+Martin Maechler <maechler@stat.math.ethz.ch>	http://stat.ethz.ch/~maechler/
+Seminar fuer Statistik, ETH-Zentrum  LEO C16	Leonhardstr. 27
+ETH (Federal Inst. Technology)	8092 Zurich	SWITZERLAND
+phone: x-41-1-632-3408		fax: ...-1228			<><
+
+From phgrosjean at sciviews.org  Sat Oct  4 12:51:08 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Sat Oct  4 11:51:29 2003
+Subject: [R-gui] Interface for Edit-Plus Editor
+In-Reply-To: <002501c389d4$4bf3b240$2b138f80@ghandi>
+Message-ID: <MABBLJDICACNFOLGIHJOGEPJDMAA.phgrosjean@sciviews.org>
+
+Greg,
+
+It seems you are trying to use interactive functions like getline() in
+batch, that is, a non-interactive mode of R. You can look at the WinEdt
+interface: it mostly uses sendkeys to simulate actions in RGui. In WinEdt
+interface, there seems to be a problem when RGui is iconized, because then,
+R does not interpret keystrokes.
+
+I wrote a little program to allow sending commands, and sourcing files to
+RGui from TextPad (http://www.textpad.com). You can find it at
+http://www.r-project.org/GUI, in the IDE/Script Editors section. You can
+either use Textpad which has quite similar features as Edit-Plus (after a
+quick glance in the web site), or you can adapt and use it with Edit-Plus.
+Best,
+
+Philippe Grosjean
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of Greg Riddick
+Sent: Friday, 03 October, 2003 19:32
+To: r-sig-gui@stat.math.ethz.ch
+Subject: Re: [R-gui] Interface for Edit-Plus Editor
+
+
+I actually am trying to execute using a command passed to Rterm.exe.
+I get the following output back to the editor:
+
+
+---------- R-batch ----------
+
+R : Copyright 2002, The R Development Core Team
+Version 1.6.1  (2002-11-01)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type `license()' or `licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type `contributors()' for more information.
+
+Type `demo()' for some demos, `help()' for on-line help, or
+`help.start()' for a HTML browser interface to help.
+Type `q()' to quit R.
+
+
+*** Error: getline(): not interactive, use stdio.
+Normal Termination
+Output completed (1 sec consumed).
+
+
+
+----- Original Message -----
+From: "Duncan Murdoch" <dmurdoch@pair.com>
+To: "Greg Riddick" <gr3k@virginia.edu>
+Sent: Friday, October 03, 2003 1:27 PM
+Subject: Re: [R-gui] Interface for Edit-Plus Editor
+
+
+> On Fri, 3 Oct 2003 10:12:42 -0400, "Greg Riddick" <gr3k@virginia.edu>
+> wrote :
+>
+> >I'm trying to develop an interface between R and the Editplus editor (for
+Windows). http://www.editplus.com/
+> >Editplus can be customized to send files and selected text to an external
+program and capture the output.
+> >I've tried using batch commands to R etc. without much success. Does
+anyone have experience they could share with me about interfacing editors to
+R in windows?
+>
+> I don't have any experience with that.  However, if they can work with
+> a console mode program, then rterm (not Rgui) is what you want to be
+> executing.
+>
+> Duncan Murdoch
+
+	[[alternative HTML version deleted]]
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From maechler at stat.math.ethz.ch  Sat Oct  4 12:57:10 2003
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Sat Oct  4 11:56:16 2003
+Subject: [R-gui] Interface for Edit-Plus Editor
+In-Reply-To: <002501c389d4$4bf3b240$2b138f80@ghandi>
+References: <002501c389d4$4bf3b240$2b138f80@ghandi>
+Message-ID: <16254.39286.186890.179476@gargle.gargle.HOWL>
+
+>>>>> "Greg" == Greg Riddick <gr3k@virginia.edu>
+>>>>>     on Fri, 3 Oct 2003 13:32:19 -0400 writes:
+
+    Greg> I actually am trying to execute using a command passed
+    Greg> to Rterm.exe.  I get the following output back to the
+    Greg> editor:
+
+Note that for ESS and windows, there's an extra command line
+option,
+	Rterm.exe --ess  .....
+
+which should help {but about which I don't know much more (since
+I'm almost always using Unix alikes)}.
+
+Martin
+
+    Greg> ---------- R-batch ----------
+
+    Greg> R : Copyright 2002, The R Development Core Team
+    Greg> Version 1.6.1 (2002-11-01)
+
+    Greg> R is free software and comes with ABSOLUTELY NO
+    Greg> WARRANTY.  You are welcome to redistribute it under
+    Greg> certain conditions.  Type `license()' or `licence()'
+    Greg> for distribution details.
+
+    Greg> R is a collaborative project with many contributors.
+    Greg> Type `contributors()' for more information.
+
+    Greg> Type `demo()' for some demos, `help()' for on-line
+    Greg> help, or `help.start()' for a HTML browser interface
+    Greg> to help.  Type `q()' to quit R.
+
+
+    Greg> *** Error: getline(): not interactive, use stdio.
+    Greg> Normal Termination Output completed (1 sec consumed).
+
+
+
+    Greg> ----- Original Message ----- From: "Duncan Murdoch"
+    Greg> <dmurdoch@pair.com> To: "Greg Riddick"
+    Greg> <gr3k@virginia.edu> Sent: Friday, October 03, 2003
+    Greg> 1:27 PM Subject: Re: [R-gui] Interface for Edit-Plus
+    Greg> Editor
+
+
+    >> On Fri, 3 Oct 2003 10:12:42 -0400, "Greg Riddick"
+    >> <gr3k@virginia.edu> wrote :
+    >> 
+    >> >I'm trying to develop an interface between R and the
+    >> Editplus editor (for
+    Greg> Windows). http://www.editplus.com/
+    >> >Editplus can be customized to send files and selected
+    >> text to an external
+    Greg> program and capture the output.
+    >> >I've tried using batch commands to R etc. without much
+    >> success. Does
+    Greg> anyone have experience they could share with me about
+    Greg> interfacing editors to R in windows?
+    >>  I don't have any experience with that.  However, if they
+    >> can work with a console mode program, then rterm (not
+    >> Rgui) is what you want to be executing.
+    >> 
+    >> Duncan Murdoch
+
+From nlwhitehouse at yahoo.com  Fri Oct 10 16:37:10 2003
+From: nlwhitehouse at yahoo.com (Nathan Whitehouse)
+Date: Fri Oct 10 16:36:15 2003
+Subject: [R-gui] Java R GUI
+Message-ID: <20031010143710.97647.qmail@web12401.mail.yahoo.com>
+
+Dear all,
+
+  Does anyone know of an effort to make a java-based R
+GUI?  
+
+  Thanks,
+
+  Nathan Whitehouse
+  Programmer
+  Shaw lab
+  Baylor College of Medicine
+  Houston, TX, USA
+
+From gr3k at virginia.edu  Fri Oct 10 17:20:29 2003
+From: gr3k at virginia.edu (Greg Riddick)
+Date: Fri Oct 10 17:22:53 2003
+Subject: [R-gui] Java R GUI
+Message-ID: <001801c38f42$0a46a000$2b138f80@ghandi>
+
+Check out:
+http://obversive.sourceforge.net/
+
+They have a not-totally functional demo for Windows and Unix platforms.
+
+
+Greg
+
+
+
+Dear all,
+
+  Does anyone know of an effort to make a java-based R
+GUI?  
+
+  Thanks,
+
+  Nathan Whitehouse
+  Programmer
+  Shaw lab
+  Baylor College of Medicine
+  Houston, TX, USA
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+	[[alternative HTML version deleted]]
+
+From carter_cheng at yahoo.com  Sun Oct 12 18:26:46 2003
+From: carter_cheng at yahoo.com (Carter Cheng)
+Date: Sun Oct 12 18:25:53 2003
+Subject: [R-gui] Re: Java R Gui
+In-Reply-To: <200310111000.h9BA0Lq7008362@stat.math.ethz.ch>
+Message-ID: <20031012162646.14922.qmail@web41506.mail.yahoo.com>
+
+How good is Java these days for that sort of thing? I
+remember playing around with the original Swing JDK
+and wasn't particularly impressed (this was a long
+time ago obviously). I am also somewhat interested in
+a serious R GUI development effort. I think it would
+be nice to have some sort of GUI for R which would
+make R accessible to a wider audience. 
+
+
+> 
+> Message: 1
+> Date: Fri, 10 Oct 2003 07:37:10 -0700 (PDT)
+> From: Nathan Whitehouse <nlwhitehouse@yahoo.com>
+> Subject: [R-gui] Java R GUI
+> To: r-sig-gui@stat.math.ethz.ch
+> Message-ID:
+> <20031010143710.97647.qmail@web12401.mail.yahoo.com>
+> Content-Type: text/plain; charset=us-ascii
+> 
+> Dear all,
+> 
+>   Does anyone know of an effort to make a java-based
+> R
+> GUI?  
+> 
+>   Thanks,
+> 
+>   Nathan Whitehouse
+>   Programmer
+>   Shaw lab
+>   Baylor College of Medicine
+>   Houston, TX, USA
+> 
+> 
+> 
+> ------------------------------
+> 
+> Message: 2
+> Date: Fri, 10 Oct 2003 11:20:29 -0400
+> From: "Greg Riddick" <gr3k@virginia.edu>
+> Subject: [R-gui] Java R GUI
+> To: <r-sig-gui@stat.math.ethz.ch>
+> Message-ID: <001801c38f42$0a46a000$2b138f80@ghandi>
+> Content-Type: text/plain
+> 
+> Check out:
+> http://obversive.sourceforge.net/
+> 
+> They have a not-totally functional demo for Windows
+> and Unix platforms.
+> 
+> 
+> Greg
+> 
+> 
+> 
+> Dear all,
+> 
+>   Does anyone know of an effort to make a java-based
+> R
+> GUI?  
+> 
+>   Thanks,
+> 
+>   Nathan Whitehouse
+>   Programmer
+>   Shaw lab
+>   Baylor College of Medicine
+>   Houston, TX, USA
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+>
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+> 	[[alternative HTML version deleted]]
+> 
+> 
+> 
+> ------------------------------
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+>
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> 
+> End of R-SIG-GUI Digest, Vol 8, Issue 2
+> ***************************************
+
+From thomas.friedrichsmeier at ruhr-uni-bochum.de  Sun Oct 12 18:40:05 2003
+From: thomas.friedrichsmeier at ruhr-uni-bochum.de (Thomas Friedrichsmeier)
+Date: Sun Oct 12 18:41:25 2003
+Subject: [R-gui] Re: Java R Gui
+In-Reply-To: <20031012162646.14922.qmail@web41506.mail.yahoo.com>
+References: <20031012162646.14922.qmail@web41506.mail.yahoo.com>
+Message-ID: <200310121840.05501.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+
+> How good is Java these days for that sort of thing? I
+> remember playing around with the original Swing JDK
+> and wasn't particularly impressed (this was a long
+> time ago obviously). I am also somewhat interested in
+> a serious R GUI development effort. I think it would
+> be nice to have some sort of GUI for R which would
+> make R accessible to a wider audience.
+>
+> >
+> > Check out:
+> > http://obversive.sourceforge.net/
+> >
+> > They have a not-totally functional demo for Windows
+> > and Unix platforms.
+> >
+
+Actually, it's no longer Java. Rather it's using the FOX-library, which is 
+cross-platform, mean and lean, but also lacking some higher-level widgets 
+such as an HTML-viewer or RTF-editor.
+
+Note that obversive is currently on ice, as the developers don't have much 
+time to work on it. It's not yet dead and burried, however.
+
+Thomas
+
+From phgrosjean at sciviews.org  Mon Oct 13 12:36:01 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon Oct 13 12:36:54 2003
+Subject: [R-gui] Re: Java R Gui
+In-Reply-To: <200310121840.05501.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+Message-ID: <MABBLJDICACNFOLGIHJOMEFPDNAA.phgrosjean@sciviews.org>
+
+SciViews is still on the road, although its development was slower these
+last few months. A new version and several new ideas will be proposed
+current of next year. However, the project is progressing very slowly partly
+because there are very few programmers involved (two for the moment). I plan
+to reorient the project (currently build as a coherent GUI environment
+around SciViews Insider, which is written in Visual Basic 6). The double bad
+side-effect is: (1) Few programmers can and want to collaborate to a project
+whose language is Visual Basic, and (2) there are too few relations with
+other projects like tcltk library, RCmdr, R-WinEdt, Sweave,...
+
+Learning from this experience, the future release of SciViews will be
+oriented towards various separate tools to supplement R with GUI features,
+and other languages are used to develop these tools (for instance,
+electronic reference cards are developped mainly in HTML / ECMAScript. I am
+currently working on a SciViews R package that will propose an object
+explorer, electronic reference cards,... and a brand-new nice GUI feature we
+develop together with Eric Lecoutre... more about that at a later time.
+
+Best,
+
+Philippe Grosjean
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of Thomas
+Friedrichsmeier
+Sent: Sunday, 12 October, 2003 18:40
+To: r-sig-gui@stat.math.ethz.ch
+Subject: Re: [R-gui] Re: Java R Gui
+
+
+> How good is Java these days for that sort of thing? I
+> remember playing around with the original Swing JDK
+> and wasn't particularly impressed (this was a long
+> time ago obviously). I am also somewhat interested in
+> a serious R GUI development effort. I think it would
+> be nice to have some sort of GUI for R which would
+> make R accessible to a wider audience.
+>
+> >
+> > Check out:
+> > http://obversive.sourceforge.net/
+> >
+> > They have a not-totally functional demo for Windows
+> > and Unix platforms.
+> >
+
+Actually, it's no longer Java. Rather it's using the FOX-library, which is
+cross-platform, mean and lean, but also lacking some higher-level widgets
+such as an HTML-viewer or RTF-editor.
+
+Note that obversive is currently on ice, as the developers don't have much
+time to work on it. It's not yet dead and burried, however.
+
+Thomas
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From nlwhitehouse at yahoo.com  Mon Oct 13 20:13:17 2003
+From: nlwhitehouse at yahoo.com (Nathan Whitehouse)
+Date: Tue Oct 14 14:26:25 2003
+Subject: [R-gui] Re: R-SIG-GUI Digest, Vol 8, Issue 3
+In-Reply-To: <200310131000.h9DA0pq7008583@stat.math.ethz.ch>
+Message-ID: <20031013181317.57032.qmail@web12404.mail.yahoo.com>
+
+> 
+> How good is Java these days for that sort of thing?
+> I
+> remember playing around with the original Swing JDK
+> and wasn't particularly impressed (this was a long
+> time ago obviously). 
+  It's become more possible to do serious Java GUI
+development.  Good examples of pretty nice all Java
+stuff is the NetBeans(/Sun Forte) java development
+environment, or Poseidon, a kindof community UML
+editor.
+  Of course, it's not as quick or easy to implement as
+some other languages.
+
+> I am also somewhat interested
+> in
+> a serious R GUI development effort. I think it would
+> be nice to have some sort of GUI for R which would
+> make R accessible to a wider audience. 
+> 
+  
+  I've known a few people who use sciviews., and they
+seem to like it.  
+  I'm interested in a gui that allows more than a
+GUIfied command line interface.  I'm interested in
+something that allowed you to "layer" other
+representations of the R code.  for example, a MDI
+window might have two tabs, one of which was a
+workspace with R objects(as icons) ordered by class. 
+You can then associate them, perform operations, etc.
+which would call macros, etc. and apply on the CLI. 
+That way the actions would be transparent to the user
+but also easily applied.
+
+  Many of the investigators we work with would like to
+use R-based analysis but just don't have the time to
+learn the CLI.  Maybe these 'mods,' so to speak, would
+encourage them to switch platforms.
+
+  We're interested in a java-based GUI because we do
+mostly java development.  But if Sciviews or something
+else could do this, we're pretty interested.
+
+  Best,
+  Nathan Whitehouse
+  Shaw lab
+
+From jfox at mcmaster.ca  Tue Oct 14 15:38:58 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue Oct 14 15:48:42 2003
+Subject: [R-gui] Re: R-SIG-GUI Digest, Vol 8, Issue 3
+In-Reply-To: <20031013181317.57032.qmail@web12404.mail.yahoo.com>
+References: <200310131000.h9DA0pq7008583@stat.math.ethz.ch>
+Message-ID: <5.1.0.14.2.20031014093641.02015d10@127.0.0.1>
+
+Dear Nathan,
+
+Perhaps this has already been said in this thread (if so, please excuse the 
+repetition), but the tcltk package, which is one of the recommended 
+packages in R, provides a basis for building cross-platform GUIs. Take a 
+look at my Rcmdr basic-statistics package (if you haven't already seen it, 
+of course), for example.
+
+Regards,
+John
+
+At 11:13 AM 10/13/2003 -0700, Nathan Whitehouse wrote:
+> >
+> > How good is Java these days for that sort of thing?
+> > I
+> > remember playing around with the original Swing JDK
+> > and wasn't particularly impressed (this was a long
+> > time ago obviously).
+>   It's become more possible to do serious Java GUI
+>development.  Good examples of pretty nice all Java
+>stuff is the NetBeans(/Sun Forte) java development
+>environment, or Poseidon, a kindof community UML
+>editor.
+>   Of course, it's not as quick or easy to implement as
+>some other languages.
+>
+> > I am also somewhat interested
+> > in
+> > a serious R GUI development effort. I think it would
+> > be nice to have some sort of GUI for R which would
+> > make R accessible to a wider audience.
+> >
+>
+>   I've known a few people who use sciviews., and they
+>seem to like it.
+>   I'm interested in a gui that allows more than a
+>GUIfied command line interface.  I'm interested in
+>something that allowed you to "layer" other
+>representations of the R code.  for example, a MDI
+>window might have two tabs, one of which was a
+>workspace with R objects(as icons) ordered by class.
+>You can then associate them, perform operations, etc.
+>which would call macros, etc. and apply on the CLI.
+>That way the actions would be transparent to the user
+>but also easily applied.
+>
+>   Many of the investigators we work with would like to
+>use R-based analysis but just don't have the time to
+>learn the CLI.  Maybe these 'mods,' so to speak, would
+>encourage them to switch platforms.
+>
+>   We're interested in a java-based GUI because we do
+>mostly java development.  But if Sciviews or something
+>else could do this, we're pretty interested.
+>
+>   Best,
+>   Nathan Whitehouse
+>   Shaw lab
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From jfox at mcmaster.ca  Tue Oct 14 15:38:58 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Wed Oct 15 01:46:48 2003
+Subject: [R-gui] Re: R-SIG-GUI Digest, Vol 8, Issue 3
+In-Reply-To: <20031013181317.57032.qmail@web12404.mail.yahoo.com>
+References: <200310131000.h9DA0pq7008583@stat.math.ethz.ch>
+Message-ID: <5.1.0.14.2.20031014093641.02015d10@127.0.0.1>
+
+Dear Nathan,
+
+Perhaps this has already been said in this thread (if so, please excuse the 
+repetition), but the tcltk package, which is one of the recommended 
+packages in R, provides a basis for building cross-platform GUIs. Take a 
+look at my Rcmdr basic-statistics package (if you haven't already seen it, 
+of course), for example.
+
+Regards,
+John
+
+At 11:13 AM 10/13/2003 -0700, Nathan Whitehouse wrote:
+> >
+> > How good is Java these days for that sort of thing?
+> > I
+> > remember playing around with the original Swing JDK
+> > and wasn't particularly impressed (this was a long
+> > time ago obviously).
+>   It's become more possible to do serious Java GUI
+>development.  Good examples of pretty nice all Java
+>stuff is the NetBeans(/Sun Forte) java development
+>environment, or Poseidon, a kindof community UML
+>editor.
+>   Of course, it's not as quick or easy to implement as
+>some other languages.
+>
+> > I am also somewhat interested
+> > in
+> > a serious R GUI development effort. I think it would
+> > be nice to have some sort of GUI for R which would
+> > make R accessible to a wider audience.
+> >
+>
+>   I've known a few people who use sciviews., and they
+>seem to like it.
+>   I'm interested in a gui that allows more than a
+>GUIfied command line interface.  I'm interested in
+>something that allowed you to "layer" other
+>representations of the R code.  for example, a MDI
+>window might have two tabs, one of which was a
+>workspace with R objects(as icons) ordered by class.
+>You can then associate them, perform operations, etc.
+>which would call macros, etc. and apply on the CLI.
+>That way the actions would be transparent to the user
+>but also easily applied.
+>
+>   Many of the investigators we work with would like to
+>use R-based analysis but just don't have the time to
+>learn the CLI.  Maybe these 'mods,' so to speak, would
+>encourage them to switch platforms.
+>
+>   We're interested in a java-based GUI because we do
+>mostly java development.  But if Sciviews or something
+>else could do this, we're pretty interested.
+>
+>   Best,
+>   Nathan Whitehouse
+>   Shaw lab
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+

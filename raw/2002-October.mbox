@@ -1,0 +1,2682 @@
+From philippe.grosjean@ifremer.fr  Tue Oct  8 08:23:11 2002
+From: philippe.grosjean@ifremer.fr (Philippe Grosjean)
+Date: Tue, 8 Oct 2002 09:23:11 +0200
+Subject: [R-gui] Summary of past discussions on R-Help
+Message-ID: <MABBLJDICACNFOLGIHJOOENHCPAA.philippe.grosjean@ifremer.fr>
+
+R-SIG-GUI is created to offer the opportunity to discuss and coordinate R
+GUI projects. It is complementary to the R GUI Projects web page
+(http://www.r-project.org/GUI/).
+Best,
+
+Philippe Grosjean
+
+...........]<(({°<...............<°}))><...............................
+( ( ( ( (
+ ) ) ) ) )      Philippe Grosjean
+( ( ( ( (
+ ) ) ) ) )      IFREMER Nantes - DEL/AO
+( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3
+ ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41
+( ( ( ( ( 
+ ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (       e-mail: phgrosjean@sciviews.org
+ ) ) ) ) ) 
+( ( ( ( (       "I'm 100% confident that p is between 0 and 1"
+ ) ) ) ) )                                L. Gonick & W. Smith (1993)
+.......................................................................
+
+
+
+R GUI project - summary of past discussions in R-Help mailing list
+==================================================================
+08/10/2002, by Philippe Grosjean (phgrosjean@sciviews.org)
+
+
+General ideas shared by several people
+--------------------------------------
+
+- Different interfaces are required for beginner / power-user / teaching (=> a flexible, tailorable interface is better than a rigid one)
+
+- Current R interface, including Windows Rgui and the Mac interfaces are more dedicated for powerusers => other requirements for beginners / teaching
+
+
+- There is sometimes a confusion of the concept of GUI and one particular implementation of GUI (Splus, Spreadsheet-like,...). There is a need to show that (1) there are several different user interfaces with various impact on the way the software is used (console, batch, notebook, menu/dialog,...). Make also a table of advantages / inconvenients and include it in the Rgui projects web page.
+
+
+GUI for teaching:
+-----------------
+- Teachers seem to range in two categories: those advocating for CLI (presumably satisfied with the current R user interface) and the others that are asking for a GUI. It seems they address different students. But perhaps, this is also connected to their teaching habits?
+
+For instance, on one hand:
+- Rohan Sadler [rsadler@agric.uwa.edu.au] asking for a teaching interface: "This GUI would support initially the simple six (EDA, probabilities and quantiles of distributions, t-tests,one-way anova, chi-square, and simple linear regression), and have the potential to develop into the next level of
+statistical analysis (glms, multivariate methods, time series and spatial - analytical problems common across our faculty)." 
+
+- David Lucy [dlucy@maths.ed.ac.uk] says: "I think the problem is that most users of R tend to be in research, or have a requirement for flexability from a suitably heavyweight language." He wrote some tcl/tk interfaces for the current R version: http://www.maths.ed.ac.uk/~dlucy/software.html. He says that it is better to make specific packages...
+
+... and on the other hand:
+- Frank E Harrell Jr [fharrell@virginia.edu] considers it's not difficult to teach students to use a command line interface and: "A better approach would be to implement the most often needed analyses on a Web server using R and Perl etc.  See http://hesweb1.med.virginia.edu/biostat/teaching/statcomp for links to some good examples (although for more complex analyses than you need)." Here is what he says (excellent Harrell's course material):
++ Graphical (GUI, mouse, menus)
+- Easier to learn
+- Less flexible
+- Becomes repetitive when tasks repeated
+- Hard to reproduce results
++ Command languages
+- Harder to learn User Interfaces
+- More flexible and powerful
+- Can save commands in scripts to replay when data updated or corrected, or to do similar analyses
+- Can write generic commands (macros, functions) to make it easy to run different analyses that have same structure
+
+- Martin Henry H. Stevens [HStevens@muohio.edu] wrote: Command line approaches allow me to replicate my work, and allow my students to replicate their work, AND allow me to replicate my students' work."
+
+
+- Ko-Kang Kevin Wang [Ko-Kang@xtra.co.nz] wrote: "When I was a student I
+found it is the easiet way to master R; and now being a demonstrator I found
+students find it easy to learn"
+
+- There is also the question that the S language is very didactic (it helps
+students to understand statistics). By hidding it with a point and click
+user interface, this benefit could be lost. For instance, Marc Feldesman
+[feldesmanm@pdx.edu] wrote: "Perforce, the students using R/S also learned
+more about statistics, programming, and data management than any group of
+students using the Point and Click software."
+
+- But also, the command line teaching diverts from other teachings (John Fox
+[jfox@mcmail.cis.mcmaster.ca]). He wrote: "Brian Ripley's point -- that
+students can use a GUI-based package with little instruction and support --
+is the key point for me. This isn't just a question of laziness: spending
+time teaching students command-driven software that they may not use again
+after the class, or may use too infrequently to become fluent, takes time
+away from teaching other things."
+
+- Jan de Leeuw [deleeuw@stat.ucla.edu] wrote: "Our programming staff is
+working on a Cocoa GUI for R (and on R services, which makes it possible to
+evaluate R expressions from any Cocoa application which has a text window).
+One of the ideas is to customize this for teaching various courses, using
+"course plugins".
+
+
+
+And what about other users?
+---------------------------
+- It is evident that the UI is heavily dependent on the use of the software.
+An expert using advanced statistics on a daily basis will look for
+performance, flexibility and efficiency more than facility. An occasional
+user will prefer a more intuitive interface, even at the cost of rigidity,
+performance and flexibility.
+
+- Peter Dalgaard BSA [p.dalgaard@biostat.ku.dk] wrote:"however, there's a
+fairly large group of people who need to do statistics only at quite long
+intervals -- they spend years collecting data, and when they get to
+analyzing them they don't want to (re)learn a whole language. In some cases
+there is also an amount of anti-intellectualism involved ("Just show us what
+to do!"), which the statistician should arguably fight against but that can
+be hard. For those people, we really need a simplified interface, or they'll
+come back to haunt us with questions about how to solve the hard issues
+(that they inevitably run into) in SPSS...."
+
+- A.J. Rossini [rossini@blindglobe.net] wrote about free software: "(there
+is a bit more work to do to make ESS + SWeave + Noweb + XEmacs do precisely
+this, but it suffers from the same problems mentioned for the GUI (lack of
+time, comparatively "amateur" (others' words/opinions, not necessarily mine)
+interface compared to say a half-decent MS Windows program."
+
+
+
+Misc ideas:
+-----------
+- Duncan Temple Lang [duncan@research.bell-labs.com] wrote: "A little more
+than a year ago, we developed an R plugin for Gnumeric as part of the
+Omegahat project.  It embeds R directly within Gnumeric rather than using a
+slave process.  One can register R functions as Gnumeric function, and
+additionally, from within R one can access, edit and create worksheets and
+their contents. The "package" is available from
+http://www.omegahat.org/RGnumeric (It may need some minor surgery to be
+consistent with recent versions of Gnumeric, but these are not structural
+changes.)"
+
+- Duncan Temple Lang [duncan@research.bell-labs.com] wrote: "To implement
+these ideas, we are using the RGtk package to build specialized GUIs; the
+gtkDevice package for embedding graphics devices in HTML widgets; using R &
+GGobi for interactive/direct manipulation graphics; and currently exploring
+embedding R within AbiWord, the Gnome word processor.  All of these tools
+share Gtk as a common fundamental component, and that is one of the reasons
+for pushing on the RGtk package.  Also, we can exploit CORBA since these
+tools have support from Orbit, the Gnome layer on top of CORBA."
+
+- Jonathan Baron [baron@cattell.psych.upenn.edu] said that a reference card
+is what students need more than a GUI. "It serves some of the functions of
+the gui, namely, reminding people who do not use a program every day of the
+basic commands."
+
+- Brian Ripley [ripley@stats.ox.ac.uk] "(Some of) the R developers would
+love to be able to provide a high-quality cross-platform GUI interface.
+There are various possible starting points (Java and wxWindows being the
+others most frequently mentioned).  But it is thought to be a large job. A
+GUI can be a good way to write command lines for you.  The discussions here
+are all about support: Minitab abd SPSS are used for basic  courses just
+because no one needs to write any documentation nor provide any
+hand-holding."
+
+- Tony Plate [tplate@blackmesacapital.com] wrote: "Maybe something of wider
+value than a GUI (for teaching and other purposes) could be an interface
+like that in Mathematica (and Maple?), which supports mathematical notation
+and plots in a command window.  This allows showing students exactly what
+they need to do to accomplish some task, and well as the all the output they
+should see."
+
+- Good points for Splus: the object browser and the interactive editing of
+the graphics.
+
+Rohan Sadler [rsadler@agric.uwa.edu.au]: "Extensive help tree with multiple
+views: (1) functions organized by key words; (2) functions organized by
+branches of statistics; (3) functions organized alphabetically; (4)
+statistical concepts [e.g., (a) group comparisons, each type such as
+two-sample comparison further divided into parametric and nonparametric; (b)
+regression, (c) EDA, ...]; (5) compendium by needed result; (6) manuals.
+For a basic stat class, view (4) needs to be prominent, and under each test
+or method there needs to be a representative example (e.g., for a Wilcoxon
+2-sample test of y by levels of g type ..... but it's better to think of
+this as a special case of the Kruskal-Wallis test which may be obtained by
+typing .... or the Spearman test which may be obtained by typing ....)."
+
+- At the command line, you have to think to what you are doing => you have
+to know your analyses, not the case for point and click (chose random
+options, click OK and there is a chance the program compute something, of
+course, something meaningless, but still something!
+
+- How to automatically generate input dialogs "a la Splus" for R functions
+[PhG: is it even desirable]?
+
+- A comparison of R to S-Plus V6 would be at least a starting point [PhG:
+yes if we consider the Splus GUI is a good basis... and what if it is not?]
+
+- GUI => difficult to go back to what was done.
+
+- GUI is not good for repeated analyses.
+
+- Synthax highlighting, debugging, quick tips on functions, (semi) automatic
+"apropos" lists, context help could be nice additions, even to the bare CLI
+of R!
+
+- Thomas Lumley [tlumley@u.washington.edu]: "Interested parties might look
+at crossbreeding this with the object browser in Bioconductor's tkWidget
+package."
+
+- Beginners have difficulties finding functions => a more fully
+cross-referenced help system, and to fill arguments => might be aided by
+adding code-completion to the UI - something ESS already does for many
+packages and libraries.
+
+- Zed A. Shaw [zedshaw@zedshaw.com]: "Myself and a Professor at a California
+university are currently designing a simplified R GUI that is targeted at
+Linux, FreeBSD, MacOSX, and Windows and will provide an interface to doing
+"canned" procedures and project based operations.  I'm currently building
+the initial interface design and then we will start a project on sourceforge
+for it.  The project will be opensource. The tentative name for it is
+obveRsive woRkbench, and it is currently way to early to even guess at a
+release date or even if the project is actually feasible.
+We are planning to do the following:
+1.  Have various output viewing capabilites, but mostly an HTML/graphics
+viewer.
+2.  Project based operation, where students can organize their work by
+projects.
+3.  Very simple data editing capabilities for different data types.
+4.  Dynamic "canned" routines with point-and-click-fill-in-dummy-form
+operations.  The routines will be extendable, so you'll be able to add your
+own when you need.
+5.  Using the CRAN update/install facility to make it easy to install new
+obveRsive packages.
+6.  Utilizing a cross platform GUI system, either FLTK or wxWindows in C++
+or Java (depending on which is easier and more stable).
+7.  Heavily user tested with a focus on usability, targeting students and
+regular folks, not professors of statistics :-)"
+
+- PhG: Here is a short decription of the SciViews project, with an
+evaluation of work already done.
+>
+> - Plug to connect to the R engine using DCom (including graph windows)  -
+> 90% done
+> - Plugs and connections manager (only locally for the moment)           -
+> 75% done
+> - Multi-document interface with dockable toolbars and windows           -
+> 90% done
+> - Console windows for direct command-line access of kernels             -
+> 80% done
+> - Report windows with RTF formatting and graphs/images embedding        -
+> 50% done
+> - Code edition windows with synthax highlighting, quick tips,...        -
+> 50% done
+> - Spreadsheed-like matrix/data frame editor                             -
+> 0% done
+> - Web-based direct online help in the interface                         -
+> 30% done
+> - Object explorer                                                       -
+> 10% done
+> - Templates manager (dockable window)                                   -
+> 25% done
+> - Tips/Help/Error dockable message window                               -
+> 25% done
+> - Customizable menus and toolbars                                       -
+> 60% done
+> - Customizable dialog boxes                                             -
+> 0% done
+> - Plug for Splus                                                        -
+> 0% done
+> - Plug for Octave                                                       -
+> 0% done
+> - Plug for Scilab                                                       -
+> 30% done
+> - Plug for Matlab                                                       -
+> 30% done
+> - Plug for OX                                                           -
+> 30% done
+> - Plug for Mathematica                                                  -
+> 75% done
+> - Messages passing between kernels                                      -
+> 0% done
+> - ODBC connections & data import/export (but also done within kernels)  -
+> 0% done
+> - Direct access from Excel or WinWord                                   -
+> 20% done
+
+- Comment on the latter: The design sounds good but I think the inability to
+run under Linux is a major problem.  I think that the GUI by necessity has
+to run on several platforms.  That way you will get assistance from many
+other programmers.  -Frank Harrell
+
+- Kurt Hornik [hornik@ci.tuwien.ac.at]: I may be forced to supervise a
+project for building an 'SPSS-style GUI' on top of R, whatever this means.
+Argh.
+
+
+- Summary of Rohan Sadler [rsadler@agric.uwa.edu.au] : "The following ideas
+were voiced, many of which already have applications:
+1) Icons on desktops that lead to GUI's that perform the analysis. Should be
+sufficient, and easy to represent as a "toolbox" (essentially a menu bar).
+2) Web Servers. I still have a problem with look and feel, though these can
+be reasonably easy to solve. Again, if there was an equivalent of it in the
+current workplace, rather than specifically  for teaching purposes, then I'd
+support it.
+3) Turning to Linux. Sorry, where I come from this is not do-able in the
+near future, for much the same reasons as why a GUI would be more suitable.
+Also we are a large faculty whose administration is already uptight about
+how much it has invested in computer resources and changes overnight are not
+in the business plan (sigh! I use linux and this fact brings tears to my
+eyes).
+4) Tcl/Tk interface. Some comments were on the suitability of it's cross
+platform compatibility. As to look and feel I use sometimes the Tcl/Tk
+interface for the GIS GRASS, and this is more than good enough, because
+again it is a concept that is easily exported to the stats packages that
+these students are generally likely to meet in the workplace.
+5) The Khoros idea of Tim Keitt's sounds good. "
+
+
+
+Script editing and IDE:
+-----------------------
+- Absent from most R interfaces (except the MacOS one). The user is supposed
+to use its own preferred text editor.
+
+- Lack of scripting window, but WinEd, Emacs, Textpad, WinEdit, WinEdt,
+Multi-Edit 9, Visual SlickEdit, Kate, ... [PhG: to do, propose a more
+exhanstive list with links for editors and IDE in R GUI projects web page].
+
+- Need for an integrated IDE (Mark Myatt [mark@myatt.demon.co.uk]): a full
+featured IDE with:
+  1. A syntax highlighting editor
+
+  2. Code completion features such as automatic insertion of function
+templates.
+
+  3. An ability to submit a file of R commands and capture the output in an
+output window.
+
+  4. Capturing of errors in code integrated with editor. Some form of
+debugging / error tracking / stack tracing would be nice.
+
+  5. An object inspector showing the objects available in the working
+environment ... it would be nice (e.g.) to be able to click on a data.frame
+reference and see column names, classes, &c. And to be able to paste these
+into the editor.
+
+  6. Basic project management functions.
+
+  7. Help system and language guide integrated.
+
+- ESS/XEmacs does this.
+
+- Using args() for quicktip: impossible to type args(...) in the middle of
+your function. But problem with methods: args(plot), it's not going to be
+terribly informative.
+
+- Uwe Ligges has spent much time to provide the R-WinEdt support files, see:
+http://cran.r-project.org/other-software.html.
+
+- Phlippe Grosjean [phgrosjean@sciviews.org) uses textpad and proposes some
+synthat highlighting and macros additions for scripmt and R documentation on
+the R Gui projects web pages.
+
+- Frank E Harrell Jr [fharrell@virginia.edu] uses the free version of
+Notetab (www.notetab.com) which supports macros, and the macro file below.
+Ctrl-space (repeat last macro) will send any highlighted text to an open
+GUI. [PhG: ask him the permission to add its config files on the R GUI
+Projetcs web pages]:
+
+^!FocusDoc
+;Save the file if it has been modified
+;^!Save
+;Select the highlighted block.
+^!If ^$GetSelSize$ = 0 END ELSE SelectLines
+
+:SelectLines
+:GetSelection
+^!Set %AnyText%=^$GetSelection$
+;Write the selected text to a temporary file in the Windows temp. dir.
+^!Set %fileName%=^$GetTmpPath$std0001.r
+^!Set %fileName%=^$StrReplace(\;/;^%fileName%;True;False)$
+
+^!TextToFile ^%fileName% ^%AnyText%
+; Copy "source" to the clipboard
+^!SetClipboard source("^%fileName%")
+; Switch to R
+^!FocusApp RGui*
+;ESC to clear the Command window, paste the command, hit enter
+^!Keyboard ESC
+^!Keyboard CTRL+V
+^!Keyboard ENTER
+
+
+... and his "favorite reg-file to start R with right mouse button in
+Explorer in a given directory:
+
+REGEDIT4
+[HKEY_CLASSES_ROOT\Directory\shell\Run R]
+[HKEY_CLASSES_ROOT\Directory\shell\Run R\command]
+@="\"C:\\Program Files\\R\\rw1050\\bin\\Rgui.exe\" --internet2"
+
+
+
+
+The graphical toolkit problem:
+------------------------------
+- A graphical user interface is based on a toolkit. As R runs on several
+systems, the toolkit should be also plateform-independent. There are also
+some other constraints, and in the counterpart, there are several candidates
+(tcl/tk, gtk, java,...). It is still hard to choose one. A deeper discussion
+is required here (need to be triggered in the R-sig-gui!!!).
+
+- There is an article in R News (vol.1, n°3) by Peter Dalgaard
+[p.dalgaard@biostat.ku.dk] on the tcltk package, and the latter includes a
+few nice examples. You need to install Tcl/Tk: it is free and can run on
+many OSes...
+
+- Prof Brian Ripley [ripley@stats.ox.ac.uk] about the tcltk package: "But
+the chief drawback is look-and-feel:  Windows users have very high
+expectations of the uniformity of their interface. A secondary one is the
+difficulty of coordinating two event-driven systems."
+
+- Alternate toolkits: Java, wxWindows, Gtk, KDE (Qt). Java GUI slow,
+wxWindows not very attractive, Tcl/Tk don't has the right look and feel for
+Windows users.
+
+- Peter Dalgaard BSA [p.dalgaard@biostat.ku.dk] wrote: "Duncan Temple Lang
+also has some higher-level plans for general GUI integration that sound
+promising."
+
+- Tcl/tk not on Mac (?).
+
+- Peter Dalgaard [p.dalgaard@biostat.ku.dk]: "Basically *any* X11, it's just
+that the user interface tends to look like Motif. In principle Tcl/Tk works
+with classic Mac, but noone has had the stamina to sort out the event-loop
+integration issues and with OS X marching on, it is hardly worth the trouble
+now. Some Tk widgets are actually made to provide a closer match to the
+Windows look and feel, and you can configure their appearance and behaviour
+considerably, although doing so tends to remove the simplicity which is the
+major attraction of using Tcl/Tk in the first place."
+
+
+
+
+Web interface to R:
+-------------------
+- RWeb: http://www.math.montana.edu/Rweb/. Example: A rather amazing
+implementation of time series analysis based on R and Javascript:
+http://ssnt.ism.ac.jp/inets2/title.html. This web server creates separate
+browser windows for data entry, graphics, and procedure selection. These
+windows are dynamic. For example, after entering data there is no submit
+button to submit the data. The procedure selection window is used to start
+the analysis, which uses the current values in the data window. Another Rweb
+example: An R web server for robust rank-based linear models
+(http://www.stat.wmich.edu/slab/RGLM/).
+
+- Rcgi, a "lighter alternative to Rweb with more 'reasonable' dependencies"
+(http://stats.mth.uea.ac.uk/Rcgi/index.html).
+
+
+
+Other interests:
+----------------
+- Kenneth Cabrera [krcabrer@perseus.unalmed.edu.co]: "And if there is the
+possibility to create a group to start a small and basic GUI as a package I
+will like to help in that project."
+
+- Ernesto Jardim [ernesto@ipimar.pt]: I volunteer to help but I don't have a
+server or experience on web sites to make it my self. So if there will be a
+coordinator I'm available to
+help.
+
+- Warnes, Gregory R [gregory_r_warnes@groton.pfizer.com] For some time, I've
+been brewing thoughts about what would make a really useful GUI interface
+for statistics packages.  Unfortunately, I'm not in a
+position to do any coding, but I would *like* to share these thoughts with
+someone who might actually start to put them into practice...  Would either
+of you be interested?
+
+...........]<(({°<...............<°}))><...............................
+( ( ( ( (
+ ) ) ) ) )      Philippe Grosjean
+( ( ( ( (
+ ) ) ) ) )      IFREMER Nantes - DEL/AO
+( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3
+ ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41
+( ( ( ( (	e-mail: philippe.grosjean@ifremer.fr
+ ) ) ) ) )
+( ( ( ( (      "I'm 100% confident that p is between 0 and 1"
+ ) ) ) ) )                                L. Gonick & W. Smith (1993)
+.......................................................................
+
+
+
+
+From philippe.grosjean@ifremer.fr  Thu Oct 10 10:26:24 2002
+From: philippe.grosjean@ifremer.fr (Philippe Grosjean)
+Date: Thu, 10 Oct 2002 11:26:24 +0200
+Subject: [R-gui] Current R-GUI projects & best graphical toolkits
+Message-ID: <MABBLJDICACNFOLGIHJOOEPLCPAA.philippe.grosjean@ifremer.fr>
+
+Hi,
+
+Thank you for those who sended me infos about ongoing R GUI projects.
+I have:
+- CoCoA R GUI: Jan De Leeuw
+- obveRsive woRkbench: Dan Putler & Zed Shaw
+- SPSS-style GUI (planed?): Kurt Hornik
+- SciViews: Philippe Grosjean
+
+Are there any other ones?
+
+For the graphical toolkit, it is certainly time to get a clearer idea of
+which one is the most suitable among Tcl/Tk (+ Tix), Gtk, QT, wxWindows,...
+As far as I know, Peter Dalgaard (with many others) develops Tcl/tk; Duncan
+Temple Lang works on Gtk/Gnome. There are already available libraries
+(including the base R library 'tcltk'). Dan Putler and Zed Shaw recently
+choose Swing. Is this correct? Any suggestions from specialists are welcome.
+
+Personnally, I develop SciViews under Windows, using OCXes (most are free or
+shipped with Microsoft Visual Studio, but one is commercial -ActiveBar-).
+This is not portable at all. This is not open source at all. But I choose it
+for all the functionnalities I got (and indeed, I started the project many
+years ago, when many oher graphical toolkits like Gtk or Qt were in their
+infancy). I consider the current windows implementation of SciViews as a
+prototype to test various GUI architectures. I would definitely be happy to
+get rid of all these M$ D-Com, ActiveX and OCXes, but I need:
+- An advanced text editor with synthax highlighting, "codetips",
+"auto-completion lists", etc... and I got the free CodeMax with CodeSense
+(http://www.ticz.com/homes/users/nlewis/HTML/Software_Development/CodeSense/
+Download/download.htm#uguide) which is wonderful.
+- An integrated and context-sensitive menus/toolbars/docking windows
+system,... and I found ActiveBar
+(http://www.datadynamics.com/activebar/default.htm) very easy to use and
+configure.
+- A spreadsheet,... and I got Formula One (shipped with the free version of
+Borland Delphi) which is very nice.
+- A decent rich text editor with embedded graphs, etc... and I find the
+standard richedit.ocx suitable.
+- A html browser,... and the Internet Explorer ocx is performing well
+(arrghl).
+
+Yes, I know! You want to kill me now! Perhaps, an alternative would be to
+convince me that I will find similar features in other graphical toolkits?
+
+Best,
+
+Philippe Grosjean
+
+...........]<(({°<...............<°}))><...............................
+( ( ( ( (
+ ) ) ) ) )      Philippe Grosjean
+( ( ( ( (
+ ) ) ) ) )      IFREMER Nantes - DEL/AO
+( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3
+ ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41
+( ( ( ( ( 
+ ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (       e-mail: phgrosjean@sciviews.org
+ ) ) ) ) ) 
+( ( ( ( (       "I'm 100% confident that p is between 0 and 1"
+ ) ) ) ) )                                L. Gonick & W. Smith (1993)
+.......................................................................
+ 
+
+
+
+From ernesto@ipimar.pt  Thu Oct 10 12:19:10 2002
+From: ernesto@ipimar.pt (Ernesto Jardim)
+Date: 10 Oct 2002 12:19:10 +0100
+Subject: [R-gui] NEdit Highligth patterns for R
+Message-ID: <1034248750.5057.77.camel@gandalf>
+
+--=-yevhV/QZg6n7BWzMpjqK
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+
+Hi
+
+I've just submitted to the NEdit development team a R highligth patterns
+for NEdit (www.nedit.org).
+
+NEdit is a text editor for LINUX which I use to write small R functions.
+In my opinion is a very good tool for small scripts, maybe for huge
+projects is not the best.
+
+I'm attaching the R-5.1.pats file so you can try it. 
+
+As usual contributions and comments are welcome.
+
+Regards
+
+EJ 
+
+
+
+--=-yevhV/QZg6n7BWzMpjqK
+Content-Disposition: attachment; filename=R-5.1.pats
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; name=R-5.1.pats; charset=ISO-8859-1
+
+!=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D
+!
+! Syntax Highlighting Patterns for R
+! by Ernesto Jardim, ernesto@ipimar.pt
+! version: 1.0
+!
+! Configuring NEdit to use a new pattern set:=20
+!=20
+! * Close your NEdit sessions=20
+! * Start an NEdit session using the import command line option with the pa=
+ttern you downloaded:=20
+!=20
+!   # nedit -import R-5.1.pats
+!=20
+! * Go into the recognition patterns dialog (Preferences>Default Settings>S=
+yntax Highlighting>Recognition Patterns...) and verify that the patterns ar=
+e imported=20
+! * Use Preferences>Save Defaults... to store the modifications.=20
+!=20
+! * This version has been verified with the following versions on NEdit
+!  - 5.1
+!
+!=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D
+
+nedit.highlightPatterns: \n\
+R:1:0{\n\
+Note:"#!":"$"::Note::\n\
+Comment:"#":"$"::TextComment::\n\
+Keyword:",|<(return|if|then|else|in|switch|while|for|function|do|done)>":::=
+Keyword::D\n\
+Loop and Equation:"\\[|\\]|\\(|\\)|\\{|\\}|\\<-|,":::Loop and Equation::\n\
+Operators:"!|~|:|\\^|\\*|%|\\<|\\>|=3D=3D|\\>=3D|\\<=3D|&|\\$|-|=3D|\\+|""|=
+/":::Operators::\n\
+}
+nedit.languageModes: 	R:.q .r .R::::::
+nedit.styles: Note:darkRed:Italic\n\
+TextComment:darkBlue:Italic\n\
+Loop and Equation:darkRed:Bold\n\
+Operators:darkGreen:Bold\n\
+
+--=-yevhV/QZg6n7BWzMpjqK--
+
+
+From p.dalgaard@biostat.ku.dk  Thu Oct 10 12:40:37 2002
+From: p.dalgaard@biostat.ku.dk (Peter Dalgaard BSA)
+Date: 10 Oct 2002 13:40:37 +0200
+Subject: [R-gui] NEdit Highligth patterns for R
+In-Reply-To: <1034248750.5057.77.camel@gandalf>
+References: <1034248750.5057.77.camel@gandalf>
+Message-ID: <x2bs62wmh6.fsf@biostat.ku.dk>
+
+Ernesto Jardim <ernesto@ipimar.pt> writes:
+> 
+> I've just submitted to the NEdit development team a R highligth patterns
+> for NEdit (www.nedit.org).
+> 
+> NEdit is a text editor for LINUX which I use to write small R functions.
+
+Actually, it would appear to be available for Win32 and MacOSX as
+well. (Personally I'm still hooked on Emacs though, and would likely
+be driven nuts by an editor that has a different interpretation of
+things like Ctrl-A...)
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From thomas.baier@kirchnersoft.com  Thu Oct 10 13:52:21 2002
+From: thomas.baier@kirchnersoft.com (TB)
+Date: Thu, 10 Oct 2002 13:52:21 +0100
+Subject: AW: [R-gui] Current R-GUI projects & best graphical toolkits
+Message-ID: <E0AC11CC93B7D21185FD0060080B65523FA78C@WWW>
+
+Philippe,
+
+> Thank you for those who sended me infos about ongoing R GUI projects.
+> I have:
+> - CoCoA R GUI: Jan De Leeuw
+> - obveRsive woRkbench: Dan Putler & Zed Shaw
+> - SPSS-style GUI (planed?): Kurt Hornik
+> - SciViews: Philippe Grosjean
+> 
+> Are there any other ones?
+
+together with Erich Neuwirth there is still an ongoing development in an
+R/Excel integration. Based on R used as a COM server, it is possible to
+perform computations in R while entering data and displaying results in
+Excel. The other way round (using R as the client and Excel providing the
+component functions) is work in progress.
+
+Thomas
+
+From ernesto@ipimar.pt  Thu Oct 10 14:24:06 2002
+From: ernesto@ipimar.pt (Ernesto Jardim)
+Date: 10 Oct 2002 14:24:06 +0100
+Subject: [R] Re: [R-gui] NEdit Highligth patterns for R
+In-Reply-To: <x2bs62wmh6.fsf@biostat.ku.dk>
+References: <1034248750.5057.77.camel@gandalf>
+ <x2bs62wmh6.fsf@biostat.ku.dk>
+Message-ID: <1034256247.5051.80.camel@gandalf>
+
+Hi
+
+It's true, you can use NEdit in windows with cygwin. I just don't like
+these "emulation" environments.
+
+Regards
+
+EJ
+
+On Thu, 2002-10-10 at 12:40, Peter Dalgaard BSA wrote:
+> Ernesto Jardim <ernesto@ipimar.pt> writes:
+> > 
+> > I've just submitted to the NEdit development team a R highligth patterns
+> > for NEdit (www.nedit.org).
+> > 
+> > NEdit is a text editor for LINUX which I use to write small R functions.
+> 
+> Actually, it would appear to be available for Win32 and MacOSX as
+> well. (Personally I'm still hooked on Emacs though, and would likely
+> be driven nuts by an editor that has a different interpretation of
+> things like Ctrl-A...)
+> 
+> -- 
+>    O__  ---- Peter Dalgaard             Blegdamsvej 3  
+>   c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+>  (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+> ~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+> -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+> r-help mailing list -- Read http://www.ci.tuwien.ac.at/~hornik/R/R-FAQ.html
+> Send "info", "help", or "[un]subscribe"
+> (in the "body", not the subject !)  To: r-help-request@stat.math.ethz.ch
+> _._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._
+
+
+
+From putler@commerce.ubc.ca  Thu Oct 10 17:33:01 2002
+From: putler@commerce.ubc.ca (Dan Putler)
+Date: Thu, 10 Oct 2002 09:33:01 -0700
+Subject: [R] Re: [R-gui] NEdit Highligth patterns for R
+In-Reply-To: <1034256247.5051.80.camel@gandalf>
+References: <1034248750.5057.77.camel@gandalf>
+ <x2bs62wmh6.fsf@biostat.ku.dk>
+ <1034256247.5051.80.camel@gandalf>
+Message-ID: <200210100933010600.0020E828@smtp.interchange.ubc.ca>
+
+Hi All,
+
+Zed Shaw has written an R/S context highlighter for JEdit (www.jedit.org), an open source text editor written in Java (no need for Cygwin, and it runs on Macs as well).  The URL to the highlighter is http://community.jedit.org/modules.php?op=modload&name=downloads&file=index&req=getit&lid=217
+
+Dan
+  
+
+*********** REPLY SEPARATOR  ***********
+
+On 10/10/2002 at 2:24 PM Ernesto Jardim wrote:
+
+>Hi
+>
+>It's true, you can use NEdit in windows with cygwin. I just don't like
+>these "emulation" environments.
+>
+>Regards
+>
+>EJ
+>
+>On Thu, 2002-10-10 at 12:40, Peter Dalgaard BSA wrote:
+>> Ernesto Jardim <ernesto@ipimar.pt> writes:
+>> > 
+>> > I've just submitted to the NEdit development team a R highligth
+>patterns
+>> > for NEdit (www.nedit.org).
+>> > 
+>> > NEdit is a text editor for LINUX which I use to write small R
+>functions.
+>> 
+>> Actually, it would appear to be available for Win32 and MacOSX as
+>> well. (Personally I'm still hooked on Emacs though, and would likely
+>> be driven nuts by an editor that has a different interpretation of
+>> things like Ctrl-A...)
+>> 
+>> -- 
+>>    O__  ---- Peter Dalgaard             Blegdamsvej 3  
+>>   c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+>>  (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+>> ~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+>>
+>-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+>> r-help mailing list -- Read
+>http://www.ci.tuwien.ac.at/~hornik/R/R-FAQ.html
+>> Send "info", "help", or "[un]subscribe"
+>> (in the "body", not the subject !)  To: r-help-request@stat.math.ethz.ch
+>>
+>_._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._
+>
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>http://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+_________________________________________
+Dan Putler
+UBC Commerce
+Email: putler dot commerce dot ubc dot ca
+Phone: 604-822-8329
+
+
+
+
+From putler@commerce.ubc.ca  Thu Oct 10 17:35:47 2002
+From: putler@commerce.ubc.ca (Dan Putler)
+Date: Thu, 10 Oct 2002 09:35:47 -0700
+Subject: [R-gui] Current R-GUI projects & best graphical toolkits
+In-Reply-To: <MABBLJDICACNFOLGIHJOOEPLCPAA.philippe.grosjean@ifremer.fr>
+References: <MABBLJDICACNFOLGIHJOOEPLCPAA.philippe.grosjean@ifremer.fr>
+Message-ID: <200210100935470470.0023700F@smtp.interchange.ubc.ca>
+
+Hi Philippe and List,
+
+Yes, obveRsive is using the Java-Swing tool kit.
+
+Dan
+
+*********** REPLY SEPARATOR  ***********
+
+On 10/10/2002 at 11:26 AM Philippe Grosjean wrote:
+
+>Hi,
+>
+>Thank you for those who sended me infos about ongoing R GUI projects.
+>I have:
+>- CoCoA R GUI: Jan De Leeuw
+>- obveRsive woRkbench: Dan Putler & Zed Shaw
+>- SPSS-style GUI (planed?): Kurt Hornik
+>- SciViews: Philippe Grosjean
+>
+>Are there any other ones?
+>
+>For the graphical toolkit, it is certainly time to get a clearer idea of
+>which one is the most suitable among Tcl/Tk (+ Tix), Gtk, QT, wxWindows,...
+>As far as I know, Peter Dalgaard (with many others) develops Tcl/tk; Duncan
+>Temple Lang works on Gtk/Gnome. There are already available libraries
+>(including the base R library 'tcltk'). Dan Putler and Zed Shaw recently
+>choose Swing. Is this correct? Any suggestions from specialists are
+>welcome.
+>
+>Personnally, I develop SciViews under Windows, using OCXes (most are free
+>or
+>shipped with Microsoft Visual Studio, but one is commercial -ActiveBar-).
+>This is not portable at all. This is not open source at all. But I choose
+>it
+>for all the functionnalities I got (and indeed, I started the project many
+>years ago, when many oher graphical toolkits like Gtk or Qt were in their
+>infancy). I consider the current windows implementation of SciViews as a
+>prototype to test various GUI architectures. I would definitely be happy to
+>get rid of all these M$ D-Com, ActiveX and OCXes, but I need:
+>- An advanced text editor with synthax highlighting, "codetips",
+>"auto-completion lists", etc... and I got the free CodeMax with CodeSense
+>(http://www.ticz.com/homes/users/nlewis/HTML/Software_Development/CodeSense/
+>Download/download.htm#uguide) which is wonderful.
+>- An integrated and context-sensitive menus/toolbars/docking windows
+>system,... and I found ActiveBar
+>(http://www.datadynamics.com/activebar/default.htm) very easy to use and
+>configure.
+>- A spreadsheet,... and I got Formula One (shipped with the free version of
+>Borland Delphi) which is very nice.
+>- A decent rich text editor with embedded graphs, etc... and I find the
+>standard richedit.ocx suitable.
+>- A html browser,... and the Internet Explorer ocx is performing well
+>(arrghl).
+>
+>Yes, I know! You want to kill me now! Perhaps, an alternative would be to
+>convince me that I will find similar features in other graphical toolkits?
+>
+>Best,
+>
+>Philippe Grosjean
+>
+>..........]<(({°<...............<°}))><..............................
+>( ( ( ( (
+> ) ) ) ) )      Philippe Grosjean
+>( ( ( ( (
+> ) ) ) ) )      IFREMER Nantes - DEL/AO
+>( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3
+> ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41
+>( ( ( ( ( 
+> ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)
+>( ( ( ( (       e-mail: phgrosjean@sciviews.org
+> ) ) ) ) ) 
+>( ( ( ( (       "I'm 100% confident that p is between 0 and 1"
+> ) ) ) ) )                                L. Gonick & W. Smith (1993)
+>......................................................................
+> 
+>
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>http://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+_________________________________________
+Dan Putler
+UBC Commerce
+Email: putler dot commerce dot ubc dot ca
+Phone: 604-822-8329
+
+
+
+
+From jfox@mcmaster.ca  Thu Oct 10 17:50:36 2002
+From: jfox@mcmaster.ca (John Fox)
+Date: Thu, 10 Oct 2002 12:50:36 -0400
+Subject: [R-gui] Current R-GUI projects & best graphical toolkits
+In-Reply-To: <MABBLJDICACNFOLGIHJOOEPLCPAA.philippe.grosjean@ifremer.fr>
+Message-ID: <5.1.0.14.2.20021010124605.027d5ba8@mcmail.cis.mcmaster.ca>
+
+Dear Philippe et al.,
+
+At 11:26 AM 10/10/2002 +0200, Philippe Grosjean wrote:
+>Hi,
+>
+>Thank you for those who sended me infos about ongoing R GUI projects.
+>I have:
+>- CoCoA R GUI: Jan De Leeuw
+>- obveRsive woRkbench: Dan Putler & Zed Shaw
+>- SPSS-style GUI (planed?): Kurt Hornik
+>- SciViews: Philippe Grosjean
+>
+>Are there any other ones?
+
+I've been experimenting a bit with the tcltk package and plan to explore 
+using it to provide a GUI to some of the basic statistical functionality in 
+S. The attraction of TCL/TK is that it's open source and available for all 
+of the platforms supported by R.
+
+ From the brief descriptions above, what I have in mind is probably closest 
+to Kurt Hornik's project. I'm applying for a small grant to begin work in 
+the Spring of 2003, so it will be a while before I have anything tangible.
+
+Regards,
+  John
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+-----------------------------------------------------
+
+
+From philippe.grosjean@ifremer.fr  Fri Oct 11 09:00:03 2002
+From: philippe.grosjean@ifremer.fr (Philippe Grosjean)
+Date: Fri, 11 Oct 2002 10:00:03 +0200
+Subject: [R-gui] NEdit Highligth patterns for R
+Message-ID: <MABBLJDICACNFOLGIHJOKEBADAAA.philippe.grosjean@ifremer.fr>
+
+>Hi
+
+>I've just submitted to the NEdit development team a R highligth patterns
+>for NEdit (www.nedit.org).
+
+>NEdit is a text editor for LINUX which I use to write small R functions.
+>In my opinion is a very good tool for small scripts, maybe for huge
+>projects is not the best.
+
+>I'm attaching the R-5.1.pats file so you can try it.
+
+>As usual contributions and comments are welcome.
+
+>Regards
+
+>EJ
+
+Nice. But regarding synthax highlighting, I stick with two problems:
+
+1) It would be interesting to highlight in different colors functions and
+arguments... but they can have same name. Example: plot(x, col=2) -argument
+'col' and col(x), function 'col'. For the moment, the only easy way I found
+is to define argument followed by = in the dictionnary, like 'col=' for the
+argument. However, space is allowed between 'col' and '=', and then the
+argument is not correctly coloured. So, I add an automatic correction that
+eliminates spaces before a single '=' sign. But now that '=' is also allowed
+as asignment, it is problematic: col = 1, with 'col' being the name of a
+variable (indeed, col <- 1) is now highlighted as an argument.
+
+2) Of course, one could statically define the dictionnary with, let's say,
+all functions and arguments in the base and recommended packages. I would
+prefer a dynamic construction of the dictionnary: when a library is loaded,
+terms are added, when it is unloaded, they are eliminated. This is only
+possible with a bidirectionnal communication between the editor and the R
+calculation kernel. I got this in SciViews but how to do that in Nedit or
+other separate script editors?
+
+Regards,
+
+Philippe Grosjean
+
+...........]<(({°<...............<°}))><...............................
+( ( ( ( (
+ ) ) ) ) )      Philippe Grosjean
+( ( ( ( (
+ ) ) ) ) )      IFREMER Nantes - DEL/AO
+( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3
+ ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41
+( ( ( ( (	    e-mail: philippe.grosjean@ifremer.fr
+ ) ) ) ) )
+( ( ( ( (       "I'm 100% confident that p is between 0 and 1"
+ ) ) ) ) )                                L. Gonick & W. Smith (1993)
+.......................................................................
+
+
+
+
+From ernesto@ipimar.pt  Fri Oct 11 10:48:04 2002
+From: ernesto@ipimar.pt (Ernesto Jardim)
+Date: 11 Oct 2002 10:48:04 +0100
+Subject: [R-gui] NEdit Highligth patterns for R
+In-Reply-To: <MABBLJDICACNFOLGIHJOKEBADAAA.philippe.grosjean@ifremer.fr>
+References: <MABBLJDICACNFOLGIHJOKEBADAAA.philippe.grosjean@ifremer.fr>
+Message-ID: <1034329684.15227.12.camel@gandalf>
+
+Hi
+
+I agree with your comments and of course you identifie the problems
+regarding the implementation of your suggestions.
+
+Of course we'd need bidireccional communication to implement it. I think
+it's impossible to do it statically.
+
+What I want with NEdit is a very ligth editor (which jedit is not) that
+highlights the most important language syntax, so that It becomes easier
+to write functions and scripts. I get that with NEdit.
+
+Of course there's a lot that can be further developed and NEdit seems
+very flexible and easy to use.
+
+Regards
+
+EJ
+
+On Fri, 2002-10-11 at 09:00, Philippe Grosjean wrote:
+> >Hi
+> 
+> >I've just submitted to the NEdit development team a R highligth patterns
+> >for NEdit (www.nedit.org).
+> 
+> >NEdit is a text editor for LINUX which I use to write small R functions.
+> >In my opinion is a very good tool for small scripts, maybe for huge
+> >projects is not the best.
+> 
+> >I'm attaching the R-5.1.pats file so you can try it.
+> 
+> >As usual contributions and comments are welcome.
+> 
+> >Regards
+> 
+> >EJ
+> 
+> Nice. But regarding synthax highlighting, I stick with two problems:
+> 
+> 1) It would be interesting to highlight in different colors functions and
+> arguments... but they can have same name. Example: plot(x, col=2) -argument
+> 'col' and col(x), function 'col'. For the moment, the only easy way I found
+> is to define argument followed by = in the dictionnary, like 'col=' for the
+> argument. However, space is allowed between 'col' and '=', and then the
+> argument is not correctly coloured. So, I add an automatic correction that
+> eliminates spaces before a single '=' sign. But now that '=' is also allowed
+> as asignment, it is problematic: col = 1, with 'col' being the name of a
+> variable (indeed, col <- 1) is now highlighted as an argument.
+> 
+> 2) Of course, one could statically define the dictionnary with, let's say,
+> all functions and arguments in the base and recommended packages. I would
+> prefer a dynamic construction of the dictionnary: when a library is loaded,
+> terms are added, when it is unloaded, they are eliminated. This is only
+> possible with a bidirectionnal communication between the editor and the R
+> calculation kernel. I got this in SciViews but how to do that in Nedit or
+> other separate script editors?
+> 
+> Regards,
+> 
+> Philippe Grosjean
+> 
+> ...........]<(({°<...............<°}))><...............................
+> ( ( ( ( (
+>  ) ) ) ) )      Philippe Grosjean
+> ( ( ( ( (
+>  ) ) ) ) )      IFREMER Nantes - DEL/AO
+> ( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3
+>  ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41
+> ( ( ( ( (	    e-mail: philippe.grosjean@ifremer.fr
+>  ) ) ) ) )
+> ( ( ( ( (       "I'm 100% confident that p is between 0 and 1"
+>  ) ) ) ) )                                L. Gonick & W. Smith (1993)
+> .......................................................................
+> 
+> 
+> 
+
+
+
+
+From rossini@u.washington.edu  Fri Oct 11 15:02:02 2002
+From: rossini@u.washington.edu (A.J. Rossini)
+Date: 11 Oct 2002 07:02:02 -0700
+Subject: [R-gui] NEdit Highligth patterns for R
+In-Reply-To: <1034329684.15227.12.camel@gandalf>
+References: <MABBLJDICACNFOLGIHJOKEBADAAA.philippe.grosjean@ifremer.fr>
+ <1034329684.15227.12.camel@gandalf>
+Message-ID: <87ofa1gjl1.fsf@jeeves.blindglobe.net>
+
+>>>>> "ernesto" == Ernesto Jardim <ernesto@ipimar.pt> writes:
+
+
+    ernesto> On Fri, 2002-10-11 at 09:00, Philippe Grosjean wrote:
+
+    >> 1) It would be interesting to highlight in different colors functions and
+    >> arguments... but they can have same name. Example: plot(x, col=2) -argument
+    >> 'col' and col(x), function 'col'. For the moment, the only easy way I found
+    >> is to define argument followed by = in the dictionnary, like 'col=' for the
+    >> argument. However, space is allowed between 'col' and '=', and then the
+    >> argument is not correctly coloured. So, I add an automatic correction that
+    >> eliminates spaces before a single '=' sign. But now that '=' is also allowed
+    >> as asignment, it is problematic: col = 1, with 'col' being the name of a
+    >> variable (indeed, col <- 1) is now highlighted as an argument.
+
+Look back through the ancient discussion (i.e. 1992 or so) on
+font-locking with Emacs.  There are many good arguments against
+turning your editor into "fruit-salad" (hence (X)Emacs provides
+options for controling level of coloration/fontification variation). 
+
+    >> 2) Of course, one could statically define the dictionnary with, let's say,
+    >> all functions and arguments in the base and recommended packages. I would
+    >> prefer a dynamic construction of the dictionnary: when a library is loaded,
+    >> terms are added, when it is unloaded, they are eliminated. This is only
+    >> possible with a bidirectionnal communication between the editor and the R
+    >> calculation kernel. I got this in SciViews but how to do that in Nedit or
+    >> other separate script editors?
+
+ESS has been doing this forever, and I'm sure any modern editor with
+extensibly scripting in a decent language can or already does this as
+well (vim, alpha, etc...).
+
+best,
+-tony
+
+-- 
+A.J. Rossini				Rsrch. Asst. Prof. of Biostatistics
+U. of Washington Biostatistics		rossini@u.washington.edu	
+FHCRC/SCHARP/HIV Vaccine Trials Net	rossini@scharp.org
+-------------- http://software.biostat.washington.edu/ ----------------
+FHCRC: M: 206-667-7025 (fax=4812)|Voicemail is pretty sketchy/use Email
+UW:   Th: 206-543-1044 (fax=3286)|Change last 4 digits of phone to FAX
+(my tuesday/wednesday/friday locations are completely unpredictable.)
+
+
+
+
+From murdoch@stats.uwo.ca  Fri Oct 11 17:56:13 2002
+From: murdoch@stats.uwo.ca (Duncan Murdoch)
+Date: Fri, 11 Oct 2002 12:56:13 -0400
+Subject: [R-gui] NEdit Highligth patterns for R
+In-Reply-To: <MABBLJDICACNFOLGIHJOKEBADAAA.philippe.grosjean@ifremer.fr>
+References: <MABBLJDICACNFOLGIHJOKEBADAAA.philippe.grosjean@ifremer.fr>
+Message-ID: <ph0equo0j0pnihbujqscbhvlbrt01lu748@4ax.com>
+
+(Apologies if anyone sees this twice; my first attempt seemed to
+disappear.) 
+
+On Fri, 11 Oct 2002 10:00:03 +0200, Philippe Grosjean wrote:
+
+>2) Of course, one could statically define the dictionnary with, let's say,
+>all functions and arguments in the base and recommended packages. I would
+>prefer a dynamic construction of the dictionnary: when a library is loaded,
+>terms are added, when it is unloaded, they are eliminated. This is only
+>possible with a bidirectionnal communication between the editor and the R
+>calculation kernel. I got this in SciViews but how to do that in Nedit or
+>other separate script editors?
+
+This can be done without bidirectional communication.  R already
+maintains the dictionaries you need, so you could query R to find out
+how to colour each identifier.
+
+Distinguishing between local and global identifiers is hard.  To do
+that the editor needs to parse the code to see if you're in a
+function, and to see what local identifiers have been defined.  But in
+the editor, functions aren't fully written, so you need a parser that
+can handle lots of syntax errors and still do useful things, or at
+least one that can keep building the parse tree until it hits an error
+and save the partial results at that point.  
+
+Adding flexibility like this to the parser would have lots of side
+benefits.  It would let you write a debugger that knows the source
+file line corresponding to each bit of code being executed, editors
+could jump to syntax errors in the source file, hints about function
+arguments could be made available in the editor, etc.
+
+Duncan Murdoch
+
+From phgrosje@ulb.ac.be  Sat Oct 12 07:08:43 2002
+From: phgrosje@ulb.ac.be (Philippe Grosjean)
+Date: Sat, 12 Oct 2002 08:08:43 +0200
+Subject: [R-gui] NEdit Highligth patterns for R
+In-Reply-To: <ph0equo0j0pnihbujqscbhvlbrt01lu748@4ax.com>
+Message-ID: <MABBLJDICACNFOLGIHJOKEMPCPAA.phgrosje@ulb.ac.be>
+
+Well said. In general, I appreciate extensions provided in recent versions
+of R to ease UI development. For instance, addTaskCallback() is of utmost
+importance to communicate information to an object explorer " a la Splus",
+but that is another story... However, there are at least two reasons why a
+synthax highlighting that does not use the internal R parser would be a good
+choice:
+
+1) Independence of the script editor and the R parser allows edition of the
+next code line while R computes the previous one. It is not the way the R
+console operates: the user must wait that the last command line is achieved
+before issuing the following one. Should it always be like that, hum?
+
+2) The parser would identify the correct top level command 'c <- 1' and will
+of course not color 'c' as the function c(), which it is not here. However,
+I believe that the synthax highlighting should be a mean to warn the user
+that he should avoid using 'c' as a variable name because it could be
+confusing with the name of an existing function. Also, giving no particular
+color to 'c2' in 'c2 <- function(....){....}' would indicate that the name
+'c2' is "safe" for a new custom function, while coloring 'c' in 'c <-
+function(){}' is a way to tell: "take care, you redefine an existing
+function,... is it really what you want do?". Considering the damages an
+innocent 'c <- function(x, ...) sum(x, ...)' can do, such a synthax
+highlighting technique is useful.
+
+Indeed, there are very few cases, in the S language, where a simple
+dictionnary would fail in producing the right colour if synthax highlighting
+is used this way, except perhaps mismatch between function and argument
+names.
+
+Best,
+
+Philippe
+
+-----Original Message-----
+From: r-sig-gui-admin@stat.math.ethz.ch
+[mailto:r-sig-gui-admin@stat.math.ethz.ch]On Behalf Of Duncan Murdoch
+Sent: vendredi 11 octobre 2002 6:56
+To: r-sig-gui@stat.math.ethz.ch
+Subject: Re: [R-gui] NEdit Highligth patterns for R
+
+
+(Apologies if anyone sees this twice; my first attempt seemed to
+disappear.)
+
+On Fri, 11 Oct 2002 10:00:03 +0200, Philippe Grosjean wrote:
+
+>2) Of course, one could statically define the dictionnary with, let's say,
+>all functions and arguments in the base and recommended packages. I would
+>prefer a dynamic construction of the dictionnary: when a library is loaded,
+>terms are added, when it is unloaded, they are eliminated. This is only
+>possible with a bidirectionnal communication between the editor and the R
+>calculation kernel. I got this in SciViews but how to do that in Nedit or
+>other separate script editors?
+
+This can be done without bidirectional communication.  R already
+maintains the dictionaries you need, so you could query R to find out
+how to colour each identifier.
+
+Distinguishing between local and global identifiers is hard.  To do
+that the editor needs to parse the code to see if you're in a
+function, and to see what local identifiers have been defined.  But in
+the editor, functions aren't fully written, so you need a parser that
+can handle lots of syntax errors and still do useful things, or at
+least one that can keep building the parse tree until it hits an error
+and save the partial results at that point.
+
+Adding flexibility like this to the parser would have lots of side
+benefits.  It would let you write a debugger that knows the source
+file line corresponding to each bit of code being executed, editors
+could jump to syntax errors in the source file, hints about function
+arguments could be made available in the editor, etc.
+
+Duncan Murdoch
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+http://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+
+
+From mark@myatt.demon.co.uk  Mon Oct 14 10:37:04 2002
+From: mark@myatt.demon.co.uk (Mark Myatt)
+Date: Mon, 14 Oct 2002 10:37:04 +0100
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <20021011100007.3822.36281.Mailman@hypatia.math.ethz.ch>
+References: <20021011100007.3822.36281.Mailman@hypatia.math.ethz.ch>
+Message-ID: <p1PylJAABpq9EwqA@myatt.demon.co.uk>
+
+List,
+
+Sorry for jumping in the middle of a discussion. I have been in the
+field for some time and have only just got back.
+
+Philippe Grosjean, I think, wrote:
+
+>>For the graphical toolkit, it is certainly time to get a clearer idea of
+>>which one is the most suitable among Tcl/Tk (+ Tix), Gtk, QT, wxWindows,...
+>>As far as I know, Peter Dalgaard (with many others) develops Tcl/tk; Duncan
+>>Temple Lang works on Gtk/Gnome. There are already available libraries
+>>(including the base R library 'tcltk'). Dan Putler and Zed Shaw recently
+>>choose Swing. Is this correct? Any suggestions from specialists are
+>>welcome.
+
+My tendency would be to explore how far we can go with Tcl/Tk since the
+availability of the tcltk library allows for a good division of labour.
+We could have two development efforts:
+
+        1. One team develops the GUI. This I envisage as a sort of IDE
+        with a syntax highlighting editor, output window, and an object
+        inspector but others might have better ideas. I have already
+        gone part of the way with this (syntax highlighting editor,
+        output window, customisable menus) in Tcl/Tk but do not have
+        time at present to do much more. I suppose this could be done in
+        something other than Tcl/Tk. The advantage of Tcl/Tk is that it
+        is open, interpreted, and not too difficult to write.
+
+        2. A second team develops tcltk wrappers to R functions to do
+        something like an 'SPSS-like' gui. These functions are called by
+        the GUI.
+
+One problem is that cross-platform implementation might be tricky since
+(possibly parading my ignorance) Windows platforms do not support named
+pipes making inter-process communication a lot more tricky than it needs
+to be. This might be immensely tricky with Tcl/Tk ... I just don't know.
+
+An alternative might be to take one of the open source IDEs ... there
+are loads of these and modify it to meet our needs.
+
+>>Personnally, I develop SciViews under Windows, using OCXes (most are free
+>>or
+>>shipped with Microsoft Visual Studio, but one is commercial -ActiveBar-).
+>>This is not portable at all. This is not open source at all. But I choose
+>>it
+>>for all the functionnalities I got (and indeed, I started the project many
+>>years ago, when many oher graphical toolkits like Gtk or Qt were in their
+>>infancy). I consider the current windows implementation of SciViews as a
+>>prototype to test various GUI architectures. I would definitely be happy to
+>>get rid of all these M$ D-Com, ActiveX and OCXes, but I need:
+>>- An advanced text editor with synthax highlighting, "codetips",
+>>"auto-completion lists", etc... and I got the free CodeMax with CodeSense
+>>(http://www.ticz.com/homes/users/nlewis/HTML/Software_Development/CodeSense/
+>>Download/download.htm#uguide) which is wonderful.
+
+I think that the ScITE editor offers similar functionality in an open
+source bundle. I think we need to be clear about what we mean by 'free'.
+I think this has to mean something like the GPL. You can do all of this
+stuff by overloading a standard Tcl/Tk text-widget.
+
+>>- An integrated and context-sensitive menus/toolbars/docking windows
+>>system,... and I found ActiveBar
+>>(http://www.datadynamics.com/activebar/default.htm) very easy to use and
+>>configure.
+
+I think most toolkits (qt, gtk, motif, tk) can do this.
+
+>>- A spreadsheet,... and I got Formula One (shipped with the free version of
+>>Borland Delphi) which is very nice.
+
+I seldom use the data-browser in R mostly because I do most data-entry /
+management outside of R. I am not sure how important a spreadsheet is.
+
+>>- A decent rich text editor with embedded graphs, etc... and I find the
+>>standard richedit.ocx suitable.
+
+I suppose this could be done with HTML or XML.
+
+>>- A html browser,... and the Internet Explorer ocx is performing well
+>>(arrghl).
+
+More of these than you can shake a stick at ... Mozilla is popular ...
+>From what I am told, Mozilla / Penzilla with XUL good do the entire GUI
+thing from within the browser.
+
+>>Yes, I know! You want to kill me now! Perhaps, an alternative would be to
+>>convince me that I will find similar features in other graphical toolkits?
+
+The problem with all this is that it is very much Windows based and I
+think we should address UNIX (and derivatives such as Linux, MacOS X)
+systems as well. This means we are restricted to cross-platform tools
+and have to choose the best available.
+
+The other thing that nags me is that we should try and make the UI as
+light as possible. I can imagine a situation where the size of the UI
+(including support libraries) comes to several times the size of the R
+engine and has a huge processing overhead. Let us avoid bloat.
+
+Well, just my tuppence.
+
+Mark
+
+
+--
+Mark Myatt
+
+
+
+From dmurdoch@pair.com  Fri Oct 11 13:13:12 2002
+From: dmurdoch@pair.com (Duncan Murdoch)
+Date: Fri, 11 Oct 2002 08:13:12 -0400
+Subject: [R-gui] NEdit Highligth patterns for R
+In-Reply-To: <MABBLJDICACNFOLGIHJOKEBADAAA.philippe.grosjean@ifremer.fr>
+References: <MABBLJDICACNFOLGIHJOKEBADAAA.philippe.grosjean@ifremer.fr>
+Message-ID: <gtedquo8oq06t6krcqkfhdghq7g9esa3oe@4ax.com>
+
+On Fri, 11 Oct 2002 10:00:03 +0200, you wrote:
+
+
+>2) Of course, one could statically define the dictionnary with, let's say,
+>all functions and arguments in the base and recommended packages. I would
+>prefer a dynamic construction of the dictionnary: when a library is loaded,
+>terms are added, when it is unloaded, they are eliminated. This is only
+>possible with a bidirectionnal communication between the editor and the R
+>calculation kernel. I got this in SciViews but how to do that in Nedit or
+>other separate script editors?
+
+This can be done without bidirectional communication.  R already
+maintains the dictionaries you need, so you could query R to find out
+how to colour each identifier.
+
+Distinguishing between local and global identifiers is hard.  To do
+that the editor needs to parse the code to see if you're in a
+function, and to see what local identifiers have been defined.  But in
+the editor, functions aren't fully written, so you need a parser that
+can handle lots of syntax errors and still do useful things, or at
+least one that can keep building the parse tree until it hits an error
+and save the partial results at that point.  
+
+Adding flexibility like this to the parser would have lots of side
+benefits.  It would let you write a debugger that knows the source
+file line corresponding to each bit of code being executed, editors
+could jump to syntax errors in the source file, hints about function
+arguments could be made available in the editor, etc.
+
+Duncan Murdoch
+
+From zed.shaw@ubc.ca  Wed Oct 16 20:36:45 2002
+From: zed.shaw@ubc.ca (Zed A. Shaw)
+Date: Wed, 16 Oct 2002 12:36:45 -0700
+Subject: [R-gui] Current R-GUI projects & best graphical toolkits
+In-Reply-To: <MABBLJDICACNFOLGIHJOOEPLCPAA.philippe.grosjean@ifremer.fr>
+Message-ID: <B9D30DDD.5D0D%zed.shaw@ubc.ca>
+
+Philippe,
+
+First off, yes the obveRsive woRkbench is currently using Java Swing.
+
+Second, I believe that most of the controls you're asking for are available
+in wxWindows (http://www.wxwindows.org) and that you could possibly
+integrate R with wxWindows with about the same work as you are currently
+doing in Windows.  The advantage though is that it would work on numerous
+platforms.  The disadvantage is that wxWindows is a P-I-G!  It's huge,
+requires tons of libraries, always needs a very complicated linking process
+which takes me forever to get right on any platform.  Also, I found that the
+docs are rather lacking, there are no GUI design tools that are worth it
+(although I may fix that soon), and that it is rather poorly designed by
+other standards.
+
+An alternative is the FOX toolkit (http://www.fox-toolkit.org).  It doesn't
+provide all the things that you require though.  As with wxWindows, you do
+get the Scintilla editor component (http://www.scintilla.org/) which is a
+pretty awesome code editor.  You could possible plug in the Gecko engine,
+but RTF with graphics might be a bit much.  On the plus side, FOX is very
+very well designed, extremely easy to work with, well documented, super
+small, easy to use, and cross platform to at least windows and unix (and
+easily ported to others).  FOX also does not come with a GUI design tool,
+but I have written a little tool that generates interfaces from code
+descriptions.  If you decide to work with FOX, let me know and I'll send it
+to you.
+
+Finally, I'd recommend also looking at GTK+ (http://www.gtk.org) and GTKmm
+(http://gtkmm.sourceforge.net/).  GTKmm is just a C++ wrapper around GTK+.
+I don't like it personally (too fat) but you may as it uses the signals/slot
+design for communication and callbacks.  Very clean, but kind of annoying in
+some ways.  GTK+ has all the goodies you mention, works on unix and windows
+and some others (although, barely), and has a fantastic GUI design tool
+called GLADE (http://glade.gnome.org/).  It's probably one of the best GUI
+builders out there and has lots of nice features.  I'm pretty sure GTK+
+supports all the stuff you mention, but I personally don't like the ugly
+"G-Object fake OO in C" API it uses.  If you choose to do it, just use GTKmm
+and C++ (unless you want to write an R to GTK+ binding, which I'm sure would
+make lots of people happy :-).
+
+Anyway, that's my .02.  There's lots of other toolkits out there, but very
+few which fit your requirements.  I think you should at least take a look at
+Scintilla and Gecko (http://www.mozilla.org/newlayout/) for your code editor
+and HTML rendering requirements.
+
+Enjoy!
+On 10/10/02 2:26 AM, "Philippe Grosjean" <philippe.grosjean@ifremer.fr>
+wrote:
+
+> Hi,
+> 
+> Thank you for those who sended me infos about ongoing R GUI projects.
+> I have:
+> - CoCoA R GUI: Jan De Leeuw
+> - obveRsive woRkbench: Dan Putler & Zed Shaw
+> - SPSS-style GUI (planed?): Kurt Hornik
+> - SciViews: Philippe Grosjean
+> 
+> Are there any other ones?
+> 
+> For the graphical toolkit, it is certainly time to get a clearer idea of
+> which one is the most suitable among Tcl/Tk (+ Tix), Gtk, QT, wxWindows,...
+> As far as I know, Peter Dalgaard (with many others) develops Tcl/tk; Duncan
+> Temple Lang works on Gtk/Gnome. There are already available libraries
+> (including the base R library 'tcltk'). Dan Putler and Zed Shaw recently
+> choose Swing. Is this correct? Any suggestions from specialists are welcome.
+> 
+> Personnally, I develop SciViews under Windows, using OCXes (most are free or
+> shipped with Microsoft Visual Studio, but one is commercial -ActiveBar-).
+> This is not portable at all. This is not open source at all. But I choose it
+> for all the functionnalities I got (and indeed, I started the project many
+> years ago, when many oher graphical toolkits like Gtk or Qt were in their
+> infancy). I consider the current windows implementation of SciViews as a
+> prototype to test various GUI architectures. I would definitely be happy to
+> get rid of all these M$ D-Com, ActiveX and OCXes, but I need:
+> - An advanced text editor with synthax highlighting, "codetips",
+> "auto-completion lists", etc... and I got the free CodeMax with CodeSense
+> (http://www.ticz.com/homes/users/nlewis/HTML/Software_Development/CodeSense/
+> Download/download.htm#uguide) which is wonderful.
+> - An integrated and context-sensitive menus/toolbars/docking windows
+> system,... and I found ActiveBar
+> (http://www.datadynamics.com/activebar/default.htm) very easy to use and
+> configure.
+> - A spreadsheet,... and I got Formula One (shipped with the free version of
+> Borland Delphi) which is very nice.
+> - A decent rich text editor with embedded graphs, etc... and I find the
+> standard richedit.ocx suitable.
+> - A html browser,... and the Internet Explorer ocx is performing well
+> (arrghl).
+> 
+> Yes, I know! You want to kill me now! Perhaps, an alternative would be to
+> convince me that I will find similar features in other graphical toolkits?
+> 
+> Best,
+> 
+> Philippe Grosjean
+> 
+> ...........]<(({°<...............<°}))><...............................
+> ( ( ( ( (
+> ) ) ) ) )      Philippe Grosjean
+> ( ( ( ( (
+> ) ) ) ) )      IFREMER Nantes - DEL/AO
+> ( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3
+> ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41
+> ( ( ( ( ( 
+> ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)
+> ( ( ( ( (       e-mail: phgrosjean@sciviews.org
+> ) ) ) ) ) 
+> ( ( ( ( (       "I'm 100% confident that p is between 0 and 1"
+> ) ) ) ) )                                L. Gonick & W. Smith (1993)
+> .......................................................................
+> 
+> 
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> http://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Zed A. Shaw
+
+
+
+
+
+From rossini@u.washington.edu  Thu Oct 17 01:47:27 2002
+From: rossini@u.washington.edu (A.J. Rossini)
+Date: 16 Oct 2002 17:47:27 -0700
+Subject: [R-gui] Current R-GUI projects & best graphical toolkits
+In-Reply-To: <B9D30DDD.5D0D%zed.shaw@ubc.ca>
+References: <B9D30DDD.5D0D%zed.shaw@ubc.ca>
+Message-ID: <87u1jlki1s.fsf@jeeves.blindglobe.net>
+
+>>>>> "zed" == Zed A Shaw <zed.shaw@ubc.ca> writes:
+
+    zed> Finally, I'd recommend also looking at GTK+ (http://www.gtk.org) and GTKmm
+    zed> (http://gtkmm.sourceforge.net/).  GTKmm is just a C++ wrapper around GTK+.
+    zed> I don't like it personally (too fat) but you may as it uses the signals/slot
+    zed> design for communication and callbacks.  Very clean, but kind of annoying in
+    zed> some ways.  GTK+ has all the goodies you mention, works on unix and windows
+    zed> and some others (although, barely), and has a fantastic GUI design tool
+    zed> called GLADE (http://glade.gnome.org/).  It's probably one of the best GUI
+    zed> builders out there and has lots of nice features.  I'm pretty sure GTK+
+    zed> supports all the stuff you mention, but I personally don't like the ugly
+    zed> "G-Object fake OO in C" API it uses.  If you choose to do it, just use GTKmm
+    zed> and C++ (unless you want to write an R to GTK+ binding, which I'm sure would
+    zed> make lots of people happy :-).
+
+
+Duncan T-L has done work with R and GTK -- maybe he'll pipe in.
+
+-- 
+A.J. Rossini				Rsrch. Asst. Prof. of Biostatistics
+U. of Washington Biostatistics		rossini@u.washington.edu	
+FHCRC/SCHARP/HIV Vaccine Trials Net	rossini@scharp.org
+-------------- http://software.biostat.washington.edu/ ----------------
+FHCRC: M: 206-667-7025 (fax=4812)|Voicemail is pretty sketchy/use Email
+UW:   Th: 206-543-1044 (fax=3286)|Change last 4 digits of phone to FAX
+(my tuesday/wednesday/friday locations are completely unpredictable.)
+
+
+
+
+From p.dalgaard@biostat.ku.dk  Thu Oct 17 16:39:46 2002
+From: p.dalgaard@biostat.ku.dk (Peter Dalgaard BSA)
+Date: 17 Oct 2002 17:39:46 +0200
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <p1PylJAABpq9EwqA@myatt.demon.co.uk>
+References: <20021011100007.3822.36281.Mailman@hypatia.math.ethz.ch>
+ <p1PylJAABpq9EwqA@myatt.demon.co.uk>
+Message-ID: <x27kgh3whp.fsf@biostat.ku.dk>
+
+Mark Myatt <mark@myatt.demon.co.uk> writes:
+
+> List,
+> 
+> Sorry for jumping in the middle of a discussion. I have been in the
+> field for some time and have only just got back.
+
+Also let me chime in briefly. I've had various other stuff on my mind
+lately, so I haven't really been up to making any kind of grand policy
+statements. This is not really a reply to Mark, I'll just cut his post
+up mercilessly so as to provide cues for some of the things that I'd
+like to say...
+
+> Philippe Grosjean, I think, wrote:
+> 
+> >>For the graphical toolkit, it is certainly time to get a clearer idea of
+> >>which one is the most suitable among Tcl/Tk (+ Tix), Gtk, QT, wxWindows,...
+...
+> 
+> My tendency would be to explore how far we can go with Tcl/Tk 
+
+
+Mine too, obviously, although maybe for other reasons: I think it is
+important to have the GUI scriptable in R, and the Tcl/Tk model is the
+best tested one out there, and cross-platform except for some
+low-level issues. 
+
+I do occasionally have doubts, though. Sometimes the Gtk approach and
+all its promises about integration with other tools looks attractive,
+but I still think we need the internal scriptability. Some efforts in
+that direction are gnocl (Tcl interface in the style of Tk) and stklos
+(object-oriented Scheme interface). However, both of these are in
+their infancy, and essentially one-man jobs.
+
+My general mode of operation has been to concentrate on getting the
+R/Tcl interface right and worry less about actually constructing
+applications, although I do currently have a student working on
+implementing a model-builder tool. The two next things I have on the
+agenda are to get an interface to TkTable working, and to employ Tcl
+object in the inter-language communication. The former would
+essentially give us a data editor for free, and the latter eradicate a
+lot of "quoting hell" that is currently going on in the .Tcl()
+function. After that, probably have another look at implementing a
+graphics driver for Tk canvases (or the zinc extension).
+
+
+> I think that the ScITE editor offers similar functionality in an open
+> source bundle. I think we need to be clear about what we mean by 'free'.
+> I think this has to mean something like the GPL. You can do all of this
+> stuff by overloading a standard Tcl/Tk text-widget.
+
+..cue the ctext text widget extension,
+http://www.xmission.com/~georgeps/ctext/ 
+
+> I seldom use the data-browser in R mostly because I do most data-entry /
+> management outside of R. I am not sure how important a spreadsheet is.
+
+It's important alright. For keeping users warm and fuzzy, giving them
+the feeling that they can see what data they are operating upon... 
+ 
+> >>- A decent rich text editor with embedded graphs, etc... and I find the
+> >>standard richedit.ocx suitable.
+> 
+> I suppose this could be done with HTML or XML.
+
+TkTable also allows all sorts of embeddings, see e.g.
+http://jfontain.free.fr/moodss/ which builds upon it
+
+> >>- A html browser,... and the Internet Explorer ocx is performing well
+> >>(arrghl).
+> 
+> More of these than you can shake a stick at ... Mozilla is popular ...
+> From what I am told, Mozilla / Penzilla with XUL good do the entire GUI
+> thing from within the browser.
+
+TkHtml, if the purpose is just to display simple stuff.
+
+> >>Yes, I know! You want to kill me now! Perhaps, an alternative would be to
+> >>convince me that I will find similar features in other graphical toolkits?
+> 
+> The problem with all this is that it is very much Windows based and I
+> think we should address UNIX (and derivatives such as Linux, MacOS X)
+> systems as well. This means we are restricted to cross-platform tools
+> and have to choose the best available.
+
+Yes.
+ 
+> The other thing that nags me is that we should try and make the UI as
+> light as possible. I can imagine a situation where the size of the UI
+> (including support libraries) comes to several times the size of the R
+> engine and has a huge processing overhead. Let us avoid bloat.
+
+I appreciate the sentiment, but I'm not really sure I agree. The main
+risk of bloating is on Windows, where support libraries are not
+available as part of the OS, and considering the fact that people are
+prepared to accept a SAS ("minimal"!) installation of close to 1GB, I
+think we have some headroom (sometimes I even tend to think that we
+should ship the whole *ing GCC/Perl development system along with the
+R binaries, rather than try to teach people how to download and
+install it). Most Linux distros come with the relevant libraries, so
+are not a problem, leaving essentially the group of older Unixen
+(Solaris, HP-UX, Irix) with a problem of installing a portfolio of
+tools, but there we already assume that people would be willing to
+install libjpeg, gnu tool, etc, etc.
+
+What we really want to avoid is "bloat by repetition", 200 routines
+doing almost the same thing in the same way (so that if you decide to
+do the same thing in a different, better, way, you'll have 200
+routines to fix up every time). We really need to make sure that we
+create the proper abstractions for the job, so that we can concentrate
+on a few key routines.
+
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From duncan@research.bell-labs.com  Thu Oct 17 18:53:08 2002
+From: duncan@research.bell-labs.com (Duncan Temple Lang)
+Date: Thu, 17 Oct 2002 13:53:08 -0400
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <x27kgh3whp.fsf@biostat.ku.dk>; from p.dalgaard@biostat.ku.dk on Thu, Oct 17, 2002 at 05:39:46PM +0200
+References: <20021011100007.3822.36281.Mailman@hypatia.math.ethz.ch> <p1PylJAABpq9EwqA@myatt.demon.co.uk> <x27kgh3whp.fsf@biostat.ku.dk>
+Message-ID: <20021017135308.A5060@jessie.research.bell-labs.com>
+
+(Sorry Peter, I sent my mail only to you.)
+
+And, in the same spirit as Peter, I'll just tag my comments onto his
+mail.
+
+While Tcl/Tk is the best tested of the R gui bindings, that is
+partially because it was added directly to the R source rather than
+provided as a package as the other interfaces have.  As a result, it
+has received a lot of attention on the configuration aspects,
+etc. from developers and users. I think it would be very useful to
+give some of the other packages the same sort of attention. 
+
+As Tony Rossini mentioned, there is the RGtk package which 
+provides an S-language connection to the Gtk widgets and event
+handling, etc.
+
+There were several reasons for doing the Gtk bindings for R.  I
+believe that Gtk has far more momentum than Tk or indeed many other
+toolkits. As the cornerstone of Gnome, it gets a lot of attention and
+a multitude of new widgets that are added externally or in Gtk 2.0,
+etc.  The fact that Sun and HP (I think my memory is correct) have
+announced that they will use Gnome as their desktop in the next major
+release of their OSes illustrates that there is some belief it will be
+here for a while and get more attention.  It might be a little
+simplistic, but one might say that Tk is tried and established but old
+and Gtk/Qt/Cocoa, etc. are the new and modern toolkits that will be
+with us for the medium term.
+
+ The connectivity with the different Gnome tools such as Gnumeric,
+AbiWord, Dia, etc. makes it easy for us to develop plugins written in
+R for those applications. This essentially allows us to put statistics
+into everyday office applications. (The use of XML also helps here a
+lot since that is the output format these tools use.)  One of the
+benefits of Gtk is that it provides compile time and run-time
+reflectance, so the bindings (and future bindings) are generated
+automatically with S code. There is no manual effort needed.
+
+I have used the Gtk mechanism to get the Rggobi link working.  Also,
+with the connectivity to Gnome, the Orbit/CORBA connection is
+relatively natural (and hence structured high-level distributed
+computing). 
+
+
+Tk is not a bad toolkit at all but the extensions are a lot more
+decentralized than those for Gtk. One of the main problems with using
+Tk I feel is that we have to go through Tcl. That is not an ideal
+programming language for our purposes by any stretch of the
+imagination. Indeed, we have a language that we can assume all the
+players involved are familiar with - i.e. S itself.  Scripting is
+essential, but scripting in a lot of different and less familiar
+languages won't make it easy for a community to move forward and
+maintain any GUI material we develop.  There are not very many large
+applications built on Tk relative to the number of professional Gtk
+applications.  
+
+We already have a Gtk graphics device as a separate package.  GtkHTML
+and Mozilla Embedded provide different HTML renderers.  Deb Nolan and
+I have been using GtkHTML to display documents that contain arbitrary
+Gtk widgets, giving us live interactive documents that make nice
+interfaces for teaching or interactive publishing.  One can use
+gtk+extra to implement a data editor. Alternatively, we have RGnumeric
+which allows us embed R in the Gnumeric spreadsheet. 
+
+
+So what Peter said is absolutely the most important thing to focus on:
+
+> We really need to make sure that we
+> create the proper abstractions for the job, so that we can concentrate
+> on a few key routines.
+
+This is key. No matter what each of us believes about the merits of
+the different toolkits, as a community, we will need probably all of
+them, i.e. Tk, Gtk, Cocoa, Swing and probably Qt (which we can
+probably generate automatically using SIP).
+
+What we should probably move forward on is developing small
+stand-alone tools that we can combine into an IDE.  As we develop
+invividual tools such as object browsers (see BioConductor), code
+displays, debuggers, model builders, etc., the different idioms will
+become apparent and we can figure out the abstractions for the S
+language level.  And we will get an understanding of what the tools
+should look like. (If they aren't programmed in S, I imagine fewer
+people will experiment with modifying them and trying new interface
+designs.  So it would be good to use the existing toolkits if possible
+or work on providing bindings for them.)
+
+Building a complete system and expecting others to adopt it as the
+"unique" GUI is likely to be unsuccessful because of all the pratical
+problems people have mentioned. There are too many diverse user
+communities and applications within the R world.  Building an
+abstraction for the existing toolkits so that one can use essentially
+the same code with different toolkits attached would be a great
+achievement and set us up for whatever new toolkits come in the
+future.
+
+One technical step in the abstraction is the ability to handle
+different event loops within R, e.g to use Tk's, Gtk's or Carbon's
+event loop.  There is an experimental package - REventLoop - at
+http://www.omegahat.org/REventLoop that does this.  If people could
+give it a try and let me know what problems (or success) they
+encounter, we can push on integrating that into R itself and getting
+it running with the Windows and Carbon event loop.s
+
+
+One other remark since I don't get much time to write these mails and
+it came up in somebody's mail on this last last week.  The need for
+pipes, etc. to communicate between the GUI and R doesn't seem like a
+necessary or good approach. Tk, Gtk, etc.  are all accessible directly
+in R and can callback to S functions, etc. We don't want to be
+communicating with R commands sent as strings.  This is a very
+limiting and tedious design. All the escaping that Peter mentions in
+the tcltk package illustrates the problems with dealing with a
+programming language entirely in strings. There are many computations
+one simply cannot do, and even more that are very cumbersome because
+of that interface.
+
+Sorry for the length of the mail. 
+
+ D.
+
+
+
+Peter Dalgaard BSA wrote:
+> Mark Myatt <mark@myatt.demon.co.uk> writes:
+> 
+> > List,
+> > 
+> > Sorry for jumping in the middle of a discussion. I have been in the
+> > field for some time and have only just got back.
+> 
+> Also let me chime in briefly. I've had various other stuff on my mind
+> lately, so I haven't really been up to making any kind of grand policy
+> statements. This is not really a reply to Mark, I'll just cut his post
+> up mercilessly so as to provide cues for some of the things that I'd
+> like to say...
+> 
+> > Philippe Grosjean, I think, wrote:
+> > 
+> > >>For the graphical toolkit, it is certainly time to get a clearer idea of
+> > >>which one is the most suitable among Tcl/Tk (+ Tix), Gtk, QT, wxWindows,...
+> ...
+> > 
+> > My tendency would be to explore how far we can go with Tcl/Tk 
+> 
+> 
+> Mine too, obviously, although maybe for other reasons: I think it is
+> important to have the GUI scriptable in R, and the Tcl/Tk model is the
+> best tested one out there, and cross-platform except for some
+> low-level issues. 
+> 
+> I do occasionally have doubts, though. Sometimes the Gtk approach and
+> all its promises about integration with other tools looks attractive,
+> but I still think we need the internal scriptability. Some efforts in
+> that direction are gnocl (Tcl interface in the style of Tk) and stklos
+> (object-oriented Scheme interface). However, both of these are in
+> their infancy, and essentially one-man jobs.
+> 
+> My general mode of operation has been to concentrate on getting the
+> R/Tcl interface right and worry less about actually constructing
+> applications, although I do currently have a student working on
+> implementing a model-builder tool. The two next things I have on the
+> agenda are to get an interface to TkTable working, and to employ Tcl
+> object in the inter-language communication. The former would
+> essentially give us a data editor for free, and the latter eradicate a
+> lot of "quoting hell" that is currently going on in the .Tcl()
+> function. After that, probably have another look at implementing a
+> graphics driver for Tk canvases (or the zinc extension).
+> 
+> 
+> > I think that the ScITE editor offers similar functionality in an open
+> > source bundle. I think we need to be clear about what we mean by 'free'.
+> > I think this has to mean something like the GPL. You can do all of this
+> > stuff by overloading a standard Tcl/Tk text-widget.
+> 
+> ..cue the ctext text widget extension,
+> http://www.xmission.com/~georgeps/ctext/ 
+> 
+> > I seldom use the data-browser in R mostly because I do most data-entry /
+> > management outside of R. I am not sure how important a spreadsheet is.
+> 
+> It's important alright. For keeping users warm and fuzzy, giving them
+> the feeling that they can see what data they are operating upon... 
+>  
+> > >>- A decent rich text editor with embedded graphs, etc... and I find the
+> > >>standard richedit.ocx suitable.
+> > 
+> > I suppose this could be done with HTML or XML.
+> 
+> TkTable also allows all sorts of embeddings, see e.g.
+> http://jfontain.free.fr/moodss/ which builds upon it
+> 
+> > >>- A html browser,... and the Internet Explorer ocx is performing well
+> > >>(arrghl).
+> > 
+> > More of these than you can shake a stick at ... Mozilla is popular ...
+> > From what I am told, Mozilla / Penzilla with XUL good do the entire GUI
+> > thing from within the browser.
+> 
+> TkHtml, if the purpose is just to display simple stuff.
+> 
+> > >>Yes, I know! You want to kill me now! Perhaps, an alternative would be to
+> > >>convince me that I will find similar features in other graphical toolkits?
+> > 
+> > The problem with all this is that it is very much Windows based and I
+> > think we should address UNIX (and derivatives such as Linux, MacOS X)
+> > systems as well. This means we are restricted to cross-platform tools
+> > and have to choose the best available.
+> 
+> Yes.
+>  
+> > The other thing that nags me is that we should try and make the UI as
+> > light as possible. I can imagine a situation where the size of the UI
+> > (including support libraries) comes to several times the size of the R
+> > engine and has a huge processing overhead. Let us avoid bloat.
+> 
+> I appreciate the sentiment, but I'm not really sure I agree. The main
+> risk of bloating is on Windows, where support libraries are not
+> available as part of the OS, and considering the fact that people are
+> prepared to accept a SAS ("minimal"!) installation of close to 1GB, I
+> think we have some headroom (sometimes I even tend to think that we
+> should ship the whole *ing GCC/Perl development system along with the
+> R binaries, rather than try to teach people how to download and
+> install it). Most Linux distros come with the relevant libraries, so
+> are not a problem, leaving essentially the group of older Unixen
+> (Solaris, HP-UX, Irix) with a problem of installing a portfolio of
+> tools, but there we already assume that people would be willing to
+> install libjpeg, gnu tool, etc, etc.
+> 
+> What we really want to avoid is "bloat by repetition", 200 routines
+> doing almost the same thing in the same way (so that if you decide to
+> do the same thing in a different, better, way, you'll have 200
+> routines to fix up every time). We really need to make sure that we
+> create the proper abstractions for the job, so that we can concentrate
+> on a few key routines.
+> 
+> 
+> -- 
+>    O__  ---- Peter Dalgaard             Blegdamsvej 3  
+>   c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+>  (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+> ~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> http://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+_______________________________________________________________
+
+Duncan Temple Lang                duncan@research.bell-labs.com
+Bell Labs, Lucent Technologies    office: (908)582-3217
+700 Mountain Avenue, Room 2C-259  fax:    (908)582-3340
+Murray Hill, NJ  07974-2070       
+         http://cm.bell-labs.com/stat/duncan
+
+From zed.shaw@ubc.ca  Fri Oct 18 00:15:37 2002
+From: zed.shaw@ubc.ca (Zed A. Shaw)
+Date: Thu, 17 Oct 2002 16:15:37 -0700
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <20021017135308.A5060@jessie.research.bell-labs.com>
+Message-ID: <B9D492A9.5E9B%zed.shaw@ubc.ca>
+
+I'm a bit confused.  I thought the purpose of this mailing list was to help
+people out who are designing various graphical user interfaces (either front
+ends or widget bindings or both).  I did not realize that it was to help
+create an entire IDE in R using every toolkit imagined.  My impression of
+the conversation so far has been towards how best to get everyone to use Tk,
+GTK+ or whatever through an R binding.  This seems a rather narrow focus in
+my opinion, but maybe I'm wrong about the conversation (probably).
+
+What *I* would like to really see discussed is why it is so damned hard to
+get R to work as a proper backend.  I think creating an R "server" that was
+accessible from CORBA, XML-RPC, etc. and ran R code reliably (without
+crashing every two seconds because it's not in "interactive" mode) would do
+a lot more for GUI development than anything discussed so far.  If there is
+already a GTK+/Orbit thing that does this, then I think making it generic
+(read, NOT GTK+ specific) and providing it as a means of integrating R with
+different languages would be fantastic.  I imagine this would give you the
+largest bang for your buck as far as development time vs. benefit to the
+community.
+
+But, if I'm wrong, and the purpose is to create an IDE and a billion
+different bindings to everything, then I'll just keep quiet.
+
+Zed
+
+
+On 10/17/02 10:53 AM, "Duncan Temple Lang" <duncan@research.bell-labs.com>
+wrote:
+
+> 
+> This is key. No matter what each of us believes about the merits of
+> the different toolkits, as a community, we will need probably all of
+> them, i.e. Tk, Gtk, Cocoa, Swing and probably Qt (which we can
+> probably generate automatically using SIP).
+> 
+> What we should probably move forward on is developing small
+> stand-alone tools that we can combine into an IDE.  As we develop
+> invividual tools such as object browsers (see BioConductor), code
+> displays, debuggers, model builders, etc., the different idioms will
+> become apparent and we can figure out the abstractions for the S
+> language level.  And we will get an understanding of what the tools
+> should look like. (If they aren't programmed in S, I imagine fewer
+> people will experiment with modifying them and trying new interface
+> designs.  So it would be good to use the existing toolkits if possible
+> or work on providing bindings for them.)
+> 
+-- 
+Zed A. Shaw
+
+
+
+
+From dmurdoch@pair.com  Fri Oct 18 00:33:33 2002
+From: dmurdoch@pair.com (Duncan Murdoch)
+Date: Thu, 17 Oct 2002 19:33:33 -0400
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <B9D492A9.5E9B%zed.shaw@ubc.ca>
+References: <20021017135308.A5060@jessie.research.bell-labs.com> <B9D492A9.5E9B%zed.shaw@ubc.ca>
+Message-ID: <qihuquk105i87o26r5rbbnsl2oqie4os0e@4ax.com>
+
+On Thu, 17 Oct 2002 16:15:37 -0700, you wrote:
+
+>I'm a bit confused.  I thought the purpose of this mailing list was to help
+>people out who are designing various graphical user interfaces (either front
+>ends or widget bindings or both).  I did not realize that it was to help
+>create an entire IDE in R using every toolkit imagined.
+
+I think it's too new to have settled down to a narrow purpose yet.
+
+>What *I* would like to really see discussed is why it is so damned hard to
+>get R to work as a proper backend.  I think creating an R "server" that was
+>accessible from CORBA, XML-RPC, etc. and ran R code reliably (without
+>crashing every two seconds because it's not in "interactive" mode) would do
+>a lot more for GUI development than anything discussed so far.
+
+I agree.  Turning R into a reliable backend server would make it
+*much* easier to experiment with different front ends.  The first
+prototypes don't need to be portable, they need to be easy to develop
+and play with.  Then when people on platform Y see that people on
+platform X are having more fun, someone can think about how to do
+things in a portable way.
+
+Duncan Murdoch
+
+From gregory_r_warnes@groton.pfizer.com  Fri Oct 18 02:33:24 2002
+From: gregory_r_warnes@groton.pfizer.com (Warnes, Gregory R)
+Date: Thu, 17 Oct 2002 21:33:24 -0400
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+Message-ID: <D7A3CFD7825BD6119B880002A58F06C20149D0C5@groexmb02.pfizer.com>
+
+> -----Original Message-----
+> From: Zed A. Shaw [mailto:zed.shaw@ubc.ca]
+
+> I think creating an R "server" that was accessible from CORBA, 
+> XML-RPC, etc. and ran R code reliably (without crashing every 
+> two seconds because it's not in "interactive" mode) would do 
+> a lot more for GUI development than anything discussed so far.  
+
+On this topic, I've written a SOAP interface for R using R + Rpy + Python +
+SOAPpy that seems to run reliably and exposes all the functionality of R.
+It is currently winding through the final stages of the red tape :-( that is
+required for me to publish it, but I expect that this will be complete in
+about a week and a half. :-)
+
+I originally wrote it so that I could provide R services to web applications
+developed in Zope.  This step became necessary because Zope is multithreaded
+and R is *not*.  (Sound familiar?) This way R is run in separate processes
+that are managed and communicated with via SOAP.
+
+As soon as the red tape is wrapped up, I'll put it up on sourceforge and
+post a note here.
+
+-Greg
+
+
+
+
+
+LEGAL NOTICE
+Unless expressly stated otherwise, this message is confidential and may be privileged. It is intended for the addressee(s) only. Access to this E-mail by anyone else is unauthorized. If you are not an addressee, any disclosure or copying of the contents of this E-mail or any action taken (or not taken) in reliance on it is unauthorized and may be unlawful. If you are not an addressee, please inform the sender immediately.
+
+From duncan@research.bell-labs.com  Fri Oct 18 02:32:32 2002
+From: duncan@research.bell-labs.com (Duncan Temple Lang)
+Date: Thu, 17 Oct 2002 21:32:32 -0400
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <B9D492A9.5E9B%zed.shaw@ubc.ca>; from zed.shaw@ubc.ca on Thu, Oct 17, 2002 at 04:15:37PM -0700
+References: <20021017135308.A5060@jessie.research.bell-labs.com> <B9D492A9.5E9B%zed.shaw@ubc.ca>
+Message-ID: <20021017213231.B5060@jessie.research.bell-labs.com>
+
+Hi Zed.
+
+Zed A. Shaw wrote:
+> I'm a bit confused.  I thought the purpose of this mailing list was to help
+> people out who are designing various graphical user interfaces (either front
+> ends or widget bindings or both).  I did not realize that it was to help
+> create an entire IDE in R using every toolkit imagined.  My impression of
+> the conversation so far has been towards how best to get everyone to use Tk,
+> GTK+ or whatever through an R binding. This seems a rather narrow focus in
+> my opinion, but maybe I'm wrong about the conversation (probably).
+
+I was hoping that we could start small and focus on the interfaces,
+regardless of how they are implemented.  However, to get the most
+number of people to be able to experiment with them, modify them,
+etc. it will be best to pick a common programming language which is R.
+If anyone wants to build something with R as an external server or an
+embedded library, that's great.  Speaking from experience, there are a
+lot of details to get users to configure this. They have to build R as
+a shared library or run R as a DCOM or CORBA server. This has proven
+to be complex for many people. Pity!  That's why I think using the
+existing bindings (or creating new ones) gives us the best chance to
+focus on the interface itself and give us a means to discuss things in
+a common language.
+
+
+> 
+> What *I* would like to really see discussed is why it is so damned hard to
+> get R to work as a proper backend.
+
+I think it is hard to get it configured on other people's machines.
+But I don't think it is technically too hard to get it to work as a
+regular server. What are the problems you have encountered.  (I agree
+things could be better and have some plans to make it easier and more
+platform independent, but they do involve significant reorganization
+of code.)
+
+
+>  I think creating an R "server" that was
+> accessible from CORBA, XML-RPC, etc. and ran R code reliably (without
+> crashing every two seconds because it's not in "interactive" mode) would do
+> a lot more for GUI development than anything discussed so far. 
+
+Luke Tierney has a simple example to show how to do this with sockets.
+I do it by embedding things as a shared library and simply by pass the
+interactivity issue (just calling R_tryEval()).
+
+Can you point me to GUIs that are developed as clients to a server
+running in a different process. Most of the Perl, Python, etc. GUIs I
+have seen are done via bindings to Tk, Gtk, Qt, etc and loaded into
+the Python process. The separation of interface and callback code is a
+good thing, but I haven't seen it taken to this level of separation
+commonly. I'd be interested in seeing how responsive and expressive it
+was.
+ 
+
+> If there is
+> already a GTK+/Orbit thing that does this, then I think making it generic
+> (read, NOT GTK+ specific) and providing it as a means of integrating R with
+> different languages would be fantastic.  I imagine this would give you the
+> largest bang for your buck as far as development time vs. benefit to the
+> community.
+
+I did that a long time ago and the silence on the user end was
+deafening! People weren't ready for CORBA as there was too much choice
+and not enough need. Things may better now, but who knows.  And a
+general DCOM/CORBA interface would presumably involve just an
+evalThisString() method which, as I mentioned, is very limited.  (What
+about return values?)
+
+
+
+> 
+> But, if I'm wrong, and the purpose is to create an IDE and a billion
+> different bindings to everything, then I'll just keep quiet.
+
+Please don't. That would be a loss.  I think we really want people to
+explore interfaces and different approaches and it seems like you have
+good and different ideas.
+
+So, really my point was that we will need to support multiple toolkits
+and we shouldn't dwell on selecting one. Rather doing things that we
+can easily experiment with and discuss.  As Duncan (Murdoch) said in
+another response, we'll figure out how to port things later.
+
+
+ D.
+
+
+> 
+> Zed
+> 
+> 
+> On 10/17/02 10:53 AM, "Duncan Temple Lang" <duncan@research.bell-labs.com>
+> wrote:
+> 
+> > 
+> > This is key. No matter what each of us believes about the merits of
+> > the different toolkits, as a community, we will need probably all of
+> > them, i.e. Tk, Gtk, Cocoa, Swing and probably Qt (which we can
+> > probably generate automatically using SIP).
+> > 
+> > What we should probably move forward on is developing small
+> > stand-alone tools that we can combine into an IDE.  As we develop
+> > invividual tools such as object browsers (see BioConductor), code
+> > displays, debuggers, model builders, etc., the different idioms will
+> > become apparent and we can figure out the abstractions for the S
+> > language level.  And we will get an understanding of what the tools
+> > should look like. (If they aren't programmed in S, I imagine fewer
+> > people will experiment with modifying them and trying new interface
+> > designs.  So it would be good to use the existing toolkits if possible
+> > or work on providing bindings for them.)
+> > 
+> -- 
+> Zed A. Shaw
+> 
+> 
+
+From duncan@research.bell-labs.com  Fri Oct 18 02:35:49 2002
+From: duncan@research.bell-labs.com (Duncan Temple Lang)
+Date: Thu, 17 Oct 2002 21:35:49 -0400
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <D7A3CFD7825BD6119B880002A58F06C20149D0C5@groexmb02.pfizer.com>; from gregory_r_warnes@groton.pfizer.com on Thu, Oct 17, 2002 at 09:33:24PM -0400
+References: <D7A3CFD7825BD6119B880002A58F06C20149D0C5@groexmb02.pfizer.com>
+Message-ID: <20021017213549.C5060@jessie.research.bell-labs.com>
+
+Great. Good to hear. I recently put a package for using R as a SOAP
+client on the Omegahat web site -- http://www.omegahat.org/SSOAP.  So
+looks like we are getting SOAP access covered.
+
+D.
+
+Warnes, Gregory R wrote:
+> 
+> > -----Original Message-----
+> > From: Zed A. Shaw [mailto:zed.shaw@ubc.ca]
+> 
+> > I think creating an R "server" that was accessible from CORBA, 
+> > XML-RPC, etc. and ran R code reliably (without crashing every 
+> > two seconds because it's not in "interactive" mode) would do 
+> > a lot more for GUI development than anything discussed so far.  
+> 
+> On this topic, I've written a SOAP interface for R using R + Rpy + Python +
+> SOAPpy that seems to run reliably and exposes all the functionality of R.
+> It is currently winding through the final stages of the red tape :-( that is
+> required for me to publish it, but I expect that this will be complete in
+> about a week and a half. :-)
+> 
+> I originally wrote it so that I could provide R services to web applications
+> developed in Zope.  This step became necessary because Zope is multithreaded
+> and R is *not*.  (Sound familiar?) This way R is run in separate processes
+> that are managed and communicated with via SOAP.
+> 
+> As soon as the red tape is wrapped up, I'll put it up on sourceforge and
+> post a note here.
+> 
+> -Greg
+> 
+> 
+> 
+> 
+> 
+> LEGAL NOTICE
+> Unless expressly stated otherwise, this message is confidential and may be privileged. It is intended for the addressee(s) only. Access to this E-mail by anyone else is unauthorized. If you are not an addressee, any disclosure or copying of the contents of this E-mail or any action taken (or not taken) in reliance on it is unauthorized and may be unlawful. If you are not an addressee, please inform the sender immediately.
+
+From dmurdoch@pair.com  Fri Oct 18 03:10:00 2002
+From: dmurdoch@pair.com (Duncan Murdoch)
+Date: Thu, 17 Oct 2002 22:10:00 -0400
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <20021017213231.B5060@jessie.research.bell-labs.com>
+References: <20021017135308.A5060@jessie.research.bell-labs.com> <B9D492A9.5E9B%zed.shaw@ubc.ca> <20021017213231.B5060@jessie.research.bell-labs.com>
+Message-ID: <nspuqu043faimlaductvvt20ds6psep7s0@4ax.com>
+
+On Thu, 17 Oct 2002 21:32:32 -0400, you wrote:
+
+>I think it is hard to get it configured on other people's machines.
+>But I don't think it is technically too hard to get it to work as a
+>regular server. What are the problems you have encountered.  (I agree
+>things could be better and have some plans to make it easier and more
+>platform independent, but they do involve significant reorganization
+>of code.)
+
+The biggest problem is that R thinks that it's in charge. There
+shouldn't be an event loop in R, or a console, or any other
+user-interface element.  R should provide the back end services that
+let a front end user interface function, but it should make the least
+possible assumptions about what that interface looks like.
+
+I'd like to have an R object (and my program might instantiate a dozen
+of them), which would provide services like parsing strings to turn
+them into expressions, evaluating expressions, converting expressions
+into printable strings,  telling me details about what's in the symbol
+table (and details about any object in the symbol table), etc.
+
+This object should be set up so that I can give it a long calculation
+and it'll go away and do it, but with a way for me to say I changed my
+mind and want to do something else instead.
+
+It needs to be able to say it wants to output a string, but let me
+decide what to do with it.
+
+It needs to be able to say it wants to draw some graphics, and give me
+a way to say where it should do that.  (This means that I'll need to
+provide all the services needed to be a graphics driver.)
+
+I'd like it to be able to report errors, and what its state was like
+when they occurred.
+
+>Can you point me to GUIs that are developed as clients to a server
+>running in a different process. 
+
+I don't know about Zed, but I wasn't thinking of it being in a
+different process.  It might be implemented that way, but I want it to
+look as though it's in the same process.  
+
+Duncan
+
+From duncan@research.bell-labs.com  Fri Oct 18 04:22:16 2002
+From: duncan@research.bell-labs.com (Duncan Temple Lang)
+Date: Thu, 17 Oct 2002 23:22:16 -0400
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <nspuqu043faimlaductvvt20ds6psep7s0@4ax.com>; from dmurdoch@pair.com on Thu, Oct 17, 2002 at 10:10:00PM -0400
+References: <20021017135308.A5060@jessie.research.bell-labs.com> <B9D492A9.5E9B%zed.shaw@ubc.ca> <20021017213231.B5060@jessie.research.bell-labs.com> <nspuqu043faimlaductvvt20ds6psep7s0@4ax.com>
+Message-ID: <20021017232216.A2786@jessie.research.bell-labs.com>
+
+Duncan Murdoch wrote:
+> On Thu, 17 Oct 2002 21:32:32 -0400, you wrote:
+> 
+> >I think it is hard to get it configured on other people's machines.
+> >But I don't think it is technically too hard to get it to work as a
+> >regular server. What are the problems you have encountered.  (I agree
+> >things could be better and have some plans to make it easier and more
+> >platform independent, but they do involve significant reorganization
+> >of code.)
+
+Thanks for the feedback.
+
+> 
+> The biggest problem is that R thinks that it's in charge. There
+> shouldn't be an event loop in R, or a console, or any other
+> user-interface element.  R should provide the back end services that
+> let a front end user interface function, but it should make the least
+> possible assumptions about what that interface looks like.
+
+That is quite easy to do.  That's how we write most of the
+inter-system interfaces that embed R, e.g. Gnumeric, Netscape, Python,
+Perl, Java, and so on.  I have heard some people mention this problem
+before, and when I discussed it with them we determined that they were
+running the R_mainloop() routine (or its equivalent). That's why R
+thought it was in charge.  The proper thing to do is just call R's
+initialization routine which sets up the engine for computation, but
+stop there and your application assumes control.  Then in any callback
+(or whatever is approriate for your application), you can use
+R_tryEval() to evaluate any S expression.  When you initialize the R
+engine, you can tell it that it is not interactive (although it knows
+that itself) and can give it command line arguments.  (This does work
+best on Unix as the Windows initialization is not similar and done in
+a separate piece of code. But it does work.)
+
+
+> 
+> I'd like to have an R object (and my program might instantiate a dozen
+> of them), which would provide services like parsing strings to turn
+> them into expressions, evaluating expressions, converting expressions
+> into printable strings,  telling me details about what's in the symbol
+> table (and details about any object in the symbol table), etc.
+
+No problem. Just arrange for that object to either call the relevant
+internal C routine in the R C code, or have it create an expression
+(in C) and evaluate that using R_tryEval(). Then extract the information
+as appropriate from the resulting SEXP. If the expression becomes
+anything more complex than  calling a function with a few arguments,
+write a function in S that takes care of doing the computations and call it.
+
+
+> 
+> This object should be set up so that I can give it a long calculation
+> and it'll go away and do it, but with a way for me to say I changed my
+> mind and want to do something else instead.
+
+Good luck. That's a tricky thing to do, in general, without threads.
+So on Windows, you can do it using threads.  But you can send an
+signal to the process on Unix. But of course you'll have to do it from
+another process or thread since there is no way to get access to the
+prompt. We may be able to do things in the near future using readers
+and idle tasks. 
+
+ 
+> It needs to be able to say it wants to output a string, but let me
+> decide what to do with it.
+
+If you really want to do that (I don't think it works in general
+except when relaying the output, e.g., directly to another display),
+just call a myEval() function which sinks the output to a
+textConnection() and return the result.  One can also use the
+taskCallback mechanism to have the result handled in a particular
+way. I am a big fan of event-driven programming and using callbacks
+to modularize behaviour that can be dynamically specified.
+
+> 
+> It needs to be able to say it wants to draw some graphics, and give me
+> a way to say where it should do that.  (This means that I'll need to
+> provide all the services needed to be a graphics driver.)
+
+I would think it is best to write a graphics device and when you start
+R load the code that implements that into R. I don't think there is a
+need for the application to be told by R that it wants to draw
+graphics.  An event driven model handles this better.
+
+> 
+> I'd like it to be able to report errors, and what its state was like
+> when they occurred.
+
+Exceptions will do this. We have discussed putting them in for I
+believe 3 1/2 years now and I brought it up again recently.  Hopefully
+those that have designed the mechanism will get a chance to put them
+in. 
+
+
+So all these are great to know about. More documentation is needed for
+how to run R as an embedded engine. I'll do this as time permits.
+Exceptions will be a very useful addition.
+
+Thanks.
+
+ (a different) Duncan
+
+> 
+> >Can you point me to GUIs that are developed as clients to a server
+> >running in a different process. 
+> 
+> I don't know about Zed, but I wasn't thinking of it being in a
+> different process.  It might be implemented that way, but I want it to
+> look as though it's in the same process.  
+> 
+> Duncan
+
+From phgrosje@ulb.ac.be  Fri Oct 18 08:59:28 2002
+From: phgrosje@ulb.ac.be (Philippe Grosjean)
+Date: Fri, 18 Oct 2002 09:59:28 +0200
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <x27kgh3whp.fsf@biostat.ku.dk>
+Message-ID: <MABBLJDICACNFOLGIHJOGEPOCPAA.phgrosje@ulb.ac.be>
+
+Peter Dalgaard <p.dalgaard@biostat.ku.dk> writes:
+
+>...
+>Mine too, obviously, although maybe for other reasons: I think it is
+>important to have the GUI scriptable in R, and the Tcl/Tk model is the
+>best tested one out there, and cross-platform except for some
+>low-level issues.
+
+>I do occasionally have doubts, though. Sometimes the Gtk approach and
+>all its promises about integration with other tools looks attractive,
+>but I still think we need the internal scriptability. Some efforts in
+>that direction are gnocl (Tcl interface in the style of Tk) and stklos
+>(object-oriented Scheme interface). However, both of these are in
+>their infancy, and essentially one-man jobs.
+>...
+
+Interesting enough, the opposite option (R driven by the GUI) is not
+completely stupid. This is the option I take in SciViews. Indeed, I have an
+object-oriented abstraction layer to communicate with the R calculation
+kernel. This layer is called "a plug". Interface exposed by the plug is
+abstracted enough to apply to other calculation engines (Splus, Matlab,
+Mathematica, Octave, Scilab,...), and also to other client-server tasks,
+even to the communication with external scientific devices or with
+databases. Methods are typically 'connect', 'evaluate', 'interrupt',
+'disconnect',... Writing plugs like that with one-to-one synchrone
+communication is not difficult. However, I need asynchrone communication,
+simultaneous connection of one client to several different kernels,
+simultaneous connection of several clients to the same kernel, error
+detection and recovery (being able to detect and kill a locked calculation
+kernel without affecting the other connections). This takes me lot of time
+and trials/errors, and the whole SciViews project is much delayed (it is
+also currently a one-man project). However, I will manage to get something
+operational by DSC 2003.
+
+Obviously, the SciViews approach takes much computing resources: it is not a
+lightweight solution that reserves most of computation power to the
+calculations, but it is very flexible and gives the opportunity to work
+easily and almost seemlessly with several different calculation engines from
+within the same GUI.
+
+I believe that both approaches (lightweight GUI driven by R and generic GUI
+driving possibly various different calculation kernels) should be developped
+concurrently since they have different and complementary uses.
+
+Best,
+
+Philippe Grosjean
+
+...........]<(({?<...............<?}))><...............................
+( ( ( ( (
+ ) ) ) ) )      Philippe Grosjean
+( ( ( ( (
+ ) ) ) ) )      IFREMER Nantes - DEL/AO
+( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3
+ ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41
+( ( ( ( ( 
+ ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (       e-mail: phgrosjean@sciviews.org
+ ) ) ) ) ) 
+( ( ( ( (       "I'm 100% confident that p is between 0 and 1"
+ ) ) ) ) )                                L. Gonick & W. Smith (1993)
+.......................................................................
+
+
+
+
+
+From mark@myatt.demon.co.uk  Fri Oct 18 13:06:59 2002
+From: mark@myatt.demon.co.uk (Mark Myatt)
+Date: Fri, 18 Oct 2002 13:06:59 +0100
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #8 - 4 msgs
+In-Reply-To: <20021018100007.16270.81981.Mailman@hypatia.math.ethz.ch>
+References: <20021018100007.16270.81981.Mailman@hypatia.math.ethz.ch>
+Message-ID: <PTmb8DAjl$r9EwFk@myatt.demon.co.uk>
+
+Philippe Grosjean wrote:
+
+>Peter Dalgaard <p.dalgaard@biostat.ku.dk> writes:
+>>...
+>>Mine too, obviously, although maybe for other reasons: I think it is
+>>important to have the GUI scriptable in R, and the Tcl/Tk model is the
+>>best tested one out there, and cross-platform except for some
+>>low-level issues.
+>
+>>I do occasionally have doubts, though. Sometimes the Gtk approach and
+>>all its promises about integration with other tools looks attractive,
+>>but I still think we need the internal scriptability. Some efforts in
+>>that direction are gnocl (Tcl interface in the style of Tk) and stklos
+>>(object-oriented Scheme interface). However, both of these are in
+>>their infancy, and essentially one-man jobs.
+>>...
+>
+>Interesting enough, the opposite option (R driven by the GUI) is not
+>completely stupid.
+
+Not stupid at all. I think that the availability of the Tk bindings in R
+means that the front-end to functions can be scripted in R. The
+advantage of this is that development can be incremental and move
+forward on several fronts.
+
+We could start with a simple 'GUI' with (e.g.) an editor, output, and
+inspector window that allows R code to be submitted to R and output
+returned. The menu system of the GUI could be scriptable ... a menu item
+can be added and associated with a call to an R function and that
+function would be a Tk front-end to (e.g.) glm(). The GUI handles
+submitting of commands and capturing and displaying output but
+everything else is done by R.
+
+This would mean that one team can concentrate on the GUI (using whatever
+tools seem best for that). Another team can concentrate on common user-
+interaction elements in R/Tk (e.g. formula specification, object
+selection) that would be common to many front-ends. With this in place
+front-ends to functions could be written gradually by anyone familiar
+with R and the Tk bindings or added by the authors of libraries. Neither
+team would be waiting on the other team to complete since Tk front-ends
+can be called from the terminal window (or from a stop-gap R/Tk front-
+end). Without R/Tk front-ends the GUI still works as an IDE.
+
+There is merit in discussing tools but I think we also need to adopt a
+development strategy that can open development up to as many people as
+possible. I think this would mean using the R language as much as
+possible since we all have some knowledge of it. I think a development
+entirely in (e.g.) C++ with Qt (or whatever) could not attract a large
+body of developers.
+
+Mark
+
+--
+Mark Myatt
+
+
+
+From murdoch@stats.uwo.ca  Fri Oct 18 14:53:24 2002
+From: murdoch@stats.uwo.ca (Duncan Murdoch)
+Date: Fri, 18 Oct 2002 09:53:24 -0400
+Subject: [R-gui] Re: R-SIG-GUI digest, Vol 1 #3 - 9 msgs
+In-Reply-To: <20021017232216.A2786@jessie.research.bell-labs.com>
+References: <20021017135308.A5060@jessie.research.bell-labs.com> <B9D492A9.5E9B%zed.shaw@ubc.ca> <20021017213231.B5060@jessie.research.bell-labs.com> <nspuqu043faimlaductvvt20ds6psep7s0@4ax.com> <20021017232216.A2786@jessie.research.bell-labs.com>
+Message-ID: <3p20ru048jisp537obm63cjobd1609bun2@4ax.com>
+
+On Thu, 17 Oct 2002 23:22:16 -0400, you wrote in message
+<20021017232216.A2786@jessie.research.bell-labs.com>:
+
+>Duncan Murdoch wrote:
+>> On Thu, 17 Oct 2002 21:32:32 -0400, you wrote:
+>> 
+>> >I think it is hard to get it configured on other people's machines.
+>> >But I don't think it is technically too hard to get it to work as a
+>> >regular server. What are the problems you have encountered.  (I agree
+>> >things could be better and have some plans to make it easier and more
+>> >platform independent, but they do involve significant reorganization
+>> >of code.)
+>
+>Thanks for the feedback.
+>
+>> 
+>> The biggest problem is that R thinks that it's in charge. There
+>> shouldn't be an event loop in R, or a console, or any other
+>> user-interface element.  R should provide the back end services that
+>> let a front end user interface function, but it should make the least
+>> possible assumptions about what that interface looks like.
+>
+>That is quite easy to do.  That's how we write most of the
+>inter-system interfaces that embed R, e.g. Gnumeric, Netscape, Python,
+>Perl, Java, and so on.
+
+That's really good news.  Could a section be added to r-exts.texi
+describing the stable part of this interface?  The difficulty for
+someone like me who isn't familiar with the internals is knowing which
+ones matter.  It would also be nice to know which ones will go away
+without warning.
+
+>If you really want to do that (I don't think it works in general
+>except when relaying the output, e.g., directly to another display),
+>just call a myEval() function which sinks the output to a
+>textConnection() and return the result.  One can also use the
+>taskCallback mechanism to have the result handled in a particular
+>way. I am a big fan of event-driven programming and using callbacks
+>to modularize behaviour that can be dynamically specified.
+
+I don't think taskCallback is mentioned in r-exts.texi, either.  Could
+we also add it as an alias to the taskCallback.Rd help file?
+
+>So all these are great to know about. More documentation is needed for
+>how to run R as an embedded engine. I'll do this as time permits.
+>Exceptions will be a very useful addition.
+
+That'll be great!
+
+Duncan Murdoch
+

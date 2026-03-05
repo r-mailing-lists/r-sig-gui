@@ -1,0 +1,109 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2009-04",
+  "messages": [
+    {
+      "id": "msg-6b5accfcd725",
+      "message_id": "<1240301090982-2668568.post@n2.nabble.com>",
+      "from_name": "Claudio82",
+      "from_email_hash": "2f7dfeaaae8839c46b73f8ccfb9480e7789a053c999c7bfc883b85b5ccbde933",
+      "date": "2009-04-21T01:04:50-07:00",
+      "subject": "[R-gui]  Tinn-R and JGR issues under Vista",
+      "subject_clean": "[R-gui]  Tinn-R and JGR issues under Vista",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all\nI'm kinda new to R and everything else, so please be kind :P\nI have some issues running Tinn-R 2.2.0.2 and JGR (latest version) on my\nlaptop (Windows Vista 64bit)\n1) As long as I use R 2.8.1 it works just fine\n2) If I run Tinn-R, the \"Send Line\" command works fine, while the \"Send\nSelection\" works but it gives me always the same answer\n\"source(.trPaths[5])\". I know it works 'cos my script generates a .txt file\nin the working directory. Nevertheless, in the R Console no display is shown\n(even dir() shows nothing). I don't think it's related to the auth policy of\nVista, as the problem didn't disappear after giving free access to the temp\nfolder and running Tinn-R as Administrator\n3) I installed JGR, loadad the packages (as Admin), installed them,\neverything went smooth...but when I launch JGR it opens and then closes one\nsecond after. I tried with the \"-debug\" option but the debug window closes\ntoo, so I'm kinda stuck...\nI hope someone can help me :)\nSee you all guys! Tnx!\n\nClaudio\n-- \nView this message in context: http://n2.nabble.com/Tinn-R-and-JGR-issues-under-Vista-tp2668568p2668568.html\nSent from the R Sig Gui mailing list archive at Nabble.com.",
+      "body_snippet": "Hi all\nI'm kinda new to R and everything else, so please be kind :P\nI have some issues running Tinn-R 2.2.0.2 and JGR (latest version) on my\nlaptop (Windows Vista 64bit)\n1) As long as I use R 2.8.1 it",
+      "thread_id": "thread-6b5accfcd725",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-f159a8f408c1",
+      "message_id": "<COL102-W383BDF6D980E13DBDE682D5730@phx.gbl>",
+      "from_name": "ibtesam al_sagaf",
+      "from_email_hash": "3221f77ea046c029e52491d12e7218cf26a68e9a2658a2d88748ccf5a02dc5a8",
+      "date": "2009-04-26T00:02:23+03:00",
+      "subject": "[R-gui] rank function problem",
+      "subject_clean": "[R-gui] rank function problem",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090426/b7901604/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090426/b7901604/attachment.pl>",
+      "thread_id": "thread-f159a8f408c1",
+      "thread_depth": 0,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-53a4355e454f",
+      "message_id": "<49F4885F.4070709@bht-berlin.de>",
+      "from_name": "Ulrike Grömping",
+      "from_email_hash": "99e1e46e1e0d7b77c1611da747e86cd6a4102b778c9e34ec69a028711516dbf9",
+      "date": "2009-04-26T18:14:23+02:00",
+      "subject": "[R-gui] rank function problem",
+      "subject_clean": "[R-gui] rank function problem",
+      "in_reply_to": "<COL102-W383BDF6D980E13DBDE682D5730@phx.gbl>",
+      "references": [
+        "<COL102-W383BDF6D980E13DBDE682D5730@phx.gbl>"
+      ],
+      "body_plain": "Ibtesam,\n\nyou are using the wrong mailing list, you should be using R-help, not \nthe GUI list.\n\nAnyway, if you execute \"print(z,digits=20)\", you see that the reason for \nyour different ranks is in numerical accuracy of representations of the \nnumbers.\n\nRegards,\nUlrike\n\nibtesam al_sagaf schrieb:\n> Dear all\n>\n>  \n>\n> I'm Ibtesam. \n>\n> I use R program in my studded.\n> I have been seeing  problem in rank function. It works as a wrong way from vector to other.\n>  \n> I run this code many times, in every time I obtained this result;\n>  \n> 1-     When I enter this data vector manually, I obtain the correct ranking. It gives the same rank for equal values.  \n> Example from the following data: rank(abs(0.2,0.2,-0.2))= 4  4 4\n>  \n>   \n>> k=c(-.9,.2,-1.1,.5,-.8,.3,-1,.6,-1.3,-.2,-1.5,.1,-1.2,-.1,-1.4,.2,-.6,.5,-.8,.8)\n>> rank(abs(k))\n>>     \n>  [1] 14.0  4.0 16.0  7.5 12.0  6.0 15.0  9.5 18.0  4.0 20.0  1.5 17.0  1.5 19.0\n> [16]  4.0  9.5  7.5 12.0 12.0\n> 2-     When I obtain the same data vector from some operations, I obtain a wrong ranking. It gives the different ranks for equal values.  \n> Example from the following data: rank(abs(0.2,-0.2,0.2))= 3  4.5  4.5\n>  \n>\n>\n>   \n>> x=c(2.9,3,2.5,2.6,3.2)\n>> y=c(3.8,2.7,4,2.4)\n>> z=rep(0,length(x)*length(y))\n>>       sizez=1\n>>       for(i in 1:length(x))\n>>     \n> +          for(j in 1:length(y))\n> +      {z[sizez]=x[i]-y[j];  sizez=sizez+1;}\n>   \n>> z\n>>     \n>  [1] -0.9  0.2 -1.1  0.5 -0.8  0.3 -1.0  0.6 -1.3 -0.2 -1.5  0.1 -1.2 -0.1 -1.4\n> [16]  0.2 -0.6  0.5 -0.8  0.8\n>   \n>>  R=rank(abs(z)) \n>> R\n>>     \n>  [1] 14.0  3.0 16.0  7.5 11.5  6.0 15.0 10.0 18.0  4.5 20.0  1.5 17.0  1.5 19.0\n> [16]  4.5  9.0  7.5 11.5 13.0\n>\n>  \n>\n>  \n>\n> I try many times but I have not known what is the mistake.\n> Can you kindly help me to solve this problem?\n>  \n> Thank you.\n> Ibtesam.\n>\n>\n>\n>  \n>\n> _________________________________________________________________\n>\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Ibtesam,\n\nyou are using the wrong mailing list, you should be using R-help, not \nthe GUI list.\n\nAnyway, if you execute \"print(z,digits=20)\", you see that the reason for \nyour different ranks is in num",
+      "thread_id": "thread-f159a8f408c1",
+      "thread_depth": 1,
+      "month": "2009-04"
+    },
+    {
+      "id": "msg-69096c62fc54",
+      "message_id": "<49F77C96.3020600@waddell.ch>",
+      "from_name": "Adrian Waddell",
+      "from_email_hash": "afd6ae43637c0691d909168b5aa7407cdbf975683ad29c432cf4cd72092f8fda",
+      "date": "2009-04-28T18:00:54-04:00",
+      "subject": "[R-gui] tcltk: change the parent of a widget",
+      "subject_clean": "[R-gui] tcltk: change the parent of a widget",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear R-SIG-GUI list readers,\n\nIf I have two canvas objects (canvas1 and canvas2), both containing \nitems and event bindings:\n\ntt <- tktoplevel()\ncanvas1 <- tkcanvas(tt, ...)\ncanvas2 <- tkcanvas(tt, ...)\n## ... tkcreate(...); tkitembind(...); ...\n\nand I'd like to display either one canvas in the toplevel window tt, or \ndisplay both, canvas1 and canvas2, in two different toplevel windows \n(say, tt and tt1).\n\nIs there a way to pack canvas1 or canvas2 into another toplevel window \nthan the tt window (for which it was defined)? It's important that all \nevent bindings stay preserved.\n\nSincerely,\n\nAdrian Waddell",
+      "body_snippet": "Dear R-SIG-GUI list readers,\n\nIf I have two canvas objects (canvas1 and canvas2), both containing \nitems and event bindings:\n\ntt <- tktoplevel()\ncanvas1 <- tkcanvas(tt, ...)\ncanvas2 <- tkcanvas(tt, ..",
+      "thread_id": "thread-69096c62fc54",
+      "thread_depth": 0,
+      "month": "2009-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-6b5accfcd725",
+      "subject": "[R-gui]  Tinn-R and JGR issues under Vista",
+      "message_count": 1,
+      "participants": [
+        "Claudio82"
+      ],
+      "started": "2009-04-21T01:04:50-07:00",
+      "last_reply": "2009-04-21T01:04:50-07:00",
+      "root_message_id": "msg-6b5accfcd725"
+    },
+    {
+      "id": "thread-f159a8f408c1",
+      "subject": "[R-gui] rank function problem",
+      "message_count": 2,
+      "participants": [
+        "Ulrike Grömping",
+        "ibtesam al_sagaf"
+      ],
+      "started": "2009-04-26T00:02:23+03:00",
+      "last_reply": "2009-04-26T18:14:23+02:00",
+      "root_message_id": "msg-f159a8f408c1"
+    },
+    {
+      "id": "thread-69096c62fc54",
+      "subject": "[R-gui] tcltk: change the parent of a widget",
+      "message_count": 1,
+      "participants": [
+        "Adrian Waddell"
+      ],
+      "started": "2009-04-28T18:00:54-04:00",
+      "last_reply": "2009-04-28T18:00:54-04:00",
+      "root_message_id": "msg-69096c62fc54"
+    }
+  ]
+}

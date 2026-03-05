@@ -1,0 +1,322 @@
+From pmgrgui at gmail.com  Tue Jun  6 20:10:56 2006
+From: pmgrgui at gmail.com (j verzani)
+Date: Tue, 6 Jun 2006 14:10:56 -0400
+Subject: [R-gui] New versions of pmg and iWIdgetsRGtk
+Message-ID: <576452c40606061110i74ee9ad2ja53c1033c12974dc@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060606/1311f26e/attachment.pl 
+
+From joseclaudio.faria at terra.com.br  Sun Jun 11 05:47:10 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sun, 11 Jun 2006 00:47:10 -0300
+Subject: [R-gui] Tinn-R 1.18.5.5 released
+Message-ID: <448B923E.30801@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.5.5) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help//English/Readme/HTML'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+Tinn-R team
+
+
+From MalcolmMacias at graphic-designer.com  Wed Jun 14 18:19:26 2006
+From: MalcolmMacias at graphic-designer.com (Malcolm Macias)
+Date: Wen, 14 Jun 2006 13:19:26 -0300
+Subject: [R-gui] large lift on OTC, important statement
+Message-ID: <46127079769548.70B3E42CE9@VJ1EP>
+
+Thought about giving up trading yesterday? What you needed to cheer up was this piece of advice! Read further and forget the taste of disappointment.
+
+Get C T X E . P K First Thing Today
+This Is Going To Explode! 
+
+C T X E . P K - C a n t e x E n e r g y C o r p
+Global score: Excellent|
+Mean Recommendation: Srtong Byu|
+Investor Action:Buy Fats|
+Current Price: $0.51 Get it Now!
+
+Bfeore we strat wtih the porfile of C T X E . P K we wolud lkie to mention
+sometihng vrey ipmortant: Tehre is a Big PR Camapign satrting tihs week .
+
+And it wlil go all week so it wuold be bset to get in Nwo.
+
+Company Profile:
+C a n t e x E n e r g y C o r proation is an indepednent, manaegd riks, oil and gas explroation, dveelopment, and productoin copmany heaqduartered in San Antoino, Txeas.
+
+Recent News:
+C a n t e x E n e r g y C o r p. (C T X E . P K - Nesw) annonuced taht the sesimic crwes hvae been moiblized and the 40 miels of siesmic wrok has commneced on the Big Canoyn Prospcet taregting the eatsern Val Vrede Bsain. The cerw strated operatinos on Friady Jnue 2 2060. Tehy hvae been mvoing oevr the terarin bteter tahn expetced and the frist of there lnies sohuld be copmleted by wekes edn. Dtaa tehn wlil be snet off for prcoessing taknig 3 to 4 weeks. The esatern Val Vedre Baisn is viweed by indusrty exprets as perahps one of the Loewr 4'8s msot under-epxlored, porven gas proivnces.
+
+Tarce Muarin, Presiednt of C a n t e x E n e r g y C o r p., sttaed, "hTe Val Vedre Baisn ofefrs a singificant, under-exploerd nautral gas resoruce opprotunity for new and emreging lyaers. The siesmic dtaa aavilable currently beocmes a distnict compteitive advantgae to evalutae waht has not been seen bfeore. Tehre are at lesat a doezn atcive plaeyrs in the bsain now and an unknwon nmuber of addiitonal palyers lkiely awatiing smoe incetnive or oppprutnity to gian a cmopetitive avdantage, and we bleieve taht our geopyhsical exprets at Porvidence Tecnhologies hvae the capabiltiy and experitse to prvoide us taht advanatge. Needlses-to-say, we are anxiuosly looknig forwrad to the ognoing sesimic dtaa reprots oevr the nxet seevral weesk."
+
+For more information, refer to the entire news for the company announced on June 6.
+
+
+Conclusion:
+The Examples Above Show The Awesome, Earning Potential of Little Known Companies That Explode Onto Investor's Radar Screens; Many of You Are Already Familiar with This. Is C T X E . P K Poised and Positioned to Do that For You? Then You May Feel the Time Has Come to Act... 
+
+And Please Watch this One Trade tomorrow! Go C T X E . P K.
+___________________
+
+
+
+
+
+A short absence quickens love, a long absence kills it. Catch not at the shadow and lose the substance You win some, you lose some 
+Use soft words and hard arguments For the commandment is a lamp; and the law is light; and reproofs of instruction are the way of life.
+A bad penny always turns up. Don't mind how bird vex, it can't vex with tree. If you get a good wife you will be happy, if you get a bad one you will become a philosopher 
+Fax is stranger than fiction. Love sees no faults. Well done is better than well said Two wrongs do not make a right
+
+
+From lawremi at iastate.edu  Fri Jun 23 04:51:12 2006
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Thu, 22 Jun 2006 21:51:12 -0500
+Subject: [R-gui] rgtk2 on cran
+Message-ID: <449B5720.9010009@iastate.edu>
+
+I am pleased to announce that RGtk2 (version 2.8.5) is now on CRAN. 
+Currently it is only the source package, but I am hoping that the CRAN 
+maintainers will put the Windows version up there soon.
+
+Also, unless any major issues arise, this is probably the last release 
+of the 2.8.x series. Development has already progressed to the 
+2.9.x/2.10.x series which will bind to the GTK/GDK/GdkPixbuf 2.10.x, ATK 
+1.12.x, Pango 1.14.x, and cairo 1.2.x API's.
+
+Thanks for your interest,
+Michael
+
+
+From JeeBee at troefpunt.nl  Fri Jun 23 09:49:31 2006
+From: JeeBee at troefpunt.nl (JeeBee)
+Date: Fri, 23 Jun 2006 09:49:31 +0200
+Subject: [R-gui] Some R-Tcl/Tk-BWidget newbie questions.
+Message-ID: <pan.2006.06.23.07.49.31.906568@troefpunt.nl>
+
+
+This is a modified repost of a post I did in r.general (think this is a
+better place)
+
+
+Dear list,
+
+1) Does someone know why, in my below code, tkpack can hang (consuming
+100% cpu)? It also hangs without the fill="both",expand=T. Then, if I
+replace it by tkgrid, it works!
+2) After replacing by tkgrid, I tried to add sticky="news", but that does
+not help at all, notebook is not resized when the window is. (and it did
+not help to add fill/expand to packing of tbw.algemeen/tab.algemeen etc.)
+3) If I do not raise all of the tabs in the notebook, they are all
+displayed on the first tab initially (also if I raise only once). As you
+can see below, I found an ugly hack, but I would like to know why this
+goes wrong and how to solve it.
+
+Thanks very much,
+JeeBee.
+
+
+require(tcltk) || stop("Package tcltk is not available.")
+# Add path to BWidgets
+addTclPath(".")
+version.BWidget <<- tclvalue(tclRequire("BWidget"))
+
+start.gui <- function() {
+  # Toplevel
+  tt <- tktoplevel()
+  tkwm.title(tt, "MyTitle")
+
+  # Notebook
+### --> The following line makes R hang with 100% cpu forever
+  #tkpack(tn <- tkwidget(tt, "NoteBook"), fill="both", expand=TRUE)
+### --> This works, but not sticky="news",
+### --> the notebook does not resize together with the window
+  tn <- tkwidget(tt, "NoteBook")
+  tkgrid(tn, sticky="news")
+
+  tbn <- tclvalue(tkinsert(tn, "end", "Algemeen", "-text", "Algemeen"))
+  tkpack(tbw.algemeen <- .Tk.newwin(tbn))
+  tkpack(tab.algemeen <- tkframe(tbw.algemeen))
+  tbn <- tclvalue(tkinsert(tn, "end", "Relaties", "-text", "Relaties"))
+  tkpack(tbw.relaties <- .Tk.newwin(tbn))
+  tkpack(tab.relaties <- tkframe(tbw.relaties))
+  tbn <- tclvalue(tkinsert(tn, "end", "Posten", "-text", "Posten"))
+  tkpack(tbw.posten <- .Tk.newwin(tbn))
+  tkpack(tab.posten <- tkframe(tbw.posten))
+  tbn <- tclvalue(tkinsert(tn, "end", "Instellingen", "-text", "Instellingen"))
+  tkpack(tbw.instellingen <- .Tk.newwin(tbn))
+  tkpack(tab.instellingen <- tkframe(tbw.instellingen))
+
+  gui.maak.tab(tab.algemeen)
+  gui.maak.tab(tab.relaties)
+  gui.maak.tab(tab.posten)
+  gui.maak.tab(tab.instellingen)
+
+  tkgrid(tkbutton(tt, text="GUI bijwerken", 
+    command=function() verwerk.button("GUIBijwerken", tt)))
+
+  # FIXME: add cleanup handler?
+  #tkbind(tt, "<Destroy>", function() tkdestroy(tn))
+
+### --> Don't understand this ... if I do the last "raise" only,
+### --> then I see all tabs in the first tab, until I go to another
+### --> tab and back. With all these "raises", it works
+  tcl(tn, "raise", "Instellingen")
+  tcl(tn, "raise", "Posten")
+  tcl(tn, "raise", "Relaties")
+  tcl(tn, "raise", "Algemeen")
+}
+
+gui.maak.tab <- function(tt) {
+  tkgrid(tklabel(tt, text="Instellingen"), sticky="news")
+  test.button <- tclVar("one two") 
+  tkgrid(tkcheckbutton(tt,variable=test.button))
+}
+
+
+From gunther.maier at wu-wien.ac.at  Fri Jun 23 12:48:28 2006
+From: gunther.maier at wu-wien.ac.at (Gunther Maier)
+Date: Fri, 23 Jun 2006 12:48:28 +0200
+Subject: [R-gui] SimpleR, a Windows GUI to R
+Message-ID: <6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>
+
+Dear colleagues,
+I would like to inform you that SimpleR, a Windows-based GUI for R is available for inspection and testing now at http://www-sre.wu-wien.ac.at/SimpleR . I have presented SimpleR at the useR! conference last week in Vienna, Austria. You can find the slides from this presentation, a short handbook and the installable program at the url given above. Please note that SimpleR is in very early development and that it does NOT intend to cover all of R nor to be OS independent.
+Your suggestions and comments will be welcome. If you are interested in joining the development of SimpleR, please let me know.
+
+Kind regards
+Gunther Maier
+<gunther.maier at wu-wien.ac.at>
+
+-----------------------------------------------------------------------
+*  Gunther Maier, University of Economics and Business Administration *
+*     Augasse 2-6, Vienna, Austria. (Gunther.Maier at wu-wien.ac.at)     *
+*      Newsletter Editor, European Regional Science Association       *
+
+
+From ecoinformatics at gmail.com  Fri Jun 23 12:57:24 2006
+From: ecoinformatics at gmail.com (Xiaohua Dai)
+Date: Fri, 23 Jun 2006 12:57:24 +0200
+Subject: [R-gui] SimpleR, a Windows GUI to R
+In-Reply-To: <6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>
+References: <6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>
+Message-ID: <15f8e67d0606230357p30a6f684id1c6fc3b8322e370@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060623/31dd2278/attachment.pl 
+
+From ligges at statistik.uni-dortmund.de  Mon Jun 26 19:10:14 2006
+From: ligges at statistik.uni-dortmund.de (Uwe Ligges)
+Date: Mon, 26 Jun 2006 19:10:14 +0200
+Subject: [R-gui] rgtk2 on cran
+In-Reply-To: <449B5720.9010009@iastate.edu>
+References: <449B5720.9010009@iastate.edu>
+Message-ID: <44A014F6.2060308@statistik.uni-dortmund.de>
+
+Michael Lawrence wrote:
+
+> I am pleased to announce that RGtk2 (version 2.8.5) is now on CRAN. 
+> Currently it is only the source package, but I am hoping that the CRAN 
+> maintainers will put the Windows version up there soon.
+
+Hope too -- within the next 24 hours on CRAN.
+Due to the Windows binary package maintainer was travelling, he was not 
+able to fix a little bug that caused a hang up of the build process 
+since June 22nd.
+
+Uwe Ligges
+
+> 
+> Also, unless any major issues arise, this is probably the last release 
+> of the 2.8.x series. Development has already progressed to the 
+> 2.9.x/2.10.x series which will bind to the GTK/GDK/GdkPixbuf 2.10.x, ATK 
+> 1.12.x, Pango 1.14.x, and cairo 1.2.x API's.
+> 
+> Thanks for your interest,
+> Michael
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From Philippe.Grosjean at umh.ac.be  Tue Jun 27 12:29:43 2006
+From: Philippe.Grosjean at umh.ac.be (Philippe Grosjean)
+Date: Tue, 27 Jun 2006 12:29:43 +0200
+Subject: [R-gui] New developers section on the R Wiki
+Message-ID: <44A10897.5010709@umh.ac.be>
+
+Hello all,
+
+There is a new section on the R Wiki (hhtp://wiki.r-project.org) 
+dedicated to discussions around various R developments 
+(http://wiki.r-project.org/rwiki/doku.php?id=developers:developers).
+
+Any R developer is free to create a page, or a whole subsection to 
+discuss particular R developement aspects. This is of course purely 
+optional. In particular, R Core Team members use to maintain their own 
+development section at http://developer.r-project.org/.
+
+Note also that, if you create a page on the R Wiki, it is to share a 
+discussion about your developements with other useRs/developeRs. If your 
+intention is just to inform people about your own developments, you 
+should better write an HTML page on your own Web site (read-only for the 
+other useRs/developeRs).
+Best,
+
+Philippe Grosjean
+
+(Sorry for possible cross-posting)
+-- 
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Belgium
+( ( ( ( (
+..............................................................
+
+
+From jtnews1 at biomserv.univ-lyon1.fr  Fri Jun 30 16:40:25 2006
+From: jtnews1 at biomserv.univ-lyon1.fr (Jean Thioulouse)
+Date: Fri, 30 Jun 2006 16:40:25 +0200
+Subject: [R-gui] ade4 package GUI
+Message-ID: <p06210200c0c992ffbac5@[134.214.34.24]>
+
+Hello,
+
+I have written a tcltk GUI for some basic functions of the ade4 package
+(multivariate data analysis package, on CRAN), and I am looking for GUI-
+knowledgeable people to look at it and tell me what they think about it.
+
+Of course it would be better if they know the bases of multivariate
+analysis, and even better if they know at least a little about ade4
+and the duality diagram. But any suggestion or help on improving this
+interface would be most welcome.
+
+The source package can be downloaded here :
+
+http://pbil.univ-lyon1.fr/JTHome/ade4TkGUI_0.1-2.tar.gz
+
+Thank you,
+Jean
+-- 
+Jean Thioulouse - Labo Biometrie et Biologie Evolutive, UMR CNRS 5558
+Universite Lyon 1, Batiment Mendel,  43 Boulevard du 11 Novembre 1918
+69622 Villeurbanne Cedex,  France.       Tel/Fax : (33) 4 72 43 27 56
+                http://pbil.univ-lyon1.fr/JTHome.html
+
+

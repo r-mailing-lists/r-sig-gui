@@ -1,0 +1,186 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-04",
+  "messages": [
+    {
+      "id": "msg-d31875ab6e45",
+      "message_id": "<44323365.3080804@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-04-04T05:50:45-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.4.4 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.4.4 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.4.4) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under *OS Windows*.\n\nTo see the changes, please, read: 'Help/English/Changes/HTML'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.4.4) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-d31875ab6e45",
+      "thread_depth": 0,
+      "month": "2006-04"
+    },
+    {
+      "id": "msg-daa45c664b32",
+      "message_id": "<1145354414.4444b8aede542@webmail.dds.nl>",
+      "from_name": "wvdgraaf at dds.nl",
+      "from_email_hash": "f4e8f55fc4b93fc7a2933b4baf44e29b5d34c5148ff19e8604db97957d00caa7",
+      "date": "2006-04-18T12:00:14+02:00",
+      "subject": "[R-gui] Installing SciViews",
+      "subject_clean": "[R-gui] Installing SciViews",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nWhat do I need to install the latest package of SciViews? I already have R\nv.2.2.1 installed on my WinXP machine.\n\nOn http://www.sciviews.org/SciViews-R/index.html I read that required components\nare:\n - SciViews-R version 0.8-9            (exe: 12,334 kb)\n - SciViews R bundle version 0.8-9     (zip:    442 kb)\n - R2HTML R package (>= 1.54)          (zip:    527 kb)\n - Manual\nThen, on http://cran.r-project.org/src/contrib/Descriptions/SciViews.html I find\na newer version of SciViews-R: 0.9-4 (zip: 550kb). Also, I have found a version\n1.56 of the R2HTML package (zip: 524 kb)on the web.\n\nLooking at the contents of the zip files and their sizes, I would say that the\n0.9-4 zip from CRAN is a newer version of the bundle version 0.8-9 on\nsciviews.org.\n\nThis leaves me with the question what I need for a new install:\n - do I need to get a newer version of the 12 Mb installer to use together with\nthe 0.9-4 bundle and 1.56 R2HTML package? If so, where can I get it?\n - can I use the old installer with the newer bundle and package?, or\n - should I stick to the 0.8-9 installer and bundle, together with the 1.54\npackage, in order to avoid clashes?\n\nThanks,\n\nWim van der Graaf",
+      "body_snippet": "Hi,\n\nWhat do I need to install the latest package of SciViews? I already have R\nv.2.2.1 installed on my WinXP machine.\n\nOn http://www.sciviews.org/SciViews-R/index.html I read that required components",
+      "thread_id": "thread-daa45c664b32",
+      "thread_depth": 0,
+      "month": "2006-04"
+    },
+    {
+      "id": "msg-d1ba2d8713b7",
+      "message_id": "<4446068B.3050209@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2006-04-19T11:44:43+02:00",
+      "subject": "[R-gui] Installing SciViews",
+      "subject_clean": "[R-gui] Installing SciViews",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "wvdgraaf at dds.nl wrote:\n> Hi,\n> \n> What do I need to install the latest package of SciViews? I already have R\n> v.2.2.1 installed on my WinXP machine.\n> \n> On http://www.sciviews.org/SciViews-R/index.html I read that required components\n> are:\n>  - SciViews-R version 0.8-9            (exe: 12,334 kb)\n>  - SciViews R bundle version 0.8-9     (zip:    442 kb)\n>  - R2HTML R package (>= 1.54)          (zip:    527 kb)\n>  - Manual\n\nWhen you install all those packages under R 2.2.X, you are sure that\nthey will work with each other.\n\n\n> Then, on http://cran.r-project.org/src/contrib/Descriptions/SciViews.html I find\n> a newer version of SciViews-R: 0.9-4 (zip: 550kb). Also, I have found a version\n> 1.56 of the R2HTML package (zip: 524 kb)on the web.\n\nYes, SciViews 0.9-4 is newer, and it is compatible with SciViews-R\nversion 0.8-9 (the first item in the list hereabove). It was necessary\nto put this version on CRAN because they push always to be conpatible\nwith the development version of R (2.3.0). This is the same for R2HTML,\nalthough, I don't know if its newest version 1.56 is fully compatible\nwith the rest.\n\nNow, R 2.3.0 is planned to be released for next week. And I will have\nthe opportunity to move SciViews/SciViews-R entirely to version 0.9-X\nand check further compatibility with the other pacakges on CRAN (R2HTML,\nRCmdr, etc.).\n\nThe problem is the following one: R and R packages on CRAN are changing\nvery rapidly (a new version of at least one CRAN package every day or\nso)! Those changes are never checked against compatibility with\nSciViews-R (developers almost exclusively use Emacs-ESS, not SciViews)!\nSo, it is a huge work for me to recherck everything, make changes and\nfix compatibility issues everytime a package changes.\n\nSo, my policy is the following: everything R makes a major update (like\n2.2.X to 2.3.0), I recheck everything and propose a coherent suite of\npackages on the SciViews-R web site. Then, eventually, some packages\nbecome outdated. You have either the possibility to install everytrhing\nfrom SciViews-R, so that oyu are sure of maximum compatibility... but\nperhaps not everything up-to-date. Or, you update with latest versions\non CRAN... but take the risk to raise some compatibility issues.\n\nThat's the best I can do, given the voluntary nature of my work on\nSciViews-R and the limited time I have to maintain it.\n\n> Looking at the contents of the zip files and their sizes, I would say that the\n> 0.9-4 zip from CRAN is a newer version of the bundle version 0.8-9 on\n> sciviews.org.\n> \n> This leaves me with the question what I need for a new install:\n>  - do I need to get a newer version of the 12 Mb installer to use together with\n> the 0.9-4 bundle and 1.56 R2HTML package? If so, where can I get it?\n>  - can I use the old installer with the newer bundle and package?, or\n>  - should I stick to the 0.8-9 installer and bundle, together with the 1.54\n> package, in order to avoid clashes?\n\nPlease, let me something like one more month after the release of R\n2.3.0 to check everything and to update the SciViews-R web site with\nversion 0.9-X.\n\nBest,\n\nPhilippe Grosjean\n\n> Thanks,\n> \n> Wim van der Graaf\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n> \n\n\n-- \n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Pentagone (3D08)\n( ( ( ( (    Academie Universitaire Wallonie-Bruxelles\n  ) ) ) ) )   8, av du Champ de Mars, 7000 Mons, Belgium\n( ( ( ( (\n  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.30.54\n( ( ( ( (    email: Philippe.Grosjean at umh.ac.be\n  ) ) ) ) )\n( ( ( ( (    web:   http://www.umh.ac.be/~econum\n  ) ) ) ) )          http://www.sciviews.org\n( ( ( ( (\n..............................................................",
+      "body_snippet": "wvdgraaf at dds.nl wrote:\n> Hi,\n> \n> What do I need to install the latest package of SciViews? I already have R\n> v.2.2.1 installed on my WinXP machine.\n> \n> On http://www.sciviews.org/SciViews-R/inde",
+      "thread_id": "thread-d1ba2d8713b7",
+      "thread_depth": 0,
+      "month": "2006-04"
+    },
+    {
+      "id": "msg-41b9013ddbbb",
+      "message_id": "<444C95E3.4020805@sbcglobal.net>",
+      "from_name": "Neil E. Klepeis",
+      "from_email_hash": "a46c8a7d7ce3b279e25fac7ccc701c0196a72f544998289d6ecedc3b8a0bf7a1",
+      "date": "2006-04-24T02:09:55-07:00",
+      "subject": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
+      "subject_clean": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
+      "in_reply_to": "<mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>",
+      "references": [
+        "<mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Hi,\n\nI apologize if this is not the proper forum.\n\nI am writing a package to automatically create RGtk GUI's with an \narbitrary number of widgets to act as a \"control panel\" front end for a \nuser-specified plotting or simulation function.      The widgets are \nspecified in a list argument to a function and associated with specific \nparameter values for the user function (FUN), which is called whenever a \nwidget value is modified.   For example, a call to:\n\nmakegui <- function (w=list(x=100, y=200, FUN)) {...}\n\nwould result in a GUI with slider widgets for parameters \"x\" and \"y\". \nWhenever the sliders are changed, the function FUN is called with the \nnew value of \"x\" or \"y\" -- possibly drawing a plot or something else.\n\nMY PROBLEM IS THIS:    I want to make callbacks for each widget that \nautomatically send new parameter values to the function FUN, but I can't \nfind a way to do this with arbitrary numbers of widgets/parameters and \narbitrary names for the widgets.    For convenience, I set the parameter \nnames to be the same as the widget names.\n\nFirst I store all initial parameter values in an array, e.g., params <- \nlist(x=100, y=200).   widget.names <- c(\"x\", \"y\")\n\nI create each widget with something like:\n\nassign(widget.name, gtkWidget(...))\n\nThen I add a callback:\n\nget(widget.name)$AddCallback(\"value-changed\", function(w) \n{callbackFUN(...)})\n\nI want the callbackFUN() function to be able to get the widget's value \nwith something like w$GetValue() and put it into the \"params\" list, and \nthen finally to send the parameter list to the FUN function.\n\nI can't seem to find any way to send a character string of the \nappropriate arbitrary widget name to the callback function so that I can \nput the widget value into the parameter list.   I've tried setting an \nattribute of the widget with its associated parameter name when I create \nthe callback, but the attribute seems to disappear when the callback is \ncalled.\n\nI can get around all this whole problem by simply looping through all of \nthe widgets at once by name:\n\nfor (i in widget.names) params[[i]] <- get(i)$GetValue()\n\nbut this approach is inefficient when only one parameter is changed at a \ntime.\n\nAm I missing something easy?\n\nTIA for any ideas.\n\n--Neil Klepeis",
+      "body_snippet": "Hi,\n\nI apologize if this is not the proper forum.\n\nI am writing a package to automatically create RGtk GUI's with an \narbitrary number of widgets to act as a \"control panel\" front end for a \nuser-spec",
+      "thread_id": "thread-41b9013ddbbb",
+      "thread_depth": 0,
+      "month": "2006-04"
+    },
+    {
+      "id": "msg-0a97d53d88ab",
+      "message_id": "<444CAFC3.2060900@iastate.edu>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2006-04-24T06:00:19-05:00",
+      "subject": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
+      "subject_clean": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
+      "in_reply_to": "<444C95E3.4020805@sbcglobal.net>",
+      "references": [
+        "<mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>",
+        "<444C95E3.4020805@sbcglobal.net>"
+      ],
+      "body_plain": "> I can't seem to find any way to send a character string of the \n> appropriate arbitrary widget name to the callback function so that I can \n> put the widget value into the parameter list.   I've tried setting an \n> attribute of the widget with its associated parameter name when I create \n> the callback, but the attribute seems to disappear when the callback is \n> called.\n>\n>   \nHow about passing the parameter name as the \"user data\" to the callback.\nLike:\n\ngSignalConnect(widget, \"value-changed\", fun, parameter_name)\n\nThen that string is passed as the last parameter to 'fun'.\nThen you can update your global data structure.\n\nNote: the code above is for RGtk2, but it looks like you're using the \nold RGtk for GTK+ 1.2.\nWhy not upgrade? http://www.ggobi.org/rgtk2\n\nYou could also use gObjectSetData() like widget$setData(\"param-name\", \nparam_name)\nThen widget$getData(\"param-name\") to get it back out.\n> I can get around all this whole problem by simply looping through all of \n> the widgets at once by name:\n>\n> for (i in widget.names) params[[i]] <- get(i)$GetValue()\n>\n> but this approach is inefficient when only one parameter is changed at a \n> time.\n>\n>   \nAre you sure this is that inefficient? How many widgets do you have per \nGUI? This would be the simplest way to do it.\n\nMichael\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "> I can't seem to find any way to send a character string of the \n> appropriate arbitrary widget name to the callback function so that I can \n> put the widget value into the parameter list.   I've tri",
+      "thread_id": "thread-41b9013ddbbb",
+      "thread_depth": 1,
+      "month": "2006-04"
+    },
+    {
+      "id": "msg-91d596ae27db",
+      "message_id": "<444D3A14.9010505@sbcglobal.net>",
+      "from_name": "Neil E. Klepeis",
+      "from_email_hash": "a46c8a7d7ce3b279e25fac7ccc701c0196a72f544998289d6ecedc3b8a0bf7a1",
+      "date": "2006-04-24T13:50:28-07:00",
+      "subject": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
+      "subject_clean": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
+      "in_reply_to": "<444CAFC3.2060900@iastate.edu>",
+      "references": [
+        "<mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>",
+        "<444C95E3.4020805@sbcglobal.net>",
+        "<444CAFC3.2060900@iastate.edu>"
+      ],
+      "body_plain": "Thanks Michael,\n\nI'd switch to RGtk2 except I recall the dependency is Gtk 2.8.0.\n\nEven though the Gtk 1.2 API states that gtkObjectSetData/GetData are \navailable, I can't get them to work with Scale widgets in RGtk, e.g. \nwith w$SetData(\"key\", value).   Are these only available with RGtk2?\n\nAnyway, I guess I'll stick with looping over all the widgets until I can \nupgrade to RGtk2.    You're right that it probably won't be too bad.\n\nThanks for RGtk2!\n\nNeil\n\n\nMichael Lawrence wrote:\n> \n> \n>> I can't seem to find any way to send a character string of the \n>> appropriate arbitrary widget name to the callback function so that I \n>> can put the widget value into the parameter list.   I've tried setting \n>> an attribute of the widget with its associated parameter name when I \n>> create the callback, but the attribute seems to disappear when the \n>> callback is called.\n>>\n>>   \n> \n> How about passing the parameter name as the \"user data\" to the callback.\n> Like:\n> \n> gSignalConnect(widget, \"value-changed\", fun, parameter_name)\n> \n> Then that string is passed as the last parameter to 'fun'.\n> Then you can update your global data structure.\n> \n> Note: the code above is for RGtk2, but it looks like you're using the \n> old RGtk for GTK+ 1.2.\n> Why not upgrade? http://www.ggobi.org/rgtk2\n> \n> You could also use gObjectSetData() like widget$setData(\"param-name\", \n> param_name)\n> Then widget$getData(\"param-name\") to get it back out.\n> \n>> I can get around all this whole problem by simply looping through all \n>> of the widgets at once by name:\n>>\n>> for (i in widget.names) params[[i]] <- get(i)$GetValue()\n>>\n>> but this approach is inefficient when only one parameter is changed at \n>> a time.\n>>\n\n> \n> Are you sure this is that inefficient? How many widgets do you have per \n> GUI? This would be the simplest way to do it.\n> \n> Michael",
+      "body_snippet": "Thanks Michael,\n\nI'd switch to RGtk2 except I recall the dependency is Gtk 2.8.0.\n\nEven though the Gtk 1.2 API states that gtkObjectSetData/GetData are \navailable, I can't get them to work with Scale ",
+      "thread_id": "thread-41b9013ddbbb",
+      "thread_depth": 2,
+      "month": "2006-04"
+    },
+    {
+      "id": "msg-1787d6d3aa35",
+      "message_id": "<b1a669cc0604250838j78803107tf6510d9c675ecf6b@mail.gmail.com>",
+      "from_name": "j verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2006-04-25T11:38:18-04:00",
+      "subject": "[R-gui]  Automatic Widget Creation and Callbacks in RGtk",
+      "subject_clean": "[R-gui]  Automatic Widget Creation and Callbacks in RGtk",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060425/f1bd3ce5/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060425/f1bd3ce5/attachment.pl",
+      "thread_id": "thread-1787d6d3aa35",
+      "thread_depth": 0,
+      "month": "2006-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-d31875ab6e45",
+      "subject": "[R-gui] Tinn-R 1.18.4.4 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-04-04T05:50:45-03:00",
+      "last_reply": "2006-04-04T05:50:45-03:00",
+      "root_message_id": "msg-d31875ab6e45"
+    },
+    {
+      "id": "thread-daa45c664b32",
+      "subject": "[R-gui] Installing SciViews",
+      "message_count": 1,
+      "participants": [
+        "wvdgraaf at dds.nl"
+      ],
+      "started": "2006-04-18T12:00:14+02:00",
+      "last_reply": "2006-04-18T12:00:14+02:00",
+      "root_message_id": "msg-daa45c664b32"
+    },
+    {
+      "id": "thread-d1ba2d8713b7",
+      "subject": "[R-gui] Installing SciViews",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2006-04-19T11:44:43+02:00",
+      "last_reply": "2006-04-19T11:44:43+02:00",
+      "root_message_id": "msg-d1ba2d8713b7"
+    },
+    {
+      "id": "thread-41b9013ddbbb",
+      "subject": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
+      "message_count": 3,
+      "participants": [
+        "Michael Lawrence",
+        "Neil E. Klepeis"
+      ],
+      "started": "2006-04-24T02:09:55-07:00",
+      "last_reply": "2006-04-24T13:50:28-07:00",
+      "root_message_id": "msg-41b9013ddbbb"
+    },
+    {
+      "id": "thread-1787d6d3aa35",
+      "subject": "[R-gui]  Automatic Widget Creation and Callbacks in RGtk",
+      "message_count": 1,
+      "participants": [
+        "j verzani"
+      ],
+      "started": "2006-04-25T11:38:18-04:00",
+      "last_reply": "2006-04-25T11:38:18-04:00",
+      "root_message_id": "msg-1787d6d3aa35"
+    }
+  ]
+}

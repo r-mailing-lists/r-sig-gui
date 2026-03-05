@@ -1,0 +1,312 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2010-02",
+  "messages": [
+    {
+      "id": "msg-d289c2946f49",
+      "message_id": "<BF0E8767E3B02C4F889D344FA2BD5447F6B8AE@S-DC-EXM34.net1.cec.eu.int>",
+      "from_name": "Alexis-Michel.MUGABUSHAKA at ec.europa.eu",
+      "from_email_hash": "d8bd8f651266ad602f1893b7b9debf1afaa81a4586809d4b6124f1b5eb70ba57",
+      "date": "2010-02-05T10:38:33+01:00",
+      "subject": "[R-gui] mailing list functional ?",
+      "subject_clean": "[R-gui] mailing list functional ?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I am wondering is this mailing list is still functional ? \n\nI posted an inquiry last week but haven't got any echo .\n\nThis was my inquiry \n\n===\n\nHi, \nI came across the \neclipseR project \n \nhttps://labs.nuevegen.net/trac/eclipser\n \n \nIs it still supported ? \n \nany idea when a Windows 7 compatible version will be available ? \n \n \nBest regards, \n \nMike \n \n===== \n\n \n\n \n\n \n\nDr. Alexis Michel MUGABUSHAKA\nPolicy Analyst\n\n \nEuropean Research Council Executive Agency\nERC.A.1 - Support to the Scientific Council\n\nOffice: COV 24/13\nB-1049 Brussels\nT +32 (0)2 29 88296\nF +32 (0)2 29 79624\nE Alexis-Michel.MUGABUSHAKA at ec.europa.eu\nW http://erc.europa.eu <http://erc.europa.eu/> \n\n \n\n \n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100205/a6fabfd4/attachment.html>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 1333 bytes\nDesc: att91e68.gif\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100205/a6fabfd4/attachment.gif>",
+      "body_snippet": "I am wondering is this mailing list is still functional ? \n\nI posted an inquiry last week but haven't got any echo .\n\nThis was my inquiry \n\n===\n\nHi, \nI came across the \neclipseR project \n \nhttps://lab",
+      "thread_id": "thread-d289c2946f49",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-ac23c5194b4d",
+      "message_id": "<4B6BE845.6010903@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2010-02-05T10:43:33+01:00",
+      "subject": "[R-gui] mailing list functional ?",
+      "subject_clean": "[R-gui] mailing list functional ?",
+      "in_reply_to": "<BF0E8767E3B02C4F889D344FA2BD5447F6B8AE@S-DC-EXM34.net1.cec.eu.int>",
+      "references": [
+        "<BF0E8767E3B02C4F889D344FA2BD5447F6B8AE@S-DC-EXM34.net1.cec.eu.int>"
+      ],
+      "body_plain": "On 05.02.2010 10:38, Alexis-Michel.MUGABUSHAKA at ec.europa.eu wrote:\n> I am wondering is this mailing list is still functional ?\n\n\nYes.\n\n\n> I posted an inquiry last week but haven't got any echo .\n>\n> This was my inquiry\n>\n> ===\n>\n> Hi,\n> I came across the\n> eclipseR project\n>\n> https://labs.nuevegen.net/trac/eclipser\n>\n>\n> Is it still supported ?\n>\n> any idea when a Windows 7 compatible version will be available ?\n\n\nNo idea (perhaps that's why you got no response?). I'd ask the authors \nof that project that I have not been aware of.\n\nBest wishes,\nUwe Ligges\n\n\n\n\n>\n> Best regards,\n>\n> Mike\n>\n> =====\n>\n>\n>\n>\n>\n>\n>\n> Dr. Alexis Michel MUGABUSHAKA\n> Policy Analyst\n>\n>\n> European Research Council Executive Agency\n> ERC.A.1 - Support to the Scientific Council\n>\n> Office: COV 24/13\n> B-1049 Brussels\n> T +32 (0)2 29 88296\n> F +32 (0)2 29 79624\n> E Alexis-Michel.MUGABUSHAKA at ec.europa.eu\n> W http://erc.europa.eu<http://erc.europa.eu/>\n>\n>\n>\n>\n>\n>\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "On 05.02.2010 10:38, Alexis-Michel.MUGABUSHAKA at ec.europa.eu wrote:\n> I am wondering is this mailing list is still functional ?\n\n\nYes.\n\n\n> I posted an inquiry last week but haven't got any echo .\n>\n",
+      "thread_id": "thread-d289c2946f49",
+      "thread_depth": 1,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-e59dc6eaa837",
+      "message_id": "<4B6BE9B2.9060107@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2010-02-05T10:49:38+01:00",
+      "subject": "[R-gui] mailing list functional ?",
+      "subject_clean": "[R-gui] mailing list functional ?",
+      "in_reply_to": "<BF0E8767E3B02C4F889D344FA2BD5447F6B8AE@S-DC-EXM34.net1.cec.eu.int>",
+      "references": [
+        "<BF0E8767E3B02C4F889D344FA2BD5447F6B8AE@S-DC-EXM34.net1.cec.eu.int>"
+      ],
+      "body_plain": "Hello,\n\nIt is probably because noone on this list can answer your question. Two \nelements:\n\n1) For such a question, it is always safer and faster to contact the \nmaintainer(s) directly. You have links to them on the page you cite in \nyour message,\n\n2) You should look also at the alternate R eclipse plugin: StatEt at \nhttp://www.walware.de/goto/statet.\n\nBest,\n\nPhilippe Grosjean\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons University, Belgium\n( ( ( ( (\n..............................................................\n\nAlexis-Michel.MUGABUSHAKA at ec.europa.eu wrote:\n> I am wondering is this mailing list is still functional ?\n> \n> I posted an inquiry last week but haven't got any echo .\n> \n> This was my inquiry\n> \n> ===\n> \n> Hi,\n> I came across the\n> eclipseR project\n>  \n> https://labs.nuevegen.net/trac/eclipser\n>  \n>  \n> Is it still supported ?\n>  \n> any idea when a Windows 7 compatible version will be available ?\n>  \n>  \n> Best regards,\n>  \n> Mike\n>  \n> =====\n> \n>  \n> \n>  \n> \n>  \n> \n> \n> *Dr. Alexis Michel MUGABUSHAKA**\n> */Policy Analyst/\n> \n> \n> *European Research Council Executive Agency*\n> /ERC.A.1 - Support to the Scientific Council/\n> \n> Office: COV 24/13\n> B-1049 Brussels\n> T +32 (0)2 29 88296\n> F +32 (0)2 29 79624\n> E Alexis-Michel.MUGABUSHAKA at ec.europa.eu \n> <mailto:Alexis-Michel.MUGABUSHAKA at ec.europa.eu>\n> W http://erc.europa.eu <http://erc.europa.eu/>\n> \n>  \n> \n>  \n> \n> \n> ------------------------------------------------------------------------\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hello,\n\nIt is probably because noone on this list can answer your question. Two \nelements:\n\n1) For such a question, it is always safer and faster to contact the \nmaintainer(s) directly. You have links",
+      "thread_id": "thread-d289c2946f49",
+      "thread_depth": 1,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-e4df22df7162",
+      "message_id": "<127B60EF19BB9F4FB94D157AA8BF3D0A91B22A4C5C@EMAIL06.pnl.gov>",
+      "from_name": "Taverner, Thomas",
+      "from_email_hash": "b1f366bba8e9c729f28d1e1aedd63126a9c927930c7cd42ffa1d692907e72bf0",
+      "date": "2010-02-17T13:20:45-08:00",
+      "subject": "[R-gui] New package RGtk2DfEdit: a spreadsheet for RGtk2",
+      "subject_clean": "[R-gui] New package RGtk2DfEdit: a spreadsheet for RGtk2",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear useRs,\n\nI would like to bring to your attention the RGtk2DfEdit package, released\nrecently and currently in version 0.5.3.1. This package provides an RGtk2 based\ndata frame viewer/editor intended to be familiar to spreadsheet users. It is\nbased on Michael Lawrence and Duncan Temple Lang's R bindings for Gtk.\n\nThe gtkDfEdit function in the package provides a cross-platform widget for\nviewing, interacting with and manipulating a data frame, based on an underlying\nRGtkDataFrame object and a specified linked data frame located in the global\nenvironment.\n\nEdits made in the grid displayed in the widget will appear instantly in the\ndata frame in the global environment. (Fortunately, there is undo capability\nvia Ctrl-z)\n\nThe package can form part of other RGtk2 based GUI projects. For example,\ngdfedit in John Verzani's current gWidgetsRGtk2 release (0.0-59) provides a\nfront end to the RGtk2DfEdit package.\n\nAs well as hopefully being useful for R GUI developers, the package may\neventually hold interest for a general audience of R users, since it offers\nsome features that edit.data.frame does not have, for example, in handling and\nediting factors.\n\nThe project is still in an early stage of development and has many bugs.\nAny suggestions are welcome.\n\nAn example, using the function dfedit to open a gtkDfEdit frame in its own\nwindow (in R 2.10.1 on 32-bit Windows)\n\ninstall.packages(\"RGtk2DfEdit\")\n\n?gtkDfEdit\n\n#  # Alternative construction using gtkDfEdit\n# win <- gtkWindowNew()\n# obj <- gtkDfEdit(iris)\n# win$add(obj)\n\nobj <- dfedit(iris)\nobj[1,1,drop=FALSE]\n\n  # select some cells\nobj$getSelection()\nobj$setColumnName(1, \"hi there\")\nobj$setColumnClickHandler(function(obj, col) print(obj[,col]))\n # click a column\n\n\nThe editor includes the following features:\n\n* Familiar modes of editing, keyboard handling and navigation\n\n* Named, floating row and column labels\n\n* Editing row and column names by double clicking the corresponding label\n\n* Support for different data types and coercion - right-click on column headers\n  to view and coerce the data type.\n\n* Familiar modes of copying, pasting and selecting cells, rows and columns\n\n* Copy and paste support (Ctrl-c, Ctrl-v) - requires xclip and xsel on Linux.\n\n* Undo (Ctrl-z) support for many manipulations\n\n* Seamlessly updating the linked R object in the global environment\n\n* Reasonably fast loading of large data frames - it remains usable with millions\n  of rows, although improvements are planned.\n\n* Cross platform, however, cairoDevice is not available on Mac and future\n  releases will make this optional.\n\n* Reassignment of data frame to different object - double click in the left\n  top corner box to edit the dataframe's name.\n\n* Support for editing factor levels, the level order and the level contrasts -\n  via the Factor Editor option in a factor column right click menu or the\n  cell right click menu over a factor column.\n\n* Support for spreadsheet-style sorting of data frames with arbitrary numbers of\n  Keys, including coercion of keys: via the Sort option in the column or corner\n  button right click menu.\n\n* Autocomplete for factor entries\n\n* Right click on a selection within a column to get options to fill it\n  with factor levels in various ways (Randomize, Fill Down, Fill Cyclic\n  (for factors)\n\n* S3 methods:\nThe \"[\" method is used for data-frame like extraction from the object.\n\nThe $getSelection method returns a list of selected row and column indices.\n\nThe $getModel method returns the backing RGtkDataFrame.\n\nThe $getDimension method returns the backing data frame dimension.\n\nThe $getColumnNames method returns the column names.\n\nThe $getRowNames method returns the row names.\n\nThe $setColumnName(idx, new.name) method sets the column name at a particular\nindex.\n\nThe $setColumnClickHandler and $setRowClickHandler method sets a function to\nhandle clicking on a column or row with signature (data.frame, col.index)\n\nThanks to John Verzani for contributions, early feedback and writing the\ngWidgets package, Michael Lawrence and Duncan Temple Lang for their work on\nRGtk2 and cairoDevice, and Kurt Hornik and all the R-Core team for their\ngreat work.\n\nTom",
+      "body_snippet": "Dear useRs,\n\nI would like to bring to your attention the RGtk2DfEdit package, released\nrecently and currently in version 0.5.3.1. This package provides an RGtk2 based\ndata frame viewer/editor intended",
+      "thread_id": "thread-e4df22df7162",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-205662024392",
+      "message_id": "<ff91746c1002180531r3bbdab0fl4dfb88ab745feda3@mail.gmail.com>",
+      "from_name": "Sankalp Upadhyay",
+      "from_email_hash": "0c5e1a6b2e84ac6ac3c950d45d2f1f6aa532ab84a96d42218458fb1363479a95",
+      "date": "2010-02-18T21:31:55+08:00",
+      "subject": "[R-gui] Netbeans and R",
+      "subject_clean": "[R-gui] Netbeans and R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI want to use Netbeans as an editor / IDE for R.?Does anybody know a\nplugin / tool that would let me do that? Any help would be good.\nWhile searching archives of r-sig-gui mailing list, I found a post in\n2008 (copied below) but nothing more.\n\n\nRegards,\nSankalp Upadhyay\n\n\n> Re: [R-gui] R Grammar\n> Duncan Murdoch\n> Tue, 26 Aug 2008 12:52:34 -0700\n>\n> On 8/26/2008 3:43 PM, Aur?lien Vall?e wrote:\n> Hello,\n> I'm currently working on a Netbeans Platform IDE for R, and i wondered if an\n> R grammar is available somewhere on the internet, I need it for syntax\n> highlighting and code completion.\n>\n> The parser uses a grammar written in Bison, available in\n> https://svn.r-project.org/R/trunk/src/main/gram.y\n> The lexical scanner is handwritten (in the same file), so it'll be a bit more work to decipher.",
+      "body_snippet": "Hi,\n\nI want to use Netbeans as an editor / IDE for R.?Does anybody know a\nplugin / tool that would let me do that? Any help would be good.\nWhile searching archives of r-sig-gui mailing list, I found a",
+      "thread_id": "thread-205662024392",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-e3fdbb9360e6",
+      "message_id": "<68b1e2611002260515y36e07700oce370d27a16ed246@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2010-02-26T13:15:58Z",
+      "subject": "[R-gui] gWidgets: multiple handlers using a loop?",
+      "subject_clean": "[R-gui] gWidgets: multiple handlers using a loop?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100226/c0871f6f/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100226/c0871f6f/attachment.pl>",
+      "thread_id": "thread-e3fdbb9360e6",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-91d5de51091f",
+      "message_id": "<acbd1aed1002260551m7f96eb0do7dddb1663c5c6b1a@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2010-02-26T05:51:15-08:00",
+      "subject": "[R-gui] gWidgets: multiple handlers using a loop?",
+      "subject_clean": "[R-gui] gWidgets: multiple handlers using a loop?",
+      "in_reply_to": "<68b1e2611002260515y36e07700oce370d27a16ed246@mail.gmail.com>",
+      "references": [
+        "<68b1e2611002260515y36e07700oce370d27a16ed246@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100226/eeffa5d0/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100226/eeffa5d0/attachment.pl>",
+      "thread_id": "thread-e3fdbb9360e6",
+      "thread_depth": 1,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-5692f9173f3b",
+      "message_id": "<68b1e2611002260637m1b104d5hdf039d37c08476bf@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2010-02-26T14:37:57Z",
+      "subject": "[R-gui] gWidgets: multiple handlers using a loop?",
+      "subject_clean": "[R-gui] gWidgets: multiple handlers using a loop?",
+      "in_reply_to": "<acbd1aed1002260551m7f96eb0do7dddb1663c5c6b1a@mail.gmail.com>",
+      "references": [
+        "<68b1e2611002260515y36e07700oce370d27a16ed246@mail.gmail.com>",
+        "<acbd1aed1002260551m7f96eb0do7dddb1663c5c6b1a@mail.gmail.com>"
+      ],
+      "body_plain": "On 2/26/10, Michael Lawrence <lawrence.michael at gene.com> wrote:\n> You probably want to change the for() loop to an lapply construct, so that you are creating a unique closure around each handler. Otherwise, they'll both see the same value of 'k' (whatever it was set to last).\n>\nIndeed, thanks! On quick check, the following does what I originally intended.\nLiviu\n\ncount.pop3 <- function(fun=c(\"count.mv.int\", \"count.mv.let\")){\n    require(gWidgets)\n    options(guiToolkit=\"tcltk\")\n    w <- gwindow(paste(\"Counters (lapply)\"))\n    g <- ggroup(cont=w, horizontal=T)\n    x.fun <- function(k){\n        x.cont <- paste(\"g\", i, sep=\"\")\n        assign(x.cont, ggroup(cont=g, horizontal=FALSE))\n        glabel(paste(\"'\", fun[k], \"'\", sep=\"\"), cont=get(x.cont))\n        x.handl <- paste(\"h\", i, sep=\"\")\n        assign(x.handl, function(h,...) eval(parse(text=paste(fun[k],\n\"(svalue(h$obj))\", sep=\"\"))))\n        x.sl <- paste(\"s\", i, sep=\"\")\n        assign(x.sl, gslider(from=formals(fun[k])$start,\nto=formals(fun[k])$end,\n                by=1, cont=get(x.cont), handler=get(x.handl)))\n        gseparator(horizontal=FALSE, cont=g, expand=TRUE)\n    }\n    lapply(1:length(fun) , x.fun)\n}\ncount.pop3()",
+      "body_snippet": "On 2/26/10, Michael Lawrence <lawrence.michael at gene.com> wrote:\n> You probably want to change the for() loop to an lapply construct, so that you are creating a unique closure around each handler. O",
+      "thread_id": "thread-e3fdbb9360e6",
+      "thread_depth": 2,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-3a0a8409eed6",
+      "message_id": "<68b1e2611002260710k25fcb71fof11ef531cb6cfed4@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2010-02-26T15:10:02Z",
+      "subject": "[R-gui] gWidgets: several statusbars per window?",
+      "subject_clean": "[R-gui] gWidgets: several statusbars per window?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all\nI would like to have one \"status area\" per container, hence several in\na window. The problem with gstatusbar() is that it can only be\nattached to a window, and the result is not very clean. Please see the\ncode below.\n\nIs there a way to attach a \"status area\" to a container? Thank you\nLiviu\n\ncount.mv.int <- function(x, start=1, end=2){\n    assign(\"i\", x, envir = .GlobalEnv)\n    print(paste(\"i = \", i))\n    return(paste(\"i = \", i))\n}\ncount.mv.int(2); i\n\ncount.mv.let <- function(x, start=1, end=4){\n    assign(\"l\", letters[x], envir = .GlobalEnv)\n    print(paste(\"l = \", l))\n    return(paste(\"l = \", l))\n}\ncount.mv.let(3); l\n\ncount.pop4 <- function(fun=c(\"count.mv.int\", \"count.mv.let\")){\n    require(gWidgets)\n    options(guiToolkit=\"tcltk\")\n    w <- gwindow(paste(\"Counters (lapply)\"))\n    g <- ggroup(cont=w, horizontal=T)\n    x.fun <- function(k){\n        x.cont <- paste(\"g\", i, sep=\"\")\n        assign(x.cont, ggroup(cont=g, horizontal=FALSE))\n        glabel(paste(\"'\", fun[k], \"'\", sep=\"\"), cont=get(x.cont))\n        x.handl <- paste(\"h\", i, sep=\"\")\n        assign(x.handl, function(h,...){\n            eval(parse(text=paste(\"svalue(sb) <- \", fun[k],\n\"(svalue(h$obj))\", sep=\"\")))\n#            svalue(sb) <- paste(svalue(h$obj))\n        })\n        x.sl <- paste(\"s\", i, sep=\"\")\n        assign(x.sl, gslider(from=formals(fun[k])$start,\nto=formals(fun[k])$end,\n                by=1, cont=get(x.cont), handler=get(x.handl)))\n        gseparator(horizontal=FALSE, cont=g, expand=TRUE)\n        sb <- gstatusbar(paste(fun[k]), cont=w)\n    }\n    lapply(1:length(fun) , x.fun)\n}\n## the two \"status bars\" will be stacked at the bottom,\n## while perfectly I would prefer a \"status area\" below each slider\ncount.pop4()",
+      "body_snippet": "Dear all\nI would like to have one \"status area\" per container, hence several in\na window. The problem with gstatusbar() is that it can only be\nattached to a window, and the result is not very clean. P",
+      "thread_id": "thread-3a0a8409eed6",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-5b28f197f9d8",
+      "message_id": "<4B884428.9020901@uv.es>",
+      "from_name": "Pedro Valero-Mora",
+      "from_email_hash": "0758f9daab59a052d57a16e90465aa042312cf77e5349eeb363b3bbbbb8f23b9",
+      "date": "2010-02-26T22:59:04+01:00",
+      "subject": "[R-gui] Announce: Speicial issue of the JSS on Graphical User Interfaces for R",
+      "subject_clean": "[R-gui] Announce: Speicial issue of the JSS on Graphical User Interfaces for R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100226/8f91bee7/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100226/8f91bee7/attachment.pl>",
+      "thread_id": "thread-5b28f197f9d8",
+      "thread_depth": 0,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-302d2f731171",
+      "message_id": "<loom.20100227T020353-690@post.gmane.org>",
+      "from_name": "j verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-02-27T01:11:09Z",
+      "subject": "[R-gui] gWidgets: several statusbars per window?",
+      "subject_clean": "[R-gui] gWidgets: several statusbars per window?",
+      "in_reply_to": null,
+      "references": [
+        "<68b1e2611002260710k25fcb71fof11ef531cb6cfed4@mail.gmail.com>"
+      ],
+      "body_plain": "Liviu Andronic <landronimirc <at> gmail.com> writes:\n\n> \n> Dear all\n> I would like to have one \"status area\" per container, hence several in\n> a window. The problem with gstatusbar() is that it can only be\n> attached to a window, and the result is not very clean. Please see the\n> code below.\n> \n> Is there a way to attach a \"status area\" to a container? Thank you\n> Liviu\n> \n\nSorry, not without just using RGtk2 commands. At some time this was possible,\nbut I changed the behavior so statusbars, menusbars and toolbars are only part\nof a toplevel window.\n\nIf you want to use RGtk2 commands, it isn't so hard. Here is an example:\n\nlibrary(RGtk2)\nlibrary(gWidgets); options(guiToolkit=\"RGtk2\")\nw <- gwindow()\ng <- ggroup(cont=w, horizontal=FALSE)\ng1 <- ggroup(cont=g, horizontal=FALSE)\nglabel(\"one\", cont=g1)\nsb1 <- gtkStatusbar(); add(g1, sb1)\n\ng2 <- ggroup(cont=g, horizontal=FALSE)\nglabel(\"two\", cont=g2)\nsb2 <- gtkStatusbar(); add(g2, sb2)\n\n\nsb1$push(1, \"some text\")\nsb1$push(1, \"new text\")\nsb1$pop(1)\n\n\n..snip..\n\n--JOhn",
+      "body_snippet": "Liviu Andronic <landronimirc <at> gmail.com> writes:\n\n> \n> Dear all\n> I would like to have one \"status area\" per container, hence several in\n> a window. The problem with gstatusbar() is that it can on",
+      "thread_id": "thread-3a0a8409eed6",
+      "thread_depth": 1,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-1f2e37bdf736",
+      "message_id": "<68b1e2611002271100j2514471euf3b49ff39d71d901@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2010-02-27T19:00:20Z",
+      "subject": "[R-gui] gWidgets: several statusbars per window?",
+      "subject_clean": "[R-gui] gWidgets: several statusbars per window?",
+      "in_reply_to": "<loom.20100227T020353-690@post.gmane.org>",
+      "references": [
+        "<68b1e2611002260710k25fcb71fof11ef531cb6cfed4@mail.gmail.com>",
+        "<loom.20100227T020353-690@post.gmane.org>"
+      ],
+      "body_plain": "On 2/27/10, j verzani <jverzani at gmail.com> wrote:\n> Sorry, not without just using RGtk2 commands. At some time this was possible,\n>  but I changed the behavior so statusbars, menusbars and toolbars are only part\n>  of a toplevel window.\n>\nAny chance that this would be relaxed in future versions?\n\n\n>  If you want to use RGtk2 commands, it isn't so hard. Here is an example:\n>\nI've been comparing RGtk2 and tcltk, and sofar I prefer tcltk\nbehaviour. The complaints are mainly petty, but they can impact\nproductivity (see the code at the end):\n- tcltk resizes the window/containers dynamically, to fit any\nadditional elements; RGtk2 creates a window of fixed size (much bigger\nthan the containing widgets).\n- for the sliders, when clicking on a slider's \"empty space\", RGtk2\nwill switch the sliders value to either min or max, while tcltk will\nchange it by a step of 1.\n- for the sliders, tcltk doesn't react to the mouse scroll-wheel,\nwhile RGtk2 does. However, RGtk2 will change the values using a step\nof 2 (say, from 1 -> 3 -> 5; even though `by=1') instead of a\npreferable step of 1 (from 1 -> 2 -> 3).\n\nIn any case, I've just tried gspinbutton() instead of gslider(), and I\nget much of what I need. Also, using pure RGtk2 commands I have the\nstatusbars as I wanted, so I guess I'll stick with RGtk2.\n\nThanks for the suggestions\nLiviu\n\n##prepare the sliders\ncount.mv.int <- function(x, start=1, end=4){\n    assign(\"i\", x, envir = .GlobalEnv)\n    print(paste(\"i = \", i))\n    return(paste(\"i = \", i))\n}\ncount.mv.int(2); i\n\ncount.mv.let <- function(x, start=1, end=7){\n    assign(\"l\", letters[x], envir = .GlobalEnv)\n    print(paste(\"l = \", l))\n    return(paste(\"l = \", l))\n}\ncount.mv.let(3); l\n\n##generate the GUI\ncount.pop4 <- function(fun=c(\"count.mv.int\", \"count.mv.let\"),\nkit=c(\"RGtk2\", \"tcltk\"), sb=T){\n    require(gWidgets)\n    options(guiToolkit=kit[1])\n    w <- gwindow(paste(\"Counters (lapply)\"))\n    g <- ggroup(cont=w, horizontal=T)\n    x.fun <- function(k){\n        x.cont <- paste(\"g\", k, sep=\"\")\n        assign(x.cont, ggroup(cont=g, horizontal=FALSE))\n        glabel(paste(\"'\", fun[k], \"'\", sep=\"\"), cont=get(x.cont))\n        x.handl <- paste(\"h\", k, sep=\"\")\n        assign(x.handl, function(h,...){\n            x.mess <- eval(parse(text=paste(fun[k], \"(svalue(h$obj))\", sep=\"\")))\n            get(x.sb)$push(1, x.mess)\n        })\n        x.sl <- paste(\"s\", k, sep=\"\")\n        assign(x.sl, gslider(from=formals(fun[k])$start,\nto=formals(fun[k])$end,\n                by=1, cont=get(x.cont), handler=get(x.handl)))\n        gseparator(horizontal=FALSE, cont=g, expand=TRUE)\n        if(sb){\n            x.sb <- paste(\"s\", k, sep=\"\")\n            assign(x.sb, gtkStatusbar())\n            add(get(x.cont), get(x.sb))\n            get(x.sb)$push(1, fun[k])\n        }\n    }\n    lapply(1:length(fun) , x.fun)\n}\n##RGtk2 exp\ncount.pop4()\n##tcltk exp\ncount.pop4(kit=\"tcltk\", sb=F)\n\n> sessionInfo()\nR version 2.10.1 (2009-12-14)\nx86_64-pc-linux-gnu\n\nlocale:\n [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C\n [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8\n [5] LC_MONETARY=C              LC_MESSAGES=en_GB.UTF-8\n [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C\n [9] LC_ADDRESS=C               LC_TELEPHONE=C\n[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C\n\nattached base packages:\n[1] tcltk     stats     graphics  grDevices utils     datasets  methods\n[8] base\n\nother attached packages:\n[1] gWidgetsRGtk2_0.0-59 gWidgetstcltk_0.0-30 gWidgets_0.0-39\n[4] fortunes_1.3-7       RGtk2_2.12.18        cairoDevice_2.10\n[7] sos_1.2-5            brew_1.0-3           hints_1.0.1-1\n\nloaded via a namespace (and not attached):\n[1] tools_2.10.1",
+      "body_snippet": "On 2/27/10, j verzani <jverzani at gmail.com> wrote:\n> Sorry, not without just using RGtk2 commands. At some time this was possible,\n>  but I changed the behavior so statusbars, menusbars and toolbars",
+      "thread_id": "thread-3a0a8409eed6",
+      "thread_depth": 2,
+      "month": "2010-02"
+    },
+    {
+      "id": "msg-27b05a72fc05",
+      "message_id": "<4B897825.8050509@uv.es>",
+      "from_name": "Pedro Valero-Mora",
+      "from_email_hash": "0758f9daab59a052d57a16e90465aa042312cf77e5349eeb363b3bbbbb8f23b9",
+      "date": "2010-02-27T20:53:09+01:00",
+      "subject": "[R-gui] Deadline for Special issue of the JSS on Graphical User Interfaces for R",
+      "subject_clean": "[R-gui] Deadline for Special issue of the JSS on Graphical User Interfaces for R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100227/9635dba4/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100227/9635dba4/attachment.pl>",
+      "thread_id": "thread-27b05a72fc05",
+      "thread_depth": 0,
+      "month": "2010-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-d289c2946f49",
+      "subject": "[R-gui] mailing list functional ?",
+      "message_count": 3,
+      "participants": [
+        "Alexis-Michel.MUGABUSHAKA at ec.europa.eu",
+        "Philippe Grosjean",
+        "Uwe Ligges"
+      ],
+      "started": "2010-02-05T10:38:33+01:00",
+      "last_reply": "2010-02-05T10:49:38+01:00",
+      "root_message_id": "msg-d289c2946f49"
+    },
+    {
+      "id": "thread-e4df22df7162",
+      "subject": "[R-gui] New package RGtk2DfEdit: a spreadsheet for RGtk2",
+      "message_count": 1,
+      "participants": [
+        "Taverner, Thomas"
+      ],
+      "started": "2010-02-17T13:20:45-08:00",
+      "last_reply": "2010-02-17T13:20:45-08:00",
+      "root_message_id": "msg-e4df22df7162"
+    },
+    {
+      "id": "thread-205662024392",
+      "subject": "[R-gui] Netbeans and R",
+      "message_count": 1,
+      "participants": [
+        "Sankalp Upadhyay"
+      ],
+      "started": "2010-02-18T21:31:55+08:00",
+      "last_reply": "2010-02-18T21:31:55+08:00",
+      "root_message_id": "msg-205662024392"
+    },
+    {
+      "id": "thread-e3fdbb9360e6",
+      "subject": "[R-gui] gWidgets: multiple handlers using a loop?",
+      "message_count": 3,
+      "participants": [
+        "Liviu Andronic",
+        "Michael Lawrence"
+      ],
+      "started": "2010-02-26T13:15:58+00:00",
+      "last_reply": "2010-02-26T14:37:57+00:00",
+      "root_message_id": "msg-e3fdbb9360e6"
+    },
+    {
+      "id": "thread-3a0a8409eed6",
+      "subject": "[R-gui] gWidgets: several statusbars per window?",
+      "message_count": 3,
+      "participants": [
+        "Liviu Andronic",
+        "j verzani"
+      ],
+      "started": "2010-02-26T15:10:02+00:00",
+      "last_reply": "2010-02-27T19:00:20+00:00",
+      "root_message_id": "msg-3a0a8409eed6"
+    },
+    {
+      "id": "thread-5b28f197f9d8",
+      "subject": "[R-gui] Announce: Speicial issue of the JSS on Graphical User Interfaces for R",
+      "message_count": 1,
+      "participants": [
+        "Pedro Valero-Mora"
+      ],
+      "started": "2010-02-26T22:59:04+01:00",
+      "last_reply": "2010-02-26T22:59:04+01:00",
+      "root_message_id": "msg-5b28f197f9d8"
+    },
+    {
+      "id": "thread-27b05a72fc05",
+      "subject": "[R-gui] Deadline for Special issue of the JSS on Graphical User Interfaces for R",
+      "message_count": 1,
+      "participants": [
+        "Pedro Valero-Mora"
+      ],
+      "started": "2010-02-27T20:53:09+01:00",
+      "last_reply": "2010-02-27T20:53:09+01:00",
+      "root_message_id": "msg-27b05a72fc05"
+    }
+  ]
+}

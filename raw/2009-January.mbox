@@ -1,0 +1,497 @@
+From enrique.bengoechea at credit-suisse.com  Thu Jan 15 10:28:45 2009
+From: enrique.bengoechea at credit-suisse.com (=?iso-8859-1?Q?Bengoechea_Bartolom=E9_Enrique_=28SIES_73=29?=)
+Date: Thu, 15 Jan 2009 10:28:45 +0100
+Subject: [R-gui] About biocep
+Message-ID: <19811401A1D8174CB3EAD7F6072E9B5001DB2CE3@chsa1025.share.beluni.net>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090115/e3daaa48/attachment.pl>
+
+From karim.chine at gmail.com  Thu Jan 15 13:20:00 2009
+From: karim.chine at gmail.com (Karim Chine)
+Date: Thu, 15 Jan 2009 12:20:00 +0000
+Subject: [R-gui] About biocep + answer to your question about running
+ the workbench
+In-Reply-To: <19811401A1D8174CB3EAD7F6072E9B5001DB2CE3@chsa1025.share.beluni.net>
+References: <19811401A1D8174CB3EAD7F6072E9B5001DB2CE3@chsa1025.share.beluni.net>
+Message-ID: <496F29F0.2050102@gmail.com>
+
+Dear Bengoechea,
+
+
+Thank you very much for your email. since you are using windows, I
+suggest that you run the workbench using one of the zip files available
+here :
+http://biocep-distrib.r-forge.r-project.org//doc.html#Deliverables  
+(For windows section)
+
+For all operating systems including windows, you can just type on the
+command line : java -jar {some_directory}/biocep.jar
+after downloading the biocep.jar :
+http://biocep-distrib.r-forge.r-project.org/appletlibs/biocep.jar
+
+if you would like to enforce biocep to use the packages (rJava ... ) you
+have installed yourself, you have to use :
+java -Duse.default.libs=true -jar {some_directory}/biocep.jar
+
+then choose "Create New R Server" , choose "On My Machine", OK
+
+Answering your questions on R-GUI, I have already asked Philippe
+Grosjean twice to add a link to my project to the R GUI Projects page,
+but nothing happened.
+Regarding the documentation and the project status :
+I have not released the project yet, the documentation is as you said
+less than minimal and I will need time to write it down.
+All this can seem too slow but I am in charge of everything related to
+the project (research & prototyping, design & implementation,
+documentation, Website, Evangelization,..)
+The workbench is only one part of a very ambitious computational
+platform that includes distributed computing frameworks and toolkits,
+Web Service generators, Cloud and Grid components, Collaborative
+features and I am  very close to a release that will happen for sure
+before the next use R! confrence (where I will be giving a tutorial).
+Most of the workbench's features are ready. I will be available to give
+webinars and support about using the workbench to users who are willing
+to be early adopters, to report bugs and major usability problems,to
+write tutorials or to develop plugins.
+
+Best wishes,
+
+Karim
+
+
+Bengoechea Bartolom? Enrique (SIES 73) wrote:
+> Hi all,
+>  
+> I'm surprised of not reading much about the biocep-R project ( http://biocep-distrib.r-forge.r-project.org/ ) on this list. I don't even see it listed on the "R GUI Projects" page at http://www.sciviews.org/_rgui/index.html 
+>  
+> I saw a presentation about it last year and it looked to me like one of the most promising GUI projects for R around. Are people already using it? Sadly it still has less-than-minimal documentation...
+>  
+> Best regards,
+>  
+> Enrique
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+
+
+From enrique.bengoechea at credit-suisse.com  Thu Jan 15 14:00:05 2009
+From: enrique.bengoechea at credit-suisse.com (=?iso-8859-1?Q?Bengoechea_Bartolom=E9_Enrique_=28SIES_73=29?=)
+Date: Thu, 15 Jan 2009 14:00:05 +0100
+Subject: [R-gui] About biocep
+In-Reply-To: <mailman.13.1232017203.4419.r-sig-gui@stat.math.ethz.ch>
+Message-ID: <19811401A1D8174CB3EAD7F6072E9B5001DB2DBA@chsa1025.share.beluni.net>
+
+Dear Karim,
+
+> I suggest that you run the workbench using one of the zip files available here :
+
+Ok, I had downloaded the plain "biocep.jar". I have now replaced it by "RWorkbench_NO_R.zip" (as I already have R 2.8.1 on my system).
+
+> if you would like to enforce biocep to use the packages (rJava ... ) you have installed yourself, you have to use :
+> java -Duse.default.libs=true -jar {some_directory}/biocep.jar
+
+This made the trick and no longer it tries to install the packages. BTW, I think the packages could not be installed because an internet connection is only available on my system using the command-line parameter --internet2 when invoking R. Is there a way to parametrize the way a local R server is launched? In the same vein, is there a way to load an .Rprofile file on startup?
+
+But then, a java exception was thrown with a message telling that it could not locate the native JRI library. Adding the path to it on the command line didn't solve it:
+
+	java -Djava.library.path=C:\Progra~1\R\R-2.8.1\library\rJava\jri -Duse.default.libs=true  -jar biocep.jar
+
+In case someone is in the same situation, I've solved both problems by manually installing from within R the required packages (rJava, JavaGD, TypeInfo, Cairo and iplots) on directory "<RBenchmarkPath>\library\R-version-2.8.1". Now everything works!
+
+Many thanks for your answer and help.
+
+Best,
+
+Enrique
+
+
+From mflawren at fhcrc.org  Thu Jan 15 14:39:14 2009
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Thu, 15 Jan 2009 05:39:14 -0800
+Subject: [R-gui] About biocep
+In-Reply-To: <19811401A1D8174CB3EAD7F6072E9B5001DB2CE3@chsa1025.share.beluni.net>
+References: <19811401A1D8174CB3EAD7F6072E9B5001DB2CE3@chsa1025.share.beluni.net>
+Message-ID: <509e0620901150539r1cbcc231y64a397ff6ae410f9@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090115/c4bf6540/attachment.pl>
+
+From vkepoglu at gmail.com  Mon Jan 19 22:13:33 2009
+From: vkepoglu at gmail.com (Volkan Kepoglu)
+Date: Mon, 19 Jan 2009 23:13:33 +0200
+Subject: [R-gui] conversion from tessellation in spatstat package to sp
+	classes ???
+Message-ID: <8b5938320901191313w59ac91bdja420a828688c2ce0@mail.gmail.com>
+
+is there any way to convert from tessellation to sp classes like
+SpatialLines or SpatialPolygons?
+
+library(spatstat)
+library(maptools)
+x <- runifpoint(42)
+t <- dirichlet(x)
+plot(t)
+plot(x, add=TRUE)
+
+sp <- as(t, "SpatialPolygons")
+Error in .classEnv(thisClass) :
+  unable to find an environment containing class "tess"
+
+any other suggestion?
+
+
+From yannis_tzamouranis at yahoo.com  Wed Jan 28 11:49:14 2009
+From: yannis_tzamouranis at yahoo.com (Yannis Tzamouranis)
+Date: Wed, 28 Jan 2009 05:49:14 -0500
+Subject: [R-gui] Splitting lines of a csv file without affecting substrings
+	in double quotes
+Message-ID: <6304EFF28480498BB18BD6C0717F32ED@yannis2>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090128/3139b833/attachment.pl>
+
+From ggrothendieck at gmail.com  Wed Jan 28 12:14:24 2009
+From: ggrothendieck at gmail.com (Gabor Grothendieck)
+Date: Wed, 28 Jan 2009 06:14:24 -0500
+Subject: [R-gui] Splitting lines of a csv file without affecting
+	substrings in double quotes
+In-Reply-To: <6304EFF28480498BB18BD6C0717F32ED@yannis2>
+References: <6304EFF28480498BB18BD6C0717F32ED@yannis2>
+Message-ID: <971536df0901280314p2a1c1ffdh48d9d5502133279e@mail.gmail.com>
+
+Try:
+
+out <- read.csv(con, nrows = 1, header = FALSE, as.is = TRUE)
+out <- paste(out, collapse = "\t")
+
+On Wed, Jan 28, 2009 at 5:49 AM, Yannis Tzamouranis
+<yannis_tzamouranis at yahoo.com> wrote:
+> Hello,
+>
+> My question pertains to splitting a string which contains a substring
+> enclosed in double-quotes.  The substring should not be split by strsplit.
+> The whole point is to read in a csv file just like Excel would do on its
+> own.
+> So I have a csv file that looks like this (small snippet):
+> Trial,Parameter,0,0.5,1.5,2.5
+> 1,ESG.Economies.CNY.NominalYieldCurve.CashTotalReturnIndex,0.98,1,1.0367,1.0
+> 66
+> 1,"ESG.Economies.CNY.NominalSpotRate(Govt, 1)",0.025,0.0367,0.0281,0.0215
+> 1,"ESG.Economies.CNY.NominalSpotRate(Govt, 2)",0.029,0.0392,0.0294,0.0227
+> 1,"ESG.Economies.CNY.NominalSpotRate(Swap, 3)",0.037,0.0405,0.029,0.0238
+> 1,"ESG.Economies.CNY.NominalSpotRate(Govt, 4)",0.036,0.0414,0.0304,0.02
+> 1,"ESG.Economies.CNY.NominalSpotRate(Swap, 5)",0.038,0.042,0.031,0.026
+> ...
+>
+> I read it in with readLines, then try to split it with strsplit.
+>
+> The desired result is this (which is how Excel reads it in automatically).
+> Notice that what is in the double quotes should remain unaffected by the
+> splitting:
+> Trial   Parameter 0    0.5     1.5     2.5
+> 1       ESG.Economies.CNY.NominalYieldCurve.CashTotalReturnIndex     0.98
+> 1       1.0367        1.066
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 1)    0.025   0.0367  0.0281
+> 0.0215
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 2)    0.029   0.0392  0.0294
+> 0.0227
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 3)    0.037   0.0405  0.029
+> 0.0238
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 4)    0.036   0.0414  0.0304
+> 0.02
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 5)    0.038   0.042   0.031
+> 0.026
+>
+> My efforts went like this:
+> bridgeCSV <- "myfile.csv";
+> con.B <- file(description=bridgeCSV, open="rt", blocking = FALSE)
+> bridgeheader <- readLines(con.B, n=1)
+> the.bridge <- readLines(con.B, n=-1)
+> the.bridge.1 <- strsplit(the.bridge, ",")
+> the.bridge.2 <- strsplit(unlist(the.bridge.1), "\"")
+>
+> I tried a few ways along these lines but did not manage to get the text in
+> caps as a single field.
+> For example:
+>> the.bridge.1 <- strsplit(the.bridge[2], ",")
+>> the.bridge.1
+> [[1]]
+> [1] "1"
+> "\"ESG.Economies.CNY.NominalSpotRate(Govt" " 1)\""
+>
+> [4] "0.025"                                    "0.0367"
+> "0.0281"
+> [7] "0.0215"
+>
+> Maybe I am missing something obvious? Does anyone have an idea how I can
+> successfully parse this to look as the desired result above?
+>
+> Yannis
+>
+>        [[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From jhallman at frb.gov  Wed Jan 28 23:15:43 2009
+From: jhallman at frb.gov (jhallman at frb.gov)
+Date: Wed, 28 Jan 2009 17:15:43 -0500
+Subject: [R-gui] Font size in gWidgetsRGtk2
+Message-ID: <18619.1233180943@rh5testlx1.rsma.frb.gov>
+
+I'm trying to construct a gui using gWidgets with the RGtk2 toolkit on a
+RHEL5 box. The font is too small for these presbyopic eyeballs.  How
+can I make it bigger?
+
+Jeff
+
+
+From yannis_tzamouranis at yahoo.com  Thu Jan 29 01:32:12 2009
+From: yannis_tzamouranis at yahoo.com (Yannis Tzamouranis)
+Date: Wed, 28 Jan 2009 19:32:12 -0500
+Subject: [R-gui] Splitting lines of a csv file without affecting
+	substrings in double quotes
+In-Reply-To: <971536df0901280314p2a1c1ffdh48d9d5502133279e@mail.gmail.com>
+References: <6304EFF28480498BB18BD6C0717F32ED@yannis2>
+	<971536df0901280314p2a1c1ffdh48d9d5502133279e@mail.gmail.com>
+Message-ID: <80ACC59B3A1541C9B62A80470CE3635B@yannis2>
+
+Thank you - worked.
+
+-----Original Message-----
+From: Gabor Grothendieck [mailto:ggrothendieck at gmail.com] 
+Sent: Wednesday, January 28, 2009 6:14 AM
+To: Yannis Tzamouranis
+Cc: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] Splitting lines of a csv file without affecting
+substrings in double quotes
+
+Try:
+
+out <- read.csv(con, nrows = 1, header = FALSE, as.is = TRUE)
+out <- paste(out, collapse = "\t")
+
+On Wed, Jan 28, 2009 at 5:49 AM, Yannis Tzamouranis
+<yannis_tzamouranis at yahoo.com> wrote:
+> Hello,
+>
+> My question pertains to splitting a string which contains a substring
+> enclosed in double-quotes.  The substring should not be split by strsplit.
+> The whole point is to read in a csv file just like Excel would do on its
+> own.
+> So I have a csv file that looks like this (small snippet):
+> Trial,Parameter,0,0.5,1.5,2.5
+>
+1,ESG.Economies.CNY.NominalYieldCurve.CashTotalReturnIndex,0.98,1,1.0367,1.0
+> 66
+> 1,"ESG.Economies.CNY.NominalSpotRate(Govt, 1)",0.025,0.0367,0.0281,0.0215
+> 1,"ESG.Economies.CNY.NominalSpotRate(Govt, 2)",0.029,0.0392,0.0294,0.0227
+> 1,"ESG.Economies.CNY.NominalSpotRate(Swap, 3)",0.037,0.0405,0.029,0.0238
+> 1,"ESG.Economies.CNY.NominalSpotRate(Govt, 4)",0.036,0.0414,0.0304,0.02
+> 1,"ESG.Economies.CNY.NominalSpotRate(Swap, 5)",0.038,0.042,0.031,0.026
+> ...
+>
+> I read it in with readLines, then try to split it with strsplit.
+>
+> The desired result is this (which is how Excel reads it in automatically).
+> Notice that what is in the double quotes should remain unaffected by the
+> splitting:
+> Trial   Parameter 0    0.5     1.5     2.5
+> 1       ESG.Economies.CNY.NominalYieldCurve.CashTotalReturnIndex     0.98
+> 1       1.0367        1.066
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 1)    0.025   0.0367
+0.0281
+> 0.0215
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 2)    0.029   0.0392
+0.0294
+> 0.0227
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 3)    0.037   0.0405
+0.029
+> 0.0238
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 4)    0.036   0.0414
+0.0304
+> 0.02
+> 1       ESG.Economies.CNY.NominalSpotRate(Govt, 5)    0.038   0.042
+0.031
+> 0.026
+>
+> My efforts went like this:
+> bridgeCSV <- "myfile.csv";
+> con.B <- file(description=bridgeCSV, open="rt", blocking = FALSE)
+> bridgeheader <- readLines(con.B, n=1)
+> the.bridge <- readLines(con.B, n=-1)
+> the.bridge.1 <- strsplit(the.bridge, ",")
+> the.bridge.2 <- strsplit(unlist(the.bridge.1), "\"")
+>
+> I tried a few ways along these lines but did not manage to get the text in
+> caps as a single field.
+> For example:
+>> the.bridge.1 <- strsplit(the.bridge[2], ",")
+>> the.bridge.1
+> [[1]]
+> [1] "1"
+> "\"ESG.Economies.CNY.NominalSpotRate(Govt" " 1)\""
+>
+> [4] "0.025"                                    "0.0367"
+> "0.0281"
+> [7] "0.0215"
+>
+> Maybe I am missing something obvious? Does anyone have an idea how I can
+> successfully parse this to look as the desired result above?
+>
+> Yannis
+>
+>        [[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+No virus found in this incoming message.
+Checked by AVG - http://www.avg.com 
+
+6:37 AM
+
+
+From jverzani at gmail.com  Thu Jan 29 01:40:26 2009
+From: jverzani at gmail.com (j verzani)
+Date: Thu, 29 Jan 2009 00:40:26 +0000 (UTC)
+Subject: [R-gui] Font size in gWidgetsRGtk2
+References: <18619.1233180943@rh5testlx1.rsma.frb.gov>
+Message-ID: <loom.20090129T003215-94@post.gmane.org>
+
+ <jhallman <at> frb.gov> writes:
+
+> 
+> I'm trying to construct a gui using gWidgets with the RGtk2 toolkit on a
+> RHEL5 box. The font is too small for these presbyopic eyeballs.  How
+> can I make it bigger?
+> 
+> Jeff
+> 
+
+
+
+Jeff you can see some details here:
+http://elliotli.blogspot.com/2007/01/font-config-of-gtk2-and-gnome2.html
+
+But basically you need to edit your ~/.gtkrc-2.0 file to include a font line like
+
+gtk-font-name = "Arial 12"
+
+--John
+
+
+From yannis_tzamouranis at yahoo.com  Fri Jan 30 14:21:01 2009
+From: yannis_tzamouranis at yahoo.com (Yannis Tzamouranis)
+Date: Fri, 30 Jan 2009 05:21:01 -0800 (PST)
+Subject: [R-gui] Lengthening a data frame by repeating it
+Message-ID: <980670.35289.qm@web90401.mail.mud.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090130/3dfb3a8e/attachment.pl>
+
+From ggrothendieck at gmail.com  Fri Jan 30 14:32:31 2009
+From: ggrothendieck at gmail.com (Gabor Grothendieck)
+Date: Fri, 30 Jan 2009 08:32:31 -0500
+Subject: [R-gui] Lengthening a data frame by repeating it
+In-Reply-To: <980670.35289.qm@web90401.mail.mud.yahoo.com>
+References: <980670.35289.qm@web90401.mail.mud.yahoo.com>
+Message-ID: <971536df0901300532p45584957rce8ac58d35c371f0@mail.gmail.com>
+
+In the post x and y are matrices, not data frames.  Converting them to
+data frames, try:
+
+> x.df <- as.data.frame(x); y.df <- as.data.frame(y)
+> data.frame(x.df[1], x.df[2], y.df)
+  V1 V2 V1.1 V2.1
+1  1  3   11   21
+2  2  4   12   22
+3  1  3   13   23
+4  2  4   14   24
+5  1  3   15   25
+6  2  4   16   26
+
+
+On Fri, Jan 30, 2009 at 8:21 AM, Yannis Tzamouranis
+<yannis_tzamouranis at yahoo.com> wrote:
+> Hello,
+>
+> this initially seemed to me like a pretty simple thing to do with rbind/cbind but did not manage to do it without looping.
+>
+> I have a simple data frame such as x:
+> x<-cbind(c(1,2),c(3,4))
+>> x
+>      [,1] [,2]
+> [1,]    1    3
+> [2,]    2    4
+>
+> And a longer data frame, such as y:
+>> y<-cbind(c(11,12,13,14,15,16),c(21,22,23,24,25,26))
+>> y
+>      [,1] [,2]
+> [1,]   11   21
+> [2,]   12   22
+> [3,]   13   23
+> [4,]   14   24
+> [5,]   15   25
+> [6,]   16   26
+>
+> I would like to merge them like this:
+>      [,1] [,2] [,3] [,4]
+> [1,]    1    3   11   21
+> [2,]    2    4   12   22
+> [3,]    1    3   13   23
+> [4,]    2    4   14   24
+> [5,]    1    3   15   25
+> [6,]    2    4   16   26
+>
+> (ie by repeating the short frame as many times as necessary (a known number) and inserting it before the y columns.
+> The need to not loop comes from the large number of times it would have to be repeated(thousands) before merged with another table of the longer, new length.
+>
+> Any ideas?
+>
+> Thank you,
+> Yannis Tzamouranis
+>
+> I tried lengthening x (as then merging them would be easy through cbind) but could not do it without looping.  I wonder if there would be another way to go about this...
+>
+>        [[alternative HTML version deleted]]
+>
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+
+
+From yannis_tzamouranis at yahoo.com  Fri Jan 30 15:52:00 2009
+From: yannis_tzamouranis at yahoo.com (Yannis Tzamouranis)
+Date: Fri, 30 Jan 2009 06:52:00 -0800 (PST)
+Subject: [R-gui] Lengthening a data frame by repeating it
+References: <980670.35289.qm@web90401.mail.mud.yahoo.com>
+	<971536df0901300532p45584957rce8ac58d35c371f0@mail.gmail.com>
+Message-ID: <23394.40848.qm@web90402.mail.mud.yahoo.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090130/c136e1f4/attachment.pl>
+

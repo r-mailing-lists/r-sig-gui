@@ -1,0 +1,462 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-10",
+  "messages": [
+    {
+      "id": "msg-973a8af83f76",
+      "message_id": "<452286EC.2070705@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-10-03T12:51:08-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.6.5 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.6.5 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.5) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help//English/Readme/HTML'.\n\nShortly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nChanges:\n\n1.18.6.5 (Oct/03/2006)\n\n  - Small bug related to Spell, that always broken when found\n    '<' or '<-' symbol, was fixed. The origin of this bug was\n    a component conflict (hard coded) among the HTML\n    brackets, declared as below:\n\n    OpenBracket: array[THTMLBracket] of PChar=('<', '<!--', '<%');\n    CloseBracket: array[THTMLBracket] of PChar=('>', '-->', '%>');\n\n    and the R assign symbols: '<-', '<<-', '->' and '->>'\n\n    So, if any file has HTML syntax (with any tags above) all\n    text among the declared brackets is free of speller. We\n    think it is now nice.\n\n  - Small bug associated to Project/Close entire project was\n    fixed.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.5) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R",
+      "thread_id": "thread-973a8af83f76",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-50bb182bb6a2",
+      "message_id": "<4526D7C0.9050602@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-10-06T19:25:04-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.6.6 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.6.6 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.6) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help//English/Readme/HTML'.\n\nChanges:\n1.18.6.6 (Oct/06/2006)\n\n  - A new option 'Sort' was added to menu 'Tools'. This enables\n    you to sort entire file (any selection mode) or selection\n    (for while only for 'smNormal' and 'smColumn').\n\n  - Popup menu editor was reworked.\n\n  - Some icons of 'R explorer' were changed.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.6) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R",
+      "thread_id": "thread-50bb182bb6a2",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-26b2fd83e7f1",
+      "message_id": "<857a431c0610072152m5cbe176dh37adda4782a36526@mail.gmail.com>",
+      "from_name": "Jay Kerns",
+      "from_email_hash": "a9925dd8c0dfe4265ad215392542ac46397a3ff80f383fac2c3b0059cafe6fca",
+      "date": "2006-10-08T00:52:14-04:00",
+      "subject": "[R-gui] new version IPSUR_0.1-1 now available on CRAN",
+      "subject_clean": "[R-gui] new version IPSUR_0.1-1 now available on CRAN",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061008/75b9e80c/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061008/75b9e80c/attachment.pl",
+      "thread_id": "thread-26b2fd83e7f1",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-19e08d81eff7",
+      "message_id": "<4529B4A8.5040606@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-10-08T23:32:08-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.6.7 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.6.7 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.7) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help//English/Readme/HTML'.\n\nChanges:\n1.18.6.7 (Oct/08/2006)\n\n  - A new option 'Organise screen' was added to the menu\n    'View' and the button associated to it was added to the\n    bar 'Tools'. This was, up to now, an old user's request,\n    and it enables you to fastly put the R Console on the top\n    of the screen and the Tinn-R on the bottom.\n\n  - 'Tools/Sort' was enhanced: it now maintain the file in\n    the original Top line position.\n\n  - The way as project files (*.tps) are opened was changed:\n    the textual file (by default) will not be opened anymore.\n    If you want, you can edit easily this file in the Project\n    interface.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.7) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R",
+      "thread_id": "thread-19e08d81eff7",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-fbdce288d052",
+      "message_id": "<20061009202153.GC1794@athene.togaware.com>",
+      "from_name": "Graham Williams",
+      "from_email_hash": "1ef1df4ed52717e8ede33b680837f556dbbb4c9b6976225abdd11fb9ec5b5ce6",
+      "date": "2006-10-10T06:21:53+10:00",
+      "subject": "[R-gui] Rattle 2.1.57 released - GUI for Data Mining in R",
+      "subject_clean": "[R-gui] Rattle 2.1.57 released - GUI for Data Mining in R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Rattle provides a Gnome (RGtk2) based interface to R functionality for\ndata mining. The aim is to provide a simple and intuitive interface\nthat allows a user to quickly load data from a CSV file (or via ODBC),\ntransform and explore the data, and build and evaluate models, knowing\nlittle about R. All R commands are logged and available for the user,\nas a tool to then begin interacting directly with R itself, if so\ndesired. Rattle also exports a number of utility functions and the\ngraphical user interface does not need to be run to deploy these.\n\nRattle is in daily use in a number of real world data mining projects,\nincluding many at the Australian Taxation Office.\n\nSince the previous release of Rattle 2.1.8 on CRAN (Rattle is also\navailable from rattle.togaware.com):\n\n* Extensive rework of the graphics/plotting component, including\n  addition of missing value correlation plots.\n\n* Evaluation plots have been enhanced for easier comparison of models.\n\n* Data exploration enhanced through use of rggobi\n\nSome features of Rattle:\n\n* Support for a number of popular data mining approaches: decision\n  trees (rpart), randomForest, SVM (kernlab), and boosting (gbm).\n\n* Model evaluation using ROCR and specially devised Risk Charts.\n\n* The project is hosted at code.google.com/p/rattle/\n\n* Rattle runs on GNU/Linux, Mac/OSX, and MS/Windows.\n\nRegards,\nGraham Williams",
+      "body_snippet": "Rattle provides a Gnome (RGtk2) based interface to R functionality for\ndata mining. The aim is to provide a simple and intuitive interface\nthat allows a user to quickly load data from a CSV file (or v",
+      "thread_id": "thread-fbdce288d052",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-8d730aeebcff",
+      "message_id": "<45360947.4090009@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-10-18T08:00:23-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.6.9 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.6.9 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.9) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nChanges:\n1.18.6.9 (Oct/17/2006)\n\n  - The 'Application options' was a little reworked. It will\n    not organise the screen when closing the 'Application\n    options'. So it is necessary to toggle it on the main\n    menu 'View/Organise screen' or in the tool bar Tools.\n\n  - The options 'Send selection' will be enabled only if any\n    selection was done, otherwise not.\n\n  - Small bug associated with 'CTRL+W' shortcut, that was\n    closing two files, was fixed.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.9) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R",
+      "thread_id": "thread-8d730aeebcff",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-ddfc0930c6a6",
+      "message_id": "<6.2.0.14.0.20061019155106.03740510@sslmail.wu-wien.ac.at>",
+      "from_name": "Gunther Maier",
+      "from_email_hash": "dba85fabd69b20401e90a168981333318f02eec9349f04ef49e01bc52df6104d",
+      "date": "2006-10-19T15:58:31+02:00",
+      "subject": "[R-gui] new version of SimpleR available",
+      "subject_clean": "[R-gui] new version of SimpleR available",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear colleagues,\nI would like to inform you that a new version (0.1.1) of SimpleR is available at http://www-sre.wu-wien.ac.at/SimpleR . The main reason for this version is that the development of SimpleR has switched from VB6 to VB.NET. Version 0.1.1 is the last one compiled under VB6, meaning this will be the last version that can be run without .NET framework. \n\nIf you have any comments, suggestions or requests concerning SimpleR, please, let me know.\n\nKind regards\nGunther Maier\n\n-----------------------------------------------------------------------\n*  Gunther Maier, University of Economics and Business Administration *\n*     Augasse 2-6, Vienna, Austria. (Gunther.Maier at wu-wien.ac.at)     *\n*      Newsletter Editor, European Regional Science Association       *",
+      "body_snippet": "Dear colleagues,\nI would like to inform you that a new version (0.1.1) of SimpleR is available at http://www-sre.wu-wien.ac.at/SimpleR . The main reason for this version is that the development of Sim",
+      "thread_id": "thread-ddfc0930c6a6",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-96b6ad619e4c",
+      "message_id": "<45394DCE.7090606@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-10-20T19:29:34-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.6.10 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.6.10 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.10) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nChanges:\n1.18.6.10 (Oct/20/2006)\n\n  - Several parts of the source code were optimized.\n\n  - 'R explorer' performance was enhanced. So, you now can to\n    try to set the delay for computational synchronization\n    (Options/Main/Application/R/R server) to small values\n    (50, 80 or 100 ms, in harmony with your hardware). We\n    recommend to test different delays still to obtain good\n    performance.\n\n  - We recommend you to use the resources of 'R explorer'\n    under TCP/IP protocol (it makes the Rgui console more\n    clean). BTW, we have still some not solved problems with\n    'R output' under this protocol.\n\n  - Window About was reworked.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.10) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-",
+      "thread_id": "thread-96b6ad619e4c",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-436d762820e9",
+      "message_id": "<453E276F.5030306@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-10-24T11:47:11-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.6.13 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.6.13 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.13) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nChanges:\n1.18.6.13 (Oct/24/2006)\n\n  - Some parts of the source code were optimized.\n\n  - 'Tools/Sort' was enhanced: it now enables you to sort by\n    'Strings', 'Numbers' and 'Dates'.\n\n  - Popup menu associated with tabs was a little reworked.\n\n  - Speller now will advise when finishes de corrections.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.6.13) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-",
+      "thread_id": "thread-436d762820e9",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-733283cad9e8",
+      "message_id": "<453FE27B.3010806@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-10-25T19:17:31-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.7.0 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.7.0 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.7.0) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nChanges:\n1.18.7.0 (Oct/25/2006)\n\n  - All the HTML documentation of Tinn-R was easily remade,\n    we became very tired of the blue colour: txt2tags is an\n    exceptional tool!\n\n  - A new Tinn-R member (Enio Jelihovschi) is from now on,\n    the responsible for the production and quality of all\n    Tinn-R documentation. Welcome Enio, we wish you have a\n    good work on board.\n\n  - One new function was added both in the R toolbar and the\n    R menu: 'TCP/IP toogle connection'.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.7.0) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R",
+      "thread_id": "thread-733283cad9e8",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-a873e7892c8d",
+      "message_id": "<4544DBEF.6060009@oomvanlieshout.net>",
+      "from_name": "Sander Oom",
+      "from_email_hash": "ada08f834c474f309c8802b171bd3b6e684383733807d908b38213627544bec5",
+      "date": "2006-10-29T17:50:55+01:00",
+      "subject": "[R-gui] R GUI for Linux (using Java)",
+      "subject_clean": "[R-gui] R GUI for Linux (using Java)",
+      "in_reply_to": "<4544A145.1050103@tlen.pl>",
+      "references": [
+        "<4544A145.1050103@tlen.pl>"
+      ],
+      "body_plain": "Dear GJR(?),\n\nGreat initiative to start a platform independent GUI for R focussed on\nLinux. I'm sure many users could benefit from this.\n\nI have limited time for science, including R, since I started a job as a\nconsultant. However I am a member of the R GUI mailing list\n(r-sig-gui at stat.math.ethz.ch). Send your messages to this mailing list,\nand I am sure you will get helpful response. You will also get negative\nresponses! Some people are happy the way things are. Do not pay too much\nattention to these and focus on the constructive critism. That will help\nthe make LinR a good program.\n\nI would stick to the KISS principle. 'Keep it simple, stupid'\n(http://en.wikipedia.org/wiki/KISS_Principle). A good editor with syntax\nhighlighting and commands to run R code in different ways. Stick to the\nshortcut commands as used by other editors like KATE. A package manager\nwill be very useful. Be ware that ROOT priviliges are required!\n\nIf you would like to contribute to an existing program, than have a look\nat JGR (http://rosuda.org/JGR):\nJGR (speak 'Jaguar') is a universal and unified Graphical User Interface\nfor R (it actually abbreviates Java Gui for R). JGR was introduced at\nthe useR! meeting in 2004.\nThey seem to need support with the Linux port!\n\nIs this just a coincidence with these letters J G R?\n\nHope this helps!\n\nSander.\n\ngjr wrote:\n> Hello.\n> I've seen that You are interested in developing R GUI for Linux.\n> \n> I'm a student and i'm angry at lack of full R-project linux port.\n> I decided to wrote something myself. Best choice is Java.\n> But i don't know what commponents add to this program.\n> I knot Tinn-R on Windows and i can take some ideas from.\n> But is it usable ?\n> I think things like hashing selected R code or sending only parts of code\n> is a standard. I would like to do a tool to easy manage of R packages.\n> What should i do more ? I need some ideas.\n> If You like i would send you a jar file.\n> Ill send you a screenshot of base program that i wrote in 2 hours.\n> \n> If You have any ideas, questions please write.\n> \n> Uh, I almost forgot. Its called Lin-R :)\n> \n> ------------------------------------------------------------------------\n>",
+      "body_snippet": "Dear GJR(?),\n\nGreat initiative to start a platform independent GUI for R focussed on\nLinux. I'm sure many users could benefit from this.\n\nI have limited time for science, including R, since I started ",
+      "thread_id": "thread-a873e7892c8d",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-52f929f8c163",
+      "message_id": "<17732.60090.201574.149635@basebud.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2006-10-29T11:54:02-06:00",
+      "subject": "[R-gui] R GUI for Linux (using Java)",
+      "subject_clean": "[R-gui] R GUI for Linux (using Java)",
+      "in_reply_to": "<4544DBEF.6060009@oomvanlieshout.net>",
+      "references": [
+        "<4544A145.1050103@tlen.pl>",
+        "<4544DBEF.6060009@oomvanlieshout.net>"
+      ],
+      "body_plain": "On 29 October 2006 at 17:50, Sander Oom wrote:\n| Dear GJR(?),\n| \n| Great initiative to start a platform independent GUI for R focussed on\n| Linux. I'm sure many users could benefit from this.\n| \n| I have limited time for science, including R, since I started a job as a\n| consultant. However I am a member of the R GUI mailing list\n| (r-sig-gui at stat.math.ethz.ch). Send your messages to this mailing list,\n| and I am sure you will get helpful response. You will also get negative\n| responses! Some people are happy the way things are. Do not pay too much\n| attention to these and focus on the constructive critism. That will help\n| the make LinR a good program.\n| \n| I would stick to the KISS principle. 'Keep it simple, stupid'\n| (http://en.wikipedia.org/wiki/KISS_Principle). A good editor with syntax\n| highlighting and commands to run R code in different ways. Stick to the\n| shortcut commands as used by other editors like KATE. A package manager\n| will be very useful. Be ware that ROOT priviliges are required!\n| \n| If you would like to contribute to an existing program, than have a look\n| at JGR (http://rosuda.org/JGR):\n| JGR (speak 'Jaguar') is a universal and unified Graphical User Interface\n| for R (it actually abbreviates Java Gui for R). JGR was introduced at\n| the useR! meeting in 2004.\n| They seem to need support with the Linux port!\n\nI think you may be unaware that it installs and runs fine on a fully-featured\nLinux distribution.  On Debian or Ubuntu, all you need to do is to install\nthe sun-java5-jdk (and to click once through the Java license thingie) as\nwell as a recent R such as r-base-core_2.4.1. After which all you need to is\n\n$ sudo R CMD javareconf\t\t\t# to set or refresh Java paths for R\n$ echo \"install.packages(\"JGR\",repos=\"http://cran.r-project.org\",depend=TRUE)\"\\\n\t| sudo R --slave\n\nand you have a working JGR --- which happens to be a working 'R GUI for Linux\n(using Java)\" as per the Subject line :)\n\nI am sure that a FC, SuSE, Gentoo, ... system can be setup similarly.\n\n| Is this just a coincidence with these letters J G R?\n| \n| Hope this helps!\n| \n| Sander.\n| \n| gjr wrote:\n| > Hello.\n| > I've seen that You are interested in developing R GUI for Linux.\n| > \n| > I'm a student and i'm angry at lack of full R-project linux port.\n\nR has been developed and supported on Linux since \"forever\", i.e. the early\n1990s. What exactly do you think is missing?\n\n| > I decided to wrote something myself. Best choice is Java.\n| > But i don't know what commponents add to this program.\n| > I knot Tinn-R on Windows and i can take some ideas from.\n| > But is it usable ?\n| > I think things like hashing selected R code or sending only parts of code\n| > is a standard. I would like to do a tool to easy manage of R packages.\n\nMost of us are happy to send code snippets, regions, functions, buffers, ...\nto R using ESS from (X)Emacs.  \n\nA graphical package manager would be nice. JGR has one. \n\nRGtk2 (or was it John's pmg?) has basic examples for it. The logic is already\navailable inside R (install.packages(), available.packages(), etc) so I\nwouldn't reinvent that wheel.\n\nDirk\n\n-- \nHell, there are no rules here - we're trying to accomplish something. \n                                                  -- Thomas A. Edison",
+      "body_snippet": "On 29 October 2006 at 17:50, Sander Oom wrote:\n| Dear GJR(?),\n| \n| Great initiative to start a platform independent GUI for R focussed on\n| Linux. I'm sure many users could benefit from this.\n| \n| I h",
+      "thread_id": "thread-a873e7892c8d",
+      "thread_depth": 1,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-409a5e40b340",
+      "message_id": "<4544EE7C.6010402@cesmail.net>",
+      "from_name": "M. Edward (Ed) Borasky",
+      "from_email_hash": "390ea6e9423379f5ff85ceeda76c9ee62169fc3ede0e90359a6c408e812bbee3",
+      "date": "2006-10-29T10:10:04-08:00",
+      "subject": "[R-gui] R GUI for Linux (using Java)",
+      "subject_clean": "[R-gui] R GUI for Linux (using Java)",
+      "in_reply_to": "<17732.60090.201574.149635@basebud.nulle.part>",
+      "references": [
+        "<4544A145.1050103@tlen.pl>",
+        "<4544DBEF.6060009@oomvanlieshout.net>",
+        "<17732.60090.201574.149635@basebud.nulle.part>"
+      ],
+      "body_plain": "Dirk Eddelbuettel wrote:\n> I think you may be unaware that it installs and runs fine on a fully-featured\n> Linux distribution.  On Debian or Ubuntu, all you need to do is to install\n> the sun-java5-jdk (and to click once through the Java license thingie) as\n> well as a recent R such as r-base-core_2.4.1. After which all you need to is\n> \n> $ sudo R CMD javareconf\t\t\t# to set or refresh Java paths for R\n> $ echo \"install.packages(\"JGR\",repos=\"http://cran.r-project.org\",depend=TRUE)\"\\\n> \t| sudo R --slave\n> \n> and you have a working JGR --- which happens to be a working 'R GUI for Linux\n> (using Java)\" as per the Subject line :)\n> \n> I am sure that a FC, SuSE, Gentoo, ... system can be setup similarly.\n\n1. What's the minimum Java required? Does it need the JDK or will the\nJRE suffice?\n\n2. Will it work with R-2.4.0, or do I need to have something more recent?\n\nI can certainly test this all out and get it working on Gentoo. I have\nboth 1.4 and 1.5 JDK, but I'm using the \"stock\" R-2.4.0 and don't plan\nto go beyond that until the next version gets into alpha testing.",
+      "body_snippet": "Dirk Eddelbuettel wrote:\n> I think you may be unaware that it installs and runs fine on a fully-featured\n> Linux distribution.  On Debian or Ubuntu, all you need to do is to install\n> the sun-java5-jd",
+      "thread_id": "thread-a873e7892c8d",
+      "thread_depth": 2,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-32251b244cb2",
+      "message_id": "<17732.62291.210619.430331@basebud.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2006-10-29T12:30:42-06:00",
+      "subject": "[R-gui] R GUI for Linux (using Java)",
+      "subject_clean": "[R-gui] R GUI for Linux (using Java)",
+      "in_reply_to": "<4544EE7C.6010402@cesmail.net>",
+      "references": [
+        "<4544A145.1050103@tlen.pl>",
+        "<4544DBEF.6060009@oomvanlieshout.net>",
+        "<17732.60090.201574.149635@basebud.nulle.part>",
+        "<4544EE7C.6010402@cesmail.net>"
+      ],
+      "body_plain": "On 29 October 2006 at 10:10, M. Edward (Ed) Borasky wrote:\n| Dirk Eddelbuettel wrote:\n| > I think you may be unaware that it installs and runs fine on a fully-featured\n| > Linux distribution.  On Debian or Ubuntu, all you need to do is to install\n| > the sun-java5-jdk (and to click once through the Java license thingie) as\n        ^^^^^^^^^^^^^\n\nThat should answer question 1 below.\n\n| > well as a recent R such as r-base-core_2.4.1. After which all you need to\n                               ^^^^^^^^^^^^^^^^^\n\nSorry - bad typo. That should have r-base-core_2.4.0. \n\n| 1. What's the minimum Java required? Does it need the JDK or will the\n| JRE suffice?\n\nJDK.\n\n| 2. Will it work with R-2.4.0, or do I need to have something more recent?\n\n2.4.0 is fine.\n \n| I can certainly test this all out and get it working on Gentoo. I have\n| both 1.4 and 1.5 JDK, but I'm using the \"stock\" R-2.4.0 and don't plan\n| to go beyond that until the next version gets into alpha testing.\n\nI think 1.4 is fine but I am not sure. 1.5 works for me, and is pre-packaged\nby Sun and Ubuntu/Debian.\n\nDirk\n\n-- \nHell, there are no rules here - we're trying to accomplish something. \n                                                  -- Thomas A. Edison",
+      "body_snippet": "On 29 October 2006 at 10:10, M. Edward (Ed) Borasky wrote:\n| Dirk Eddelbuettel wrote:\n| > I think you may be unaware that it installs and runs fine on a fully-featured\n| > Linux distribution.  On Debi",
+      "thread_id": "thread-a873e7892c8d",
+      "thread_depth": 3,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-7f2d86cc0638",
+      "message_id": "<509e0620610291413u13c7e11bp40ec86b4cd832177@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2006-10-29T16:13:36-06:00",
+      "subject": "[R-gui] R GUI for Linux (using Java)",
+      "subject_clean": "[R-gui] R GUI for Linux (using Java)",
+      "in_reply_to": "<17732.62291.210619.430331@basebud.nulle.part>",
+      "references": [
+        "<4544A145.1050103@tlen.pl>",
+        "<4544DBEF.6060009@oomvanlieshout.net>",
+        "<17732.60090.201574.149635@basebud.nulle.part>",
+        "<4544EE7C.6010402@cesmail.net>",
+        "<17732.62291.210619.430331@basebud.nulle.part>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061029/132020a8/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061029/132020a8/attachment.pl",
+      "thread_id": "thread-a873e7892c8d",
+      "thread_depth": 4,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-bb701cf2448b",
+      "message_id": "<45453FAD.4070207@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-10-29T20:56:29-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.7.2 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.7.2 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.7.2) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nChanges:\n1.18.7.2 (Oct/30/2006)\n- The 'Application options' was reworked a little bit. The\n   options enabling the user to set Tinn-R to always show\n   'Tips' and 'Completion' were removed. We think it was an\n   annoyance. Now, the triggers can be used to do that.\n\n- One new function was added both in the 'R toolbar' and\n   the 'R' menu: 'Toogle start/close'. It will enable the\n   user to start/close the preferred user 'Rgui'.\n\n- From now on, whenever the user starts R inside Tinn-R, it\n   will open automatically in the 'SDI mode', otherwise, in\n   the default mode defined in the 'Rconsole' configuration\n   file. Also, if there is any opened file, the 'R Working\n   Directory' will be set to its path. Otherwise, it will be\n   set to the default path (../bin) where R was installed.\n\n- Several parts of the source code were optimized.\n\n- The performance of the communication with the 'R server'\n   (under all protocols) was enhanced. Now the user can to\n   try to set the delay for computational synchronization\n   (Options/Main/Application/R/R server) to small values (50,\n   80 or 100 ms, in harmony with the hardware). We recommend\n   testing different delays until a good performance is\n   obtained.\n\n- A small bug, when closing the 'Rgui' and the choice of\n   'Cancel', was fixed.\n\n- Some icons of 'Controlling R' were remade.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.7.2) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R",
+      "thread_id": "thread-bb701cf2448b",
+      "thread_depth": 0,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-defa34afeb92",
+      "message_id": "<200610301242.58868.dusa.adrian@gmail.com>",
+      "from_name": "Adrian Dusa",
+      "from_email_hash": "6a403e8d36067b9a5490b33c3f9b771c8b9fb11b65319c8b0ebbaa42146b32c8",
+      "date": "2006-10-30T12:42:58+02:00",
+      "subject": "[R-gui] R GUI for Linux (using Java)",
+      "subject_clean": "[R-gui] R GUI for Linux (using Java)",
+      "in_reply_to": "<17732.62291.210619.430331@basebud.nulle.part>",
+      "references": [
+        "<4544A145.1050103@tlen.pl>",
+        "<4544EE7C.6010402@cesmail.net>",
+        "<17732.62291.210619.430331@basebud.nulle.part>"
+      ],
+      "body_plain": "Dear Dirk,\n\nOn Sunday 29 October 2006 20:30, Dirk Eddelbuettel wrote:\n> [...snip...]\n> | > well as a recent R such as r-base-core_2.4.1. After which all you need\n> | > to\n>                                ^^^^^^^^^^^^^^^^^\n> Sorry - bad typo. That should have r-base-core_2.4.0.\n\nI've been looking for r-base-core_2.4.0 for Ubuntu on CRAN... any chance to \nappear there soon? Kind of gave up on my habbit of compiling R from sources, \nI was hoping to use Synaptic to install the most recent version.\n\nThanks,\nAdrian\n\n-- \nAdrian Dusa\nRomanian Social Data Archive\n1, Schitu Magureanu Bd\n050025 Bucharest sector 5\nRomania\nTel./Fax: +40 21 3126618 \\\n          +40 21 3120210 / int.101",
+      "body_snippet": "Dear Dirk,\n\nOn Sunday 29 October 2006 20:30, Dirk Eddelbuettel wrote:\n> [...snip...]\n> | > well as a recent R such as r-base-core_2.4.1. After which all you need\n> | > to\n>                            ",
+      "thread_id": "thread-a873e7892c8d",
+      "thread_depth": 4,
+      "month": "2006-10"
+    },
+    {
+      "id": "msg-9bdce0e0addd",
+      "message_id": "<17733.62766.599961.988626@basebud.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2006-10-30T06:50:54-06:00",
+      "subject": "[R-gui] R GUI for Linux (using Java)",
+      "subject_clean": "[R-gui] R GUI for Linux (using Java)",
+      "in_reply_to": "<200610301242.58868.dusa.adrian@gmail.com>",
+      "references": [
+        "<4544A145.1050103@tlen.pl>",
+        "<4544EE7C.6010402@cesmail.net>",
+        "<17732.62291.210619.430331@basebud.nulle.part>",
+        "<200610301242.58868.dusa.adrian@gmail.com>"
+      ],
+      "body_plain": "Adrian,\n\nOn 30 October 2006 at 12:42, Adrian Dusa wrote:\n| Dear Dirk,\n| \n| On Sunday 29 October 2006 20:30, Dirk Eddelbuettel wrote:\n| > [...snip...]\n| > | > well as a recent R such as r-base-core_2.4.1. After which all you need\n| > | > to\n| >                                ^^^^^^^^^^^^^^^^^\n| > Sorry - bad typo. That should have r-base-core_2.4.0.\n| \n| I've been looking for r-base-core_2.4.0 for Ubuntu on CRAN... any chance to \n| appear there soon? Kind of gave up on my habbit of compiling R from sources, \n| I was hoping to use Synaptic to install the most recent version.\n\nI am actually not the volunteer in charge of that, see the R FAQ for details.\nIt is also the wrong list as r-sig-debian is more on topic.  CC'ed and MFT\nset accordingly.\n\nHth, Dirk\n\n-- \nHell, there are no rules here - we're trying to accomplish something. \n                                                  -- Thomas A. Edison",
+      "body_snippet": "Adrian,\n\nOn 30 October 2006 at 12:42, Adrian Dusa wrote:\n| Dear Dirk,\n| \n| On Sunday 29 October 2006 20:30, Dirk Eddelbuettel wrote:\n| > [...snip...]\n| > | > well as a recent R such as r-base-core_2.4",
+      "thread_id": "thread-a873e7892c8d",
+      "thread_depth": 5,
+      "month": "2006-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-973a8af83f76",
+      "subject": "[R-gui] Tinn-R 1.18.6.5 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-10-03T12:51:08-03:00",
+      "last_reply": "2006-10-03T12:51:08-03:00",
+      "root_message_id": "msg-973a8af83f76"
+    },
+    {
+      "id": "thread-50bb182bb6a2",
+      "subject": "[R-gui] Tinn-R 1.18.6.6 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-10-06T19:25:04-03:00",
+      "last_reply": "2006-10-06T19:25:04-03:00",
+      "root_message_id": "msg-50bb182bb6a2"
+    },
+    {
+      "id": "thread-26b2fd83e7f1",
+      "subject": "[R-gui] new version IPSUR_0.1-1 now available on CRAN",
+      "message_count": 1,
+      "participants": [
+        "Jay Kerns"
+      ],
+      "started": "2006-10-08T00:52:14-04:00",
+      "last_reply": "2006-10-08T00:52:14-04:00",
+      "root_message_id": "msg-26b2fd83e7f1"
+    },
+    {
+      "id": "thread-19e08d81eff7",
+      "subject": "[R-gui] Tinn-R 1.18.6.7 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-10-08T23:32:08-03:00",
+      "last_reply": "2006-10-08T23:32:08-03:00",
+      "root_message_id": "msg-19e08d81eff7"
+    },
+    {
+      "id": "thread-fbdce288d052",
+      "subject": "[R-gui] Rattle 2.1.57 released - GUI for Data Mining in R",
+      "message_count": 1,
+      "participants": [
+        "Graham Williams"
+      ],
+      "started": "2006-10-10T06:21:53+10:00",
+      "last_reply": "2006-10-10T06:21:53+10:00",
+      "root_message_id": "msg-fbdce288d052"
+    },
+    {
+      "id": "thread-8d730aeebcff",
+      "subject": "[R-gui] Tinn-R 1.18.6.9 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-10-18T08:00:23-03:00",
+      "last_reply": "2006-10-18T08:00:23-03:00",
+      "root_message_id": "msg-8d730aeebcff"
+    },
+    {
+      "id": "thread-ddfc0930c6a6",
+      "subject": "[R-gui] new version of SimpleR available",
+      "message_count": 1,
+      "participants": [
+        "Gunther Maier"
+      ],
+      "started": "2006-10-19T15:58:31+02:00",
+      "last_reply": "2006-10-19T15:58:31+02:00",
+      "root_message_id": "msg-ddfc0930c6a6"
+    },
+    {
+      "id": "thread-96b6ad619e4c",
+      "subject": "[R-gui] Tinn-R 1.18.6.10 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-10-20T19:29:34-03:00",
+      "last_reply": "2006-10-20T19:29:34-03:00",
+      "root_message_id": "msg-96b6ad619e4c"
+    },
+    {
+      "id": "thread-436d762820e9",
+      "subject": "[R-gui] Tinn-R 1.18.6.13 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-10-24T11:47:11-03:00",
+      "last_reply": "2006-10-24T11:47:11-03:00",
+      "root_message_id": "msg-436d762820e9"
+    },
+    {
+      "id": "thread-733283cad9e8",
+      "subject": "[R-gui] Tinn-R 1.18.7.0 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-10-25T19:17:31-03:00",
+      "last_reply": "2006-10-25T19:17:31-03:00",
+      "root_message_id": "msg-733283cad9e8"
+    },
+    {
+      "id": "thread-a873e7892c8d",
+      "subject": "[R-gui] R GUI for Linux (using Java)",
+      "message_count": 7,
+      "participants": [
+        "Adrian Dusa",
+        "Dirk Eddelbuettel",
+        "M. Edward (Ed) Borasky",
+        "Michael Lawrence",
+        "Sander Oom"
+      ],
+      "started": "2006-10-29T17:50:55+01:00",
+      "last_reply": "2006-10-30T06:50:54-06:00",
+      "root_message_id": "msg-a873e7892c8d"
+    },
+    {
+      "id": "thread-bb701cf2448b",
+      "subject": "[R-gui] Tinn-R 1.18.7.2 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-10-29T20:56:29-03:00",
+      "last_reply": "2006-10-29T20:56:29-03:00",
+      "root_message_id": "msg-bb701cf2448b"
+    }
+  ]
+}

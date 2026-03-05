@@ -1,0 +1,430 @@
+From iqbaljamal at shaw.ca  Thu Feb  7 10:13:30 2008
+From: iqbaljamal at shaw.ca (Iqbal Jamal)
+Date: Thu, 07 Feb 2008 02:13:30 -0700
+Subject: [R-gui] Rcmdr and Subsets
+Message-ID: <0JVV006F72PAYT20@l-daemon>
+
+Greetings All:
+
+I'm looking for a way to generate subsets from pick lists of the 
+cases for each variable.
+So the user could use scroll down (or similar) lists of the instances 
+of a variable and
+select one or more to create subsets rather than having to key in a 
+subset expression.
+
+Thanks, Iqbal
+
+
+From iqbaljamal at shaw.ca  Thu Feb  7 10:16:13 2008
+From: iqbaljamal at shaw.ca (Iqbal Jamal)
+Date: Thu, 07 Feb 2008 02:16:13 -0700
+Subject: [R-gui] Rcmdr and Calls to Other Programs
+Message-ID: <0JVV00DV22TTYT10@l-daemon>
+
+Greetings All:
+
+I'm looking for a way to generate input code and then call an external routine
+from Rcmdr. An example would be calling Satscan to do spatial analysis.
+
+Thanks, Iqbal
+
+
+From jfox at mcmaster.ca  Thu Feb  7 15:45:01 2008
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu, 7 Feb 2008 09:45:01 -0500
+Subject: [R-gui] Rcmdr and Subsets
+In-Reply-To: <0JVV006F72PAYT20@l-daemon>
+References: <0JVV006F72PAYT20@l-daemon>
+Message-ID: <001401c86998$04b86d00$0e294700$@ca>
+
+Dear Iqbal,
+
+If I understand your question correctly, the Rcmdr won't do what you want.
+
+Regards,
+ John
+
+--------------------------------
+John Fox, Professor
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+905-525-9140x23604
+http://socserv.mcmaster.ca/jfox
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> bounces at stat.math.ethz.ch] On Behalf Of Iqbal Jamal
+> Sent: February-07-08 4:14 AM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] Rcmdr and Subsets
+> 
+> Greetings All:
+> 
+> I'm looking for a way to generate subsets from pick lists of the
+> cases for each variable.
+> So the user could use scroll down (or similar) lists of the instances
+> of a variable and
+> select one or more to create subsets rather than having to key in a
+> subset expression.
+> 
+> Thanks, Iqbal
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From jfox at mcmaster.ca  Thu Feb  7 15:47:50 2008
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu, 7 Feb 2008 09:47:50 -0500
+Subject: [R-gui] Rcmdr and Calls to Other Programs
+In-Reply-To: <0JVV00DV22TTYT10@l-daemon>
+References: <0JVV00DV22TTYT10@l-daemon>
+Message-ID: <001501c86998$695ae850$3c10b8f0$@ca>
+
+Dear Iqbal,
+
+Again, if I understand your question correctly, you could write an Rcmdr
+plug-in package to provide dialog boxes that produce the commands that you
+want. See my article on Rmcdr plug-ins in the last R News
+<http://cran.r-project.org/doc/Rnews/Rnews_2007-3.pdf>.
+
+I hope this helps,
+ John
+
+--------------------------------
+John Fox, Professor
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+905-525-9140x23604
+http://socserv.mcmaster.ca/jfox
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> bounces at stat.math.ethz.ch] On Behalf Of Iqbal Jamal
+> Sent: February-07-08 4:16 AM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] Rcmdr and Calls to Other Programs
+> 
+> Greetings All:
+> 
+> I'm looking for a way to generate input code and then call an external
+> routine
+> from Rcmdr. An example would be calling Satscan to do spatial analysis.
+> 
+> Thanks, Iqbal
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From jfox at mcmaster.ca  Thu Feb  7 22:05:33 2008
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu, 7 Feb 2008 16:05:33 -0500
+Subject: [R-gui] Rcmdr and Calls to Other Programs
+In-Reply-To: <0JVV00CKTW5HKS20@l-daemon>
+References: <0JVV00DV22TTYT10@l-daemon> <001501c86998$695ae850$3c10b8f0$@ca>
+	<0JVV00CKTW5HKS20@l-daemon>
+Message-ID: <000601c869cd$2dd22ca0$897685e0$@ca>
+
+Dear Iqbal,
+
+I didn't intend that the Rcmdr be used to call programs external to R, but
+you should be able to do this via system(). Of course, you'd have to take
+care of calling the programs or batch files properly and writing out any
+additional files that they might need for input. This really isn't an Rcmdr
+issue, but a more general question of calling other programs from R.
+
+Regards,
+ John
+
+--------------------------------
+John Fox, Professor
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+905-525-9140x23604
+http://socserv.mcmaster.ca/jfox
+
+> -----Original Message-----
+> From: Iqbal Jamal [mailto:iqbaljamal at shaw.ca]
+> Sent: February-07-08 2:49 PM
+> To: John Fox
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: RE: [R-gui] Rcmdr and Calls to Other Programs
+> 
+> Thanks John:
+> 
+> I have some compiled code (in *.exe files) that I have been running
+> from
+> *.bat files and I would like to run them from Rcmdr after a user
+> completes
+> and OK's the input data form.
+> 
+> At 07:47 AM 07/02/2008, John Fox wrote:
+> >Dear Iqbal,
+> >
+> >Again, if I understand your question correctly, you could write an
+> Rcmdr
+> >plug-in package to provide dialog boxes that produce the commands that
+> you
+> >want. See my article on Rmcdr plug-ins in the last R News
+> ><http://cran.r-project.org/doc/Rnews/Rnews_2007-3.pdf>.
+> >
+> >I hope this helps,
+> >  John
+> >
+> >--------------------------------
+> >John Fox, Professor
+> >Department of Sociology
+> >McMaster University
+> >Hamilton, Ontario, Canada L8S 4M4
+> >905-525-9140x23604
+> >http://socserv.mcmaster.ca/jfox
+> >
+> >
+> > > -----Original Message-----
+> > > From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> > > bounces at stat.math.ethz.ch] On Behalf Of Iqbal Jamal
+> > > Sent: February-07-08 4:16 AM
+> > > To: r-sig-gui at stat.math.ethz.ch
+> > > Subject: [R-gui] Rcmdr and Calls to Other Programs
+> > >
+> > > Greetings All:
+> > >
+> > > I'm looking for a way to generate input code and then call an
+> external
+> > > routine
+> > > from Rcmdr. An example would be calling Satscan to do spatial
+> analysis.
+> > >
+> > > Thanks, Iqbal
+> > >
+> > > _______________________________________________
+> > > R-SIG-GUI mailing list
+> > > R-SIG-GUI at stat.math.ethz.ch
+> > > https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From Wayne.W.Jones at shell.com  Tue Feb 19 08:33:18 2008
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Tue, 19 Feb 2008 07:33:18 -0000
+Subject: [R-gui]  tkrplot and background colour
+In-Reply-To: <001501c86998$695ae850$3c10b8f0$@ca>
+Message-ID: <77693D6263D9B94AA3C6384F1474E26A02CE5710@wyt-s-019.europe.shell.com>
+
+Hi Everyone, 
+
+I have been using rpanel to produce a GUI for R. I came upon some formatting problems when using rp.tkrplot. 
+Basically when I set the background of the tkrplot from "transparent" to "white" using the par functionality the dimensions of the plot change. 
+
+The problem (if it really is one!) is not related to rpanel but to tkrplot. 
+
+A reproducible example can be found below. 
+
+Can anyone explain why this behaviour occurs?
+Can anyone explain what settings are changing in the plots when the background colour is changed so 
+that I can alter my code to accommodate this?
+
+Regards
+
+Wayne
+
+
+
+
+library(tcltk)
+library(tkrplot)
+###### plot 1 with no background 
+
+tt <- tktoplevel()
+bb<-1
+img <-tkrplot(tt, function() plot(1:20,(1:20)^bb))
+f<-function(...) {
+    b <- as.numeric(tclvalue("bb"))
+    if (b != bb) {
+        bb <<- b
+        tkrreplot(img)
+    }
+}
+s <- tkscale(tt, command=f, from=0.05, to=2.00, variable="bb",
+             showvalue=FALSE, resolution=0.05, orient="horiz")
+tkpack(img,s)
+
+
+###### plot 2 with White background 
+
+tt <- tktoplevel()
+img <-tkrplot(tt, function() {par(bg="white"); plot(1:20,(1:20)^bb)})
+s <- tkscale(tt, command=f, from=0.05, to=2.00, variable="bb",
+             showvalue=FALSE, resolution=0.05, orient="horiz")
+tkpack(img,s)
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+Wayne Jones
+Statistical Consultant
+Shell Global Solutions (UK)
+Shell Technology Centre Thornton, P.O. Box 1, Chester CH1 3SH, United Kingdom
+
+Tel: +44 (0) 151 373 5977 
+Fax: +44 (0) 151 373 5384 
+Mobile: +44 (0) 7896 536026
+Email: Wayne.W.Jones at shell.com
+Internet: www.shell.com/globalsolutions/statisticsandchemometrics
+
+Shell Global Solutions (UK) is a division of Shell Research Limited which has its Registered Office at Shell Centre, London SE1 7NA and is registered in England & Wales with No.539964.
+
+
+From Indra.Kshattry at cncc.edu  Thu Feb 28 22:56:43 2008
+From: Indra.Kshattry at cncc.edu (Kshattry, Indra)
+Date: Thu, 28 Feb 2008 14:56:43 -0700
+Subject: [R-gui]  Request for users of my R-Tcl/Tk examples,
+Message-ID: <6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080228/b3e11956/attachment.pl 
+
+From albmont at centroin.com.br  Fri Feb 29 12:05:59 2008
+From: albmont at centroin.com.br (Alberto Monteiro)
+Date: Fri, 29 Feb 2008 09:05:59 -0200
+Subject: [R-gui] Request for users of my R-Tcl/Tk examples,
+In-Reply-To: <6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>
+References: <6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>
+Message-ID: <20080229110347.M91659@centroin.com.br>
+
+Indra B. Kshattry wrote:
+>
+> I am trying to use R-Tcl/TK in my R-code. I want to develop a dialog 
+> box for Data Entry. I am trying to make use of
+> 
+> Keyword "entry" in your examples, but I could not make it. Could you
+> kindly give me a hint to write the code
+> 
+Do you mean something like this? I am a newbie with R's tcltk too.
+
+library(tcltk)
+
+tt <- tktoplevel() 
+input.widget <- tkentry(tt)
+output.widget <- tkentry(tt)
+tkinsert(input.widget, "end", "4")
+tkinsert(output.widget, "end", "24")
+
+gui.fat <- function() {
+  n <- as.integer(tclvalue(tkget(input.widget)))
+  fat.n <- prod(1:n)
+  tkdelete(output.widget, 0, "end")
+  tkinsert(output.widget, "end", fat.n)
+}
+
+button.widget <- tkbutton(tt, text="fat() =", command = gui.fat) 
+tkpack(input.widget, button.widget, output.widget) # geometry manager 
+ 
+Alberto Monteiro
+
+
+From Wayne.W.Jones at shell.com  Fri Feb 29 12:30:41 2008
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Fri, 29 Feb 2008 11:30:41 -0000
+Subject: [R-gui] Request for users of my R-Tcl/Tk examples,
+In-Reply-To: <6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>
+Message-ID: <77693D6263D9B94AA3C6384F1474E26A02CE5764@wyt-s-019.europe.shell.com>
+
+
+
+
+Hi Indra, 
+
+It is not exactly clear to me what you are trying to do!
+Perhaps you could give a better reference to the keyword "entry" example. 
+
+However, R has a buit in data entry editor (at least for R running on Windows ). 
+
+for example:
+
+my.df<-data.frame(x=rnorm(10),y=rnorm(10))
+new.df<-edit(my.df)
+
+See also ?dataentry
+
+and 
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/modalDialog.html
+
+
+Regards
+
+Wayne
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch]On Behalf Of Kshattry, Indra
+Sent: 28 February 2008 21:57
+To: r-sig-gui at stat.math.ethz.ch
+Subject: [R-gui] Request for users of my R-Tcl/Tk examples,
+
+
+Dear James
+
+ 
+
+I am trying to use R-Tcl/TK in my R-code. I want to develop a dialog box
+for Data Entry. I am trying to make use of 
+
+Keyword "entry" in your examples, but I could not make it. Could you
+kindly give me a hint to write the code
+
+ 
+
+My email address
+
+kshattryindra at hotmail.com
+
+ 
+
+Sincerely yours
+
+ 
+
+Indra B. Kshattry  
+
+
+	[[alternative HTML version deleted]]
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From landronimirc at gmail.com  Fri Feb 29 14:23:34 2008
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Fri, 29 Feb 2008 14:23:34 +0100
+Subject: [R-gui] Request for users of my R-Tcl/Tk examples,
+In-Reply-To: <6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>
+References: <6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>
+Message-ID: <68b1e2610802290523h5b891bbre841960f526cda4e@mail.gmail.com>
+
+On 2/28/08, Kshattry, Indra <Indra.Kshattry at cncc.edu> wrote:
+>  I am trying to use R-Tcl/TK in my R-code. I want to develop a dialog box
+>  for Data Entry. I am trying to make use of
+
+Check the Rcmdr code. It might provide you with indications.
+Liviu
+
+

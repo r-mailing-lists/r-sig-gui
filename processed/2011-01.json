@@ -1,0 +1,166 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2011-01",
+  "messages": [
+    {
+      "id": "msg-cf684eed8163",
+      "message_id": "<D814F59C-3B1F-426C-BD7A-CD21B1B82A9B@stat.ucla.edu>",
+      "from_name": "Ian Fellows",
+      "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
+      "date": "2011-01-03T22:26:30-08:00",
+      "subject": "[R-gui] New version of the JGR R Console released",
+      "subject_clean": "[R-gui] New version of the JGR R Console released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "JGR Version 1.7-4 has been released to CRAN and is propagating across the mirrors. \n\n\nJGR Description:\nJava GUI for R - cross-platform, universal and unified Graphical User Interface for R. For full functionality on Windows and Mac OS X JGR requires a start application which depends on your OS. This can be downloaded from JGR's website: http://rforge.net/JGR/\n\n\nChanges and Features:\n1. In editor, run on an empty selection runs line and advances caret.\n\n2. The editor now has an option to format ugly / poorly written R code. Simply select the ugly code you wish to beautify then hit the \"Format Selection\" menu option, and the code will be reformatted using good style guidelines (See also the formatR package).\n\n3. A preference item controlling italicized comments has been added.\n\n4. The data loader uses the to.data.frame=TRUE in the read.spss function for .sav files",
+      "body_snippet": "JGR Version 1.7-4 has been released to CRAN and is propagating across the mirrors. \n\n\nJGR Description:\nJava GUI for R - cross-platform, universal and unified Graphical User Interface for R. For full f",
+      "thread_id": "thread-cf684eed8163",
+      "thread_depth": 0,
+      "month": "2011-01"
+    },
+    {
+      "id": "msg-15388b1af4ce",
+      "message_id": "<4D25AD59.8020809@compserv.gla.ac.uk>",
+      "from_name": "Colin Farrow",
+      "from_email_hash": "441cd4134d29fd214bbe9c06ce017d04ed9e042116e334a43f4cc4bf8de910e2",
+      "date": "2011-01-06T11:54:01Z",
+      "subject": "[R-gui] Error running New version (1.7-4) of the JGR R Console",
+      "subject_clean": "[R-gui] Error running New version (1.7-4) of the JGR R Console",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I have just installed successfully version 1.7-4 of JGR, but when I run \nit I get the following\n\nLoading required package: iplots\nError in dyn.load(file, DLLpath = DLLpath, ...) :\nunable to load shared object \n'/usr/local/R-2.12.0/library/tool/libs/tools.so':\n/usr/local/R-2.12.0/library/tools/libs/tools.so: undefined symbol: \nR_NaString\n\nLoading required package: JGR\nError in dyn.load(file, DLLpath = DLLpath, ...) :\n   unable to load shared object \n'/usr/local/R-2.12.0/library/tools/libs/tools.so':\n   /usr/local/R-2.12.0/library/tools/libs/tools.so: undefined symbol: \nR_NaString\n\nError: could not find function \".getModels\"\nError: could not find function \".getDataObjects\"\nError: could not find function \".getOtherObjects\"\nError: could not find function \".getFunctionsInWS\"\nwhich repeats ad infinitum\n\n/usr/local/R-2.12.0/library/tools/libs/tools.so does exist\n\nCan anyone offer any suggestions for further diagnosing or fixing this?\n\nThank you,\nColin.\n\nR version 2.12.0 (2010-10-15)\nPlatform: i686-pc-linux-gnu (32-bit)\n\n\n\n-- \nColin Farrow\nComputing Service, University of Glasgow, Glasgow G12 8QQ\nTel: 0141 330 4862, Email: c.farrow at compserv.gla.ac.uk\n---",
+      "body_snippet": "I have just installed successfully version 1.7-4 of JGR, but when I run \nit I get the following\n\nLoading required package: iplots\nError in dyn.load(file, DLLpath = DLLpath, ...) :\nunable to load share",
+      "thread_id": "thread-15388b1af4ce",
+      "thread_depth": 0,
+      "month": "2011-01"
+    },
+    {
+      "id": "msg-cfb99d90365e",
+      "message_id": "<4D2AE9C1.3090700@compserv.gla.ac.uk>",
+      "from_name": "Colin Farrow",
+      "from_email_hash": "441cd4134d29fd214bbe9c06ce017d04ed9e042116e334a43f4cc4bf8de910e2",
+      "date": "2011-01-10T11:13:05Z",
+      "subject": "[R-gui] Error running New version (1.7-4) of the JGR R Console",
+      "subject_clean": "[R-gui] Error running New version (1.7-4) of the JGR R Console",
+      "in_reply_to": "<4D25AD59.8020809@compserv.gla.ac.uk>",
+      "references": [
+        "<4D25AD59.8020809@compserv.gla.ac.uk>"
+      ],
+      "body_plain": "hmm, mea culpa. Removing an old instance of R and then reinstalling R, \nJGR and its reequisites has fixed the problem.\n\nOn 06/01/11 11:54, Colin Farrow wrote:\n> I have just installed successfully version 1.7-4 of JGR, but when I run\n> it I get the following\n>\n> Loading required package: iplots\n> Error in dyn.load(file, DLLpath = DLLpath, ...) :\n> unable to load shared object\n> '/usr/local/R-2.12.0/library/tool/libs/tools.so':\n> /usr/local/R-2.12.0/library/tools/libs/tools.so: undefined symbol:\n> R_NaString\n>\n> Loading required package: JGR\n> Error in dyn.load(file, DLLpath = DLLpath, ...) :\n> unable to load shared object\n> '/usr/local/R-2.12.0/library/tools/libs/tools.so':\n> /usr/local/R-2.12.0/library/tools/libs/tools.so: undefined symbol:\n> R_NaString\n>\n> Error: could not find function \".getModels\"\n> Error: could not find function \".getDataObjects\"\n> Error: could not find function \".getOtherObjects\"\n> Error: could not find function \".getFunctionsInWS\"\n> which repeats ad infinitum\n>\n> /usr/local/R-2.12.0/library/tools/libs/tools.so does exist\n>\n> Can anyone offer any suggestions for further diagnosing or fixing this?\n>\n> Thank you,\n> Colin.\n>\n> R version 2.12.0 (2010-10-15)\n> Platform: i686-pc-linux-gnu (32-bit)\n>\n>\n>\n\n-- \nColin Farrow\nComputing Service, University of Glasgow, Glasgow G12 8QQ\nTel: 0141 330 4862, Email: c.farrow at compserv.gla.ac.uk\n---",
+      "body_snippet": "hmm, mea culpa. Removing an old instance of R and then reinstalling R, \nJGR and its reequisites has fixed the problem.\n\nOn 06/01/11 11:54, Colin Farrow wrote:\n> I have just installed successfully vers",
+      "thread_id": "thread-15388b1af4ce",
+      "thread_depth": 1,
+      "month": "2011-01"
+    },
+    {
+      "id": "msg-94cdc2e597ec",
+      "message_id": "<AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>",
+      "from_name": "Harshad Shrikhande",
+      "from_email_hash": "65da83c2d7e1a260a8582297d161fa68aad4969cbacc3a605e30932d90718e52",
+      "date": "2011-01-17T10:54:39+05:30",
+      "subject": "[R-gui] Reg help in using SciViews R!",
+      "subject_clean": "[R-gui] Reg help in using SciViews R!",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/91873898/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/91873898/attachment.pl>",
+      "thread_id": "thread-94cdc2e597ec",
+      "thread_depth": 0,
+      "month": "2011-01"
+    },
+    {
+      "id": "msg-ebf0fad80c51",
+      "message_id": "<4D3405E3.3070106@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2011-01-17T10:03:31+01:00",
+      "subject": "[R-gui] Reg help in using SciViews R!",
+      "subject_clean": "[R-gui] Reg help in using SciViews R!",
+      "in_reply_to": "<AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>",
+      "references": [
+        "<AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>"
+      ],
+      "body_plain": "Harshad,\n\nThe R packages are just one side of the GUI. You have also to install \nKomodo Edit and SciViews-K, see http://www.sciviews.org/SciViews-K.\nBest,\n\nPhilippe Grosjean\n\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons University, Belgium\n( ( ( ( (\n..............................................................\n\nOn 17/01/11 06:24, Harshad Shrikhande wrote:\n> Hi Guys,\n>\n>      I am a newbie at using Project-R for my analysis work. Till now, I have\n> been using the command-line interface of R. But now, I want some help\n> regarding using SciViews - the GUI API for Project R. Though I installed the\n> packages in SciViews, I can't find a way to start the GUI and program in S\n> language.\n>\n>     I would like your help in this regard. Please revert back as soon as\n> possible.\n>\n> Thank You.\n> Harshad Shrikhande\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>",
+      "body_snippet": "Harshad,\n\nThe R packages are just one side of the GUI. You have also to install \nKomodo Edit and SciViews-K, see http://www.sciviews.org/SciViews-K.\nBest,\n\nPhilippe Grosjean\n\n.........................",
+      "thread_id": "thread-94cdc2e597ec",
+      "thread_depth": 1,
+      "month": "2011-01"
+    },
+    {
+      "id": "msg-675a2a2b95dc",
+      "message_id": "<AANLkTi=Wf4SJABjHHBjXCcRzCVZ-0ruVBYhycqzyDkfC@mail.gmail.com>",
+      "from_name": "Harshad Shrikhande",
+      "from_email_hash": "65da83c2d7e1a260a8582297d161fa68aad4969cbacc3a605e30932d90718e52",
+      "date": "2011-01-17T15:13:47+05:30",
+      "subject": "[R-gui] Reg help in using SciViews R!",
+      "subject_clean": "[R-gui] Reg help in using SciViews R!",
+      "in_reply_to": "<4D3405E3.3070106@sciviews.org>",
+      "references": [
+        "<AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>",
+        "<4D3405E3.3070106@sciviews.org>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/43d31109/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/43d31109/attachment.pl>",
+      "thread_id": "thread-94cdc2e597ec",
+      "thread_depth": 2,
+      "month": "2011-01"
+    },
+    {
+      "id": "msg-92b064efd09e",
+      "message_id": "<127B60EF19BB9F4FB94D157AA8BF3D0A93323B0E6A@EMAIL06.pnl.gov>",
+      "from_name": "Taverner, Thomas",
+      "from_email_hash": "b1f366bba8e9c729f28d1e1aedd63126a9c927930c7cd42ffa1d692907e72bf0",
+      "date": "2011-01-25T14:06:51-08:00",
+      "subject": "[R-gui] RGtk2Extras package for dataframe editing and easy dialog creation",
+      "subject_clean": "[R-gui] RGtk2Extras package for dataframe editing and easy dialog creation",
+      "in_reply_to": "<4D2AE9C1.3090700@compserv.gla.ac.uk>",
+      "references": [
+        "<4D25AD59.8020809@compserv.gla.ac.uk>",
+        "<4D2AE9C1.3090700@compserv.gla.ac.uk>"
+      ],
+      "body_plain": "Dear useRs,\n\nThis is to announce the RGtk2Extras R package currently in 0.5.1.\n\nThis package provides useful extras for R programmers who wish to create graphic user interfaces. It is based on GTK, using Michael Lawrence's RGtk2 package and John Verzani's gWidgets, and some ideas from John Verzani's traitr package.\n\nThe first major feature of RGtk2Extras, the run.dialog function, is an interface for creating simple front-ends to R functions using a terse markup scheme. No GUI knowledge is required; if you can write an R function, you can create a dialog for it.\n\nAn example:\n\n    # A function with one argument, N\n\n  Histogram = function(N) hist(rnorm(N))\n\n    # Dialog markup list for the function Histogram\n    # Create the main dialog label with the first \"label=\" (optional)\n    # Then (this is the important bit!) specify N.integerItem, where \n    #   (1) N is the function argument\n    #   (2) integerItem is the type of widget to use, see ?run.dialog\n    #   (3) the value 50 is the default\n    # Then with the second \"label=\" add a label for the N item (optional)\n\n  Histogram.dialog = list(label = \"A density-plotting histogram dialog\",\n    N.integerItem = 50, label = \"Value of N\")\n  \n    # Run the dialog.\n    # The returned list \"a\" has elements \"args\" for dialog arguments\n    # and \"retval\" for the return value.\n    # With auto.assign=TRUE, the return value is stored in \"Histogram_output\".\n    # run.dialog also does error handling and supports interrupts for \n    # long running tasks, see ?run.dialog\n\n  a <- run.dialog(Histogram, auto.assign=FALSE)\n\nA more complex demo example, thanks to Graham Williams:\n\n  demo(MakeAngle)\n\n\nThe second feature of RGtk2Extras is gtkDfEdit, an editable spreadsheet widget designed for editing data matrices and data frames. It's also based on RGtk2. This was released earlier as RGtk2DfEdit which was then folded into RGtk2Extras.\n\nThe gtkDfEdit spreadsheet is quite full featured and has been designed to be familiar to Excel users, while allowing most of the data frames and factor operations that are possible from the R command line.\n\nData frame columns are type-aware and there is a factor editor. Most functions can be accessed from right clicking on data columns or cells. There is undo, cross platform copy/paste, sorting, cell filling, and data loading capabilities. See ?gtkDfEdit.\n\nThe widget provided by gtkDfEdit() can be integrated into larger RGtk2 based user interfaces, or its standalone wrapper dfedit() can be used as a straight replacement for edit.data.frame().\n\nThere is also a rudimentary API for manipulating and binding event handlers to the spreadsheet. See ?gtkDfEditDoTask and ?gtkDfEditSetActionHandler.\n\n# Edit the iris data frame\n# Note the blank row at the bottom to allow pasting into rows below.\nx = dfedit(iris)\n\n# Example user interactions\n1. Right click the \"Species\" column or column header to see or change the data type. Click \"Edit Factors\" to change factor levels or ordering.\n\n2. Right click a column header and then click \"Sort\" to sort columns\n\n3. Right click column header and change data type by selecting \"Character\"/\"Integer\" etc. Factors can be changed to integer levels (\"To Factor Levels\") or integers (\"To Factor Ordering\")\n\n4. Right click column header to insert or delete columns or change column name.\n\n5. Select a submatrix of numbers within \"iris\" and press the \"=\" key to bring up the Command Editor, then type \"hist\" in the command field and \"OK\" to create a histogram of the submatrix; \"function(x) hist(x)\" works as well.\n\n6. Select a submatrix within \"iris\" and press Ctrl-V or right-click and select Copy to copy into an external spreadsheet; Ctrl-C works to paste into the data frame. Ctrl-Shift-V copies submatrix and row and column names.\n\n7. Select a range of cells within \"Species\" column and right-click to select \"Fill in Cycles\" to fill cyclic factors.\n\n8. Right click left hand corner cell to open CSV file into editor or save as file.\n\n9. Right click left hand corner cell to set columns to default Excel-style column headers.\n\n10. Ctrl-Z to undo previous edits. \n# End of examples\n\nRGtk2Extras is still in a beta stage of development. It is hosted on r-forge.r-project.org/R/?group_id=924. Comments and suggestions appreciated; email thomas.taverner _AT_ pnl.gov\n\nThanks to the entire R community for their work, particularly the R Development Core Team, Michael Lawrence and John Verzani, and also Graham Williams and Iago Conde for comments.\n\nTom",
+      "body_snippet": "Dear useRs,\n\nThis is to announce the RGtk2Extras R package currently in 0.5.1.\n\nThis package provides useful extras for R programmers who wish to create graphic user interfaces. It is based on GTK, us",
+      "thread_id": "thread-15388b1af4ce",
+      "thread_depth": 2,
+      "month": "2011-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-cf684eed8163",
+      "subject": "[R-gui] New version of the JGR R Console released",
+      "message_count": 1,
+      "participants": [
+        "Ian Fellows"
+      ],
+      "started": "2011-01-03T22:26:30-08:00",
+      "last_reply": "2011-01-03T22:26:30-08:00",
+      "root_message_id": "msg-cf684eed8163"
+    },
+    {
+      "id": "thread-15388b1af4ce",
+      "subject": "[R-gui] Error running New version (1.7-4) of the JGR R Console",
+      "message_count": 3,
+      "participants": [
+        "Colin Farrow",
+        "Taverner, Thomas"
+      ],
+      "started": "2011-01-06T11:54:01+00:00",
+      "last_reply": "2011-01-25T14:06:51-08:00",
+      "root_message_id": "msg-15388b1af4ce"
+    },
+    {
+      "id": "thread-94cdc2e597ec",
+      "subject": "[R-gui] Reg help in using SciViews R!",
+      "message_count": 3,
+      "participants": [
+        "Harshad Shrikhande",
+        "Philippe Grosjean"
+      ],
+      "started": "2011-01-17T10:54:39+05:30",
+      "last_reply": "2011-01-17T15:13:47+05:30",
+      "root_message_id": "msg-94cdc2e597ec"
+    }
+  ]
+}

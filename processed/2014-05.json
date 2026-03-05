@@ -1,0 +1,54 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2014-05",
+  "messages": [
+    {
+      "id": "msg-3e5e0e03cea6",
+      "message_id": "<CAK4TpGwqfjLKjrbd5c8Gt5HdtHNqyGX2vzKEfO_=LZJun8LdpQ@mail.gmail.com>",
+      "from_name": "Minh-Nhut Huynh",
+      "from_email_hash": "0a5e6bf82679f00cda776100f4cd5703fefd0953e1523d14e34424e21eb4e13b",
+      "date": "2014-05-26T16:13:09+02:00",
+      "subject": "[R-gui] Question on R X11() on Windows OS",
+      "subject_clean": "[R-gui] Question on R X11() on Windows OS",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/e238b841/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/e238b841/attachment.pl>",
+      "thread_id": "thread-3e5e0e03cea6",
+      "thread_depth": 0,
+      "month": "2014-05"
+    },
+    {
+      "id": "msg-b66970a6eafd",
+      "message_id": "<CAK4TpGwHxNzM7az4Y-cv2wnHm_T_FcUFvmVXao8P_u0Q9fNtzw@mail.gmail.com>",
+      "from_name": "Minh-Nhut Huynh",
+      "from_email_hash": "0a5e6bf82679f00cda776100f4cd5703fefd0953e1523d14e34424e21eb4e13b",
+      "date": "2014-05-26T22:48:18+02:00",
+      "subject": "[R-gui] Question on R X11() on Windows OS",
+      "subject_clean": "[R-gui] Question on R X11() on Windows OS",
+      "in_reply_to": "<CAK4TpGwqfjLKjrbd5c8Gt5HdtHNqyGX2vzKEfO_=LZJun8LdpQ@mail.gmail.com>",
+      "references": [
+        "<CAK4TpGwqfjLKjrbd5c8Gt5HdtHNqyGX2vzKEfO_=LZJun8LdpQ@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/b7ed85af/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/b7ed85af/attachment.pl>",
+      "thread_id": "thread-3e5e0e03cea6",
+      "thread_depth": 1,
+      "month": "2014-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-3e5e0e03cea6",
+      "subject": "[R-gui] Question on R X11() on Windows OS",
+      "message_count": 2,
+      "participants": [
+        "Minh-Nhut Huynh"
+      ],
+      "started": "2014-05-26T16:13:09+02:00",
+      "last_reply": "2014-05-26T22:48:18+02:00",
+      "root_message_id": "msg-3e5e0e03cea6"
+    }
+  ]
+}

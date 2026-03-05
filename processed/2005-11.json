@@ -1,0 +1,55 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2005-11",
+  "messages": [
+    {
+      "id": "msg-f14cd38a82a6",
+      "message_id": "<785CC9D2-746F-4392-BA4B-E087EAC458A4@mac.com>",
+      "from_name": "Aaike De Wever",
+      "from_email_hash": "673d33eb5f790151bb9e1722c81803f2ebd2a651ed33830989ae036c1d595625",
+      "date": "2005-11-28T21:58:24+01:00",
+      "subject": "[R-gui] Dutch localisation file",
+      "subject_clean": "[R-gui] Dutch localisation file",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI prepared a dutch localisation for the R-Gui, I am not sure if this  \nis the right place to submit it, but the documentation pointed to  \nthis list.\n\n?\nBest regards,\n--\nAaike De Wever\naaike at mac.com\n\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20051128/a4c0094c/attachment-0002.html\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: res-nl.tar.gz\nType: application/x-gzip\nSize: 307176 bytes\nDesc: not available\nUrl : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20051128/a4c0094c/res-nl.tar-0001.gz\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20051128/a4c0094c/attachment-0003.html",
+      "body_snippet": "Hello,\n\nI prepared a dutch localisation for the R-Gui, I am not sure if this  \nis the right place to submit it, but the documentation pointed to  \nthis list.\n\n?\nBest regards,\n--\nAaike De Wever\naaike a",
+      "thread_id": "thread-f14cd38a82a6",
+      "thread_depth": 0,
+      "month": "2005-11"
+    },
+    {
+      "id": "msg-da7adbefa627",
+      "message_id": "<438CCF39.7050407@stats.uwo.ca>",
+      "from_name": "Duncan Murdoch",
+      "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
+      "date": "2005-11-29T16:59:21-05:00",
+      "subject": "[R-gui] Dutch localisation file",
+      "subject_clean": "[R-gui] Dutch localisation file",
+      "in_reply_to": "<785CC9D2-746F-4392-BA4B-E087EAC458A4@mac.com>",
+      "references": [
+        "<785CC9D2-746F-4392-BA4B-E087EAC458A4@mac.com>"
+      ],
+      "body_plain": "On 11/28/2005 3:58 PM, Aaike De Wever wrote:\n> Hello,\n> \n> I prepared a dutch localisation for the R-Gui, I am not sure if this is the \n> right place to submit it, but the documentation pointed to this list.\n> \n\nNo, this list is for discussion of GUI issues: more speculative than \nday-to-day operations.  The web page\n\nhttp://developer.r-project.org/Translations.html\n\ngives instructions on preparing a translation and submitting it. I think \nyours consists of Mac-GUI translations, so it should go to the Mac-GUI \nauthors:  Simon Urbanek  and Stefano Iacus (but I'm not a Mac user, so \napologies if I've got the authorship wrong).\n\nDuncan Murdoch",
+      "body_snippet": "On 11/28/2005 3:58 PM, Aaike De Wever wrote:\n> Hello,\n> \n> I prepared a dutch localisation for the R-Gui, I am not sure if this is the \n> right place to submit it, but the documentation pointed to thi",
+      "thread_id": "thread-f14cd38a82a6",
+      "thread_depth": 1,
+      "month": "2005-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-f14cd38a82a6",
+      "subject": "[R-gui] Dutch localisation file",
+      "message_count": 2,
+      "participants": [
+        "Aaike De Wever",
+        "Duncan Murdoch"
+      ],
+      "started": "2005-11-28T21:58:24+01:00",
+      "last_reply": "2005-11-29T16:59:21-05:00",
+      "root_message_id": "msg-f14cd38a82a6"
+    }
+  ]
+}

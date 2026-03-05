@@ -1,0 +1,109 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-11",
+  "messages": [
+    {
+      "id": "msg-59d5b81ad63e",
+      "message_id": "<45547F7D.3030400@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-11-10T10:32:45-03:00",
+      "subject": "[R-gui] Tinn-R 1.19.0.2 released",
+      "subject_clean": "[R-gui] Tinn-R 1.19.0.2 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.19.0.2) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nChanges:\n1.19.0.2 (Nov/09/2006)\n\n- The option 'Automatically configure R (Rprofile.site)' was\n   enhanced. The user now can decide if the changes will be\n   temporaries (to current session only) or permanents\n   (editing automatically the Rprofile.site file). For both,\n   if necessary, the user can edit (customize) the file\n   'Rconfigure.r' in the folder 'doc/English' where Tinn-R\n   was installed. So we think it new resource is now more\n   flexible.\n\n- The 'Application options' was reworked. It is now possible\n   to set the position of Tinn-R (top, bottom, left and\n   right), the two last are recommendable only to very large\n   screen, on 'Organize' resource by using 'Application\n   options/R/Organize'.\n\n- Sorry, the text of this version was not corrected by Enio\n   (but it will): he is traveling.\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.19.0.2) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R",
+      "thread_id": "thread-59d5b81ad63e",
+      "thread_depth": 0,
+      "month": "2006-11"
+    },
+    {
+      "id": "msg-78e9a601a456",
+      "message_id": "<000001c7066d$35f81080$0100007f@localhost>",
+      "from_name": "Darius Harris",
+      "from_email_hash": "0b2429f52bb2679bb0ce948d5affbe641996e1053356ee5956e16374e7ca0bd7",
+      "date": "2006-11-12T15:15:31Z",
+      "subject": "[R-gui] Health",
+      "subject_clean": "[R-gui] Health",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "The incident adage at\nthe Molly Mansor bullheaded \nand flowed of sparks\nthe border in ideograms\nleft corn to curving\ndeepest in the ferson\nfloor and ceil to remem\n\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061112/5da6a4ca/attachment.html \n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/jpeg\nSize: 7744 bytes\nDesc: not available\nUrl : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061112/5da6a4ca/attachment.jpe \n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: image/gif\nSize: 4882 bytes\nDesc: not available\nUrl : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061112/5da6a4ca/attachment.gif",
+      "body_snippet": "The incident adage at\nthe Molly Mansor bullheaded \nand flowed of sparks\nthe border in ideograms\nleft corn to curving\ndeepest in the ferson\nfloor and ceil to remem\n\n-------------- next part -----------",
+      "thread_id": "thread-78e9a601a456",
+      "thread_depth": 0,
+      "month": "2006-11"
+    },
+    {
+      "id": "msg-517ffa7fb287",
+      "message_id": "<A6C04FE4-69DB-4DBC-A078-AA19C733C3C8@eva.mpg.de>",
+      "from_name": "Mehmet Somel",
+      "from_email_hash": "22ecd37dcf1d5eb6ab117ffb6f1566b492b99cab87b77814b0984c949421535e",
+      "date": "2006-11-15T00:13:30+08:00",
+      "subject": "[R-gui] replace all",
+      "subject_clean": "[R-gui] replace all",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\nthe built-in editor of the R GUI does not seem to be able to replace  \na pattern only within selected text (\"Replace all\" under the \"Find\"  \noption changes all the matched patterns within the document). Is  \nthere a solution to this?\nThanks in advance,\nMehmet Somel",
+      "body_snippet": "Hello,\nthe built-in editor of the R GUI does not seem to be able to replace  \na pattern only within selected text (\"Replace all\" under the \"Find\"  \noption changes all the matched patterns within the d",
+      "thread_id": "thread-517ffa7fb287",
+      "thread_depth": 0,
+      "month": "2006-11"
+    },
+    {
+      "id": "msg-317d7bedd364",
+      "message_id": "<4559FD8E.6000203@stats.uwo.ca>",
+      "from_name": "Duncan Murdoch",
+      "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
+      "date": "2006-11-14T12:31:58-05:00",
+      "subject": "[R-gui] replace all",
+      "subject_clean": "[R-gui] replace all",
+      "in_reply_to": "<A6C04FE4-69DB-4DBC-A078-AA19C733C3C8@eva.mpg.de>",
+      "references": [
+        "<A6C04FE4-69DB-4DBC-A078-AA19C733C3C8@eva.mpg.de>"
+      ],
+      "body_plain": "On 11/14/2006 11:13 AM, Mehmet Somel wrote:\n> Hello,\n> the built-in editor of the R GUI does not seem to be able to replace  \n> a pattern only within selected text (\"Replace all\" under the \"Find\"  \n> option changes all the matched patterns within the document). Is  \n> there a solution to this?\n\nSubmit a patch, or use a different editor, or avoid Replace All.\n\nDuncan Murdoch",
+      "body_snippet": "On 11/14/2006 11:13 AM, Mehmet Somel wrote:\n> Hello,\n> the built-in editor of the R GUI does not seem to be able to replace  \n> a pattern only within selected text (\"Replace all\" under the \"Find\"  \n> ",
+      "thread_id": "thread-517ffa7fb287",
+      "thread_depth": 1,
+      "month": "2006-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-59d5b81ad63e",
+      "subject": "[R-gui] Tinn-R 1.19.0.2 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-11-10T10:32:45-03:00",
+      "last_reply": "2006-11-10T10:32:45-03:00",
+      "root_message_id": "msg-59d5b81ad63e"
+    },
+    {
+      "id": "thread-78e9a601a456",
+      "subject": "[R-gui] Health",
+      "message_count": 1,
+      "participants": [
+        "Darius Harris"
+      ],
+      "started": "2006-11-12T15:15:31+00:00",
+      "last_reply": "2006-11-12T15:15:31+00:00",
+      "root_message_id": "msg-78e9a601a456"
+    },
+    {
+      "id": "thread-517ffa7fb287",
+      "subject": "[R-gui] replace all",
+      "message_count": 2,
+      "participants": [
+        "Duncan Murdoch",
+        "Mehmet Somel"
+      ],
+      "started": "2006-11-15T00:13:30+08:00",
+      "last_reply": "2006-11-14T12:31:58-05:00",
+      "root_message_id": "msg-517ffa7fb287"
+    }
+  ]
+}

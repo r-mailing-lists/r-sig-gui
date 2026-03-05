@@ -1,0 +1,635 @@
+From moctodliamg at gmail.com  Wed Oct 28 16:41:49 2015
+From: moctodliamg at gmail.com (Seth Frey)
+Date: Wed, 28 Oct 2015 11:41:49 -0400
+Subject: [R-gui] tcltk troubleshooting on OS X
+Message-ID: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+
+Hello,
+
+I have a strange problem with both R.app and RStudio.app.  Since it's
+a problem with both, I figure it's a problem with R or with my system,
+and that your expertises may offer some leads on how I can keep
+isolating the problem.
+
+I've made it this far: when I run either capabilities() or
+library(tcltk), both GUI apps hang uninformatively and have to be
+force quit.  On the command line (via OS X Terminal), R does fine:
+"""
+> library(tcltk)  ### shouldn't work, and doesn't, but doesn't crash/hang either
+Warning message:
+In fun(libname, pkgname) : couldn't connect to display ":0.0"
+> tcltk()
+Error: could not find function "tcltk"
+> capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua
+       TRUE        TRUE        TRUE        TRUE       FALSE        TRUE
+   http/ftp     sockets      libxml        fifo      cledit       iconv
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+        NLS     profmem       cairo         ICU long.double     libcurl
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+"""
+
+So far, I've tried the following solutions:
+Update R
+Update RStudio
+Downgrade RStudio (to version 0.98.1091 from Nov 2014)
+And also,
+     after removing all of following:
+          /Library/Frameworks
+          /Library/Frameworks/R.framework
+          ~/Library/R
+          ~/Applications/RStudio.app
+          ~/Applications/R.app
+          ~/.rstudio-desktop .rstudio-desktop.bak
+          ~/.R
+          ~/.Rapp.history
+          ~/.Rhistory
+          ~/.Rprofile
+          and port uninstall R
+     I tried installing R clean from https://cran.r-project.org/bin/macosx/
+          and also removing it and installing R clean from Darwin
+Ports with the +tcltk variant
+
+After all this, I'm still getting the mysterious hang in both R.app
+and RStudio.  I'm now out of guesses. I'm prepared to keep at it, but
+at this point I don't even know where to start to continue chasing the
+problem.
+
+Thank you for your help.  If this isn't the right list to reach out
+to, please let me know who to ask instead.
+
+best,
+seth.
+
+ps. This isn't a problem with sqldf, but with a more obscure package,
+mwa, so the standard workaround for tcltk problems,
+options(gsubfn.engine = "R"), won't do. I need to be able to run:
+"""
+install.packages("mwa")
+library(mwa)
+example(matchedwake)
+"""
+This code should work fine on your machines (so it isn't a problem
+with the developer of mwa), but it hangs on mine at "library(mwa)"
+while loading required package tcltk.
+
+pps., specs:
+"""
+> sessionInfo()
+R version 3.2.2 (2015-08-14)
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+Running under: OS X 10.10.4 (Yosemite)
+
+locale:
+[1] C
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+loaded via a namespace (and not attached):
+[1] tools_3.2.2
+"""
+
+best,
+seth.
+
+
+From adrian at waddell.ch  Wed Oct 28 16:48:33 2015
+From: adrian at waddell.ch (Adrian Waddell)
+Date: Wed, 28 Oct 2015 16:48:33 +0100
+Subject: [R-gui] tcltk troubleshooting on OS X
+In-Reply-To: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+References: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+Message-ID: <F8A0970F-D9FB-4594-8D27-E1677FC3DA6F@waddell.ch>
+
+Hi Seth,
+
+Have you installed XQuartz? See
+
+https://cran.r-project.org/bin/macosx/ <https://cran.r-project.org/bin/macosx/>
+
+Adrian
+
+
+> On 28 Oct 2015, at 16:41, Seth Frey <moctodliamg at gmail.com> wrote:
+> 
+> Hello,
+> 
+> I have a strange problem with both R.app and RStudio.app.  Since it's
+> a problem with both, I figure it's a problem with R or with my system,
+> and that your expertises may offer some leads on how I can keep
+> isolating the problem.
+> 
+> I've made it this far: when I run either capabilities() or
+> library(tcltk), both GUI apps hang uninformatively and have to be
+> force quit.  On the command line (via OS X Terminal), R does fine:
+> """
+>> library(tcltk)  ### shouldn't work, and doesn't, but doesn't crash/hang either
+> Warning message:
+> In fun(libname, pkgname) : couldn't connect to display ":0.0"
+>> tcltk()
+> Error: could not find function "tcltk"
+>> capabilities()
+>       jpeg         png        tiff       tcltk         X11        aqua
+>       TRUE        TRUE        TRUE        TRUE       FALSE        TRUE
+>   http/ftp     sockets      libxml        fifo      cledit       iconv
+>       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+>        NLS     profmem       cairo         ICU long.double     libcurl
+>       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+> """
+> 
+> So far, I've tried the following solutions:
+> Update R
+> Update RStudio
+> Downgrade RStudio (to version 0.98.1091 from Nov 2014)
+> And also,
+>     after removing all of following:
+>          /Library/Frameworks
+>          /Library/Frameworks/R.framework
+>          ~/Library/R
+>          ~/Applications/RStudio.app
+>          ~/Applications/R.app
+>          ~/.rstudio-desktop .rstudio-desktop.bak
+>          ~/.R
+>          ~/.Rapp.history
+>          ~/.Rhistory
+>          ~/.Rprofile
+>          and port uninstall R
+>     I tried installing R clean from https://cran.r-project.org/bin/macosx/
+>          and also removing it and installing R clean from Darwin
+> Ports with the +tcltk variant
+> 
+> After all this, I'm still getting the mysterious hang in both R.app
+> and RStudio.  I'm now out of guesses. I'm prepared to keep at it, but
+> at this point I don't even know where to start to continue chasing the
+> problem.
+> 
+> Thank you for your help.  If this isn't the right list to reach out
+> to, please let me know who to ask instead.
+> 
+> best,
+> seth.
+> 
+> ps. This isn't a problem with sqldf, but with a more obscure package,
+> mwa, so the standard workaround for tcltk problems,
+> options(gsubfn.engine = "R"), won't do. I need to be able to run:
+> """
+> install.packages("mwa")
+> library(mwa)
+> example(matchedwake)
+> """
+> This code should work fine on your machines (so it isn't a problem
+> with the developer of mwa), but it hangs on mine at "library(mwa)"
+> while loading required package tcltk.
+> 
+> pps., specs:
+> """
+>> sessionInfo()
+> R version 3.2.2 (2015-08-14)
+> Platform: x86_64-apple-darwin13.4.0 (64-bit)
+> Running under: OS X 10.10.4 (Yosemite)
+> 
+> locale:
+> [1] C
+> 
+> attached base packages:
+> [1] stats     graphics  grDevices utils     datasets  methods   base
+> 
+> loaded via a namespace (and not attached):
+> [1] tools_3.2.2
+> """
+> 
+> best,
+> seth.
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+	[[alternative HTML version deleted]]
+
+
+From moctodliamg at gmail.com  Wed Oct 28 17:19:59 2015
+From: moctodliamg at gmail.com (Seth Frey)
+Date: Wed, 28 Oct 2015 12:19:59 -0400
+Subject: [R-gui] tcltk troubleshooting on OS X
+In-Reply-To: <F8A0970F-D9FB-4594-8D27-E1677FC3DA6F@waddell.ch>
+References: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+	<F8A0970F-D9FB-4594-8D27-E1677FC3DA6F@waddell.ch>
+Message-ID: <CA+iVVeUUKF_+NkPmGD_8sMftq20JhzOKmbYKvJwLktZCBnXpOw@mail.gmail.com>
+
+Adrian,
+
+> Have you installed XQuartz? See
+> https://cran.r-project.org/bin/macosx/
+
+I'm not sure if I had or not, but I just installed it or reinstalled
+it and reinstalled R on top of it.  That doesn't fix my problem,
+RStudio.app and R.app both still hang.
+
+In Terminal, capabilities is still showing X11 as FALSE.  Is that the
+thing I should be trying to fix?  If tcltk depends on X11, why would
+capabilities list it as TRUE if X11 is showing as FALSE?
+
+Thanks again, and for the super quick reply.
+
+best,
+seth.
+
+
+From pdalgd at gmail.com  Wed Oct 28 17:51:07 2015
+From: pdalgd at gmail.com (peter dalgaard)
+Date: Wed, 28 Oct 2015 17:51:07 +0100
+Subject: [R-gui] tcltk troubleshooting on OS X
+In-Reply-To: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+References: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+Message-ID: <2300E20C-3D01-4AD1-8B44-CCB5438FC8AD@gmail.com>
+
+This may not bee too helpful but rather just increase your number of grey hairs (or cause you to pull them out...), but I see the following in RGui.app and Rstudio.app
+
+> library(tcltk)
+> capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua    http/ftp     sockets      libxml        fifo      cledit 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+      iconv         NLS     profmem       cairo         ICU long.double     libcurl 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
+> sessionInfo()
+R version 3.2.2 (2015-08-14)
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+Running under: OS X 10.9.5 (Mavericks)
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] tcltk     stats     graphics  grDevices utils     datasets  methods   base     
+> 
+
+One thing though: Beware of mixing build systems. If you are using macPorts, as it seems that you are, you may wind up with incompatible libraries.
+
+
+-pd
+
+On 28 Oct 2015, at 16:41 , Seth Frey <moctodliamg at gmail.com> wrote:
+
+> Hello,
+> 
+> I have a strange problem with both R.app and RStudio.app.  Since it's
+> a problem with both, I figure it's a problem with R or with my system,
+> and that your expertises may offer some leads on how I can keep
+> isolating the problem.
+> 
+> I've made it this far: when I run either capabilities() or
+> library(tcltk), both GUI apps hang uninformatively and have to be
+> force quit.  On the command line (via OS X Terminal), R does fine:
+> """
+>> library(tcltk)  ### shouldn't work, and doesn't, but doesn't crash/hang either
+> Warning message:
+> In fun(libname, pkgname) : couldn't connect to display ":0.0"
+>> tcltk()
+> Error: could not find function "tcltk"
+>> capabilities()
+>       jpeg         png        tiff       tcltk         X11        aqua
+>       TRUE        TRUE        TRUE        TRUE       FALSE        TRUE
+>   http/ftp     sockets      libxml        fifo      cledit       iconv
+>       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+>        NLS     profmem       cairo         ICU long.double     libcurl
+>       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+> """
+> 
+> So far, I've tried the following solutions:
+> Update R
+> Update RStudio
+> Downgrade RStudio (to version 0.98.1091 from Nov 2014)
+> And also,
+>     after removing all of following:
+>          /Library/Frameworks
+>          /Library/Frameworks/R.framework
+>          ~/Library/R
+>          ~/Applications/RStudio.app
+>          ~/Applications/R.app
+>          ~/.rstudio-desktop .rstudio-desktop.bak
+>          ~/.R
+>          ~/.Rapp.history
+>          ~/.Rhistory
+>          ~/.Rprofile
+>          and port uninstall R
+>     I tried installing R clean from https://cran.r-project.org/bin/macosx/
+>          and also removing it and installing R clean from Darwin
+> Ports with the +tcltk variant
+> 
+> After all this, I'm still getting the mysterious hang in both R.app
+> and RStudio.  I'm now out of guesses. I'm prepared to keep at it, but
+> at this point I don't even know where to start to continue chasing the
+> problem.
+> 
+> Thank you for your help.  If this isn't the right list to reach out
+> to, please let me know who to ask instead.
+> 
+> best,
+> seth.
+> 
+> ps. This isn't a problem with sqldf, but with a more obscure package,
+> mwa, so the standard workaround for tcltk problems,
+> options(gsubfn.engine = "R"), won't do. I need to be able to run:
+> """
+> install.packages("mwa")
+> library(mwa)
+> example(matchedwake)
+> """
+> This code should work fine on your machines (so it isn't a problem
+> with the developer of mwa), but it hangs on mine at "library(mwa)"
+> while loading required package tcltk.
+> 
+> pps., specs:
+> """
+>> sessionInfo()
+> R version 3.2.2 (2015-08-14)
+> Platform: x86_64-apple-darwin13.4.0 (64-bit)
+> Running under: OS X 10.10.4 (Yosemite)
+> 
+> locale:
+> [1] C
+> 
+> attached base packages:
+> [1] stats     graphics  grDevices utils     datasets  methods   base
+> 
+> loaded via a namespace (and not attached):
+> [1] tools_3.2.2
+> """
+> 
+> best,
+> seth.
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Peter Dalgaard, Professor,
+Center for Statistics, Copenhagen Business School
+Solbjerg Plads 3, 2000 Frederiksberg, Denmark
+Phone: (+45)38153501
+Office: A 4.23
+Email: pd.mes at cbs.dk  Priv: PDalgd at gmail.com
+
+
+From simon.urbanek at r-project.org  Thu Oct 29 15:39:39 2015
+From: simon.urbanek at r-project.org (Simon Urbanek)
+Date: Thu, 29 Oct 2015 10:39:39 -0400
+Subject: [R-gui] tcltk troubleshooting on OS X
+In-Reply-To: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+References: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+Message-ID: <9652AB62-7D30-419D-811E-917DE4FB72E6@r-project.org>
+
+Check your DISPLAY env var -- it defines which X11 to connect to. In your command line you have apparently set it to :0.0 while you don't have even X11 running so it will fail unless you start X11 yourself. When you request X11, Apple has some additional magic it offers to start X11 automatically - I wonder if that is broken on your system so it just hangs. That magic will show up as a path in the DISPLAY variable instead of the regular display specification. If in doubt, start X11 by hand and set DISPLAY to :0.0.
+
+Cheers,
+Simon
+
+PS: This would be more appropriate on SIG-Mac instead...
+
+
+> On Oct 28, 2015, at 11:41 AM, Seth Frey <moctodliamg at gmail.com> wrote:
+> 
+> Hello,
+> 
+> I have a strange problem with both R.app and RStudio.app.  Since it's
+> a problem with both, I figure it's a problem with R or with my system,
+> and that your expertises may offer some leads on how I can keep
+> isolating the problem.
+> 
+> I've made it this far: when I run either capabilities() or
+> library(tcltk), both GUI apps hang uninformatively and have to be
+> force quit.  On the command line (via OS X Terminal), R does fine:
+> """
+>> library(tcltk)  ### shouldn't work, and doesn't, but doesn't crash/hang either
+> Warning message:
+> In fun(libname, pkgname) : couldn't connect to display ":0.0"
+>> tcltk()
+> Error: could not find function "tcltk"
+>> capabilities()
+>       jpeg         png        tiff       tcltk         X11        aqua
+>       TRUE        TRUE        TRUE        TRUE       FALSE        TRUE
+>   http/ftp     sockets      libxml        fifo      cledit       iconv
+>       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+>        NLS     profmem       cairo         ICU long.double     libcurl
+>       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+> """
+> 
+> So far, I've tried the following solutions:
+> Update R
+> Update RStudio
+> Downgrade RStudio (to version 0.98.1091 from Nov 2014)
+> And also,
+>     after removing all of following:
+>          /Library/Frameworks
+>          /Library/Frameworks/R.framework
+>          ~/Library/R
+>          ~/Applications/RStudio.app
+>          ~/Applications/R.app
+>          ~/.rstudio-desktop .rstudio-desktop.bak
+>          ~/.R
+>          ~/.Rapp.history
+>          ~/.Rhistory
+>          ~/.Rprofile
+>          and port uninstall R
+>     I tried installing R clean from https://cran.r-project.org/bin/macosx/
+>          and also removing it and installing R clean from Darwin
+> Ports with the +tcltk variant
+> 
+> After all this, I'm still getting the mysterious hang in both R.app
+> and RStudio.  I'm now out of guesses. I'm prepared to keep at it, but
+> at this point I don't even know where to start to continue chasing the
+> problem.
+> 
+> Thank you for your help.  If this isn't the right list to reach out
+> to, please let me know who to ask instead.
+> 
+> best,
+> seth.
+> 
+> ps. This isn't a problem with sqldf, but with a more obscure package,
+> mwa, so the standard workaround for tcltk problems,
+> options(gsubfn.engine = "R"), won't do. I need to be able to run:
+> """
+> install.packages("mwa")
+> library(mwa)
+> example(matchedwake)
+> """
+> This code should work fine on your machines (so it isn't a problem
+> with the developer of mwa), but it hangs on mine at "library(mwa)"
+> while loading required package tcltk.
+> 
+> pps., specs:
+> """
+>> sessionInfo()
+> R version 3.2.2 (2015-08-14)
+> Platform: x86_64-apple-darwin13.4.0 (64-bit)
+> Running under: OS X 10.10.4 (Yosemite)
+> 
+> locale:
+> [1] C
+> 
+> attached base packages:
+> [1] stats     graphics  grDevices utils     datasets  methods   base
+> 
+> loaded via a namespace (and not attached):
+> [1] tools_3.2.2
+> """
+> 
+> best,
+> seth.
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+
+From moctodliamg at gmail.com  Thu Oct 29 15:54:28 2015
+From: moctodliamg at gmail.com (Seth Frey)
+Date: Thu, 29 Oct 2015 10:54:28 -0400
+Subject: [R-gui] tcltk troubleshooting on OS X
+In-Reply-To: <9652AB62-7D30-419D-811E-917DE4FB72E6@r-project.org>
+References: <CA+iVVeUVoRD4oVk-m1v3riC7oSWd0+iKxEfHJZdBgsP8rhRtTg@mail.gmail.com>
+	<9652AB62-7D30-419D-811E-917DE4FB72E6@r-project.org>
+Message-ID: <CA+iVVeWVFA89LHA6yHSRJa36LcA2RSKdo8nbbBwT4fTO6TOEiQ@mail.gmail.com>
+
+Thank you for all of the on- and off-list help.  The error came down
+to an old old setting in my bash profile, totally unrelated to X11,
+that was somehow crashing X11 anyway, which was in turn crashing the R
+GUIs. Your leads helped me isolate it.  If something like this happens
+again, I'll post to SIG-mac instead.
+
+To be a bit more specific, the failure of X11 was hard-crashing R.app,
+but it was only freezing RStudio.  With RStudio hanging on
+capabilities(), for arbitrarily long, the act of opening XQuartz
+caused RStudio to finish with capabilities() and print the right
+output as if nothing had gone wrong.  Don't know if those are
+interesting differences or not, but it might be, so worth sharing.
+
+Thank you again for your help.
+
+best,
+seth.
+
+Seth Frey
+Neukom Postdoctoral Fellow
+Dartmouth College
+http://enfascination.com/research
+
+
+On Thu, Oct 29, 2015 at 10:39 AM, Simon Urbanek
+<simon.urbanek at r-project.org> wrote:
+> Check your DISPLAY env var -- it defines which X11 to connect to. In your command line you have apparently set it to :0.0 while you don't have even X11 running so it will fail unless you start X11 yourself. When you request X11, Apple has some additional magic it offers to start X11 automatically - I wonder if that is broken on your system so it just hangs. That magic will show up as a path in the DISPLAY variable instead of the regular display specification. If in doubt, start X11 by hand and set DISPLAY to :0.0.
+>
+> Cheers,
+> Simon
+>
+> PS: This would be more appropriate on SIG-Mac instead...
+>
+>
+>> On Oct 28, 2015, at 11:41 AM, Seth Frey <moctodliamg at gmail.com> wrote:
+>>
+>> Hello,
+>>
+>> I have a strange problem with both R.app and RStudio.app.  Since it's
+>> a problem with both, I figure it's a problem with R or with my system,
+>> and that your expertises may offer some leads on how I can keep
+>> isolating the problem.
+>>
+>> I've made it this far: when I run either capabilities() or
+>> library(tcltk), both GUI apps hang uninformatively and have to be
+>> force quit.  On the command line (via OS X Terminal), R does fine:
+>> """
+>>> library(tcltk)  ### shouldn't work, and doesn't, but doesn't crash/hang either
+>> Warning message:
+>> In fun(libname, pkgname) : couldn't connect to display ":0.0"
+>>> tcltk()
+>> Error: could not find function "tcltk"
+>>> capabilities()
+>>       jpeg         png        tiff       tcltk         X11        aqua
+>>       TRUE        TRUE        TRUE        TRUE       FALSE        TRUE
+>>   http/ftp     sockets      libxml        fifo      cledit       iconv
+>>       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+>>        NLS     profmem       cairo         ICU long.double     libcurl
+>>       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+>> """
+>>
+>> So far, I've tried the following solutions:
+>> Update R
+>> Update RStudio
+>> Downgrade RStudio (to version 0.98.1091 from Nov 2014)
+>> And also,
+>>     after removing all of following:
+>>          /Library/Frameworks
+>>          /Library/Frameworks/R.framework
+>>          ~/Library/R
+>>          ~/Applications/RStudio.app
+>>          ~/Applications/R.app
+>>          ~/.rstudio-desktop .rstudio-desktop.bak
+>>          ~/.R
+>>          ~/.Rapp.history
+>>          ~/.Rhistory
+>>          ~/.Rprofile
+>>          and port uninstall R
+>>     I tried installing R clean from https://cran.r-project.org/bin/macosx/
+>>          and also removing it and installing R clean from Darwin
+>> Ports with the +tcltk variant
+>>
+>> After all this, I'm still getting the mysterious hang in both R.app
+>> and RStudio.  I'm now out of guesses. I'm prepared to keep at it, but
+>> at this point I don't even know where to start to continue chasing the
+>> problem.
+>>
+>> Thank you for your help.  If this isn't the right list to reach out
+>> to, please let me know who to ask instead.
+>>
+>> best,
+>> seth.
+>>
+>> ps. This isn't a problem with sqldf, but with a more obscure package,
+>> mwa, so the standard workaround for tcltk problems,
+>> options(gsubfn.engine = "R"), won't do. I need to be able to run:
+>> """
+>> install.packages("mwa")
+>> library(mwa)
+>> example(matchedwake)
+>> """
+>> This code should work fine on your machines (so it isn't a problem
+>> with the developer of mwa), but it hangs on mine at "library(mwa)"
+>> while loading required package tcltk.
+>>
+>> pps., specs:
+>> """
+>>> sessionInfo()
+>> R version 3.2.2 (2015-08-14)
+>> Platform: x86_64-apple-darwin13.4.0 (64-bit)
+>> Running under: OS X 10.10.4 (Yosemite)
+>>
+>> locale:
+>> [1] C
+>>
+>> attached base packages:
+>> [1] stats     graphics  grDevices utils     datasets  methods   base
+>>
+>> loaded via a namespace (and not attached):
+>> [1] tools_3.2.2
+>> """
+>>
+>> best,
+>> seth.
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at r-project.org
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+>
+
+

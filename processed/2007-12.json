@@ -1,0 +1,129 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2007-12",
+  "messages": [
+    {
+      "id": "msg-c4182ee4fec8",
+      "message_id": "<4750F593.4010502@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2007-12-01T06:48:03+01:00",
+      "subject": "[R-gui] Something odd about Windows GUI with the menu command",
+      "subject_clean": "[R-gui] Something odd about Windows GUI with the menu command",
+      "in_reply_to": "<2264.132.166.74.140.1196429915.squirrel@webmail.lsce.ipsl.fr>",
+      "references": [
+        "<2264.132.166.74.140.1196429915.squirrel@webmail.lsce.ipsl.fr>"
+      ],
+      "body_plain": "Hello,\nThis is not a question for R-SIG-GUI (Graphical User Interface), isn't \nit? You may get answer, or not. If not, I suggest you redirect this \nquestion to R-Help, or directly submit a bug report if you think this is \na bug (but you should first try this with the latest R 2.6.1).\nBest,\n\nPhilippe Grosjean\n\nT. Marthews wrote:\n> Dear R-sig-gui,\n> \n> I'm using R 2.5.1 for Windows. Here's an interesting one (perhaps!):\n> \n> If I have the Console window about 80 characters wide, I can do the\n> following commands:\n> \n> \n>> a=c(\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\")\n>> menu(a)\n> \n>  1: Jan   2: Feb   3: Mar   4: Apr   5: May   6: Jun   7: Jul   8: Aug\n>  9: Sep  10: Oct  11: Nov  12: Dec\n> \n> Selection: 13\n> Enter an item from the menu, or 0 to exit\n> Selection: 3\n> [1] 3\n>>\n> \n> ...which is pretty much what one would expect. However, if I make the\n> Console window about twice as wide and do the same commands, I get:\n> \n>>\n>> a=c(\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\")\n>> menu(a)\n> \n>  1: Jan   2: Feb   3: Mar   4: Apr   5: May   6: Jun   7: Jul   8: Aug  \n> 9: Sep  10: Oct  11: Nov  12: Dec   1: Jan   2: Feb   3: Mar   4: Apr  \n> 5: May   6: Jun   7: Jul   8: Aug\n> \n> \n> Selection: 13\n> Enter an item from the menu, or 0 to exit\n> Selection: 3\n> [1] 3\n>>\n> \n> My question is: where do those extra non-existent menu options come from?\n> \n> Thanks to anyone who has time to look at this.\n> \n> Toby\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Hello,\nThis is not a question for R-SIG-GUI (Graphical User Interface), isn't \nit? You may get answer, or not. If not, I suggest you redirect this \nquestion to R-Help, or directly submit a bug report ",
+      "thread_id": "thread-c4182ee4fec8",
+      "thread_depth": 0,
+      "month": "2007-12"
+    },
+    {
+      "id": "msg-848ab0869d71",
+      "message_id": "<F2F0B4F4D798D1499DC8D3AFE36E1D4408D22C@mbzajhb02.za.corp.investec.com>",
+      "from_name": "Ruvashen Padayachee",
+      "from_email_hash": "ded9f0ce8cc819f10f09ddd4c7f721f9be8d5bffd7d6e161ed55ea3dac335b0b",
+      "date": "2007-12-04T16:53:03+02:00",
+      "subject": "[R-gui] tktoplevel issues",
+      "subject_clean": "[R-gui] tktoplevel issues",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071204/abe8bd50/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071204/abe8bd50/attachment.pl",
+      "thread_id": "thread-848ab0869d71",
+      "thread_depth": 0,
+      "month": "2007-12"
+    },
+    {
+      "id": "msg-046a7b2b4481",
+      "message_id": "<4755852F.9040505@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2007-12-04T17:49:51+01:00",
+      "subject": "[R-gui] tktoplevel issues",
+      "subject_clean": "[R-gui] tktoplevel issues",
+      "in_reply_to": "<F2F0B4F4D798D1499DC8D3AFE36E1D4408D22C@mbzajhb02.za.corp.investec.com>",
+      "references": [
+        "<F2F0B4F4D798D1499DC8D3AFE36E1D4408D22C@mbzajhb02.za.corp.investec.com>"
+      ],
+      "body_plain": "Hello,\n\nThis works for me:\n\nlibrary(tcltk2)\ntt <- tktoplevel(background = \"black\")\n# Creates the body of the GUI.\nilogo <- tk2ico.load(file.path(Sys.getenv(\"R_HOME\"), \"bin\", \"R.exe\"), \nres = \"R\")\ntk2ico.set(tt, ilogo)\t# This assigns the icon to the main window.\ntktitle(tt) <- \"Backtest\"\t# Creates a window title.\nmasterframe <- tkframe(tt)\n\n#  Button\nopenwindow <- function(){\n\truv <- tktoplevel()\n\t.Tcl(\"update idletasks\")\t\n   \ttk2ico.set(ruv, ilogo)\n\ttktitle(ruv) <- \"Test Window\"\n\t\n\ttopMenu <- tk2menu(ruv)\n\t\n\tfileMenu <- tk2menu(topMenu, tearoff = FALSE)\n\ttkadd(fileMenu, \"command\", label = \"Quit\", command =\n\t\tfunction()tkdestroy(ruv))\n\ttkadd(topMenu, \"cascade\", label = \"File\", menu = fileMenu)\n\ttkconfigure(ruv, menu = topMenu)\n\t\t\n\tMasterFrame2 <- tkframe(ruv)\n\ttkgrid(MasterFrame2)\n}\ntest.but <- tkbutton(masterframe, text = \"Run\", command = openwindow)\ntkpack(test.but, side = \"top\")\n\ntkgrid(masterframe)\n\nComments:\n1) Do not create same (graphical) resource twice, reuse it,\n2) Declare your functions or objects before using them in tcl widgets\n3) do not forget .Tcl(\"update idletasks\") when required, especially with \nfunctions like tk2ico.set()\n\nBest regards,\n\nPhilippe Grosjean\n\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Belgium\n( ( ( ( (\n..............................................................\n\nRuvashen Padayachee wrote:\n> Hi there! I have a little problem regarding the tcltk2 package. I have\n> created a simple GUI and a button within which, when pressed, opens up\n> another window. The problem I have is that the icon I specify to appear\n> in the second window does not appear. Do you have any idea why? \n>  \n> Example code: \n>  \n>  \n> tt = tktoplevel(background = \"black\")\n> # Creates the body of the GUI.\n> tktitle(tt) = \"Backtest\"\n> # Creates a window title.\n> ilogo = tk2ico.create(\"H:/GUI/icons/ilogo.ico\")\n> # Icon created.\n> tk2ico.set(tt,investeclogo)\n> # This assigns the icon to the main window.\n> masterframe = tkframe(tt)\n> tkgrid(masterframe)\n>  \n> #  Button\n> test.but = tkbutton(masterframe,text = \"Run\",command = openwindow)\n> tkpack(test.but, side = \"top\") \n> \n>  \n> openwindow = function(){\n>  \n> ruv = tktoplevel()                              \n> tktitle(ruv) = \"Test Window\"          \n> ilogo2 = tk2ico.create(\"H:/GUI/icons/ilogo.ico\")\n> tk2ico.set(ruv,ilogo2)         \n>  \n> topMenu = tk2menu(ruv)\n> tkconfigure(ruv,menu = topMenu)\n> fileMenu = tk2menu(topMenu, tearoff = FALSE)\n> tkadd(fileMenu,\"command\", label = \"Quit\", command =\n> function()tkdestroy(ruv))\n> tkadd(topMenu,\"cascade\",label = \"File\", menu = fileMenu)\n>  \n> MasterFrame2 = tkframe(ruv)                          \n> tkgrid(MasterFrame2)\n>  \n> }\n>  \n> Thanks and Regards! \n>  \n>  \n> \n> \n> \n> \n>  \n>  \n>  \n> \n>  \n> \n> http://www.investec.com/EmailDisclaimer/emaildisclaimer.htm\n> \n> The disclaimer also provides our corporate information and names of our directors as required by law.\n> \n> The disclaimer is deemed to form part of this message in terms of Section 11 of the Electronic Communications and Transactions Act 25 of 2002. \n> If you cannot access the disclaimer, please obtain a copy thereof from us by sending an email to: disclaimer at investec.co.za\n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Hello,\n\nThis works for me:\n\nlibrary(tcltk2)\ntt <- tktoplevel(background = \"black\")\n# Creates the body of the GUI.\nilogo <- tk2ico.load(file.path(Sys.getenv(\"R_HOME\"), \"bin\", \"R.exe\"), \nres = \"R\")\ntk2i",
+      "thread_id": "thread-848ab0869d71",
+      "thread_depth": 1,
+      "month": "2007-12"
+    },
+    {
+      "id": "msg-0650a9d1c7c9",
+      "message_id": "<CA561A6D-D0E4-4D3A-888D-6D40853554D1@gmail.com>",
+      "from_name": "Charilaos Skiadas",
+      "from_email_hash": "983c2b1003be35a5cf23d12111c3d21cfa275576566eb9cb10c2d0ec255221bf",
+      "date": "2007-12-21T19:38:34-05:00",
+      "subject": "[R-gui] tcltk problem using \"in\"",
+      "subject_clean": "[R-gui] tcltk problem using \"in\"",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello all,\n\n\tI've been struggling for the best part of the last couple of hours  \nwith the following simple problem. Consider the following code:\n\nlibrary(tcltk)\ntktest <- function(parent, wdgt) {\n   fr <- tkframe(parent, borderwidth=2, relief=\"raised\")\n   tkgrid(wdgt, `in`=fr)\n   tmp <- tklabel(fr, text=\"hi\")\n   tmp2 <- tklabel(parent, text=\"there\")\n   tkgrid(tmp)\n   tkgrid(tmp2, `in`=fr)\n   fr\n}\ntt <- tktoplevel()\nt2 <- tklabel(tt,text=\"a\")\nt3 <- tklabel(tt,text=\"b\")\nsg <- tktest(tt,t2)\nt4 <- tklabel(sg,text=\"c\")\ntkgrid(t3,`in`=sg)\ntkgrid(t4)\ntkgrid(sg)\n\n\n\nNow, the resulting window contains the frame sg, with room in it for  \nall 5 strings a, hi, there, b, c,    BUT a and b are not showing!\nSo, I am wondering what I am doing wrong. The `in` call seem to work  \nin one case, and fail in the other two cases, and I can't tell what  \nthe difference is, especially between the \"there\" and \"b\" cases. What  \nI find more weird is that the space is allotted, but not used.\n\nAny help appreciated, I am starting to lose my mind over here.\n\nHaris Skiadas\nDepartment of Mathematics and Computer Science\nHanover College",
+      "body_snippet": "Hello all,\n\n\tI've been struggling for the best part of the last couple of hours  \nwith the following simple problem. Consider the following code:\n\nlibrary(tcltk)\ntktest <- function(parent, wdgt) {\n   ",
+      "thread_id": "thread-0650a9d1c7c9",
+      "thread_depth": 0,
+      "month": "2007-12"
+    },
+    {
+      "id": "msg-17900e20d875",
+      "message_id": "<1AC95160-38CD-4BB5-8EF8-A42E245A6283@gmail.com>",
+      "from_name": "Charilaos Skiadas",
+      "from_email_hash": "983c2b1003be35a5cf23d12111c3d21cfa275576566eb9cb10c2d0ec255221bf",
+      "date": "2007-12-22T00:27:36-05:00",
+      "subject": "[R-gui] tcltk problem using \"in\"",
+      "subject_clean": "[R-gui] tcltk problem using \"in\"",
+      "in_reply_to": "<CA561A6D-D0E4-4D3A-888D-6D40853554D1@gmail.com>",
+      "references": [
+        "<CA561A6D-D0E4-4D3A-888D-6D40853554D1@gmail.com>"
+      ],
+      "body_plain": "Replying to myself, though not sure that the threading will be  \npreserved (long story short: I use gmail+pop, and as a consequence  \ndon't see my posts to the list, so I am responding to my sent message).\n\nThe problem is \"explained\" by the following code:\n\ntktest <- function(parent) {\n   fr <- tkframe(parent, borderwidth=2, relief=\"raised\")      # Line 1\n   l1 <- tklabel(parent, text=\"b\")                           # Line 2\n   l2 <- tklabel(fr,text=\"a\")\n   tkgrid(l1,l2, `in`=fr)\n   fr\n}\n\ntt <- tktoplevel()\ntf1 <- tktest(tt)\ntkgrid(tf1)\n\nThe above code, as it stands, produces a nice frame with two letters,  \na and b, in it.\nNow, if we interchange the lines I called Line 1 and Line 2 above,  \nthen in the resulting frame b doesn't show up any more, though there  \nis space reserved for it.\n\nIn other words,  a widget cannot be inserted into a frame that was  \ncreated after the widget came to existence (in which case we have to  \nuse the \"in\" argument). A quick check with code directly in Tcl/Tk  \nseems to indicate that this is actually a limitation of Tcl/Tk  \n(sounds to me a bit silly to have such limitation though).\n\nUnfortunately, this makes what I was intending to do a lot more  \ndifficult. I was hoping to create \"tkcbind\" and \"tkrbind\" commands to  \nallow one to build the GUI from the ground up. It sounds like I would  \nneed, at the very least, to specify beforehand the overall frame  \nstructure, and thus move top-to-bottom instead.\n\nIs this problem documented anywhere?\n\nHaris Skiadas\nDepartment of Mathematics and Computer Science\nHanover College\n\n\n\nOn Dec 21, 2007, at 7:38 PM, Charilaos Skiadas wrote:\n\n> Hello all,\n>\n> \tI've been struggling for the best part of the last couple of hours  \n> with the following simple problem. Consider the following code:\n>\n> library(tcltk)\n> tktest <- function(parent, wdgt) {\n>   fr <- tkframe(parent, borderwidth=2, relief=\"raised\")\n>   tkgrid(wdgt, `in`=fr)\n>   tmp <- tklabel(fr, text=\"hi\")\n>   tmp2 <- tklabel(parent, text=\"there\")\n>   tkgrid(tmp)\n>   tkgrid(tmp2, `in`=fr)\n>   fr\n> }\n> tt <- tktoplevel()\n> t2 <- tklabel(tt,text=\"a\")\n> t3 <- tklabel(tt,text=\"b\")\n> sg <- tktest(tt,t2)\n> t4 <- tklabel(sg,text=\"c\")\n> tkgrid(t3,`in`=sg)\n> tkgrid(t4)\n> tkgrid(sg)\n>\n>\n>\n> Now, the resulting window contains the frame sg, with room in it  \n> for all 5 strings a, hi, there, b, c,    BUT a and b are not showing!\n> So, I am wondering what I am doing wrong. The `in` call seem to  \n> work in one case, and fail in the other two cases, and I can't tell  \n> what the difference is, especially between the \"there\" and \"b\"  \n> cases. What I find more weird is that the space is allotted, but  \n> not used.\n>\n> Any help appreciated, I am starting to lose my mind over here.\n>\n> Haris Skiadas\n> Department of Mathematics and Computer Science\n> Hanover College\n>\n>",
+      "body_snippet": "Replying to myself, though not sure that the threading will be  \npreserved (long story short: I use gmail+pop, and as a consequence  \ndon't see my posts to the list, so I am responding to my sent mess",
+      "thread_id": "thread-0650a9d1c7c9",
+      "thread_depth": 1,
+      "month": "2007-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-c4182ee4fec8",
+      "subject": "[R-gui] Something odd about Windows GUI with the menu command",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2007-12-01T06:48:03+01:00",
+      "last_reply": "2007-12-01T06:48:03+01:00",
+      "root_message_id": "msg-c4182ee4fec8"
+    },
+    {
+      "id": "thread-848ab0869d71",
+      "subject": "[R-gui] tktoplevel issues",
+      "message_count": 2,
+      "participants": [
+        "Philippe Grosjean",
+        "Ruvashen Padayachee"
+      ],
+      "started": "2007-12-04T16:53:03+02:00",
+      "last_reply": "2007-12-04T17:49:51+01:00",
+      "root_message_id": "msg-848ab0869d71"
+    },
+    {
+      "id": "thread-0650a9d1c7c9",
+      "subject": "[R-gui] tcltk problem using \"in\"",
+      "message_count": 2,
+      "participants": [
+        "Charilaos Skiadas"
+      ],
+      "started": "2007-12-21T19:38:34-05:00",
+      "last_reply": "2007-12-22T00:27:36-05:00",
+      "root_message_id": "msg-0650a9d1c7c9"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-08",
+  "messages": [
+    {
+      "id": "msg-a41a2cb58f90",
+      "message_id": "<001201c6b502$4f6d19f0$6401a8c0@DESKTOP>",
+      "from_name": "Jerry Pressnell",
+      "from_email_hash": "c17070d6b586fecdf18b0bf7efdfe162dcb5716139e65f1a20a68697edf5ae47",
+      "date": "2006-08-01T10:34:54+10:00",
+      "subject": "[R-gui]  [ANN] New version of Rpad -- a web-based interface to R",
+      "subject_clean": "[R-gui]  [ANN] New version of Rpad -- a web-based interface to R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060801/8e0383f5/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060801/8e0383f5/attachment.pl",
+      "thread_id": "thread-a41a2cb58f90",
+      "thread_depth": 0,
+      "month": "2006-08"
+    },
+    {
+      "id": "msg-82e18d88edc1",
+      "message_id": "<EA46353C4E0C944895590C266B96A3AF1018D0@uspalpf02.epri.com>",
+      "from_name": "Short, Tom",
+      "from_email_hash": "503204ef6fe47e47669217b4db6a41d60d212fdaa5629a73cba79917db374ea9",
+      "date": "2006-08-01T06:54:35-07:00",
+      "subject": "[R-gui] [ANN] New version of Rpad -- a web-based interface to R",
+      "subject_clean": "[R-gui] [ANN] New version of Rpad -- a web-based interface to R",
+      "in_reply_to": "<001201c6b502$4f6d19f0$6401a8c0@DESKTOP>",
+      "references": [],
+      "body_plain": "Jerry, The Rpad server has a bad networking card. Hopefully, it'll be\nback online tomorrow.\n\n- Tom \n\nTom Short\nEPRI Solutions, Inc.\n\n \n-----Original Message-----\nFrom: r-sig-gui-bounces at stat.math.ethz.ch\n[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Jerry\nPressnell\nSent: Monday, July 31, 2006 8:35 PM\nTo: r-sig-gui at stat.math.ethz.ch\nSubject: [R-gui] [ANN] New version of Rpad -- a web-based interface to R\n\nHi Tom,\n \nI am having difficulties getting onto the following site (I'm sure it\nwas there a couple of weeks ago)\n \n \nhttp://www.rpad.org/Rpad/\n\n \n\n \n\nIs the site still functioning?\n\n \n\nRegards \n\n \n\nJerry Pressnell\n\n \n\n\n\t[[alternative HTML version deleted]]\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at stat.math.ethz.ch\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Jerry, The Rpad server has a bad networking card. Hopefully, it'll be\nback online tomorrow.\n\n- Tom \n\nTom Short\nEPRI Solutions, Inc.\n\n \n-----Original Message-----\nFrom: r-sig-gui-bounces at stat.math.e",
+      "thread_id": "thread-a41a2cb58f90",
+      "thread_depth": 1,
+      "month": "2006-08"
+    },
+    {
+      "id": "msg-5be3ab2c1bab",
+      "message_id": "<ccfee0c50608021443x3d3ec3a4nc73e9371bff74a86@mail.gmail.com>",
+      "from_name": "j verzani",
+      "from_email_hash": "e20704472bc61a02d77ea3e9265cfa5063fc7f96ca96eb6da92d78c740c413c1",
+      "date": "2006-08-02T17:43:25-04:00",
+      "subject": "[R-gui] New version of pmg, 0.9-18, based on new gWidgetsRGtk package",
+      "subject_clean": "[R-gui] New version of pmg, 0.9-18, based on new gWidgetsRGtk package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060802/8c2b9b47/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060802/8c2b9b47/attachment.pl",
+      "thread_id": "thread-5be3ab2c1bab",
+      "thread_depth": 0,
+      "month": "2006-08"
+    },
+    {
+      "id": "msg-476724e4d8c4",
+      "message_id": "<44D78D8B.8090909@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-08-07T15:59:23-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.5.5 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.5.5 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.8) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help//English/Readme/HTML'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.8) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-476724e4d8c4",
+      "thread_depth": 0,
+      "month": "2006-08"
+    },
+    {
+      "id": "msg-b2a913954794",
+      "message_id": "<44D7906D.4020606@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-08-07T16:11:41-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.5.8 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.5.8 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.8) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help//English/Readme/HTML'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\nTinn-R team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.8) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-b2a913954794",
+      "thread_depth": 0,
+      "month": "2006-08"
+    },
+    {
+      "id": "msg-91325b22383f",
+      "message_id": "<200608222120.AA31523088@comb.es>",
+      "from_name": "Manel Salamero",
+      "from_email_hash": "dbd2b360016cb9ce0f2a0501ec4ac1d7f382af0816b25d341d5db21ba67eafb2",
+      "date": "2006-08-22T21:20:27+02:00",
+      "subject": "[R-gui] tktoplevel & tkgetSaveFile options",
+      "subject_clean": "[R-gui] tktoplevel & tkgetSaveFile options",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear list\n\n1. Is there some option for mantaining the tktoplevel window always on top?\n2. Is there some option to eliminate the border icons maximize, minimize and close of a tktoplevel window?\n3. Is possible to avoid the warning message (or changing its contents) in tkgetSaveFile when the file to save already exists?\n\nThanks,\n\nManel",
+      "body_snippet": "Dear list\n\n1. Is there some option for mantaining the tktoplevel window always on top?\n2. Is there some option to eliminate the border icons maximize, minimize and close of a tktoplevel window?\n3. Is ",
+      "thread_id": "thread-91325b22383f",
+      "thread_depth": 0,
+      "month": "2006-08"
+    },
+    {
+      "id": "msg-06a6b77291c8",
+      "message_id": "<17655.14328.717788.448765@basebud.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2006-08-31T14:26:48-05:00",
+      "subject": "[R-gui] tktoplevel & tkgetSaveFile options",
+      "subject_clean": "[R-gui] tktoplevel & tkgetSaveFile options",
+      "in_reply_to": "<200608222120.AA31523088@comb.es>",
+      "references": [
+        "<200608222120.AA31523088@comb.es>"
+      ],
+      "body_plain": "On 22 August 2006 at 21:20, Manel Salamero wrote:\n| Dear list\n| \n| 1. Is there some option for mantaining the tktoplevel window always on top?\n| 2. Is there some option to eliminate the border icons maximize, minimize\n| and close of a tktoplevel window?\n\nAren't both of those handled by the windowmanager? \n\n| 3. Is possible to avoid the warning message (or changing its contents) in\n|    tkgetSaveFile when the file to save already exists? \n\nCouldn't you sail around that and delete the file pre-emptively?\n\nDirk\n\n-- \nHell, there are no rules here - we're trying to accomplish something. \n                                                  -- Thomas A. Edison",
+      "body_snippet": "On 22 August 2006 at 21:20, Manel Salamero wrote:\n| Dear list\n| \n| 1. Is there some option for mantaining the tktoplevel window always on top?\n| 2. Is there some option to eliminate the border icons m",
+      "thread_id": "thread-91325b22383f",
+      "thread_depth": 1,
+      "month": "2006-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-a41a2cb58f90",
+      "subject": "[R-gui]  [ANN] New version of Rpad -- a web-based interface to R",
+      "message_count": 2,
+      "participants": [
+        "Jerry Pressnell",
+        "Short, Tom"
+      ],
+      "started": "2006-08-01T10:34:54+10:00",
+      "last_reply": "2006-08-01T06:54:35-07:00",
+      "root_message_id": "msg-a41a2cb58f90"
+    },
+    {
+      "id": "thread-5be3ab2c1bab",
+      "subject": "[R-gui] New version of pmg, 0.9-18, based on new gWidgetsRGtk package",
+      "message_count": 1,
+      "participants": [
+        "j verzani"
+      ],
+      "started": "2006-08-02T17:43:25-04:00",
+      "last_reply": "2006-08-02T17:43:25-04:00",
+      "root_message_id": "msg-5be3ab2c1bab"
+    },
+    {
+      "id": "thread-476724e4d8c4",
+      "subject": "[R-gui] Tinn-R 1.18.5.5 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-08-07T15:59:23-03:00",
+      "last_reply": "2006-08-07T15:59:23-03:00",
+      "root_message_id": "msg-476724e4d8c4"
+    },
+    {
+      "id": "thread-b2a913954794",
+      "subject": "[R-gui] Tinn-R 1.18.5.8 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-08-07T16:11:41-03:00",
+      "last_reply": "2006-08-07T16:11:41-03:00",
+      "root_message_id": "msg-b2a913954794"
+    },
+    {
+      "id": "thread-91325b22383f",
+      "subject": "[R-gui] tktoplevel & tkgetSaveFile options",
+      "message_count": 2,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Manel Salamero"
+      ],
+      "started": "2006-08-22T21:20:27+02:00",
+      "last_reply": "2006-08-31T14:26:48-05:00",
+      "root_message_id": "msg-91325b22383f"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2010-05",
+  "messages": [
+    {
+      "id": "msg-dc21591f1a6f",
+      "message_id": "<20100504161930.aa8924c5d28ca71e2a043bb294e795eb.f08feec33f.wbe@mobilemail.secureserver.net>",
+      "from_name": "sue at xlsolutions-corp.com",
+      "from_email_hash": "83b03cf4c7189b037a71645b6a2b812e376c4a3259e7206d8e5d6f136948677b",
+      "date": "2010-05-04T16:19:30-07:00",
+      "subject": "[R-gui] Openings in the Consulting Department of XLSolutions Corp",
+      "subject_clean": "[R-gui] Openings in the Consulting Department of XLSolutions Corp",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear useRs,\n\nPlease help me find the ideal candidates for 2 R programming consulting\npositions at XLSolutions Corp. \n\nThe job entails building custom applications for our end users. R\nprogramming is vital and skill in data analysis is important. If you are\ninterested in working with our consulting group, please contact me.\n\nPlease pass along to your contacts and If you have questions, please\nemail me. Telecommuting is possible for these openings.\n\nRegards\n \n Jennifer McDonald\n Assistant to Mary RITZ\n Research and Consulting\n XLSolutions Corporation \n North American Division \n 1700 7th Ave \n Suite 2100 \n Seattle, WA 98101 \n Phone: 206-686-1578 \n Email: jen at xlsolutions-corp.com \n web: www.xlsolutions-corp.com/rcourses",
+      "body_snippet": "Dear useRs,\n\nPlease help me find the ideal candidates for 2 R programming consulting\npositions at XLSolutions Corp. \n\nThe job entails building custom applications for our end users. R\nprogramming is v",
+      "thread_id": "thread-dc21591f1a6f",
+      "thread_depth": 0,
+      "month": "2010-05"
+    },
+    {
+      "id": "msg-943690695c75",
+      "message_id": "<a0385d82e61b8f7f0d47f6139d19f723.squirrel@mail.stat.ucla.edu>",
+      "from_name": "ian.fellows at stat.ucla.edu",
+      "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
+      "date": "2010-05-04T17:45:21-07:00",
+      "subject": "[R-gui] Deducer 0.3-1",
+      "subject_clean": "[R-gui] Deducer 0.3-1",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Deducer 0.3-1 has just been released to CRAN and should be propagating\nthrough the mirrors shortly. This version contains a number of\nimprovements and additions, including:\n\na) The Data viewer has been improved. It now operates much faster on\nmoderately large datasets. Several drawing bugs have been fixed.\n\nb) Additional facilities for plug-in development have been added. Fairly\ncomplex dialogs can be constructed easily with pure R code\n\nc) A variable transformation dialog has been added, with options for\ncentering, standardizing, robust standardizing, log, reciprocal, rank,\nbox-cox, powers, quantile binning, equal width binning, arcsine, and\ncustom expressions. Before and after histograms can be displayed.\n\nAs always, stand alone installers and program documentation are available\nat http://www.deducer.org/manual.html and an active discussion group can\nbe found at http://groups.google.com/group/deducer .\n\nDeveloper documentation is available at\nhttp://www.deducer.org/pmwiki/index.php?n=Main.Development . Information\nregarding plug-in development, both in Java and pure R is available there.\nAn example plug-in is also on CRAN (see: DeducerPlugInExample). If you\nwould like to build a plug-in, or help work on Deducer its self, feel free\nto contact me.\n\nOn a related note, through a google summer of code grant, this summer I\nwill be adding a GUI for the ggplot2 package to Deducer.\n\nCheers,\nIan Fellows",
+      "body_snippet": "Deducer 0.3-1 has just been released to CRAN and should be propagating\nthrough the mirrors shortly. This version contains a number of\nimprovements and additions, including:\n\na) The Data viewer has bee",
+      "thread_id": "thread-943690695c75",
+      "thread_depth": 0,
+      "month": "2010-05"
+    },
+    {
+      "id": "msg-f0c1cb315909",
+      "message_id": "<4BE1937A.2060106@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2010-05-05T17:49:14+02:00",
+      "subject": "[R-gui] New SciViews version 0.9.16",
+      "subject_clean": "[R-gui] New SciViews version 0.9.16",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "The new SciViews version 0.9.16 (http://www.sciviews.org/SciViews-K) is \nnow compatible with R 2.11.0 and comes with a couple of new features and \nconnects more smoothly to R (in console/terminal, RGui under Windows, \nR.app or R64.app on the Mac).\n\nSciViews provides a series of packages for R and a Komodo Edit (a very \ncapable code editor) plugin. With this plugin, you got an environment \nwith similar features as you got with Eclipse + StatET, RKward, R \nCommander or JGR + Deducer.\n\nOn the contrary to R Commander or Deducer, you cannot perform tasks \nthrough dialog boxes, but you got so-called *snippets with dialog \nboxes*, which are dialog boxes allowing to parameterize snippets of R \ncode. This approach is deliberate to focus on building an *R script*, as \nthe best way to both trace your analysis and to build easily reusable \ncode (this approach combines, thus, the best of the two worlds: GUI and \ncommand line). Look at \nhttp://www.sciviews.org/SciViews-K/VisualGuide3Snippets.pdf for a more \nextensive explanation.\n\nSciViews also provides all the niceties for editing R code (syntax \nhighlighting, bracket matching, call tips, completion lists, code \nfolding, etc.). It has a complete R objects explorer, a graphical test \nunits system, and much, much more...\n\nSciViews works on Linux, Mac OS X and Windows (tested with Komodo Edit \n5.2, R 2.11 and Windows XP SP3, Windows 7, Ubuntu 9.10 and Mac OS X 10.6).\n\nPhG\n-- \n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons University, Belgium\n( ( ( ( (\n..............................................................",
+      "body_snippet": "The new SciViews version 0.9.16 (http://www.sciviews.org/SciViews-K) is \nnow compatible with R 2.11.0 and comes with a couple of new features and \nconnects more smoothly to R (in console/terminal, RGu",
+      "thread_id": "thread-f0c1cb315909",
+      "thread_depth": 0,
+      "month": "2010-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-dc21591f1a6f",
+      "subject": "[R-gui] Openings in the Consulting Department of XLSolutions Corp",
+      "message_count": 1,
+      "participants": [
+        "sue at xlsolutions-corp.com"
+      ],
+      "started": "2010-05-04T16:19:30-07:00",
+      "last_reply": "2010-05-04T16:19:30-07:00",
+      "root_message_id": "msg-dc21591f1a6f"
+    },
+    {
+      "id": "thread-943690695c75",
+      "subject": "[R-gui] Deducer 0.3-1",
+      "message_count": 1,
+      "participants": [
+        "ian.fellows at stat.ucla.edu"
+      ],
+      "started": "2010-05-04T17:45:21-07:00",
+      "last_reply": "2010-05-04T17:45:21-07:00",
+      "root_message_id": "msg-943690695c75"
+    },
+    {
+      "id": "thread-f0c1cb315909",
+      "subject": "[R-gui] New SciViews version 0.9.16",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2010-05-05T17:49:14+02:00",
+      "last_reply": "2010-05-05T17:49:14+02:00",
+      "root_message_id": "msg-f0c1cb315909"
+    }
+  ]
+}

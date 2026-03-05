@@ -1,0 +1,28 @@
+From nikko at hailmail.net  Wed Dec 28 17:47:07 2005
+From: nikko at hailmail.net (Nicholas Lewin-Koh)
+Date: Wed, 28 Dec 2005 11:47:07 -0500
+Subject: [R-gui] tcl-tk color chooser (sucks on unix)
+Message-ID: <1135788427.29796.250668861@webmail.messagingengine.com>
+
+Hi,
+I am working on an R package for interactive color mainipulation
+and also a graphical tool for setting lattice(trellis) parameters.
+I am not well versed in tcl/tk but it seems the most developed of the
+widget
+tools in that it works well on all platforms. If RGtk were more
+developed and worked
+on windows I would probably choose that instead. My question is that the
+standard
+color picker "tk_chooseColor" is ok on windows, but absolutely stinks on
+linux/unix.
+Has anyone found an alternative? I don't want to write one from scratch
+since 
+it probably will slow things down considerably, but that is a
+possibility. Is there 
+any gui package as well developed as Rtcltk and crossplatform that is
+availabel as an alternative?
+
+Thanks
+Nicholas
+
+

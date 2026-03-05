@@ -1,0 +1,774 @@
+From thomas.friedrichsmeier at ruhr-uni-bochum.de  Sun Aug  1 20:05:49 2004
+From: thomas.friedrichsmeier at ruhr-uni-bochum.de (Thomas Friedrichsmeier)
+Date: Sun Aug  1 20:03:59 2004
+Subject: [R-gui] RKWard revived, release 0.2.0 is out
+Message-ID: <200408012005.49544.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+
+Hi!
+
+Just a quick note to let you know that I picked up development of RKWard again 
+and perpared a new release. If you're interested, you can have a look at:
+
+http://rkward.sourceforge.net
+
+What it is:
+RKWard is developed using KDE/Qt and therefore - unfortunately - it is 
+platform dependent. It now uses PHP to generate R-code from GUI-settings and 
+also to generate pretty (HTML-)output from the R-output. New features can be 
+added as plugins without the need to recompile.
+
+Thomas
+
+From wettenhall at wehi.edu.au  Mon Aug  2 14:01:11 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Mon Aug  2 14:01:17 2004
+Subject: [R-gui] Windows/GraphApp require package GUI
+In-Reply-To: <200408012005.49544.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+References: <200408012005.49544.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+Message-ID: <Pine.GSO.4.58.0408022139560.9074@unix33.alpha.wehi.edu.au>
+
+Hi,
+
+R GUI users/developers using the _Windows_ operating system
+may be interested in this:
+
+http://bioinf.wehi.edu.au/folders/james/Require/
+
+install.packages("Require",
+  contriburl="http://bioinf.wehi.edu.au/folders/james/Require")
+
+Following on from some recent discussion relating to John
+Fox's Rcmdr (and my GUI packages limmaGUI and affylmGUI), I've
+now written a GUI version of require(package), using GraphApp,
+the GUI toolkit which Rgui for Windows is implemented in.  If
+the required package is already installed, my function
+Require(...) should behave exactly as require(...) does.
+
+But if the required package is missing, the user should be
+guided through possible installation sources:
+(CRAN, Bioconductor, local repository, or local zip file),
+with some dialogs and message boxes.
+
+Let me know whether it works for you, and whether you think this
+sort of thing would be useful.  I can try to write a
+platform-independent version (Tcl/Tk?) as well.  But I think
+the GraphApp version feels more 'native' for Windows Rgui
+users.
+
+It doesn't yet use any of the reposTools functions from
+Bioconductor, but I may try to implement them at some stage.
+
+Regards,
+James
+
+From phgrosjean at sciviews.org  Mon Aug  2 16:39:44 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon Aug  2 16:39:53 2004
+Subject: [R-gui] Windows/GraphApp require package GUI
+In-Reply-To: <Pine.GSO.4.58.0408022139560.9074@unix33.alpha.wehi.edu.au>
+Message-ID: <MABBLJDICACNFOLGIHJOIEELELAA.phgrosjean@sciviews.org>
+
+This is excellent. Thank you James!
+Errors due to missing package is a big problem with beginners... now there
+is a solution. However, since the Require package is not in the standard
+distribution of R, it is still complex to use because you have to check in
+your code if (1) it is running under Windows, and (2) if the Require package
+is installed... and using Require(Require) is not especially useful ;-)
+
+So, it would be nice if the GUI extension was introduced right in the
+standard require() function. Do you intend to propose such a thing to the R
+core team?
+
+Best,
+
+Philippe
+
+.......................................................<?}))><....
+ ) ) ) ) )
+( ( ( ( (   Prof. Philippe Grosjean
+\  ___   )
+ \/ECO\ (   Numerical Ecology of Aquatic Systems
+ /\___/  )  Mons-Hainaut University, Pentagone
+/ ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium
+ /NUM\/  )
+ \___/\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+       \ )  email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (
+...................................................................
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of James
+Wettenhall
+Sent: Monday, 02 August, 2004 14:01
+To: r-sig-gui@stat.math.ethz.ch
+Subject: [R-gui] Windows/GraphApp require package GUI
+
+
+Hi,
+
+R GUI users/developers using the _Windows_ operating system
+may be interested in this:
+
+http://bioinf.wehi.edu.au/folders/james/Require/
+
+install.packages("Require",
+  contriburl="http://bioinf.wehi.edu.au/folders/james/Require")
+
+Following on from some recent discussion relating to John
+Fox's Rcmdr (and my GUI packages limmaGUI and affylmGUI), I've
+now written a GUI version of require(package), using GraphApp,
+the GUI toolkit which Rgui for Windows is implemented in.  If
+the required package is already installed, my function
+Require(...) should behave exactly as require(...) does.
+
+But if the required package is missing, the user should be
+guided through possible installation sources:
+(CRAN, Bioconductor, local repository, or local zip file),
+with some dialogs and message boxes.
+
+Let me know whether it works for you, and whether you think this
+sort of thing would be useful.  I can try to write a
+platform-independent version (Tcl/Tk?) as well.  But I think
+the GraphApp version feels more 'native' for Windows Rgui
+users.
+
+It doesn't yet use any of the reposTools functions from
+Bioconductor, but I may try to implement them at some stage.
+
+Regards,
+James
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From wettenhall at wehi.edu.au  Tue Aug  3 01:18:31 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Tue Aug  3 01:18:46 2004
+Subject: [R-gui] Windows/GraphApp require package GUI
+In-Reply-To: <MABBLJDICACNFOLGIHJOIEELELAA.phgrosjean@sciviews.org>
+References: <MABBLJDICACNFOLGIHJOIEELELAA.phgrosjean@sciviews.org>
+Message-ID: <Pine.GSO.4.58.0408030906530.2645@unix33.alpha.wehi.edu.au>
+
+Hi Philippe,
+
+On Mon, 2 Aug 2004, Philippe Grosjean wrote:
+> So, it would be nice if the GUI extension was introduced right in the
+> standard require() function. Do you intend to propose such a thing to the R
+> core team?
+
+Yes, I do understand that a Require package to help with missing
+packages is not much use if the Require package itself is
+missing.  So I would hope that something like this could be
+distributed with R (at least on Windows) at some stage.  But I
+know that the R core team don't add in contributions which
+aren't thoroughly tested, so I thought I'd try the R-SIG-GUI
+list first to get some feedback and begin testing / quality
+assurance before proposing it to R-core.  (Of course,
+GraphApp may be replaced with another GUI toolkit at some
+stage, but I think it's still alive for R 2.0.0 for Windows.)
+
+Our webserver, bioinf.wehi.edu.au (where I have the package)
+may go offline briefly to install some new hardware today or
+tomorrow.
+
+Philippe, of course I'd be happy to collaborate with you to make
+this sort of thing as easy as possible to integrate with
+SciViews.
+
+Regards,
+James
+
+From jfox at mcmaster.ca  Wed Aug  4 19:40:13 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Wed Aug  4 19:40:15 2004
+Subject: [R-gui] New version of Rcmdr package
+Message-ID: <20040804174011.VFCN6357.tomts10-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear R-GUI list members,
+
+I'm working towards the 1.0-0 release of the Rcmdr package in September. The
+current version, which I've just uploaded to CRAN, is 0.9-10. This version
+is also available on my web site, at
+<http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/index.html>.
+
+I've made substantial changes to the package since the useR! Conference in
+May. For example, the size of the code has been reduced by about 40 percent
+-- mostly by using macro-like functions to generate common elements of
+dialogs, such as sets of radio buttons, check boxes, and OK/Cancel/Help
+buttons (and these functions might be useful to others who are using the
+tcltk package); by default R output is now routed to an output window within
+the Commander; and several new capabilities have been added to the package.
+All this is detailed in the CHANGES file.
+
+The principal reason that I'm writing to the list is that it would be
+helpful if people could try out the new version on various platforms and let
+me know whether there are any problems. I'm leaving town for a couple of
+weeks next Monday, but should have time to deal with issues that arise when
+I return.
+
+Thanks,
+ John
+
+--------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario
+Canada L8S 4M4
+905-525-9140x23604
+http://socserv.mcmaster.ca/jfox
+
+From joseclaudio.faria at terra.com.br  Thu Aug  5 23:12:06 2004
+From: joseclaudio.faria at terra.com.br (=?Windows-1252?Q?Jos=E9_Cl=E1udio_Faria?=)
+Date: Fri Aug  6 11:13:31 2004
+Subject: [R-gui] Tinn-R: new option for the script editors under Windows
+Message-ID: <003e01c47b30$df28b490$03fea8c0@sapetinga>
+
+Tinn-R
+
+The Tinn is an editor in development with the Delphi 5 of the Borland,
+addressed to programmers, of free code under GPL (GNU Public License),
+developed under the operational system Windows.
+
+The Tinn-R version contains enhancements to allow syntax highlighting
+of S language (in *.R, *.r, *.Q or *.q files), that is the language
+used by the free statistical environment R (http://www.r-project.org).
+
+It also pops up an additional menu and toolbar when it detects either
+Rgui, or SciViews-R (see http://www.sciviews.org/SciViews-R)
+running on the same computer (see Tinn-R.pdf atacched).
+
+These add-ons interact with the R console and allow it to submit a code
+in part or in whole and to control R directly.
+So far the adaptation was tested on Windows XP (used in development)
+Windows 95/98 and 2000.
+
+Tinn-R is small, free, simple and efficient. It replaces
+the basic code editor which is provided by Rgui or SciViews-R.
+
+The distributed zip file (Tinn-R version 0.0.8.8 r1.04.zip)
+must be unzipped first. It contains a 'ReadMe.html' file that
+explains how to use Tinn-R in details, as well as a couple of
+example scripts in addition to 'Tinn-R.exe'.
+
+There is file to install for Tinn-R. The whole program is contained
+in a small 'Tinn-R.exe' file (1.5 Mb). Just place this file where you want
+to on your computer disk and run it from there... that's all!
+
+Source code of the program is available upon request.
+
+A page for Tinn-R to download is on the SciViews Web Site at
+http://www.sciviews.org/Tinn-R and an entry in
+http://www.r-project.org/GUI in the section
+'IDE/script Editors'.
+
+Best regards,
+
+
+Jos? Cl?udio Faria
+UESC/DCET
+Brasil
+73-634.2779
+joseclaudio.faria@terra.com.br
+jc_faria@uol.com.br
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Tinn-R.pdf
+Type: application/pdf
+Size: 194840 bytes
+Desc: not available
+Url : https://www.stat.math.ethz.ch/pipermail/r-sig-gui/attachments/20040805/5ba08c8b/Tinn-R-0001.pdf
+From murdoch at stats.uwo.ca  Fri Aug 13 16:14:54 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Fri Aug 13 16:14:59 2004
+Subject: [R-gui] Re: RGui windows question
+In-Reply-To: <411B7791.1060705@univie.ac.at>
+References: <411B7791.1060705@univie.ac.at>
+Message-ID: <caiph0ti3d4qvoe12tp9ccucckv9c0cu9h@4ax.com>
+
+On Thu, 12 Aug 2004 15:58:41 +0200, Erich Neuwirth
+<erich.neuwirth@univie.ac.at> wrote :
+
+>Duncan,
+>next week, there will be  new release of the DCOM server and RExcel.
+>Graphics is still an open issue.
+>One of the possibilities would be to have R controlled by Excel render 
+>the graphics and when the graphics is in its finalized, just using the 
+>clipboard and import the wmf file into Excel.
+>This coule be made more convenient when the right click menu in R
+>graphics devices would allow to add user defined menu items with 
+>commands, comparable to the winMenu functions.
+>Would that be hard to add?
+
+This would be fairly easy to do as follows.  I'd add fake user menu
+names corresponding to the existing menus and you'd refer to those,
+e.g.
+
+winMenuAddItem('$GraphPopup', 'Caption', 'action')
+
+The names I can think of off the top of my head would be
+
+$ConsoleMain (the default location for new menu additions, but it
+could also be specified, just for completeness)
+$ConsolePopup
+$GraphMain
+$GraphPopup
+$DataentryMain
+$DataentryPopup
+
+I'll have to check the code to see if we've got others that I've
+forgotten.
+
+We don't have separate popups for each instance of a graph window, so
+you wouldn't be able to add local menu items to just one instance. 
+
+>Of course, it would be even more comfortable if the click also could 
+>report the position like grid.locator in package grid does.
+
+That would be harder.  Currently no information about the menu gets
+passed to the command.  I might be able to record some information and
+make it visible (so for example you'd call a function
+"winPopupLocation" to find out where the last popup occurred).   
+
+Duncan
+
+From murdoch at stats.uwo.ca  Fri Aug 13 16:38:31 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Fri Aug 13 16:38:33 2004
+Subject: [R-gui] Re: RGui windows question
+In-Reply-To: <caiph0ti3d4qvoe12tp9ccucckv9c0cu9h@4ax.com>
+References: <411B7791.1060705@univie.ac.at>
+	<caiph0ti3d4qvoe12tp9ccucckv9c0cu9h@4ax.com>
+Message-ID: <1gkph0p4rous1jtr024sahao08o6t7rmij@4ax.com>
+
+On Fri, 13 Aug 2004 10:14:54 -0400, Duncan Murdoch
+<murdoch@stats.uwo.ca> wrote :
+
+>On Thu, 12 Aug 2004 15:58:41 +0200, Erich Neuwirth
+><erich.neuwirth@univie.ac.at> wrote :
+>
+>>Duncan,
+>>next week, there will be  new release of the DCOM server and RExcel.
+>>Graphics is still an open issue.
+>>One of the possibilities would be to have R controlled by Excel render 
+>>the graphics and when the graphics is in its finalized, just using the 
+>>clipboard and import the wmf file into Excel.
+>>This coule be made more convenient when the right click menu in R
+>>graphics devices would allow to add user defined menu items with 
+>>commands, comparable to the winMenu functions.
+>>Would that be hard to add?
+>
+>This would be fairly easy to do as follows.  I'd add fake user menu
+>names corresponding to the existing menus and you'd refer to those,
+>e.g.
+>
+>winMenuAddItem('$GraphPopup', 'Caption', 'action')
+>
+>The names I can think of off the top of my head would be
+>
+>$ConsoleMain (the default location for new menu additions, but it
+>could also be specified, just for completeness)
+>$ConsolePopup
+>$GraphMain
+>$GraphPopup
+>$DataentryMain
+>$DataentryPopup
+>
+>I'll have to check the code to see if we've got others that I've
+>forgotten.
+>
+>We don't have separate popups for each instance of a graph window, so
+>you wouldn't be able to add local menu items to just one instance. 
+
+Oops, that's wrong.  We *do* have separate popups for each instance of
+a graph window.  This means that the items would have to be added
+*after* the window is open, and would not be there if you opened a new
+window later.  That makes managing them a little trickier.
+
+>
+>>Of course, it would be even more comfortable if the click also could 
+>>report the position like grid.locator in package grid does.
+>
+>That would be harder.  Currently no information about the menu gets
+>passed to the command.  I might be able to record some information and
+>make it visible (so for example you'd call a function
+>"winPopupLocation" to find out where the last popup occurred).   
+>
+>Duncan
+
+From murdoch at stats.uwo.ca  Sat Aug 14 05:02:22 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Sat Aug 14 05:02:26 2004
+Subject: [R-gui] Re: RGui windows question
+In-Reply-To: <1gkph0p4rous1jtr024sahao08o6t7rmij@4ax.com>
+References: <411B7791.1060705@univie.ac.at>
+	<caiph0ti3d4qvoe12tp9ccucckv9c0cu9h@4ax.com>
+	<1gkph0p4rous1jtr024sahao08o6t7rmij@4ax.com>
+Message-ID: <esvqh0p66fgjugp24lfc5hbf6ld9vka7cu@4ax.com>
+
+Okay, this is in place now in r-devel.  It'll probably be Monday
+before I upload a new build though.
+
+To add something to the right click menu for a graphics window, you
+need to know the device number (dev.cur() returns it).  Say it's 2,
+then 
+
+winMenuAddItem("$Graph2Popup", "Caption", "action")
+
+works.
+
+Similar things work for the main menu of the graphics window, and for
+the popup in the console.  I didn't do any others, because some don't
+allow commands to be executed (e.g. the data editor is modal), and the
+text editor gives no obvious way to specify which window you mean.
+
+Duncan Murdoch
+
+On Fri, 13 Aug 2004 10:38:31 -0400, Duncan Murdoch
+<murdoch@stats.uwo.ca> wrote:
+
+>On Fri, 13 Aug 2004 10:14:54 -0400, Duncan Murdoch
+><murdoch@stats.uwo.ca> wrote :
+>
+>>On Thu, 12 Aug 2004 15:58:41 +0200, Erich Neuwirth
+>><erich.neuwirth@univie.ac.at> wrote :
+>>
+>>>Duncan,
+>>>next week, there will be  new release of the DCOM server and RExcel.
+>>>Graphics is still an open issue.
+>>>One of the possibilities would be to have R controlled by Excel render 
+>>>the graphics and when the graphics is in its finalized, just using the 
+>>>clipboard and import the wmf file into Excel.
+>>>This coule be made more convenient when the right click menu in R
+>>>graphics devices would allow to add user defined menu items with 
+>>>commands, comparable to the winMenu functions.
+>>>Would that be hard to add?
+>>
+>>This would be fairly easy to do as follows.  I'd add fake user menu
+>>names corresponding to the existing menus and you'd refer to those,
+>>e.g.
+>>
+>>winMenuAddItem('$GraphPopup', 'Caption', 'action')
+>>
+>>The names I can think of off the top of my head would be
+>>
+>>$ConsoleMain (the default location for new menu additions, but it
+>>could also be specified, just for completeness)
+>>$ConsolePopup
+>>$GraphMain
+>>$GraphPopup
+>>$DataentryMain
+>>$DataentryPopup
+>>
+>>I'll have to check the code to see if we've got others that I've
+>>forgotten.
+>>
+>>We don't have separate popups for each instance of a graph window, so
+>>you wouldn't be able to add local menu items to just one instance. 
+>
+>Oops, that's wrong.  We *do* have separate popups for each instance of
+>a graph window.  This means that the items would have to be added
+>*after* the window is open, and would not be there if you opened a new
+>window later.  That makes managing them a little trickier.
+>
+>>
+>>>Of course, it would be even more comfortable if the click also could 
+>>>report the position like grid.locator in package grid does.
+>>
+>>That would be harder.  Currently no information about the menu gets
+>>passed to the command.  I might be able to record some information and
+>>make it visible (so for example you'd call a function
+>>"winPopupLocation" to find out where the last popup occurred).   
+>>
+>>Duncan
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+From phgrosjean at sciviews.org  Sat Aug 14 14:18:09 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Sat Aug 14 14:18:31 2004
+Subject: [R-gui] Re: RGui windows question
+In-Reply-To: <esvqh0p66fgjugp24lfc5hbf6ld9vka7cu@4ax.com>
+Message-ID: <MABBLJDICACNFOLGIHJOOEPAELAA.phgrosjean@sciviews.org>
+
+Duncan Murdoch wrote:
+>Okay, this is in place now in r-devel.  It'll probably be Monday
+>before I upload a new build though.
+
+>To add something to the right click menu for a graphics window, you
+>need to know the device number (dev.cur() returns it).  Say it's 2,
+>then
+
+>winMenuAddItem("$Graph2Popup", "Caption", "action")
+
+>works.
+
+This is fine, I love this addition! Is it possible to add something also to
+the context menu in 'locator' mode (the menu showing 'stop', 'continue')?
+Also, do you think it should be possible to change the behaviour of
+*existing* menu items this way, or even to disable (or hide?) them if action
+specified is ""? I know this is currently not possible, but do you think it
+can be done easily?
+
+The reason of my question is because I would like to add some code in my GUI
+when, for instance, the user clicks 'Stay on top' in the context menu (just
+an example). So, if I can redirect this command to a custom function, I
+could do something like:
+
+# Imagine the current topmost state of the R console is stored in an option
+# named 'console.top' (I know you plan to place this in a dedicated package)
+# My custom function that replaces the default behaviour of 'Stay on top'
+# in the context menu of R console would look like this:
+
+cons.to.top <- function() {
+	ctop <- getOption("console.top")
+	if (is.null(ctop) || !is.logical(ctop)) ctop <- FALSE	# By default
+	ctop <- !ctop # Toggle the 'stay on top' state
+	# Change the 'stay on top' state of the R console
+	bringToTop(-1, stay = ctop)
+
+	# Here I can add code for actions I have to take in my GUI
+	# ...
+
+	invisible(ctop)
+}
+
+# This command would change the default behaviour of 'Stay on top' by
+calling
+# my custom function 'cons.to.top' instead
+winMenuAddItem("$ConsolePopup", "Stay on top", "cons.to.top")
+
+Note that if we have the possibility to hide existing items in the context
+menu, I could simply hide the default one, and then add my own custom entry
+entry... Well here, a mean to check/uncheck the corresponding custom menu
+entry is obviously missing to get exactly the same result!
+
+>Similar things work for the main menu of the graphics window, and for
+>the popup in the console.  I didn't do any others, because some don't
+>allow commands to be executed (e.g. the data editor is modal), and the
+>text editor gives no obvious way to specify which window you mean.
+
+Best,
+
+Philippe Grosjean
+
+.......................................................<?}))><....
+ ) ) ) ) )
+( ( ( ( (   Prof. Philippe Grosjean
+\  ___   )
+ \/ECO\ (   Numerical Ecology of Aquatic Systems
+ /\___/  )  Mons-Hainaut University, Pentagone
+/ ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium
+ /NUM\/  )
+ \___/\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+       \ )  email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (
+...................................................................
+
+From murdoch at stats.uwo.ca  Sat Aug 14 14:33:38 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Sat Aug 14 14:33:53 2004
+Subject: [R-gui] Re: RGui windows question
+In-Reply-To: <MABBLJDICACNFOLGIHJOOEPAELAA.phgrosjean@sciviews.org>
+References: <esvqh0p66fgjugp24lfc5hbf6ld9vka7cu@4ax.com>
+	<MABBLJDICACNFOLGIHJOOEPAELAA.phgrosjean@sciviews.org>
+Message-ID: <7k1sh093q8v8o4bnpp5pj49h3qmcksbp2l@4ax.com>
+
+On Sat, 14 Aug 2004 14:18:09 +0200, "Philippe Grosjean"
+<phgrosjean@sciviews.org> wrote:
+
+>Duncan Murdoch wrote:
+>>Okay, this is in place now in r-devel.  It'll probably be Monday
+>>before I upload a new build though.
+>
+>>To add something to the right click menu for a graphics window, you
+>>need to know the device number (dev.cur() returns it).  Say it's 2,
+>>then
+>
+>>winMenuAddItem("$Graph2Popup", "Caption", "action")
+>
+>>works.
+>
+>This is fine, I love this addition! Is it possible to add something also to
+>the context menu in 'locator' mode (the menu showing 'stop', 'continue')?
+
+That would be easy, but I didn't do it because locator mode is modal.
+Menu selections there won't be acted on until locator mode ends.
+
+>Also, do you think it should be possible to change the behaviour of
+>*existing* menu items this way, or even to disable (or hide?) them if action
+>specified is ""? I know this is currently not possible, but do you think it
+>can be done easily?
+
+That's harder, because user-defined commands are stored differently
+than general commands.  What we'd need would be access to the menu
+structure in Graphapp from R, and we don't currently have that.  It
+would be nice, but I don't think I'll have time to do it before the
+feature freeze next month.
+
+On the other hand, contributions would be welcome...
+
+Duncan
+>
+>The reason of my question is because I would like to add some code in my GUI
+>when, for instance, the user clicks 'Stay on top' in the context menu (just
+>an example). So, if I can redirect this command to a custom function, I
+>could do something like:
+>
+># Imagine the current topmost state of the R console is stored in an option
+># named 'console.top' (I know you plan to place this in a dedicated package)
+># My custom function that replaces the default behaviour of 'Stay on top'
+># in the context menu of R console would look like this:
+>
+>cons.to.top <- function() {
+>	ctop <- getOption("console.top")
+>	if (is.null(ctop) || !is.logical(ctop)) ctop <- FALSE	# By default
+>	ctop <- !ctop # Toggle the 'stay on top' state
+>	# Change the 'stay on top' state of the R console
+>	bringToTop(-1, stay = ctop)
+>
+>	# Here I can add code for actions I have to take in my GUI
+>	# ...
+>
+>	invisible(ctop)
+>}
+>
+># This command would change the default behaviour of 'Stay on top' by
+>calling
+># my custom function 'cons.to.top' instead
+>winMenuAddItem("$ConsolePopup", "Stay on top", "cons.to.top")
+>
+>Note that if we have the possibility to hide existing items in the context
+>menu, I could simply hide the default one, and then add my own custom entry
+>entry... Well here, a mean to check/uncheck the corresponding custom menu
+>entry is obviously missing to get exactly the same result!
+>
+>>Similar things work for the main menu of the graphics window, and for
+>>the popup in the console.  I didn't do any others, because some don't
+>>allow commands to be executed (e.g. the data editor is modal), and the
+>>text editor gives no obvious way to specify which window you mean.
+>
+>Best,
+>
+>Philippe Grosjean
+
+From murdoch at stats.uwo.ca  Sun Aug 29 18:39:32 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Sun Aug 29 18:39:33 2004
+Subject: [R-gui] Fixes for tcltk focus problems
+Message-ID: <bvu3j091hj88c3bn9lme4ruar4t83mjlb4@4ax.com>
+
+I've just committed two Windows-specific changes to r-patched and
+r-devel:
+
+ - library(tcltk) now preserves the foreground window.   
+
+Previously it would switch focus to the console (in SDI mode) or just
+lose it (in MDI mode)
+
+ - In MDI mode, bringToTop() now brings the MDI frame forward before 
+bringing forward the requested window within it.  
+
+The second change was an attempt to fix library(tcltk) in MDI mode,
+but it didn't handle the focus change in something like
+
+ windows(); library(tcltk)
+
+properly.  (This should leave focus on the graphics window.)  I put a
+lower level change into the tcltk initialization code, then decided
+that the bringToTop change was good too.
+
+Duncan Murdoch
+
+From murdoch at stats.uwo.ca  Sun Aug 29 23:03:52 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Sun Aug 29 23:04:03 2004
+Subject: [R-gui] Fixes for tcltk focus problems
+In-Reply-To: <082920041958.23471.41323553000A146400005BAF22007507440699089F9D0103@comcast.net>
+References: <082920041958.23471.41323553000A146400005BAF22007507440699089F9D0103@comcast.net>
+Message-ID: <o1h4j05s55gue92os5tqnm8plinf7358bg@4ax.com>
+
+On Sun, 29 Aug 2004 19:58:11 +0000, morphwj@comcast.net wrote:
+
+>Idea
+>I wish for a menu of gui objects to drop, drag, and arrange in a top window.    As an example of such, see the Excel forms controls on my web page at
+>http://home.comcast.net/~morphwj/public/controls.bmp
+>Then I wish for a right click on a gui object to bring up a form with tabs to set variables, assign R programs to run, etc.  You just enter values into the form, and the R tcltk is written.
+
+That would be nice, but I think you'll have to write it yourself.
+Take a look at Delphi for ideas:  it does a really good job of
+interactive UI design.
+
+Duncan Murdoch
+
+From wettenhall at wehi.edu.au  Mon Aug 30 04:11:44 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Mon Aug 30 04:11:51 2004
+Subject: [R-gui] Fixes for tcltk focus problems
+In-Reply-To: <bvu3j091hj88c3bn9lme4ruar4t83mjlb4@4ax.com>
+References: <bvu3j091hj88c3bn9lme4ruar4t83mjlb4@4ax.com>
+Message-ID: <Pine.GSO.4.58.0408301203490.28348@unix33.alpha.wehi.edu.au>
+
+Hi Duncan,
+
+On Sun, 29 Aug 2004, Duncan Murdoch wrote:
+>  - library(tcltk) now preserves the foreground window.
+>
+>  - In MDI mode, bringToTop() now brings the MDI frame forward before
+> bringing forward the requested window within it.
+
+Thanks for doing that!  As the author of two R-Tcl/Tk packages,
+I really appreciate it!
+
+Best regards,
+James
+
+From jfox at mcmaster.ca  Mon Aug 30 14:49:30 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Mon Aug 30 14:49:48 2004
+Subject: [R-gui] Fixes for tcltk focus problems
+In-Reply-To: <Pine.GSO.4.58.0408301203490.28348@unix33.alpha.wehi.edu.au>
+Message-ID: <20040830124944.RRBA29920.tomts10-srv.bellnexxia.net@JohnDesktop8300>
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> James Wettenhall
+> Sent: Sunday, August 29, 2004 9:12 PM
+> To: Duncan Murdoch
+> Cc: r-sig-gui@stat.math.ethz.ch
+> Subject: Re: [R-gui] Fixes for tcltk focus problems
+> 
+> Hi Duncan,
+> 
+> On Sun, 29 Aug 2004, Duncan Murdoch wrote:
+> >  - library(tcltk) now preserves the foreground window.
+> >
+> >  - In MDI mode, bringToTop() now brings the MDI frame 
+> forward before 
+> > bringing forward the requested window within it.
+> 
+> Thanks for doing that!  As the author of two R-Tcl/Tk 
+> packages, I really appreciate it!
+> 
+
+Hear, hear!
+
+John
+
+> Best regards,
+> James
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+

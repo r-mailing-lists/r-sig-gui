@@ -1,0 +1,535 @@
+From information4vikas at gmail.com  Fri Jun  3 14:35:00 2011
+From: information4vikas at gmail.com (Vikas Garud)
+Date: Fri, 3 Jun 2011 18:05:00 +0530
+Subject: [R-gui] Pareto Chart using GUI
+Message-ID: <BANLkTimUaHXgNk92fV3dViSjPX6szuRbQg@mail.gmail.com>
+
+Hi,
+
+I am exploring GUI's for doing Quality
+Management/Assurance/Improvement activities and this is another mail
+in series!
+
+Focus of this mail is Pareto Analysis for following data (Truncated):
+Date	Defect code	Operator	Shift	Machine	Cost - Internal	Cost -
+External	Cost - Total
+8-Jun-2011	410	Joe	1	AAA	5	50	55
+8-Jun-2011	465	Joe	1	AAA	1.5	25	26.5
+8-Jun-2011	412	Joe	1	AAA	1.5	10	11.5
+8-Jun-2011	410	Joe	1	AAA	5	50	55
+8-Jun-2011	218	Joe	1	AAA	1	10	11
+8-Jun-2011	440	Joe	1	AAA	1	10	11
+8-Jun-2011	410	Joe	1	AAA	5	50	55
+8-Jun-2011	413	Joe	1	AAA	0.5	5	5.5
+8-Jun-2011	410	Joe	1	AAA	5	50	55
+8-Jun-2011	465	Moe	1	BBB	1.5	25	26.5
+8-Jun-2011	410	Moe	1	BBB	5	50	55
+8-Jun-2011	412	Moe	1	BBB	1.5	10	11.5
+8-Jun-2011	841	Moe	1	BBB	0.5	5	5.5
+8-Jun-2011	410	Moe	1	BBB	5	50	55
+8-Jun-2011	413	Moe	1	BBB	0.5	5	5.5
+8-Jun-2011	410	Moe	1	BBB	5	50	55
+8-Jun-2011	413	Moe	1	BBB	0.5	5	5.5
+8-Jun-2011	465	Moe	1	BBB	1.5	25	26.5
+8-Jun-2011	410	Moe	1	BBB	5	50	55
+
+In all cases, the qcc package is loaded.
+
+RKward:
+
+I could get nice Pareto Chart, for the variable Defect code.  Is it
+possible to plot a Pareto Chart for, say, Total cost?  The attempt of
+plotting the same through RKward fails, in the sense that the number
+of times a particular cost value appears is used for plotting the
+Pareto chart.  I'd like a Pareto plot by defect codes based on Total
+cost.  Is this possible?  How?
+
+The data in this example to demonstrate Pareto Chart contains 8 defect
+codes and it is possible to make sense of the plot.  Some real data
+contains hundreds of records.  (There is file, somewhere on the
+internet - sorry, I could not find the link - CFHPareto.xls containing
+11099 records in 37 defect codes.)  Doing a Pareto Analysis did give
+me nice coloured Pareto Chart, however, the legends are all mixed up
+and can not be read.  The utility of the Pareto chart is practically
+nil.  For such data, I would like to club categories beyond, say, 80%
+in cumulative total, to be clubbed in "Others".    Is it possible?
+How?
+
+R Commander (with qcc plugin):
+
+I could not get Pareto Chart in R Commander.  Under the Quality
+Control Menu, The choice for variables is limited to Date, Machine and
+Operator.  This does not change even after the defect code is set to
+"Character" type.  I tried the other data (CFHPareto.xls) and I could
+get a Pareto Chart of defect code - with bars for all 37 defect codes,
+but legends only for 4 codes, which could fit the space available.
+Though there is Pareto chart, its practical utility is nil for large
+number of categories.
+
+JGR-Deducer:
+
+I could not get any option for plotting Pareto chart.  The
+"Frequencies" under the "Analysis" menu computed the number of times a
+particular defect code occurs.  This could be used for plotting Bar
+chart - though not Pareto chart with the lines above the bars.
+However, I could not sort the output table.  I could also not get any
+way to compute values for plotting bar plot of defect codes based on
+total cost.  Is there a way to accomplish Pareto Chart, may be through
+couple of stages?
+
+Any help is appreciated.
+
+Regards
+Vikas Garud
+
+
+From sebble at sebble.com  Tue Jun  7 12:38:31 2011
+From: sebble at sebble.com (Sebastian Mellor)
+Date: Tue, 7 Jun 2011 11:38:31 +0100
+Subject: [R-gui] Developing a GUI
+Message-ID: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110607/354d80df/attachment.pl>
+
+From jverzani at gmail.com  Thu Jun  9 04:53:41 2011
+From: jverzani at gmail.com (jverzani)
+Date: Thu, 9 Jun 2011 02:53:41 +0000
+Subject: [R-gui] Developing a GUI
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+Message-ID: <loom.20110609T043601-751@post.gmane.org>
+
+Sebastian Mellor <sebble <at> sebble.com> writes:
+ 
+> Hello all,
+> 
+
+Hi Sebastian,
+
+A few things. gWidgets is much better with RGtk2 than tcltk, as the table 
+widgets are nicer and there are more methods implemented. Some 
+people have made very nice interfaces with gWidgetsRGtk2. Of course, 
+the tcltk package is much easier than RGtk2 for users to install (for many it is
+already done). If you really want to integrate in with Rcmdr, 
+you might want to stick with tcltk. 
+
+You might also consider the qtinterfaces work, especially if you have 
+graphics in mind.
+
+As for RStudio, I have on r-forge an experimental package gWidgetsWWW2, 
+which is a rewrite of gWidgetsWWW to work with Rook. Most of the basic 
+functionality is  there, but there are some areas to implement still. Certainly 
+many bugs left. I can't get it working with the server version of RStudio, 
+but have gotten it to work with the desktop version with windows. For 
+such use there are no installation issues, but the GUIs implemented aren't 
+quite as useful and debugging can be a bit of a chore. For serving 
+through rapache, gWidgetsWWW is still the only choice. When Rook is 
+integrated with rapache, that will hopefully change.
+
+Have fun,
+
+John
+
+
+
+... cut ...
+
+> Best regards,
+> Seb
+> 
+> P.S.  Any other comments and suggestions welcome.
+> 
+> 	[[alternative HTML version deleted]]
+>
+
+
+From Wayne.W.Jones at shell.com  Thu Jun  9 10:07:46 2011
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Thu, 9 Jun 2011 10:07:46 +0200
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+Message-ID: <8E3590214E4380489D2F8BF129B939F301A6CF8D@amsdc1-s-03371.europe.shell.com>
+
+HI Sebastian, 
+
+I would very much advocate the use of the rpanel package. In essence it
+is essentially a suite of wrapper functions for building GUIs with tcltk
+. 
+The rp.cartoons demo is very good example of a nice GUI. 
+
+Try the following: 
+
+install.packages("rpanel")
+library(rpanel)
+rp.cartoons()
+
+Regards, 
+
+Wayne
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at r-project.org
+[mailto:r-sig-gui-bounces at r-project.org] On Behalf Of Sebastian Mellor
+Sent: 07 June 2011 11:39
+To: r-sig-gui at r-project.org
+Subject: [R-gui] Developing a GUI
+
+Hello all,
+
+I am spending this Summer developing a GUI for the hyperSpec package in
+R.
+I have already done some preliminary research but now I am really
+getting
+started.  The full requirements are yet undetermined but we have several
+desires as with most other GUIs, i.e., cross-platform, minimal
+pre-requisites, easy to install.  After looking at several available
+packages I am leaning towards gWidgets with either RGtk2 or TclTk layers
+to
+cover most platforms.  I am also considering providing basic plugins for
+other packages like RCmdr to add a menu item to initiate any of the main
+GUI
+features.  The GUI we are looking to create is not a full featured
+environment, but rather a collection of smaller functions to be chained.
+
+While determining exactly what we require I am going to keep
+investigating
+the experience of using various GUI packages.  What are your experiences
+with the available packages in terms of installation and reliability
+when
+making small GUIs or 'widgets'?
+
+One environment I have been using personally for the last couple of
+months
+is RStudio (server edition), this has proved extremely useful when
+working
+between Uni and home.  I believe an API will be released eventually
+allowing
+the menu bar to be extended and I have just discovered that Rook will
+work
+from the web interface as it would from the desktop or any other console
+that could spawn a browser window.  Does anyone have any experience with
+using a web-based GUI?  This is probably out of the scope of my initial
+aims
+but if gWidgets, gWidgetsWWW, rApache, Rook, EXT JS, and the rest of it
+all
+worked together theoretically a gWidgets interface could also work on
+the
+web server too when using the RStudio console.  How unreasonable is
+this?
+
+Best regards,
+Seb
+
+P.S.  Any other comments and suggestions welcome.
+
+	[[alternative HTML version deleted]]
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at r-project.org
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From lorenz at usgs.gov  Thu Jun  9 16:33:11 2011
+From: lorenz at usgs.gov (David L Lorenz)
+Date: Thu, 9 Jun 2011 09:33:11 -0500
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+Message-ID: <OF90E80D06.3AF94DCB-ON862578AA.004FC422-862578AA.004FF187@usgs.gov>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110609/bff6a19e/attachment.pl>
+
+From ian.fellows at stat.ucla.edu  Thu Jun  9 20:44:17 2011
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Thu, 9 Jun 2011 11:44:17 -0700
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <OF90E80D06.3AF94DCB-ON862578AA.004FC422-862578AA.004FF187@usgs.gov>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+	<OF90E80D06.3AF94DCB-ON862578AA.004FC422-862578AA.004FF187@usgs.gov>
+Message-ID: <E7DA8897-4C4A-4959-BA0A-82A0BAAA8815@stat.ucla.edu>
+
+I know there were some rather lengthy discussions on the topic during the GSOC application process. It is my opinion that programing from within R is a very good way to get a working GUI quickly, but you are better served leaving R for something polished and professional looking.
+
+ian
+
+btw, you can also provide menu items for Deducer/JGR regardless of the toolkit you use. 
+
+
+On Jun 9, 2011, at 7:33 AM, David L Lorenz wrote:
+
+> Sebastian,
+>  I have found that fgui is a very easy-to-use package for developing 
+> GUIs. The documentation gives some very good examples to get started.
+> Dave
+> 
+> 
+> 
+> 
+> From:
+> Sebastian Mellor <sebble at sebble.com>
+> To:
+> r-sig-gui at r-project.org
+> Date:
+> 06/08/2011 06:36 AM
+> Subject:
+> [R-gui] Developing a GUI
+> Sent by:
+> r-sig-gui-bounces at r-project.org
+> 
+> 
+> 
+> Hello all,
+> 
+> I am spending this Summer developing a GUI for the hyperSpec package in R.
+> I have already done some preliminary research but now I am really getting
+> started.  The full requirements are yet undetermined but we have several
+> desires as with most other GUIs, i.e., cross-platform, minimal
+> pre-requisites, easy to install.  After looking at several available
+> packages I am leaning towards gWidgets with either RGtk2 or TclTk layers 
+> to
+> cover most platforms.  I am also considering providing basic plugins for
+> other packages like RCmdr to add a menu item to initiate any of the main 
+> GUI
+> features.  The GUI we are looking to create is not a full featured
+> environment, but rather a collection of smaller functions to be chained.
+> 
+> While determining exactly what we require I am going to keep investigating
+> the experience of using various GUI packages.  What are your experiences
+> with the available packages in terms of installation and reliability when
+> making small GUIs or 'widgets'?
+> 
+> One environment I have been using personally for the last couple of months
+> is RStudio (server edition), this has proved extremely useful when working
+> between Uni and home.  I believe an API will be released eventually 
+> allowing
+> the menu bar to be extended and I have just discovered that Rook will work
+> from the web interface as it would from the desktop or any other console
+> that could spawn a browser window.  Does anyone have any experience with
+> using a web-based GUI?  This is probably out of the scope of my initial 
+> aims
+> but if gWidgets, gWidgetsWWW, rApache, Rook, EXT JS, and the rest of it 
+> all
+> worked together theoretically a gWidgets interface could also work on the
+> web server too when using the RStudio console.  How unreasonable is this?
+> 
+> Best regards,
+> Seb
+> 
+> P.S.  Any other comments and suggestions welcome.
+> 
+>                 [[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> 
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+
+From lawrence.michael at gene.com  Thu Jun  9 22:41:25 2011
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Thu, 9 Jun 2011 13:41:25 -0700
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <E7DA8897-4C4A-4959-BA0A-82A0BAAA8815@stat.ucla.edu>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+	<OF90E80D06.3AF94DCB-ON862578AA.004FC422-862578AA.004FF187@usgs.gov>
+	<E7DA8897-4C4A-4959-BA0A-82A0BAAA8815@stat.ucla.edu>
+Message-ID: <BANLkTinLz8FA7Sy0E-YkpuG86uq=gCJJsw@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110609/2d10ab83/attachment.pl>
+
+From thomas.friedrichsmeier at ruhr-uni-bochum.de  Fri Jun 10 13:33:43 2011
+From: thomas.friedrichsmeier at ruhr-uni-bochum.de (Thomas Friedrichsmeier)
+Date: 10 Jun 2011 13:33:43 +0200
+Subject: [R-gui] GUI specific R API wishlist
+Message-ID: <201106101333.48912.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+
+Hi!
+
+I have just finished a first draft of a page listing GUI specific wishes 
+concerning the R API: 
+http://rwiki.sciviews.org/doku.php?id=developers:gui:r_api_wishlist . The idea 
+of this page is to collect ideas on improving GUI support in R core, and to 
+develop those ideas collaboratively.
+
+The page is deliberately limited to aspects which should best be addressed in 
+the core R distribution. In particular, it tries *not* to discuss topics which 
+are specific to individual toolkits, frameworks or even specific GUI projects.  
+Naturally, however, not all topics on this page will be of interest to all GUI 
+projects.
+
+I'm sure the list is not complete, and I'm sure it ignores many important 
+points and thoughts which have been raised in previous discussions. However, I 
+hope it is good enough as a starting point for brain-storming.
+
+Thus, if you are a GUI developer, please do take a look. As a first step, I 
+suggest to add your (project) name behind in the section on "Interested 
+parties" for whichever topic affects your project. Then we can get an idea of 
+which points are worth discussing on this list. Of course, it's a wiki, and 
+you can add your own suggestions and comments, too.
+
+Then perhaps, in a week or two, we can identify which topics are worth 
+discussing in detail in the short term, and coordinate the next steps.
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: This is a digitally signed message part.
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110610/82689bd4/attachment.bin>
+
+From sebble at sebble.com  Fri Jun 10 19:19:21 2011
+From: sebble at sebble.com (Sebastian Mellor)
+Date: Fri, 10 Jun 2011 18:19:21 +0100
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+Message-ID: <BANLkTik85yQA2A7qzNqCfDT0jsLFhw5g7w@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110610/fe9646a1/attachment.pl>
+
+From ian.fellows at stat.ucla.edu  Fri Jun 10 19:41:49 2011
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Fri, 10 Jun 2011 10:41:49 -0700
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <BANLkTik85yQA2A7qzNqCfDT0jsLFhw5g7w@mail.gmail.com>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+	<BANLkTik85yQA2A7qzNqCfDT0jsLFhw5g7w@mail.gmail.com>
+Message-ID: <5BF8A46F-C44C-4359-82EF-B8F3148FC691@stat.ucla.edu>
+
+> 
+> Ian, Michael,
+>> From my experience with the available packages for developing GUIs, when a
+> small, efficient sequence of dialogs or controls and plots is needed there
+> are many polished examples written within R.  I have not disregarded other
+> options such as embedding R within a C program, or using another external
+> GUI but an important part of this project (which I should have mentioned
+> before) is being able to move back to the command line to tweak parameters
+> and re-run as batch scripts -- how I do this I am not yet sure but staying
+> in R may make this easier.  In my opinion GTK and Qt have some nice widget
+> elements, even tcltk on my system looks reasonable.
+
+Just to clarify my (admittedly controversial) opinion. I didn't mean that good GUIs can't be embedded within R, I meant that if you need to do something that goes beyond placing widgets in a window, you probably will want to write the GUI code in another language and call it from R. For example, speedR's GUI interactively calls R but is written in Java.
+
+ian
+
+
+From sebble at sebble.com  Fri Jun 10 22:32:06 2011
+From: sebble at sebble.com (Sebastian Mellor)
+Date: Fri, 10 Jun 2011 21:32:06 +0100
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <5BF8A46F-C44C-4359-82EF-B8F3148FC691@stat.ucla.edu>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+	<BANLkTik85yQA2A7qzNqCfDT0jsLFhw5g7w@mail.gmail.com>
+	<5BF8A46F-C44C-4359-82EF-B8F3148FC691@stat.ucla.edu>
+Message-ID: <BANLkTinjZvdyD=1yJtvdOBH6P0+5V33swg@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110610/f4f9a44f/attachment.pl>
+
+From lawrence.michael at gene.com  Fri Jun 10 22:55:13 2011
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Fri, 10 Jun 2011 13:55:13 -0700
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <BANLkTinjZvdyD=1yJtvdOBH6P0+5V33swg@mail.gmail.com>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+	<BANLkTik85yQA2A7qzNqCfDT0jsLFhw5g7w@mail.gmail.com>
+	<5BF8A46F-C44C-4359-82EF-B8F3148FC691@stat.ucla.edu>
+	<BANLkTinjZvdyD=1yJtvdOBH6P0+5V33swg@mail.gmail.com>
+Message-ID: <BANLkTikEYy9AsKzBksKtaVSx8CyBTPO9RQ@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110610/d1a4207a/attachment.pl>
+
+From sebble at sebble.com  Fri Jun 10 23:18:45 2011
+From: sebble at sebble.com (Sebastian Mellor)
+Date: Fri, 10 Jun 2011 22:18:45 +0100
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <BANLkTinMgGMd-dt+o35jURxFkFdct+FpXQ@mail.gmail.com>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+	<BANLkTik85yQA2A7qzNqCfDT0jsLFhw5g7w@mail.gmail.com>
+	<5BF8A46F-C44C-4359-82EF-B8F3148FC691@stat.ucla.edu>
+	<BANLkTinjZvdyD=1yJtvdOBH6P0+5V33swg@mail.gmail.com>
+	<BANLkTinMgGMd-dt+o35jURxFkFdct+FpXQ@mail.gmail.com>
+Message-ID: <BANLkTimmQ0f-WAx15+UbB0Wm3B+crpSsnw@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110610/714740f6/attachment.pl>
+
+From Graham.Williams at togaware.com  Sat Jun 11 01:31:29 2011
+From: Graham.Williams at togaware.com (Graham Williams)
+Date: Sat, 11 Jun 2011 07:31:29 +0800
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <BANLkTimmQ0f-WAx15+UbB0Wm3B+crpSsnw@mail.gmail.com>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+	<BANLkTik85yQA2A7qzNqCfDT0jsLFhw5g7w@mail.gmail.com>
+	<5BF8A46F-C44C-4359-82EF-B8F3148FC691@stat.ucla.edu>
+	<BANLkTinjZvdyD=1yJtvdOBH6P0+5V33swg@mail.gmail.com>
+	<BANLkTinMgGMd-dt+o35jURxFkFdct+FpXQ@mail.gmail.com>
+	<BANLkTimmQ0f-WAx15+UbB0Wm3B+crpSsnw@mail.gmail.com>
+Message-ID: <BANLkTinREwew8vxC8O8Jk6v_CW4m=-Zs7g@mail.gmail.com>
+
+Another option Iis to use the programming
+language independent Glade app to build your GUI visually (for GTK,
+and hence RGtk2). Basic (and sophisticated) GUIs can be quickly built
+and saved as XML which can then be loaded through RGtk2.  Takes away
+the hand coding of the GUI if that is a preference, so you mainly
+focus on the callbacks. (The same XML file can even be instantiated as
+Java, C, etc if you wanted to implement callbacks in those languages
+and the call R underneath)
+
+Another coding option using RGtk2 is found in Tom Taverner's RGtk2Extras package
+which has a rapid deployment dialog making wrapper called run.dialog -
+it wraps an R function with a GUI to seek all the required options.
+
+GTK GUIs (in my opinion) look better than some other competing
+toolkits - opinions differ. Runs trivially on Linux and on MS/Windows
+(unless you end up with multiple installs of different versions of it
+on MS/Windows - after which you have to work a little bit to clean up
+your machine), and Mac OS/X though there are some issues with it on
+the Mac at times.
+
+Regards,
+Graham
+
+
+From joe at rstudio.org  Fri Jun 10 22:59:20 2011
+From: joe at rstudio.org (Joe Cheng [RStudio])
+Date: Fri, 10 Jun 2011 13:59:20 -0700
+Subject: [R-gui] Developing a GUI
+In-Reply-To: <BANLkTinjZvdyD=1yJtvdOBH6P0+5V33swg@mail.gmail.com>
+References: <BANLkTi=y7opUTkWKbVwvu2bTHQGwc98z2A@mail.gmail.com>
+	<BANLkTik85yQA2A7qzNqCfDT0jsLFhw5g7w@mail.gmail.com>
+	<5BF8A46F-C44C-4359-82EF-B8F3148FC691@stat.ucla.edu>
+	<BANLkTinjZvdyD=1yJtvdOBH6P0+5V33swg@mail.gmail.com>
+Message-ID: <BANLkTinMgGMd-dt+o35jURxFkFdct+FpXQ@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110610/10b7f2da/attachment.pl>
+

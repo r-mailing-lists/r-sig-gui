@@ -1,0 +1,117 @@
+From sue at xlsolutions-corp.com  Wed May  5 01:19:30 2010
+From: sue at xlsolutions-corp.com (sue at xlsolutions-corp.com)
+Date: Tue, 04 May 2010 16:19:30 -0700
+Subject: [R-gui] Openings in the Consulting Department of XLSolutions Corp
+Message-ID: <20100504161930.aa8924c5d28ca71e2a043bb294e795eb.f08feec33f.wbe@mobilemail.secureserver.net>
+
+Dear useRs,
+
+Please help me find the ideal candidates for 2 R programming consulting
+positions at XLSolutions Corp. 
+
+The job entails building custom applications for our end users. R
+programming is vital and skill in data analysis is important. If you are
+interested in working with our consulting group, please contact me.
+
+Please pass along to your contacts and If you have questions, please
+email me. Telecommuting is possible for these openings.
+
+Regards
+ 
+ Jennifer McDonald
+ Assistant to Mary RITZ
+ Research and Consulting
+ XLSolutions Corporation 
+ North American Division 
+ 1700 7th Ave 
+ Suite 2100 
+ Seattle, WA 98101 
+ Phone: 206-686-1578 
+ Email: jen at xlsolutions-corp.com 
+ web: www.xlsolutions-corp.com/rcourses 
+
+From ian.fellows at stat.ucla.edu  Wed May  5 02:45:21 2010
+From: ian.fellows at stat.ucla.edu (ian.fellows at stat.ucla.edu)
+Date: Tue, 4 May 2010 17:45:21 -0700 (PDT)
+Subject: [R-gui] Deducer 0.3-1
+Message-ID: <a0385d82e61b8f7f0d47f6139d19f723.squirrel@mail.stat.ucla.edu>
+
+Deducer 0.3-1 has just been released to CRAN and should be propagating
+through the mirrors shortly. This version contains a number of
+improvements and additions, including:
+
+a) The Data viewer has been improved. It now operates much faster on
+moderately large datasets. Several drawing bugs have been fixed.
+
+b) Additional facilities for plug-in development have been added. Fairly
+complex dialogs can be constructed easily with pure R code
+
+c) A variable transformation dialog has been added, with options for
+centering, standardizing, robust standardizing, log, reciprocal, rank,
+box-cox, powers, quantile binning, equal width binning, arcsine, and
+custom expressions. Before and after histograms can be displayed.
+
+As always, stand alone installers and program documentation are available
+at http://www.deducer.org/manual.html and an active discussion group can
+be found at http://groups.google.com/group/deducer .
+
+Developer documentation is available at
+http://www.deducer.org/pmwiki/index.php?n=Main.Development . Information
+regarding plug-in development, both in Java and pure R is available there.
+An example plug-in is also on CRAN (see: DeducerPlugInExample). If you
+would like to build a plug-in, or help work on Deducer its self, feel free
+to contact me.
+
+On a related note, through a google summer of code grant, this summer I
+will be adding a GUI for the ggplot2 package to Deducer.
+
+Cheers,
+Ian Fellows
+
+
+From phgrosjean at sciviews.org  Wed May  5 17:49:14 2010
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Wed, 05 May 2010 17:49:14 +0200
+Subject: [R-gui] New SciViews version 0.9.16
+Message-ID: <4BE1937A.2060106@sciviews.org>
+
+The new SciViews version 0.9.16 (http://www.sciviews.org/SciViews-K) is 
+now compatible with R 2.11.0 and comes with a couple of new features and 
+connects more smoothly to R (in console/terminal, RGui under Windows, 
+R.app or R64.app on the Mac).
+
+SciViews provides a series of packages for R and a Komodo Edit (a very 
+capable code editor) plugin. With this plugin, you got an environment 
+with similar features as you got with Eclipse + StatET, RKward, R 
+Commander or JGR + Deducer.
+
+On the contrary to R Commander or Deducer, you cannot perform tasks 
+through dialog boxes, but you got so-called *snippets with dialog 
+boxes*, which are dialog boxes allowing to parameterize snippets of R 
+code. This approach is deliberate to focus on building an *R script*, as 
+the best way to both trace your analysis and to build easily reusable 
+code (this approach combines, thus, the best of the two worlds: GUI and 
+command line). Look at 
+http://www.sciviews.org/SciViews-K/VisualGuide3Snippets.pdf for a more 
+extensive explanation.
+
+SciViews also provides all the niceties for editing R code (syntax 
+highlighting, bracket matching, call tips, completion lists, code 
+folding, etc.). It has a complete R objects explorer, a graphical test 
+units system, and much, much more...
+
+SciViews works on Linux, Mac OS X and Windows (tested with Komodo Edit 
+5.2, R 2.11 and Windows XP SP3, Windows 7, Ubuntu 9.10 and Mac OS X 10.6).
+
+PhG
+-- 
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons University, Belgium
+( ( ( ( (
+..............................................................
+
+

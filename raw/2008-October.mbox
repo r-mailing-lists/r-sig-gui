@@ -1,0 +1,909 @@
+From plroebuck at mdanderson.org  Wed Oct  8 00:16:47 2008
+From: plroebuck at mdanderson.org (Paul Roebuck)
+Date: Tue, 7 Oct 2008 17:16:47 -0500 (CDT)
+Subject: [R-gui] Need Advice on Tcl/Tk Translation
+Message-ID: <Pine.OSF.4.58.0810071646350.107259@wotan.mdacc.tmc.edu>
+
+Did a quick (well, maybe not) translation of some example
+code from section 4.2 of "Effective Tcl/Tk Programming".
+I'm trying to learn how to write R scripts that use Tcl/Tk
+and would like advice, pointers, suggestions based on
+code below. Thanks for any help you could provide.
+
+
+Translation left me with some questions about how best to
+do a couple things with the tcltk package. Some questions
+below are related to one another.
+
+1) What's the best way to convert from a Tk widget id
+back to R object? I used .Tk.newwin() as I didn't notice
+anything more appropriate. Are there functions I missed
+that return R objects instead?
+
+2) Is there a method for finding a widget from a widget
+hierarchy?
+
+3) Better way to use tags on canvas widget? Don't seem
+very useful in conjunction with R tcltk package.
+
+4) tkitemconfigure() didn't seem to work for tag? What
+did I do wrong? (scrollform_resize())
+
+5) After resizing such that all form items were displayed,
+clicking on the scrollbar arrows would still cause the
+form to scroll.
+
+6) What is the canonical means of accessing 'subwidgets'
+(like 'form' from scrollform_create())? Global variables?
+
+
+------------------------CODE------------------------------
+
+
+###
+### Translation of example from sect 4.2 of "Effective Tcl/Tk Programming"
+###
+
+
+require(tcltk)
+
+scrollform_create <- function(top) {
+    cat("scrollform_create()", "\n")
+    frame <- tkframe(top, class="Scrollform")
+    sbar <- tkscrollbar(frame,
+                        command=function(...) tkyview(vport, ...))
+    tkpack(sbar, side="right", fill="y")
+    vport <- tkcanvas(frame,
+                       yscrollcommand=function(...) tkset(sbar, ...))
+    tkpack(vport, side="left", fill="both", expand=TRUE)
+    form <- tkframe(vport, background="red")
+    cat("internal form id:" , form$ID, "\n")
+    tkcreate(vport, "window", "0 0", anchor="nw", window=form$ID)
+    tkbind(form, "<Configure>", function() scrollform_resize(form))
+    tkaddtag(vport, "iform", "all")
+
+    iform.win <- tkitemconfigure(vport,
+                                 tkfind(vport, "withtag", "iform"),
+                                 "-window")
+    cat("iform.win =", tclvalue(iform.win), "\n")
+
+    return(frame)
+}
+
+
+## :WHY: If form is resized such that all items are displayed, why is the
+## up arrow of scrollbar still active? Clicking on it scrolls frame
+## downwards even though it is fully displayed...
+scrollform_resize <- function(form) {
+    cat("scrollform_resize()", "\n")
+    stopifnot(tclvalue(tkwinfo("class", form)) == "Frame")
+    vport <- tkwinfo("parent", form)
+    stopifnot(tclvalue(tkwinfo("class", vport)) == "Canvas")
+
+# this doesn't work either
+#tkitemconfigure(vport, "iform", background="green")
+
+    bbox <- tkbbox(vport, "all")
+    cat("bbox:", tclvalue(bbox), "\n");
+
+    w <- tkwinfo("width", form)
+    tkconfigure(vport, width=w, scrollregion=bbox,
+                yscrollincrement="0.1i")
+}
+
+
+scrollform_interior <- function() {
+    cat("scrollform_interior()", "\n")
+    return(form)    ## Would require global variable
+}
+
+
+## Given scrolled form widget, find its embedded "form" frame widget
+## via hierarchy traversal. There must be a better way to do this...
+get_scrollform_interior.hier <- function(sform) {
+    cat("get_scrollform_interior.hier()", "\n")
+    stopifnot(inherits(sform, "tkwin") && tclvalue(tkwinfo("class",
+sform)) == "Scrollform")
+    children.ids <- unlist(strsplit(tclvalue(tkwinfo("children", sform)),
+" "))
+    for (child.id in children.ids) {
+        if (tclvalue(tkwinfo("class", child.id)) == "Canvas") {
+            canvas.child.id <-
+unlist(strsplit(tclvalue(tkwinfo("children", child.id)), " "))
+            stopifnot(length(canvas.child.id) == 1)
+            stopifnot(tclvalue(tkwinfo("class", canvas.child.id)) ==
+"Frame")
+            cat("iform.id =", canvas.child.id, "\n")
+            form <- .Tk.newwin(canvas.child.id)   # convert Tk widget id
+to R object?
+            return(form)
+        }
+    }
+}
+
+
+## Given scrolled form widget, find its embedded "form" frame widget
+## via tag reference. There must be a better way to do this...
+get_scrollform_interior.tags <- function(sform) {
+    cat("get_scrollform_interior.tags()", "\n")
+    stopifnot(inherits(sform, "tkwin") && tclvalue(tkwinfo("class",
+sform)) == "Scrollform")
+    children.ids <- unlist(strsplit(tclvalue(tkwinfo("children", sform)),
+" "))
+    for (child.id in children.ids) {
+        if (tclvalue(tkwinfo("class", child.id)) == "Canvas") {
+            vport <- .Tk.newwin(child.id)
+            iform.win <- tkitemconfigure(vport, tkfind(vport, "withtag",
+"iform"), "-window")
+            iform.id <- unlist(strsplit(tclvalue(iform.win), " "))[5]    #
+...shudder...
+            cat("iform.id =", iform.id, "\n")
+
+            stopifnot(tclvalue(tkwinfo("class", iform.id)) == "Frame")
+            form <- .Tk.newwin(iform.id)   # convert Tk widget id to R
+object?
+            return(form)
+        }
+    }
+}
+
+get_scrollform_interior <- get_scrollform_interior.tags
+#debug(get_scrollform_interior)
+
+toplevel <- tktoplevel()
+
+
+main <- function() {
+    tkpack(title <- tklabel(toplevel,
+                            text="Enter Information in the form below:"),
+           anchor="w")
+
+    sform <- scrollform_create(toplevel)
+    tkpack(sform, expand=TRUE, fill="both")
+    #form <- scrollform_interior()
+    form <- get_scrollform_interior(sform)
+
+    tktitle(toplevel) <- "ScrForm Demo"
+
+    fields <- c("Name:",
+                "Address:",
+                "City, State:",
+                "Phone:",
+                "FAX:",
+                "E-mail:",
+                "-",
+                "SSN:",
+                "Birthdate:",
+                "Marital Status:",
+                "-",
+                "Employer:",
+                "Occupation:",
+                "Annual Income:",
+                "-",
+                "Emergency Contact:",
+                "Phone:")
+    for (field in fields) {
+        if (field == "-") {
+            line <- tkframe(form, height=2, borderwidth=1,
+relief="sunken")
+            tkpack(line,
+                   fill="x",
+                   padx=4,
+                   pady=4)
+        } else {
+            line <- tkframe(form)
+            label <- tklabel(line, text=field, width=20, anchor="e")
+            tkpack(label, side="left")
+            entry <- tkentry(line)
+            tkpack(entry, fill="x")
+            tkpack(line, side="top", fill="x")
+        }
+    }
+}
+
+## Run above code
+main()
+
+----------------------------------------------------------
+SIGSIG -- signature too long (core dumped)
+
+
+From Wayne.W.Jones at shell.com  Wed Oct  8 08:48:11 2008
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Wed, 8 Oct 2008 08:48:11 +0200
+Subject: [R-gui] Need Advice on Tcl/Tk Translation
+In-Reply-To: <Pine.OSF.4.58.0810071646350.107259@wotan.mdacc.tmc.edu>
+Message-ID: <8E3590214E4380489D2F8BF129B939F30B7B8C@amsdc1-s-03371.europe.shell.com>
+
+
+Hi Paul, 
+
+I know that finding good tcltk documentation can be tough. 
+
+You probably know of http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+
+
+But are you aware of the rpanel package available from CRAN and developed by 
+Adrian Bowman and Ewan Crawford from Glasgow Uni, see: http://www.stats.gla.ac.uk/~adrian/rpanel/
+
+Essentially rpanel provides wrapper functions for tcltk objects which makes it extremely easy to build a tcltk GUI.
+It may not do everything you need to perform the task in hand. 
+However, you can look at the underlying code which should give you some pointers. 
+
+Alternatively it could well be worth looking at how the "gWidgets" package handles tcltk objects. 
+
+Regards,
+
+Wayne
+
+
+
+
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch]On Behalf Of Paul Roebuck
+Sent: 07 October 2008 23:17
+To: R-SIG-GUI Mailing List
+Subject: [R-gui] Need Advice on Tcl/Tk Translation
+
+
+Did a quick (well, maybe not) translation of some example
+code from section 4.2 of "Effective Tcl/Tk Programming".
+I'm trying to learn how to write R scripts that use Tcl/Tk
+and would like advice, pointers, suggestions based on
+code below. Thanks for any help you could provide.
+
+
+Translation left me with some questions about how best to
+do a couple things with the tcltk package. Some questions
+below are related to one another.
+
+1) What's the best way to convert from a Tk widget id
+back to R object? I used .Tk.newwin() as I didn't notice
+anything more appropriate. Are there functions I missed
+that return R objects instead?
+
+2) Is there a method for finding a widget from a widget
+hierarchy?
+
+3) Better way to use tags on canvas widget? Don't seem
+very useful in conjunction with R tcltk package.
+
+4) tkitemconfigure() didn't seem to work for tag? What
+did I do wrong? (scrollform_resize())
+
+5) After resizing such that all form items were displayed,
+clicking on the scrollbar arrows would still cause the
+form to scroll.
+
+6) What is the canonical means of accessing 'subwidgets'
+(like 'form' from scrollform_create())? Global variables?
+
+
+------------------------CODE------------------------------
+
+
+###
+### Translation of example from sect 4.2 of "Effective Tcl/Tk Programming"
+###
+
+
+require(tcltk)
+
+scrollform_create <- function(top) {
+    cat("scrollform_create()", "\n")
+    frame <- tkframe(top, class="Scrollform")
+    sbar <- tkscrollbar(frame,
+                        command=function(...) tkyview(vport, ...))
+    tkpack(sbar, side="right", fill="y")
+    vport <- tkcanvas(frame,
+                       yscrollcommand=function(...) tkset(sbar, ...))
+    tkpack(vport, side="left", fill="both", expand=TRUE)
+    form <- tkframe(vport, background="red")
+    cat("internal form id:" , form$ID, "\n")
+    tkcreate(vport, "window", "0 0", anchor="nw", window=form$ID)
+    tkbind(form, "<Configure>", function() scrollform_resize(form))
+    tkaddtag(vport, "iform", "all")
+
+    iform.win <- tkitemconfigure(vport,
+                                 tkfind(vport, "withtag", "iform"),
+                                 "-window")
+    cat("iform.win =", tclvalue(iform.win), "\n")
+
+    return(frame)
+}
+
+
+## :WHY: If form is resized such that all items are displayed, why is the
+## up arrow of scrollbar still active? Clicking on it scrolls frame
+## downwards even though it is fully displayed...
+scrollform_resize <- function(form) {
+    cat("scrollform_resize()", "\n")
+    stopifnot(tclvalue(tkwinfo("class", form)) == "Frame")
+    vport <- tkwinfo("parent", form)
+    stopifnot(tclvalue(tkwinfo("class", vport)) == "Canvas")
+
+# this doesn't work either
+#tkitemconfigure(vport, "iform", background="green")
+
+    bbox <- tkbbox(vport, "all")
+    cat("bbox:", tclvalue(bbox), "\n");
+
+    w <- tkwinfo("width", form)
+    tkconfigure(vport, width=w, scrollregion=bbox,
+                yscrollincrement="0.1i")
+}
+
+
+scrollform_interior <- function() {
+    cat("scrollform_interior()", "\n")
+    return(form)    ## Would require global variable
+}
+
+
+## Given scrolled form widget, find its embedded "form" frame widget
+## via hierarchy traversal. There must be a better way to do this...
+get_scrollform_interior.hier <- function(sform) {
+    cat("get_scrollform_interior.hier()", "\n")
+    stopifnot(inherits(sform, "tkwin") && tclvalue(tkwinfo("class",
+sform)) == "Scrollform")
+    children.ids <- unlist(strsplit(tclvalue(tkwinfo("children", sform)),
+" "))
+    for (child.id in children.ids) {
+        if (tclvalue(tkwinfo("class", child.id)) == "Canvas") {
+            canvas.child.id <-
+unlist(strsplit(tclvalue(tkwinfo("children", child.id)), " "))
+            stopifnot(length(canvas.child.id) == 1)
+            stopifnot(tclvalue(tkwinfo("class", canvas.child.id)) ==
+"Frame")
+            cat("iform.id =", canvas.child.id, "\n")
+            form <- .Tk.newwin(canvas.child.id)   # convert Tk widget id
+to R object?
+            return(form)
+        }
+    }
+}
+
+
+## Given scrolled form widget, find its embedded "form" frame widget
+## via tag reference. There must be a better way to do this...
+get_scrollform_interior.tags <- function(sform) {
+    cat("get_scrollform_interior.tags()", "\n")
+    stopifnot(inherits(sform, "tkwin") && tclvalue(tkwinfo("class",
+sform)) == "Scrollform")
+    children.ids <- unlist(strsplit(tclvalue(tkwinfo("children", sform)),
+" "))
+    for (child.id in children.ids) {
+        if (tclvalue(tkwinfo("class", child.id)) == "Canvas") {
+            vport <- .Tk.newwin(child.id)
+            iform.win <- tkitemconfigure(vport, tkfind(vport, "withtag",
+"iform"), "-window")
+            iform.id <- unlist(strsplit(tclvalue(iform.win), " "))[5]    #
+...shudder...
+            cat("iform.id =", iform.id, "\n")
+
+            stopifnot(tclvalue(tkwinfo("class", iform.id)) == "Frame")
+            form <- .Tk.newwin(iform.id)   # convert Tk widget id to R
+object?
+            return(form)
+        }
+    }
+}
+
+get_scrollform_interior <- get_scrollform_interior.tags
+#debug(get_scrollform_interior)
+
+toplevel <- tktoplevel()
+
+
+main <- function() {
+    tkpack(title <- tklabel(toplevel,
+                            text="Enter Information in the form below:"),
+           anchor="w")
+
+    sform <- scrollform_create(toplevel)
+    tkpack(sform, expand=TRUE, fill="both")
+    #form <- scrollform_interior()
+    form <- get_scrollform_interior(sform)
+
+    tktitle(toplevel) <- "ScrForm Demo"
+
+    fields <- c("Name:",
+                "Address:",
+                "City, State:",
+                "Phone:",
+                "FAX:",
+                "E-mail:",
+                "-",
+                "SSN:",
+                "Birthdate:",
+                "Marital Status:",
+                "-",
+                "Employer:",
+                "Occupation:",
+                "Annual Income:",
+                "-",
+                "Emergency Contact:",
+                "Phone:")
+    for (field in fields) {
+        if (field == "-") {
+            line <- tkframe(form, height=2, borderwidth=1,
+relief="sunken")
+            tkpack(line,
+                   fill="x",
+                   padx=4,
+                   pady=4)
+        } else {
+            line <- tkframe(form)
+            label <- tklabel(line, text=field, width=20, anchor="e")
+            tkpack(label, side="left")
+            entry <- tkentry(line)
+            tkpack(entry, fill="x")
+            tkpack(line, side="top", fill="x")
+        }
+    }
+}
+
+## Run above code
+main()
+
+----------------------------------------------------------
+SIGSIG -- signature too long (core dumped)
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From plroebuck at mdanderson.org  Fri Oct 10 20:22:31 2008
+From: plroebuck at mdanderson.org (Paul Roebuck)
+Date: Fri, 10 Oct 2008 13:22:31 -0500 (CDT)
+Subject: [R-gui] Example using 'after'
+Message-ID: <Pine.OSF.4.58.0810101320130.217081@wotan.mdacc.tmc.edu>
+
+Does this work when using tcltk package?
+
+I tried the minimalist
+    tcl("after idle bell")
+
+but it just gives an error.
+
+Does someone have an example?
+
+----------------------------------------------------------
+SIGSIG -- signature too long (core dumped)
+
+
+From plroebuck at mdanderson.org  Fri Oct 10 20:44:07 2008
+From: plroebuck at mdanderson.org (Paul Roebuck)
+Date: Fri, 10 Oct 2008 13:44:07 -0500 (CDT)
+Subject: [R-gui] Example of validating entry contents
+Message-ID: <Pine.OSF.4.58.0810101322400.217081@wotan.mdacc.tmc.edu>
+
+I have the basics of this down in Tcl/Tk, but fail to see
+how to get tcltk package to pass the desired arguments
+to the validation function.
+
+I wish to know how to specify one or more of:
+   %d, %i, %P, %s, %v, %V, %W
+
+
+How do I translate the following Tcl script into R?
+
+proc ValidInt {val} {
+    return [ expr {[string is integer $val] ||
+                   [string match {[-+]} $val]} ]
+}
+
+proc Upper {w validation action new} {
+    if {$action == 1} {
+        $w insert insert [string toupper $new]
+        after idle [list $w configure -validate $validation]
+    }
+    return 1
+}
+
+label .ln -text "enter number"
+entry .en -validate all -vcmd {ValidInt %P}
+grid .ln .en
+label .lu -text "enter text"
+entry .eu -validate all -vcmd {Upper %W %v %d %S}
+grid .lu .eu
+
+
+
+----------------------------------------------------------
+SIGSIG -- signature too long (core dumped)
+
+
+From p.dalgaard at biostat.ku.dk  Fri Oct 10 21:37:00 2008
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Fri, 10 Oct 2008 21:37:00 +0200
+Subject: [R-gui] Example using 'after'
+In-Reply-To: <Pine.OSF.4.58.0810101320130.217081@wotan.mdacc.tmc.edu>
+References: <Pine.OSF.4.58.0810101320130.217081@wotan.mdacc.tmc.edu>
+Message-ID: <48EFAEDC.9070303@biostat.ku.dk>
+
+Paul Roebuck wrote:
+> Does this work when using tcltk package?
+>
+> I tried the minimalist
+>     tcl("after idle bell")
+>
+> but it just gives an error.
+>
+> Does someone have an example?
+>   
+tcl("after", "idle", "bell")
+
+or
+
+.Tcl("after idle bell")
+
+(which starts with a dot because you shouldn't have to know about it....)
+
+-- 
+   O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+  c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+ (*) \(*) -- University of Copenhagen   Denmark      Ph:  (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)              FAX: (+45) 35327907
+
+
+From plroebuck at mdanderson.org  Mon Oct 13 01:12:20 2008
+From: plroebuck at mdanderson.org (Paul Roebuck)
+Date: Sun, 12 Oct 2008 18:12:20 -0500 (CDT)
+Subject: [R-gui] Example using 'after'
+In-Reply-To: <48EFAEDC.9070303@biostat.ku.dk>
+References: <Pine.OSF.4.58.0810101320130.217081@wotan.mdacc.tmc.edu>
+	<48EFAEDC.9070303@biostat.ku.dk>
+Message-ID: <Pine.OSF.4.58.0810121724360.425213@wotan.mdacc.tmc.edu>
+
+On Fri, 10 Oct 2008, Peter Dalgaard wrote:
+
+> Paul Roebuck wrote:
+> > Does this work when using tcltk package?
+> >
+> > I tried the minimalist
+> >     tcl("after idle bell")
+> >
+> > but it just gives an error.
+> >
+> > Does someone have an example?
+> >
+> tcl("after", "idle", "bell")
+>
+> or
+>
+> .Tcl("after idle bell")
+>
+> (which starts with a dot because you shouldn't have to know about it....)
+>
+
+Thanks for responding. How far does this go? This was a
+trivial example so I didn't expect much but there appears
+to be little support for using "after" in general. If I
+have an actual procedure to call, just write the entire
+code as a single string and pass it to .Tcl() method?
+
+For instance, if one wanted to set a minimum size for a
+Tk application, the Tcl code might be as follows:
+
+after idle [format {
+    update idletasks
+    wm minsize %s [winfo reqwidth %s] [winfo reqheight %s]
+} $top $top $top]
+
+
+Also, could you (Peter) clarify whether the environment
+created with each Tk widget should be considered "private"?
+In other words, is storing widget-specific user data
+within its environment user-supported functionality?
+
+----------------------------------------------------------
+SIGSIG -- signature too long (core dumped)
+
+
+From p.dalgaard at biostat.ku.dk  Mon Oct 13 09:30:23 2008
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Mon, 13 Oct 2008 09:30:23 +0200
+Subject: [R-gui] Example using 'after'
+In-Reply-To: <Pine.OSF.4.58.0810121724360.425213@wotan.mdacc.tmc.edu>
+References: <Pine.OSF.4.58.0810101320130.217081@wotan.mdacc.tmc.edu>
+	<48EFAEDC.9070303@biostat.ku.dk>
+	<Pine.OSF.4.58.0810121724360.425213@wotan.mdacc.tmc.edu>
+Message-ID: <48F2F90F.1050305@biostat.ku.dk>
+
+Paul Roebuck wrote:
+> On Fri, 10 Oct 2008, Peter Dalgaard wrote:
+> 
+>> Paul Roebuck wrote:
+>>> Does this work when using tcltk package?
+>>> 
+>>> I tried the minimalist tcl("after idle bell")
+>>> 
+>>> but it just gives an error.
+>>> 
+>>> Does someone have an example?
+>>> 
+>> tcl("after", "idle", "bell")
+>> 
+>> or
+>> 
+>> .Tcl("after idle bell")
+>> 
+>> (which starts with a dot because you shouldn't have to know about 
+>> it....)
+>> 
+> 
+> Thanks for responding. How far does this go? This was a trivial 
+> example so I didn't expect much but there appears to be little 
+> support for using "after" in general. If I have an actual procedure 
+> to call, just write the entire code as a single string and pass it to
+>  .Tcl() method?
+> 
+> For instance, if one wanted to set a minimum size for a Tk 
+> application, the Tcl code might be as follows:
+> 
+> after idle [format { update idletasks wm minsize %s [winfo reqwidth 
+> %s] [winfo reqheight %s] } $top $top $top]
+> 
+
+You're a bit on your own there, in the sense that I can't afford
+spending hours to figure out the exact way of doing it. However, notice
+that the general picture is that callbacks can be R functions so it
+could be something like
+
+tkafter("idle", function() {
+    tkupdate("idletasks")
+    tkwm("minsize", tt,
+         tkwinfo("regwidth", tt),
+         tkwinfo("regheight", tt))
+})
+
+(Notice that there are predefined shortcuts
+
+tkwm(....) for
+
+tcl("wm", ...) etc.)
+
+> Also, could you (Peter) clarify whether the environment created with 
+> each Tk widget should be considered "private"? In other words, is 
+> storing widget-specific user data within its environment 
+> user-supported functionality?
+
+They're not intended for that, just to hold widget references and
+callback, but I don't see any harm in "abusing" them for other purposes.
+The general idea was to use ordinary lexical scoping rules, though.
+
+
+-- 
+    O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+   c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+  (*) \(*) -- University of Copenhagen   Denmark      Ph:  (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)              FAX: (+45) 35327907
+
+
+From landronimirc at gmail.com  Sun Oct 26 14:18:26 2008
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Sun, 26 Oct 2008 14:18:26 +0100
+Subject: [R-gui] alternative to Crystal Ball ?
+Message-ID: <68b1e2610810260618o20c41cbdj4da8cb7a9b620400@mail.gmail.com>
+
+Dear R users,
+
+I am looking for R packages that would best approximate Oracle's
+Crystall Ball [1]. For those not familiar:
+"Crystal Ball software is a leading spreadsheet-based software suite
+for predictive modeling, forecasting, Monte Carlo simulation and
+optimization. [..] Crystal Ball is used by customers from a broad
+range of industries, such as aerospace, financial services,
+manufacturing, oil and gas, pharmaceutical and utilities. Crystal Ball
+is used in over 800 universities and schools worldwide for teaching
+risk analysis concepts.
+
+The diverse applications for Crystal Ball include financial risk
+analysis, valuation, engineering, Six Sigma, portfolio allocation,
+cost estimation, and project management. "
+
+[1] http://www.oracle.com/crystalball/index.html
+
+The other day, in the Risk Management class, we did Monte Carlo
+simulations using Crystall Ball&Excel. The professor (a relatively
+young MIT PhD) made a speech that felt a bit distressing, in short:
+"Working in Finance, Excel, Excel and nothing but Excel."  I would
+prefer to avoid this.
+
+R's packages with Monte Carlo support are numerous, and I wouldn't
+know where to start. Recently [2] as alternative to Crystall Ball
+QRMlib [3] was suggested, but it is accompanied with a book, while
+currently I would prefer online documentation. If any of the R GUI
+packages support something similar, please also drop a note.
+
+[2] http://www.nabble.com/Quantitative-risk-analysis-with-R-tp19184940p19184940.html
+[3] http://cran.r-project.org/web/packages/QRMlib/index.html
+
+Thank you,
+Liviu
+
+PS I'm cross-posting; please let me know if this is not a good idea
+
+
+From landronimirc at gmail.com  Wed Oct 29 18:29:16 2008
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Wed, 29 Oct 2008 18:29:16 +0100
+Subject: [R-gui] RExcel and Rcmdr view/edit buttons
+Message-ID: <68b1e2610810291029m2da096aeo97a19c20d3774402@mail.gmail.com>
+
+Hello everyone,
+
+The other day I've installed RExcel [2], using the "all-in-one"
+installer [1], and was amazed at the work developers have done:
+integrate Rcmdr into Excel and use Excel&VBA as an interface for R (1)
+and automate the installation to such a degree (2).
+
+However, from the Rcmdr GUI, there was one element that seemed
+missing: the buttons "View" and "Edit" data frames. Normally these
+buttons are on the Rcmdr toolbar only, and not part of the menus. In
+RExcel, however, the respective toolbar lacks the two actions. Is
+there a way to enable, display these two buttons in RExcel?
+
+Thank you,
+Liviu
+
+[1] http://learnserver.csd.univie.ac.at/rcomwiki/doku.php?id=rexcel_as_an_r_package#complete_r_with_rexcel_and_further_packages
+[2] http://sunsite.univie.ac.at/rcom/
+
+
+From erich.neuwirth at univie.ac.at  Thu Oct 30 10:04:06 2008
+From: erich.neuwirth at univie.ac.at (Erich Neuwirth)
+Date: Thu, 30 Oct 2008 10:04:06 +0100
+Subject: [R-gui] RExcel and Rcmdr view/edit buttons
+Message-ID: <49097886.70000@univie.ac.at>
+
+Simple Answer:
+You can start Rcmdr from Excel in a way it keeps all its menus
+and buttons on its own window.
+
+RExcel -> RCommander -> with separate menus does that.
+
+(You have to use RExcel -> Start R) to get the RCommander submenu.
+
+More complex answer:
+
+Do you know that when you right click in a cell in Excel, you can
+immediately transfer a dataframe between Excel and R in both directions?
+So to edit a dataframe:
+create a new worksheet,
+right click in the upper left cell,
+Use Get Dataframe,
+change what you want to change
+press ctrl-shft-return (selecting the whole dataframe)
+rightclick and use Put Dataframe
+
+There is no need at all to use .csv when transferring data between R and
+Excel.
+In fact that is one of the reasons I wrote RExcel!
+
+Please have a look at the demo workbooks in RExcel, especially the one
+aboout Data transfer.
+
+-- 
+Erich Neuwirth, University of Vienna
+Faculty of Computer Science
+Computer Supported Didactics Working Group
+Visit our SunSITE at http://sunsite.univie.ac.at
+Phone: +43-1-4277-39464 Fax: +43-1-4277-39459
+
+
+From plroebuck at mdanderson.org  Thu Oct 30 20:59:17 2008
+From: plroebuck at mdanderson.org (Paul Roebuck)
+Date: Thu, 30 Oct 2008 14:59:17 -0500 (CDT)
+Subject: [R-gui] [Rd] using yscrollcommand in tkcanvas crashes R
+	(PR#13231)
+In-Reply-To: <20081030051005.4800E282EFC1@mail.pubhealth.ku.dk>
+References: <20081030051005.4800E282EFC1@mail.pubhealth.ku.dk>
+Message-ID: <Pine.OSF.4.58.0810301426560.93237@wotan.mdacc.tmc.edu>
+
+On Thu, 30 Oct 2008 sundar.dorai-raj at pdf.com wrote:
+
+> Full_Name: Sundar Dorai-Raj
+> Version: 2.8.0
+> OS: Windows
+> Submission from: (NULL) (76.220.41.126)
+>
+>
+> The following code crashes R:
+>
+> library(tcltk)
+> tt <- tktoplevel()
+> tc <- tkcanvas(tt, yscrollcommand = function(...) tkset(ts, ...))
+>
+> > sessionInfo()
+> R version 2.8.0 (2008-10-20)
+> i386-pc-mingw32
+>
+> locale:
+> LC_COLLATE=English_United States.1252;LC_CTYPE=English_United
+> States.1252;LC_MONETARY=English_United
+> States.1252;LC_NUMERIC=C;LC_TIME=English_United States.1252
+>
+> attached base packages:
+> [1] tcltk     stats     graphics  grDevices utils     datasets  methods
+> [8] base
+>
+
+Here's a portion of the code I wrote for a package that
+contains a scrollable canvas, if it helps you any.
+
+
+.RDEnv <- new.env(hash=TRUE)                   # Private environment
+
+rdenv <- function() {
+    return(.RDEnv)
+}
+
+
+scrollframe_create <- function(parent) {
+    stopifnot(is.tkwin(parent))
+
+    frame <- tkframe(parent,
+                     class="ScrollFrame")
+    xscroll <- tkscrollbar(frame,
+                           orient="horizontal",
+                           command=function(...) tkxview(vport, ...))
+    yscroll <- tkscrollbar(frame,
+                           orient="vertical",
+                           command=function(...) tkyview(vport, ...))
+    vport <- tkcanvas(frame,
+                      xscrollcommand=function(...) tkset(xscroll, ...),
+                      yscrollcommand=function(...) tkset(yscroll, ...))
+
+    pady <- paste("0", tclvalue(tkwinfo.reqheight(xscroll)))
+    tkpack(yscroll, side="right", fill="y", pady=pady)
+    tkpack(xscroll, side="bottom", fill="x")
+    tkpack(vport, side="left", fill="both", expand=TRUE)
+
+    int.frame <- tkframe(vport,
+                         borderwidth=4,
+                         relief="groove")
+    tkcreate(vport, "window", "0 0", anchor="nw", window=int.frame$ID)
+    tkbind(int.frame, "<Configure>", function() scrollframe_resize(int.frame))
+
+    ## Save this so items can be put in it
+    assign("interior.frame", int.frame, envir=rdenv())
+
+    return(frame)
+}
+
+
+scrollframe_resize <- function(iframe) {
+    stopifnot(tclvalue(tkwinfo.class(iframe)) == "Frame")
+
+    w <- tkwinfo.width(iframe)
+    h <- tkwinfo.height(iframe)
+
+    vport <- tkwinfo.parent(iframe)
+    stopifnot(tclvalue(tkwinfo.class(vport)) == "Canvas")
+    bbox <- tkbbox(vport, "all")
+
+    tkconfigure(vport,
+                width=w,
+                height=h,
+                scrollregion=bbox,
+                xscrollincrement="0.1i",
+                yscrollincrement="0.1i")
+}
+
+
+scrollframe_interior <- function() {
+    return(get("interior.frame", envir=rdenv()))
+}
+
+
+----------------------------------------------------------
+SIGSIG -- signature too long (core dumped)
+
+

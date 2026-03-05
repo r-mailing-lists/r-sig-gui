@@ -1,0 +1,341 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2002-12",
+  "messages": [
+    {
+      "id": "msg-f232d06ce1ff",
+      "message_id": "<200212011333.32836.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ee937b434486ed9032c3a334c49c9d5605e120dffa3d619066cf1ab46afd9dd4",
+      "date": "2002-12-01T13:33:32+01:00",
+      "subject": "[R-gui]  (renamed) What do we do?",
+      "subject_clean": "[R-gui]  (renamed) What do we do?",
+      "in_reply_to": "<MABBLJDICACNFOLGIHJOOEGEDBAA.phgrosjean@sciviews.org>",
+      "references": [
+        "<MABBLJDICACNFOLGIHJOOEGEDBAA.phgrosjean@sciviews.org>"
+      ],
+      "body_plain": "> Mak Myatt wrote:\n> >Please humour me on this but I have become confused about the subject of\n> >our deliberations.\n>\n> and in another message:\n> >What is stopping ME from getting my hands dirty is that, without\n> >agreement that this is the way to go, it might be a lone enterprise which\n> >will amount to so much wasted effort.\n>\n> These are really pertinent remarks. I observe, a little bit disappointed,\n> that we all spend much time in endless discussions on what to do, and what\n> not to do... but nobody really moves forward in taking concrete\n> initiatives.\n\nI have come to think, that the \"endless discussions\" are still partially due \nto one or more misunderstandings. I support Phillippe in that we really \nshould start making concrete steps, and as part of that I view the draft I \nsuggested for a common plugin-specification. Let me try to sum up very \nshortly the premises that made me arrive at thinking, that such a \nspecification would indeed be a good idea. Maybe then we can spot, where \nexactly we don't agree (if there is still disagreement, which I suspect):\n\nA1) We have ultimately failed in agreeing on one single large project. Rather \nwe have split up into several different ones. Some of those projects may \nfusion at some point of time, others may be given up. Still, we will have \nseveral different R-frontends.\nA2) We have also failed at trying to agree on a common toolkit/general \napproach. As a matter of fact, this is one of the reasons for A1. Also, we \nall have an opinion on which toolkit/approach is best suited for our needs, \nbut unfortunately we don't agree on which one that is. Discussions of the \nform lets simply all use Tcl/Delphi/whatever are completely futile (as are \ndiscussions \"extend R to have a GUI\" vs. \"GUI around R\").\nA3) Apart from toolkit and general approach, there are a number of further \nimportant differences between projects.\n\nB1) Despite A1-3, many, if not all projects will want to offer a GUI-dialog \nfor e.g. a t-test.\nB2) Despite A1-2, there are only so many different ways to do a GUI for a \nt-test \"in principle\".\nB3) This \"in principle\" (i.e. the thing that all GUIs for a t-test will have \nin common) can be formalized in a relatively straightforward way.\nB4) B3 is possible without sticking closely to any particular toolkit.\nB5) since B4, it can be done in a way that is useful to projects using \ndifferent toolkits/approaches/differing in other ways.\n\nC1) There is a _lot_ of problems to which not only B1, but also B2-5 apply, \neven though B1-5 may not apply to _all_ problems.\nC2) from C1 and B5 it seems reasonable to try to come up with such a \nspecification, and we will be able to share a lot of effort despite A1-3.\n\nI hope this is explicit enough, so we will be able to spot, where exactly it \nis that we disagree.\nThomas",
+      "body_snippet": "> Mak Myatt wrote:\n> >Please humour me on this but I have become confused about the subject of\n> >our deliberations.\n>\n> and in another message:\n> >What is stopping ME from getting my hands dirty is t",
+      "thread_id": "thread-b7160772a4ae",
+      "thread_depth": 1,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-21e40b7b7ce5",
+      "message_id": "<87adjp1tsq.fsf@jeeves.blindglobe.net>",
+      "from_name": "A.J. Rossini",
+      "from_email_hash": "e38e01ad6ef7554feaf1446fbf732417739f2726ef60f5377d3a8dfe80e4b2ad",
+      "date": "2002-12-01T10:24:37-08:00",
+      "subject": "[R-gui]  (renamed) What do we do?",
+      "subject_clean": "[R-gui]  (renamed) What do we do?",
+      "in_reply_to": "<200212011333.32836.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
+      "references": [
+        "<MABBLJDICACNFOLGIHJOOEGEDBAA.phgrosjean@sciviews.org>",
+        "<200212011333.32836.thomas.friedrichsmeier@ruhr-uni-bochum.de>"
+      ],
+      "body_plain": ">>>>> \"thomas\" == Thomas Friedrichsmeier <thomas.friedrichsmeier@ruhr-uni-bochum.de> writes:\n\n    thomas> I have come to think, that the \"endless discussions\" are still partially due \n    thomas> to one or more misunderstandings. I support Phillippe in that we really \n    thomas> should start making concrete steps, and as part of that I view the draft I \n    thomas> suggested for a common plugin-specification. Let me try to sum up very \n    thomas> shortly the premises that made me arrive at thinking, that such a \n    thomas> specification would indeed be a good idea. Maybe then we can spot, where \n    thomas> exactly we don't agree (if there is still disagreement, which I suspect):\n\n    thomas> A1) We have ultimately failed in agreeing on one single large project. Rather \n    thomas> we have split up into several different ones. Some of those projects may \n    thomas> fusion at some point of time, others may be given up. Still, we will have \n    thomas> several different R-frontends.\n\nThis is not a bad thing!  \n\n    thomas> A2) We have also failed at trying to agree on a common toolkit/general \n    thomas> approach. As a matter of fact, this is one of the reasons for A1. Also, we \n    thomas> all have an opinion on which toolkit/approach is best suited for our needs, \n    thomas> but unfortunately we don't agree on which one that is. Discussions of the \n    thomas> form lets simply all use Tcl/Delphi/whatever are completely futile (as are \n    thomas> discussions \"extend R to have a GUI\" vs. \"GUI around R\").\n\nThis is not solvable.  If it was, we'd all be rallying around ESS and\nsomeone would've embedded R within Emacs (similar to the current\nPostgreSQL embeddings and language interface that has been done for\nXEmacs), to solve Peter's complaint.  After many years sheparding that\nproject, I've learned that people have strange, senseless opinions,\nand it's best not to challenge them, just let them learn by their\nmistakes...  :-).\n\n    thomas> A3) Apart from toolkit and general approach, there are a number of further \n    thomas> important differences between projects.\n\n    thomas> B1) Despite A1-3, many, if not all projects will want to offer a GUI-dialog \n    thomas> for e.g. a t-test.\n    thomas> B2) Despite A1-2, there are only so many different ways to do a GUI for a \n    thomas> t-test \"in principle\".\n    thomas> B3) This \"in principle\" (i.e. the thing that all GUIs for a t-test will have \n    thomas> in common) can be formalized in a relatively straightforward way.\n    thomas> B4) B3 is possible without sticking closely to any particular toolkit.\n    thomas> B5) since B4, it can be done in a way that is useful to projects using \n    thomas> different toolkits/approaches/differing in other ways.\n\n    thomas> C1) There is a _lot_ of problems to which not only B1, but also B2-5 apply, \n    thomas> even though B1-5 may not apply to _all_ problems.\n    thomas> C2) from C1 and B5 it seems reasonable to try to come up with such a \n    thomas> specification, and we will be able to share a lot of effort despite A1-3.\n\nThis is what I view as minimal practical gain.  I can do a GUI right\nnow for the t-test in about 4 different toolkits (Java, tcltk, python,\nemacs lisp; maybe more, but I not going to change from being\n\"read-only\" in Perl), and there are a number of obvious and completely\ndifferent approaches, all of which are appropriate WITHIN CONTEXT and\nAUDIENCE.  However, that there are a number of \"equally good\" (modulo\ncontext/audience) choices.\n\nRather than discussing, it would be better to be coding and\ndisplaying examples.  \n\nI'm not strongly in favor of designing the guts without seeing the end\nresults -- you can refactor the guts later as you find out what you\nreally will need.  To design them right the first time without\nexamples is a bit backwards, though exceptions occur (DTL comes to\nmind :-).\n\nSo talk about XML vs. an associated list conf-file, etc, is sort of\nsilly.  You can write simple translators for that sort of thing, or\nrefactor the guts later.\n\nEveryone wants to run a project and being in control; but to agree on\ngoals with the final outcome requires people to swallow something and\ntake up pieces, as well as \"release ownership and trust others\".  It's\nthe problem with opensource, and why successful projects (like R) mean\nsomething about the people involved.\n\nAnyway, what I'd like to see is people generating cool and novel use\ncases; GUIs that REALLY simplify life, not just the \"here's a t-test\nwidget\", but perhaps add another dimension (a simple interface to\nre-simulation methodologies for sensitivity analysis, or other tasks\nwhich reduce the computation/programming level).  Stuff which knocks\nmy socks off, that we can all agree on the statement that \"we need to\npublish this in JCGS/JSS now\".  I'm less concerned about refinements\nat the backend -- optimizations and flexibile interfaces will come at\nsome point.\n\nBoth Tony Hoare and Don Knuth said, long ago, \"premature optimization\nis the root of all evil\" (in software design), and I'd add premature\nflexibility to that, as well.\n\nAnyway, while that sums up my long-winded opinion, I'm still eager to\nsee if anyone comes up with something good.  (and of course, that\nmeans, \"better than ESS\" :-).   I think it's possible.\n\nAnd it's fine to figure out the primary use cases as well as to agree\non definitions first, before coding.  I think this is why people are\ntalking at loggerheads, though it's somewhat useful.  In fact, it\nwould be worth writing out what you want to do.  Here's my interests:\n\nAudience: moderate/experienced programmers interested in data analysis\nTools to develop: GUI/IDEs for largish projects using modern\n    programming methodologies (literate programming, extreme\n    programming, aspect-oriented programming).\nLanguages: Statistical languages, such as S(R/S-Plus); SAS; Stata; \n    SciPython; XLispStat, and any that interface with them.\nGoal: support both programming and data analysis cross platform and \n    more importantly, UNIFORMLY\n    cross-language. (extraction/display/manipulation of \n    electronic documents, workbooks that support literate statistical\n    analysis) \n\nSounds like SciViews, eh? \n\nbest,\n-tony\n\n-- \nA.J. Rossini\t\t\t\tRsrch. Asst. Prof. of Biostatistics\nU. of Washington Biostatistics\t\trossini@u.washington.edu\t\nFHCRC/SCHARP/HIV Vaccine Trials Net\trossini@scharp.org\n-------------- http://software.biostat.washington.edu/ ----------------\nFHCRC: M: 206-667-7025 (fax=4812)|Voicemail is pretty sketchy/use Email\nUW:   Th: 206-543-1044 (fax=3286)|Change last 4 digits of phone to FAX\n(my tuesday/wednesday/friday locations are completely unpredictable.)",
+      "body_snippet": ">>>>> \"thomas\" == Thomas Friedrichsmeier <thomas.friedrichsmeier@ruhr-uni-bochum.de> writes:\n\n    thomas> I have come to think, that the \"endless discussions\" are still partially due \n    thomas> to o",
+      "thread_id": "thread-b7160772a4ae",
+      "thread_depth": 2,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-13df6c4c50e1",
+      "message_id": "<permail-2002120120423924630-friedtcb@ruhr-uni-bochum.de>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "c80ea4ab5d54ba92d46df0ae2a6cb18c4f3196f17defcae70f2f3c4410749a27",
+      "date": "2002-12-01T21:42:39+01:00",
+      "subject": "[R-gui] (renamed) What do we do?",
+      "subject_clean": "[R-gui] (renamed) What do we do?",
+      "in_reply_to": "<87adjp1tsq.fsf@jeeves.blindglobe.net>",
+      "references": [],
+      "body_plain": "I think we're still having a misunderstanding here. The plugin-thing I'm proposing is again NOT about finding a way to describe an entire R-frontend. I seriously do hope that at least some of our projects will come up with truely innovative new stuff that can not easily be modeled as a plugin. Still  (I think) there will be lots of more or less \"standard\" functionality that implies a lot of work, but leaves only so much room for innovations. IMHO, one example of that is a t-test, and looking e.g. at the Analysis-menu in SPSS, I find it full of similar stuff. All projects will have to implement at least considerable parts of that, and I'd hate to see all of us doing it over and over again for each project.\nAlso, I'm not even talking about all of us doing this in exactly the same way. That's why my specification is what Phillipe calls \"voluntarily incomplete\" - the idea is to leave a lot of freedom to an interpreting application, and still use a common base.\nFurther, when you talk about \"here's the t-test widget\", I feel we're still talking about fundamentally different things. I'm not talking about a t-test widget. I'm talking about a rather abstract description that specifies the core-functionality of (for example!) a t-test GUI, namely \"for a t-test you need two numeric vectors and you can specifiy a number of options\". I'm trying to talk as little as possible about how this should be presented, and I'm not talking AT ALL about which toolkit to use (use Tcl/Qt/Delphi/your-own-toolkit(tm)/whatever. I'm not AT ALL talking about how data/commands should be passed to/from the backend. I'm not proposing to implement a t-test widget, but a simple common language, that all our projects will understand. They will NOT understand it in exactly the same way. E.g. RKWard uses Qt-widgets, but others will use Tcl-widgets. They will interpret the \"t-test plugin\" to provide the same core-functionality in a certain dialog, that's all. And if you have a radically different idea on how to design a GUI for a t-test, that can not be modelled using our common language, you simply will not use this plugin (but may still use others). (Besides, if you can think of a radically different and incompatible-with-my-draft way of designing a t-test dialog, I'd be very interested to hear about that!)\nI am in no way trying to take away freedom of design or implementation. I am not saying you should create your entire frontend using only the plugin-description language (I'm not even trying to do that myself). I'm trying to avoid duplicate work in some areas, not trying to force all frontends to be the same.\nFurther, when you say, we can worry about the details later, we must again be talking about entirely different things. I want to start an application NOW, and _part_ of it will be an interpreter, that can create dialogs from the plugin-specification language. I do not want to do that work completely over again at some point of time. This is why I want a half-ready specification as soon as possible. Of course we will still be able to change some things later, but IMHO it is not impossible to come up with something functional in a matter of weeks (if not days). If in my draft you find something which you think is fundamentally wrong or incomplete, please comment on that. But keep in mind that you will not have to create your whole application this way, but it is only meant to describe some \"standard\" functionality.\n\n> Rather than discussing, it would be better to be coding and\n> displaying examples.\n\nThen please do take a look at RKWard-codebase (class RKPlugin should be your starting point for this), screenshots, and the example XML. This is a working example of what a plugin-specification could look like and what a \"translator\" can make of it. And once again note, this is NOT what any \"translator\" has to make of it - yours has a LOT of freedom to do it different. I am again not saying all our applications should do the same thing - but if you're looking for an _example_, it's there.\n\n> Everyone wants to run a project and being in control; but to agree on\n> goals with the final outcome requires people to swallow something and\n> take up pieces, as well as \"release ownership and trust others\".  It's\n> the problem with opensource, and why successful projects (like R) mean\n> something about the people involved.\n\nI'm not trying to make anybody swallow anything. I'm trying to offer a way by which duplication of a lot of effort could be prevented. If you don't like some of it, don't use those parts. If you don't want any of it, don't use it at all. Once again, this is not about writing an entire application or a framework for one, but a standard for PLUG-INs (and you could even have different standards for even better (but specific to your app) plugins besides this one). Simple standard functionality that does not affect the operations of the rest of the app. That's all. I don't see all that many \"goals\" we have to agree on here. And if you don't want to \"trust others\", you can simply review all available plugins before including them into a distribution of your app.\n\n> And it's fine to figure out the primary use cases as well as to agree\n> on definitions first, before coding.  I think this is why people are\n> talking at loggerheads, though it's somewhat useful.  In fact, it\n> would be worth writing out what you want to do.  Here's my interests:\n\n> Audience: moderate/experienced programmers interested in data analysis\n> Tools to develop: GUI/IDEs for largish projects using modern\n>     programming methodologies (literate programming, extreme\n>     programming, aspect-oriented programming).\n> Languages: Statistical languages, such as S(R/S-Plus); SAS; Stata;\n>     SciPython; XLispStat, and any that interface with them.\n> Goal: support both programming and data analysis cross platform and\n>     more importantly, UNIFORMLY\n>     cross-language. (extraction/display/manipulation of\n>     electronic documents, workbooks that support literate statistical\n>     analysis)\n\n> Sounds like SciViews, eh?\n\nThe only thing I'm trying to do here right now, is to propose a \"one size fits all\"-approach to the vast mass of uninteresting (from a creative point of view) dialogs for all sorts of uninteresting (from a frontend-designer's point of view) statistical tests. And \"one size fits all\" also means, that I'm neither interfering with any of your goals, nor am I introducing new ones. I don't care what you use as a backend, I don't care what programming language you use, I don't care what platforms you intend to be compatible with, I don't care how you pass data (or whether you \"pass\" it at all). If you don't believe me on this, please read my draft again (and point out where I'm introducing unnecessary limitations). If you think this to be \"premature flexibility\" - I say it's a realistic approach (and it's not even complicated or hard to implement - look at RKWard codebase, if you don't believe me).\n\nThomas",
+      "body_snippet": "I think we're still having a misunderstanding here. The plugin-thing I'm proposing is again NOT about finding a way to describe an entire R-frontend. I seriously do hope that at least some of our proj",
+      "thread_id": "thread-b7160772a4ae",
+      "thread_depth": 3,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-819e051b3e7e",
+      "message_id": "<87u1hxzao0.fsf@jeeves.blindglobe.net>",
+      "from_name": "A.J. Rossini",
+      "from_email_hash": "e38e01ad6ef7554feaf1446fbf732417739f2726ef60f5377d3a8dfe80e4b2ad",
+      "date": "2002-12-01T13:33:51-08:00",
+      "subject": "[R-gui] (renamed) What do we do?",
+      "subject_clean": "[R-gui] (renamed) What do we do?",
+      "in_reply_to": "<permail-2002120120423924630-friedtcb@ruhr-uni-bochum.de>",
+      "references": [
+        "<permail-2002120120423924630-friedtcb@ruhr-uni-bochum.de>"
+      ],
+      "body_plain": "thomas> The only thing I'm trying to do here right now, is to\n    thomas> propose a \"one size fits all\"-approach to the vast mass of\n    thomas> uninteresting (from a creative point of view) dialogs for\n    thomas> all sorts of uninteresting (from a frontend-designer's\n    thomas> point of view) statistical tests. And \"one size fits all\"\n    thomas> also means, that I'm neither interfering with any of your\n    thomas> goals, nor am I introducing new ones. I don't care what\n    thomas> you use as a backend, I don't care what programming\n    thomas> language you use, I don't care what platforms you intend\n    thomas> to be compatible with, I don't care how you pass data (or\n    thomas> whether you \"pass\" it at all). If you don't believe me on\n    thomas> this, please read my draft again (and point out where I'm\n    thomas> introducing unnecessary limitations). If you think this to\n    thomas> be \"premature flexibility\" - I say it's a realistic\n    thomas> approach (and it's not even complicated or hard to\n    thomas> implement - look at RKWard codebase, if you don't believe\n    thomas> me).\n\nI don't see a one-size fits all approach providing a gain.  It means\nyet another language.  I'm willing to be proven wrong.\n\nHere's an example: I can think of a number of appropriate abstract\nways to represent a t-test (and I mean it in your sense, in the\ncontext and not in the display).  If they could be fit into a nice\nlinear scale, and indexed via a LOD (level of display) view, that\nwould be great, and would seem to fit in your model, but it's more of\na hypercube in terms of ordering (unordered, rather than strict or\npartial ordered) and getting the abstraction right seems more trouble\nthan just doing it.\n\nTo be explicit, the components of the t-test that I'd like to see, to\nmake this a non-trivial example (scalable to the level of the\nanalyst), would be:\n\n1. specification of the groups (2 variables, vs. 1 response and a\n   grouping variable).\n\n2. specification of the variance estimate (and corresponding adjustments)\n\n3. approaches for resampling - data, model based.\n\n4. approaches for sensitivity analysis (related rank-based tests,\n   related 2-sample based likelihood based tests, using both same and\n   different probability models, additions of noise or resampling, ala\n   Gary King's Clarify).\n\n5. a \"dial-o-meter\" (I don't see it as 1-d, but not sure what the\n   right interface would be) to control the flexibility inherent in this\n   (buttons, help settings, link-outs) based on user's skill level,\n   needs, wants, etc. \n\nI don't think that constraining the data format, i.e. #1, would be\nuseful; it is precisely the issue being addressed with the GUI. #3/#4\nstart to become novel, at least they were when others proposed them.\n\n#5 is what I'm hoping to see in your description of the layout,\nThomas, i.e. a statistical rather than computational description.  I'm\nnot seeing it at this point, but maybe I'm being obtuse.\n\nI don't see what you are doing as particularly novel -- in fact,\nnumerous parts are possible as very simple extensions of ESS or\n(X)Emacs tools (such as the S-Spreadsheet tool from the mid-90s, or\nthe widget and image tools that have been available for a while).\nBut to each, their own toolset...\n\nBut #5, if you can figure that specification out...!\n\nbest,\n-tony\n\n-- \nA.J. Rossini\t\t\t\tRsrch. Asst. Prof. of Biostatistics\nU. of Washington Biostatistics\t\trossini@u.washington.edu\t\nFHCRC/SCHARP/HIV Vaccine Trials Net\trossini@scharp.org\n-------------- http://software.biostat.washington.edu/ ----------------\nFHCRC: M: 206-667-7025 (fax=4812)|Voicemail is pretty sketchy/use Email\nUW:   Th: 206-543-1044 (fax=3286)|Change last 4 digits of phone to FAX\n(my tuesday/wednesday/friday locations are completely unpredictable.)",
+      "body_snippet": "thomas> The only thing I'm trying to do here right now, is to\n    thomas> propose a \"one size fits all\"-approach to the vast mass of\n    thomas> uninteresting (from a creative point of view) dialogs f",
+      "thread_id": "thread-b7160772a4ae",
+      "thread_depth": 4,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-fcba25e35323",
+      "message_id": "<x265uduy6g.fsf@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard BSA",
+      "from_email_hash": "d79f7f7aadaa643f3d84d8044fae63a21eadaad807f7baf741671876cecc5fab",
+      "date": "2002-12-02T00:17:11+01:00",
+      "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "in_reply_to": "<zYhkOWA3c059EwC4@myatt.demon.co.uk>",
+      "references": [
+        "<20021127231803.20108.22910.Mailman@hypatia.math.ethz.ch>",
+        "<+MwnbGAzVg59EwiF@myatt.demon.co.uk>",
+        "<x28yzd4pyk.fsf@biostat.ku.dk>",
+        "<zYhkOWA3c059EwC4@myatt.demon.co.uk>"
+      ],
+      "body_plain": "Mark Myatt <mark@myatt.demon.co.uk> writes:\n\n> Peter Dalgaard BSA <p.dalgaard@biostat.ku.dk> writes:\n> \n> >To the above discussion, just let me add that there is nothing in\n> >principle keeping you from writing a substantial body of GUI code as\n> >Tcl functions and call those from R, nor is it impossible -- although\n> >what is in the current implementation is rudimentary at best -- to\n> >reverse the roles of the two languages and make calls from Tcl into R.\n> >You could in fact have R load as a Tcl extension, while still\n> >retaining the possibility for the embedded R to add GUI elements, etc.\n> \n> I am not sure whether you are being personal with the use of \"you\" in\n> the above. I will, however, cast my reply in personal terms ... What is\n> stopping ME from getting my hands dirty is that, without agreement that\n> this is the way to go, it might be a lone enterprise which will amount\n> to so much wasted effort. If there is agreement amongst some of us that\n> this is the way to go then I will do what I can to help the effort.\n\nThat was actually meant as an impersonal \"you\"... In general, I think\nsome of the emotions that got stirred up comes from the sentiment that\nwe necessarily have to agree here and now about what to do, which is\nnot at all what I feel is a good way to use an SIG. Rather, I thought\nthat the purpose of the list would be to bandy ideas about regarding\nUI matter large and small. \n\nI don't think that anything will happen until a small group of 1-4\npeople with similar ideas about how things should work sit down and\nmake a prototype where at least some things do work. Then others might\nstart chipping in if they can see that useful things can be added with\nrelatively minor effort.\n\nPersonally, I definitely want to keep developing the Tcl/Tk interface,\nif for nothing else out of intellectual curiosity. At least for a\nwhile until I know its limitations better. I don't worry too much\nabout wasting efforts, most of the problems that I have been bumping\ninto have been interesting enough in themselves (and no more futile\nthan chasing down floating point compiler errors with some versions of\nGCC on some types of Alpha computers...). If you have suggestions\nabout what would be good to have in that interface (or maybe more to\nthe point: how to implement it) you'd be most welcome.\n \n> >The basic thing to avoid is the \"ESS approach\" (don't get me wrong,\n> >some of my best friends are ESS users ;-) ) where the interface must\n> >try to learn about the internal state of R by parsing printed output\n...\n> I have not got into R below the language level and I have been guilty of\n> the ESS approach myself.\n\nThat is of course a natural first approach. It's just that if you can\navoid going through a textual representation it is usually worth it.\nThe current tcltk interface has a similar weakness since it builds Tcl\ncommands as strings and has to deal with Tcl's quoting mechanisms. And\nas Tony pointed out, it is not the fault of ESS as such: there could\nbe hooks that allowed R to be aware of the emacs shell and let a more\ndirect communication take place.\n\n> >I'm not all that happy with the idea of encoding menu structures in\n> >external files either. I really do think that you need a handle on\n> >(say) the system menubar, so that a function can say \"Please add these\n> >items to the toplevel menu\", etc. However, there is not necessarily a\n> >contradiction between the two - the R side can edit the XML\n> >description and ask the GUI shell to reload it; it just feels a bit\n> >clunky.\n> \n> These are details ... I rather like a resource file approach since\n> configuration can be done in an editor rather than requiring function\n> calls. I am not sure how essential is the ability to add menus and items\n> on the fly. I think most users will be happy to stick with menus as\n> defined at application start.\n\nI do actually think it is essential. R is a modular design, and it\nisn't possible to define in advance what a package might wish to\ncontain in terms of user interface. Certain things might be boiled\ndown to a static description that could sit in an external file or in\nan R data structure, but not all. How would a dynamic graphics\npackage like ggobi (um, tkgobi?) fit in for instance? Programmability\nhas been *the* key to the success of the S languages, so why should we\ndiscard the possibility of making our user interfaces programmable?\n\n-- \n   O__  ---- Peter Dalgaard             Blegdamsvej 3  \n  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   \n (*) \\(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907",
+      "body_snippet": "Mark Myatt <mark@myatt.demon.co.uk> writes:\n\n> Peter Dalgaard BSA <p.dalgaard@biostat.ku.dk> writes:\n> \n> >To the above discussion, just let me add that there is nothing in\n> >principle keeping you fr",
+      "thread_id": "thread-fcba25e35323",
+      "thread_depth": 0,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-8fb9ac20469f",
+      "message_id": "<87hedxuwry.fsf@jeeves.blindglobe.net>",
+      "from_name": "A.J. Rossini",
+      "from_email_hash": "e38e01ad6ef7554feaf1446fbf732417739f2726ef60f5377d3a8dfe80e4b2ad",
+      "date": "2002-12-01T15:47:29-08:00",
+      "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "in_reply_to": "<x265uduy6g.fsf@biostat.ku.dk>",
+      "references": [
+        "<20021127231803.20108.22910.Mailman@hypatia.math.ethz.ch>",
+        "<+MwnbGAzVg59EwiF@myatt.demon.co.uk>",
+        "<x28yzd4pyk.fsf@biostat.ku.dk>",
+        "<zYhkOWA3c059EwC4@myatt.demon.co.uk>",
+        "<x265uduy6g.fsf@biostat.ku.dk>"
+      ],
+      "body_plain": ">>>>> \"peter\" == Peter Dalgaard <BSA <p.dalgaard@biostat.ku.dk>> writes:\n\n    peter> I do actually think it is essential. R is a modular design, and it\n    peter> isn't possible to define in advance what a package might wish to\n    peter> contain in terms of user interface. Certain things might be boiled\n    peter> down to a static description that could sit in an external file or in\n    peter> an R data structure, but not all. How would a dynamic graphics\n    peter> package like ggobi (um, tkgobi?) fit in for instance? Programmability\n    peter> has been *the* key to the success of the S languages, so why should we\n    peter> discard the possibility of making our user interfaces programmable?\n\nThis last example is one I'm actually working on (gosh, at least I\nwish I was, maybe after I finish up the 2 clinical trials protocols on\nmy desk tommorow...).\n\nSo, we've got a great dynamic graphics interface (modulo stability,\nspeed, and efficiency of Java/SJava/R interaction, ) using Orca.  It\nworks, all views are linked nicely, you can brush any of the views and\nthis propogates between views and R (i.e. \n        result <- GrandTour(myDataFrame)\n        result$brush(ThisColor,ArrayOfCases)\n        CasesColored <- result$select()\nworks, for about 5 types of high-dimensional views).\n\nBUT...\n\nWhile I can piece together these views fairly easily, even by building\nfrom within R, it would be far simpler and potentially more flexible\nto use a config file to describe the multi-view layout, and linkages\n(or lack thereof) between projections.  \n\nRight now, things are hardcoded, which is fine for prototyping and\nresearch, but lousy for real work.\n\nSo example #2, which I won't spell out, is: How should one describe a\nmultiview visualization?  (components (which exist NOW!)  might be\nhigh-dimensional covariates, correlated data, spatial-temporal data,\nmultivariate timeseries, projection engines (regression, many\nshapes/forms) and dynamic projection engines (grand tours, guided and\nunguided, possibly mixed w/ regression), compositional data, graph\ndata.\n\nSo, another use-case to ponder.  We've got a alpha-quality\n\"visualization builder\" (stolen UML graph modeling code), and part of\nthe reason it is alpha is that the structure is a bit different\n(forced rooted and highly branched tree, a bit more complex that the\nt-test GUI example).\n\nbest,\n-tony\n\n-- \nA.J. Rossini\t\t\t\tRsrch. Asst. Prof. of Biostatistics\nU. of Washington Biostatistics\t\trossini@u.washington.edu\t\nFHCRC/SCHARP/HIV Vaccine Trials Net\trossini@scharp.org\n-------------- http://software.biostat.washington.edu/ --------------\nFHCRC: M: 206-667-7025 (fax=4812)|Voicemail is pretty sketchy/use Email\nUW:   Th: 206-543-1044 (fax=3286)|Change last 4 digits of phone to FAX\n(my tuesday/wednesday/friday locations are completely unpredictable.)",
+      "body_snippet": ">>>>> \"peter\" == Peter Dalgaard <BSA <p.dalgaard@biostat.ku.dk>> writes:\n\n    peter> I do actually think it is essential. R is a modular design, and it\n    peter> isn't possible to define in advance w",
+      "thread_id": "thread-fcba25e35323",
+      "thread_depth": 1,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-da8444629c9a",
+      "message_id": "<200212020118.01268.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ee937b434486ed9032c3a334c49c9d5605e120dffa3d619066cf1ab46afd9dd4",
+      "date": "2002-12-02T01:18:01+01:00",
+      "subject": "[R-gui] (renamed) What do we do?",
+      "subject_clean": "[R-gui] (renamed) What do we do?",
+      "in_reply_to": "<87u1hxzao0.fsf@jeeves.blindglobe.net>",
+      "references": [
+        "<permail-2002120120423924630-friedtcb@ruhr-uni-bochum.de>",
+        "<87u1hxzao0.fsf@jeeves.blindglobe.net>"
+      ],
+      "body_plain": "I must admit, I'm not quite as adept at statistics as you are (or as likely \nmost of the people on this list are), so I can't respond to everything, but \nsome things I can answer:\n\n> To be explicit, the components of the t-test that I'd like to see, to\n> make this a non-trivial example (scalable to the level of the\n> analyst), would be:\n>\n> 1. specification of the groups (2 variables, vs. 1 response and a\n>    grouping variable).\n\nIn the draft: <varselector>, <varslot>. I admit, there's no yet a tag to \nrepresent a widget to select one or more specific values from a nominal-scale \nvar (if the grouping var is not 0-1-coded), but that's not a problem in \nprinciple.\n\n> 2. specification of the variance estimate (and corresponding adjustments)\n\n<input>, <radio>, <checkbutton>, <select> or <optionselector>\n\n> 3. approaches for resampling - data, model based.\n\nI was rather thinking of using a separate dialog, but it's no more than a few \noptions-tags plus a bit of code in the <code>-section to realize this in a \nsingle dialog.\n\n> 4. approaches for sensitivity analysis (related rank-based tests,\n>    related 2-sample based likelihood based tests, using both same and\n>    different probability models, additions of noise or resampling, ala\n>    Gary King's Clarify).\n\nVarious options-tags (see 2), no? Potentially some rather complicated stuff in \nthe <code>-section, but no more complicated than any individual solution \nwould have to be.\n\n> 5. a \"dial-o-meter\" (I don't see it as 1-d, but not sure what the\n>    right interface would be) to control the flexibility inherent in this\n>    (buttons, help settings, link-outs) based on user's skill level,\n>    needs, wants, etc.\n\nDepends on what exactly you mean by this. I can think of three approaches \n(solving different problems), only one of which would require an extension of \nthe specification-draft:\n1) As long as it doesn't touch the core functionality, it's entirely the \napplications responsibility (to e.g. offer transformations to be applied to \nselected objects, or not), and the application would provide that \n\"dial-o-meter\" (in the dialog itself or in a \"global\" place), no need to put \nsomething like that in the spec.\n2) Simple but probably quite feasible approach: Put extended options into a \nseparate <tab> (whatever your app thinks a <tab> should look like, no need \nfor it to really be a classical tabwidget). Probably rather reasonable \nanyway, when we're talking about dialogs with potentially _lots_ of options.\n3) Extend specification to include \"level\"-attributes for all \"widgets\". \nApplication would decide (depended on user setting) which level of widgets to \nshow and simply assume default values for widgets below that level. Other \nthan than, see 1). There's no problem with adding this to the specs. We'd \nhave to agree on rough landmarks in the range of levels to use (potentially \nmulti-dimensional, but dimensions would need to be defined beforehand).\nSome toolkits may have trouble showing/hiding widgets on the fly (Qt handles \nthis like a charm, but I'm not sure, how some others will be doing), but in \nthese cases, it's not a problem of the specification, but would also apply \nwhen trying to find an individual solution.\nIf you want something similar for the help-settings, I propose to use either \n#targets (current proposal is to use HTML for the help), or several \nhelp-sections with different \"level\"-attributes. The application would know \nwhich target to jump to preferrably (once again based on user-settings). This \nwould of course require the plugin-author to provide multiple versions of \nhelp, otherwise the setting will not have any effect. But this is no more \ncomplicated than any \"individual\" approach.\n\n> I don't think that constraining the data format, i.e. #1, would be\n> useful; it is precisely the issue being addressed with the GUI. #3/#4\n> start to become novel, at least they were when others proposed them.\n\nOk, but these really only require a more elaborate <code>-section, no? I mean \nthere's nothing fundamentally new in the GUI, or is there?\n\n> #5 is what I'm hoping to see in your description of the layout,\n> Thomas, i.e. a statistical rather than computational description.  I'm\n> not seeing it at this point, but maybe I'm being obtuse.\n\nNot quite sure, whether you're satisfied with my answers, but I'm open for \nproposals. After all, it's only a draft. I'm very convinced that we should \nuse something along these lines, and at some points I have strong opinions \nabout what should _not_ go into the draft, but I'm definitely open for \ndiscussion of improvements/extensions/changes.\n\n> I don't see what you are doing as particularly novel -- in fact,\n> numerous parts are possible as very simple extensions of ESS or\n> (X)Emacs tools (such as the S-Spreadsheet tool from the mid-90s, or\n> the widget and image tools that have been available for a while).\n> But to each, their own toolset...\n\nIt's not very novel, indeed, and it's not innovative at all. The differences \nto the approaches you mention are that 1) it's relatively easy on the \nplugin-writer, esp. as far as the GUI-side is concerned (one of the major \nreasons I wanted to have something like it in the first place), 2) it's as \nyou say not depended on a specific toolkit (and independency from specific \ntoolkits is a definite prerequestite, if we want something useful to all of \nour projects!) 3) it is meant to allow for easy fallbacks, so that an \napplication, that e.g. does not understand the newly introduced \n\"level\"-attribute is still fully functional 4) it is designed to leave some \nfreedom of look-and-feel-and-functionality to the application.\n2) is probably the most important point, but IMHO, the others deserve \nconsideration, too.\n\n> But #5, if you can figure that specification out...!\n\nHow did I do?\n\nSeriously, I see you have some very interesting ideas, that I did not think of \nand would not have thought of. Also chances are, that new ideas will come up \nlate in the process of trying to agree on a specification, some of which \nmight not be easy to incorporate (although I'm quite optimistic).\nStill, don't you agree, that if we could find a solution that could cover if \nnot 95% then at least some 60% of \"standard\" problems, a lot would still be \nwon?\n\nThomas",
+      "body_snippet": "I must admit, I'm not quite as adept at statistics as you are (or as likely \nmost of the people on this list are), so I can't respond to everything, but \nsome things I can answer:\n\n> To be explicit, t",
+      "thread_id": "thread-b7160772a4ae",
+      "thread_depth": 5,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-31556ecf576c",
+      "message_id": "<200212020141.14047.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ee937b434486ed9032c3a334c49c9d5605e120dffa3d619066cf1ab46afd9dd4",
+      "date": "2002-12-02T01:41:14+01:00",
+      "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "in_reply_to": "<x265uduy6g.fsf@biostat.ku.dk>",
+      "references": [
+        "<20021127231803.20108.22910.Mailman@hypatia.math.ethz.ch>",
+        "<zYhkOWA3c059EwC4@myatt.demon.co.uk>",
+        "<x265uduy6g.fsf@biostat.ku.dk>"
+      ],
+      "body_plain": "> I do actually think it is essential. R is a modular design, and it\n> isn't possible to define in advance what a package might wish to\n> contain in terms of user interface. Certain things might be boiled\n> down to a static description that could sit in an external file or in\n> an R data structure, but not all. How would a dynamic graphics\n> package like ggobi (um, tkgobi?) fit in for instance? Programmability\n> has been *the* key to the success of the S languages, so why should we\n> discard the possibility of making our user interfaces programmable?\n\nWe would not. We'd simply _add_ an easy and portable (across \ntoolkits/approaches) way of solving \"standard\" problems.\n\nThomas",
+      "body_snippet": "> I do actually think it is essential. R is a modular design, and it\n> isn't possible to define in advance what a package might wish to\n> contain in terms of user interface. Certain things might be bo",
+      "thread_id": "thread-fcba25e35323",
+      "thread_depth": 1,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-4e386db3b732",
+      "message_id": "<84bnmAARW069EwYz@myatt.demon.co.uk>",
+      "from_name": "Mark Myatt",
+      "from_email_hash": "9269c5bb9542b39dae93442eb6b59a972ecef3b8f04ece9c54d6cad7276f0800",
+      "date": "2002-12-02T11:35:45Z",
+      "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #22 - 5 msgs",
+      "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #22 - 5 msgs",
+      "in_reply_to": "<20021201232202.317.71584.Mailman@hypatia.math.ethz.ch>",
+      "references": [
+        "<20021201232202.317.71584.Mailman@hypatia.math.ethz.ch>"
+      ],
+      "body_plain": "Regarding configuration, Peter wrote:\n\n>I do actually think it is essential. R is a modular design, and it\n>isn't possible to define in advance what a package might wish to\n>contain in terms of user interface. Certain things might be boiled\n>down to a static description that could sit in an external file or in\n>an R data structure, but not all. How would a dynamic graphics\n>package like ggobi (um, tkgobi?) fit in for instance? Programmability\n>has been *the* key to the success of the S languages, so why should we\n>discard the possibility of making our user interfaces programmable?\n\nYes. Spot on.\n\nMark\n\n--\nMark Myatt",
+      "body_snippet": "Regarding configuration, Peter wrote:\n\n>I do actually think it is essential. R is a modular design, and it\n>isn't possible to define in advance what a package might wish to\n>contain in terms of user i",
+      "thread_id": "thread-4e386db3b732",
+      "thread_depth": 0,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-91743d250e4c",
+      "message_id": "<MABBLJDICACNFOLGIHJOCEGPDBAA.philippe.grosjean@ifremer.fr>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "049ac2b8efcf881dbbcca11f142148e8aa6327ee2862d95deb5adcbe051ac10e",
+      "date": "2002-12-03T11:21:40+01:00",
+      "subject": "[R-gui] R GUI developer's page",
+      "subject_clean": "[R-gui] R GUI developer's page",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\nI appended a \"R GUIs developer's page\" to http://www.r-project.org/GUI. This\npage is intended to be progressively filled with working documents about\nwhat we discuss on this mailing list.\nBest,\n\nPhilippe Grosjean\n\n...........]<(({Â°<...............<Â°}))><...............................\n( ( ( ( (\n ) ) ) ) )      Philippe Grosjean\n( ( ( ( (\n ) ) ) ) )      IFREMER Nantes - DEL/AO\n( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3\n ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41\n( ( ( ( ( \n ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)\n( ( ( ( (       e-mail: phgrosjean@sciviews.org\n ) ) ) ) ) \n( ( ( ( (      \"I'm 100% confident that p is between 0 and 1\"\n ) ) ) ) )                                L. Gonick & W. Smith (1993)\n.......................................................................",
+      "body_snippet": "Hi all,\n\nI appended a \"R GUIs developer's page\" to http://www.r-project.org/GUI. This\npage is intended to be progressively filled with working documents about\nwhat we discuss on this mailing list.\nBes",
+      "thread_id": "thread-91743d250e4c",
+      "thread_depth": 0,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-47a0406ce5b6",
+      "message_id": "<3DEE559C.1000809@almaden.ibm.com>",
+      "from_name": "Johnny Accot",
+      "from_email_hash": "69db4e3638e2d4bf48e87a62414a579ccd40dc2359da1ef673958e11c54609d8",
+      "date": "2002-12-04T11:21:00-08:00",
+      "subject": "[R-gui] R and DirectFB",
+      "subject_clean": "[R-gui] R and DirectFB",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI joined the mailing list yesterday and I am very pleased to hear about this SIG-GUI initiative.  Personally I have often thought about the UI aspects of R, but more in a \"toolkit approach\".  More precisely I wanted (but lacked time) to see if it is easy/possible to interface R with DirectFB (http://directfb.org) under Linux.  My dream would be to have R drive the whole framebuffer, using the Gtk port to DirecFB (http://directfb.org/gtk.xml) or a simple graphical toolkit written in R on top of DirectFB.  The new toolkit would have antialiasing and transparency capabilities, and would be much faster/simpler than its X counterpart.\n\nWould anybody else be interested in such a thing?  Would you have an idea of the difficulty to interface R with DirectFB? (in particular in terms of event loop)\n\nI would appreciate any comment or advice.\n\nThanks,\n\nJohnny",
+      "body_snippet": "Hi,\n\nI joined the mailing list yesterday and I am very pleased to hear about this SIG-GUI initiative.  Personally I have often thought about the UI aspects of R, but more in a \"toolkit approach\".  Mor",
+      "thread_id": "thread-47a0406ce5b6",
+      "thread_depth": 0,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-7a127f729cfa",
+      "message_id": "<MABBLJDICACNFOLGIHJOIEFJDBAA.philippe.grosjean@ifremer.fr>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "049ac2b8efcf881dbbcca11f142148e8aa6327ee2862d95deb5adcbe051ac10e",
+      "date": "2002-12-28T11:22:42+01:00",
+      "subject": "[R-gui] XML specifs for R GUIs dialog boxes",
+      "subject_clean": "[R-gui] XML specifs for R GUIs dialog boxes",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Some clarifications about what we do here:\n------------------------------------------\nWe are specifying the definition of a plugin-description language for\nR-frontends. This language, probably in XML, aims to define simple and\nhighly portable dialog boxes for R graphical user interfaces. Highly\nportable means that it should be as much abstracted as possible, and in\nparticular, remain independent for a particular graphical toolkit, a\nparticular programmation language and a particular plateform. These files\naim to be parsed and translated in actual dialog boxes in the various R GUI\nprojects in a similar (or at least \"compatible\") way, while leaving the\nfreedom to adapts various aspects to obtain a GUI that is homogeneous with\nthe look & feel and some other particularities of each environment\n(environment, here, is taken as a combination of a programmation language, a\ngraphical toolkit, a R GUI project, and possible also a plateform).\n\n\n==== WHY? ====================\nVery early (the discussion stated in R-Help, befor R-SIG-GUI was born),\nthere is a long thread about which graphical toolkit should be used for R\nGUI. This discussion never ended with a winner. As a consequence, we should\nexpect the developement of different GUIs using different graphical\ntoolkits. In this context, how to append graphical elements (mainly menus\nand dialog boxes) to R packages, while remaining compatible with the\ndifferents projects? Answer, by using a higher level definition language of\nthese dialog boxes that makes abstraction of the particularities in each\nproject, as much as possible.\n\n[If, in your own opinion, this is totally silly, or impossible to do for\ntechnical reasons, then please, share your knowledge. Otherwise, we proceed\nfurther.]\n\n\n==== WHAT WE DO ==============\nWe define a specification language using XML tags. It describes what the\ndialog box should contains (various graphical features, or \"widgets\"), and\nhow it should react to user actions (mainly submit R code modified according\nto the context of the dialog box (variable replacement mainly) when the \"OK\"\nbutton is clicked, but also interactions between the dialog boxe and\nR -events-), as well as how to invoke help.\n\nSuch a file is intended to be parsed and translated by an engine (that I\nwill call here, a \"translator\") in an actual form specification/code for\nbuilding the dialog box using a particular programming language combined\nwith a particular graphical toolkit (Tcl/Tk, Gtk, Swing, ActiveX/OCX,...),\nand possibly specialized widgets like those currently developed for tcltk by\nthe Bioconductor group.\n\nThis file should be very easy to build for simplest dialog boxes. Anybody\nshould be able to write one, and to translate it in dialog boxes, at least,\nusing the most automatted \"translators\" (this will be obviously dependent\nupon the level of automatisation provided by each translator). Of course,\nmore complex dialog boxes, will obviously require more work.\n\nThe ultimate level in simplicity would be to pick up any R function and to\ncreate a specification file just by filling a dialog box asking how each\nfunction argument should be translated into a graphical widget (text, list,\npushbuttons,...).\n\n\n==== WHAT WE DO NOT ===========\nSpecification will not fit _all kinds_ of dialog boxes or GUI elements (most\ncomplex ones, or those using very specific features of such or such\ngraphical toolkit or language will no be descriptible by this language). We\nfavor simplicity rather than exhaustivity!\n\nSpecification do not define the code used to interact with the dialog box.\nBasically, an event calls a R function that does the job (or perhaps, if the\naction is simple enough or best handle in another way, a scripting\nlanguage -Thomas proposes PHP, I must admit I would personnally prefer to\nuse JavaScript, other could argue for Perl or Python, or ... probably-). For\nthe simplest dialog boxes, it will also propose a variable replacement\nsystem in R code that is then submitted to R.\n\n\n==== HOW DO WE DO THAT? =======\nWe will produce a draft of a specification document, supported by a little\nbrainstorming in R-SIG-GUI. This draft will be posted in\nhttp://www.r-project.org/GUI. Thomas wrote a skeleton that I formatted. As\nsoon as we agree on its presentation, we will share it and allow everybody\nto append comments on it. The draft will be a compilation of all these\ncomments.\n\nThe critical stage will be to test it. At this point, we will need to write\nthe core of translators in various contexts (at least tcltk for it is\nlargely integrated to R in most plateform, I suppose Thomas is writting\nsomething similar for Qt in its RKward project, I could probably write\nsomething using OCXes under Windows in the framework of SciViews,...).\n\nFlaws and lacks will be reveiled when testing translators. This will lead to\na modified document for the specifications. At that time, we will submit our\nproposal to the whole R community.\n\n\n==== MISC =====================\nThe sensitive question: should we design our own specifications, or should\nwe reuse existing standards (HTML, XForms, Jelly where proposed)?\n\nThe Bioconductor team seems to do something similar, but using lists in R\nlanguage?\n\nTo proceed in the right direction, we all need to identify clearly the same,\nunique goal.\n\nPhilippe\n\n...........]<(({Â°<...............<Â°}))><...............................\n( ( ( ( (\n ) ) ) ) )      Philippe Grosjean\n( ( ( ( (\n ) ) ) ) )      IFREMER Nantes - DEL/AO\n( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3\n ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41\n( ( ( ( ( \n ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)\n( ( ( ( (       e-mail: phgrosjean@sciviews.org\n ) ) ) ) ) \n( ( ( ( (       \"I'm 100% confident that p is between 0 and 1\"\n ) ) ) ) )                                L. Gonick & W. Smith (1993)\n.......................................................................",
+      "body_snippet": "Some clarifications about what we do here:\n------------------------------------------\nWe are specifying the definition of a plugin-description language for\nR-frontends. This language, probably in XML,",
+      "thread_id": "thread-7a127f729cfa",
+      "thread_depth": 0,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-c136e26dab93",
+      "message_id": "<MABBLJDICACNFOLGIHJOAEFPDBAA.phgrosjean@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "3c424dd553515be1310de610ed58358afe0689b16c81c3f5aef1648a8bc7eb30",
+      "date": "2002-12-29T10:02:07+01:00",
+      "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "in_reply_to": "<x28yzd4pyk.fsf@biostat.ku.dk>",
+      "references": [],
+      "body_plain": "Peter Dalgaard wrote:\n\n>[...]; the only really sticky issues\n>that I see are associated with the intertwining of event loops,\n>issuing a locator() call while retaining the ability to navigate\n>menus, etc. and they are sticky whichever way you turn the interface.\n>I suspect that there's not going to be a neat solution of that without\n>some form of multithreading. [There are issues even without an actual\n>GUI, just try something like \"boxplot(1:10); help(boxplot)\" under X11\n>and notice that the plot doesn't redraw until you terminate the help\n>pager.]\n\nYes, yes, yes, for SciViews this is the major reason why I am actually\nlooking for an alternate solution. Believe me, I hate to reinvent the wheel.\nI hate to recode tkTable (or even tkPlot, or so...), but they simply do not\noperate as required in SciViews for now! It is because in SciViews I have\ntwo separate processes (in fact three, not counting the separate threads,\nbut I do not detail for now): one for R, the other one for the GUI. R - GUI\ncommunication is asynchronous. It means that the GUI is _never_ blocked by\nR. I know that for the moment, all this is fuzzy because I still haven't\nreleased any code. It is is preparation and I plan to release something\nbefore March 2003. Patience. Patience.\n\nHowever, I would gladly reconsider my position at a later time, if somebody\nproposes a workaround for these problems. Indeed, I feel a little\nincomfortable to be in the position of rejecting what is already done with\nthe tcltk package and the like. I feel also incomfortable in using a\npropretary and platform dependent alternative (Windows OCXes). However, my\nmajor concern for the moment is to finalize a working prototype that could\ndemontrate the original approach in SciViews, as soon as possible. So, I\ncannot wait until these little problems are solved, and I really have no\ntime to work on them myself.\n\n\n>The basic thing to avoid is the \"ESS approach\" (don't get me wrong,\n>some of my best friends are ESS users ;-) ) where the interface must\n>try to learn about the internal state of R by parsing printed output\n>(and then make the command and its output disappear from the eyes of\n>the end user). There needs to be a direct interface at the level of\n>the language objects.\n\n??? OK, I see why (questions of performances, mainly?). However, SciViews\nuses ESS mode. It is very convenient for some tasks. Just an example: I call\nan enhanced args() that automatically gets arguments of a functions in a\ntooltip as soon as I type \"(\" after the function name. I know, there are\nsome problematic issues in R with generic methods. It was already discussed.\nIt is not solved yet. But anyway. The point is that using the ESS mode, and\nsending something like \"enhanced.args(my function)\\n\", and retrieving the\nresult does the job perfectly well for most functions. Direct access to R\nobjects could be more efficent... Just sticking to efficiency is an\nincomplete view of the problem. There is a pretty nice aspect in the ESS\nmode: it makes abstraction of the way the calculation kernel operates\ninternally as much as possible. You just have to change a little bit the\ncommand string to do exactly the same in Octave, Matlab,... In SciViews, we\nneed a solution that works for R, but also for Octave, Scilab, Matlab,\nSplus, Ox,... and more. So, do not eliminate ESS mode too rapidly!\n\nBy the way, it is for the same reason that I encourage Thomas' initiative to\npropose an abstracted plugin-definition language.\n\nOtherwise, I agree that _most_ commands should not become transparent to the\nuser. In particular, filling a dialog box should not result in transparent\nissuing of commands (like in Splus, for instance). Dialog boxes should just\nserve as a help to generate R code for occasional users that are not very\nfamiliar with the underlying language.\n\nPhilippe\n\n...........]<(({?<...............<?}))><...............................\n( ( ( ( (\n ) ) ) ) )      Philippe Grosjean\n( ( ( ( (\n ) ) ) ) )      IFREMER Nantes - DEL/AO\n( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3\n ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41\n( ( ( ( ( \n ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)\n( ( ( ( (       e-mail: phgrosjean@sciviews.org\n ) ) ) ) ) \n( ( ( ( (       \"I'm 100% confident that p is between 0 and 1\"\n ) ) ) ) )                                L. Gonick & W. Smith (1993)\n.......................................................................",
+      "body_snippet": "Peter Dalgaard wrote:\n\n>[...]; the only really sticky issues\n>that I see are associated with the intertwining of event loops,\n>issuing a locator() call while retaining the ability to navigate\n>menus, ",
+      "thread_id": "thread-c136e26dab93",
+      "thread_depth": 0,
+      "month": "2002-12"
+    },
+    {
+      "id": "msg-b7160772a4ae",
+      "message_id": "<MABBLJDICACNFOLGIHJOOEGEDBAA.phgrosjean@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "3c424dd553515be1310de610ed58358afe0689b16c81c3f5aef1648a8bc7eb30",
+      "date": "2002-12-29T14:19:19+01:00",
+      "subject": "[R-gui]  (renamed) What do we do?",
+      "subject_clean": "[R-gui]  (renamed) What do we do?",
+      "in_reply_to": "<aPxeLGA2xz59EwWm@myatt.demon.co.uk>",
+      "references": [],
+      "body_plain": "Mak Myatt wrote:\n\n>Please humour me on this but I have become confused about the subject of\n>our deliberations.\n\nand in another message:\n\n>What is stopping ME from getting my hands dirty is that, without\n>agreement that this is the way to go, it might be a lone enterprise which\n>will amount to so much wasted effort.\n\nThese are really pertinent remarks. I observe, a little bit disappointed,\nthat we all spend much time in endless discussions on what to do, and what\nnot to do... but nobody really moves forward in taking concrete initiatives.\nAnd this situation is not new. I recall some discussions on R-help last\nyear. I just checked also proceedings of DSC 2001\n(http://www.ci.tuwien.ac.at/Conferences/DSC-2001/Proceedings/index.html),\nthus almost two years ago. I was striked that a few papers already talk\nabout the need of a GUI for R,... the feature that would be nice, the way to\ndo it, tatati, tatata,... And we are almost in 2003 with many volonteers\nready to participate to such a nice project,... but still wondering what\nthey really could do.\n\nPerhaps, loose discussions on a mailing list is not the best approach, or at\nleast, complementary tools are required. Personnally, I would like to save\nas much time as possible to finish a prototype of SciViews and release it\nbefore March 2003 (I currently have a significant amount of code, but I\nstill need to put it all together, write minimum required documentation,\netc...). However, I realize that we urgently need some more formal\norganization with identified tasks and identified leaders for these\ndifferent tasks. A simple thing I can do is to add a web page to\nhttp://www.r-project.org/GUI for this, with a list of running tasks and\nidentified responsible people (i'll do that next week).\n\nCurrently, we have one task (!? obviously we need to extend the list ;-):\n- \"Specification of a plugin-description language for R-frontends\", proposed\nby Thomas Friedrismeier [thomas.friedrichsmeier@ruhr-uni-bochum.de]. Thomas\ntold me however that he has no time enough to manage this task alone. I\nrepost the document in its current state at\nhttp://www.r-project.org/GUI/plugin/Rplug1.rtf.\n\nAdditional propositions and volunteers to start new topics are warmly\nwelcome.\n\nPhilippe\n\n...........]<(({Â°<...............<Â°}))><...............................\n( ( ( ( (\n ) ) ) ) )      Philippe Grosjean\n( ( ( ( (\n ) ) ) ) )      IFREMER Nantes - DEL/AO\n( ( ( ( (       rue de l'Ile d'Yeu, BP 21105, 44311 Nantes Cedex 3\n ) ) ) ) )      tel: (33) 02.40.37.42.29, fax: (33) 02.40.37.42.41\n( ( ( ( ( \n ) ) ) ) )      SciViews project coordinator (http://www.sciviews.org)\n( ( ( ( (       e-mail: phgrosjean@sciviews.org\n ) ) ) ) ) \n( ( ( ( (       \"I'm 100% confident that p is between 0 and 1\"\n ) ) ) ) )                                L. Gonick & W. Smith (1993)\n.......................................................................",
+      "body_snippet": "Mak Myatt wrote:\n\n>Please humour me on this but I have become confused about the subject of\n>our deliberations.\n\nand in another message:\n\n>What is stopping ME from getting my hands dirty is that, with",
+      "thread_id": "thread-b7160772a4ae",
+      "thread_depth": 0,
+      "month": "2002-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-fcba25e35323",
+      "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "message_count": 3,
+      "participants": [
+        "A.J. Rossini",
+        "Peter Dalgaard BSA",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2002-12-02T00:17:11+01:00",
+      "last_reply": "2002-12-02T01:41:14+01:00",
+      "root_message_id": "msg-fcba25e35323"
+    },
+    {
+      "id": "thread-4e386db3b732",
+      "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #22 - 5 msgs",
+      "message_count": 1,
+      "participants": [
+        "Mark Myatt"
+      ],
+      "started": "2002-12-02T11:35:45+00:00",
+      "last_reply": "2002-12-02T11:35:45+00:00",
+      "root_message_id": "msg-4e386db3b732"
+    },
+    {
+      "id": "thread-91743d250e4c",
+      "subject": "[R-gui] R GUI developer's page",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2002-12-03T11:21:40+01:00",
+      "last_reply": "2002-12-03T11:21:40+01:00",
+      "root_message_id": "msg-91743d250e4c"
+    },
+    {
+      "id": "thread-47a0406ce5b6",
+      "subject": "[R-gui] R and DirectFB",
+      "message_count": 1,
+      "participants": [
+        "Johnny Accot"
+      ],
+      "started": "2002-12-04T11:21:00-08:00",
+      "last_reply": "2002-12-04T11:21:00-08:00",
+      "root_message_id": "msg-47a0406ce5b6"
+    },
+    {
+      "id": "thread-7a127f729cfa",
+      "subject": "[R-gui] XML specifs for R GUIs dialog boxes",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2002-12-28T11:22:42+01:00",
+      "last_reply": "2002-12-28T11:22:42+01:00",
+      "root_message_id": "msg-7a127f729cfa"
+    },
+    {
+      "id": "thread-c136e26dab93",
+      "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2002-12-29T10:02:07+01:00",
+      "last_reply": "2002-12-29T10:02:07+01:00",
+      "root_message_id": "msg-c136e26dab93"
+    },
+    {
+      "id": "thread-b7160772a4ae",
+      "subject": "[R-gui]  (renamed) What do we do?",
+      "message_count": 6,
+      "participants": [
+        "A.J. Rossini",
+        "Philippe Grosjean",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2002-12-29T14:19:19+01:00",
+      "last_reply": "2002-12-29T14:19:19+01:00",
+      "root_message_id": "msg-b7160772a4ae"
+    }
+  ]
+}

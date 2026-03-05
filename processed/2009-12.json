@@ -1,0 +1,360 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2009-12",
+  "messages": [
+    {
+      "id": "msg-fcfabd21395f",
+      "message_id": "<bd27195cb539a9f82317852a91e1b7d5.squirrel@mail.stat.ucla.edu>",
+      "from_name": "ian.fellows at stat.ucla.edu",
+      "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
+      "date": "2009-12-02T16:19:36-08:00",
+      "subject": "[R-gui] Deducer: An R data analysis GUI",
+      "subject_clean": "[R-gui] Deducer: An R data analysis GUI",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Announcing a new version of Deducer:\n\nDeducer 0.2-1 is an intuitive, cross-platform graphical data analysis\nsystem. It uses menus and dialogs to guide the user efficiently through\nthe data manipulation and analysis process, and has an excel like\nspreadsheet for easy data frame visualization and editing. Deducer works\nbest when used with the Java based R GUI JGR, but the dialogs can be\ncalled from the command line. Dialogs have also been integrated into the\nWindows Rgui.\n\nThe statistical methods and concepts covered by the dialogs is increasing,\nand currently includes:\n\nData Manipulation: factor editing, Variable recoding, subseting, sorting,\nmerging, transposing, opening data (text and foreign), and saving data\n\nAnalysis: Frequencies, Descriptives, Contingency tables (and related\nstatistics), one-sample, two-sample, k-sample tests, as well as\ncorrelations\n\nModels: Linear Models (with optional HCCM), Logistic regression,\nGeneralized Linear Models\n\nSince it?s initial release in August, there have been significant changes\nto the back-end as well as the programmatic interface. This has resulted\nin increased stability, and made for easier incorporation of Deducer?s R\nfunctions into non-GUI programs. Additionally, a plug-in interface has\nbeen added, which allows arbitrary packages to add onto Deducer?s menu\nsystem.",
+      "body_snippet": "Announcing a new version of Deducer:\n\nDeducer 0.2-1 is an intuitive, cross-platform graphical data analysis\nsystem. It uses menus and dialogs to guide the user efficiently through\nthe data manipulatio",
+      "thread_id": "thread-fcfabd21395f",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-15833d4f047a",
+      "message_id": "<9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>",
+      "from_name": "Mark Heckmann",
+      "from_email_hash": "326ab8408fdb6ffa799b5f40426ff3e2eaa77572838a8fd5f4aeaedeaa611a65",
+      "date": "2009-12-06T14:24:45+01:00",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "subject_clean": "[R-gui] tk2mclistbox problem",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091206/6db419ce/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091206/6db419ce/attachment.pl>",
+      "thread_id": "thread-15833d4f047a",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-430862003ae8",
+      "message_id": "<4B1C1047.1080209@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2009-12-06T21:12:55+01:00",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "subject_clean": "[R-gui] tk2mclistbox problem",
+      "in_reply_to": "<9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>",
+      "references": [
+        "<9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>"
+      ],
+      "body_plain": "Mark Heckmann wrote:\n> Hey Philippe,\n> \n> I have a question concerning an tk2mclistbox problem.\n> I have the same problem as in this post you commented.\n> \n> https://stat.ethz.ch/pipermail/r-sig-gui/2009-February/000911.html\n> \n> It was dated Feb.09. The sample code still throws an error.\n> Are there any advances? Right now it seems the tk2mclistbox cannot be  \n> used?!\n\nI tried to fix the problem, but it appears to be a bug in a Tk widget \nthat is not maintained any more (mclistbox). At the time I integrated it \nin tcltk2, it was fully functional. At this point, there are three \npossibilities:\n\n1) To use a Tktable widget instead (also supported by tcltk2),\n\n2) To use the newer tablelist Tk widget, but that requires some work to \nincorporate it in tcltk2 (http://wiki.tcl.tk/5527; the best choice I think),\n\n3) To fix the old mclistbox widget (we need a good Tcl programmer here).\n\nIf someone wants to submit a patch for #3, or work on a solution for #2, \nI will gladly include it in tcltk2.\nBest,\n\nPhilippe Grosjean\n\n> Am I wrong? What can I do?\n> \n> Thanks in advance!!\n> \n> Mark\n> \n> ???????????????????????????????????????\n> Mark Heckmann\n> Dipl. Wirt.-Ing. cand. Psych.\n> Vorstra?e 93 B01\n> 28359 Bremen\n> Blog: www.markheckmann.de\n> R-Blog: http://ryouready.wordpress.com\n> \n> \n> \n> \n> \n> \t[[alternative HTML version deleted]]\n> \n> \n> \n> ------------------------------------------------------------------------\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Mark Heckmann wrote:\n> Hey Philippe,\n> \n> I have a question concerning an tk2mclistbox problem.\n> I have the same problem as in this post you commented.\n> \n> https://stat.ethz.ch/pipermail/r-sig-gui/2",
+      "thread_id": "thread-15833d4f047a",
+      "thread_depth": 1,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-34c29bfd9204",
+      "message_id": "<4B220CE8.1010404@imbe.med.uni-erlangen.de>",
+      "from_name": "Christiane Raemsch",
+      "from_email_hash": "c8d99184c6c4daea2d1fcaa248f47bdf39a190ac8deaf0831565278311e7798e",
+      "date": "2009-12-11T10:12:08+01:00",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "subject_clean": "[R-gui] tk2mclistbox problem",
+      "in_reply_to": "<4B1C1047.1080209@sciviews.org>",
+      "references": [
+        "<9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>",
+        "<4B1C1047.1080209@sciviews.org>"
+      ],
+      "body_plain": "Philippe Grosjean schrieb:\n> Mark Heckmann wrote:\n>> Hey Philippe,\n>>\n>> I have a question concerning an tk2mclistbox problem.\n>> I have the same problem as in this post you commented.\n>>\n>> https://stat.ethz.ch/pipermail/r-sig-gui/2009-February/000911.html\n>>\n>> It was dated Feb.09. The sample code still throws an error.\n>> Are there any advances? Right now it seems the tk2mclistbox cannot \n>> be  used?!\n>\n> I tried to fix the problem, but it appears to be a bug in a Tk widget \n> that is not maintained any more (mclistbox). At the time I integrated \n> it in tcltk2, it was fully functional. At this point, there are three \n> possibilities:\n>\n> 1) To use a Tktable widget instead (also supported by tcltk2),\n>\n> 2) To use the newer tablelist Tk widget, but that requires some work \n> to incorporate it in tcltk2 (http://wiki.tcl.tk/5527; the best choice \n> I think),\n>\n> 3) To fix the old mclistbox widget (we need a good Tcl programmer here).\n>\n> If someone wants to submit a patch for #3, or work on a solution for \n> #2, I will gladly include it in tcltk2.\n> Best,\n>\n> Philippe Grosjean\n>\n>> Am I wrong? What can I do?\n>>\n>> Thanks in advance!!\n>>\n>> Mark\n>>\n>> ???????????????????????????????????????\n>> Mark Heckmann\n>> Dipl. Wirt.-Ing. cand. Psych.\n>> Vorstra?e 93 B01\n>> 28359 Bremen\n>> Blog: www.markheckmann.de\n>> R-Blog: http://ryouready.wordpress.com\n>>\n>>\n>>\n>>\n>>\n>>     [[alternative HTML version deleted]]\n>>\n>>\n>>\n>> ------------------------------------------------------------------------\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at stat.math.ethz.ch\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\nI also had this problem.\nI found out that the error occurs in the tcl procedure \n'::tk::ListboxBeginSelect', so i rewrite it (removing the part where the \nerror occurs, which was only an additional condition here *).\n\nRun the following in R before creating the listbox:\n\nstring = 'proc ::tk::ListboxBeginSelect {w el {focus 1}} {\n                                    variable ::tk::Priv\n                                    if {[$w cget -selectmode] eq \n\"multiple\"} {\n                                    if {[$w selection includes $el]} {\n                                        $w selection clear $el\n                                    } else {\n                                        $w selection set $el\n                                    }\n                                    } else {\n                                    $w selection clear 0 end\n                                    $w selection set $el\n                                    $w selection anchor $el\n                                    set Priv(listboxSelection) {}\n                                    set Priv(listboxPrev) $el\n                                    }\n                                    event generate $w <<ListboxSelect>>\n                                    if {$focus && [winfo exists $w] *} \n{                     \n                                    focus $w\n                                    }\n                                }'\n                               \n.Tcl(string)\n\nI am not a skilled tcl programmer,  it was only an experiment and for me \nit worked good.\nMaybe it also helps you.\n\nBest Regards,\nC.R?msch",
+      "body_snippet": "Philippe Grosjean schrieb:\n> Mark Heckmann wrote:\n>> Hey Philippe,\n>>\n>> I have a question concerning an tk2mclistbox problem.\n>> I have the same problem as in this post you commented.\n>>\n>> https://s",
+      "thread_id": "thread-15833d4f047a",
+      "thread_depth": 2,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-86977fd83961",
+      "message_id": "<68b1e2610912120215h33db1bd5rf509b5c23891e61e@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2009-12-12T10:15:06Z",
+      "subject": "[R-gui] debugging GUI-creation code (Rcmdr)",
+      "subject_clean": "[R-gui] debugging GUI-creation code (Rcmdr)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all\nHow could I properly debug Rcmdr GUI-creation code? I am working on my\nplug-in and I get a strange error in an unexpected place. When I try\nto debug it via browser()---just before the offending line---and then\n'n' to enter the step-through debugger, I always get stopped at the\nfirst doItAndPrint().\nBrowse[1]> search\n[1] \"asdf\"\nBrowse[1]> searchCommand\n[1] \"findFn('asdf')\"\nBrowse[1]> n\ndebug at /home/liviu/Devel/Rcmdr-dev/Rcmdr.sos/RcmdrPlugin.sos-0.1-0/R/sosInit.R#51:\ndoItAndPrint(paste(\"## Launching RSiteSearch, please be patient..\"))\nBrowse[2]> n\nError in function ()  : invalid connection\nError: invalid connection\n\nHowever I know that the error doesn't occur there, since when I use\nthe same \"asdf\" string in the non-debug section, the function outputs\nas expected. (It is for more complex strings such as \"asdf ; HTMLgrid\"\nthat the function unexpectedly terminates with the above error, in\nnon-debug sessions).\n\nHow should I correctly debug Rcmdr GUI-creation code? Thank you\nLiviu\n\n\n-- \nDo you know how to read?\nhttp://www.alienetworks.com/srtest.cfm\nDo you know how to write?\nhttp://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail",
+      "body_snippet": "Dear all\nHow could I properly debug Rcmdr GUI-creation code? I am working on my\nplug-in and I get a strange error in an unexpected place. When I try\nto debug it via browser()---just before the offendi",
+      "thread_id": "thread-86977fd83961",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-91ddf2f82153",
+      "message_id": "<4B237896.7040604@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2009-12-12T12:03:50+01:00",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "subject_clean": "[R-gui] tk2mclistbox problem",
+      "in_reply_to": "<4B220CE8.1010404@imbe.med.uni-erlangen.de>",
+      "references": [
+        "<9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>",
+        "<4B1C1047.1080209@sciviews.org>",
+        "<4B220CE8.1010404@imbe.med.uni-erlangen.de>"
+      ],
+      "body_plain": "Many thanks! Added to tcltk2 1.1-1 (in a slightly different form). It \nshould shortly appear on CRAN.\nBest,\n\nPhG\n\n\nChristiane Raemsch wrote:\n> Philippe Grosjean schrieb:\n>> Mark Heckmann wrote:\n>>> Hey Philippe,\n>>>\n>>> I have a question concerning an tk2mclistbox problem.\n>>> I have the same problem as in this post you commented.\n>>>\n>>> https://stat.ethz.ch/pipermail/r-sig-gui/2009-February/000911.html\n>>>\n>>> It was dated Feb.09. The sample code still throws an error.\n>>> Are there any advances? Right now it seems the tk2mclistbox cannot \n>>> be  used?!\n>>\n>> I tried to fix the problem, but it appears to be a bug in a Tk widget \n>> that is not maintained any more (mclistbox). At the time I integrated \n>> it in tcltk2, it was fully functional. At this point, there are three \n>> possibilities:\n>>\n>> 1) To use a Tktable widget instead (also supported by tcltk2),\n>>\n>> 2) To use the newer tablelist Tk widget, but that requires some work \n>> to incorporate it in tcltk2 (http://wiki.tcl.tk/5527; the best choice \n>> I think),\n>>\n>> 3) To fix the old mclistbox widget (we need a good Tcl programmer here).\n>>\n>> If someone wants to submit a patch for #3, or work on a solution for \n>> #2, I will gladly include it in tcltk2.\n>> Best,\n>>\n>> Philippe Grosjean\n>>\n>>> Am I wrong? What can I do?\n>>>\n>>> Thanks in advance!!\n>>>\n>>> Mark\n>>>\n>>> ???????????????????????????????????????\n>>> Mark Heckmann\n>>> Dipl. Wirt.-Ing. cand. Psych.\n>>> Vorstra?e 93 B01\n>>> 28359 Bremen\n>>> Blog: www.markheckmann.de\n>>> R-Blog: http://ryouready.wordpress.com\n>>>\n>>>\n>>>\n>>>\n>>>\n>>>     [[alternative HTML version deleted]]\n>>>\n>>>\n>>>\n>>> ------------------------------------------------------------------------\n>>>\n>>> _______________________________________________\n>>> R-SIG-GUI mailing list\n>>> R-SIG-GUI at stat.math.ethz.ch\n>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at stat.math.ethz.ch\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n> I also had this problem.\n> I found out that the error occurs in the tcl procedure \n> '::tk::ListboxBeginSelect', so i rewrite it (removing the part where the \n> error occurs, which was only an additional condition here *).\n> \n> Run the following in R before creating the listbox:\n> \n> string = 'proc ::tk::ListboxBeginSelect {w el {focus 1}} {\n>                                    variable ::tk::Priv\n>                                    if {[$w cget -selectmode] eq \n> \"multiple\"} {\n>                                    if {[$w selection includes $el]} {\n>                                        $w selection clear $el\n>                                    } else {\n>                                        $w selection set $el\n>                                    }\n>                                    } else {\n>                                    $w selection clear 0 end\n>                                    $w selection set $el\n>                                    $w selection anchor $el\n>                                    set Priv(listboxSelection) {}\n>                                    set Priv(listboxPrev) $el\n>                                    }\n>                                    event generate $w <<ListboxSelect>>\n>                                    if {$focus && [winfo exists $w] *} \n> {                                                        focus $w\n>                                    }\n>                                }'\n>                               .Tcl(string)\n> \n> I am not a skilled tcl programmer,  it was only an experiment and for me \n> it worked good.\n> Maybe it also helps you.\n> \n> Best Regards,\n> C.R?msch\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n>",
+      "body_snippet": "Many thanks! Added to tcltk2 1.1-1 (in a slightly different form). It \nshould shortly appear on CRAN.\nBest,\n\nPhG\n\n\nChristiane Raemsch wrote:\n> Philippe Grosjean schrieb:\n>> Mark Heckmann wrote:\n>>> He",
+      "thread_id": "thread-15833d4f047a",
+      "thread_depth": 3,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-ac1672002ffa",
+      "message_id": "<CB9702E9-A523-44DA-A2B7-55171BF667F6@gmx.de>",
+      "from_name": "Mark Heckmann",
+      "from_email_hash": "326ab8408fdb6ffa799b5f40426ff3e2eaa77572838a8fd5f4aeaedeaa611a65",
+      "date": "2009-12-12T13:57:18+01:00",
+      "subject": "[R-gui] gwidgets drag and drop basic question",
+      "subject_clean": "[R-gui] gwidgets drag and drop basic question",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I got stuck while trying to implement Drag and Drop in gwidgets.\nI hoped the following code would call the handler function and thus  \nprint something to the console.\nBut it does not. ISo  suppose I do not understand some basic  \nproperties of the handler mechanism.\nCan someone explain?\n\nw <- gwindow()\nlab  = glabel(\"drag me\",container=w)\ned = gedit(\"drop here\",container = w)\nadddropsource(lab)\nadddroptarget(ed, handler=function(h,...) print(\"arrived\"))\n\nThanks,\nMark\n\n???????????????????????????????????????\nMark Heckmann\nDipl. Wirt.-Ing. cand. Psych.\nVorstra?e 93 B01\n28359 Bremen\nBlog: www.markheckmann.de\nR-Blog: http://ryouready.wordpress.com",
+      "body_snippet": "I got stuck while trying to implement Drag and Drop in gwidgets.\nI hoped the following code would call the handler function and thus  \nprint something to the console.\nBut it does not. ISo  suppose I d",
+      "thread_id": "thread-ac1672002ffa",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-60d123c611a6",
+      "message_id": "<loom.20091213T035927-765@post.gmane.org>",
+      "from_name": "j verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2009-12-13T03:00:20Z",
+      "subject": "[R-gui] gwidgets drag and drop basic question",
+      "subject_clean": "[R-gui] gwidgets drag and drop basic question",
+      "in_reply_to": null,
+      "references": [
+        "<CB9702E9-A523-44DA-A2B7-55171BF667F6@gmx.de>"
+      ],
+      "body_plain": "Mark Heckmann <mark.heckmann <at> gmx.de> writes:\n\n> \n> I got stuck while trying to implement Drag and Drop in gwidgets.\n> I hoped the following code would call the handler function and thus  \n> print something to the console.\n> But it does not. ISo  suppose I do not understand some basic  \n> properties of the handler mechanism.\n> Can someone explain?\n> \n\n\n\nMark, it should, but doesn't. I couldn't figure out how to get dnd with the\ngedit widget to work properly (it would drop the value twice). What yo have\nworks with other widgets. However, it shouldn't be so hard. Below I show how to\ndo this through RGtk2, a fix I'll put on my todo list for the package:\n\n\n\nlibrary(gWidgets)\noptions(guiToolkit=\"RGtk2\")\nw <- gwindow()\ng <- ggroup(cont=w)\nlab  = glabel(\"drag me\",container=g)\ned = gedit(\"drop here\",container = g)\nadddropsource(lab)\n\n## do this:\n\nlibrary(RGtk2)\ngSignalConnect(getToolkitWidget(ed), \"drag-data-received\", f=function(w,...) {\n  print(\"arrived\")\n  val <- w$getText()\n  svalue(ed) <- val\n  })\n\n\n\n--John\n\n\n> w <- gwindow()\n> lab  = glabel(\"drag me\",container=w)\n> ed = gedit(\"drop here\",container = w)\n> adddropsource(lab)\n> adddroptarget(ed, handler=function(h,...) print(\"arrived\"))\n> \n> Thanks,\n> Mark\n> \n> ???????????????????????????????????????\n> Mark Heckmann\n> Dipl. Wirt.-Ing. cand. Psych.\n> Vorstra?e 93 B01\n> 28359 Bremen\n> Blog: www.markheckmann.de\n> R-Blog: http://ryouready.wordpress.com\n>",
+      "body_snippet": "Mark Heckmann <mark.heckmann <at> gmx.de> writes:\n\n> \n> I got stuck while trying to implement Drag and Drop in gwidgets.\n> I hoped the following code would call the handler function and thus  \n> print",
+      "thread_id": "thread-ac1672002ffa",
+      "thread_depth": 1,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-9d97fde44cd2",
+      "message_id": "<7A14A9AE-5FF2-45C4-81D0-7369F3C31A44@ulg.ac.be>",
+      "from_name": "Yan ALPEROVYCH",
+      "from_email_hash": "c936d3e4b55b34ea035ef3f2b424e049ae70a3b79a5dacc604ebc27ad1d238b8",
+      "date": "2009-12-15T18:26:41+01:00",
+      "subject": "[R-gui] R GUI editor window - help field does not return the help topic.",
+      "subject_clean": "[R-gui] R GUI editor window - help field does not return the help topic.",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello everyone, \n\nI am not sure if I am at the right place to put this question, so don't hesitate to redirect me to the correct mailing list. My question is about the editor window under the R GUI on Mac OS 10.6.2. Before the upgrade to R 2.10.1 with GUI 1.31, I was able to call for the help topics from the spotlight-like help field in the upper right corner of the editor. Now it only returns me a blank box, which still slides as before, but the help topic is missing. Is this a frequent problem or is it related to my specific computer? And if it's a general issue, is there some solution please?\n\nThank you for the replies or possible indications on where can I find more hints.\n\nYan ALPEROVYCH\nFinancial Management, FRFC-FNRS Fellow\nHEC-ULg Management School\nTel.: \t+32(4)/232.74.30\nGSM:  \t+32(4)/85.75.04.16 \nE-mail: \ty.alperovych at ulg.ac.be",
+      "body_snippet": "Hello everyone, \n\nI am not sure if I am at the right place to put this question, so don't hesitate to redirect me to the correct mailing list. My question is about the editor window under the R GUI on",
+      "thread_id": "thread-9d97fde44cd2",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-a7a4756b9303",
+      "message_id": "<4B27D56D.3060207@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2009-12-15T19:29:01+01:00",
+      "subject": "[R-gui] R GUI editor window - help field does not return the help\ttopic.",
+      "subject_clean": "[R-gui] R GUI editor window - help field does not return the help\ttopic.",
+      "in_reply_to": "<7A14A9AE-5FF2-45C4-81D0-7369F3C31A44@ulg.ac.be>",
+      "references": [
+        "<7A14A9AE-5FF2-45C4-81D0-7369F3C31A44@ulg.ac.be>"
+      ],
+      "body_plain": "You should fill a bug report for R.\n\nPhG\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons University, Belgium\n( ( ( ( (\n..............................................................\n\nYan ALPEROVYCH wrote:\n> Hello everyone, \n> \n> I am not sure if I am at the right place to put this question, so don't hesitate to redirect me to the correct mailing list. My question is about the editor window under the R GUI on Mac OS 10.6.2. Before the upgrade to R 2.10.1 with GUI 1.31, I was able to call for the help topics from the spotlight-like help field in the upper right corner of the editor. Now it only returns me a blank box, which still slides as before, but the help topic is missing. Is this a frequent problem or is it related to my specific computer? And if it's a general issue, is there some solution please?\n> \n> Thank you for the replies or possible indications on where can I find more hints.\n> \n> Yan ALPEROVYCH\n> Financial Management, FRFC-FNRS Fellow\n> HEC-ULg Management School\n> Tel.: \t+32(4)/232.74.30\n> GSM:  \t+32(4)/85.75.04.16 \n> E-mail: \ty.alperovych at ulg.ac.be\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n>",
+      "body_snippet": "You should fill a bug report for R.\n\nPhG\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aq",
+      "thread_id": "thread-9d97fde44cd2",
+      "thread_depth": 1,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-f817b949374a",
+      "message_id": "<DCF3076A-4754-4891-A1F6-1CC49BC82611@gmx.de>",
+      "from_name": "Mark Heckmann",
+      "from_email_hash": "326ab8408fdb6ffa799b5f40426ff3e2eaa77572838a8fd5f4aeaedeaa611a65",
+      "date": "2009-12-18T12:17:39+01:00",
+      "subject": "[R-gui] gwidgets  - what arguments are possible?",
+      "subject_clean": "[R-gui] gwidgets  - what arguments are possible?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\n1) is there a way to change the color or font size/type in gbuttons  \nand other widgets etc.?\nHere:\nhttp://www.mail-archive.com/r-sig-gui at stat.math.ethz.ch/msg00422.html\nit is pointed out that font size can be changed globally by editing  \nthe ~/.gtkrc-2.0 file.\n\nIs there a way to do it dynamically, like\n\nbutton <- gbutton(\"Hello world\", container=group_2, font.attr=list \n(color=\"red\",style=\"bold\"))\n\nwhich does not work?\n\nWhat I would like is my buttons to change color according to some value.\n\n2) If not in gwidgets, is it possible via the RGtk2 package (have not  \nused it yet directly)?\n\nThanks in advance!\nMark\n\n???????????????????????????????????????\nMark Heckmann\nDipl. Wirt.-Ing. cand. Psych.\nVorstra?e 93 B01\n28359 Bremen\nBlog: www.markheckmann.de\nR-Blog: http://ryouready.wordpress.com",
+      "body_snippet": "Hi all,\n\n1) is there a way to change the color or font size/type in gbuttons  \nand other widgets etc.?\nHere:\nhttp://www.mail-archive.com/r-sig-gui at stat.math.ethz.ch/msg00422.html\nit is pointed out ",
+      "thread_id": "thread-f817b949374a",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-b8e70b341eea",
+      "message_id": "<loom.20091218T200258-583@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2009-12-18T19:20:04Z",
+      "subject": "[R-gui] gwidgets  - what arguments are possible?",
+      "subject_clean": "[R-gui] gwidgets  - what arguments are possible?",
+      "in_reply_to": null,
+      "references": [
+        "<DCF3076A-4754-4891-A1F6-1CC49BC82611@gmx.de>"
+      ],
+      "body_plain": "Mark Heckmann <mark.heckmann <at> gmx.de> writes:\n\n> \n> Hi all,\n> \n> 1) is there a way to change the color or font size/type in gbuttons  \n> and other widgets etc.?\n> Here:\n> http://www.mail-archive.com/r-sig-gui <at> stat.math.ethz.ch/msg00422.html\n> it is pointed out that font size can be changed globally by editing  \n> the ~/.gtkrc-2.0 file.\n> \n> Is there a way to do it dynamically, like\n> \n> button <- gbutton(\"Hello world\", container=group_2, font.attr=list \n> (color=\"red\",style=\"bold\"))\n> \n> which does not work?\n> \n\n\n\nDear Mark,\n\nI fixed the font<- method to work with buttons:\n\nfont(button) <- c(color=\"red\", style=\"bold\")\n\nshould work after the button is constructed. The new version was just uploaded\nto CRAN.\n\nI don't really support themes within gWidgets, but this may not be the most\nstandard way of indicating to the user some value has changed.\n\nHope that helps,\n\nJohn\n\n\n> What I would like is my buttons to change color according to some value.\n> \n> 2) If not in gwidgets, is it possible via the RGtk2 package (have not  \n> used it yet directly)?\n> \n> Thanks in advance!\n> Mark\n> \n> ???????????????????????????????????????\n> Mark Heckmann\n> Dipl. Wirt.-Ing. cand. Psych.\n> Vorstra?e 93 B01\n> 28359 Bremen\n> Blog: www.markheckmann.de\n> R-Blog: http://ryouready.wordpress.com\n>",
+      "body_snippet": "Mark Heckmann <mark.heckmann <at> gmx.de> writes:\n\n> \n> Hi all,\n> \n> 1) is there a way to change the color or font size/type in gbuttons  \n> and other widgets etc.?\n> Here:\n> http://www.mail-archive.c",
+      "thread_id": "thread-f817b949374a",
+      "thread_depth": 1,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-53ef5a060f58",
+      "message_id": "<1261393358.3984.76.camel@druidaiii.nuevegen.net>",
+      "from_name": "Hector Lopez",
+      "from_email_hash": "fb960e8bddaae79a16f72fd06482a5882d185e69ebbb03b921a63a37a6c0ded7",
+      "date": "2009-12-21T12:02:38+01:00",
+      "subject": "[R-gui] EclipseR - a GUI for R in the shadow",
+      "subject_clean": "[R-gui] EclipseR - a GUI for R in the shadow",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi everybody,\n\nWe are just in Christmas time and I want to give you a gift announcing a\nnew (or old one, because it was released 4 years ago) GUI for R:\nEclipseR. \n\nEclipseR was our BSc in Software/System engineering final project on\nSept/2006. I was a member of the developer team, and I think it could be\na good application for statistical uni-depts. or for team researchers.\n\nEclipseR is a java application based in Eclipse RCP platform, and it use\nJRI (now rJava, by Rosuda) library to link it with R. In my opinion, I\nthink it is a good platform to extend it with plug-ins, but I need more\nfeedbacks to be sure it can be useful for someone.\n\nAll source-code and tracking were in my university forge\n(http://forge.udl.es) but it is down from a year ago, and I've created a\nnew tracking environment in: https://labs.nuevegen.net/trac/eclipser ,\nwhere you can read some information about EclipseR, and download it to\ntry it.\n\nI hope it could be useful for you ;)\n\nBests,\n\nH?ctor",
+      "body_snippet": "Hi everybody,\n\nWe are just in Christmas time and I want to give you a gift announcing a\nnew (or old one, because it was released 4 years ago) GUI for R:\nEclipseR. \n\nEclipseR was our BSc in Software/Sy",
+      "thread_id": "thread-53ef5a060f58",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-c2ebafe7a902",
+      "message_id": "<1B278F48-454A-4C0D-B8CD-39F1736EFAA6@gmx.de>",
+      "from_name": "Mark Heckmann",
+      "from_email_hash": "326ab8408fdb6ffa799b5f40426ff3e2eaa77572838a8fd5f4aeaedeaa611a65",
+      "date": "2009-12-23T04:07:25+01:00",
+      "subject": "[R-gui] ggraphics and retrieving mouse coordinate as npc coordinates",
+      "subject_clean": "[R-gui] ggraphics and retrieving mouse coordinate as npc coordinates",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\ni tried to retrieve the mouse coordinates from a ggraphics widget  \nusing a handler. With base graphics system it works fine, but using  \ngrid, the returned values do not make sense to me. How can I transform  \nthe returned values to e.g. npc coordinates?\n\n\tlibrary(RGtk2)\n\tlibrary(gWidgets)\n\n\tw = gwindow(\"ggraphics example\")\n\tg = ggraphics(cont=w, expand=T)\n\tsize(g) <- c(900,900)\n\tSys.sleep(1)\n\tprint(grid.rect())\n\n\taddHandlerClicked(g, handler = function(h,...) {\n   \t\tx <- h$x; y <- h$y\n\t\tprint(c(\"pressed at:\", c(x,y)))\n\t})\t\n\nThanks and merry X-mas\nMark\n\n???????????????????????????????????????\nMark Heckmann\nDipl. Wirt.-Ing. cand. Psych.\nVorstra?e 93 B01\n28359 Bremen\nBlog: www.markheckmann.de\nR-Blog: http://ryouready.wordpress.com",
+      "body_snippet": "Hi all,\n\ni tried to retrieve the mouse coordinates from a ggraphics widget  \nusing a handler. With base graphics system it works fine, but using  \ngrid, the returned values do not make sense to me. Ho",
+      "thread_id": "thread-c2ebafe7a902",
+      "thread_depth": 0,
+      "month": "2009-12"
+    },
+    {
+      "id": "msg-de6e10d17945",
+      "message_id": "<loom.20091228T034118-855@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2009-12-28T02:44:37Z",
+      "subject": "[R-gui] ggraphics and retrieving mouse coordinate as npc coordinates",
+      "subject_clean": "[R-gui] ggraphics and retrieving mouse coordinate as npc coordinates",
+      "in_reply_to": null,
+      "references": [
+        "<1B278F48-454A-4C0D-B8CD-39F1736EFAA6@gmx.de>"
+      ],
+      "body_plain": "Mark Heckmann <mark.heckmann <at> gmx.de> writes:\n\n> \n> Hi all,\n> \n> i tried to retrieve the mouse coordinates from a ggraphics widget  \n> using a handler. With base graphics system it works fine, but using  \n> grid, the returned values do not make sense to me. How can I transform  \n> the returned values to e.g. npc coordinates?\n> \n> \tlibrary(RGtk2)\n> \tlibrary(gWidgets)\n> \n> \tw = gwindow(\"ggraphics example\")\n> \tg = ggraphics(cont=w, expand=T)\n> \tsize(g) <- c(900,900)\n> \tSys.sleep(1)\n> \tprint(grid.rect())\n> \n> \taddHandlerClicked(g, handler = function(h,...) {\n>    \t\tx <- h$x; y <- h$y\n> \t\tprint(c(\"pressed at:\", c(x,y)))\n> \t})\t\n> \n\nThere are two ways. The first is to mimic the handler call in gWidgetsRGtk2\nskipping the call to pltToUsr:\n\n\nf <- function(h,...) {\n  theArgs <- list(...)\n  w <- theArgs[[1]]\n  e <- theArgs[[2]]\n  allocation <- w$GetAllocation()\n  xclick <- e$GetX()\n  yclick <- e$GetY()\n  x <- xclick/allocation$width\n  y <- 1 - (allocation$height - yclick)/allocation$height\n  print(c(x,y))\n}\n\naddHandler(g, signal=\"button-press-event\", handler =f)\n\n(Changing print(c(x,y)) as needed.)\n\nThe other is to invert this function which is what converts the (x,1-y) value\nabove into the output of the handler:\n\npltToUsr <- function(x,y) {\n      plt <- par(\"plt\"); usr = par(\"usr\")\n      c( (usr[2]-usr[1])/(plt[2]-plt[1])*(x - plt[1]) + usr[1],\n         (usr[4] - usr[3])/(plt[4] - plt[3])*(y - plt[3]) + usr[3]\n       )\n}\n\n\n\nHope that helps!\n\n> Thanks and merry X-mas\n> Mark\n> \n> ???????????????????????????????????????\n> Mark Heckmann\n> Dipl. Wirt.-Ing. cand. Psych.\n> Vorstra?e 93 B01\n> 28359 Bremen\n> Blog: www.markheckmann.de\n> R-Blog: http://ryouready.wordpress.com\n>",
+      "body_snippet": "Mark Heckmann <mark.heckmann <at> gmx.de> writes:\n\n> \n> Hi all,\n> \n> i tried to retrieve the mouse coordinates from a ggraphics widget  \n> using a handler. With base graphics system it works fine, but",
+      "thread_id": "thread-c2ebafe7a902",
+      "thread_depth": 1,
+      "month": "2009-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-fcfabd21395f",
+      "subject": "[R-gui] Deducer: An R data analysis GUI",
+      "message_count": 1,
+      "participants": [
+        "ian.fellows at stat.ucla.edu"
+      ],
+      "started": "2009-12-02T16:19:36-08:00",
+      "last_reply": "2009-12-02T16:19:36-08:00",
+      "root_message_id": "msg-fcfabd21395f"
+    },
+    {
+      "id": "thread-15833d4f047a",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "message_count": 4,
+      "participants": [
+        "Christiane Raemsch",
+        "Mark Heckmann",
+        "Philippe Grosjean"
+      ],
+      "started": "2009-12-06T14:24:45+01:00",
+      "last_reply": "2009-12-12T12:03:50+01:00",
+      "root_message_id": "msg-15833d4f047a"
+    },
+    {
+      "id": "thread-86977fd83961",
+      "subject": "[R-gui] debugging GUI-creation code (Rcmdr)",
+      "message_count": 1,
+      "participants": [
+        "Liviu Andronic"
+      ],
+      "started": "2009-12-12T10:15:06+00:00",
+      "last_reply": "2009-12-12T10:15:06+00:00",
+      "root_message_id": "msg-86977fd83961"
+    },
+    {
+      "id": "thread-ac1672002ffa",
+      "subject": "[R-gui] gwidgets drag and drop basic question",
+      "message_count": 2,
+      "participants": [
+        "Mark Heckmann",
+        "j verzani"
+      ],
+      "started": "2009-12-12T13:57:18+01:00",
+      "last_reply": "2009-12-13T03:00:20+00:00",
+      "root_message_id": "msg-ac1672002ffa"
+    },
+    {
+      "id": "thread-9d97fde44cd2",
+      "subject": "[R-gui] R GUI editor window - help field does not return the help topic.",
+      "message_count": 2,
+      "participants": [
+        "Philippe Grosjean",
+        "Yan ALPEROVYCH"
+      ],
+      "started": "2009-12-15T18:26:41+01:00",
+      "last_reply": "2009-12-15T19:29:01+01:00",
+      "root_message_id": "msg-9d97fde44cd2"
+    },
+    {
+      "id": "thread-f817b949374a",
+      "subject": "[R-gui] gwidgets  - what arguments are possible?",
+      "message_count": 2,
+      "participants": [
+        "Mark Heckmann",
+        "john verzani"
+      ],
+      "started": "2009-12-18T12:17:39+01:00",
+      "last_reply": "2009-12-18T19:20:04+00:00",
+      "root_message_id": "msg-f817b949374a"
+    },
+    {
+      "id": "thread-53ef5a060f58",
+      "subject": "[R-gui] EclipseR - a GUI for R in the shadow",
+      "message_count": 1,
+      "participants": [
+        "Hector Lopez"
+      ],
+      "started": "2009-12-21T12:02:38+01:00",
+      "last_reply": "2009-12-21T12:02:38+01:00",
+      "root_message_id": "msg-53ef5a060f58"
+    },
+    {
+      "id": "thread-c2ebafe7a902",
+      "subject": "[R-gui] ggraphics and retrieving mouse coordinate as npc coordinates",
+      "message_count": 2,
+      "participants": [
+        "Mark Heckmann",
+        "john verzani"
+      ],
+      "started": "2009-12-23T04:07:25+01:00",
+      "last_reply": "2009-12-28T02:44:37+00:00",
+      "root_message_id": "msg-c2ebafe7a902"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2011-12",
+  "messages": [
+    {
+      "id": "msg-c5c9bc1d471d",
+      "message_id": "<CAJESSmZbiUBzrpoOThu9pAFhXeesLm=sCth1NPR5LeqjrMU3uA@mail.gmail.com>",
+      "from_name": "christiaan pauw",
+      "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
+      "date": "2011-12-02T15:49:40+02:00",
+      "subject": "[R-gui] Post hoc tweeking of ggenericwidget?",
+      "subject_clean": "[R-gui] Post hoc tweeking of ggenericwidget?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi Everybody\n\nggenericwidet in the gWidgets package is really handy - you can get a\nbasic gui for your function in just about no time. Now I just want to\ntweek it a little bit. For example: I want to use gvarbrowser to\nselect x . Can this type of object be manipulated after the initial\ncreation or must be all be done when it is created? If\n\nIn the process of trying to ascertain this, I tried to see the\nstructure of the object created by ggenericwidget. This is what\nhappened:\nx=ggenericwidget(\"boxplot.default\", container=TRUE)  # example from\nthe help file\nstr(x)\n      # I am trying to use str() to see the structure of x so that I\ncan figure out how to manipulate certain aspect\n\nError in function (classes, fdef, mtable)  :\n  unable to find an inherited method for function \".length\", for\nsignature \"gGenericWidgetANY\", \"guiWidgetsToolkitRGtk2\"\n\nIs this a problem in my system or is the object not accesable to str() ?\n\nThanks in advance\nChristiaan\n\n> sessionInfo()\nR version 2.14.0 (2011-10-31)\nPlatform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\nattached base packages:\n[1] splines   stats     graphics  grDevices utils     datasets\nmethods   base\n\nother attached packages:\n[1] cjp_1.1              Hmisc_3.9-0          survival_2.36-10\nRGtk2_2.20.19        gWidgetsRGtk2_0.0-77 traitr_0.12\n[7] gWidgets_0.0-47      proto_0.3-9.2        digest_0.5.1\n\nloaded via a namespace (and not attached):\n[1] cluster_1.14.1 grid_2.14.0    lattice_0.20-0 tools_2.14.0\n\n-- \nChristiaan Pauw\nNova Institute\nwww.nova.org.za",
+      "body_snippet": "Hi Everybody\n\nggenericwidet in the gWidgets package is really handy - you can get a\nbasic gui for your function in just about no time. Now I just want to\ntweek it a little bit. For example: I want to ",
+      "thread_id": "thread-c5c9bc1d471d",
+      "thread_depth": 0,
+      "month": "2011-12"
+    },
+    {
+      "id": "msg-5129e890db33",
+      "message_id": "<loom.20111202T214810-816@post.gmane.org>",
+      "from_name": "j verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2011-12-02T20:55:52Z",
+      "subject": "[R-gui] Post hoc tweeking of ggenericwidget?",
+      "subject_clean": "[R-gui] Post hoc tweeking of ggenericwidget?",
+      "in_reply_to": null,
+      "references": [
+        "<CAJESSmZbiUBzrpoOThu9pAFhXeesLm=sCth1NPR5LeqjrMU3uA@mail.gmail.com>"
+      ],
+      "body_plain": "christiaan pauw <cjpauw <at> gmail.com> writes:\n\n> \n> Hi Everybody\n> \n> ggenericwidet in the gWidgets package is really handy - you can get a\n> basic gui for your function in just about no time. Now I just want to\n> tweek it a little bit. For example: I want to use gvarbrowser to\n> select x . Can this type of object be manipulated after the initial\n> creation or must be all be done when it is created? If\n> \n\n\nThe idea behind this widget is there are two steps: one to create\na list specifying how to layout the dialog and the other to make the \ndialog. If you want to modify the object, you modify the list, not the \ndialog. The list can be obtained two ways. See either:\n\ncat(gWidgets:::autogenerategeneric(mean))\n\nor\n\nsvalue(ggenericwidget(mean))\n\n\nThe whole thing is pretty limited and you'll bump into its walls\nif you try too much, but it can make basic dialogs very simple.\nThe gformlayout adds a bit more functionality for mapping a list \ninto a dialog, but has nothing to autogenerate the list.\n\n--John\n\n> Thanks in advance\n> Christiaan\n> \n> > sessionInfo()\n> R version 2.14.0 (2011-10-31)\n> Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)\n> \n> locale:\n> [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n> \n> attached base packages:\n> [1] splines   stats     graphics  grDevices utils     datasets\n> methods   base\n> \n> other attached packages:\n> [1] cjp_1.1              Hmisc_3.9-0          survival_2.36-10\n> RGtk2_2.20.19        gWidgetsRGtk2_0.0-77 traitr_0.12\n> [7] gWidgets_0.0-47      proto_0.3-9.2        digest_0.5.1\n> \n> loaded via a namespace (and not attached):\n> [1] cluster_1.14.1 grid_2.14.0    lattice_0.20-0 tools_2.14.0\n>",
+      "body_snippet": "christiaan pauw <cjpauw <at> gmail.com> writes:\n\n> \n> Hi Everybody\n> \n> ggenericwidet in the gWidgets package is really handy - you can get a\n> basic gui for your function in just about no time. Now I",
+      "thread_id": "thread-c5c9bc1d471d",
+      "thread_depth": 1,
+      "month": "2011-12"
+    },
+    {
+      "id": "msg-ebd29b109843",
+      "message_id": "<CAJESSmZtRoEvFPcwUJ5gAfZP76u4P5n70XPrcMDXs1fVGezBHQ@mail.gmail.com>",
+      "from_name": "christiaan pauw",
+      "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
+      "date": "2011-12-03T14:02:10+02:00",
+      "subject": "[R-gui] Post hoc tweeking of ggenericwidget?",
+      "subject_clean": "[R-gui] Post hoc tweeking of ggenericwidget?",
+      "in_reply_to": "<loom.20111202T214810-816@post.gmane.org>",
+      "references": [
+        "<CAJESSmZbiUBzrpoOThu9pAFhXeesLm=sCth1NPR5LeqjrMU3uA@mail.gmail.com>",
+        "<loom.20111202T214810-816@post.gmane.org>"
+      ],
+      "body_plain": "Thanks John\n\nI have tried another approach after reading your advice. I followed\nthe example in the traitr vignette and included ggenericwidget inside\na traitr dialog together with a gvarbrowser object. Now you can drop\nobjects from the wordkspace browser (because in practice I always\nfroget or misspel something). All that is needed to implement this for\nanother function is varying the second last line.\n\nregards\nChristiaan\n\nrequire(traitr)\noptions(\"guiToolkit\"=\"RGtk2\")\n\ntt=stats:::t.test.default\n\nd.dlg <- aDialog(items=list(),\ntitle=\"generic dialog\",\nhelp_string=\"You're on your own here. Good night and good luck\",\nbuttons=NULL\n)\n\ng=aGroup(attr=list(size=c(500,500)))\ng2=aGroup()\n\ng.view <- aGroup(\naContainer(\naFrame(aContainer(g2),label=\"Write var name or drop var for x\")\n),\naFrame(aContainer(g),label=\"Workspace Browser\")\n,horizontal=TRUE)\n\t\nd.dlg$make_gui(gui_layout=g.view,visible=FALSE)\n\nvarbrowser <- gvarbrowser(cont=g$container)\ntt.w <- ggenericwidget(tt,cont=g2$container)\n\nd.dlg$visible(TRUE)\n\n\nOn 2 December 2011 22:55, j verzani <jverzani at gmail.com> wrote:\n> christiaan pauw <cjpauw <at> gmail.com> writes:\n>\n>>\n>> Hi Everybody\n>>\n>> ggenericwidet in the gWidgets package is really handy - you can get a\n>> basic gui for your function in just about no time. Now I just want to\n>> tweek it a little bit. For example: I want to use gvarbrowser to\n>> select x . Can this type of object be manipulated after the initial\n>> creation or must be all be done when it is created? If\n>>\n>\n> The idea behind this widget is there are two steps: one to create\n> a list specifying how to layout the dialog and the other to make the\n> dialog. If you want to modify the object, you modify the list, not the\n> dialog. The list can be obtained two ways. See either:\n>\n> cat(gWidgets:::autogenerategeneric(mean))\n>\n> or\n>\n> svalue(ggenericwidget(mean))\n>\n> The whole thing is pretty limited and you'll bump into its walls\n> if you try too much, but it can make basic dialogs very simple.\n> The gformlayout adds a bit more functionality for mapping a list\n> into a dialog, but has nothing to autogenerate the list.\n-- \nChristiaan Pauw\nNova Institute\nwww.nova.org.za",
+      "body_snippet": "Thanks John\n\nI have tried another approach after reading your advice. I followed\nthe example in the traitr vignette and included ggenericwidget inside\na traitr dialog together with a gvarbrowser objec",
+      "thread_id": "thread-c5c9bc1d471d",
+      "thread_depth": 2,
+      "month": "2011-12"
+    },
+    {
+      "id": "msg-a2d758019206",
+      "message_id": "<5A791953-3AF4-45F7-A83E-935EA2BA3FD1@cornell.edu>",
+      "from_name": "Sang Chul Choi",
+      "from_email_hash": "f4d29483fcf56642c4efad9052213c91d3dbbc77df4f77bd27e18ac91984c7db",
+      "date": "2011-12-21T19:36:55Z",
+      "subject": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
+      "subject_clean": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI am wondering how \"R.app GUI 1.41 for Mac OS X\" is built from the source code, and am messing around about the R project web site.\n\nMy question is if there are some scripts for packaging built R and R-GUI binaries to a Mac OS X install package (I was able to build R and R-GUI, but I could not find a way to package them for installation). If so, where could I find it?  I'm new to either building R from scratch or packaging a Mac installation.  When I was reading \"R for Mac OS X Developer's Page\" at http://r.research.att.com/, I thought that there must be some scripts for packaging to create an installation file, such as R-2.14-branch-leopard.pkg in the web site at http://r.research.att.com/.  I could not find any of such script or helpful information.\n\nThank you,\n\nSangChul",
+      "body_snippet": "Hi,\n\nI am wondering how \"R.app GUI 1.41 for Mac OS X\" is built from the source code, and am messing around about the R project web site.\n\nMy question is if there are some scripts for packaging built R",
+      "thread_id": "thread-a2d758019206",
+      "thread_depth": 0,
+      "month": "2011-12"
+    },
+    {
+      "id": "msg-f2c9cb18c0af",
+      "message_id": "<4EF2E384.4020300@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2011-12-22T09:00:04+01:00",
+      "subject": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
+      "subject_clean": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
+      "in_reply_to": "<5A791953-3AF4-45F7-A83E-935EA2BA3FD1@cornell.edu>",
+      "references": [
+        "<5A791953-3AF4-45F7-A83E-935EA2BA3FD1@cornell.edu>"
+      ],
+      "body_plain": "The sig list for Macs is probably more appropriate since Simon Urbanek - \nwho builds that - is very active on that list.\n\nBest,\nUwe Ligges\n\n\nOn 21.12.2011 20:36, Sang Chul Choi wrote:\n> Hi,\n>\n> I am wondering how \"R.app GUI 1.41 for Mac OS X\" is built from the source code, and am messing around about the R project web site.\n>\n> My question is if there are some scripts for packaging built R and R-GUI binaries to a Mac OS X install package (I was able to build R and R-GUI, but I could not find a way to package them for installation). If so, where could I find it?  I'm new to either building R from scratch or packaging a Mac installation.  When I was reading \"R for Mac OS X Developer's Page\" at http://r.research.att.com/, I thought that there must be some scripts for packaging to create an installation file, such as R-2.14-branch-leopard.pkg in the web site at http://r.research.att.com/.  I could not find any of such script or helpful information.\n>\n> Thank you,\n>\n> SangChul\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "The sig list for Macs is probably more appropriate since Simon Urbanek - \nwho builds that - is very active on that list.\n\nBest,\nUwe Ligges\n\n\nOn 21.12.2011 20:36, Sang Chul Choi wrote:\n> Hi,\n>\n> I am w",
+      "thread_id": "thread-a2d758019206",
+      "thread_depth": 1,
+      "month": "2011-12"
+    },
+    {
+      "id": "msg-2a0406afe66e",
+      "message_id": "<CA1AAAA8-B20C-4E2E-B9CB-B73D41196255@cornell.edu>",
+      "from_name": "Sang Chul Choi",
+      "from_email_hash": "f4d29483fcf56642c4efad9052213c91d3dbbc77df4f77bd27e18ac91984c7db",
+      "date": "2011-12-22T13:39:32Z",
+      "subject": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
+      "subject_clean": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
+      "in_reply_to": "<4EF2E384.4020300@statistik.tu-dortmund.de>",
+      "references": [
+        "<5A791953-3AF4-45F7-A83E-935EA2BA3FD1@cornell.edu>",
+        "<4EF2E384.4020300@statistik.tu-dortmund.de>"
+      ],
+      "body_plain": "Thank you! I did not realize it at the time when I posted the message.  Thankfully, two people have helped me find the answer to the question.\n\nAnd, I'm sorry for the \"HTML\" message. I hope that this message is in plain text.\n\nThank you,\n\nSangChul\n\nOn Dec 22, 2011, at 3:00 AM, Uwe Ligges wrote:\n\n> The sig list for Macs is probably more appropriate since Simon Urbanek - who builds that - is very active on that list.\n> \n> Best,\n> Uwe Ligges\n> \n> \n> On 21.12.2011 20:36, Sang Chul Choi wrote:\n>> Hi,\n>> \n>> I am wondering how \"R.app GUI 1.41 for Mac OS X\" is built from the source code, and am messing around about the R project web site.\n>> \n>> My question is if there are some scripts for packaging built R and R-GUI binaries to a Mac OS X install package (I was able to build R and R-GUI, but I could not find a way to package them for installation). If so, where could I find it?  I'm new to either building R from scratch or packaging a Mac installation.  When I was reading \"R for Mac OS X Developer's Page\" at http://r.research.att.com/, I thought that there must be some scripts for packaging to create an installation file, such as R-2.14-branch-leopard.pkg in the web site at http://r.research.att.com/.  I could not find any of such script or helpful information.\n>> \n>> Thank you,\n>> \n>> SangChul\n>> \n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Thank you! I did not realize it at the time when I posted the message.  Thankfully, two people have helped me find the answer to the question.\n\nAnd, I'm sorry for the \"HTML\" message. I hope that this ",
+      "thread_id": "thread-a2d758019206",
+      "thread_depth": 2,
+      "month": "2011-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-c5c9bc1d471d",
+      "subject": "[R-gui] Post hoc tweeking of ggenericwidget?",
+      "message_count": 3,
+      "participants": [
+        "christiaan pauw",
+        "j verzani"
+      ],
+      "started": "2011-12-02T15:49:40+02:00",
+      "last_reply": "2011-12-03T14:02:10+02:00",
+      "root_message_id": "msg-c5c9bc1d471d"
+    },
+    {
+      "id": "thread-a2d758019206",
+      "subject": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
+      "message_count": 3,
+      "participants": [
+        "Sang Chul Choi",
+        "Uwe Ligges"
+      ],
+      "started": "2011-12-21T19:36:55+00:00",
+      "last_reply": "2011-12-22T13:39:32+00:00",
+      "root_message_id": "msg-a2d758019206"
+    }
+  ]
+}

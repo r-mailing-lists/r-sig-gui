@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2011-04",
+  "messages": [
+    {
+      "id": "msg-0d8e09433a05",
+      "message_id": "<4D99C21B.10307@yahoo.com.br>",
+      "from_name": "Cleber N. Borges",
+      "from_email_hash": "0b8bcead7baccf2b0076ea176ba18d3d66b73de88c9e56149b6ac78c2f7e6170",
+      "date": "2011-04-04T10:05:31-03:00",
+      "subject": "[R-gui] RGtk2: How to populate an GtkListStore data model?",
+      "subject_clean": "[R-gui] RGtk2: How to populate an GtkListStore data model?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "hello all\nI am trying to learn how to use the RGtk2 package...\nso, my first problem is: I don't get the right way for populate my \ngtkListStore object!\nany help is welcome... because I am trying several day to mount the code...\nThanks in advanced\nCleber N. Borges\n---------------------------\n# my testing code\n\nlibrary(RGtk2)\nwin <- gtkWindowNew()\ndatamodel <- gtkListStoreNew('gchararray')\ntreeview <- gtkTreeViewNew()\nrenderer <- gtkCellRendererText()\ncol_0 <- gtkTreeViewColumnNewWithAttributes(title=\"TitleXXX\", \ncell=renderer, \"text\"=\"Bar\")\nnc_next <- gtkTreeViewInsertColumn(object=treeview, column=col_0, \nposition=0)\ngtkTreeViewSetModel( treeview, datamodel )\nwin$add( treeview ) # is there an alternative function for this?\n\n# iter <- gtkTreeModelGetIterFirst( datamodel )[[2]]\n# this function don't give VALID iter\n# gtkListStoreIterIsValid( datamodel, iter )  result in FALSE\niter <- gtkListStoreInsert( datamodel, position=0 )[[2]]\ngtkListStoreIterIsValid( datamodel, iter )\n\n# the help of this function say to terminated in -1 value\n# but -1 crash the R-pckage (or the gtk)...\ngtkListStoreSet(object=datamodel, iter=iter, 0, \"textFoo\")\n# don't make any difference in the window... :-(\n\n\n----\nR version 2.13.0 alpha (2011-03-27 r55091)\nPlatform: i386-pc-mingw32/i386 (32-bit)\n\nlocale:\n[1] LC_COLLATE=Portuguese_Brazil.1252\n[2] LC_CTYPE=Portuguese_Brazil.1252\n[3] LC_MONETARY=Portuguese_Brazil.1252\n[4] LC_NUMERIC=C\n[5] LC_TIME=Portuguese_Brazil.1252\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods\n[7] base\n\nother attached packages:\n[1] RGtk2_2.20.8\n\nloaded via a namespace (and not attached):\n[1] tools_2.13.0\n>\n\n\nmy gtk version == 2.16.2",
+      "body_snippet": "hello all\nI am trying to learn how to use the RGtk2 package...\nso, my first problem is: I don't get the right way for populate my \ngtkListStore object!\nany help is welcome... because I am trying sever",
+      "thread_id": "thread-0d8e09433a05",
+      "thread_depth": 0,
+      "month": "2011-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0d8e09433a05",
+      "subject": "[R-gui] RGtk2: How to populate an GtkListStore data model?",
+      "message_count": 1,
+      "participants": [
+        "Cleber N. Borges"
+      ],
+      "started": "2011-04-04T10:05:31-03:00",
+      "last_reply": "2011-04-04T10:05:31-03:00",
+      "root_message_id": "msg-0d8e09433a05"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+From steve at paradise.stat.tku.edu.tw  Wed Jun 11 16:20:34 2003
+From: steve at paradise.stat.tku.edu.tw (Steve Chen)
+Date: Wed Jun 11 23:38:57 2003
+Subject: [R-gui] Announcing R_PHP_Online version 0.1
+Message-ID: <Pine.LNX.4.21.0306111519510.15609-100000@paradise.stat.tku.edu.tw>
+
+Hi all,
+
+I am releasing version 0.1 of my R_PHP_Online package.
+This is an online CGI package for running R programs via Web interface
+like RWeb, but it's written in PHP and it can show graphic outputs.
+
+The R_PHP_Online can be found at
+
+http://steve-chen.net/R_PHP/
+
+or at
+
+http://steve.stat.tku.edu.tw/R_PHP/
+
+and you can use the demo or download version 0.1 there.
+
+Regards,
+
+Steve Chen,
+Associate Professor, Department of Statistics,
+TamKang University, Taiwan
+
+From vtas at hotmail.com  Mon Jun 30 14:30:25 2003
+From: vtas at hotmail.com (Vytautas M.)
+Date: Mon Jun 30 15:30:56 2003
+Subject: [R-gui] IDE/Script Editor
+Message-ID: <BAY2-F151bDt3HvoFOA000000a5@hotmail.com>
+
+take a look at
+
+syn.sf.net
+
+for open source, customisable syn Text Editor with R syntax highliting.
+
+Vytautas Maniusis
+

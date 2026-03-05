@@ -1,0 +1,570 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2011-05",
+  "messages": [
+    {
+      "id": "msg-ec2b2de11907",
+      "message_id": "<926CC2893BF56F41934855A286B9E9DFD202@GROWLER.ern.nps.edu>",
+      "from_name": "Fricker, Ronald (Ron) (CIV)",
+      "from_email_hash": "652b976b9c1a2a3a3ba87f3ac68a01e13b17e35a9e92d85aec2cf159b9bac5a8",
+      "date": "2011-05-07T01:14:41Z",
+      "subject": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "subject_clean": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110507/37fe9753/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110507/37fe9753/attachment.pl>",
+      "thread_id": "thread-ec2b2de11907",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-a65e065bd498",
+      "message_id": "<36186D2E0727CE4E8D6465C0F305A33990A47A56EF@VTTMAIL.ad.vtt.fi>",
+      "from_name": "Virkki Arho",
+      "from_email_hash": "76b013f0ba6227a65f6ab8a8370b922d0310d8130b5afed495ef9d24e1785144",
+      "date": "2011-05-10T22:56:47+03:00",
+      "subject": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "subject_clean": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "in_reply_to": "<926CC2893BF56F41934855A286B9E9DFD202@GROWLER.ern.nps.edu>",
+      "references": [
+        "<926CC2893BF56F41934855A286B9E9DFD202@GROWLER.ern.nps.edu>"
+      ],
+      "body_plain": "Dear Ron,\n\nI am sorry about not being able to help you with these direct questions, but the sentence \"Right now I'm testing the code on my local PC using localServerOpen()\" caught my attention. Namely, I am very happy with the GTK2 version gwidgets, but had to abandon gWidgetsWWW because it was unreliable with long distance remote connections (with early 2010 versions). I wish I could understand the underlying javascript machinery better to help the authors to fix this...\n\nNevertheless, have you tested that you site will work in the actual use? At least I would be very happy to hear your experiences - as I feel that the technology itself would be very easy way to go for creating web pages (as compared to jumping into the tedius Java/JSP -world to do this. I am still hesitating in taking such a step).\n\nBest Wishes,\nArho\n\n\n--\nArho Virkki\nPhD in Applied Mathematics\nResearch Scientist & Project Manager\nVTT Technical Research Centre of Finland\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-project.org] On Behalf Of Fricker, Ronald (Ron) (CIV)\nSent: 7. toukokuuta 2011 4:15\nTo: r-sig-gui at r-project.org\nSubject: [R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage\n\nAll:  Using gWidgetsWWW, I'm in the process of designing a website that will provide users with a GUI to interact with various datasets.  As part of that, I want to provide users the ability select particular variables (via combo boxes) that will then result in summary (text) output being returned to the webpage.  Think of it as their choices ultimately result in a one- or two-way table being returned from the R table() function.\n\nThe way I have implemented it is with a series of comboboxes that users use to make selections and that ultimately return table() output to a gtext widget.  In so doing, I was essentially following the example at the end of \"Examples for gWidgets\" (Section 17.2, An alternative to ggenericwidget).  Right now I'm testing the code on my local PC using localServerOpen().\n\nThe problem is not with the function, but with the output.  Specifically, in the output the formatting (particularly newline returns) are stripped out and my table turns into a long string of numbers.  Similarly, any text that I add to the gtext widget is just appended.  So, I just get a long string of text and numbers that is essentially unintelligible.\n\nWhat I want is output similar to what I would see in the R Console were I to generate a table there.  In an attempt to correct this, I have tried all manner of font options such as font.attr=c(\"monospace\"), etc., and it seems that no matter what I try I can neither affect the displayed font (it's some sort of proportional Arial-like font) nor the exclusion of line returns.  (When I include \\n in the text, it's simply stripped out/ignored.  However, \\t works.)\n\nNow, when I run the same code under gWidgets, I get a Courier-style font and the line returns show up.  That is, the output in the gtext widget looks much like I would see in the R Console.  So, my guess is that the browser is overriding the gWidgetsWWW output.  I'm running this in the latest version of Firefox.  (When I ran the same code using IE 9.0, the gtext widget does not even show up, but that's a different issue...)\n\nWith all that as background, two questions:\n\n(1) Is the use of the gtext widget a good approach for what I want to do, or is there a better approach?\n\n(2) If the gtext widget is the way to go, any suggestions for solving the above problem?\n\nMany thanks,\nRon\nAssociate Professor\nOperations Research Dept.\nNaval Postgraduate School\nMonterey, CA, USA\n\n\n\t[[alternative HTML version deleted]]\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at r-project.org\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Dear Ron,\n\nI am sorry about not being able to help you with these direct questions, but the sentence \"Right now I'm testing the code on my local PC using localServerOpen()\" caught my attention. Namely",
+      "thread_id": "thread-ec2b2de11907",
+      "thread_depth": 1,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-3e09e0e021e3",
+      "message_id": "<926CC2893BF56F41934855A286B9E9DFE89E@GROWLER.ern.nps.edu>",
+      "from_name": "Fricker, Ronald (Ron) (CIV)",
+      "from_email_hash": "652b976b9c1a2a3a3ba87f3ac68a01e13b17e35a9e92d85aec2cf159b9bac5a8",
+      "date": "2011-05-10T20:35:07Z",
+      "subject": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "subject_clean": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "in_reply_to": "<36186D2E0727CE4E8D6465C0F305A33990A47A56EF@VTTMAIL.ad.vtt.fi>",
+      "references": [
+        "<926CC2893BF56F41934855A286B9E9DFD202@GROWLER.ern.nps.edu>",
+        "<36186D2E0727CE4E8D6465C0F305A33990A47A56EF@VTTMAIL.ad.vtt.fi>"
+      ],
+      "body_plain": "Hi Virkki:  We're still in the process of setting the site up.  Given that we plan to only allow a restricted set of operations on the server, I'm hopeful we can get it all to work consistently.  But the proof will be once we go operational.  Happy to let you know how this all works out once we do.\n\nBest,\nRon\n\n-----Original Message-----\nFrom: Virkki Arho [mailto:Arho.Virkki at vtt.fi] \nSent: Tuesday, May 10, 2011 12:57 PM\nTo: Fricker, Ronald (Ron) (CIV); r-sig-gui at r-project.org\nSubject: RE: [R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage\n\n\nDear Ron,\n\nI am sorry about not being able to help you with these direct questions, but the sentence \"Right now I'm testing the code on my local PC using localServerOpen()\" caught my attention. Namely, I am very happy with the GTK2 version gwidgets, but had to abandon gWidgetsWWW because it was unreliable with long distance remote connections (with early 2010 versions). I wish I could understand the underlying javascript machinery better to help the authors to fix this...\n\nNevertheless, have you tested that you site will work in the actual use? At least I would be very happy to hear your experiences - as I feel that the technology itself would be very easy way to go for creating web pages (as compared to jumping into the tedius Java/JSP -world to do this. I am still hesitating in taking such a step).\n\nBest Wishes,\nArho\n\n\n--\nArho Virkki\nPhD in Applied Mathematics\nResearch Scientist & Project Manager\nVTT Technical Research Centre of Finland\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-project.org] On Behalf Of Fricker, Ronald (Ron) (CIV)\nSent: 7. toukokuuta 2011 4:15\nTo: r-sig-gui at r-project.org\nSubject: [R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage\n\nAll:  Using gWidgetsWWW, I'm in the process of designing a website that will provide users with a GUI to interact with various datasets.  As part of that, I want to provide users the ability select particular variables (via combo boxes) that will then result in summary (text) output being returned to the webpage.  Think of it as their choices ultimately result in a one- or two-way table being returned from the R table() function.\n\nThe way I have implemented it is with a series of comboboxes that users use to make selections and that ultimately return table() output to a gtext widget.  In so doing, I was essentially following the example at the end of \"Examples for gWidgets\" (Section 17.2, An alternative to ggenericwidget).  Right now I'm testing the code on my local PC using localServerOpen().\n\nThe problem is not with the function, but with the output.  Specifically, in the output the formatting (particularly newline returns) are stripped out and my table turns into a long string of numbers.  Similarly, any text that I add to the gtext widget is just appended.  So, I just get a long string of text and numbers that is essentially unintelligible.\n\nWhat I want is output similar to what I would see in the R Console were I to generate a table there.  In an attempt to correct this, I have tried all manner of font options such as font.attr=c(\"monospace\"), etc., and it seems that no matter what I try I can neither affect the displayed font (it's some sort of proportional Arial-like font) nor the exclusion of line returns.  (When I include \\n in the text, it's simply stripped out/ignored.  However, \\t works.)\n\nNow, when I run the same code under gWidgets, I get a Courier-style font and the line returns show up.  That is, the output in the gtext widget looks much like I would see in the R Console.  So, my guess is that the browser is overriding the gWidgetsWWW output.  I'm running this in the latest version of Firefox.  (When I ran the same code using IE 9.0, the gtext widget does not even show up, but that's a different issue...)\n\nWith all that as background, two questions:\n\n(1) Is the use of the gtext widget a good approach for what I want to do, or is there a better approach?\n\n(2) If the gtext widget is the way to go, any suggestions for solving the above problem?\n\nMany thanks,\nRon\nAssociate Professor\nOperations Research Dept.\nNaval Postgraduate School\nMonterey, CA, USA\n\n\n\t[[alternative HTML version deleted]]\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at r-project.org\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi Virkki:  We're still in the process of setting the site up.  Given that we plan to only allow a restricted set of operations on the server, I'm hopeful we can get it all to work consistently.  But ",
+      "thread_id": "thread-ec2b2de11907",
+      "thread_depth": 2,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-6d2efabd7550",
+      "message_id": "<loom.20110511T012638-302@post.gmane.org>",
+      "from_name": "jverzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2011-05-10T23:32:02Z",
+      "subject": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "subject_clean": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "in_reply_to": null,
+      "references": [
+        "<926CC2893BF56F41934855A286B9E9DFD202@GROWLER.ern.nps.edu>",
+        "<36186D2E0727CE4E8D6465C0F305A33990A47A56EF@VTTMAIL.ad.vtt.fi>"
+      ],
+      "body_plain": "Virkki Arho <Arho.Virkki <at> vtt.fi> writes:\n\n..snip..\n\nWish I could say Arho is wrong, but he isn't. The rApache integration has \nsome issues. The newer gWidgetsWWW2 package will *hopefully* \naddress this integration with  rApache through its use of the Rook \npackage to abstract out the  web server <--> R connection. For \nthe moment, Rook is not yet working with rApache, but that \nshould be changing soon.",
+      "body_snippet": "Virkki Arho <Arho.Virkki <at> vtt.fi> writes:\n\n..snip..\n\nWish I could say Arho is wrong, but he isn't. The rApache integration has \nsome issues. The newer gWidgetsWWW2 package will *hopefully* \naddres",
+      "thread_id": "thread-ec2b2de11907",
+      "thread_depth": 2,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-4673a6437647",
+      "message_id": "<4DCCD1B6.2070901@uhb.fr>",
+      "from_name": "Yvonnick Noel",
+      "from_email_hash": "6b0c1beb7700ad7ed9305cad83d011377781980ebe20349aefdf56be0114ff43",
+      "date": "2011-05-13T08:37:42+02:00",
+      "subject": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "subject_clean": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello John,\n\nHope you are doing well.\n\nI note the following problem with the last version of gWidgetsRGtk2. \nDefining a gradio handler as a function embedded in a proto class leads \nto an error :\n\nlibrary(proto)\nlibrary(gWidgetsRGtk2)\n\nexample = proto(\n   create = function(.) {\n\n     .$window = gwindow(visible=FALSE)\n     .$choice = gradio(1:3,cont=.$window,handler=.$onChoice)\n     visible(.$window)=TRUE\n   },\n   onChoice = function(.,h,...) {\n     cat(\"You clicked\",svalue(.$choice),\"\\n\")\n   },\n   window = NULL,\n   choice = NULL\n)\n\nexample$create()\n\nError in as(value, \"function\") :\n   internal problem in as(): \"instantiatedProtoMethod\" is(object, \n\"function\") is TRUE, but the metadata asserts that the 'is' relation is \nFALSE\n\nNote that is works if I define the onChoice function outside the proto \nobject, and it also works if a replace the gradio by a gdroplist, so it \nseems specific to gradio.\n\nThank you in advance for your help.\n\nBest wishes,\n\nYvonnick Noel\nUniversity of Brittany, Rennes\nFrance\n\n > sessionInfo()\nR version 2.13.0 (2011-04-13)\nPlatform: x86_64-pc-linux-gnu (64-bit)\n\nlocale:\n  [1] LC_CTYPE=fr_FR.utf8       LC_NUMERIC=C\n  [3] LC_TIME=fr_FR.utf8        LC_COLLATE=fr_FR.utf8\n  [5] LC_MONETARY=C             LC_MESSAGES=fr_FR.utf8\n  [7] LC_PAPER=fr_FR.utf8       LC_NAME=C\n  [9] LC_ADDRESS=C              LC_TELEPHONE=C\n[11] LC_MEASUREMENT=fr_FR.utf8 LC_IDENTIFICATION=C\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base\n\nother attached packages:\n[1] cairoDevice_2.15     gWidgetsRGtk2_0.0-74 gWidgets_0.0-44\n[4] proto_0.3-9.2\n\nloaded via a namespace (and not attached):\n[1] RGtk2_2.20.12 tools_2.13.0",
+      "body_snippet": "Hello John,\n\nHope you are doing well.\n\nI note the following problem with the last version of gWidgetsRGtk2. \nDefining a gradio handler as a function embedded in a proto class leads \nto an error :\n\nlib",
+      "thread_id": "thread-4673a6437647",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-8b59492f6b42",
+      "message_id": "<BANLkTikkphm_pPgGB=J42_YTOGizd_bL=w@mail.gmail.com>",
+      "from_name": "Gabor Grothendieck",
+      "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
+      "date": "2011-05-13T07:30:31-04:00",
+      "subject": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "subject_clean": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "in_reply_to": "<4DCCD1B6.2070901@uhb.fr>",
+      "references": [
+        "<4DCCD1B6.2070901@uhb.fr>"
+      ],
+      "body_plain": "On Fri, May 13, 2011 at 2:37 AM, Yvonnick Noel <yvonnick.noel at uhb.fr> wrote:\n> Hello John,\n>\n> Hope you are doing well.\n>\n> I note the following problem with the last version of gWidgetsRGtk2.\n> Defining a gradio handler as a function embedded in a proto class leads to\n> an error :\n>\n> library(proto)\n> library(gWidgetsRGtk2)\n>\n> example = proto(\n> ?create = function(.) {\n>\n> ? ?.$window = gwindow(visible=FALSE)\n> ? ?.$choice = gradio(1:3,cont=.$window,handler=.$onChoice)\n> ? ?visible(.$window)=TRUE\n> ?},\n> ?onChoice = function(.,h,...) {\n> ? ?cat(\"You clicked\",svalue(.$choice),\"\\n\")\n> ?},\n> ?window = NULL,\n> ?choice = NULL\n> )\n>\n> example$create()\n>\n> Error in as(value, \"function\") :\n> ?internal problem in as(): \"instantiatedProtoMethod\" is(object, \"function\")\n> is TRUE, but the metadata asserts that the 'is' relation is FALSE\n>\n> Note that is works if I define the onChoice function outside the proto\n> object, and it also works if a replace the gradio by a gdroplist, so it\n> seems specific to gradio.\n>\n> Thank you in advance for your help.\n>\n> Best wishes,\n>\n> Yvonnick Noel\n> University of Brittany, Rennes\n> France\n>\n\nOn my system it works even with gradio if gWidgetsRGtk2 is replaced by\ngWidgetstcltk.\n\n> packageVersion(\"gWidgets\")\n[1] ?0.0.44?\n> packageVersion(\"gWidgetstcltk\")\n[1] ?0.0.43?\n> packageVersion(\"proto\")\n[1] ?0.3.9.2?\n> R.version.string\n[1] \"R version 2.13.0 Patched (2011-04-25 r55638)\"\n> win.version()\n[1] \"Windows Vista (build 6002) Service Pack 2\"\n\n\n-- \nStatistics & Software Consulting\nGKX Group, GKX Associates Inc.\ntel: 1-877-GKX-GROUP\nemail: ggrothendieck at gmail.com",
+      "body_snippet": "On Fri, May 13, 2011 at 2:37 AM, Yvonnick Noel <yvonnick.noel at uhb.fr> wrote:\n> Hello John,\n>\n> Hope you are doing well.\n>\n> I note the following problem with the last version of gWidgetsRGtk2.\n> De",
+      "thread_id": "thread-4673a6437647",
+      "thread_depth": 1,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-64d1734438b0",
+      "message_id": "<BANLkTikQbeUPnJYwcyD7E+FJMEWNBXsmYQ@mail.gmail.com>",
+      "from_name": "John Verzani",
+      "from_email_hash": "b807e48d46a4dd62c3f942d742ee2674ab86ebefa69a6e8a05f6abb119c12cdb",
+      "date": "2011-05-13T07:52:33-04:00",
+      "subject": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "subject_clean": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "in_reply_to": "<BANLkTikkphm_pPgGB=J42_YTOGizd_bL=w@mail.gmail.com>",
+      "references": [
+        "<4DCCD1B6.2070901@uhb.fr>",
+        "<BANLkTikkphm_pPgGB=J42_YTOGizd_bL=w@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/1d0d4cd5/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/1d0d4cd5/attachment.pl>",
+      "thread_id": "thread-4673a6437647",
+      "thread_depth": 2,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-121691691188",
+      "message_id": "<BANLkTikVKvbcUc4XY4w6P4d9Hn+s-XcXxg@mail.gmail.com>",
+      "from_name": "Gabor Grothendieck",
+      "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
+      "date": "2011-05-13T09:33:40-04:00",
+      "subject": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "subject_clean": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "in_reply_to": "<BANLkTikQbeUPnJYwcyD7E+FJMEWNBXsmYQ@mail.gmail.com>",
+      "references": [
+        "<4DCCD1B6.2070901@uhb.fr>",
+        "<BANLkTikkphm_pPgGB=J42_YTOGizd_bL=w@mail.gmail.com>",
+        "<BANLkTikQbeUPnJYwcyD7E+FJMEWNBXsmYQ@mail.gmail.com>"
+      ],
+      "body_plain": "On Fri, May 13, 2011 at 7:52 AM, John Verzani <verzani at math.csi.cuny.edu> wrote:\n> Dear Yvonnick and Gabor,\n> I use a different implementation for each, but this gave me some place to\n> look. For gradio for gWidgetsRGtk2 I decoupled the handler call from the\n> widget so replacing radio buttons was easier. The R5 class I made, for some\n> reason, doesn't play nicely with this proto object. Here is a simplified\n> example:\n> library(proto)\n> a <- setRefClass(\"Test\",\n> ?? ? ? ? ? ? ? ? fields=list(\n> ?? ? ? ? ? ? ? ? ? o = \"function\"\n> ?? ? ? ? ? ? ? ? ? ),\n> ?? ? ? ? ? ? ? ? methods=list(\n> ?? ? ? ? ? ? ? ? ? initialize=function(o) {\n> ?? ? ? ? ? ? ? ? ? ? o <<- o\n> ?? ? ? ? ? ? ? ? ? }))\n> example = proto(\n> ?create = function(.) {\n> ?? a$new(.$onChoice)\n> ?},\n> ?onChoice = function(.,h,...) {\n> ?? print(\"hi\")\n> ?}\n> )\n>\n> When setting the \"o\" property R tries coercion to a function and you get\n> this error.\n> Gabor, any thoughts? This deep dark magic is one of your many specialities.\n\nThe class vector of .$onChoice is c(\"instantiatedProtoMethod\",\n\"function\").  It seems the reference class mechanism won't let you\nrefer to it as \"function\".  Also, the initialize method needs to have\nan appropriate return value.\n\nThis seems to work for me where the ## lines are new or modified:\n\nlibrary(proto)\nsetClass(\"instantiatedProtoMethod\")\na <- setRefClass(\"Test\",\n                 fields=list(\n                   o = \"instantiatedProtoMethod\" ##\n                   ),\n                 methods=list(\n                   initialize=function(o) {\n                     initFields(o = o) ##\n                   }))\n\nexample = proto(\n create = function(.) {\n   a$new(.$onChoice)\n },\n onChoice = function(.,h,...) {\n   print(\"hi\")\n }\n)\nexample$create()$o() ##\n\n-- \nStatistics & Software Consulting\nGKX Group, GKX Associates Inc.\ntel: 1-877-GKX-GROUP\nemail: ggrothendieck at gmail.com",
+      "body_snippet": "On Fri, May 13, 2011 at 7:52 AM, John Verzani <verzani at math.csi.cuny.edu> wrote:\n> Dear Yvonnick and Gabor,\n> I use a different implementation for each, but this gave me some place to\n> look. For g",
+      "thread_id": "thread-4673a6437647",
+      "thread_depth": 3,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-b4d309248fa9",
+      "message_id": "<BANLkTikfnJznznkJdfbFbZ1Zz6NRrY3J9g@mail.gmail.com>",
+      "from_name": "John Verzani",
+      "from_email_hash": "b807e48d46a4dd62c3f942d742ee2674ab86ebefa69a6e8a05f6abb119c12cdb",
+      "date": "2011-05-13T10:05:59-04:00",
+      "subject": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "subject_clean": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "in_reply_to": "<BANLkTikVKvbcUc4XY4w6P4d9Hn+s-XcXxg@mail.gmail.com>",
+      "references": [
+        "<4DCCD1B6.2070901@uhb.fr>",
+        "<BANLkTikkphm_pPgGB=J42_YTOGizd_bL=w@mail.gmail.com>",
+        "<BANLkTikQbeUPnJYwcyD7E+FJMEWNBXsmYQ@mail.gmail.com>",
+        "<BANLkTikVKvbcUc4XY4w6P4d9Hn+s-XcXxg@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/be2fd170/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/be2fd170/attachment.pl>",
+      "thread_id": "thread-4673a6437647",
+      "thread_depth": 4,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-b74706f2f5f5",
+      "message_id": "<BANLkTi=fWd1Lx5QSnTH2kCXfT8=jVNpYpg@mail.gmail.com>",
+      "from_name": "Gabor Grothendieck",
+      "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
+      "date": "2011-05-13T10:20:54-04:00",
+      "subject": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "subject_clean": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "in_reply_to": "<BANLkTikfnJznznkJdfbFbZ1Zz6NRrY3J9g@mail.gmail.com>",
+      "references": [
+        "<4DCCD1B6.2070901@uhb.fr>",
+        "<BANLkTikkphm_pPgGB=J42_YTOGizd_bL=w@mail.gmail.com>",
+        "<BANLkTikQbeUPnJYwcyD7E+FJMEWNBXsmYQ@mail.gmail.com>",
+        "<BANLkTikVKvbcUc4XY4w6P4d9Hn+s-XcXxg@mail.gmail.com>",
+        "<BANLkTikfnJznznkJdfbFbZ1Zz6NRrY3J9g@mail.gmail.com>"
+      ],
+      "body_plain": "On Fri, May 13, 2011 at 10:05 AM, John Verzani\n<verzani at math.csi.cuny.edu> wrote:\n> Thanks Gabor!\n> I changed the class to \"ANY\" and it works now. Should there be an \"as\"\n> method for coercing?instantiatedProtoMethod to function, or would that lose\n> the \"proto\" nature of the object?\n\nIts already a subclass of function.  Any S3 generic that is dispatched\non it will automatically use the function method rather than the\ninstantiatedProtoMethod method if the former exists and the latter\ndoes not.  I think the appropriate change if reference classes wish to\nfully support S3 would be for reference classes to support full S3\ndispatch.\n\n-- \nStatistics & Software Consulting\nGKX Group, GKX Associates Inc.\ntel: 1-877-GKX-GROUP\nemail: ggrothendieck at gmail.com",
+      "body_snippet": "On Fri, May 13, 2011 at 10:05 AM, John Verzani\n<verzani at math.csi.cuny.edu> wrote:\n> Thanks Gabor!\n> I changed the class to \"ANY\" and it works now. Should there be an \"as\"\n> method for coercing?inst",
+      "thread_id": "thread-4673a6437647",
+      "thread_depth": 5,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-90736b4d27b4",
+      "message_id": "<4DCE6ABD.2050101@uhb.fr>",
+      "from_name": "Yvonnick Noel",
+      "from_email_hash": "6b0c1beb7700ad7ed9305cad83d011377781980ebe20349aefdf56be0114ff43",
+      "date": "2011-05-14T13:42:53+02:00",
+      "subject": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "subject_clean": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "in_reply_to": "<BANLkTikfnJznznkJdfbFbZ1Zz6NRrY3J9g@mail.gmail.com>",
+      "references": [
+        "<4DCCD1B6.2070901@uhb.fr>",
+        "<BANLkTikkphm_pPgGB=J42_YTOGizd_bL=w@mail.gmail.com>",
+        "<BANLkTikQbeUPnJYwcyD7E+FJMEWNBXsmYQ@mail.gmail.com>",
+        "<BANLkTikVKvbcUc4XY4w6P4d9Hn+s-XcXxg@mail.gmail.com>",
+        "<BANLkTikfnJznznkJdfbFbZ1Zz6NRrY3J9g@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110514/ff21ed23/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110514/ff21ed23/attachment.pl>",
+      "thread_id": "thread-4673a6437647",
+      "thread_depth": 5,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-56999b8d4815",
+      "message_id": "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+      "from_name": "Charles Stangor",
+      "from_email_hash": "18d3b54490f2ceedee5b3db11b4c63cf8a8e9e08658c9b027e7e654e26d8393e",
+      "date": "2011-05-21T10:10:14-04:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110521/3cc82166/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110521/3cc82166/attachment.pl>",
+      "thread_id": "thread-56999b8d4815",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-7634d47fb1bb",
+      "message_id": "<D1D49868-34A8-4AE3-ABA6-028A1638701E@univie.ac.at>",
+      "from_name": "Neuwirth Erich",
+      "from_email_hash": "178c9665decd09e76ed713e123ba2a6b2ed2ac166995047eb6dc12c5ab93e7ac",
+      "date": "2011-05-21T17:22:06+02:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>"
+      ],
+      "body_plain": "A few places seem to have good experiences with R Commander (which is (no offense intended) an SPSS like menu interface on top of R).\nIf you are a Windows based shop, yo also might want to have a look at our package RExcel\nwhich allows to access R from within Excel and turns R Commander's menu into an Excel menu bar.\nRExcel is available at rcom.univie.ac.at\n \n\n\nOn May 21, 2011, at 4:10 PM, Charles Stangor wrote:\n\n> So I'm wondering what might be a recommended R front-end for my undergraduate college students who are first learning statistics?  I'm tired of paying for SPSS but I can't ask them to learn the command lines.\n> \n> Thanks\n> \n> Charles Stangor\n> Professor and Associate Chair\n> Department of Psychology\n> University of Maryland\n> Executive Officer, Society of Experimental Social Psychology\n> http://sites.google.com/site/charlesstangor/\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "A few places seem to have good experiences with R Commander (which is (no offense intended) an SPSS like menu interface on top of R).\nIf you are a Windows based shop, yo also might want to have a look",
+      "thread_id": "thread-56999b8d4815",
+      "thread_depth": 1,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-41739b8cc608",
+      "message_id": "<4DD808AA.8070300@sauder.ubc.ca>",
+      "from_name": "Dan Putler",
+      "from_email_hash": "9a2942c99196d0544b3517efc9390a2ad9988031ef34a782b6be64725b046bd4",
+      "date": "2011-05-21T11:47:06-07:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<16115_1305991520_1305991520_D1D49868-34A8-4AE3-ABA6-028A1638701E@univie.ac.at>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+        "<16115_1305991520_1305991520_D1D49868-34A8-4AE3-ABA6-028A1638701E@univie.ac.at>"
+      ],
+      "body_plain": "I have used the R Commander in both marketing research and a customer \nanalytics / data mining course for a number of years, and it has \ngenerally worked well. Running things on the OS X side (which represents \nan increasing share of the laptops owned by undergrads) is a bit more of \na challenge since they have to access it through X11 and the \ninstallation is a bit more involved (the X11 Tcl/Tk libraries need to be \ninstalled, but they are included with the OS X R binaries). I've gone to \nusing a web based installer script to install the R Commander and its \nrequired dependencies (installing the Rcmdr package and allowing for the \nautomatic installation of required and suggested packages, including \nsuggested packages of suggested packages, results in a lot of things \nbeing loaded that aren't needed). If you are interested, I can send that \nscript along to you. One nice thing is that if you want to add \nfunctionality it is fairly easy to do so via Rcmdr's plug-in infrastructure.\n\nDan\n\nOn 05/21/2011 08:22 AM, Neuwirth Erich wrote:\n> A few places seem to have good experiences with R Commander (which is (no offense intended) an SPSS like menu interface on top of R).\n> If you are a Windows based shop, yo also might want to have a look at our package RExcel\n> which allows to access R from within Excel and turns R Commander's menu into an Excel menu bar.\n> RExcel is available at rcom.univie.ac.at\n>\n>\n>\n> On May 21, 2011, at 4:10 PM, Charles Stangor wrote:\n>\n>> So I'm wondering what might be a recommended R front-end for my undergraduate college students who are first learning statistics?  I'm tired of paying for SPSS but I can't ask them to learn the command lines.\n>>\n>> Thanks\n>>\n>> Charles Stangor\n>> Professor and Associate Chair\n>> Department of Psychology\n>> University of Maryland\n>> Executive Officer, Society of Experimental Social Psychology\n>> http://sites.google.com/site/charlesstangor/\n>>\n>> \t[[alternative HTML version deleted]]\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "I have used the R Commander in both marketing research and a customer \nanalytics / data mining course for a number of years, and it has \ngenerally worked well. Running things on the OS X side (which r",
+      "thread_id": "thread-41739b8cc608",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-7d3b0193880b",
+      "message_id": "<003601cc17f6$bf7d10e0$3e7732a0$@mcmaster.ca>",
+      "from_name": "John Fox",
+      "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
+      "date": "2011-05-21T16:36:22-04:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<4DD808AA.8070300@sauder.ubc.ca>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+        "<16115_1305991520_1305991520_D1D49868-34A8-4AE3-ABA6-028A1638701E@univie.ac.at>",
+        "<4DD808AA.8070300@sauder.ubc.ca>"
+      ],
+      "body_plain": "Dear Dan,\n\n> -----Original Message-----\n> From: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-\n> project.org] On Behalf Of Dan Putler\n> Sent: May-21-11 2:47 PM\n> To: r-sig-gui at r-project.org\n> Subject: Re: [R-gui] Best GUI?\n> \n> I have used the R Commander in both marketing research and a customer\n> analytics / data mining course for a number of years, and it has\n> generally worked well. Running things on the OS X side (which represents\n> an increasing share of the laptops owned by undergrads) is a bit more of\n> a challenge since they have to access it through X11 and the\n> installation is a bit more involved (the X11 Tcl/Tk libraries need to be\n> installed, but they are included with the OS X R binaries). I've gone to\n> using a web based installer script to install the R Commander and its\n> required dependencies (installing the Rcmdr package and allowing for the\n> automatic installation of required and suggested packages, including\n> suggested packages of suggested packages, results in a lot of things\n> being loaded that aren't needed). If you are interested, I can send that\n\nThe issue of suggested packages installed recursively is increasingly\nirritating. The reason that I don't make the directly required packages\n\"depends\" rather than \"suggests\" is that I don't want them loaded every time\nthe Rcmdr starts up. I think that I have a solution, which I'll incorporate\nin the next minor version of the Rcmdr, and which I plan to release late in\nthe summer.\n\nMeanwhile, if you'd like to share your script, I'd be interested in taking a\nlook at it, with an eye to including it on the Rcmdr installation web page.\n\nBest,\n John\n\n> script along to you. One nice thing is that if you want to add\n> functionality it is fairly easy to do so via Rcmdr's plug-in\n> infrastructure.\n> \n> Dan\n> \n> On 05/21/2011 08:22 AM, Neuwirth Erich wrote:\n> > A few places seem to have good experiences with R Commander (which is\n> (no offense intended) an SPSS like menu interface on top of R).\n> > If you are a Windows based shop, yo also might want to have a look at\n> > our package RExcel which allows to access R from within Excel and\n> turns R Commander's menu into an Excel menu bar.\n> > RExcel is available at rcom.univie.ac.at\n> >\n> >\n> >\n> > On May 21, 2011, at 4:10 PM, Charles Stangor wrote:\n> >\n> >> So I'm wondering what might be a recommended R front-end for my\n> undergraduate college students who are first learning statistics?  I'm\n> tired of paying for SPSS but I can't ask them to learn the command\n> lines.\n> >>\n> >> Thanks\n> >>\n> >> Charles Stangor\n> >> Professor and Associate Chair\n> >> Department of Psychology\n> >> University of Maryland\n> >> Executive Officer, Society of Experimental Social Psychology\n> >> http://sites.google.com/site/charlesstangor/\n> >>\n> >> \t[[alternative HTML version deleted]]\n> >>\n> >> _______________________________________________\n> >> R-SIG-GUI mailing list\n> >> R-SIG-GUI at r-project.org\n> >> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> >>\n> > _______________________________________________\n> > R-SIG-GUI mailing list\n> > R-SIG-GUI at r-project.org\n> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Dear Dan,\n\n> -----Original Message-----\n> From: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-\n> project.org] On Behalf Of Dan Putler\n> Sent: May-21-11 2:47 PM\n> To: r-sig-gui at r",
+      "thread_id": "thread-41739b8cc608",
+      "thread_depth": 1,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-b2cf0b6cb369",
+      "message_id": "<73A1B9A6-0B54-43D8-9858-23A2D28A1DCF@stat.ucla.edu>",
+      "from_name": "Ian Fellows",
+      "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
+      "date": "2011-05-21T14:11:06-07:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>"
+      ],
+      "body_plain": "You may also be interested in Deducer http://www.deducer.org, which is in use in statistics classes in Psychology departments.\n\nIan\n\nOn May 21, 2011, at 7:10 AM, Charles Stangor wrote:\n\n> So I'm wondering what might be a recommended R front-end for my undergraduate college students who are first learning statistics?  I'm tired of paying for SPSS but I can't ask them to learn the command lines.\n> \n> Thanks\n> \n> Charles Stangor\n> Professor and Associate Chair\n> Department of Psychology\n> University of Maryland\n> Executive Officer, Society of Experimental Social Psychology\n> http://sites.google.com/site/charlesstangor/\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "You may also be interested in Deducer http://www.deducer.org, which is in use in statistics classes in Psychology departments.\n\nIan\n\nOn May 21, 2011, at 7:10 AM, Charles Stangor wrote:\n\n> So I'm wonde",
+      "thread_id": "thread-56999b8d4815",
+      "thread_depth": 1,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-04b1a8fa7978",
+      "message_id": "<4DD858ED.2080909@sauder.ubc.ca>",
+      "from_name": "Dan Putler",
+      "from_email_hash": "9a2942c99196d0544b3517efc9390a2ad9988031ef34a782b6be64725b046bd4",
+      "date": "2011-05-21T17:29:33-07:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<25557_1306010203_1306010203_003601cc17f6$bf7d10e0$3e7732a0$@mcmaster.ca>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+        "<16115_1305991520_1305991520_D1D49868-34A8-4AE3-ABA6-028A1638701E@univie.ac.at>",
+        "<4DD808AA.8070300@sauder.ubc.ca>",
+        "<25557_1306010203_1306010203_003601cc17f6$bf7d10e0$3e7732a0$@mcmaster.ca>"
+      ],
+      "body_plain": "Hi John,\n\nThat would  be great. The use of the web installer does add some \ncomplication in the installation process, so the ability to obtain only \nthe relevant packages as part of the \"stock\" installation would be a \nvery nice addition.\n\nDan\n\nOn 05/21/2011 01:36 PM, John Fox wrote:\n> Dear Dan,\n>\n>> -----Original Message-----\n>> From: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-\n>> project.org] On Behalf Of Dan Putler\n>> Sent: May-21-11 2:47 PM\n>> To: r-sig-gui at r-project.org\n>> Subject: Re: [R-gui] Best GUI?\n>>\n>> I have used the R Commander in both marketing research and a customer\n>> analytics / data mining course for a number of years, and it has\n>> generally worked well. Running things on the OS X side (which represents\n>> an increasing share of the laptops owned by undergrads) is a bit more of\n>> a challenge since they have to access it through X11 and the\n>> installation is a bit more involved (the X11 Tcl/Tk libraries need to be\n>> installed, but they are included with the OS X R binaries). I've gone to\n>> using a web based installer script to install the R Commander and its\n>> required dependencies (installing the Rcmdr package and allowing for the\n>> automatic installation of required and suggested packages, including\n>> suggested packages of suggested packages, results in a lot of things\n>> being loaded that aren't needed). If you are interested, I can send that\n> The issue of suggested packages installed recursively is increasingly\n> irritating. The reason that I don't make the directly required packages\n> \"depends\" rather than \"suggests\" is that I don't want them loaded every time\n> the Rcmdr starts up. I think that I have a solution, which I'll incorporate\n> in the next minor version of the Rcmdr, and which I plan to release late in\n> the summer.\n>\n> Meanwhile, if you'd like to share your script, I'd be interested in taking a\n> look at it, with an eye to including it on the Rcmdr installation web page.\n>\n> Best,\n>   John\n>\n>> script along to you. One nice thing is that if you want to add\n>> functionality it is fairly easy to do so via Rcmdr's plug-in\n>> infrastructure.\n>>\n>> Dan\n>>\n>> On 05/21/2011 08:22 AM, Neuwirth Erich wrote:\n>>> A few places seem to have good experiences with R Commander (which is\n>> (no offense intended) an SPSS like menu interface on top of R).\n>>> If you are a Windows based shop, yo also might want to have a look at\n>>> our package RExcel which allows to access R from within Excel and\n>> turns R Commander's menu into an Excel menu bar.\n>>> RExcel is available at rcom.univie.ac.at\n>>>\n>>>\n>>>\n>>> On May 21, 2011, at 4:10 PM, Charles Stangor wrote:\n>>>\n>>>> So I'm wondering what might be a recommended R front-end for my\n>> undergraduate college students who are first learning statistics?  I'm\n>> tired of paying for SPSS but I can't ask them to learn the command\n>> lines.\n>>>> Thanks\n>>>>\n>>>> Charles Stangor\n>>>> Professor and Associate Chair\n>>>> Department of Psychology\n>>>> University of Maryland\n>>>> Executive Officer, Society of Experimental Social Psychology\n>>>> http://sites.google.com/site/charlesstangor/\n>>>>\n>>>> \t[[alternative HTML version deleted]]\n>>>>\n>>>> _______________________________________________\n>>>> R-SIG-GUI mailing list\n>>>> R-SIG-GUI at r-project.org\n>>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>>>\n>>> _______________________________________________\n>>> R-SIG-GUI mailing list\n>>> R-SIG-GUI at r-project.org\n>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi John,\n\nThat would  be great. The use of the web installer does add some \ncomplication in the installation process, so the ability to obtain only \nthe relevant packages as part of the \"stock\" instal",
+      "thread_id": "thread-04b1a8fa7978",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-4027452b4483",
+      "message_id": "<FE7AFF4E82C5458788A0DA01B127FAD7@ChuckPC>",
+      "from_name": "Charles Stangor",
+      "from_email_hash": "18d3b54490f2ceedee5b3db11b4c63cf8a8e9e08658c9b027e7e654e26d8393e",
+      "date": "2011-05-21T21:10:50-04:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<4DD858ED.2080909@sauder.ubc.ca>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+        "<16115_1305991520_1305991520_D1D49868-34A8-4AE3-ABA6-028A1638701E@univie.ac.at>",
+        "<4DD808AA.8070300@sauder.ubc.ca>",
+        "<25557_1306010203_1306010203_003601cc17f6$bf7d10e0$3e7732a0$@mcmaster.ca>",
+        "<4DD858ED.2080909@sauder.ubc.ca>"
+      ],
+      "body_plain": "Right, I tried to load commander from R and it downloaded tens and tens of \nfiles.\n\n\n--------------------------------------------------\nFrom: \"Dan Putler\" <dan.putler at sauder.ubc.ca>\nSent: Saturday, May 21, 2011 8:29 PM\nTo: \"John Fox\" <jfox at mcmaster.ca>\nCc: <r-sig-gui at r-project.org>\nSubject: Re: [R-gui] Best GUI?\n\n> Hi John,\n>\n> That would  be great. The use of the web installer does add some \n> complication in the installation process, so the ability to obtain only \n> the relevant packages as part of the \"stock\" installation would be a very \n> nice addition.\n>\n> Dan\n>\n> On 05/21/2011 01:36 PM, John Fox wrote:\n>> Dear Dan,\n>>\n>>> -----Original Message-----\n>>> From: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-\n>>> project.org] On Behalf Of Dan Putler\n>>> Sent: May-21-11 2:47 PM\n>>> To: r-sig-gui at r-project.org\n>>> Subject: Re: [R-gui] Best GUI?\n>>>\n>>> I have used the R Commander in both marketing research and a customer\n>>> analytics / data mining course for a number of years, and it has\n>>> generally worked well. Running things on the OS X side (which represents\n>>> an increasing share of the laptops owned by undergrads) is a bit more of\n>>> a challenge since they have to access it through X11 and the\n>>> installation is a bit more involved (the X11 Tcl/Tk libraries need to be\n>>> installed, but they are included with the OS X R binaries). I've gone to\n>>> using a web based installer script to install the R Commander and its\n>>> required dependencies (installing the Rcmdr package and allowing for the\n>>> automatic installation of required and suggested packages, including\n>>> suggested packages of suggested packages, results in a lot of things\n>>> being loaded that aren't needed). If you are interested, I can send that\n>> The issue of suggested packages installed recursively is increasingly\n>> irritating. The reason that I don't make the directly required packages\n>> \"depends\" rather than \"suggests\" is that I don't want them loaded every \n>> time\n>> the Rcmdr starts up. I think that I have a solution, which I'll \n>> incorporate\n>> in the next minor version of the Rcmdr, and which I plan to release late \n>> in\n>> the summer.\n>>\n>> Meanwhile, if you'd like to share your script, I'd be interested in \n>> taking a\n>> look at it, with an eye to including it on the Rcmdr installation web \n>> page.\n>>\n>> Best,\n>>   John\n>>\n>>> script along to you. One nice thing is that if you want to add\n>>> functionality it is fairly easy to do so via Rcmdr's plug-in\n>>> infrastructure.\n>>>\n>>> Dan\n>>>\n>>> On 05/21/2011 08:22 AM, Neuwirth Erich wrote:\n>>>> A few places seem to have good experiences with R Commander (which is\n>>> (no offense intended) an SPSS like menu interface on top of R).\n>>>> If you are a Windows based shop, yo also might want to have a look at\n>>>> our package RExcel which allows to access R from within Excel and\n>>> turns R Commander's menu into an Excel menu bar.\n>>>> RExcel is available at rcom.univie.ac.at\n>>>>\n>>>>\n>>>>\n>>>> On May 21, 2011, at 4:10 PM, Charles Stangor wrote:\n>>>>\n>>>>> So I'm wondering what might be a recommended R front-end for my\n>>> undergraduate college students who are first learning statistics?  I'm\n>>> tired of paying for SPSS but I can't ask them to learn the command\n>>> lines.\n>>>>> Thanks\n>>>>>\n>>>>> Charles Stangor\n>>>>> Professor and Associate Chair\n>>>>> Department of Psychology\n>>>>> University of Maryland\n>>>>> Executive Officer, Society of Experimental Social Psychology\n>>>>> http://sites.google.com/site/charlesstangor/\n>>>>>\n>>>>> [[alternative HTML version deleted]]\n>>>>>\n>>>>> _______________________________________________\n>>>>> R-SIG-GUI mailing list\n>>>>> R-SIG-GUI at r-project.org\n>>>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>>>>\n>>>> _______________________________________________\n>>>> R-SIG-GUI mailing list\n>>>> R-SIG-GUI at r-project.org\n>>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>> _______________________________________________\n>>> R-SIG-GUI mailing list\n>>> R-SIG-GUI at r-project.org\n>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Right, I tried to load commander from R and it downloaded tens and tens of \nfiles.\n\n\n--------------------------------------------------\nFrom: \"Dan Putler\" <dan.putler at sauder.ubc.ca>\nSent: Saturday,",
+      "thread_id": "thread-04b1a8fa7978",
+      "thread_depth": 1,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-afaa114d0ea4",
+      "message_id": "<71712E08DA8B409C90275EB6BC5B96ED@ChuckPC>",
+      "from_name": "Charles Stangor",
+      "from_email_hash": "18d3b54490f2ceedee5b3db11b4c63cf8a8e9e08658c9b027e7e654e26d8393e",
+      "date": "2011-05-21T21:36:40-04:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<73A1B9A6-0B54-43D8-9858-23A2D28A1DCF@stat.ucla.edu>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+        "<73A1B9A6-0B54-43D8-9858-23A2D28A1DCF@stat.ucla.edu>"
+      ],
+      "body_plain": "OK, looks good if I can get it installed.  Also seems to completely reload \ntons of files that I already have.\n\n\n--------------------------------------------------\nFrom: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\nSent: Saturday, May 21, 2011 5:11 PM\nTo: \"Charles Stangor\" <cstangor at charlesstangor.com>\nCc: <r-sig-gui at r-project.org>\nSubject: Re: [R-gui] Best GUI?\n\n> You may also be interested in Deducer http://www.deducer.org, which is in \n> use in statistics classes in Psychology departments.\n>\n> Ian\n>\n> On May 21, 2011, at 7:10 AM, Charles Stangor wrote:\n>\n>> So I'm wondering what might be a recommended R front-end for my \n>> undergraduate college students who are first learning statistics?  I'm \n>> tired of paying for SPSS but I can't ask them to learn the command lines.\n>>\n>> Thanks\n>>\n>> Charles Stangor\n>> Professor and Associate Chair\n>> Department of Psychology\n>> University of Maryland\n>> Executive Officer, Society of Experimental Social Psychology\n>> http://sites.google.com/site/charlesstangor/\n>>\n>> [[alternative HTML version deleted]]\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>\n>",
+      "body_snippet": "OK, looks good if I can get it installed.  Also seems to completely reload \ntons of files that I already have.\n\n\n--------------------------------------------------\nFrom: \"Ian Fellows\" <ian.fellows at ",
+      "thread_id": "thread-56999b8d4815",
+      "thread_depth": 2,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-63d613bd2a68",
+      "message_id": "<C0DFF3ED037A49B8983A17D1E5DDF5BE@ChuckPC>",
+      "from_name": "Charles Stangor",
+      "from_email_hash": "18d3b54490f2ceedee5b3db11b4c63cf8a8e9e08658c9b027e7e654e26d8393e",
+      "date": "2011-05-21T23:20:36-04:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<73A1B9A6-0B54-43D8-9858-23A2D28A1DCF@stat.ucla.edu>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+        "<73A1B9A6-0B54-43D8-9858-23A2D28A1DCF@stat.ucla.edu>"
+      ],
+      "body_plain": "Yes, this seems like a really good alternative.  Somewhat less elegant than \nSPSS, but free.  I will test this possibility.  Thanks Ian and all of you \nwho make R possible.\n\n--------------------------------------------------\nFrom: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\nSent: Saturday, May 21, 2011 5:11 PM\nTo: \"Charles Stangor\" <cstangor at charlesstangor.com>\nCc: <r-sig-gui at r-project.org>\nSubject: Re: [R-gui] Best GUI?\n\n> You may also be interested in Deducer http://www.deducer.org, which is in \n> use in statistics classes in Psychology departments.\n>\n> Ian\n>\n> On May 21, 2011, at 7:10 AM, Charles Stangor wrote:\n>\n>> So I'm wondering what might be a recommended R front-end for my \n>> undergraduate college students who are first learning statistics?  I'm \n>> tired of paying for SPSS but I can't ask them to learn the command lines.\n>>\n>> Thanks\n>>\n>> Charles Stangor\n>> Professor and Associate Chair\n>> Department of Psychology\n>> University of Maryland\n>> Executive Officer, Society of Experimental Social Psychology\n>> http://sites.google.com/site/charlesstangor/\n>>\n>> [[alternative HTML version deleted]]\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>\n>",
+      "body_snippet": "Yes, this seems like a really good alternative.  Somewhat less elegant than \nSPSS, but free.  I will test this possibility.  Thanks Ian and all of you \nwho make R possible.\n\n--------------------------",
+      "thread_id": "thread-56999b8d4815",
+      "thread_depth": 2,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-b9ce444e26bc",
+      "message_id": "<201105220955.50125.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "5788a71988abb9472ec6ea7525cade7538b3cb3d32178ced51c7b1e82ef11760",
+      "date": "2011-05-22T09:55:46+02:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<73A1B9A6-0B54-43D8-9858-23A2D28A1DCF@stat.ucla.edu>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+        "<73A1B9A6-0B54-43D8-9858-23A2D28A1DCF@stat.ucla.edu>"
+      ],
+      "body_plain": "While we are at listing our favorite R GUIs, I'll throw RKWard into the ring: \nhttp://rkward.sf.net .\n\nI assume you are aware of the list of R GUI projects at \nhttp://rwiki.sciviews.org/doku.php?id=guis:projects ? Also, the Journal of \nStatistical Software is planning a special issue on R GUI (scheduled to be \npublished some time this year; http://www.jstatsoft.org/). You may want to \nlook out for that.\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 198 bytes\nDesc: This is a digitally signed message part.\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110522/ef41495b/attachment.bin>",
+      "body_snippet": "While we are at listing our favorite R GUIs, I'll throw RKWard into the ring: \nhttp://rkward.sf.net .\n\nI assume you are aware of the list of R GUI projects at \nhttp://rwiki.sciviews.org/doku.php?id=gu",
+      "thread_id": "thread-56999b8d4815",
+      "thread_depth": 2,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-c83a8377b6fb",
+      "message_id": "<522D285C-F889-49F9-81DE-D8B2B1122894@alice-dsl.net>",
+      "from_name": "Gerrit Hirschfeld",
+      "from_email_hash": "72411a4c0aed4ebd4ce5144726fa8d24e2fdc6560ef74e0998301480c3c48363",
+      "date": "2011-05-22T12:55:49+02:00",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 90, Issue 6",
+      "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 90, Issue 6",
+      "in_reply_to": "<mailman.11.1306058403.27059.r-sig-gui@r-project.org>",
+      "references": [
+        "<mailman.11.1306058403.27059.r-sig-gui@r-project.org>"
+      ],
+      "body_plain": "Hi, \n\nhere comes my favorite: RStudio (rstudio.org). It is not yet on the sciviews list. \n\nIt does not have as many clickable functions as RCommander, or RKward, but has some nice menus for beginners -e.g. for reading data - and more advanced users - e.g. extracting functions . The biggest advantage is that it can be set up to run on a server, so students only need a browser to access R. \n\nBest\nGerrit\n\nOn 22.05.2011, at 12:00, r-sig-gui-request at r-project.org wrote:\n\n> Send R-SIG-GUI mailing list submissions to\n> \tr-sig-gui at r-project.org\n> \n> To subscribe or unsubscribe via the World Wide Web, visit\n> \thttps://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> or, via email, send a message with subject or body 'help' to\n> \tr-sig-gui-request at r-project.org\n> \n> You can reach the person managing the list at\n> \tr-sig-gui-owner at r-project.org\n> \n> When replying, please edit your Subject line so it is more specific\n> than \"Re: Contents of R-SIG-GUI digest...\"\n> \n> \n> Today's Topics:\n> \n>   1. Re: Best GUI? (Charles Stangor)\n>   2. Re: Best GUI? (Charles Stangor)\n>   3. Re: Best GUI? (Thomas Friedrichsmeier)\n> \n> \n> ----------------------------------------------------------------------\n> \n> Message: 1\n> Date: Sat, 21 May 2011 21:36:40 -0400\n> From: \"Charles Stangor\" <cstangor at charlesstangor.com>\n> To: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\n> Cc: r-sig-gui at r-project.org\n> Subject: Re: [R-gui] Best GUI?\n> Message-ID: <71712E08DA8B409C90275EB6BC5B96ED at ChuckPC>\n> Content-Type: text/plain; format=flowed; charset=\"iso-8859-1\";\n> \treply-type=original\n> \n> OK, looks good if I can get it installed.  Also seems to completely reload \n> tons of files that I already have.\n> \n> \n> --------------------------------------------------\n> From: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\n> Sent: Saturday, May 21, 2011 5:11 PM\n> To: \"Charles Stangor\" <cstangor at charlesstangor.com>\n> Cc: <r-sig-gui at r-project.org>\n> Subject: Re: [R-gui] Best GUI?\n> \n>> You may also be interested in Deducer http://www.deducer.org, which is in \n>> use in statistics classes in Psychology departments.\n>> \n>> Ian\n>> \n>> On May 21, 2011, at 7:10 AM, Charles Stangor wrote:\n>> \n>>> So I'm wondering what might be a recommended R front-end for my \n>>> undergraduate college students who are first learning statistics?  I'm \n>>> tired of paying for SPSS but I can't ask them to learn the command lines.\n>>> \n>>> Thanks\n>>> \n>>> Charles Stangor\n>>> Professor and Associate Chair\n>>> Department of Psychology\n>>> University of Maryland\n>>> Executive Officer, Society of Experimental Social Psychology\n>>> http://sites.google.com/site/charlesstangor/\n>>> \n>>> [[alternative HTML version deleted]]\n>>> \n>>> _______________________________________________\n>>> R-SIG-GUI mailing list\n>>> R-SIG-GUI at r-project.org\n>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>> \n>> \n>> \n> \n> \n> \n> ------------------------------\n> \n> Message: 2\n> Date: Sat, 21 May 2011 23:20:36 -0400\n> From: \"Charles Stangor\" <cstangor at charlesstangor.com>\n> To: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\n> Cc: r-sig-gui at r-project.org\n> Subject: Re: [R-gui] Best GUI?\n> Message-ID: <C0DFF3ED037A49B8983A17D1E5DDF5BE at ChuckPC>\n> Content-Type: text/plain; format=flowed; charset=\"iso-8859-1\";\n> \treply-type=original\n> \n> Yes, this seems like a really good alternative.  Somewhat less elegant than \n> SPSS, but free.  I will test this possibility.  Thanks Ian and all of you \n> who make R possible.\n> \n> --------------------------------------------------\n> From: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\n> Sent: Saturday, May 21, 2011 5:11 PM\n> To: \"Charles Stangor\" <cstangor at charlesstangor.com>\n> Cc: <r-sig-gui at r-project.org>\n> Subject: Re: [R-gui] Best GUI?\n> \n>> You may also be interested in Deducer http://www.deducer.org, which is in \n>> use in statistics classes in Psychology departments.\n>> \n>> Ian\n>> \n>> On May 21, 2011, at 7:10 AM, Charles Stangor wrote:\n>> \n>>> So I'm wondering what might be a recommended R front-end for my \n>>> undergraduate college students who are first learning statistics?  I'm \n>>> tired of paying for SPSS but I can't ask them to learn the command lines.\n>>> \n>>> Thanks\n>>> \n>>> Charles Stangor\n>>> Professor and Associate Chair\n>>> Department of Psychology\n>>> University of Maryland\n>>> Executive Officer, Society of Experimental Social Psychology\n>>> http://sites.google.com/site/charlesstangor/\n>>> \n>>> [[alternative HTML version deleted]]\n>>> \n>>> _______________________________________________\n>>> R-SIG-GUI mailing list\n>>> R-SIG-GUI at r-project.org\n>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>> \n>> \n>> \n> \n> \n> \n> ------------------------------\n> \n> Message: 3\n> Date: 22 May 2011 09:55:46 +0200\n> From: \"Thomas Friedrichsmeier\"\n> \t<thomas.friedrichsmeier at ruhr-uni-bochum.de>\n> To: r-sig-gui at r-project.org\n> Subject: Re: [R-gui] Best GUI?\n> Message-ID:\n> \t<201105220955.50125.thomas.friedrichsmeier at ruhr-uni-bochum.de>\n> Content-Type: text/plain; charset=\"iso-8859-1\"\n> \n> While we are at listing our favorite R GUIs, I'll throw RKWard into the ring: \n> http://rkward.sf.net .\n> \n> I assume you are aware of the list of R GUI projects at \n> http://rwiki.sciviews.org/doku.php?id=guis:projects ? Also, the Journal of \n> Statistical Software is planning a special issue on R GUI (scheduled to be \n> published some time this year; http://www.jstatsoft.org/). You may want to \n> look out for that.\n> \n> Regards\n> Thomas\n> -------------- next part --------------\n> A non-text attachment was scrubbed...\n> Name: not available\n> Type: application/pgp-signature\n> Size: 198 bytes\n> Desc: This is a digitally signed message part.\n> URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110522/ef41495b/attachment-0001.bin>\n> \n> ------------------------------\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n> \n> End of R-SIG-GUI Digest, Vol 90, Issue 6\n> ****************************************\n\n___________________________________\nDr. rer. nat. Gerrit Hirschfeld, Dipl.-Psych.\n\nVodafone Foundation Institute and Chair for Children's Pain Therapy and Paediatric Palliative Care\nChildren's Hospital Datteln\nWitten/Herdecke University\nDr.-Friedrich-Steiner Str. 5\n45711 Datteln\n\nPhone: +49 (0) 2363-975-183\nFax: +49 (0) 2363-975-181\n\nWeb: \nwww.vodafone-stiftungsinstitut.de\nwww.gerrithirschfeld.de\nwww.surefoss.org",
+      "body_snippet": "Hi, \n\nhere comes my favorite: RStudio (rstudio.org). It is not yet on the sciviews list. \n\nIt does not have as many clickable functions as RCommander, or RKward, but has some nice menus for beginners ",
+      "thread_id": "thread-c83a8377b6fb",
+      "thread_depth": 0,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-3879b2566152",
+      "message_id": "<ABA35599F5684270915BFFD8F792FD9B@ChuckPC>",
+      "from_name": "Charles Stangor",
+      "from_email_hash": "18d3b54490f2ceedee5b3db11b4c63cf8a8e9e08658c9b027e7e654e26d8393e",
+      "date": "2011-05-22T08:17:23-04:00",
+      "subject": "[R-gui] Best GUI?",
+      "subject_clean": "[R-gui] Best GUI?",
+      "in_reply_to": "<201105220955.50125.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
+      "references": [
+        "<8FE3C320942B4834B88E2189908883E2@ChuckPC>",
+        "<73A1B9A6-0B54-43D8-9858-23A2D28A1DCF@stat.ucla.edu>",
+        "<201105220955.50125.thomas.friedrichsmeier@ruhr-uni-bochum.de>"
+      ],
+      "body_plain": "Thanks Thomas... I'm liking the Deducer package a lot.\n\n\n--------------------------------------------------\nFrom: \"Thomas Friedrichsmeier\" <thomas.friedrichsmeier at ruhr-uni-bochum.de>\nSent: Sunday, May 22, 2011 3:55 AM\nTo: <r-sig-gui at r-project.org>\nCc: \"Charles Stangor\" <cstangor at charlesstangor.com>\nSubject: Re: [R-gui] Best GUI?",
+      "body_snippet": "Thanks Thomas... I'm liking the Deducer package a lot.\n\n\n--------------------------------------------------\nFrom: \"Thomas Friedrichsmeier\" <thomas.friedrichsmeier at ruhr-uni-bochum.de>\nSent: Sunday, ",
+      "thread_id": "thread-56999b8d4815",
+      "thread_depth": 3,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-76b47ff5f1a0",
+      "message_id": "<8527422406934602B14FB1449EA4CEB9@ChuckPC>",
+      "from_name": "Charles Stangor",
+      "from_email_hash": "18d3b54490f2ceedee5b3db11b4c63cf8a8e9e08658c9b027e7e654e26d8393e",
+      "date": "2011-05-22T08:34:13-04:00",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 90, Issue 6",
+      "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 90, Issue 6",
+      "in_reply_to": "<522D285C-F889-49F9-81DE-D8B2B1122894@alice-dsl.net>",
+      "references": [
+        "<mailman.11.1306058403.27059.r-sig-gui@r-project.org>",
+        "<522D285C-F889-49F9-81DE-D8B2B1122894@alice-dsl.net>"
+      ],
+      "body_plain": "Gerrit,\n\nOK, well I completely love the idea that the student version would be \nserver-based, but RStudio seems less user-friendly to me than Deducer.  I \ndon't see a data editor or dropdown menus.  Deducer feels a lot like SPSS to \nme (again, no offense intended).\n\n\n--------------------------------------------------\nFrom: \"Gerrit Hirschfeld\" <gerrit.hirschfeld at alice-dsl.net>\nSent: Sunday, May 22, 2011 6:55 AM\nTo: <r-sig-gui at r-project.org>\nSubject: Re: [R-gui] R-SIG-GUI Digest, Vol 90, Issue 6\n\n> Hi,\n>\n> here comes my favorite: RStudio (rstudio.org). It is not yet on the \n> sciviews list.\n>\n> It does not have as many clickable functions as RCommander, or RKward, but \n> has some nice menus for beginners -e.g. for reading data - and more \n> advanced users - e.g. extracting functions . The biggest advantage is that \n> it can be set up to run on a server, so students only need a browser to \n> access R.\n>\n> Best\n> Gerrit\n>\n> On 22.05.2011, at 12:00, r-sig-gui-request at r-project.org wrote:\n>\n>> Send R-SIG-GUI mailing list submissions to\n>> r-sig-gui at r-project.org\n>>\n>> To subscribe or unsubscribe via the World Wide Web, visit\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>> or, via email, send a message with subject or body 'help' to\n>> r-sig-gui-request at r-project.org\n>>\n>> You can reach the person managing the list at\n>> r-sig-gui-owner at r-project.org\n>>\n>> When replying, please edit your Subject line so it is more specific\n>> than \"Re: Contents of R-SIG-GUI digest...\"\n>>\n>>\n>> Today's Topics:\n>>\n>>   1. Re: Best GUI? (Charles Stangor)\n>>   2. Re: Best GUI? (Charles Stangor)\n>>   3. Re: Best GUI? (Thomas Friedrichsmeier)\n>>\n>>\n>> ----------------------------------------------------------------------\n>>\n>> Message: 1\n>> Date: Sat, 21 May 2011 21:36:40 -0400\n>> From: \"Charles Stangor\" <cstangor at charlesstangor.com>\n>> To: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\n>> Cc: r-sig-gui at r-project.org\n>> Subject: Re: [R-gui] Best GUI?\n>> Message-ID: <71712E08DA8B409C90275EB6BC5B96ED at ChuckPC>\n>> Content-Type: text/plain; format=flowed; charset=\"iso-8859-1\";\n>> reply-type=original\n>>\n>> OK, looks good if I can get it installed.  Also seems to completely \n>> reload\n>> tons of files that I already have.\n>>\n>>\n>> --------------------------------------------------\n>> From: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\n>> Sent: Saturday, May 21, 2011 5:11 PM\n>> To: \"Charles Stangor\" <cstangor at charlesstangor.com>\n>> Cc: <r-sig-gui at r-project.org>\n>> Subject: Re: [R-gui] Best GUI?\n>>\n>>> You may also be interested in Deducer http://www.deducer.org, which is \n>>> in\n>>> use in statistics classes in Psychology departments.\n>>>\n>>> Ian\n>>>\n>>> On May 21, 2011, at 7:10 AM, Charles Stangor wrote:\n>>>\n>>>> So I'm wondering what might be a recommended R front-end for my\n>>>> undergraduate college students who are first learning statistics?  I'm\n>>>> tired of paying for SPSS but I can't ask them to learn the command \n>>>> lines.\n>>>>\n>>>> Thanks\n>>>>\n>>>> Charles Stangor\n>>>> Professor and Associate Chair\n>>>> Department of Psychology\n>>>> University of Maryland\n>>>> Executive Officer, Society of Experimental Social Psychology\n>>>> http://sites.google.com/site/charlesstangor/\n>>>>\n>>>> [[alternative HTML version deleted]]\n>>>>\n>>>> _______________________________________________\n>>>> R-SIG-GUI mailing list\n>>>> R-SIG-GUI at r-project.org\n>>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>>>\n>>>\n>>>\n>>\n>>\n>>\n>> ------------------------------\n>>\n>> Message: 2\n>> Date: Sat, 21 May 2011 23:20:36 -0400\n>> From: \"Charles Stangor\" <cstangor at charlesstangor.com>\n>> To: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\n>> Cc: r-sig-gui at r-project.org\n>> Subject: Re: [R-gui] Best GUI?\n>> Message-ID: <C0DFF3ED037A49B8983A17D1E5DDF5BE at ChuckPC>\n>> Content-Type: text/plain; format=flowed; charset=\"iso-8859-1\";\n>> reply-type=original\n>>\n>> Yes, this seems like a really good alternative.  Somewhat less elegant \n>> than\n>> SPSS, but free.  I will test this possibility.  Thanks Ian and all of you\n>> who make R possible.\n>>\n>> --------------------------------------------------\n>> From: \"Ian Fellows\" <ian.fellows at stat.ucla.edu>\n>> Sent: Saturday, May 21, 2011 5:11 PM\n>> To: \"Charles Stangor\" <cstangor at charlesstangor.com>\n>> Cc: <r-sig-gui at r-project.org>\n>> Subject: Re: [R-gui] Best GUI?\n>>\n>>> You may also be interested in Deducer http://www.deducer.org, which is \n>>> in\n>>> use in statistics classes in Psychology departments.\n>>>\n>>> Ian\n>>>\n>>> On May 21, 2011, at 7:10 AM, Charles Stangor wrote:\n>>>\n>>>> So I'm wondering what might be a recommended R front-end for my\n>>>> undergraduate college students who are first learning statistics?  I'm\n>>>> tired of paying for SPSS but I can't ask them to learn the command \n>>>> lines.\n>>>>\n>>>> Thanks\n>>>>\n>>>> Charles Stangor\n>>>> Professor and Associate Chair\n>>>> Department of Psychology\n>>>> University of Maryland\n>>>> Executive Officer, Society of Experimental Social Psychology\n>>>> http://sites.google.com/site/charlesstangor/\n>>>>\n>>>> [[alternative HTML version deleted]]\n>>>>\n>>>> _______________________________________________\n>>>> R-SIG-GUI mailing list\n>>>> R-SIG-GUI at r-project.org\n>>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>>>\n>>>\n>>>\n>>\n>>\n>>\n>> ------------------------------\n>>\n>> Message: 3\n>> Date: 22 May 2011 09:55:46 +0200\n>> From: \"Thomas Friedrichsmeier\"\n>> <thomas.friedrichsmeier at ruhr-uni-bochum.de>\n>> To: r-sig-gui at r-project.org\n>> Subject: Re: [R-gui] Best GUI?\n>> Message-ID:\n>> <201105220955.50125.thomas.friedrichsmeier at ruhr-uni-bochum.de>\n>> Content-Type: text/plain; charset=\"iso-8859-1\"\n>>\n>> While we are at listing our favorite R GUIs, I'll throw RKWard into the \n>> ring:\n>> http://rkward.sf.net .\n>>\n>> I assume you are aware of the list of R GUI projects at\n>> http://rwiki.sciviews.org/doku.php?id=guis:projects ? Also, the Journal \n>> of\n>> Statistical Software is planning a special issue on R GUI (scheduled to \n>> be\n>> published some time this year; http://www.jstatsoft.org/). You may want \n>> to\n>> look out for that.\n>>\n>> Regards\n>> Thomas\n>> -------------- next part --------------\n>> A non-text attachment was scrubbed...\n>> Name: not available\n>> Type: application/pgp-signature\n>> Size: 198 bytes\n>> Desc: This is a digitally signed message part.\n>> URL: \n>> <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110522/ef41495b/attachment-0001.bin>\n>>\n>> ------------------------------\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>>\n>> End of R-SIG-GUI Digest, Vol 90, Issue 6\n>> ****************************************\n>\n> ___________________________________\n> Dr. rer. nat. Gerrit Hirschfeld, Dipl.-Psych.\n>\n> Vodafone Foundation Institute and Chair for Children's Pain Therapy and \n> Paediatric Palliative Care\n> Children's Hospital Datteln\n> Witten/Herdecke University\n> Dr.-Friedrich-Steiner Str. 5\n> 45711 Datteln\n>\n> Phone: +49 (0) 2363-975-183\n> Fax: +49 (0) 2363-975-181\n>\n> Web:\n> www.vodafone-stiftungsinstitut.de\n> www.gerrithirschfeld.de\n> www.surefoss.org\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Gerrit,\n\nOK, well I completely love the idea that the student version would be \nserver-based, but RStudio seems less user-friendly to me than Deducer.  I \ndon't see a data editor or dropdown menus.  D",
+      "thread_id": "thread-c83a8377b6fb",
+      "thread_depth": 1,
+      "month": "2011-05"
+    },
+    {
+      "id": "msg-4a4037a5058d",
+      "message_id": "<4DDA244F.2050107@uhb.fr>",
+      "from_name": "Yvonnick Noel",
+      "from_email_hash": "6b0c1beb7700ad7ed9305cad83d011377781980ebe20349aefdf56be0114ff43",
+      "date": "2011-05-23T11:09:35+02:00",
+      "subject": "[R-gui] R2STATS: A New GUI for GLM and GLMM in R",
+      "subject_clean": "[R-gui] R2STATS: A New GUI for GLM and GLMM in R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI don't know if it might be of interest to some of you, but I have begun \nto develop a very simple GUI for estimating GLM and GLMM in R, called \nR2STATS :\n\nhttp://yvonnick.noel.free.fr/r2stats\n\nIt is based on gWidgets and RGtk2. I am sorry: It is only available in \nFrench at the moment but should be available in English in the next few \nmonths.\n\nIt is by no means as sophisticated or complete as other existing \nsolutions, but is strongly oriented towards a model-comparison approach, \nwith automatic graphs generation, which was what I needed for my students.\n\nBest wishes,\n\nYvonnick Noel\nDepartment of Psychology\nUniversity of Brittany, Rennes\nFrance",
+      "body_snippet": "Hello,\n\nI don't know if it might be of interest to some of you, but I have begun \nto develop a very simple GUI for estimating GLM and GLMM in R, called \nR2STATS :\n\nhttp://yvonnick.noel.free.fr/r2stats",
+      "thread_id": "thread-4a4037a5058d",
+      "thread_depth": 0,
+      "month": "2011-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-ec2b2de11907",
+      "subject": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
+      "message_count": 4,
+      "participants": [
+        "Fricker, Ronald (Ron) (CIV)",
+        "Virkki Arho",
+        "jverzani"
+      ],
+      "started": "2011-05-07T01:14:41+00:00",
+      "last_reply": "2011-05-10T23:32:02+00:00",
+      "root_message_id": "msg-ec2b2de11907"
+    },
+    {
+      "id": "thread-4673a6437647",
+      "subject": "[R-gui] gWidgetsRGtk2: Problem with gradio handler in a proto object",
+      "message_count": 7,
+      "participants": [
+        "Gabor Grothendieck",
+        "John Verzani",
+        "Yvonnick Noel"
+      ],
+      "started": "2011-05-13T08:37:42+02:00",
+      "last_reply": "2011-05-14T13:42:53+02:00",
+      "root_message_id": "msg-4673a6437647"
+    },
+    {
+      "id": "thread-56999b8d4815",
+      "subject": "[R-gui] Best GUI?",
+      "message_count": 7,
+      "participants": [
+        "Charles Stangor",
+        "Ian Fellows",
+        "Neuwirth Erich",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2011-05-21T10:10:14-04:00",
+      "last_reply": "2011-05-22T08:17:23-04:00",
+      "root_message_id": "msg-56999b8d4815"
+    },
+    {
+      "id": "thread-41739b8cc608",
+      "subject": "[R-gui] Best GUI?",
+      "message_count": 2,
+      "participants": [
+        "Dan Putler",
+        "John Fox"
+      ],
+      "started": "2011-05-21T11:47:06-07:00",
+      "last_reply": "2011-05-21T16:36:22-04:00",
+      "root_message_id": "msg-41739b8cc608"
+    },
+    {
+      "id": "thread-04b1a8fa7978",
+      "subject": "[R-gui] Best GUI?",
+      "message_count": 2,
+      "participants": [
+        "Charles Stangor",
+        "Dan Putler"
+      ],
+      "started": "2011-05-21T17:29:33-07:00",
+      "last_reply": "2011-05-21T21:10:50-04:00",
+      "root_message_id": "msg-04b1a8fa7978"
+    },
+    {
+      "id": "thread-c83a8377b6fb",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 90, Issue 6",
+      "message_count": 2,
+      "participants": [
+        "Charles Stangor",
+        "Gerrit Hirschfeld"
+      ],
+      "started": "2011-05-22T12:55:49+02:00",
+      "last_reply": "2011-05-22T08:34:13-04:00",
+      "root_message_id": "msg-c83a8377b6fb"
+    },
+    {
+      "id": "thread-4a4037a5058d",
+      "subject": "[R-gui] R2STATS: A New GUI for GLM and GLMM in R",
+      "message_count": 1,
+      "participants": [
+        "Yvonnick Noel"
+      ],
+      "started": "2011-05-23T11:09:35+02:00",
+      "last_reply": "2011-05-23T11:09:35+02:00",
+      "root_message_id": "msg-4a4037a5058d"
+    }
+  ]
+}

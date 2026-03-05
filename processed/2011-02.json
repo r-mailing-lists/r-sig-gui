@@ -1,0 +1,82 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2011-02",
+  "messages": [
+    {
+      "id": "msg-e4222995ef07",
+      "message_id": "<C98ABA8D.14DEF%proebuck@mdanderson.org>",
+      "from_name": "Roebuck,Paul L",
+      "from_email_hash": "ef0e57f0bb056c7f3f42f0e63a2d5a56aad5435f894d1b6af3943f2a4f40021d",
+      "date": "2011-02-23T13:22:21-06:00",
+      "subject": "[R-gui] Good Tcl/Tk widget reference?",
+      "subject_clean": "[R-gui] Good Tcl/Tk widget reference?",
+      "in_reply_to": "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>",
+      "references": [],
+      "body_plain": "On 9/16/10 4:22 PM, \"Hodgess, Erin\" <HodgessE at uhd.edu> wrote:\n\n> Next, what is a good reference for Tcl/tk that would include the options\n> for widgets, please?\n\n<http://www.amazon.com/Effective-Tcl-Tk-Programming-Programs/dp/0201634740>\n\"Effective Tcl/Tk Programming\" (Harrison/McLennan)\n    Best Tk book available (GUI programming).\n\n<http://www.beedub.com/book/>\n\"Practical Programming in Tcl and Tk\" (Welch/Jones)\n    Everything. Good reference in general.\n\n\nBoth are must-haves for doing any significant amount of Tcl/Tk work.\nI found John Ousterhout's book to be more dense and of less\nvalue than either listed above.\n\n\n<Sorry so late to the party...>",
+      "body_snippet": "On 9/16/10 4:22 PM, \"Hodgess, Erin\" <HodgessE at uhd.edu> wrote:\n\n> Next, what is a good reference for Tcl/tk that would include the options\n> for widgets, please?\n\n<http://www.amazon.com/Effective-Tc",
+      "thread_id": "thread-e4222995ef07",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-90ff1022d11b",
+      "message_id": "<C98AC0FB.14DF4%proebuck@mdanderson.org>",
+      "from_name": "Roebuck,Paul L",
+      "from_email_hash": "ef0e57f0bb056c7f3f42f0e63a2d5a56aad5435f894d1b6af3943f2a4f40021d",
+      "date": "2011-02-23T13:49:47-06:00",
+      "subject": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
+      "subject_clean": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "<previously misfiled in r-devel...>\n\nHow are % substitutions handled for callbacks in R?\nIs there an 'event' parameter that can be requested\nwhich would contain the rest of the information specific\nto the event type itself?\n\nHow should we translate something like the following:\n\nTcl> bind Frame <Enter> {%W config -bg red}\nTcl> bind Frame <Leave> {%W config -bg white}\n\nsuch that the widget id (and other % substitutions) can be accessed\nin R callback? I'm trying to write callback handlers for dynamic\nbindtags.\n\none   <- tkframe(width=30, height=30)\ntwo   <- tkframe(width=30, height=30)\nthree <- tkframe(width=30, height=30)\ntkbind(\"Frame\",\n       \"<Enter>\",\n       function(TBD} {\n           ## How do I determine widget id (%W) here?\n       })",
+      "body_snippet": "<previously misfiled in r-devel...>\n\nHow are % substitutions handled for callbacks in R?\nIs there an 'event' parameter that can be requested\nwhich would contain the rest of the information specific\nto",
+      "thread_id": "thread-90ff1022d11b",
+      "thread_depth": 0,
+      "month": "2011-02"
+    },
+    {
+      "id": "msg-834ec6fd238c",
+      "message_id": "<4D656775.7020803@waddell.ch>",
+      "from_name": "Adrian Waddell",
+      "from_email_hash": "afd6ae43637c0691d909168b5aa7407cdbf975683ad29c432cf4cd72092f8fda",
+      "date": "2011-02-23T15:00:53-05:00",
+      "subject": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
+      "subject_clean": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
+      "in_reply_to": "<C98AC0FB.14DF4%proebuck@mdanderson.org>",
+      "references": [
+        "<C98AC0FB.14DF4%proebuck@mdanderson.org>"
+      ],
+      "body_plain": "Paul:\n\nOn 02/23/2011 02:49 PM, Roebuck,Paul L wrote:\n> <previously misfiled in r-devel...>\n> \n> How are % substitutions handled for callbacks in R?\n> Is there an 'event' parameter that can be requested\n> which would contain the rest of the information specific\n> to the event type itself?\n> \n> How should we translate something like the following:\n> \n> Tcl> bind Frame <Enter> {%W config -bg red}\n> Tcl> bind Frame <Leave> {%W config -bg white}\n> \n> such that the widget id (and other % substitutions) can be accessed\n> in R callback? I'm trying to write callback handlers for dynamic\n> bindtags.\n> \n> one   <- tkframe(width=30, height=30)\n> two   <- tkframe(width=30, height=30)\n> three <- tkframe(width=30, height=30)\n> tkbind(\"Frame\",\n>        \"<Enter>\",\n>        function(TBD} {\n>            ## How do I determine widget id (%W) here?\n>        })\n\nI think you can just use the letter without % as a function argument, try\n\nlibrary(tcltk)\ntt <- tktoplevel()\ntkbind(tt,'<Enter>',function(W){\n  cat(paste('Toplevel',W,'\\n'))\n})\n\nGreetings,\n\nAdrian\n\n\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Paul:\n\nOn 02/23/2011 02:49 PM, Roebuck,Paul L wrote:\n> <previously misfiled in r-devel...>\n> \n> How are % substitutions handled for callbacks in R?\n> Is there an 'event' parameter that can be requeste",
+      "thread_id": "thread-90ff1022d11b",
+      "thread_depth": 1,
+      "month": "2011-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-e4222995ef07",
+      "subject": "[R-gui] Good Tcl/Tk widget reference?",
+      "message_count": 1,
+      "participants": [
+        "Roebuck,Paul L"
+      ],
+      "started": "2011-02-23T13:22:21-06:00",
+      "last_reply": "2011-02-23T13:22:21-06:00",
+      "root_message_id": "msg-e4222995ef07"
+    },
+    {
+      "id": "thread-90ff1022d11b",
+      "subject": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
+      "message_count": 2,
+      "participants": [
+        "Adrian Waddell",
+        "Roebuck,Paul L"
+      ],
+      "started": "2011-02-23T13:49:47-06:00",
+      "last_reply": "2011-02-23T15:00:53-05:00",
+      "root_message_id": "msg-90ff1022d11b"
+    }
+  ]
+}

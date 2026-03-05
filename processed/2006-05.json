@@ -1,0 +1,289 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-05",
+  "messages": [
+    {
+      "id": "msg-1414d72a41c4",
+      "message_id": "<SANTANARhyzJeQeqGFK000066fe@santana.lemond.3rdmill.com>",
+      "from_name": "eNews at 3rdmill.com",
+      "from_email_hash": "5c62506aae61dc789515db417fe0efc8d3f6dd8bcfa28b669e9da9350e204e52",
+      "date": "2006-05-19T16:56:22-04:00",
+      "subject": "[R-gui] Innovative Enterprise Microarray Software",
+      "subject_clean": "[R-gui] Innovative Enterprise Microarray Software",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "3rd Millennium is announcing the release of its award winning Array Repository and Data Analysis System (ARDAS) version 2. ARDAS is a web-enabled enterprise software system that provides a complete and fully integrated solution to microarray data acquisition, management, and analysis.\n\nARDAS includes three main modules:\n1- A Laboratory Information Management System (LIMS)\n2- A repository and data warehouse\n3- An Analysis Information Management System (AIMS) based on bioconductor and R\n\nARDAS is a robust and scalable enterprise system based on an Oracle relational database and is offered at desktop prices ($1900-$2900). To learn more or request a trial, please visit our web site at http://www.3rdmill.com/em1\n\nThank you.\n\n3rd Millennium, Inc.\n391 Totten Pond Rd. Suite 104\nWaltham, MA 02451\neSales at 3rdmill.com\n781-890-4440\nwww.3rdmill.com\n\n---------------------------------------------------------------------\nIf you'd rather not receive emails from 3rd Millennium, please reply\nto this email with the word REMOVE in the body of your message.",
+      "body_snippet": "3rd Millennium is announcing the release of its award winning Array Repository and Data Analysis System (ARDAS) version 2. ARDAS is a web-enabled enterprise software system that provides a complete an",
+      "thread_id": "thread-1414d72a41c4",
+      "thread_depth": 0,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-4d72799a1dfd",
+      "message_id": "<446FD0BA.6070008@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-05-20T23:30:18-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.5.1 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.5.1 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.1) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help/English/Changes/HTML'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.1) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-4d72799a1dfd",
+      "thread_depth": 0,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-2a9ef220467d",
+      "message_id": "<4471A6C3.3020601@ufz.de>",
+      "from_name": "Ingo Fetzer",
+      "from_email_hash": "514c618903ed31ae4e3103031dbe117818db3c3a4b641704397d2d625132edf0",
+      "date": "2006-05-22T13:55:47+02:00",
+      "subject": "[R-gui] How to assign value from tlctk window to variable ?",
+      "subject_clean": "[R-gui] How to assign value from tlctk window to variable ?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "most probably this is a question with a simple answer but I have not found an answer to it anywhere yet:\n\nI took one of James Wettenhalls sample scripts (http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/) for radio buttons as basis to be integrated into a larger script.\n\nNow I wonder how can one assign the input of a tcltk window (eg in the radiobutton\nexample \"oranges\") to a variable which can be used later in a r-script ?\n\n In the case of the radio buttons I tried it with (see also script below):\n\n chosen.fruit<-tclvalue(rbValue)\n print(chosen.fruit)             #to check the ouput in the console\n\n But then I always get the default values (\"Oranges\").\n When I after running the skript print in the R-console \"tclvalue(rbValue)\" I get the correct values (e.g. \"Apples\").\n\n I additionally made rbVal (which should represent the actual input of\n the tcltk window) with \"<<-\" a global variable but still I get the same\n results as before.\n\n It would be grateful if one could help me\n\nIngo\n\n\n\n require(tcltk)\n tt <- tktoplevel()\n rb1 <- tkradiobutton(tt)\n rb2 <- tkradiobutton(tt)\n rbValue <- tclVar(\"oranges\")\n tkconfigure(rb1,variable=rbValue,value=\"apples\")\n tkconfigure(rb2,variable=rbValue,value=\"oranges\")\n tkgrid(tklabel(tt,text=\"Which do you prefer?\"))\n tkgrid(tklabel(tt,text=\"Apples \"),rb1)\n tkgrid(tklabel(tt,text=\"Oranges \"),rb2)\n\n OnOK <- function()\n {\n     rbVal <- as.character(tclvalue(rbValue))\n     tkdestroy(tt)\n     if (rbVal==\"apples\")\n     \ttkmessageBox(message=\"Good choice!  An apple a day keeps the doctor\n away!\")\n     if (rbVal==\"oranges\")\n     \ttkmessageBox(message=\"Good choice!  Oranges are full of Vitamin C!\")\n }\n OK.but <- tkbutton(tt,text=\"OK\",command=OnOK)\n tkgrid(OK.but)\n tkfocus(tt)\n\n chosen.fruit<-tclvalue(rbValue)\n print(chosen.fruit)",
+      "body_snippet": "most probably this is a question with a simple answer but I have not found an answer to it anywhere yet:\n\nI took one of James Wettenhalls sample scripts (http://bioinf.wehi.edu.au/~wettenhall/RTclTkEx",
+      "thread_id": "thread-2a9ef220467d",
+      "thread_depth": 0,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-e96586ff0a89",
+      "message_id": "<x2r72mxn9y.fsf@viggo.kubism.ku.dk>",
+      "from_name": "Peter Dalgaard",
+      "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
+      "date": "2006-05-22T14:22:01+02:00",
+      "subject": "[R-gui] How to assign value from tlctk window to variable ?",
+      "subject_clean": "[R-gui] How to assign value from tlctk window to variable ?",
+      "in_reply_to": "<4471A6C3.3020601@ufz.de>",
+      "references": [
+        "<4471A6C3.3020601@ufz.de>"
+      ],
+      "body_plain": "Ingo Fetzer <ingo.fetzer at ufz.de> writes:\n\n> most probably this is a question with a simple answer but I have not found an answer to it anywhere yet:\n> \n> I took one of James Wettenhalls sample scripts (http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/) for radio buttons as basis to be integrated into a larger script.\n> \n> Now I wonder how can one assign the input of a tcltk window (eg in the radiobutton\n> example \"oranges\") to a variable which can be used later in a r-script ?\n> \n>  In the case of the radio buttons I tried it with (see also script below):\n> \n>  chosen.fruit<-tclvalue(rbValue)\n>  print(chosen.fruit)             #to check the ouput in the console\n> \n>  But then I always get the default values (\"Oranges\").\n>  When I after running the skript print in the R-console \"tclvalue(rbValue)\" I get the correct values (e.g. \"Apples\").\n\nEr, what did you expect? chosen.fruit will represent the value for the\nselected item  *at the time of the assignment* .\n \n>  I additionally made rbVal (which should represent the actual input of\n>  the tcltk window) with \"<<-\" a global variable but still I get the same\n>  results as before.\n> \n>  It would be grateful if one could help me\n> \n> Ingo\n> \n> \n> \n>  require(tcltk)\n>  tt <- tktoplevel()\n>  rb1 <- tkradiobutton(tt)\n>  rb2 <- tkradiobutton(tt)\n>  rbValue <- tclVar(\"oranges\")\n>  tkconfigure(rb1,variable=rbValue,value=\"apples\")\n>  tkconfigure(rb2,variable=rbValue,value=\"oranges\")\n>  tkgrid(tklabel(tt,text=\"Which do you prefer?\"))\n>  tkgrid(tklabel(tt,text=\"Apples \"),rb1)\n>  tkgrid(tklabel(tt,text=\"Oranges \"),rb2)\n> \n>  OnOK <- function()\n>  {\n>      rbVal <- as.character(tclvalue(rbValue))\n>      tkdestroy(tt)\n>      if (rbVal==\"apples\")\n>      \ttkmessageBox(message=\"Good choice!  An apple a day keeps the doctor\n>  away!\")\n>      if (rbVal==\"oranges\")\n>      \ttkmessageBox(message=\"Good choice!  Oranges are full of Vitamin C!\")\n>  }\n>  OK.but <- tkbutton(tt,text=\"OK\",command=OnOK)\n>  tkgrid(OK.but)\n>  tkfocus(tt)\n> \n>  chosen.fruit<-tclvalue(rbValue)\n>  print(chosen.fruit)\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n\n-- \n   O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B\n  c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K\n (*) \\(*) -- University of Copenhagen   Denmark          Ph:  (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)                  FAX: (+45) 35327907",
+      "body_snippet": "Ingo Fetzer <ingo.fetzer at ufz.de> writes:\n\n> most probably this is a question with a simple answer but I have not found an answer to it anywhere yet:\n> \n> I took one of James Wettenhalls sample scri",
+      "thread_id": "thread-2a9ef220467d",
+      "thread_depth": 1,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-02664547b55f",
+      "message_id": "<4471CABA.2060800@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-05-22T11:29:14-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.5.2 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.5.2 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.2) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help//English/Readme/HTML'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.2) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-02664547b55f",
+      "thread_depth": 0,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-730637f30471",
+      "message_id": "<4473AE2F.4010902@iastate.edu>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2006-05-23T19:51:59-05:00",
+      "subject": "[R-gui] RGtk2 2.8.4 and cairoDevice 1.0.0 released",
+      "subject_clean": "[R-gui] RGtk2 2.8.4 and cairoDevice 1.0.0 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I am pleased to announce a new version of RGtk2 (2.8.4) and its sibling \ncairoDevice (1.0.0).\nThese versions actually represent significant revisions in that both of \nthem now pass \"R CMD check\" so that they could theoretically be placed \non CRAN.\n\nMany bugs in RGtk2 were fixed and some enhancements were made to the \nRGtkDataFrame.\nThe naming of constants (like GDK key codes, Pango scale factors, and \nGTK stock ids) was changed to exactly match that of the C \nimplementation, in order to differentiate them from function names. This \nprobably doesn't affect anyone.\n\nThe cairo graphics device (cairoDevice) now supports rendering to \nGdkDrawables, which means you can leverage the GDK and GDKPixbuf API's \n(from RGtk2) to modify cairo-drawn R graphics and save them to files in \nformats like JPEG, GIF, and PNG.\n\nPlease grab these from the RGtk2 website: http://www.ggobi.org/rgtk2\n\nThanks,\nMichael",
+      "body_snippet": "I am pleased to announce a new version of RGtk2 (2.8.4) and its sibling \ncairoDevice (1.0.0).\nThese versions actually represent significant revisions in that both of \nthem now pass \"R CMD check\" so th",
+      "thread_id": "thread-730637f30471",
+      "thread_depth": 0,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-dc011c786782",
+      "message_id": "<576452c40605251211m78e43028j118da6dd7d874d88@mail.gmail.com>",
+      "from_name": "j verzani",
+      "from_email_hash": "a029675bf9462719f336b4ef9bb1441ceba180f1ffd7e0365f6802832a6ad84e",
+      "date": "2006-05-25T15:11:04-04:00",
+      "subject": "[R-gui] New version of iWIdgetsRGtk and pmg",
+      "subject_clean": "[R-gui] New version of iWIdgetsRGtk and pmg",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060525/738cffeb/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060525/738cffeb/attachment.pl",
+      "thread_id": "thread-dc011c786782",
+      "thread_depth": 0,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-0e065dceed1f",
+      "message_id": "<200605281645.05678.adi@roda.ro>",
+      "from_name": "Adrian DUSA",
+      "from_email_hash": "c7eb80271393ed831f0ae78107a15bf2f527ce148e6d2808ba6b98398c1130f7",
+      "date": "2006-05-28T16:45:05+03:00",
+      "subject": "[R-gui] pseudo radiobutton from check boxes",
+      "subject_clean": "[R-gui] pseudo radiobutton from check boxes",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear list members,\n\nI have a question related to tcltk programming. I'd like to create 4 check \nboxes with different options; that's easy, but I want the 4th option to \ndeactivate the first three and viceversa: if any of the first three check \nboxes has been activated, this should deactivate the fourth check box.\n\nI've written a draft code below, but I feel I misunderstand the usage of \n\"command\". In my mind, this is only activated when the user presses the \nbutton with the mouse. Instead, it seems like the command is activated each \ntime when the button chages its state. Is there another option I could use \nfor this purpose?\n\nThank you in advance,\nAdrian\n\nrequire(tcltk)\ntop <- tktoplevel()\n\ncbOptions <- c(\"option1\", \"option2\", \"option3\", \"option4\")\ncbLabels <- c(\"Option A:\", \"Option B:\", \"Option C:\", \"Option D:\")\ninitialValues <- c(0, 0, 0, 0)\ncbVariable <- tclVar(\"0\")\n\noption13Command <- function() {\n    tkconfigure(option4CB, variable=cbVariable)\n    }\n\noption4Command <- function() {\n    tkconfigure(option1CB, variable=cbVariable)\n    tkconfigure(option2CB, variable=cbVariable)\n    tkconfigure(option3CB, variable=cbVariable)\n    }\n\noption1CB <- tkcheckbutton(top)\noption1Variable <- tclVar(initialValues[1])\ntkconfigure(option1CB, variable=option1Variable, command=option13Command)\ntkgrid(tklabel(top, text=cbLabels[1]), option1CB, sticky=\"e\")\n\noption2CB <- tkcheckbutton(top)\noption2Variable <- tclVar(initialValues[2])\ntkconfigure(option2CB, variable=option2Variable, command=option13Command)\ntkgrid(tklabel(top, text=cbLabels[2]), option2CB, sticky=\"e\")\n\noption3CB <- tkcheckbutton(top)\noption3Variable <- tclVar(initialValues[3])\ntkconfigure(option3CB, variable=option3Variable, command=option13Command)\ntkgrid(tklabel(top, text=cbLabels[3]), option3CB, sticky=\"e\")\n\noption4CB <- tkcheckbutton(top)\noption4Variable <- tclVar(initialValues[4])\ntkconfigure(option4CB, variable=option4Variable, command=option4Command)\ntkgrid(tklabel(top, text=cbLabels[4]), option4CB, sticky=\"e\")\n\n\n\n-- \nAdrian DUSA\nRomanian Social Data Archive\n1, Schitu Magureanu Bd\n050025 Bucharest sector 5\nRomania\nTel./Fax: +40 21 3126618 \\\n          +40 21 3120210 / int.101",
+      "body_snippet": "Dear list members,\n\nI have a question related to tcltk programming. I'd like to create 4 check \nboxes with different options; that's easy, but I want the 4th option to \ndeactivate the first three and ",
+      "thread_id": "thread-0e065dceed1f",
+      "thread_depth": 0,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-928f85519aab",
+      "message_id": "<200605281704.49035.adi@roda.ro>",
+      "from_name": "Adrian DUSA",
+      "from_email_hash": "c7eb80271393ed831f0ae78107a15bf2f527ce148e6d2808ba6b98398c1130f7",
+      "date": "2006-05-28T17:04:48+03:00",
+      "subject": "[R-gui] pseudo radiobutton from check boxes",
+      "subject_clean": "[R-gui] pseudo radiobutton from check boxes",
+      "in_reply_to": "<200605281645.05678.adi@roda.ro>",
+      "references": [
+        "<200605281645.05678.adi@roda.ro>"
+      ],
+      "body_plain": "As usual, the solution is found immediatly after posting...\nThe option I was looking for is \"deselect\", as in:\ntkdeselect(option4CB)\n\nSorry to have waisted your time,\nAdrian\n\nOn Sunday 28 May 2006 16:45, Adrian DUSA wrote:\n> Dear list members,\n>\n> I have a question related to tcltk programming. I'd like to create 4 check\n> boxes with different options; that's easy, but I want the 4th option to\n> deactivate the first three and viceversa: if any of the first three check\n> boxes has been activated, this should deactivate the fourth check box.\n>\n> I've written a draft code below, but I feel I misunderstand the usage of\n> \"command\". In my mind, this is only activated when the user presses the\n> button with the mouse. Instead, it seems like the command is activated each\n> time when the button chages its state. Is there another option I could use\n> for this purpose?\n>\n> Thank you in advance,\n> Adrian\n>\n> require(tcltk)\n> top <- tktoplevel()\n>\n> cbOptions <- c(\"option1\", \"option2\", \"option3\", \"option4\")\n> cbLabels <- c(\"Option A:\", \"Option B:\", \"Option C:\", \"Option D:\")\n> initialValues <- c(0, 0, 0, 0)\n> cbVariable <- tclVar(\"0\")\n>\n> option13Command <- function() {\n>     tkconfigure(option4CB, variable=cbVariable)\n>     }\n>\n> option4Command <- function() {\n>     tkconfigure(option1CB, variable=cbVariable)\n>     tkconfigure(option2CB, variable=cbVariable)\n>     tkconfigure(option3CB, variable=cbVariable)\n>     }\n>\n> option1CB <- tkcheckbutton(top)\n> option1Variable <- tclVar(initialValues[1])\n> tkconfigure(option1CB, variable=option1Variable, command=option13Command)\n> tkgrid(tklabel(top, text=cbLabels[1]), option1CB, sticky=\"e\")\n>\n> option2CB <- tkcheckbutton(top)\n> option2Variable <- tclVar(initialValues[2])\n> tkconfigure(option2CB, variable=option2Variable, command=option13Command)\n> tkgrid(tklabel(top, text=cbLabels[2]), option2CB, sticky=\"e\")\n>\n> option3CB <- tkcheckbutton(top)\n> option3Variable <- tclVar(initialValues[3])\n> tkconfigure(option3CB, variable=option3Variable, command=option13Command)\n> tkgrid(tklabel(top, text=cbLabels[3]), option3CB, sticky=\"e\")\n>\n> option4CB <- tkcheckbutton(top)\n> option4Variable <- tclVar(initialValues[4])\n> tkconfigure(option4CB, variable=option4Variable, command=option4Command)\n> tkgrid(tklabel(top, text=cbLabels[4]), option4CB, sticky=\"e\")\n\n-- \nAdrian DUSA\nRomanian Social Data Archive\n1, Schitu Magureanu Bd\n050025 Bucharest sector 5\nRomania\nTel./Fax: +40 21 3126618 \\\n          +40 21 3120210 / int.101",
+      "body_snippet": "As usual, the solution is found immediatly after posting...\nThe option I was looking for is \"deselect\", as in:\ntkdeselect(option4CB)\n\nSorry to have waisted your time,\nAdrian\n\nOn Sunday 28 May 2006 16:",
+      "thread_id": "thread-0e065dceed1f",
+      "thread_depth": 1,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-05ce223024c8",
+      "message_id": "<4479BD77.20305@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-05-28T12:10:47-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.5.3 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.5.3 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.3) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help//English/Readme/HTML'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.5.3) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-05ce223024c8",
+      "thread_depth": 0,
+      "month": "2006-05"
+    },
+    {
+      "id": "msg-291064385252",
+      "message_id": "<136415410459.XAA13898Forward_Contract_tacked@gmail.com>",
+      "from_name": "Karina Lovett",
+      "from_email_hash": "5a2a24cf3a69af53216025eda7402c15e44be3b7208fd4b59ba190c7e0f38885",
+      "date": "2006-05-30T08:06:50-06:00",
+      "subject": "[R-gui] CTBG Deploys World's Only Fully Rotating Well Fishing Tools - Ref. msq3115",
+      "subject_clean": "[R-gui] CTBG Deploys World's Only Fully Rotating Well Fishing Tools - Ref. msq3115",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060530/37316a7b/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060530/37316a7b/attachment.pl",
+      "thread_id": "thread-291064385252",
+      "thread_depth": 0,
+      "month": "2006-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-1414d72a41c4",
+      "subject": "[R-gui] Innovative Enterprise Microarray Software",
+      "message_count": 1,
+      "participants": [
+        "eNews at 3rdmill.com"
+      ],
+      "started": "2006-05-19T16:56:22-04:00",
+      "last_reply": "2006-05-19T16:56:22-04:00",
+      "root_message_id": "msg-1414d72a41c4"
+    },
+    {
+      "id": "thread-4d72799a1dfd",
+      "subject": "[R-gui] Tinn-R 1.18.5.1 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-05-20T23:30:18-03:00",
+      "last_reply": "2006-05-20T23:30:18-03:00",
+      "root_message_id": "msg-4d72799a1dfd"
+    },
+    {
+      "id": "thread-02664547b55f",
+      "subject": "[R-gui] Tinn-R 1.18.5.2 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-05-22T11:29:14-03:00",
+      "last_reply": "2006-05-22T11:29:14-03:00",
+      "root_message_id": "msg-02664547b55f"
+    },
+    {
+      "id": "thread-2a9ef220467d",
+      "subject": "[R-gui] How to assign value from tlctk window to variable ?",
+      "message_count": 2,
+      "participants": [
+        "Ingo Fetzer",
+        "Peter Dalgaard"
+      ],
+      "started": "2006-05-22T13:55:47+02:00",
+      "last_reply": "2006-05-22T14:22:01+02:00",
+      "root_message_id": "msg-2a9ef220467d"
+    },
+    {
+      "id": "thread-730637f30471",
+      "subject": "[R-gui] RGtk2 2.8.4 and cairoDevice 1.0.0 released",
+      "message_count": 1,
+      "participants": [
+        "Michael Lawrence"
+      ],
+      "started": "2006-05-23T19:51:59-05:00",
+      "last_reply": "2006-05-23T19:51:59-05:00",
+      "root_message_id": "msg-730637f30471"
+    },
+    {
+      "id": "thread-dc011c786782",
+      "subject": "[R-gui] New version of iWIdgetsRGtk and pmg",
+      "message_count": 1,
+      "participants": [
+        "j verzani"
+      ],
+      "started": "2006-05-25T15:11:04-04:00",
+      "last_reply": "2006-05-25T15:11:04-04:00",
+      "root_message_id": "msg-dc011c786782"
+    },
+    {
+      "id": "thread-05ce223024c8",
+      "subject": "[R-gui] Tinn-R 1.18.5.3 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-05-28T12:10:47-03:00",
+      "last_reply": "2006-05-28T12:10:47-03:00",
+      "root_message_id": "msg-05ce223024c8"
+    },
+    {
+      "id": "thread-0e065dceed1f",
+      "subject": "[R-gui] pseudo radiobutton from check boxes",
+      "message_count": 2,
+      "participants": [
+        "Adrian DUSA"
+      ],
+      "started": "2006-05-28T16:45:05+03:00",
+      "last_reply": "2006-05-28T17:04:48+03:00",
+      "root_message_id": "msg-0e065dceed1f"
+    },
+    {
+      "id": "thread-291064385252",
+      "subject": "[R-gui] CTBG Deploys World's Only Fully Rotating Well Fishing Tools - Ref. msq3115",
+      "message_count": 1,
+      "participants": [
+        "Karina Lovett"
+      ],
+      "started": "2006-05-30T08:06:50-06:00",
+      "last_reply": "2006-05-30T08:06:50-06:00",
+      "root_message_id": "msg-291064385252"
+    }
+  ]
+}

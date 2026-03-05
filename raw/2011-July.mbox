@@ -1,0 +1,154 @@
+From leonid.landsman at gmail.com  Mon Jul 18 17:28:32 2011
+From: leonid.landsman at gmail.com (Leonid Landsman)
+Date: Mon, 18 Jul 2011 11:28:32 -0400
+Subject: [R-gui] GUI Builder for R
+Message-ID: <CALtXcnVZCXvu-QVu9Eh72pvF5PtaZB7RuA98pwYHC91p+vFOJg@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110718/ae0d6426/attachment.pl>
+
+From sebble at sebble.com  Tue Jul 19 15:20:41 2011
+From: sebble at sebble.com (Sebastian Mellor)
+Date: Tue, 19 Jul 2011 14:20:41 +0100
+Subject: [R-gui] Return value from gWidgets
+Message-ID: <CAOyiOQGzPQ-hNuseKaDycHzSekK6RAn+Qcy2PWJmosZ6j2GTCg@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/e36923c9/attachment.pl>
+
+From sebble at sebble.com  Tue Jul 19 16:28:32 2011
+From: sebble at sebble.com (Sebastian Mellor)
+Date: Tue, 19 Jul 2011 15:28:32 +0100
+Subject: [R-gui] Fwd: Return value from gWidgets
+In-Reply-To: <CADx-4xCUhUQOO+VnwcvZLUM7ymPH2Ub=oR_KJm8RJq7R3eVhLg@mail.gmail.com>
+References: <CAOyiOQGzPQ-hNuseKaDycHzSekK6RAn+Qcy2PWJmosZ6j2GTCg@mail.gmail.com>
+	<CADx-4xCUhUQOO+VnwcvZLUM7ymPH2Ub=oR_KJm8RJq7R3eVhLg@mail.gmail.com>
+Message-ID: <CAOyiOQEwy3ge6xbbbapDmO5OXrmQfyKWVAKTBFMze_QTu2Gsog@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/a3afafc8/attachment.pl>
+
+From j.burke at earthlink.net  Tue Jul 26 17:50:32 2011
+From: j.burke at earthlink.net (Jim Burke)
+Date: Tue, 26 Jul 2011 10:50:32 -0500
+Subject: [R-gui] R for a historical timeline chart?
+Message-ID: <4E2EE248.4030004@earthlink.net>
+
+First, I don't know if R Sig Gui is the right list, so feel free to 
+redirect me if this is so.
+
+I would like to produce a historical timeline chart.  For a general idea 
+of what I want, go to the following web site. Scroll down until you find 
+the "Jewelry History Timeline" jpeg. Say we use a variation of this for 
+birth dates to annual birthdays for a family or group of friends.
+http://www.allaboutgemstones.com/gem_history.html
+
+Any pointers and example code would be appreciated.
+
+Thanks,
+Jim
+
+
+From lorenz at usgs.gov  Tue Jul 26 18:12:00 2011
+From: lorenz at usgs.gov (David L Lorenz)
+Date: Tue, 26 Jul 2011 11:12:00 -0500
+Subject: [R-gui] R for a historical timeline chart?
+In-Reply-To: <4E2EE248.4030004@earthlink.net>
+References: <4E2EE248.4030004@earthlink.net>
+Message-ID: <OFB5BB16F1.C6693979-ON862578D9.0058B915-862578D9.0058FD98@usgs.gov>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110726/80a6370c/attachment.pl>
+
+From Wayne.W.Jones at shell.com  Wed Jul 27 09:17:11 2011
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Wed, 27 Jul 2011 09:17:11 +0200
+Subject: [R-gui] R for a historical timeline chart?
+In-Reply-To: <OFB5BB16F1.C6693979-ON862578D9.0058B915-862578D9.0058FD98@usgs.gov>
+References: <4E2EE248.4030004@earthlink.net>
+	<OFB5BB16F1.C6693979-ON862578D9.0058B915-862578D9.0058FD98@usgs.gov>
+Message-ID: <8E3590214E4380489D2F8BF129B939F301BC49C0@amsdc1-s-03371.europe.shell.com>
+
+Hi Jim, 
+
+
+The plotrix package has a function for generating Gantt charts. 
+
+See
+http://finzi.psych.upenn.edu/R/library/plotrix/html/gantt.chart.html
+
+
+Wayne
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at r-project.org
+[mailto:r-sig-gui-bounces at r-project.org] On Behalf Of David L Lorenz
+Sent: 26 July 2011 17:12
+To: Jim Burke
+Cc: r-sig-gui-bounces at r-project.org; R Sig Gui
+Subject: Re: [R-gui] R for a historical timeline chart?
+
+Jim,
+  Are you trying to develop a GUI for such a chart? If so, then this
+would 
+be the place.
+  If not and your just looking for some software that creates a graph
+like 
+that, I'd suggest looking for something that produces a Gantt chart. The
+
+"Jewelry History Timeline" looks much like that. Gannt charts are 
+typically used for planning, but could probably be tweaked to fit you 
+needs.
+Dave
+
+
+
+From:
+Jim Burke <j.burke at earthlink.net>
+To:
+R Sig Gui <r-sig-gui at r-project.org>
+Date:
+07/26/2011 10:52 AM
+Subject:
+[R-gui] R for a historical timeline chart?
+Sent by:
+r-sig-gui-bounces at r-project.org
+
+
+
+First, I don't know if R Sig Gui is the right list, so feel free to 
+redirect me if this is so.
+
+I would like to produce a historical timeline chart.  For a general idea
+
+of what I want, go to the following web site. Scroll down until you find
+
+the "Jewelry History Timeline" jpeg. Say we use a variation of this for 
+birth dates to annual birthdays for a family or group of friends.
+http://www.allaboutgemstones.com/gem_history.html
+
+Any pointers and example code would be appreciated.
+
+Thanks,
+Jim
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at r-project.org
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+
+	[[alternative HTML version deleted]]
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at r-project.org
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+

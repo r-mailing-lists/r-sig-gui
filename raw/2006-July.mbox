@@ -1,0 +1,32 @@
+From verzani at math.csi.cuny.edu  Thu Jul  6 17:56:34 2006
+From: verzani at math.csi.cuny.edu (verzani at math.csi.cuny.edu)
+Date: Thu, 6 Jul 2006 11:56:34 -0400
+Subject: [R-gui] New version (-17) of iWidgetsRGtk, pmg
+Message-ID: <17581.12978.488153.907241@markov.math.csi.cuny.edu>
+
+A new version (-17) of iWidgetsRGtk and pmg was uploaded to the
+website http://www.math.csi.cuny.edu/pmg. The new version has a new
+widget icheckboxgroup for selecting one or more from many, and some
+bug fixes.
+
+--John
+
+
+From gunther.maier at wu-wien.ac.at  Thu Jul 27 13:33:12 2006
+From: gunther.maier at wu-wien.ac.at (Gunther Maier)
+Date: Thu, 27 Jul 2006 13:33:12 +0200
+Subject: [R-gui] new version of SimpleR, a Windows GUI to R
+Message-ID: <6.2.0.14.0.20060727132940.038af390@sslmail.wu-wien.ac.at>
+
+Dear colleagues,
+I would like to inform you that a new version of SimpleR, a Windows-based GUI for R is available at http://www-sre.wu-wien.ac.at/SimpleR . This version has new features for data management (subsetting of datasets, merging of datasets) and improved data handling functions. Please, send questions, comments and feedback to gunther.maier at wu-wien.ac.at .
+
+Kind regards
+Gunther Maier
+
+-----------------------------------------------------------------------
+*  Gunther Maier, University of Economics and Business Administration *
+*     Augasse 2-6, Vienna, Austria. (Gunther.Maier at wu-wien.ac.at)     *
+*      Newsletter Editor, European Regional Science Association       *
+
+

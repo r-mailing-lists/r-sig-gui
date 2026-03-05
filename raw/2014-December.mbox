@@ -1,0 +1,88 @@
+From 11.6729 at stis.ac.id  Sat Dec 20 11:55:37 2014
+From: 11.6729 at stis.ac.id (Jodi Jhouranda Siregar)
+Date: Sat, 20 Dec 2014 17:55:37 +0700
+Subject: [R-gui] Embedding r
+Message-ID: <CAGQ++V0QU=jxSRsOfKdRPDoN9_Rz1NqJZX8GBfExcNoXuzmqsA@mail.gmail.com>
+
+My team developing r gui especially for spatial data analysis. We have some
+problems to dicided how to embed R in our software. We learn about Rcpp,
+rkward mechanism to emmbed r and other stuffs. But still, we can't jump to
+any conclusion what is the best way to emmbed R in our software. Hopes you
+guys give us advises regarding this problem.
+Regards,
+Jodi jhouranda siregar
+Statistical university
+Faculty of computational statistics
+Jakarta,indonesia
+Www.stis.ac.id
+
+	[[alternative HTML version deleted]]
+
+
+From simon.urbanek at r-project.org  Sun Dec 21 06:51:47 2014
+From: simon.urbanek at r-project.org (Simon Urbanek)
+Date: Sun, 21 Dec 2014 00:51:47 -0500
+Subject: [R-gui] Embedding r
+In-Reply-To: <CAGQ++V0QU=jxSRsOfKdRPDoN9_Rz1NqJZX8GBfExcNoXuzmqsA@mail.gmail.com>
+References: <CAGQ++V0QU=jxSRsOfKdRPDoN9_Rz1NqJZX8GBfExcNoXuzmqsA@mail.gmail.com>
+Message-ID: <DE8B90B9-5532-4F0A-94A6-0838966AB8F7@r-project.org>
+
+Jodi,
+
+there is no "best" way in general, there are so may different ways that it really depends on your application and your comfort with the tools involved.
+
+First, the fundamental setup:
+a) direct embedding (linking libR, examples: R.app GUI, JGR, ...)
+b) indirect embedding (UI separate from the R process. examples: RStudio, RCloud, ...)
+c) UI over R process (ESS)
+
+For a) your application is directly linking to R and running the interpreter. It is the technically most involved solution, because you need to obey all the rules imposed by the setup, but on the plus side you have the most control. With power comes responsibility. It's also the easiest to crash R ;). The R embedding API is what you would use (C) or one of the wrappers such as RInside (C++), JRI (Java) or REngine (ObjC).
+
+b) is more safe since it isolates your application for R so your application is less impacted by the constraints R imposes. On the other hand it limits some interactions since your application will be running in a separate process. It is also easier to use since you only deal with the API created by the interface. Examples of this separation are RStudio (HTTP/WS) and Rserve (Java, PHP, Ruby, WS/JavaScript).
+
+c) This is the most trivial solution - technically not embedding - where you're simply driving the R process from another process without any additional protocol. I'm only mentioning it because there are GUIs that use this for simplicity.
+
+Once you select the fundamental model for your application you will probably zone in quite quickly on the tools, since the space is mostly partitioned by the language of the interface (C, C++, Java, ...).
+
+Cheers,
+Simon
+
+
+On Dec 20, 2014, at 5:55 AM, Jodi Jhouranda Siregar <11.6729 at stis.ac.id> wrote:
+
+> My team developing r gui especially for spatial data analysis. We have some
+> problems to dicided how to embed R in our software. We learn about Rcpp,
+> rkward mechanism to emmbed r and other stuffs. But still, we can't jump to
+> any conclusion what is the best way to emmbed R in our software. Hopes you
+> guys give us advises regarding this problem.
+> Regards,
+> Jodi jhouranda siregar
+> Statistical university
+> Faculty of computational statistics
+> Jakarta,indonesia
+> Www.stis.ac.id
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+
+From 11.6729 at stis.ac.id  Mon Dec 22 07:06:11 2014
+From: 11.6729 at stis.ac.id (Jodi Jhouranda Siregar)
+Date: Mon, 22 Dec 2014 13:06:11 +0700
+Subject: [R-gui] Embedding R
+Message-ID: <CAGQ++V3-91ixA0nduQxe=2Y=pa2kdc4J=T7zAgCOMv4uLdkY-Q@mail.gmail.com>
+
+Thanks for the answer.
+We have been decided to use C++, and we interest in indirect embedding R in
+our software. We need some references about this method. Hopes you guys can
+help us
+Thanks
+
+	[[alternative HTML version deleted]]
+
+

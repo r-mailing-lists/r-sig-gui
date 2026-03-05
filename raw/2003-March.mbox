@@ -1,0 +1,175 @@
+From phgrosjean at sciviews.org  Tue Mar 18 15:45:49 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Mar 18 16:00:17 2003
+Subject: [R-gui] SciViews R GUI preview version available
+Message-ID: <MABBLJDICACNFOLGIHJOCEOJDEAA.phgrosjean@sciviews.org>
+
+Hi all,
+After being a long time off the R and R-SIG-GUI lists, because I was working
+hard on SciViews, I am happy to deliver the first public version of this
+program. It is still v. 0.1, that is, an incomplete alpha version. It
+currently installs only on Windows 2000 or XP (NOT on Windows
+9X/ME/Millenium, nor any other platform!). You can download it at
+http://www.sciviews.org. Please, note that the program still does not
+support path names with spaces, like the default one, "C:\Program
+Files\SciViews\". You _have to change_ the default value of installation
+folder in the setup program to something like "c:\Pgm\SciViews\"! Of course,
+you need also R installed on the same computer (at least version 1.5.0).
+
+This package proposes:
+- Insighter, a GUI specifically designed for data analysis. It offers:
+  + a MDI (multiple document interface),
+  + a complete IDE (code editing with syntax highlighting, bookmarks, run,
+step-by-step execution,...),
+  + a command bar which handle several simultaneous calculation kernels, an
+advanced history of commands, syntax highlighting, and quick tips for
+functions. It operates hand in hand with the integrated, advanced console
+document,
+  + an integrated reporting system (rich text format with graphs, figures
+and embedded objects),
+  + an integrated help system in HTML format (although not active yet for
+R),
+  + an explorer (no object explorer yet, but this is planned for the next
+version),
+  + a 'library docking window' (for quick reference electronic cards, code
+templates, and more...),
+  + a fully customizable menus/toolbars/docking panels system, very similar
+to the Microsoft Office 2000 one,
+  + even more customization in the SciViews sessions (icon, program title,
+splash screen, default working directory,...).
+- SciViews main module, to manage and open SciViews sessions,
+- Xchanger, a centralized system to connect different calculation kernels
+through SciViews plugs,
+- currently, only one plug is provided: for R. Plugs for Octave, Matlab,
+S-PLUS, Scilab, Ox, Mathematica,... are in development.
+
+At http://www.sciviews.org/software/Insighter.gif, you will find a
+screenshot example of SciViews Insighter with a R console, a R graph device
+and a reporting document openend in the same session. License is GPL 2 or
+above. Code source is provided but you need Visual Basic 6.0 pro to edit it.
+
+Our next work will be dedicated to custom dialog boxes and to the object
+explorer... and of course, bugs elimination and better compatibility with
+Windows 9X/ME/Millenium.
+
+Your comments are welcome.
+Best regards,
+
+Philippe Grosjean
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oc?anologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From phgrosjean at sciviews.org  Thu Mar 27 11:15:21 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Mar 27 11:15:43 2003
+Subject: [R-gui] New version 0.1.1 of SciViews available
+Message-ID: <MABBLJDICACNFOLGIHJOMECMDFAA.phgrosjean@sciviews.org>
+
+I have just posted a new version 0.1.1 of SciViews on
+http://www.sciviews.org/development/rgui.htm. Here are changes since version
+0.1:
+
+- 'Insighter' was renamed 'Insider' to avoid possible conflicting name with
+Insightful.
+- SciViews should now run under 9X/ME/Millenium (incompatibilities solved)
+- SciViews should run normally when installed in a path with spaces (bug
+solved)
+- *.svp, *.svpt and *.svl files are now registered as SciViews extensions
+during first
+  execution of SciViews.exe
+
+Best regards,
+
+Philippe Grosjean
+
+P.S.: current development focus on helping tools like the object explorer,
+the contextual tip and the completion list.
+
+- Object explorer: the aim is to develop a function in pure R language to
+return the list of variables in the user workspace + its class + its
+components (for instance, the components of a list or a dataframe) + perhaps
+some other information, after each top level evaluation. This has been
+already somewhat discussed in R Help list. Of course, the whole list should
+not be returned, but changes from previous list only. This function will be
+registered using addTaskCallback(), and its output will be processed by the
+GUI in order to display a tree of variables available under the user
+workspace.
+
+- SciViews already proposes "contextual tips", that is, the syntax of a
+function automatically displayed when the user enters "(" after the name of
+the function. Basically, it is a slightly modified version of args(). Two
+problems: (1) not much explicit with generic functions, and (2) error
+returned with, e.g., "function(". It is however not much difficult to make
+an improved args() function to get more interesting contextual tips.
+
+- Completion lists: basically, a kind of apropos() function that returns all
+possible words starting with ..., but should return also components in a
+list or dataframe after keying "mydataframe$", or "mydataframe[[", or even
+slots after "object@".
+
+All this would constitute the starting point of a library of R functions
+tailored for better interactions with the SciViews GUI. If someone would
+like to contribute to it, please, contact me.
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oc?anologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From bellis at hsph.harvard.edu  Thu Mar 27 17:01:01 2003
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Thu Mar 27 23:01:02 2003
+Subject: [R-gui] Notebook style interface (Mac OS X)
+Message-ID: <992169E0-609F-11D7-8475-000393BDE1EC@hsph.harvard.edu>
+
+I posted a late night rambling to R-SIG-Mac last night and forgot to 
+crosspost it here. However, now that its day and I'm coherent I won't 
+subject this list to the same rambling. :-)
+
+Over the last few days I've been coding up the beginnings of a 
+Cocoa-based front end for R that employs a notebook style interface a 
+la Mathematica or Maple since I rather like that mode of operation. I 
+put a quick build up on my website 
+http://www.people.fas.harvard.edu/~bcellis/StatPaper.app.tar.gz
+
+You can't load or save or use graphics but the basic styling 
+functionality is there (Text, Titles or various sorts, Code, Output) as 
+is basic execution (I unknowingly duplicated RKWard in this respect. 
+:-))
+
+It assumes many things, like R being installed in the "usual" place so 
+I won't be surprised if it crashes but it worked on my iBook running 
+10.2.4 :-)
+
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" - The Librarian
+

@@ -1,0 +1,117 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-02",
+  "messages": [
+    {
+      "id": "msg-3bd386737adb",
+      "message_id": "<3AE86C86-4576-11D7-A90A-00039391E298@zedshaw.com>",
+      "from_name": "Zed A. Shaw",
+      "from_email_hash": "818f5267c73d76f40a5c166259a6fa77e92aedc14ccbaf3e3c67b2fdf8b495fb",
+      "date": "2003-02-21T00:26:52-08:00",
+      "subject": "[R-gui] [ANN] ObveRsive WoRkbench MS1 Release",
+      "subject_clean": "[R-gui] [ANN] ObveRsive WoRkbench MS1 Release",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi All,\n\nI just wanted to send out a quick note to everyone on r-devel and \nr-sig-gui list announcing that the ObveRsive WoRkbench project has  \nmade a milestone 1 (MS1) release.  The release is available for \nWindows, Linux (i386/PPC), and Mac OSX.  This release really does \nnothing R related yet, but it does have all the GUI elements we thought \nimportant.  You'll be able to play with tables, wizards, and a console \nelement.\n\nPlease go to http://obversive.sourceforge.net/ and check out the \n\"Downloads\" section to get a release.  You can also post comments to \nthe main page as comments to the top news announcement.  Also, feel \nfree to e-mail me directly if you have comments or suggestions.\n\nEnjoy!\n\n-----\nZed A. Shaw\nhttp://www.zedshaw.com/",
+      "body_snippet": "Hi All,\n\nI just wanted to send out a quick note to everyone on r-devel and \nr-sig-gui list announcing that the ObveRsive WoRkbench project has  \nmade a milestone 1 (MS1) release.  The release is avail",
+      "thread_id": "thread-3bd386737adb",
+      "thread_depth": 0,
+      "month": "2003-02"
+    },
+    {
+      "id": "msg-dedcb00bab49",
+      "message_id": "<F3ECEC1A-49B6-11D7-9DCB-000393BB6D36@stat.ucla.edu>",
+      "from_name": "Jan de Leeuw",
+      "from_email_hash": "59a1e3d24a4d17014651921c954560da2e7ad5132d0ea3d38e11e0c3e1dd9a92",
+      "date": "2003-02-26T10:20:15-08:00",
+      "subject": "[R-gui] Re: [R-SIG-Mac]compiling r-devel on Darwin",
+      "subject_clean": "[R-gui] Re: [R-SIG-Mac]compiling r-devel on Darwin",
+      "in_reply_to": "<p05200f00ba82ac40e0c7@[134.214.34.24]>",
+      "references": [],
+      "body_plain": "I'll look into it. But I also do not have this problem because in  \nR-devel I\nuse the --with-blas=\"-framework vecLib\" --with-lapack flags in  \nconfigure,\nwhich use Apple's BLAS/Lapack optimized for OS X.\n\nOn Wednesday, Feb 26, 2003, at 09:54 US/Pacific, Jean Thioulouse wrote:\n\n>> I don't have this. What this says is that the modules in libg2c.a  \n>> have not been\n>> compiled with -fno-common., which indicates there is something wrong  \n>> with\n>> your g77 from fink. Make sure you have the latest OS 10.2 version. In  \n>> any case\n>> use the g77 from the unstable tree, and try \"fink rebuild g77\"\n>\n> I have done it, and I have now g77 3.1-20020420-5 instead of  \n> 3.1-20020420-4\n> with a new libg2c library, but I still have the same error.\n>\n> Jean\n>\n> --  \n> Jean Thioulouse - Equipe \"Ecologie  Statistique\" - UMR CNRS 5558\n> Universite Lyon 1, Bat. Mendel, 69622 Villeurbanne Cedex, France\n> Fax: (33) 4 78 89 27 19                  Tel: (33) 4 72 43 27 56\n>           http://pbil.univ-lyon1.fr/JTHome.html\n>\n>\n===\nJan de Leeuw; Professor and Chair, UCLA Department of Statistics;\nEditor: Journal of Multivariate Analysis, Journal of Statistical  \nSoftware\nUS mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554\nphone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu\nhomepage: http://gifi.stat.ucla.edu\n   \n------------------------------------------------------------------------ \n-------------------------\n           No matter where you go, there you are. --- Buckaroo Banzai\n                    http://gifi.stat.ucla.edu/sounds/nomatter.au\n   \n------------------------------------------------------------------------ \n-------------------------",
+      "body_snippet": "I'll look into it. But I also do not have this problem because in  \nR-devel I\nuse the --with-blas=\"-framework vecLib\" --with-lapack flags in  \nconfigure,\nwhich use Apple's BLAS/Lapack optimized for OS",
+      "thread_id": "thread-dedcb00bab49",
+      "thread_depth": 0,
+      "month": "2003-02"
+    },
+    {
+      "id": "msg-3f2e3cba3af6",
+      "message_id": "<EE913B7F-49F9-11D7-9DCB-000393BB6D36@stat.ucla.edu>",
+      "from_name": "Jan de Leeuw",
+      "from_email_hash": "59a1e3d24a4d17014651921c954560da2e7ad5132d0ea3d38e11e0c3e1dd9a92",
+      "date": "2003-02-26T18:19:42-08:00",
+      "subject": "[R-gui] nice combo on os x",
+      "subject_clean": "[R-gui] nice combo on os x",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "You need\n\n(a) a recent OS X framework build of python, which also installs IDLE\n(b) a recent OS X framework build  of AquaTk (i.e. native Tcl/Tk)\n(c) a version of R compiled with AquaTk and without X11\n(d) a recent version of Rpy\n\nNow you can open IDLE and say\n\n >> from rpy import *\n >> r.quartz()\n >> r.library(\"tcltk\")\n >> r.demo(\"tkdensity\")\n\nThis all works. You get the Aqua Tk widgets and the plotting in the\nquartz device. Windows can be brought to the foreground, minimized to  \nthe\ndock, and widgets can be operated with the mouse. No X11 is required\nat all.\n\n===\nJan de Leeuw; Professor and Chair, UCLA Department of Statistics;\nEditor: Journal of Multivariate Analysis, Journal of Statistical  \nSoftware\nUS mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554\nphone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu\nhomepage: http://gifi.stat.ucla.edu\n   \n------------------------------------------------------------------------ \n-------------------------\n           No matter where you go, there you are. --- Buckaroo Banzai\n                    http://gifi.stat.ucla.edu/sounds/nomatter.au\n   \n------------------------------------------------------------------------ \n-------------------------",
+      "body_snippet": "You need\n\n(a) a recent OS X framework build of python, which also installs IDLE\n(b) a recent OS X framework build  of AquaTk (i.e. native Tcl/Tk)\n(c) a version of R compiled with AquaTk and without X1",
+      "thread_id": "thread-3f2e3cba3af6",
+      "thread_depth": 0,
+      "month": "2003-02"
+    },
+    {
+      "id": "msg-17441cde9f0a",
+      "message_id": "<20030228200335.86916.qmail@web41202.mail.yahoo.com>",
+      "from_name": "Tom Smith",
+      "from_email_hash": "c946446cb6e4654375abf3d18a3ca45c3a7547bc7fd347fd615dfaac056c82e8",
+      "date": "2003-02-28T12:03:35-08:00",
+      "subject": "[R-gui] Texmacs as an R gui",
+      "subject_clean": "[R-gui] Texmacs as an R gui",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "On thing to keep an eye on as an R gui is Texmacs\n(www.texmacs.org). It is a very good typesetting\nprogram, but it is designed to have connections to\nmath programs like maxima or octave and now R. \n\nRight now, they mainly work in a terminal mode. The\nadvantage is that you can display graph results in\nline with the output. See the following link for an\nexample:\n\nhttp://mail.gnu.org/archive/html/texmacs-dev/2002-11/ps00000.ps\n\nWhich was buried in this email:\n\nhttp://mail.gnu.org/archive/html/texmacs-dev/2002-11/msg00262.html\n\nEventually, they plan to also have workbook and\nspreadsheet type interfaces. See:\n\nhttp://mail.gnu.org/archive/html/texmacs-dev/2002-11/msg00256.html\n\nMike",
+      "body_snippet": "On thing to keep an eye on as an R gui is Texmacs\n(www.texmacs.org). It is a very good typesetting\nprogram, but it is designed to have connections to\nmath programs like maxima or octave and now R. \n\nR",
+      "thread_id": "thread-17441cde9f0a",
+      "thread_depth": 0,
+      "month": "2003-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-3bd386737adb",
+      "subject": "[R-gui] [ANN] ObveRsive WoRkbench MS1 Release",
+      "message_count": 1,
+      "participants": [
+        "Zed A. Shaw"
+      ],
+      "started": "2003-02-21T00:26:52-08:00",
+      "last_reply": "2003-02-21T00:26:52-08:00",
+      "root_message_id": "msg-3bd386737adb"
+    },
+    {
+      "id": "thread-dedcb00bab49",
+      "subject": "[R-gui] Re: [R-SIG-Mac]compiling r-devel on Darwin",
+      "message_count": 1,
+      "participants": [
+        "Jan de Leeuw"
+      ],
+      "started": "2003-02-26T10:20:15-08:00",
+      "last_reply": "2003-02-26T10:20:15-08:00",
+      "root_message_id": "msg-dedcb00bab49"
+    },
+    {
+      "id": "thread-3f2e3cba3af6",
+      "subject": "[R-gui] nice combo on os x",
+      "message_count": 1,
+      "participants": [
+        "Jan de Leeuw"
+      ],
+      "started": "2003-02-26T18:19:42-08:00",
+      "last_reply": "2003-02-26T18:19:42-08:00",
+      "root_message_id": "msg-3f2e3cba3af6"
+    },
+    {
+      "id": "thread-17441cde9f0a",
+      "subject": "[R-gui] Texmacs as an R gui",
+      "message_count": 1,
+      "participants": [
+        "Tom Smith"
+      ],
+      "started": "2003-02-28T12:03:35-08:00",
+      "last_reply": "2003-02-28T12:03:35-08:00",
+      "root_message_id": "msg-17441cde9f0a"
+    }
+  ]
+}

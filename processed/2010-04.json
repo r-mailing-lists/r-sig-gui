@@ -1,0 +1,172 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2010-04",
+  "messages": [
+    {
+      "id": "msg-9d98b274e536",
+      "message_id": "<4BC6BF7B.9010708@exposurescience.org>",
+      "from_name": "N K",
+      "from_email_hash": "9f6efdd5109795fc7940cbfc7609b7f1a8f500f02fb650456edfca951d1570f7",
+      "date": "2010-04-15T00:25:47-07:00",
+      "subject": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
+      "subject_clean": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
+      "in_reply_to": "<loom.20100329T022447-843@post.gmane.org>",
+      "references": [
+        "<89b6b8c91003281408w7ac44379ia17a782a833c6665@mail.gmail.com>",
+        "<loom.20100329T022447-843@post.gmane.org>"
+      ],
+      "body_plain": "Hi,\n\nI'm trying to draw some crosshairs and floating X,Y coordinates in a \ntext box that follow the mouse cursor around on an embedded R plotting \narea (asCairoDevice).     i.e., I want to have Cairo line and text \nobjects that are updated whenever the mouse moves over an R plot.\n\nI used the commands below but the text flickers, like it is being erased \nimmediately after being drawn.      Has anyone solved this problem or \nhave some pointers, demos, examples, etc?      Is there some limitation \nwith the R Cairo device that prevents user interaction like this?    \nBefore calling asCairoDevice I can draw on the gtk drawing area, but not \nafter.      Any help appreciated!\n\nplotArea <- gtkDrawingArea()\ngtkWidgetSetSizeRequest(plotArea, 300, 400)\n#  Receive mouse events....\ngtkWidgetAddEvents(plotArea, 2)\nasCairoDevice(plotArea)\ngtkWidgetShow(plotArea)\nplotArea$AddCallback(\"motion-notify-event\", function(w,ev) {\n         x <- ev$x\n         y <- ev$y\n         cr$moveTo(x,y)\n         coor <- win2plot(x, y)   #  Note this converts from screen to \nuser coordinates\n         cr$showText(paste(coor[1],coor[2], sep=\", \"))\n})\ncr <- gdkCairoCreate(plotArea$window)\nplot(1:10)\n\n--Neil",
+      "body_snippet": "Hi,\n\nI'm trying to draw some crosshairs and floating X,Y coordinates in a \ntext box that follow the mouse cursor around on an embedded R plotting \narea (asCairoDevice).     i.e., I want to have Cairo ",
+      "thread_id": "thread-9d98b274e536",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-8c43ef1c263e",
+      "message_id": "<m2zacbd1aed1004150458ube850ab7m16ff74f3406b91cf@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2010-04-15T04:58:41-07:00",
+      "subject": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
+      "subject_clean": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
+      "in_reply_to": "<4BC6BF7B.9010708@exposurescience.org>",
+      "references": [
+        "<89b6b8c91003281408w7ac44379ia17a782a833c6665@mail.gmail.com>",
+        "<loom.20100329T022447-843@post.gmane.org>",
+        "<4BC6BF7B.9010708@exposurescience.org>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100415/bbc5f03b/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100415/bbc5f03b/attachment.pl>",
+      "thread_id": "thread-9d98b274e536",
+      "thread_depth": 1,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-ee9f193e5be5",
+      "message_id": "<4BC82248.3050600@netzkonstrukte.de>",
+      "from_name": "Christian Gadder",
+      "from_email_hash": "9784de072b6ee3d59b5f79733f763e412e4ec204712dbfe7df0fa9ddf53d918d",
+      "date": "2010-04-16T10:39:36+02:00",
+      "subject": "[R-gui] start rgtk2 script",
+      "subject_clean": "[R-gui] start rgtk2 script",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\nI want to start a Rgtk2 script under Windows by iconclick. But \npossibilities like starting rgui.exe -f filename doesn't work.\nAlso a batchfile did not work.  After executing the script. no gtk gui \nis visible.\nHow can I start a Rscript with rgtk2 library in Windows?\n\n\ngreetings, chris",
+      "body_snippet": "Hi all,\nI want to start a Rgtk2 script under Windows by iconclick. But \npossibilities like starting rgui.exe -f filename doesn't work.\nAlso a batchfile did not work.  After executing the script. no gt",
+      "thread_id": "thread-ee9f193e5be5",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-3f4fb6dc2feb",
+      "message_id": "<4BCB1F00.7000407@hotmail.com>",
+      "from_name": "chris",
+      "from_email_hash": "838d93d278e2a8992c6739c401fd573f8e1597fee289f85b548b5d79a47378a2",
+      "date": "2010-04-18T17:02:24+02:00",
+      "subject": "[R-gui] Rgtk2 and rgui.exe",
+      "subject_clean": "[R-gui] Rgtk2 and rgui.exe",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\nI want to start a Rgtk2 script under Windows by iconclick. But \npossibilities like starting rgui.exe -f filename doesn't work.\nAlso a batchfile did not work.  After executing the script. no gtk gui \nis visible.\nHow can I start a Rscript with rgtk2 library in Windows?\n\n\ngreetings, chris",
+      "body_snippet": "Hi all,\nI want to start a Rgtk2 script under Windows by iconclick. But \npossibilities like starting rgui.exe -f filename doesn't work.\nAlso a batchfile did not work.  After executing the script. no gt",
+      "thread_id": "thread-3f4fb6dc2feb",
+      "thread_depth": 0,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-1db13c3eb192",
+      "message_id": "<o2yacbd1aed1004180831qbb1d67c3y6af2e6023aec7b77@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2010-04-18T08:31:41-07:00",
+      "subject": "[R-gui] Rgtk2 and rgui.exe",
+      "subject_clean": "[R-gui] Rgtk2 and rgui.exe",
+      "in_reply_to": "<4BCB1F00.7000407@hotmail.com>",
+      "references": [
+        "<4BCB1F00.7000407@hotmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100418/095ded6f/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100418/095ded6f/attachment.pl>",
+      "thread_id": "thread-3f4fb6dc2feb",
+      "thread_depth": 1,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-1298da1d0a0a",
+      "message_id": "<u2z89b6b8c91004181242r777f2f2eo804f5c2ee03d8c84@mail.gmail.com>",
+      "from_name": "Yihui Xie",
+      "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
+      "date": "2010-04-18T14:42:32-05:00",
+      "subject": "[R-gui] start rgtk2 script",
+      "subject_clean": "[R-gui] start rgtk2 script",
+      "in_reply_to": "<4BC82248.3050600@netzkonstrukte.de>",
+      "references": [
+        "<4BC82248.3050600@netzkonstrukte.de>"
+      ],
+      "body_plain": "RGui.exe does not accept the -f argument.\n\nOne possible way to start RGtk2 with a mouse click on an icon is to\nput a shortcut of RGui.exe or R.exe in a certain directory, remove the\ndirectory in the \"Start in\" filed (right-click on the shortcut icon\n--> Properties), then put a file named .Rprofile in the same directory\nas your shortcut. In .Rprofile, write the R script related to your\nRGtk2 GUI.\n\nNote: as Windows does not like a file which begins with a dot, you\nwill have to create a file with a \"normal\" file name (say Rprofile.r)\nand RENAME it to .Rprofile in a command window.\n\nRegards,\nYihui\n--\nYihui Xie <xieyihui at gmail.com>\nPhone: 515-294-6609 Web: http://yihui.name\nDepartment of Statistics, Iowa State University\n3211 Snedecor Hall, Ames, IA\n\n\n\nOn Fri, Apr 16, 2010 at 3:39 AM, Christian Gadder\n<gadder at netzkonstrukte.de> wrote:\n> Hi all,\n> I want to start a Rgtk2 script under Windows by iconclick. But possibilities\n> like starting rgui.exe -f filename doesn't work.\n> Also a batchfile did not work. ?After executing the script. no gtk gui is\n> visible.\n> How can I start a Rscript with rgtk2 library in Windows?\n>\n>\n> greetings, chris\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "RGui.exe does not accept the -f argument.\n\nOne possible way to start RGtk2 with a mouse click on an icon is to\nput a shortcut of RGui.exe or R.exe in a certain directory, remove the\ndirectory in the \"",
+      "thread_id": "thread-ee9f193e5be5",
+      "thread_depth": 1,
+      "month": "2010-04"
+    },
+    {
+      "id": "msg-cc9d3252decf",
+      "message_id": "<i2k89b6b8c91004181245me19e19a7u4a61a32bc471dba5@mail.gmail.com>",
+      "from_name": "Yihui Xie",
+      "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
+      "date": "2010-04-18T14:45:12-05:00",
+      "subject": "[R-gui] Rgtk2 and rgui.exe",
+      "subject_clean": "[R-gui] Rgtk2 and rgui.exe",
+      "in_reply_to": "<o2yacbd1aed1004180831qbb1d67c3y6af2e6023aec7b77@mail.gmail.com>",
+      "references": [
+        "<4BCB1F00.7000407@hotmail.com>",
+        "<o2yacbd1aed1004180831qbb1d67c3y6af2e6023aec7b77@mail.gmail.com>"
+      ],
+      "body_plain": "chris,\n\nplease don't post the same question twice...\n\nRegards,\nYihui\n--\nYihui Xie <xieyihui at gmail.com>\nPhone: 515-294-6609 Web: http://yihui.name\nDepartment of Statistics, Iowa State University\n3211 Snedecor Hall, Ames, IA\n\n\n\nOn Sun, Apr 18, 2010 at 10:31 AM, Michael Lawrence\n<lawrence.michael at gene.com> wrote:\n> If you're going to run it in batch mode, then you'll need a gtkMain() to\n> keep the process from exiting. If you want to use rgui.exe, you can place a\n> .Rprofile (with your commands) in the directory listed as the \"start in\"\n> directory of the shortcut. See the R docs for more info on profiles.\n>\n> Michael\n>\n> On Sun, Apr 18, 2010 at 8:02 AM, chris <chgaxx at hotmail.com> wrote:\n>\n>> Hi all,\n>> I want to start a Rgtk2 script under Windows by iconclick. But\n>> possibilities like starting rgui.exe -f filename doesn't work.\n>> Also a batchfile did not work. ?After executing the script. no gtk gui is\n>> visible.\n>> How can I start a Rscript with rgtk2 library in Windows?\n>>\n>>\n>> greetings, chris\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at stat.math.ethz.ch\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>\n> ? ? ? ?[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "chris,\n\nplease don't post the same question twice...\n\nRegards,\nYihui\n--\nYihui Xie <xieyihui at gmail.com>\nPhone: 515-294-6609 Web: http://yihui.name\nDepartment of Statistics, Iowa State University\n321",
+      "thread_id": "thread-3f4fb6dc2feb",
+      "thread_depth": 2,
+      "month": "2010-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-9d98b274e536",
+      "subject": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
+      "message_count": 2,
+      "participants": [
+        "Michael Lawrence",
+        "N K"
+      ],
+      "started": "2010-04-15T00:25:47-07:00",
+      "last_reply": "2010-04-15T04:58:41-07:00",
+      "root_message_id": "msg-9d98b274e536"
+    },
+    {
+      "id": "thread-ee9f193e5be5",
+      "subject": "[R-gui] start rgtk2 script",
+      "message_count": 2,
+      "participants": [
+        "Christian Gadder",
+        "Yihui Xie"
+      ],
+      "started": "2010-04-16T10:39:36+02:00",
+      "last_reply": "2010-04-18T14:42:32-05:00",
+      "root_message_id": "msg-ee9f193e5be5"
+    },
+    {
+      "id": "thread-3f4fb6dc2feb",
+      "subject": "[R-gui] Rgtk2 and rgui.exe",
+      "message_count": 3,
+      "participants": [
+        "Michael Lawrence",
+        "Yihui Xie",
+        "chris"
+      ],
+      "started": "2010-04-18T17:02:24+02:00",
+      "last_reply": "2010-04-18T14:45:12-05:00",
+      "root_message_id": "msg-3f4fb6dc2feb"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2014-12",
+  "messages": [
+    {
+      "id": "msg-6c19f9f2b41e",
+      "message_id": "<CAGQ++V0QU=jxSRsOfKdRPDoN9_Rz1NqJZX8GBfExcNoXuzmqsA@mail.gmail.com>",
+      "from_name": "Jodi Jhouranda Siregar",
+      "from_email_hash": "6f2441c73c48e3ffded39f6644e316b491ce0256e0abb80277683c5eb29d8765",
+      "date": "2014-12-20T17:55:37+07:00",
+      "subject": "[R-gui] Embedding r",
+      "subject_clean": "[R-gui] Embedding r",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "My team developing r gui especially for spatial data analysis. We have some\nproblems to dicided how to embed R in our software. We learn about Rcpp,\nrkward mechanism to emmbed r and other stuffs. But still, we can't jump to\nany conclusion what is the best way to emmbed R in our software. Hopes you\nguys give us advises regarding this problem.\nRegards,\nJodi jhouranda siregar\nStatistical university\nFaculty of computational statistics\nJakarta,indonesia\nWww.stis.ac.id\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "My team developing r gui especially for spatial data analysis. We have some\nproblems to dicided how to embed R in our software. We learn about Rcpp,\nrkward mechanism to emmbed r and other stuffs. But ",
+      "thread_id": "thread-6c19f9f2b41e",
+      "thread_depth": 0,
+      "month": "2014-12"
+    },
+    {
+      "id": "msg-237398dc8942",
+      "message_id": "<DE8B90B9-5532-4F0A-94A6-0838966AB8F7@r-project.org>",
+      "from_name": "Simon Urbanek",
+      "from_email_hash": "4b8015e605c1e8a78e0fc166d7f94d0bc9cab6230366ee1dfdd8a0de17b4b371",
+      "date": "2014-12-21T00:51:47-05:00",
+      "subject": "[R-gui] Embedding r",
+      "subject_clean": "[R-gui] Embedding r",
+      "in_reply_to": "<CAGQ++V0QU=jxSRsOfKdRPDoN9_Rz1NqJZX8GBfExcNoXuzmqsA@mail.gmail.com>",
+      "references": [
+        "<CAGQ++V0QU=jxSRsOfKdRPDoN9_Rz1NqJZX8GBfExcNoXuzmqsA@mail.gmail.com>"
+      ],
+      "body_plain": "Jodi,\n\nthere is no \"best\" way in general, there are so may different ways that it really depends on your application and your comfort with the tools involved.\n\nFirst, the fundamental setup:\na) direct embedding (linking libR, examples: R.app GUI, JGR, ...)\nb) indirect embedding (UI separate from the R process. examples: RStudio, RCloud, ...)\nc) UI over R process (ESS)\n\nFor a) your application is directly linking to R and running the interpreter. It is the technically most involved solution, because you need to obey all the rules imposed by the setup, but on the plus side you have the most control. With power comes responsibility. It's also the easiest to crash R ;). The R embedding API is what you would use (C) or one of the wrappers such as RInside (C++), JRI (Java) or REngine (ObjC).\n\nb) is more safe since it isolates your application for R so your application is less impacted by the constraints R imposes. On the other hand it limits some interactions since your application will be running in a separate process. It is also easier to use since you only deal with the API created by the interface. Examples of this separation are RStudio (HTTP/WS) and Rserve (Java, PHP, Ruby, WS/JavaScript).\n\nc) This is the most trivial solution - technically not embedding - where you're simply driving the R process from another process without any additional protocol. I'm only mentioning it because there are GUIs that use this for simplicity.\n\nOnce you select the fundamental model for your application you will probably zone in quite quickly on the tools, since the space is mostly partitioned by the language of the interface (C, C++, Java, ...).\n\nCheers,\nSimon\n\n\nOn Dec 20, 2014, at 5:55 AM, Jodi Jhouranda Siregar <11.6729 at stis.ac.id> wrote:\n\n> My team developing r gui especially for spatial data analysis. We have some\n> problems to dicided how to embed R in our software. We learn about Rcpp,\n> rkward mechanism to emmbed r and other stuffs. But still, we can't jump to\n> any conclusion what is the best way to emmbed R in our software. Hopes you\n> guys give us advises regarding this problem.\n> Regards,\n> Jodi jhouranda siregar\n> Statistical university\n> Faculty of computational statistics\n> Jakarta,indonesia\n> Www.stis.ac.id\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Jodi,\n\nthere is no \"best\" way in general, there are so may different ways that it really depends on your application and your comfort with the tools involved.\n\nFirst, the fundamental setup:\na) direct ",
+      "thread_id": "thread-6c19f9f2b41e",
+      "thread_depth": 1,
+      "month": "2014-12"
+    },
+    {
+      "id": "msg-ae7f012c6e44",
+      "message_id": "<CAGQ++V3-91ixA0nduQxe=2Y=pa2kdc4J=T7zAgCOMv4uLdkY-Q@mail.gmail.com>",
+      "from_name": "Jodi Jhouranda Siregar",
+      "from_email_hash": "6f2441c73c48e3ffded39f6644e316b491ce0256e0abb80277683c5eb29d8765",
+      "date": "2014-12-22T13:06:11+07:00",
+      "subject": "[R-gui] Embedding R",
+      "subject_clean": "[R-gui] Embedding R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Thanks for the answer.\nWe have been decided to use C++, and we interest in indirect embedding R in\nour software. We need some references about this method. Hopes you guys can\nhelp us\nThanks\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Thanks for the answer.\nWe have been decided to use C++, and we interest in indirect embedding R in\nour software. We need some references about this method. Hopes you guys can\nhelp us\nThanks\n\n\t[[altern",
+      "thread_id": "thread-ae7f012c6e44",
+      "thread_depth": 0,
+      "month": "2014-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-6c19f9f2b41e",
+      "subject": "[R-gui] Embedding r",
+      "message_count": 2,
+      "participants": [
+        "Jodi Jhouranda Siregar",
+        "Simon Urbanek"
+      ],
+      "started": "2014-12-20T17:55:37+07:00",
+      "last_reply": "2014-12-21T00:51:47-05:00",
+      "root_message_id": "msg-6c19f9f2b41e"
+    },
+    {
+      "id": "thread-ae7f012c6e44",
+      "subject": "[R-gui] Embedding R",
+      "message_count": 1,
+      "participants": [
+        "Jodi Jhouranda Siregar"
+      ],
+      "started": "2014-12-22T13:06:11+07:00",
+      "last_reply": "2014-12-22T13:06:11+07:00",
+      "root_message_id": "msg-ae7f012c6e44"
+    }
+  ]
+}

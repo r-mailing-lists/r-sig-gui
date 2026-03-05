@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2008-12",
+  "messages": [
+    {
+      "id": "msg-b3c0246b2bd2",
+      "message_id": "<499704.86019.qm@web110211.mail.gq1.yahoo.com>",
+      "from_name": "Dwight Bullock",
+      "from_email_hash": "1e109b78a134ab1aaa0f7311b41656a1f7f0d0a0c9935ef06161c86af005a85c",
+      "date": "2008-12-13T22:21:38-08:00",
+      "subject": "[R-gui]  R web based application",
+      "subject_clean": "[R-gui]  R web based application",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081213/08577590/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081213/08577590/attachment.pl>",
+      "thread_id": "thread-b3c0246b2bd2",
+      "thread_depth": 0,
+      "month": "2008-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-b3c0246b2bd2",
+      "subject": "[R-gui]  R web based application",
+      "message_count": 1,
+      "participants": [
+        "Dwight Bullock"
+      ],
+      "started": "2008-12-13T22:21:38-08:00",
+      "last_reply": "2008-12-13T22:21:38-08:00",
+      "root_message_id": "msg-b3c0246b2bd2"
+    }
+  ]
+}

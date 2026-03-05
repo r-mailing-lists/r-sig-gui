@@ -1,0 +1,704 @@
+From HodgessE at uhd.edu  Tue Sep  7 02:42:32 2010
+From: HodgessE at uhd.edu (Hodgess, Erin)
+Date: Mon, 6 Sep 2010 19:42:32 -0500
+Subject: [R-gui] using Microsoft foundation classes with C++ and R
+Message-ID: <101CBF5360343B45B9C9B0B05D71474C25BCAA@BALI.uhd.campus>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100906/3288b3a6/attachment.pl>
+
+From thomas.baier at logicals.com  Tue Sep  7 06:53:16 2010
+From: thomas.baier at logicals.com (Thomas Baier)
+Date: Tue, 7 Sep 2010 06:53:16 +0200
+Subject: [R-gui] using Microsoft foundation classes with C++ and R
+In-Reply-To: <101CBF5360343B45B9C9B0B05D71474C25BCAA@BALI.uhd.campus>
+Message-ID: <L5D3F82D0FE9C4e5c82515DDC3F3D0152.1283835195.srvmail.ow.ks@MHS>
+
+Erin,
+
+yes, of course. Have a look at statconnDCOM and rcom (download from 
+http://rcom.univie.ac.at/) for embedding R into an MFC app and vice 
+versa. Example code is included.
+
+Best,
+Thomas
+
+Hodgess, Erin wrote:
+> Dear R GUI People:
+> 
+> Have any of you used the Microsoft foundation classes with C++ and R,
+> please? 
+> 
+> Thanks,
+> Erin
+> 
+> 
+> Erin M. Hodgess, PhD
+> Associate Professor
+> Department of Computer and Mathematical Sciences University of
+> Houston - Downtown mailto: hodgesse at uhd.edu
+> 
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From HodgessE at uhd.edu  Thu Sep 16 07:45:56 2010
+From: HodgessE at uhd.edu (Hodgess, Erin)
+Date: Thu, 16 Sep 2010 00:45:56 -0500
+Subject: [R-gui] Sliders and combo Boxes
+Message-ID: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/30fa68c5/attachment.pl>
+
+From ligges at statistik.tu-dortmund.de  Thu Sep 16 09:47:33 2010
+From: ligges at statistik.tu-dortmund.de (Uwe Ligges)
+Date: Thu, 16 Sep 2010 09:47:33 +0200
+Subject: [R-gui] Sliders and combo Boxes
+In-Reply-To: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+References: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+Message-ID: <4C91CB95.8070702@statistik.tu-dortmund.de>
+
+
+
+On 16.09.2010 07:45, Hodgess, Erin wrote:
+> Dear R GUI People:
+>
+> I have 2 questions please:
+> a. Is there a function for a slider that runs from a sequence of dates, rather than the usual 0 - 100, please?
+> b. Is there a combo box which allows for multiple selections, please?  For instance, if you have a list of countries, then you could select several (or all) of the countries.
+
+
+Erin,
+
+which of the hundreds of GUI frameworks are we talking about?
+
+
+Uwe
+
+
+> Thanks in advance!
+> Sincerely,
+> Erin
+>
+>
+> Erin M. Hodgess, PhD
+> Associate Professor
+> Department of Computer and Mathematical Sciences
+> University of Houston - Downtown
+> mailto: hodgesse at uhd.edu
+>
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From Wayne.W.Jones at shell.com  Thu Sep 16 10:11:45 2010
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Thu, 16 Sep 2010 10:11:45 +0200
+Subject: [R-gui] Sliders and combo Boxes
+In-Reply-To: <4C91CB95.8070702@statistik.tu-dortmund.de>
+References: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+	<4C91CB95.8070702@statistik.tu-dortmund.de>
+Message-ID: <8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>
+
+Hi Erin, 
+
+Why not have a look at the package rpanel. 
+
+See the following examples in the package rpanel: 
+
+>library(rpanel)
+>?rp.listbox
+>?rp.slider
+
+You could very easily modify the slider to display dates rather than a
+number from 1:100. 
+
+Hope this helps, 
+
+Wayne
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Uwe Ligges
+Sent: 16 September 2010 08:48
+To: Hodgess, Erin
+Cc: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] Sliders and combo Boxes
+
+
+
+On 16.09.2010 07:45, Hodgess, Erin wrote:
+> Dear R GUI People:
+>
+> I have 2 questions please:
+> a. Is there a function for a slider that runs from a sequence of
+dates, rather than the usual 0 - 100, please?
+> b. Is there a combo box which allows for multiple selections, please?
+For instance, if you have a list of countries, then you could select
+several (or all) of the countries.
+
+
+Erin,
+
+which of the hundreds of GUI frameworks are we talking about?
+
+
+Uwe
+
+
+> Thanks in advance!
+> Sincerely,
+> Erin
+>
+>
+> Erin M. Hodgess, PhD
+> Associate Professor
+> Department of Computer and Mathematical Sciences
+> University of Houston - Downtown
+> mailto: hodgesse at uhd.edu
+>
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From HodgessE at uhd.edu  Thu Sep 16 17:47:08 2010
+From: HodgessE at uhd.edu (Hodgess, Erin)
+Date: Thu, 16 Sep 2010 10:47:08 -0500
+Subject: [R-gui] Sliders and combo Boxes
+References: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+	<4C91CB95.8070702@statistik.tu-dortmund.de>
+	<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>
+Message-ID: <586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/690716ee/attachment.pl>
+
+From xie at yihui.name  Thu Sep 16 18:44:45 2010
+From: xie at yihui.name (Yihui Xie)
+Date: Thu, 16 Sep 2010 11:44:45 -0500
+Subject: [R-gui] Sliders and combo Boxes
+In-Reply-To: <586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>
+References: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+	<4C91CB95.8070702@statistik.tu-dortmund.de>
+	<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>
+	<586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>
+Message-ID: <AANLkTinQcS8LMQH=KJA-DGPoUE-Vb2r=9GAyZsgEHXcy@mail.gmail.com>
+
+For the second question, base R has a simple function select.list()
+which allows you to do multiple selections.
+
+Regards,
+Yihui
+--
+Yihui Xie <xieyihui at gmail.com>
+Phone: 515-294-2465 Web: http://yihui.name
+Department of Statistics, Iowa State University
+2215 Snedecor Hall, Ames, IA
+
+
+
+On Thu, Sep 16, 2010 at 10:47 AM, Hodgess, Erin <HodgessE at uhd.edu> wrote:
+> Hi Wayne and Uwe:
+>
+> The rp.slider will be perfect.
+>
+> The rp.listbox will only let you select one option. ?My ultimate goal is to have something that will let you select several options, if possible
+>
+> I've been looking in the Tcl/tk options.
+>
+> Thanks,
+> Erin
+>
+>
+> Erin M. Hodgess, PhD
+> Associate Professor
+> Department of Computer and Mathematical Sciences
+> University of Houston - Downtown
+> mailto: hodgesse at uhd.edu
+>
+>
+> ________________________________
+>
+> From: Wayne.W.Jones at shell.com [mailto:Wayne.W.Jones at shell.com]
+> Sent: Thu 9/16/2010 3:11 AM
+> To: ligges at statistik.tu-dortmund.de; Hodgess, Erin
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: RE: [R-gui] Sliders and combo Boxes
+>
+>
+>
+> Hi Erin,
+>
+> Why not have a look at the package rpanel.
+>
+> See the following examples in the package rpanel:
+>
+>>library(rpanel)
+>>?rp.listbox
+>>?rp.slider
+>
+> You could very easily modify the slider to display dates rather than a
+> number from 1:100.
+>
+> Hope this helps,
+>
+> Wayne
+>
+>
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch
+> [mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Uwe Ligges
+> Sent: 16 September 2010 08:48
+> To: Hodgess, Erin
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] Sliders and combo Boxes
+>
+>
+>
+> On 16.09.2010 07:45, Hodgess, Erin wrote:
+>> Dear R GUI People:
+>>
+>> I have 2 questions please:
+>> a. Is there a function for a slider that runs from a sequence of
+> dates, rather than the usual 0 - 100, please?
+>> b. Is there a combo box which allows for multiple selections, please?
+> For instance, if you have a list of countries, then you could select
+> several (or all) of the countries.
+>
+>
+> Erin,
+>
+> which of the hundreds of GUI frameworks are we talking about?
+>
+>
+> Uwe
+>
+>
+>> Thanks in advance!
+>> Sincerely,
+>> Erin
+>>
+>>
+>> Erin M. Hodgess, PhD
+>> Associate Professor
+>> Department of Computer and Mathematical Sciences
+>> University of Houston - Downtown
+>> mailto: hodgesse at uhd.edu
+>>
+>>
+>> ? ? ? [[alternative HTML version deleted]]
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+>
+>
+>
+> ? ? ? ?[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From Greg.Snow at imail.org  Thu Sep 16 19:31:46 2010
+From: Greg.Snow at imail.org (Greg Snow)
+Date: Thu, 16 Sep 2010 11:31:46 -0600
+Subject: [R-gui] Sliders and combo Boxes
+In-Reply-To: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+References: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+Message-ID: <B37C0A15B8FB3C468B5BC7EBC7DA14CC633C849D25@LP-EXMBVS10.CO.IHC.COM>
+
+For the Tk slider and dates, it does not do it directly, but you could set the slider to go across a set of numbers (possibly the Julian date number), suppress the display of the numerical value and instead have a linked label that would show the corresponding date and would update as the slider moves.
+
+The TK combo box does not allow for multiple selection, but the Tk list box does, just set selectmode to either "multiple" or "extended".
+
+-- 
+Gregory (Greg) L. Snow Ph.D.
+Statistical Data Center
+Intermountain Healthcare
+greg.snow at imail.org
+801.408.8111
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> bounces at stat.math.ethz.ch] On Behalf Of Hodgess, Erin
+> Sent: Wednesday, September 15, 2010 11:46 PM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] Sliders and combo Boxes
+> 
+> Dear R GUI People:
+> 
+> I have 2 questions please:
+> a. Is there a function for a slider that runs from a sequence of dates,
+> rather than the usual 0 - 100, please?
+> b. Is there a combo box which allows for multiple selections, please?
+> For instance, if you have a list of countries, then you could select
+> several (or all) of the countries.
+> 
+> Thanks in advance!
+> Sincerely,
+> Erin
+> 
+> 
+> Erin M. Hodgess, PhD
+> Associate Professor
+> Department of Computer and Mathematical Sciences
+> University of Houston - Downtown
+> mailto: hodgesse at uhd.edu
+> 
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From HodgessE at uhd.edu  Thu Sep 16 23:22:48 2010
+From: HodgessE at uhd.edu (Hodgess, Erin)
+Date: Thu, 16 Sep 2010 16:22:48 -0500
+Subject: [R-gui] Good Tcl/tk widget reference?
+Message-ID: <586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/ef1db347/attachment.pl>
+
+From groemping at bht-berlin.de  Fri Sep 17 00:28:37 2010
+From: groemping at bht-berlin.de (=?ISO-8859-1?Q?Ulrike_Gr=F6mping?=)
+Date: Fri, 17 Sep 2010 00:28:37 +0200
+Subject: [R-gui] Good Tcl/tk widget reference?
+In-Reply-To: <586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>
+References: <586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>
+Message-ID: <4C929A15.9010809@bht-berlin.de>
+
+Erin,
+
+there is one that comes with your R installation, at least if you are on 
+Windows. On my Windoes R 2.11.0, this is the path:
+
+C:\Programme\R\R-2.11.0\Tcl\doc\tcltk85.chm
+
+Best, Ulrike
+
+Hodgess, Erin schrieb:
+> Hello again.
+>
+>  
+>
+> First, thanks for all for the great help on sliders, etc.
+>
+>  
+>
+> Next, what is a good reference for Tcl/tk that would include the options
+> for widgets, please?
+>
+>  
+>
+> Thanks again very much!!
+>
+> Sincerely,
+>
+> Erin
+>
+>  
+>
+>  
+>
+> Erin M. Hodgess, Ph.D.
+>
+> Associate Professor
+>
+> Department of Computer and Mathematical Sciences
+>
+> University of Houston - Downtown
+>
+> mailto: hodgesse at uhd.edu
+>
+>  
+>
+>  
+>
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From Wayne.W.Jones at shell.com  Fri Sep 17 11:02:03 2010
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Fri, 17 Sep 2010 11:02:03 +0200
+Subject: [R-gui] Sliders and combo Boxes
+In-Reply-To: <586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>
+References: <586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>
+	<4C91CB95.8070702@statistik.tu-dortmund.de>
+	<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>
+	<586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>
+Message-ID: <8E3590214E4380489D2F8BF129B939F30146D28F@amsdc1-s-03371.europe.shell.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100917/50359cd1/attachment.pl>
+
+From Greg.Snow at imail.org  Fri Sep 17 22:29:30 2010
+From: Greg.Snow at imail.org (Greg Snow)
+Date: Fri, 17 Sep 2010 14:29:30 -0600
+Subject: [R-gui] Good Tcl/tk widget reference?
+In-Reply-To: <586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>
+References: <586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>
+Message-ID: <B37C0A15B8FB3C468B5BC7EBC7DA14CC633C962538@LP-EXMBVS10.CO.IHC.COM>
+
+I don't know of a single good reference, installed with R is the help files for tcltk, this has lots of detail including all the options and that information, but it is in the tcl syntax, not R and translating to R can be tricky in some cases.
+
+There were a couple of tutorials examples in the R newsletter (now the R journal) a few years back that gave a good starting place, but not the detail on all widgets etc.
+
+I personally often refer to the perlTk book, but that is only helpful for those of us with experience in Perl and I still need to translate to R syntax.
+
+So the only real option is to combine various things, the tcl documentation, examples of R syntax (the newsletter and existing code), and a bit of trial and error to figure out what works.
+
+The one upside is that you can ask questions without fear of getting a RTFM response.
+
+I think Tk with R is still a bit too much of a niche area that no one has written the document yet that covers everything that you want.
+
+Hope this helps a little, sorry it is not what you had hoped for.
+
+-- 
+Gregory (Greg) L. Snow Ph.D.
+Statistical Data Center
+Intermountain Healthcare
+greg.snow at imail.org
+801.408.8111
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> bounces at stat.math.ethz.ch] On Behalf Of Hodgess, Erin
+> Sent: Thursday, September 16, 2010 3:23 PM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] Good Tcl/tk widget reference?
+> 
+> Hello again.
+> 
+> 
+> 
+> First, thanks for all for the great help on sliders, etc.
+> 
+> 
+> 
+> Next, what is a good reference for Tcl/tk that would include the
+> options
+> for widgets, please?
+> 
+> 
+> 
+> Thanks again very much!!
+> 
+> Sincerely,
+> 
+> Erin
+> 
+> 
+> 
+> 
+> 
+> Erin M. Hodgess, Ph.D.
+> 
+> Associate Professor
+> 
+> Department of Computer and Mathematical Sciences
+> 
+> University of Houston - Downtown
+> 
+> mailto: hodgesse at uhd.edu
+> 
+> 
+> 
+> 
+> 
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From edd at debian.org  Fri Sep 17 22:55:57 2010
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Fri, 17 Sep 2010 15:55:57 -0500
+Subject: [R-gui] Good Tcl/tk widget reference?
+In-Reply-To: <B37C0A15B8FB3C468B5BC7EBC7DA14CC633C962538@LP-EXMBVS10.CO.IHC.COM>
+References: <586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>
+	<B37C0A15B8FB3C468B5BC7EBC7DA14CC633C962538@LP-EXMBVS10.CO.IHC.COM>
+Message-ID: <19603.54749.172709.326543@max.nulle.part>
+
+
+On 17 September 2010 at 14:29, Greg Snow wrote:
+| I personally often refer to the perlTk book, but that is only helpful for those of us with experience in Perl and I still need to translate to R syntax.
+
+Same here. When I used to program a little with the tcltk package, I often
+alternated between O'Reilly's PerlTk book and the trusted site put togther by
+James Wettenhall well over five years ago:
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+
+Hth, Dirk
+
+-- 
+Dirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com
+
+
+From adrian at waddell.ch  Mon Sep 20 02:04:25 2010
+From: adrian at waddell.ch (Adrian Waddell)
+Date: Sun, 19 Sep 2010 20:04:25 -0400
+Subject: [R-gui] Good Tcl/tk widget reference?
+In-Reply-To: <19603.54749.172709.326543@max.nulle.part>
+References: <586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>	<B37C0A15B8FB3C468B5BC7EBC7DA14CC633C962538@LP-EXMBVS10.CO.IHC.COM>
+	<19603.54749.172709.326543@max.nulle.part>
+Message-ID: <4C96A509.1040701@waddell.ch>
+
+Hello all,
+
+The tcltk R package provides wrapper functions to tcl and the naive tk
+extension itself. So I suggest you read a tcl/tk book. I can recommend
+Practical Programming in Tcl and Tk by Brent Welch.
+
+I have started writing some slides explaining the tcltk R package but I
+ran out of time for the moment. However, I plan to write more slides by
+the end of October which should cover geometry managers (pack, maybe
+grid) and the connection between the functions provided by the tcltk R
+package and the naive Tk commands. You can find these slides here:
+
+http://www.stats.uwaterloo.ca/stats_navigation/StatSoftware/Essential-Software/
+
+Greetings,
+
+Adrian Waddell
+
+
+
+On 09/17/2010 04:55 PM, Dirk Eddelbuettel wrote:
+> 
+> On 17 September 2010 at 14:29, Greg Snow wrote:
+> | I personally often refer to the perlTk book, but that is only helpful for those of us with experience in Perl and I still need to translate to R syntax.
+> 
+> Same here. When I used to program a little with the tcltk package, I often
+> alternated between O'Reilly's PerlTk book and the trusted site put togther by
+> James Wettenhall well over five years ago:
+> 
+> http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+> 
+> Hth, Dirk
+>
+
+
+From Paul.Story at daff.gov.au  Wed Sep 22 02:45:51 2010
+From: Paul.Story at daff.gov.au (Story, Paul)
+Date: Wed, 22 Sep 2010 10:45:51 +1000
+Subject: [R-gui] unsubscribe [SEC=UNCLASSIFIED]
+Message-ID: <992ACCE01A51114BB0258DC52F76B7A607A51E06@ACT001CL03EX03.agdaff.gov.au>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/e6fe5529/attachment.pl>
+
+From Paul.Story at daff.gov.au  Wed Sep 22 02:46:27 2010
+From: Paul.Story at daff.gov.au (Story, Paul)
+Date: Wed, 22 Sep 2010 10:46:27 +1000
+Subject: [R-gui] unsubscribe [SEC=UNCLASSIFIED]
+Message-ID: <992ACCE01A51114BB0258DC52F76B7A607A51E08@ACT001CL03EX03.agdaff.gov.au>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/6a0f0454/attachment.pl>
+
+From ian.fellows at stat.ucla.edu  Sat Sep 25 19:01:10 2010
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Sat, 25 Sep 2010 10:01:10 -0700
+Subject: [R-gui] Deducer 0.4-1 and JGR 1.7-2 released
+Message-ID: <52C938A8-5077-406F-BBCC-54F199F07791@stat.ucla.edu>
+
+Hi All,
+
+I would like to announce the release of Deducer 0.4-1 and JGR 1.7-2 to CRAN. The updates should be propagating through the mirrors over the next few days. On the Deducer side we have a number of nice improvements:
+
+1. A new Text Field Widget for plug-ins is included, which is better suited for entering/displaying numeric and short string fields than TextAreaWidget.
+2. A new Object Chooser Widget is included, which allows the user to select an object from their workspace, possibly of a specific class.
+3. Fixed combobox bug on Mac OS 64-bit.
+4. Factor editor and Recode dialog handle empty strings.
+5. Created menu items for common plotting templates.
+
+The new JGR includes stability fixes along with a few new features.
+
+Bug fixes:
+1. Fixed MacOS JavaGD resize deadlock bug
+2. Fixed 100% CPU on start-up bug reported on some UNIX systems.
+3. Interrupt R button fixed on unix systems 
+
+New Features:
+1. Graphics device save support for png, jpeg, bmp, and tiff
+2. User control over the menu system has been improved. Added ability to insert new menus, menu items, separators, and sub-menus. Menus and menu items can also be removed.
+
+
+Ian Fellows
+
+
+From landronimirc at gmail.com  Sat Sep 25 21:45:17 2010
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Sat, 25 Sep 2010 22:45:17 +0300
+Subject: [R-gui] Deducer 0.4-1 and JGR 1.7-2 released
+In-Reply-To: <52C938A8-5077-406F-BBCC-54F199F07791@stat.ucla.edu>
+References: <52C938A8-5077-406F-BBCC-54F199F07791@stat.ucla.edu>
+Message-ID: <AANLkTiksLt8NZyYuYQFQjdE0zfqHsOkCGgOtFYqzPbEz@mail.gmail.com>
+
+On Sat, Sep 25, 2010 at 8:01 PM, Ian Fellows <ian.fellows at stat.ucla.edu> wrote:
+> 2. Fixed 100% CPU on start-up bug reported on some UNIX systems.
+> 3. Interrupt R button fixed on unix systems
+>
+Great news! Thanks a lot for these two. Regards
+Liviu
+
+

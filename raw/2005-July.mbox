@@ -1,0 +1,808 @@
+From r.shengzhe at gmail.com  Fri Jul  8 12:30:33 2005
+From: r.shengzhe at gmail.com (wu sz)
+Date: Fri, 8 Jul 2005 12:30:33 +0200
+Subject: [R-gui] Tk Library and Tk Library
+Message-ID: <ea57975b050708033056faa143@mail.gmail.com>
+
+Hello,
+
+I am now using tcltk which just includes Tcl / Tk Built-In Commands,
+and how to  install and use Tk Library and Tk Library?
+
+Is there any function which can do the operation "click a button",
+just like using a mouse to click?
+
+Thank you,
+shengzhe
+
+
+From uth at zhwin.ch  Fri Jul  8 16:52:08 2005
+From: uth at zhwin.ch (=?iso-8859-1?Q?Untern=E4hrer_Thomas_=28uth=29?=)
+Date: Fri, 8 Jul 2005 16:52:08 +0200
+Subject: [R-gui] Tk Library and Tk Library
+Message-ID: <029B130F0241DE488B3EC72A34F855B4115D39@langouste.zhwin.ch>
+
+
+Take a look at http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+
+There are a lot of usefull examples.
+
+
+-----Urspr?ngliche Nachricht-----
+Von: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-bounces at stat.math.ethz.ch] Im Auftrag von wu sz
+Gesendet: Freitag, 8. Juli 2005 12:31
+An: r-sig-gui at stat.math.ethz.ch
+Betreff: [R-gui] Tk Library and Tk Library
+
+
+Hello,
+
+I am now using tcltk which just includes Tcl / Tk Built-In Commands, and how to  install and use Tk Library and Tk Library?
+
+Is there any function which can do the operation "click a button", just like using a mouse to click?
+
+Thank you,
+shengzhe
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From r.shengzhe at gmail.com  Sat Jul  9 01:47:52 2005
+From: r.shengzhe at gmail.com (wu sz)
+Date: Sat, 9 Jul 2005 01:47:52 +0200
+Subject: [R-gui] Tk Library and Tk Library
+In-Reply-To: <070820051719.8052.42CEB590000B53A100001F7422058861720699089F9D0103@comcast.net>
+References: <070820051719.8052.42CEB590000B53A100001F7422058861720699089F9D0103@comcast.net>
+Message-ID: <ea57975b05070816477fc6d887@mail.gmail.com>
+
+Hi Bill,
+
+Thanks a lot for sending so much info to me!
+
+Could you tell me the name of the function which can do the operation
+"click a button",  just like using a mouse to click?
+
+I find that in this fold \R\rw2010\Tcl\doc there are two tcltk help
+files. While I browse the files, I find two types of function, one is
+tcl / tk Built-In Commands, the other is tcl / tk Library Procedures.
+The first one can be loaded(library(tcltk)) and used in R, but how to
+load and use the second one?
+
+Thank you,
+Shengzhe
+
+
+From crendon at gmail.com  Sat Jul  9 01:55:34 2005
+From: crendon at gmail.com (Carlos Rendon)
+Date: Fri, 8 Jul 2005 16:55:34 -0700
+Subject: [R-gui] Tk Library and Tk Library
+In-Reply-To: <ea57975b05070816477fc6d887@mail.gmail.com>
+References: <070820051719.8052.42CEB590000B53A100001F7422058861720699089F9D0103@comcast.net>
+	<ea57975b05070816477fc6d887@mail.gmail.com>
+Message-ID: <5a33f11c05070816551ff7172e@mail.gmail.com>
+
+Please look at the following page for a button example.
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/buttons.html
+
+
+On 7/8/05, wu sz <r.shengzhe at gmail.com> wrote:
+> Hi Bill,
+> 
+> Thanks a lot for sending so much info to me!
+> 
+> Could you tell me the name of the function which can do the operation
+> "click a button",  just like using a mouse to click?
+> 
+> I find that in this fold \R\rw2010\Tcl\doc there are two tcltk help
+> files. While I browse the files, I find two types of function, one is
+> tcl / tk Built-In Commands, the other is tcl / tk Library Procedures.
+> The first one can be loaded(library(tcltk)) and used in R, but how to
+> load and use the second one?
+> 
+> Thank you,
+> Shengzhe
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+
+-- 
+Carlos Rendon
+
+
+From r.vaiciunas at takas.lt  Sun Jul 10 03:55:27 2005
+From: r.vaiciunas at takas.lt (=?windows-1257?Q?Renatas_Vai=E8i=FBnas_?=)
+Date: Sun, 10 Jul 2005 04:55:27 +0300
+Subject: [R-gui] Contents of R-SIG-GUI digest...
+In-Reply-To: <mailman.2.1120903201.25394.r-sig-gui@stat.math.ethz.ch>
+Message-ID: <ISPFE160nmR1sjVfusc0002760a@mail-src.takas.lt>
+
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of
+r-sig-gui-request at stat.math.ethz.ch
+Sent: Saturday, July 09, 2005 1:00 PM
+To: r-sig-gui at stat.math.ethz.ch
+Subject: R-SIG-GUI Digest, Vol 28, Issue 1
+
+Send R-SIG-GUI mailing list submissions to
+	r-sig-gui at stat.math.ethz.ch
+
+To subscribe or unsubscribe via the World Wide Web, visit
+	https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+or, via email, send a message with subject or body 'help' to
+	r-sig-gui-request at stat.math.ethz.ch
+
+You can reach the person managing the list at
+	r-sig-gui-owner at stat.math.ethz.ch
+
+When replying, please edit your Subject line so it is more specific
+than "Re: Contents of R-SIG-GUI digest..."
+
+
+From crendon at gmail.com  Tue Jul 12 00:33:39 2005
+From: crendon at gmail.com (Carlos Rendon)
+Date: Mon, 11 Jul 2005 15:33:39 -0700
+Subject: [R-gui] Making text window follow text
+Message-ID: <5a33f11c050711153322c72b9@mail.gmail.com>
+
+I have looked through the example:
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/TextWindows.html
+
+What I want to be able to do is have the textbox follow or scroll with
+the text as it is inserted into the textbox. For example, if I were to
+insert 100 lines of "hello", I would only see the last 20 hello's if
+the textbox was 20 lines tall.
+
+Is there some way to specify what part of the text the textbox shows? 
+Or, at least a way to display only the most recent text?
+
+Any assistance would be greatly appreciated.
+-- 
+Carlos Rendon
+
+
+From crendon at gmail.com  Wed Jul 13 17:05:36 2005
+From: crendon at gmail.com (Carlos Rendon)
+Date: Wed, 13 Jul 2005 08:05:36 -0700
+Subject: [R-gui] Found a solution
+In-Reply-To: <071320050940.13763.42D4E19F0006B229000035C322058891160699089F9D0103@comcast.net>
+References: <071320050940.13763.42D4E19F0006B229000035C322058891160699089F9D0103@comcast.net>
+Message-ID: <5a33f11c0507130805f11b12c@mail.gmail.com>
+
+Bill,
+
+Thanks for the help, I had been playing around with manipulations of
+yview and moveto with no luck.
+
+-- 
+Carlos Rendon
+
+On 7/13/05, <Bill's email> wrote:
+>  
+> Carlos, 
+> In the R Help file under "tkmove(widget, ...)" I read "Except for a few
+> exceptions, the pattern is that Tcl widget commands possibly with
+> subcommands like .a.b selection clear are converted to function names like
+> tkselection.clear and the widget is given as the first argument."  Then
+> ".txt yview moveto 1.0" translates to "tkyview.moveto(txt,1)", which moved
+> "most recent" to the line above the bottom of the text window. 
+> Bill
+>
+
+
+From eacunaf at yahoo.com  Thu Jul 14 15:36:12 2005
+From: eacunaf at yahoo.com (Edgar Acuna)
+Date: Thu, 14 Jul 2005 06:36:12 -0700 (PDT)
+Subject: [R-gui] visual programming on R
+Message-ID: <20050714133612.25863.qmail@web51402.mail.yahoo.com>
+
+Hello,
+One of my students is building a visual environment
+for the package dprep
+developed by my research group at the University of
+Puerto Rico.
+The environment will be in the style of the Orange and
+Weka machine learning/data mining software.
+She is using only the tools provided by tcl/tck
+(active tcl).
+I wonder if somebody else has built  such kind of
+environment and which tools has used?
+
+Best,
+Edgar Acuna
+CASTLE group
+UPR-Mayaguez
+
+
+From joseclaudio.faria at terra.com.br  Wed Jul 20 01:04:36 2005
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Tue, 19 Jul 2005 20:04:36 -0300
+Subject: [R-gui] Tinn-R 1.16.1.5 stable was released
+Message-ID: <42DD8704.6040802@terra.com.br>
+
+Dears R users,
+
+We would like to announce that a new version of the Tinn-R
+(Tinn-R 1.16.1.5 stable) was released and is available
+in http://www.sciviews.org/Tinn-R.
+
+________________________________________________________________________________
+Tinn-R 1.16.1.5 stable (15 Jul 2005) - LATEST
+________________________________________________________________________________
+
+  - Tinn-R now works with R in MDI mode if the device graphic is maximized with
+    no more limitations of the number of device graphic, as pointed in the
+    Tinn-R 1.15.1.7 stable (07 Apr 2005).
+
+  - If you use the function 'utils:::setWindowTitle(paste("-",getwd()))' in
+    Rprofile, Tinn-R still recognizes Rgui (was not the case in previous
+    versions).
+
+  - A new menu option (and respective button and hotkey) was added to the main
+    menu: 'R/Controlling R/List structure of selected variable' that allows you
+    to list the structure of any R object/variable.
+
+  - A new menu (and respective popup menu) was added to the main menu:
+    'File/Put full path in clipboard'. This option allows you to put the full
+    path of the file in the clipboard with two options: Unix mode (../..) or
+    Windows (..\..) (usefull to get full path of data files).
+
+  - In 'R toolbar' the position of the buttons were a little changed for a more
+    logical arrangement.
+
+  - The menu 'Format/Block' was a little reworked.
+
+  - A small bug with project ('Save' and 'Save as'), related to automatic
+    extension ('*.tps'), was fixed.
+________________________________________________________________________________
+
+
+Best regards,
+___________
+Tinn-R team
+
+
+From ligges at statistik.uni-dortmund.de  Wed Jul 20 14:24:56 2005
+From: ligges at statistik.uni-dortmund.de (Uwe Ligges)
+Date: Wed, 20 Jul 2005 14:24:56 +0200
+Subject: [R-gui] Tinn-R 1.16.1.5 stable was released
+In-Reply-To: <42DD8704.6040802@terra.com.br>
+References: <42DD8704.6040802@terra.com.br>
+Message-ID: <42DE4298.1070606@statistik.uni-dortmund.de>
+
+Unfortunately, it does not run on, e.g., Windows NT4.0SP6, for example.
+
+Translation of the error message:
+Entry point "SHGetSpecialFolderPathA" not found in "shell32.dll".
+
+Uwe Ligges
+
+
+Jose Claudio Faria wrote:
+
+> Dears R users,
+> 
+> We would like to announce that a new version of the Tinn-R
+> (Tinn-R 1.16.1.5 stable) was released and is available
+> in http://www.sciviews.org/Tinn-R.
+> 
+> ________________________________________________________________________________
+> Tinn-R 1.16.1.5 stable (15 Jul 2005) - LATEST
+> ________________________________________________________________________________
+> 
+>   - Tinn-R now works with R in MDI mode if the device graphic is maximized with
+>     no more limitations of the number of device graphic, as pointed in the
+>     Tinn-R 1.15.1.7 stable (07 Apr 2005).
+> 
+>   - If you use the function 'utils:::setWindowTitle(paste("-",getwd()))' in
+>     Rprofile, Tinn-R still recognizes Rgui (was not the case in previous
+>     versions).
+> 
+>   - A new menu option (and respective button and hotkey) was added to the main
+>     menu: 'R/Controlling R/List structure of selected variable' that allows you
+>     to list the structure of any R object/variable.
+> 
+>   - A new menu (and respective popup menu) was added to the main menu:
+>     'File/Put full path in clipboard'. This option allows you to put the full
+>     path of the file in the clipboard with two options: Unix mode (../..) or
+>     Windows (..\..) (usefull to get full path of data files).
+> 
+>   - In 'R toolbar' the position of the buttons were a little changed for a more
+>     logical arrangement.
+> 
+>   - The menu 'Format/Block' was a little reworked.
+> 
+>   - A small bug with project ('Save' and 'Save as'), related to automatic
+>     extension ('*.tps'), was fixed.
+> ________________________________________________________________________________
+> 
+> 
+> Best regards,
+> ___________
+> Tinn-R team
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From p.dalgaard at biostat.ku.dk  Wed Jul 20 15:28:18 2005
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: 20 Jul 2005 15:28:18 +0200
+Subject: [R-gui] Tinn-R 1.16.1.5 stable was released
+In-Reply-To: <42DE4298.1070606@statistik.uni-dortmund.de>
+References: <42DD8704.6040802@terra.com.br>
+	<42DE4298.1070606@statistik.uni-dortmund.de>
+Message-ID: <x2wtnl1ua5.fsf@turmalin.kubism.ku.dk>
+
+Uwe Ligges <ligges at statistik.uni-dortmund.de> writes:
+
+> Unfortunately, it does not run on, e.g., Windows NT4.0SP6, for example.
+> 
+> Translation of the error message:
+> Entry point "SHGetSpecialFolderPathA" not found in "shell32.dll".
+> 
+> Uwe Ligges
+
+Works for me on W98, but there's a rather bad bug in the parenthesis
+highlighting. Basically, they turn into the *background* color when
+highlighting is off, so running the textcursor through a line makes
+all parentheses look like blanks. I'll see if the same thing applies
+to XP.
+ 
+> 
+> Jose Claudio Faria wrote:
+> 
+> > Dears R users,
+> > 
+> > We would like to announce that a new version of the Tinn-R
+> > (Tinn-R 1.16.1.5 stable) was released and is available
+> > in http://www.sciviews.org/Tinn-R.
+> > 
+> > ________________________________________________________________________________
+> > Tinn-R 1.16.1.5 stable (15 Jul 2005) - LATEST
+> > ________________________________________________________________________________
+> > 
+> >   - Tinn-R now works with R in MDI mode if the device graphic is maximized with
+> >     no more limitations of the number of device graphic, as pointed in the
+> >     Tinn-R 1.15.1.7 stable (07 Apr 2005).
+> > 
+> >   - If you use the function 'utils:::setWindowTitle(paste("-",getwd()))' in
+> >     Rprofile, Tinn-R still recognizes Rgui (was not the case in previous
+> >     versions).
+> > 
+> >   - A new menu option (and respective button and hotkey) was added to the main
+> >     menu: 'R/Controlling R/List structure of selected variable' that allows you
+> >     to list the structure of any R object/variable.
+> > 
+> >   - A new menu (and respective popup menu) was added to the main menu:
+> >     'File/Put full path in clipboard'. This option allows you to put the full
+> >     path of the file in the clipboard with two options: Unix mode (../..) or
+> >     Windows (..\..) (usefull to get full path of data files).
+> > 
+> >   - In 'R toolbar' the position of the buttons were a little changed for a more
+> >     logical arrangement.
+> > 
+> >   - The menu 'Format/Block' was a little reworked.
+> > 
+> >   - A small bug with project ('Save' and 'Save as'), related to automatic
+> >     extension ('*.tps'), was fixed.
+> > ________________________________________________________________________________
+> > 
+> > 
+> > Best regards,
+> > ___________
+> > Tinn-R team
+> > 
+> > _______________________________________________
+> > R-SIG-GUI mailing list
+> > R-SIG-GUI at stat.math.ethz.ch
+> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+-- 
+   O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+  c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+ (*) \(*) -- University of Copenhagen   Denmark          Ph:  (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)                  FAX: (+45) 35327907
+
+
+From p.dalgaard at biostat.ku.dk  Wed Jul 20 15:35:55 2005
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: 20 Jul 2005 15:35:55 +0200
+Subject: [R-gui] Tinn-R 1.16.1.5 stable was released
+In-Reply-To: <x2wtnl1ua5.fsf@turmalin.kubism.ku.dk>
+References: <42DD8704.6040802@terra.com.br>
+	<42DE4298.1070606@statistik.uni-dortmund.de>
+	<x2wtnl1ua5.fsf@turmalin.kubism.ku.dk>
+Message-ID: <x2sly91txg.fsf@turmalin.kubism.ku.dk>
+
+Peter Dalgaard <p.dalgaard at biostat.ku.dk> writes:
+
+> Uwe Ligges <ligges at statistik.uni-dortmund.de> writes:
+> 
+> > Unfortunately, it does not run on, e.g., Windows NT4.0SP6, for example.
+> > 
+> > Translation of the error message:
+> > Entry point "SHGetSpecialFolderPathA" not found in "shell32.dll".
+> > 
+> > Uwe Ligges
+> 
+> Works for me on W98, but there's a rather bad bug in the parenthesis
+> highlighting. Basically, they turn into the *background* color when
+> highlighting is off, so running the textcursor through a line makes
+
+Argh. Not clear. Here's what I meant:
+
+cursor on ")" : color is red  along with matching "("
+move cursor away from ")": both turn white (on white BG)
+redraw screen: parens turn black again.
+
+> all parentheses look like blanks. I'll see if the same thing applies
+> to XP.
+>  
+> > 
+> > Jose Claudio Faria wrote:
+> > 
+> > > Dears R users,
+> > > 
+> > > We would like to announce that a new version of the Tinn-R
+> > > (Tinn-R 1.16.1.5 stable) was released and is available
+> > > in http://www.sciviews.org/Tinn-R.
+> > > 
+> > > ________________________________________________________________________________
+> > > Tinn-R 1.16.1.5 stable (15 Jul 2005) - LATEST
+> > > ________________________________________________________________________________
+> > > 
+> > >   - Tinn-R now works with R in MDI mode if the device graphic is maximized with
+> > >     no more limitations of the number of device graphic, as pointed in the
+> > >     Tinn-R 1.15.1.7 stable (07 Apr 2005).
+> > > 
+> > >   - If you use the function 'utils:::setWindowTitle(paste("-",getwd()))' in
+> > >     Rprofile, Tinn-R still recognizes Rgui (was not the case in previous
+> > >     versions).
+> > > 
+> > >   - A new menu option (and respective button and hotkey) was added to the main
+> > >     menu: 'R/Controlling R/List structure of selected variable' that allows you
+> > >     to list the structure of any R object/variable.
+> > > 
+> > >   - A new menu (and respective popup menu) was added to the main menu:
+> > >     'File/Put full path in clipboard'. This option allows you to put the full
+> > >     path of the file in the clipboard with two options: Unix mode (../..) or
+> > >     Windows (..\..) (usefull to get full path of data files).
+> > > 
+> > >   - In 'R toolbar' the position of the buttons were a little changed for a more
+> > >     logical arrangement.
+> > > 
+> > >   - The menu 'Format/Block' was a little reworked.
+> > > 
+> > >   - A small bug with project ('Save' and 'Save as'), related to automatic
+> > >     extension ('*.tps'), was fixed.
+> > > ________________________________________________________________________________
+> > > 
+> > > 
+> > > Best regards,
+> > > ___________
+> > > Tinn-R team
+> > > 
+> > > _______________________________________________
+> > > R-SIG-GUI mailing list
+> > > R-SIG-GUI at stat.math.ethz.ch
+> > > https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> > 
+> > _______________________________________________
+> > R-SIG-GUI mailing list
+> > R-SIG-GUI at stat.math.ethz.ch
+> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> > 
+> 
+> -- 
+>    O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+>   c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+>  (*) \(*) -- University of Copenhagen   Denmark          Ph:  (+45) 35327918
+> ~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)                  FAX: (+45) 35327907
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+-- 
+   O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+  c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+ (*) \(*) -- University of Copenhagen   Denmark          Ph:  (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)                  FAX: (+45) 35327907
+
+
+From p.dalgaard at biostat.ku.dk  Wed Jul 20 16:02:14 2005
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: 20 Jul 2005 16:02:14 +0200
+Subject: [R-gui] Tinn-R 1.16.1.5 stable was released
+In-Reply-To: <x2wtnl1ua5.fsf@turmalin.kubism.ku.dk>
+References: <42DD8704.6040802@terra.com.br>
+	<42DE4298.1070606@statistik.uni-dortmund.de>
+	<x2wtnl1ua5.fsf@turmalin.kubism.ku.dk>
+Message-ID: <x2oe8x1spl.fsf@turmalin.kubism.ku.dk>
+
+Peter Dalgaard <p.dalgaard at biostat.ku.dk> writes:
+
+> Uwe Ligges <ligges at statistik.uni-dortmund.de> writes:
+> 
+> > Unfortunately, it does not run on, e.g., Windows NT4.0SP6, for example.
+> > 
+> > Translation of the error message:
+> > Entry point "SHGetSpecialFolderPathA" not found in "shell32.dll".
+> > 
+> > Uwe Ligges
+> 
+> Works for me on W98, but there's a rather bad bug in the parenthesis
+> highlighting. Basically, they turn into the *background* color when
+> highlighting is off, so running the textcursor through a line makes
+> all parentheses look like blanks. I'll see if the same thing applies
+> to XP.
+
+Nope, that works OK. (Needless to say, "W98" and "XP" refer to a
+sample of one machine each...)
+
+-- 
+   O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+  c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+ (*) \(*) -- University of Copenhagen   Denmark          Ph:  (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)                  FAX: (+45) 35327907
+
+
+From joseclaudio.faria at terra.com.br  Wed Jul 20 16:34:41 2005
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Wed, 20 Jul 2005 11:34:41 -0300
+Subject: [R-gui] Tinn-R 1.16.1.5 stable was released
+In-Reply-To: <x2oe8x1spl.fsf@turmalin.kubism.ku.dk>
+References: <42DD8704.6040802@terra.com.br>	<42DE4298.1070606@statistik.uni-dortmund.de>	<x2wtnl1ua5.fsf@turmalin.kubism.ku.dk>
+	<x2oe8x1spl.fsf@turmalin.kubism.ku.dk>
+Message-ID: <42DE6101.90005@terra.com.br>
+
+Dears users,
+
+Tinn-R team have been developing Tinn-R under WinXP/SP2, because it is the most 
+recent.
+
+In the future, I think, it is better to install four OS (NT4, Win98, WinME and 
+WinXP) on a special computer to make tests with Tinn-R before to release it.
+
+For me, with exception of the Uwe problem respect NT4, it is the first time that 
+these problems are pointed.
+
+So, for while, I suggest to use Tinn-R under WinXP.
+
+Peter, if possible, send me a screen bitmap of the problem with Tinn-R running 
+under Win98.
+
+TIA,
+
+Jose Claudio Faria.
+
+Peter Dalgaard wrote:
+> Peter Dalgaard <p.dalgaard at biostat.ku.dk> writes:
+> 
+> 
+>>Uwe Ligges <ligges at statistik.uni-dortmund.de> writes:
+>>
+>>
+>>>Unfortunately, it does not run on, e.g., Windows NT4.0SP6, for example.
+>>>
+>>>Translation of the error message:
+>>>Entry point "SHGetSpecialFolderPathA" not found in "shell32.dll".
+>>>
+>>>Uwe Ligges
+>>
+>>Works for me on W98, but there's a rather bad bug in the parenthesis
+>>highlighting. Basically, they turn into the *background* color when
+>>highlighting is off, so running the textcursor through a line makes
+>>all parentheses look like blanks. I'll see if the same thing applies
+>>to XP.
+> 
+> 
+> Nope, that works OK. (Needless to say, "W98" and "XP" refer to a
+> sample of one machine each...)
+> 
+
+
+-- 
+Jose Claudio Faria
+Brasil/Bahia/UESC/DCET
+Estatistica Experimental/Prof. Adjunto
+mails:
+  joseclaudio.faria at terra.com.br
+  jc_faria at uesc.br
+  jc_faria at uol.com.br
+tel: 73-3634.2779
+
+
+From phgrosjean at sciviews.org  Wed Jul 20 18:16:15 2005
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Wed, 20 Jul 2005 18:16:15 +0200
+Subject: [R-gui] Tinn-R 1.16.1.5 stable was released
+In-Reply-To: <42DE4298.1070606@statistik.uni-dortmund.de>
+References: <42DD8704.6040802@terra.com.br>
+	<42DE4298.1070606@statistik.uni-dortmund.de>
+Message-ID: <42DE78CF.1020406@sciviews.org>
+
+Uwe Ligges wrote:
+> Unfortunately, it does not run on, e.g., Windows NT4.0SP6, for example.
+> 
+> Translation of the error message:
+> Entry point "SHGetSpecialFolderPathA" not found in "shell32.dll".
+> 
+> Uwe Ligges
+
+Indeed, this appears to be a function recently added in the Win32 API. 
+That is why it does not work with NT 4.0. I find 
+SHGetSpecialFolderLocation which could be used instead and which 
+requires Windows NT 4.0 or later and Windows 95 or later. So, should be 
+fine!
+Best,
+
+Philippe
+
+
+> 
+> 
+> Jose Claudio Faria wrote:
+> 
+> 
+>>Dears R users,
+>>
+>>We would like to announce that a new version of the Tinn-R
+>>(Tinn-R 1.16.1.5 stable) was released and is available
+>>in http://www.sciviews.org/Tinn-R.
+>>
+>>________________________________________________________________________________
+>>Tinn-R 1.16.1.5 stable (15 Jul 2005) - LATEST
+>>________________________________________________________________________________
+>>
+>>  - Tinn-R now works with R in MDI mode if the device graphic is maximized with
+>>    no more limitations of the number of device graphic, as pointed in the
+>>    Tinn-R 1.15.1.7 stable (07 Apr 2005).
+>>
+>>  - If you use the function 'utils:::setWindowTitle(paste("-",getwd()))' in
+>>    Rprofile, Tinn-R still recognizes Rgui (was not the case in previous
+>>    versions).
+>>
+>>  - A new menu option (and respective button and hotkey) was added to the main
+>>    menu: 'R/Controlling R/List structure of selected variable' that allows you
+>>    to list the structure of any R object/variable.
+>>
+>>  - A new menu (and respective popup menu) was added to the main menu:
+>>    'File/Put full path in clipboard'. This option allows you to put the full
+>>    path of the file in the clipboard with two options: Unix mode (../..) or
+>>    Windows (..\..) (usefull to get full path of data files).
+>>
+>>  - In 'R toolbar' the position of the buttons were a little changed for a more
+>>    logical arrangement.
+>>
+>>  - The menu 'Format/Block' was a little reworked.
+>>
+>>  - A small bug with project ('Save' and 'Save as'), related to automatic
+>>    extension ('*.tps'), was fixed.
+>>________________________________________________________________________________
+>>
+>>
+>>Best regards,
+>>___________
+>>Tinn-R team
+>>
+>>_______________________________________________
+>>R-SIG-GUI mailing list
+>>R-SIG-GUI at stat.math.ethz.ch
+>>https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+
+From morphwj at comcast.net  Wed Jul 27 19:07:23 2005
+From: morphwj at comcast.net (morphwj@comcast.net)
+Date: Wed, 27 Jul 2005 17:07:23 +0000
+Subject: [R-gui] seeking R tcltk solution
+Message-ID: <072720051707.28161.42E7BF4A000C9B9A00006E0122007507440699089F9D0103@comcast.net>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20050727/e632743d/attachment.pl
+
+From jfox at mcmaster.ca  Wed Jul 27 19:49:29 2005
+From: jfox at mcmaster.ca (John Fox)
+Date: Wed, 27 Jul 2005 13:49:29 -0400
+Subject: [R-gui] seeking R tcltk solution
+In-Reply-To: <072720051707.28161.42E7BF4A000C9B9A00006E0122007507440699089F9D0103@comcast.net>
+Message-ID: <20050727174930.FHVB19894.tomts20-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear Bill,
+
+Yes, it's possible to do this, but a little tricky, since you need to save
+the "ID" and "position" of the menu item so that you can then address it. I
+do menu activation/deactivation in the Rcmdr package using this function:
+
+activateMenus <- function(){
+    for (item in getRcmdr("Menus")){
+        if (item$activation()) .Tcl(paste(item$ID, " entryconfigure ",
+item$position - 1," -state normal", sep=""))
+        else .Tcl(paste(item$ID, " entryconfigure ", item$position - 1,"
+-state disabled", sep=""))
+        }
+    }
+
+What's of direct interest to you, I think, is the first call to .Tcl for
+enabling a menu item (where item$ID is the item ID and item$position, which
+I previously saved).
+
+If you'd like a bit more context, see as well the function Commander() in
+the file Commander.R in the source for the Rcmdr package, and in particular
+near line 600.
+
+I hope this helps,
+ John
+
+--------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario
+Canada L8S 4M4
+905-525-9140x23604
+http://socserv.mcmaster.ca/jfox 
+-------------------------------- 
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of 
+> morphwj at comcast.net
+> Sent: Wednesday, July 27, 2005 12:07 PM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] seeking R tcltk solution
+> 
+> The following short block of code creates a menu bar with 
+> menu item "graphic" disabled:
+> 
+> TopWindow <- tktoplevel(parent=.TkRoot)
+> TopMenu <- tkmenu(TopWindow)
+> tkconfigure(TopWindow,menu=TopMenu)
+> FileMenu <- tkmenu(TopMenu)
+> GraphicsMenu <- tkmenu(TopMenu)
+> tkadd(TopMenu,"cascade",label="File", menu=FileMenu) 
+> tkadd(TopMenu,"cascade",label="Graphics", menu=GraphicsMenu, 
+> state="disabled")
+> 
+> Other than tkdestroy(TopMenu)and rebuilding the menubar 
+> omitting'state="disabled"', is there a way to change the 
+> state of the menu item "Graphics" to "normal"?
+> 
+> Bill Morphet, Space Shuttle engineer & PhD statistics student
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+

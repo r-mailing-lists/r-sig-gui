@@ -1,0 +1,184 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2009-09",
+  "messages": [
+    {
+      "id": "msg-fa5c03c83edf",
+      "message_id": "<4AA6FCBB.7020502@cs.washington.edu>",
+      "from_name": "Hana Sevcikova",
+      "from_email_hash": "bb1f67ba3bb063409b69cbc8556f14f42710c1dd58d8d71308075eb6f4e3db89",
+      "date": "2009-09-08T17:54:19-07:00",
+      "subject": "[R-gui] gfilebrowse questions",
+      "subject_clean": "[R-gui] gfilebrowse questions",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI have a few questions about gWidgets' gfilebrowse:\n\n1. Pressing the Cancel button updates the text widget to the value NA. \nWhat can I do to leave the text widget unchanged when using Cancel.\n\n2. The size of the file browser switches between 2 sizes (I cannot \nfigure out the logic behind it - maybe after a value is changed, but not \nalways). Sometimes it appears very small. How can I avoid it?\n\n3. This problem has something to do with Gtk or Mac: By pressing either \nOK or Cancel, I get the following in the R console:\n\n(R:1145): Gtk-WARNING **: Unable to find default local directory monitor \ntype\n\n(R:1145): GLib-GObject-CRITICAL **: g_object_unref: assertion \n`G_IS_OBJECT (object)' failed\n2009-09-08 17:15:05.561 R[1145] tossing reply message sequence 116 on \nthread 0x22a40d0\n\n\nThis code should help to reproduce it:\n\nmw <- gwindow('Filebrowser test', height=20)\ng <- ggroup(cont=mw)\ngfilebrowse(type='selectdir', quote=FALSE, cont=g)\n\n\nAny help would be appreciated.\n\nThank you very much,\n\nHana",
+      "body_snippet": "Hello,\n\nI have a few questions about gWidgets' gfilebrowse:\n\n1. Pressing the Cancel button updates the text widget to the value NA. \nWhat can I do to leave the text widget unchanged when using Cancel.",
+      "thread_id": "thread-fa5c03c83edf",
+      "thread_depth": 0,
+      "month": "2009-09"
+    },
+    {
+      "id": "msg-a9cde0076217",
+      "message_id": "<loom.20090909T031732-945@post.gmane.org>",
+      "from_name": "jverzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2009-09-09T01:50:31Z",
+      "subject": "[R-gui] gfilebrowse questions",
+      "subject_clean": "[R-gui] gfilebrowse questions",
+      "in_reply_to": null,
+      "references": [
+        "<4AA6FCBB.7020502@cs.washington.edu>"
+      ],
+      "body_plain": "Hana Sevcikova <hana <at> cs.washington.edu> writes:\n\n> \n> Hello,\n> \n> I have a few questions about gWidgets' gfilebrowse:\n> \n> 1. Pressing the Cancel button updates the text widget to the value NA. \n> What can I do to leave the text widget unchanged when using Cancel.\n> \n> 2. The size of the file browser switches between 2 sizes (I cannot \n> figure out the logic behind it - maybe after a value is changed, but not \n> always). Sometimes it appears very small. How can I avoid it?\n> \n> 3. This problem has something to do with Gtk or Mac: By pressing either \n> OK or Cancel, I get the following in the R console:\n> \n> (R:1145): Gtk-WARNING **: Unable to find default local directory monitor \n> type\n> \n> (R:1145): GLib-GObject-CRITICAL **: g_object_unref: assertion \n> `G_IS_OBJECT (object)' failed\n> 2009-09-08 17:15:05.561 R[1145] tossing reply message sequence 116 on \n> thread 0x22a40d0\n> \n\nDear Hana,\n\nThanks for the report. When I get get time during the next week I can fix 1. I\ndon't get the error in 3, but do get an error about fonts so perhaps that is\nwhat is going on. I'll look into it. As for 2, can you email me an example (it\nprobably has something to do with the ggroup container and the expand argument,\nbut I'll have to investigate.\n\n--John\n\n.. snip ...\n> \n> Thank you very much,\n> \n> Hana\n>",
+      "body_snippet": "Hana Sevcikova <hana <at> cs.washington.edu> writes:\n\n> \n> Hello,\n> \n> I have a few questions about gWidgets' gfilebrowse:\n> \n> 1. Pressing the Cancel button updates the text widget to the value NA. \n",
+      "thread_id": "thread-fa5c03c83edf",
+      "thread_depth": 1,
+      "month": "2009-09"
+    },
+    {
+      "id": "msg-47ecbb2595c8",
+      "message_id": "<ce6b4d120909090554k799d2842j379c4a1c1c945acf@mail.gmail.com>",
+      "from_name": "Ilhami Visne",
+      "from_email_hash": "324021f6667f61f578115d7b9f07a8e22c929fc93ab2e029ea7f69c6dd7f29cf",
+      "date": "2009-09-09T14:54:44+02:00",
+      "subject": "[R-gui] RGG help",
+      "subject_clean": "[R-gui] RGG help",
+      "in_reply_to": "<4A95300F.DFDF.006E.0@resbank.co.za>",
+      "references": [
+        "<4A95300F.DFDF.006E.0@resbank.co.za>"
+      ],
+      "body_plain": "Hello,\n\nI'm the developer of RGG. In the docs there is a typo\naccepted-extension. Actually it must be accepted-extensions (corrected\nthe docs). Please add an 's' to the end. Second, no point before\nextension, write only RData.\n\nHere is the corrected version of yours:\n\n<rgg>\n #### First test of RGG. setwd and load .R file\n <filechooser label=\"Path:\" var=\"path\" accepted-extensions=\"RData\"/>\n source(\"C:/Documents and Settings/p176435/My\nDocuments/gev_application/rgg_test01.R\")\n dir = tstDir(path)\n setFun(path, dir = dir)\n if(!dir) load(path)\n getwd()\n ls()\n</rgg>\n\ni'll submit a patch so in the future accepted-extension will be accepted too.\n\nBest wishes,\nIlhami Visne\n\nOn Wed, Aug 26, 2009 at 12:52 PM, Stefan\nJansevanRensburg<Stefan.JansevanRensburg at resbank.co.za> wrote:\n> ----------------------- *** Disclaimer *** -----------------------\n> This e-mail and its contents are subject to the SA Reserve Bank's\n> Disclaimer and Confidentiality Clause, which can be viewed at:\n> http://www.reservebank.co.za/disclaimer\n> Should you be unable to access the link provided, please send a\n> blank e-mail to Disclaimer at resbank.co.za\n> ----------------------- *** Disclaimer *** -----------------------\n>\n>\n> Hi,\n>\n> Apart from experimenting with gWidgets, I'm also experimenting with RGG. Very impressed with it so far, especially considering it's pre-alpha status. I have, however, found that the accepted-extensions attribute of filechooser doesn't behave as expected. Despite setting accepted-extension=\".RData\", any file can still be selected.\n>\n> Here is the basic script I am busy with. It is meant to select the working directory and load the .RData file if that file is selected.\n>\n> Note that the R script is in a separate file, which the .rgg sourcing that file.\n>\n> RGG FILE:\n>\n> <rgg>\n> ?#### First test of RGG. setwd and load .R file\n> ?<filechooser label=\"Path:\" var=\"path\" accepted-extension=\".RData\"/>\n> ?source(\"C:/Documents and Settings/p176435/My Documents/gev_application/rgg_test01.R\")\n> ?dir = tstDir(path)\n> ?setFun(path, dir = dir)\n> ?if(!dir) load(path)\n> ?getwd()\n> ?ls()\n> </rgg>\n>\n> THE R SCRIPT rgg_test01.R:\n>\n> #### Function to paste togeth characters\n> pCh <- function(ch){\n> ?x <- \"\"\n> ?for(i in ch){\n> ?x <- paste(x, i, sep = \"\")\n> ?}\n> ?return(x)\n> ?}\n>\n> #### Function to test if file or directory\n> tstDir <- function(path){\n> ?lch <- unlist(strsplit(path, NULL))\n> ?sq <- seq(length(lch)-5, length(lch))\n> ?lch <- pCh(lch[sq])\n> ?print(lch)\n> ?dir <- ifelse(lch == \".RData\", FALSE, TRUE)\n> ?return(dir)\n> ?}\n>\n> #### Function to set workspace and / or load prev session.\n> setFun <- function(path, dir = TRUE){\n> ?ifelse(dir, setwd(path), setwd(dirname(path)))\n> ?}\n>\n> Any help or suggestions whatsoever, would be most appreciated.\n>\n> Kind regards,\n>\n>\n>\n>\n> Stefan Janse van Rensburg\n> Macroprudential Division\n> Financial Stability Department\n> SARB\n> Tel : 012-313 4687\n> Fax : 012 313 4772\n>\n> ? ? ? ?[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Hello,\n\nI'm the developer of RGG. In the docs there is a typo\naccepted-extension. Actually it must be accepted-extensions (corrected\nthe docs). Please add an 's' to the end. Second, no point before\nex",
+      "thread_id": "thread-47ecbb2595c8",
+      "thread_depth": 0,
+      "month": "2009-09"
+    },
+    {
+      "id": "msg-9cee7aadf558",
+      "message_id": "<c0fbb8790909110115w15bfc393m2bf11be0711694ee@mail.gmail.com>",
+      "from_name": "MERAL YAY",
+      "from_email_hash": "f3ba4590ab7b6703c07c3c4d3bf3d40f48ba59c722324f160a8ad003140d95f3",
+      "date": "2009-09-11T12:45:34+04:30",
+      "subject": "[R-gui] (no subject)",
+      "subject_clean": "[R-gui] (no subject)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/f95c7f90/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/f95c7f90/attachment.pl>",
+      "thread_id": "thread-9cee7aadf558",
+      "thread_depth": 0,
+      "month": "2009-09"
+    },
+    {
+      "id": "msg-fd97d157ceae",
+      "message_id": "<c0fbb8790909110118m42d6f4a5uf6624cb95c077702@mail.gmail.com>",
+      "from_name": "MERAL YAY",
+      "from_email_hash": "f3ba4590ab7b6703c07c3c4d3bf3d40f48ba59c722324f160a8ad003140d95f3",
+      "date": "2009-09-11T12:48:31+04:30",
+      "subject": "[R-gui] header intact",
+      "subject_clean": "[R-gui] header intact",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/4046ea8c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/4046ea8c/attachment.pl>",
+      "thread_id": "thread-fd97d157ceae",
+      "thread_depth": 0,
+      "month": "2009-09"
+    },
+    {
+      "id": "msg-8775933e177e",
+      "message_id": "<4AAA089F.2030008@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2009-09-11T10:21:51+02:00",
+      "subject": "[R-gui] (no subject)",
+      "subject_clean": "[R-gui] (no subject)",
+      "in_reply_to": "<c0fbb8790909110115w15bfc393m2bf11be0711694ee@mail.gmail.com>",
+      "references": [
+        "<c0fbb8790909110115w15bfc393m2bf11be0711694ee@mail.gmail.com>"
+      ],
+      "body_plain": "Hello,\n\nI think you are on the wrong list. You may have more luck if you post \nyour message on R-Help. R-SIG-GUI is for discussing GUIs (Graphical User \nInterfaces). And you increase the chance to get aznswer if you use a \nmainingful title on your mail.\nBest,\n\nPhilippe Grosjean\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Belgium\n( ( ( ( (\n..............................................................\n\nMERAL YAY wrote:\n> Hello,\n> \n> I have a question about \"ipred\" package. I am working on a data set which\n> contains 1000 individual swho came from 588 regions.\n> \n> I calculated misclassification error rate with cross validation and its\n> smooted version \"bootstrap 632\" for different sample sizes in LDF. I am\n> doubting whether error rate and low variance are enough to explain my data.\n> \n> Thanks\n> \n> Meral\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n>",
+      "body_snippet": "Hello,\n\nI think you are on the wrong list. You may have more luck if you post \nyour message on R-Help. R-SIG-GUI is for discussing GUIs (Graphical User \nInterfaces). And you increase the chance to get",
+      "thread_id": "thread-9cee7aadf558",
+      "thread_depth": 1,
+      "month": "2009-09"
+    },
+    {
+      "id": "msg-10962bb297b4",
+      "message_id": "<5c8bd49c0909250646v471978e4g1fe287f30ff39d1d@mail.gmail.com>",
+      "from_name": "Anup Parikh",
+      "from_email_hash": "6418cea15d2cbe0a891aec3e3e378a2c9f75d98b44eac119dabc1f13c84c678e",
+      "date": "2009-09-25T08:46:12-05:00",
+      "subject": "[R-gui] Red-R: a visual interface for R",
+      "subject_clean": "[R-gui] Red-R: a visual interface for R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090925/999876f9/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090925/999876f9/attachment.pl>",
+      "thread_id": "thread-10962bb297b4",
+      "thread_depth": 0,
+      "month": "2009-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-fa5c03c83edf",
+      "subject": "[R-gui] gfilebrowse questions",
+      "message_count": 2,
+      "participants": [
+        "Hana Sevcikova",
+        "jverzani"
+      ],
+      "started": "2009-09-08T17:54:19-07:00",
+      "last_reply": "2009-09-09T01:50:31+00:00",
+      "root_message_id": "msg-fa5c03c83edf"
+    },
+    {
+      "id": "thread-47ecbb2595c8",
+      "subject": "[R-gui] RGG help",
+      "message_count": 1,
+      "participants": [
+        "Ilhami Visne"
+      ],
+      "started": "2009-09-09T14:54:44+02:00",
+      "last_reply": "2009-09-09T14:54:44+02:00",
+      "root_message_id": "msg-47ecbb2595c8"
+    },
+    {
+      "id": "thread-9cee7aadf558",
+      "subject": "[R-gui] (no subject)",
+      "message_count": 2,
+      "participants": [
+        "MERAL YAY",
+        "Philippe Grosjean"
+      ],
+      "started": "2009-09-11T12:45:34+04:30",
+      "last_reply": "2009-09-11T10:21:51+02:00",
+      "root_message_id": "msg-9cee7aadf558"
+    },
+    {
+      "id": "thread-fd97d157ceae",
+      "subject": "[R-gui] header intact",
+      "message_count": 1,
+      "participants": [
+        "MERAL YAY"
+      ],
+      "started": "2009-09-11T12:48:31+04:30",
+      "last_reply": "2009-09-11T12:48:31+04:30",
+      "root_message_id": "msg-fd97d157ceae"
+    },
+    {
+      "id": "thread-10962bb297b4",
+      "subject": "[R-gui] Red-R: a visual interface for R",
+      "message_count": 1,
+      "participants": [
+        "Anup Parikh"
+      ],
+      "started": "2009-09-25T08:46:12-05:00",
+      "last_reply": "2009-09-25T08:46:12-05:00",
+      "root_message_id": "msg-10962bb297b4"
+    }
+  ]
+}

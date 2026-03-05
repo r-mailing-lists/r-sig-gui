@@ -1,0 +1,84 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2016-04",
+  "messages": [
+    {
+      "id": "msg-0753af086f4b",
+      "message_id": "<CY1PR0201MB1818D3AEBC4F2B87B0A9C328C3940@CY1PR0201MB1818.namprd02.prod.outlook.com>",
+      "from_name": "Mike Deanza",
+      "from_email_hash": "5d005182d4834f2b9f9af0850717f8fec2474d017f5d52d8bdee35134bd29179",
+      "date": "2016-04-11T15:03:27Z",
+      "subject": "[R-gui] [VC++ calling R] How to create a real-time interactive ticking time-series chart using dygraph via RInside?",
+      "subject_clean": "[R-gui] [VC++ calling R] How to create a real-time interactive ticking time-series chart using dygraph via RInside?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\r\n\r\n\r\nI am trying to figure out how to do this in R and I need your help.\r\n\r\n\r\nMy journey started from something like the following:\r\n\r\n\r\nhttp://stackoverflow.com/questions/11365857/real-time-auto-updating-incremental-plot-in-r/1#1\r\n\r\n\r\nn=1000\r\ndf=data.frame(time=1:n,y=runif(n))\r\nwindow=100\r\nfor(i in 1:(n?\\window)) {\r\nflush.console()\r\nplot(df$time,df$y,type='l',xlim=c(i,i+window))\r\nSys.sleep(.09)\r\n}\r\n\r\n\r\nThen I wanted to make it nicer looking so I went to dygraph.\r\n\r\n\r\nAnd then, I would like to be able to live send tick data from within Visual C++ so I started to investigate RInside.\r\n\r\n\r\nFollowing the example code here:\r\n\r\n\r\nhttp://dirk.eddelbuettel.com/papers/useR2009RcppRInside.pdf\r\n\r\n\r\nI can open an RInside object in VC++, and then send some data to it, and then execute some command in it, and then get data back.\r\n\r\n\r\nIt is really great.\r\n\r\n\r\nHowever, is there a way to have the real-time updating ticking plots to be drawn on dygraph inside RInside?\r\n\r\n\r\nIt turns out the dygraph package tends to draw onto a browser. That makes the real-time updating pretty slow.\r\n\r\n\r\nIs there a way to set the dygraph to plot to a GUI window in VC++? For example, a QT or MFC GUI window?\r\n\r\n\r\nMy working environment is Win7 64bit ,with VS 2013 and VS2015, QT 5.3 32bit.\r\n\r\n\r\nCould anybody please shed some lights on me?\r\n\r\n\r\nThanks a lot!\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi all,\r\n\r\n\r\nI am trying to figure out how to do this in R and I need your help.\r\n\r\n\r\nMy journey started from something like the following:\r\n\r\n\r\nhttp://stackoverflow.com/questions/11365857/real-time-a",
+      "thread_id": "thread-0753af086f4b",
+      "thread_depth": 0,
+      "month": "2016-04"
+    },
+    {
+      "id": "msg-07e68297aec5",
+      "message_id": "<CAPPM_gSXWwYSY+s8iwaa5G3jxM=72aGwOy3p_+aA7tidZ8qP4g@mail.gmail.com>",
+      "from_name": "Joshua Ulrich",
+      "from_email_hash": "1c142a8ab2a2cd292396c50d658d894b0e8efcc0774aa9558978b89b50ac3080",
+      "date": "2016-04-11T15:11:26Z",
+      "subject": "[R-gui] [R-SIG-Finance] [VC++ calling R] How to create a real-time interactive ticking time-series chart using dygraph via RInside?",
+      "subject_clean": "[R-gui] [R-SIG-Finance] [VC++ calling R] How to create a real-time interactive ticking time-series chart using dygraph via RInside?",
+      "in_reply_to": "<CY1PR0201MB1818D3AEBC4F2B87B0A9C328C3940@CY1PR0201MB1818.namprd02.prod.outlook.com>",
+      "references": [
+        "<CY1PR0201MB1818D3AEBC4F2B87B0A9C328C3940@CY1PR0201MB1818.namprd02.prod.outlook.com>"
+      ],
+      "body_plain": "Please choose *one* _relevant_ mailing list.  Spamming 5 (!!!!!)\nmailing lists fragments the conversation and makes things difficult\nfor everyone involved.\n\nOn Mon, Apr 11, 2016 at 10:03 AM, Mike Deanza <mikedeanza at outlook.com> wrote:\n> Hi all,\n>\n>\n> I am trying to figure out how to do this in R and I need your help.\n>\n>\n> My journey started from something like the following:\n>\n>\n> http://stackoverflow.com/questions/11365857/real-time-auto-updating-incremental-plot-in-r/1#1\n>\n>\n> n=1000\n> df=data.frame(time=1:n,y=runif(n))\n> window=100\n> for(i in 1:(n?\\window)) {\n> flush.console()\n> plot(df$time,df$y,type='l',xlim=c(i,i+window))\n> Sys.sleep(.09)\n> }\n>\n>\n> Then I wanted to make it nicer looking so I went to dygraph.\n>\n>\n> And then, I would like to be able to live send tick data from within Visual C++ so I started to investigate RInside.\n>\n>\n> Following the example code here:\n>\n>\n> http://dirk.eddelbuettel.com/papers/useR2009RcppRInside.pdf\n>\n>\n> I can open an RInside object in VC++, and then send some data to it, and then execute some command in it, and then get data back.\n>\n>\n> It is really great.\n>\n>\n> However, is there a way to have the real-time updating ticking plots to be drawn on dygraph inside RInside?\n>\n>\n> It turns out the dygraph package tends to draw onto a browser. That makes the real-time updating pretty slow.\n>\n>\n> Is there a way to set the dygraph to plot to a GUI window in VC++? For example, a QT or MFC GUI window?\n>\n>\n> My working environment is Win7 64bit ,with VS 2013 and VS2015, QT 5.3 32bit.\n>\n>\n> Could anybody please shed some lights on me?\n>\n>\n> Thanks a lot!\n>\n>\n>\n>\n>\n>\n>\n>         [[alternative HTML version deleted]]\n>\n>\n> _______________________________________________\n> R-SIG-Finance at r-project.org mailing list\n> https://stat.ethz.ch/mailman/listinfo/r-sig-finance\n> -- Subscriber-posting only. If you want to post, subscribe first.\n> -- Also note that this is not the r-help list where general R questions should go.\n\n\n\n-- \nJoshua Ulrich  |  about.me/joshuaulrich\nFOSS Trading  |  www.fosstrading.com\nR/Finance 2016 | www.rinfinance.com",
+      "body_snippet": "Please choose *one* _relevant_ mailing list.  Spamming 5 (!!!!!)\nmailing lists fragments the conversation and makes things difficult\nfor everyone involved.\n\nOn Mon, Apr 11, 2016 at 10:03 AM, Mike Dean",
+      "thread_id": "thread-0753af086f4b",
+      "thread_depth": 1,
+      "month": "2016-04"
+    },
+    {
+      "id": "msg-1a14302d0b00",
+      "message_id": "<CAE5kS0xXkjn7-X2iXTTFQXGuX+pOraG926efMO-FfwnrSQ4KTg@mail.gmail.com>",
+      "from_name": "Sasha Goodman",
+      "from_email_hash": "5feaa3a63be846a0d1b7983251b920517372e0d4945adda5cafb73370194455b",
+      "date": "2016-04-13T17:33:57-07:00",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 107, Issue 1",
+      "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 107, Issue 1",
+      "in_reply_to": "<mailman.13.1460455203.7932.r-sig-gui@r-project.org>",
+      "references": [
+        "<mailman.13.1460455203.7932.r-sig-gui@r-project.org>"
+      ],
+      "body_plain": "unsubscribe\n\nOn Tue, Apr 12, 2016 at 3:00 AM, <r-sig-gui-request at r-project.org> wrote:\n\n> Send R-SIG-GUI mailing list submissions to\n>         r-sig-gui at r-project.org\n>\n> To subscribe or unsubscribe via the World Wide Web, visit\n>         https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> or, via email, send a message with subject or body 'help' to\n>         r-sig-gui-request at r-project.org\n>\n> You can reach the person managing the list at\n>         r-sig-gui-owner at r-project.org\n>\n> When replying, please edit your Subject line so it is more specific\n> than \"Re: Contents of R-SIG-GUI digest...\"\n>\n>\n> Today's Topics:\n>\n>    1. [VC++ calling R] How to create a real-time interactive\n>       ticking time-series chart using dygraph via RInside? (Mike Deanza)\n>\n>\n> ----------------------------------------------------------------------\n>\n> Message: 1\n> Date: Mon, 11 Apr 2016 15:03:27 +0000\n> From: Mike Deanza <mikedeanza at outlook.com>\n> To: \"r-sig-gui at r-project.org\" <r-sig-gui at r-project.org>,\n>         \"r-sig-finance at r-project.org\" <r-sig-finance at r-project.org>,\n>         \"r-devel at r-project.org\" <r-devel at r-project.org>,\n>         \"r-package-devel at r-project.org\" <r-package-devel at r-project.org>,\n>         \"r-help at r-project.org\" <r-help at r-project.org>\n> Subject: [R-gui] [VC++ calling R] How to create a real-time\n>         interactive ticking time-series chart using dygraph via RInside?\n> Message-ID:\n>         <\n> CY1PR0201MB1818D3AEBC4F2B87B0A9C328C3940 at CY1PR0201MB1818.namprd02.prod.outlook.com\n> >\n>\n> Content-Type: text/plain; charset=\"UTF-8\"\n>\n> Hi all,\n>\n>\n> I am trying to figure out how to do this in R and I need your help.\n>\n>\n> My journey started from something like the following:\n>\n>\n>\n> http://stackoverflow.com/questions/11365857/real-time-auto-updating-incremental-plot-in-r/1#1\n>\n>\n> n=1000\n> df=data.frame(time=1:n,y=runif(n))\n> window=100\n> for(i in 1:(n?\\window)) {\n> flush.console()\n> plot(df$time,df$y,type='l',xlim=c(i,i+window))\n> Sys.sleep(.09)\n> }\n>\n>\n> Then I wanted to make it nicer looking so I went to dygraph.\n>\n>\n> And then, I would like to be able to live send tick data from within\n> Visual C++ so I started to investigate RInside.\n>\n>\n> Following the example code here:\n>\n>\n> http://dirk.eddelbuettel.com/papers/useR2009RcppRInside.pdf\n>\n>\n> I can open an RInside object in VC++, and then send some data to it, and\n> then execute some command in it, and then get data back.\n>\n>\n> It is really great.\n>\n>\n> However, is there a way to have the real-time updating ticking plots to be\n> drawn on dygraph inside RInside?\n>\n>\n> It turns out the dygraph package tends to draw onto a browser. That makes\n> the real-time updating pretty slow.\n>\n>\n> Is there a way to set the dygraph to plot to a GUI window in VC++? For\n> example, a QT or MFC GUI window?\n>\n>\n> My working environment is Win7 64bit ,with VS 2013 and VS2015, QT 5.3\n> 32bit.\n>\n>\n> Could anybody please shed some lights on me?\n>\n>\n> Thanks a lot!\n>\n>\n>\n>\n>\n>\n>\n>         [[alternative HTML version deleted]]\n>\n>\n> ------------------------------\n>\n> Subject: Digest Footer\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n> ------------------------------\n>\n> End of R-SIG-GUI Digest, Vol 107, Issue 1\n> *****************************************\n>\n\n\n\n-- \nSasha Goodman\nhttp://www.sashagoodman.com\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "unsubscribe\n\nOn Tue, Apr 12, 2016 at 3:00 AM, <r-sig-gui-request at r-project.org> wrote:\n\n> Send R-SIG-GUI mailing list submissions to\n>         r-sig-gui at r-project.org\n>\n> To subscribe or unsubsc",
+      "thread_id": "thread-1a14302d0b00",
+      "thread_depth": 0,
+      "month": "2016-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0753af086f4b",
+      "subject": "[R-gui] [VC++ calling R] How to create a real-time interactive ticking time-series chart using dygraph via RInside?",
+      "message_count": 2,
+      "participants": [
+        "Joshua Ulrich",
+        "Mike Deanza"
+      ],
+      "started": "2016-04-11T15:03:27+00:00",
+      "last_reply": "2016-04-11T15:11:26+00:00",
+      "root_message_id": "msg-0753af086f4b"
+    },
+    {
+      "id": "thread-1a14302d0b00",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 107, Issue 1",
+      "message_count": 1,
+      "participants": [
+        "Sasha Goodman"
+      ],
+      "started": "2016-04-13T17:33:57-07:00",
+      "last_reply": "2016-04-13T17:33:57-07:00",
+      "root_message_id": "msg-1a14302d0b00"
+    }
+  ]
+}

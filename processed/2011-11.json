@@ -1,0 +1,159 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2011-11",
+  "messages": [
+    {
+      "id": "msg-a3ef287d6758",
+      "message_id": "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>",
+      "from_name": "christiaan pauw",
+      "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
+      "date": "2011-11-23T09:31:34+02:00",
+      "subject": "[R-gui] Mixing GUI packages",
+      "subject_clean": "[R-gui] Mixing GUI packages",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/7ee6ca57/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/7ee6ca57/attachment.pl>",
+      "thread_id": "thread-a3ef287d6758",
+      "thread_depth": 0,
+      "month": "2011-11"
+    },
+    {
+      "id": "msg-d93db2532279",
+      "message_id": "<4ECCA866.7070005@sauder.ubc.ca>",
+      "from_name": "Dan Putler",
+      "from_email_hash": "9a2942c99196d0544b3517efc9390a2ad9988031ef34a782b6be64725b046bd4",
+      "date": "2011-11-23T00:01:42-08:00",
+      "subject": "[R-gui] Mixing GUI packages",
+      "subject_clean": "[R-gui] Mixing GUI packages",
+      "in_reply_to": "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>",
+      "references": [
+        "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>"
+      ],
+      "body_plain": "Hi Christiaan,\n\nThis is (as you probably expect) an \"it depends\" question for at least \ntwo reasons. One thing that complicates everything is the underlying \nwidget toolkit that is being used. The goal of gWidgets is to be \nagnostic with respect to the underlying GUI toolkit, but seems to have \nthe most functionality under GTK2 (via the RGTK package), while both \nfgui and rpanel use Tcl/Tk  (via the tcltk package). gWidgets will work \nwith Tcl/Tk and the tcltk package, but you may want to make sure you can \nget the functionality you want from gWidgets when using Tcl/Tk. Mixing \nGTK2 and Tcl/Tk in even a loosely coupled setup seems like asking for \ntrouble (and the installation process for novice Mac users could be \nreally trying). The second question is how tightly integrated do you \nwant all the various dialogs you create to be? If they are very loose, \nyou may well be OK using a number of different high level R GUI \n\"frameworks\". However, I can see where maintenance of the system you \ndevelop could be a real headache, particularly if you want the \ncomponents to be tightly integrated. The upshot, if you can base \neverything on using the R tcltk package as the foundation, then what you \nare proposing is probably do-able, but by mixing and matching higher \nlevel R GUI frameworks you may be trading-off short-term implementation \ngains for long-term maintenance headaches. Personally, in this situation \nI would stick with the higher level GUI framework that is the most \nflexible, even it it is not the easiest for creating \"quick and dirty\" \nuser dialog boxes.\n\nDan\n\nOn 11/22/2011 11:31 PM, christiaan pauw wrote:\n> Hi Everybody\n>\n> I have to make a gui for a collection of my functions in order to make it\n> easier for my colleagues (who are very code-shy and function strictly in a\n> point and click environment).\n>\n> I have trawled the web for documentation and have come to the preliminary\n> conclusion that I am going to use the gWidgets package for this task but\n> fgui and rpanel seems to make some aspects easy to implement.\n>\n> Is it feasible to use gWidgets, fgui as well as rpanel in one\n> implementation or should one stick to one of these and do everything with\n> the one gui package?\n>\n> regards\n> Christiaan\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi Christiaan,\n\nThis is (as you probably expect) an \"it depends\" question for at least \ntwo reasons. One thing that complicates everything is the underlying \nwidget toolkit that is being used. The goa",
+      "thread_id": "thread-a3ef287d6758",
+      "thread_depth": 1,
+      "month": "2011-11"
+    },
+    {
+      "id": "msg-ad878079dd4d",
+      "message_id": "<CAOQ5NyenprmwvBGEwfuJwZC-mLWKPSSvqLzGarg-WBp5np2rWA@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2011-11-23T03:42:13-08:00",
+      "subject": "[R-gui] Mixing GUI packages",
+      "subject_clean": "[R-gui] Mixing GUI packages",
+      "in_reply_to": "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>",
+      "references": [
+        "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/1d8cef8d/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/1d8cef8d/attachment.pl>",
+      "thread_id": "thread-a3ef287d6758",
+      "thread_depth": 1,
+      "month": "2011-11"
+    },
+    {
+      "id": "msg-53317fecde10",
+      "message_id": "<CAJESSmbv+t705Hz+L-GLpZDpJ5f0Xjp4y43N+3Up_Mg0g3Y76g@mail.gmail.com>",
+      "from_name": "christiaan pauw",
+      "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
+      "date": "2011-11-23T19:49:08+02:00",
+      "subject": "[R-gui] Mixing GUI packages",
+      "subject_clean": "[R-gui] Mixing GUI packages",
+      "in_reply_to": "<4ECCA866.7070005@sauder.ubc.ca>",
+      "references": [
+        "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>",
+        "<4ECCA866.7070005@sauder.ubc.ca>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/2643ef77/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/2643ef77/attachment.pl>",
+      "thread_id": "thread-a3ef287d6758",
+      "thread_depth": 2,
+      "month": "2011-11"
+    },
+    {
+      "id": "msg-d16e5ab92b81",
+      "message_id": "<CAOQ5Nyfow4v2R154J5kOAt6vn0EGsFR9p-M4E-AE94GbDZ2yzQ@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2011-11-23T09:54:40-08:00",
+      "subject": "[R-gui] Mixing GUI packages",
+      "subject_clean": "[R-gui] Mixing GUI packages",
+      "in_reply_to": "<CAJESSmbv+t705Hz+L-GLpZDpJ5f0Xjp4y43N+3Up_Mg0g3Y76g@mail.gmail.com>",
+      "references": [
+        "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>",
+        "<4ECCA866.7070005@sauder.ubc.ca>",
+        "<CAJESSmbv+t705Hz+L-GLpZDpJ5f0Xjp4y43N+3Up_Mg0g3Y76g@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/7a9aa2cc/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/7a9aa2cc/attachment.pl>",
+      "thread_id": "thread-a3ef287d6758",
+      "thread_depth": 3,
+      "month": "2011-11"
+    },
+    {
+      "id": "msg-0e4e173c514e",
+      "message_id": "<CAJESSmaGoMA4FzXnRe+OmTjAMhy3c+CVq7ai6EFiCgwjg7q34A@mail.gmail.com>",
+      "from_name": "christiaan pauw",
+      "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
+      "date": "2011-11-28T22:35:47+02:00",
+      "subject": "[R-gui] file load dialog with traitr",
+      "subject_clean": "[R-gui] file load dialog with traitr",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi Everybody\n\nI have learned about the traitr package recently following a\nsuggestion from this list. I think this package has massive potential.\nI am working through the documentation to try to build up a sufficient\nunderstanding to enable me to build a gui environment for my\nfunctions.\n\nOne of the common tasks is loading a file. After reading the vignette\n, I attempted to write a dialog to load a .Rda file (below) since this\nis a very common task. It doesn't work. Can someone please help me\nspot the mistake?\n\nThanks in advance\nChristiaan\n\n# Simple Load GUI (but it doesn't work)\nrequire(traitr)\n\ndlg <- aDialog(items=list(\n                 file=fileItem(\"\"),\n                 assign.to=stringItem(\"\", label=\"Assign to:\")\n                  ),\n               title=\"Load a .Rda file\",\n               help_string=\"Select a file, then load\",               )\n\ndlg$OK_handler <- function(.) {\n  out <- .$do_call(\"load\",.$get_file())\n  assign.to <- .$get_assign.to()\n  assign(assign.to, out, envir=.GlobalEnv)\n}\ndlg$make_gui()\n\n(R:3012): Gtk-WARNING **: Unable to find default local directory monitor type\n\n(R:3012): Gtk-WARNING **: Unable to find default local directory monitor type\nError in file$to_R : object of type 'closure' is not subsettable\n\n-- \nChristiaan Pauw\nNova Institute\nwww.nova.org.za",
+      "body_snippet": "Hi Everybody\n\nI have learned about the traitr package recently following a\nsuggestion from this list. I think this package has massive potential.\nI am working through the documentation to try to build",
+      "thread_id": "thread-0e4e173c514e",
+      "thread_depth": 0,
+      "month": "2011-11"
+    },
+    {
+      "id": "msg-9ca5655716c7",
+      "message_id": "<loom.20111129T000747-328@post.gmane.org>",
+      "from_name": "j verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2011-11-28T23:10:55Z",
+      "subject": "[R-gui] file load dialog with traitr",
+      "subject_clean": "[R-gui] file load dialog with traitr",
+      "in_reply_to": null,
+      "references": [
+        "<CAJESSmaGoMA4FzXnRe+OmTjAMhy3c+CVq7ai6EFiCgwjg7q34A@mail.gmail.com>"
+      ],
+      "body_plain": "christiaan pauw <cjpauw <at> gmail.com> writes:\n\n> \n> Hi Everybody\n\n.. snip ..\n\n> (R:3012): Gtk-WARNING **: Unable to find default local \n>  directory monitor type\n> \n> (R:3012): Gtk-WARNING **: Unable to find default local \n> directory monitor type\n> Error in file$to_R : object of type 'closure' is not subsettable\n> \n\n\nI'm not able to reconstruct this error, which makes me think it \nmight be fixed  with the r-forge version. It might also be the \nuse of \"file: as the name, as file  is a function, hence \nthe file$to_R error.\n\n\nHave fun,\n\nJohn",
+      "body_snippet": "christiaan pauw <cjpauw <at> gmail.com> writes:\n\n> \n> Hi Everybody\n\n.. snip ..\n\n> (R:3012): Gtk-WARNING **: Unable to find default local \n>  directory monitor type\n> \n> (R:3012): Gtk-WARNING **: Unabl",
+      "thread_id": "thread-0e4e173c514e",
+      "thread_depth": 1,
+      "month": "2011-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-a3ef287d6758",
+      "subject": "[R-gui] Mixing GUI packages",
+      "message_count": 5,
+      "participants": [
+        "Dan Putler",
+        "Michael Lawrence",
+        "christiaan pauw"
+      ],
+      "started": "2011-11-23T09:31:34+02:00",
+      "last_reply": "2011-11-23T09:54:40-08:00",
+      "root_message_id": "msg-a3ef287d6758"
+    },
+    {
+      "id": "thread-0e4e173c514e",
+      "subject": "[R-gui] file load dialog with traitr",
+      "message_count": 2,
+      "participants": [
+        "christiaan pauw",
+        "j verzani"
+      ],
+      "started": "2011-11-28T22:35:47+02:00",
+      "last_reply": "2011-11-28T23:10:55+00:00",
+      "root_message_id": "msg-0e4e173c514e"
+    }
+  ]
+}

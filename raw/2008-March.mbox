@@ -1,0 +1,295 @@
+From philrack at gmail.com  Tue Mar  4 18:00:16 2008
+From: philrack at gmail.com (Phil Rack)
+Date: Tue, 4 Mar 2008 12:00:16 -0500
+Subject: [R-gui] Announcement: WPS to R Bridge
+Message-ID: <000301c87e19$3908a850$ab19f8f0$@com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080304/fae2619f/attachment.pl 
+
+From eduardosanmi at gmail.com  Sat Mar 15 00:08:37 2008
+From: eduardosanmi at gmail.com (eduardo san miguel)
+Date: Sat, 15 Mar 2008 00:08:37 +0100
+Subject: [R-gui] tk2menubutton command
+Message-ID: <23277cfb0803141608t24addc05p3b14b93d04a36850@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080315/25460e57/attachment.pl 
+
+From phgrosjean at sciviews.org  Sat Mar 15 10:54:42 2008
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Sat, 15 Mar 2008 10:54:42 +0100
+Subject: [R-gui] tk2menubutton command
+In-Reply-To: <23277cfb0803141608t24addc05p3b14b93d04a36850@mail.gmail.com>
+References: <23277cfb0803141608t24addc05p3b14b93d04a36850@mail.gmail.com>
+Message-ID: <47DB9CE2.9010905@sciviews.org>
+
+Hello,
+
+This is not so easy (but still feasible), because you want to change the 
+default behaviour of the MenuButton, which is to always show the menu 
+wherever you click. Here is one solution. A better one would be to 
+define a completely new class!
+Best,
+
+Philippe Grosjean
+
+P.S.: in your example, use short English names for your variables: it 
+helps concentrate on the problem for non-Spanish speaking people. By the 
+way, do the same for code you want to release publicly!
+
+
+
+require(tcltk2)
+
+# Create a new window
+winTk <- tktoplevel()
+tktitle(winTk) <- "tk2menubutton"
+
+# Define the menubutton and its associated menu
+mbVar <-  tclVar('Black')
+mbBut <- tk2menubutton(winTk, textvariable = mbVar, width = 6)
+# The following is required to display plain Tk MenuButtons correctly
+# when tile is not available or not used
+if (as.character(.Tcl(paste("winfo class", mbBut$ID))) == "Menubutton")
+     tkconfigure(mbBut, indicatoron = 1)
+mnButMenu <- tk2menu(mbBut, tearoff = FALSE)
+# Usually, selecting an entry in the menu of a menubutton also issues
+# the corresponding command (not the case is your code)
+tkadd(mnButMenu, 'command' , label = 'White',
+     command = function() { tclvalue(mbVar) <<- 'White'; mbButFun() })
+tkadd(mnButMenu, 'command' , label = 'Black',
+     command = function() { tclvalue(mbVar) <<- 'Black'; mbButFun() })
+tkconfigure(mbBut, menu = mnButMenu)
+tkpack(mbBut)
+
+# Redefine binding of mouse-1 click for this menubutton
+mbButClick <- function(x) {
+     wx <- as.numeric(.Tcl(paste("winfo rootx", mbBut$ID)))
+     wy <- as.numeric(.Tcl(paste("winfo rooty", mbBut$ID)))
+     width <- as.numeric(.Tcl(paste("winfo width", mbBut$ID)))
+     height <- as.numeric(.Tcl(paste("winfo height", mbBut$ID)))
+     # Determine if we click the arrow or the button
+     # 17 is only a guess for arrow width (good compromize for
+     # Menubutton and TMenubutton on most platforms!
+     isarrow <- ((width - as.numeric(x)) <= 17)
+     if (isarrow) {	# Show the menu
+         tkpost(mnButMenu, wx, wy + height)	
+     } else {		# Execute mbButFun()
+         mbButFun()
+     }
+}
+# tkbind(mbBut, "<1>", mbButClick) cannot be used because it does not
+# cancel the event associated with the menubutton class
+# One must specify 'break' in the event binding to prevent this
+.Tcl(paste("bind ", mbBut$ID, " <1> {", .Tcl.callback(mbButClick),
+     "; break}", sep = ""))
+
+# Action for the menubutton (just a toy example)!
+mbButFun <- function(){
+     if (as.character(tclvalue(mbVar)) == 'White') {
+         cat("You selected 'White'!\n")
+     } else {
+         cat("You selected 'Black'!\n")
+     }
+}
+
+# A button to close the window
+tkpack(tk2button(winTk, text = "Exit",
+     command = function() tkdestroy(winTk)))
+
+
+eduardo san miguel wrote:
+> Hello all,
+> 
+> I?d like a tk2menubutton to display a menu when clicking the 'arrow' and to
+> trigger a function when clicking the text.
+> 
+> I have the following:
+> 
+> require(tcltk2)
+> widgetPrincipal <- tktoplevel()
+> tipo.busqueda.valores <-  tclVar('Single-Query')
+> tipo.busqueda.boton <- tk2menubutton(widgetPrincipal, textvariable =
+> tipo.busqueda.valores,
+>       width = 15 )
+> tipo.busqueda.menu <- tk2menu(tipo.busqueda.boton, tearoff = FALSE)
+> tkadd( tipo.busqueda.menu, 'command' , label = 'Tesauro',
+>  command = function() {tclvalue(tipo.busqueda.valores )<<- 'Tesauro'})
+> tkadd( tipo.busqueda.menu, 'command' , label = 'Single-Query',
+>  command = function() {tclvalue(tipo.busqueda.valores )<<- 'Single-Query'})
+> tkconfigure(tipo.busqueda.boton, menu = tipo.busqueda.menu)
+> tkpack(tipo.busqueda.boton)
+> 
+> # this being the function I would like to trigger
+> 
+> tipo.busqueda.accion = function(){
+>  if (as.character(tclvalue(tipo.busqueda.valores)) == 'Tesauro') {
+>   # do A
+>  }else{
+>   # do B
+>  }
+> }
+> 
+> Any tips.
+> 
+> Thanks
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> 
+> 
+> ------------------------------------------------------------------------
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From eduardosanmi at gmail.com  Sat Mar 29 16:22:00 2008
+From: eduardosanmi at gmail.com (eduardo san miguel)
+Date: Sat, 29 Mar 2008 16:22:00 +0100
+Subject: [R-gui] one-column tk2mclistbox
+Message-ID: <23277cfb0803290822t78f839c2m6ee17e4563af7efa@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080329/b3012eea/attachment.pl 
+
+From phgrosjean at sciviews.org  Sat Mar 29 23:40:45 2008
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Sat, 29 Mar 2008 23:40:45 +0100
+Subject: [R-gui] one-column tk2mclistbox
+In-Reply-To: <23277cfb0803290822t78f839c2m6ee17e4563af7efa@mail.gmail.com>
+References: <23277cfb0803290822t78f839c2m6ee17e4563af7efa@mail.gmail.com>
+Message-ID: <47EEC56D.1050006@sciviews.org>
+
+Hello Eduardo,
+
+Regarding the problem with a single column, your request of alternate 
+row background, and other limitations of the tk2mclistbox, I am 
+considering to change for a better implementation of this widget in 
+Tcl/Tk: tablelist, see: 
+http://www.davidmarshall.net/doc/tablelist-4.0/tablelist.html.
+
+Either, you wait for the next tcltk2 release (depending on my free 
+time), or you can anticipate. Just look in the tcltk2 code on how 
+tk2mclistbox is implemented, and you should figure out how to replace it 
+by tablelist, or better, tablelist_tile. Tablelist is written in pure 
+Tcl. So, you don't need to compile it and the code runs on all R 
+supported platforms.
+
+Best,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Belgium
+( ( ( ( (
+..............................................................
+
+eduardo san miguel wrote:
+> Hello,
+> 
+> I have a tk2mclistbox displaying some data (a matrix).
+> It works OK while ncol(matrix) > 1; but when matrix is one-columned, only
+> the first row seems to be displayed.
+> what am I missing?
+> 
+> And talking about tk2mclistbox, is there a way to display rows with
+> different (alternate) background colors?
+> 
+> Thanks.
+>  Eduardo San Miguel
+> 
+> 
+> require(tcltk2)
+> 
+> fillt <- function() {
+>    nCols =   as.numeric(tkget(tl.e1))
+>    nRows =   as.numeric(tkget(tl.e2))
+> 
+>    # remove existing columns
+>    COLUMNS <- tclvalue(.Tcl( paste( tl.t, 'column names')))
+>    for (i in 1:length(COLUMNS)){
+>       .Tcl( paste( tl.t, 'column delete', COLUMNS[i]))
+>    }
+> 
+>    # generate matrix
+>    data = matrix(rnorm(nRows*nCols), nc = nCols)
+> 
+>    # tricky way to display one-column data
+> #   auxcol <- matrix(rep(0, dim(data)[1]), ncol = 1)
+> #   tk2column(tl.t, 'add', 'auxcol', label = 'auxcol',
+> #    width = 20)
+> #   tk2column(tl.t,'configure', 'auxcol', visible = 0)
+> 
+>    # insert data
+>    for (i in 1:dim(data)[2]){
+>       tk2column(tl.t, 'add', paste('col_',i, sep =''),
+>                      label = paste('col_',i, sep =''),  width = 20)
+>    }
+> 
+> 
+>    # tricky way to display one-column data
+> #   data = cbind(auxcol, data)
+>    tk2insert.multi(tl.t, 'end', data)
+> 
+>    tkconfigure(tl.t, columnborderwidth = 1)
+>    tkconfigure(tl.t, columnbd = 1)
+> }
+> 
+> tl <- tktoplevel()
+> 
+> tl.f1 <- tk2frame(tl)
+> tl.l1 <- tk2label(tl.f1, text = 'N Cols:')
+> tl.l2 <- tk2label(tl.f1, text = 'N Rows:')
+> tl.e1 <- tk2entry(tl.f1 ,'n Cols ', width = 5)
+> tl.e2 <- tk2entry(tl.f1 ,'n Rows ', width = 5)
+> tl.f1.b <- tk2button(tl.f1, ' ', text = 'Show Matrix',
+>      command = fillt)
+> tl.f1.b1 <- tk2button(tl.f1, ' ', text = 'Close',
+>      command = function() tkdestroy(tl))
+> 
+> tl.f2 <- tk2frame(tl)
+> tl.t <- tk2mclistbox(tl.f2, width = 84, resizablecolumns = TRUE)
+> tl.scr_1 <- tk2scrollbar(tl.f2, orient = 'vertical')
+> tl.scr_2 <- tk2scrollbar(tl.f2, orient = 'horizontal')
+> 
+> tkconfigure(tl.t, yscrollcommand = function(...) tkset(tl.scr_1, ...))
+> tkconfigure(tl.scr_1, command = function(...) tkyview(tl.t, ...))
+> tkconfigure(tl.t, xscrollcommand = function(...) tkset(tl.scr_2, ...))
+> tkconfigure(tl.scr_2, command = function(...) tkxview(tl.t, ...))
+> 
+> tkpack(tl.scr_2, side = 'bottom', fill = 'x')
+> tkpack(tl.scr_1, side = 'right', fill = 'y')
+> tkpack(tl.t, fill = 'both', expand = 1)
+> 
+> tkgrid(tl.f1)
+> tkgrid(tl.l1, row = 0, column = 0)
+> tkgrid(tl.e1, row = 0, column = 1)
+> tkgrid(tl.l2, row = 0, column = 2)
+> tkgrid(tl.e2, row = 0, column = 3)
+> tkgrid(tl.f1.b, row = 0, column = 4)
+> tkgrid(tl.f1.b1, row = 0, column = 5)
+> tkgrid(tl.f2)
+> 
+> tkconfigure(tl.t, relief = 'sunk')
+> tkbind(tl.t,'<Enter>',function() tkfocus(tl.t))
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+

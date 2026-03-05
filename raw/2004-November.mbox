@@ -1,0 +1,4505 @@
+From TShort at epri-peac.com  Wed Nov  3 23:13:13 2004
+From: TShort at epri-peac.com (Short, Tom)
+Date: Wed Nov  3 23:09:56 2004
+Subject: [R-gui] New version of Rpad released
+In-Reply-To: <41470FAF.4000806@epri-peac.com>
+References: <41470FAF.4000806@epri-peac.com>
+Message-ID: <418957F9.50200@epri-peac.com>
+
+Another release of Rpad is available. Rpad is an interactive, web-based
+analysis program. Rpad pages are interactive workbook-type sheets based
+on R. Rpad is an analysis package, a web-page designer, and a gui designer
+all wrapped in one.
+
+For more information and demonstrations, please see:
+
+http://www.Rpad.org/Rpad/
+
+Most of the changes in this version are tweaks and bug fixes. The most
+notable bug caused Internet Explorer to lock up at times. The tweaks
+improve compatibility with R 2.0 and apache2. Rpad works well with R 2.0.
+The lazy loading in 2.0 improves startup responsiveness and should reduce
+the memory load on the server. Note that the server at www.rpad.org still
+uses R 1.9.1; I'm waiting for R 2.0 to make it into Debian's testing
+distribution. Key new features in the 2004-11-02 release include:
+
+(*) MULTIPLE-FIGURE PLOTTING -- Many plots can be generated and shown
+at once in the browser. For example, you could enter the following to
+show all of the graphs in the demo for graphics:
+
+      newgraph(width=6)
+      demo(graphics)
+      HTMLon()
+      showgraph()
+
+(*) EASY GUI GENERATION -- I added two examples for adding GUI elements
+for adjusting plot parameters. This is a starting point for automating GUI
+generation for entering many parameters.
+
+(*) Rpad & R REFCARD -- I made a 4-page quick reference of common
+functions that's based largely on Emmanuel Paradis's excellent "R for
+Beginners" (http://cran.r-project.org/doc/contrib/rdebuts_en.pdf).
+There's also a reference card just for R. The latex source is also
+available if you want to make customized versions of this.
+
+This release also includes an install script for Debian. I'm working
+on this in hopes of making a Debian package with the goal of
+getting Rpad included on Dirk Eddelbuettel's Quantian livecd.
+
+- Tom
+
+-- 
+Tom Short
+EPRI PEAC, www.epri-peac.com
+
+From edd at debian.org  Wed Nov  3 23:39:48 2004
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Wed Nov  3 23:40:02 2004
+Subject: [R-gui] New version of Rpad released
+In-Reply-To: <418957F9.50200@epri-peac.com>
+References: <41470FAF.4000806@epri-peac.com> <418957F9.50200@epri-peac.com>
+Message-ID: <20041103223948.GA23417@sonny.eddelbuettel.com>
+
+Tom,
+
+On Wed, Nov 03, 2004 at 05:13:13PM -0500, Short, Tom wrote:
+> the memory load on the server. Note that the server at www.rpad.org still
+> uses R 1.9.1; I'm waiting for R 2.0 to make it into Debian's testing
+> distribution. Key new features in the 2004-11-02 release include:
+
+Don't -- just fetch it from unstable. It will be the exact same binary
+whether you take it now, or wait (unless of course a bug would require a
+rebuild).  If CRAN had a working Debian mirroring setup, you'd get it from
+there but lacking that, the 'pinning' feature of apt is your best bet.
+
+As it stands, the wait is 'indetermined' right now because a) a part of the
+build architecture set seems to have a broken toolchain, and b) because the
+binary incompatibility between 1.9.* and 2.0.* coupled with the actual
+Depends: for lazyloading create a weird mesh of interdependence. The end
+result is more like a boolean "and" over all required pieces: only the whole
+set can enter 'testing', and that may take a while.
+
+> This release also includes an install script for Debian. I'm working
+> on this in hopes of making a Debian package with the goal of
+> getting Rpad included on Dirk Eddelbuettel's Quantian livecd.
+
+Neat -- we have to also make sure apache is configured correctly for it. Is
+it in your tests? Also, so far Quantian included only Apache 1.3.*, is that
+good enough for you?
+
+Dirk
+
+-- 
+If your hair is standing up, then you are in extreme danger.
+      -- http://www.usafa.af.mil/dfp/cockpit-phys/fp1ex3.htm
+
+From phgrosjean at sciviews.org  Tue Nov  9 11:23:31 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Nov  9 11:24:01 2004
+Subject: [R-gui] Tinn-R beta test
+Message-ID: <200411091025.iA9APjHD303120@hedwig1.umh.ac.be>
+
+Hello,
+
+We have now decided to freeze the latest Tinn-R version (0.0.9.0 r1.13, see
+http://www.sciviews.org/Tinn-R) and to proceed with a wider beta test. We
+would like to end up with a very stable R code editor (under Windows
+WIN98/2000/XP, sorry for the other platforms) by the end of the year. So,
+this is a call among "R-SIG-GUI-GUYS":
+
+we need beta testers for Tinn-R!
+
+We do not request only "negative" reports (i.e., bugs reports), but also
+"positive" reports (i.e., information about successful installs and testes).
+Thanks.
+Best,
+
+The Tinn-R developers (Jos? Claudio Faria & Philippe Grosjean). 
+
+..............................................<?}))><........
+ ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+ ) ) ) ) )   Mons-Hainaut University, Pentagone
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+ ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium  
+( ( ( ( (       
+ ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )      
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+ ) ) ) ) )
+..............................................................
+
+From phgrosjean at sciviews.org  Tue Nov  9 11:42:45 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Nov  9 11:43:07 2004
+Subject: [R-gui] A GUI API for R
+Message-ID: <200411091045.iA9Aj0Rh196652@hedwig1.umh.ac.be>
+
+Hello,
+
+SciViews-R (new version 0.7-0, see http://www.sciviews.org/SciViews-R)
+provides a first attempt for a full GUI API for R that could be reused among
+GUI projects. It is neither complete, nor fully debugged yet. Also, it is
+only compiled and tested under Windows today (one package, tcltk2, still
+requires some work to compile on various platforms).
+
+This appears to be a much larger work than expected. Currently, it is
+materialized into a bundle (SciViews), containing six different R packages:
+- svGUI: main functions for a GUI, that is interaction with the GUI client,
+implementation of the object explorer, function tips, completion lists,
+etc...
+- svIO: GUI functions to import and export R objects in various formats used
+by external GUI apps,
+- svViews: the rich-formatted views on objects and corresponding reporting
+features (see the manual),
+- svDialogs: both reusable, fixed dialog boxes (input, lists, file
+open/save, var select, and much more...), and "flexible" dialog boxes (kind
+of GUI frontends to prompt for arguments for any R function),
+- svMisc: various other functions needed by the other packages,
+- tcltk2: an extension to the tcltk package with more Tk widgets:
+comboboxes, notebook, tree, tile (themable Tk widgets), tkTables, ...
+
+We would like to get feedback, and also possibly, help from you to finalize
+this GUI API. Among hot topics:
+
+- svDialogs: finalizing the fixed dialog boxes,
+- tcltk2: make it compiling on other platforms (currently, only Windows
+binaries of additional Tk widgets are installed),
+- svViews: writing pertinent "views" for most common R objects,
+- writing of the manual (see ftp://ftp.umh.ac.be/pub/ftp_econum/Manual.pdf
+for its latest version).
+- test on other platforms, and writing of platform-independent
+implementation of simple GUI clients, like an object explorer, a "views"
+display, ...
+
+SciViews-R is also a suite of applications that actually implement a GUI for
+R under Windows.
+Best,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+ ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+ ) ) ) ) )   Mons-Hainaut University, Pentagone
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+ ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium  
+( ( ( ( (       
+ ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )      
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+ ) ) ) ) )
+..............................................................
+
+From murdoch at stats.uwo.ca  Tue Nov  9 11:57:24 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Tue Nov  9 11:57:00 2004
+Subject: [R-gui] Tinn-R beta test
+In-Reply-To: <200411091025.iA9APjHD303120@hedwig1.umh.ac.be>
+References: <200411091025.iA9APjHD303120@hedwig1.umh.ac.be>
+Message-ID: <h081p0dq0lu6332vftfns51kacpi86cti7@4ax.com>
+
+On Tue, 9 Nov 2004 11:23:31 +0100, "Philippe Grosjean"
+<phgrosjean@sciviews.org> wrote:
+
+>Hello,
+>
+>We have now decided to freeze the latest Tinn-R version (0.0.9.0 r1.13, see
+>http://www.sciviews.org/Tinn-R) and to proceed with a wider beta test. We
+>would like to end up with a very stable R code editor (under Windows
+>WIN98/2000/XP, sorry for the other platforms) by the end of the year. So,
+>this is a call among "R-SIG-GUI-GUYS":
+>
+>we need beta testers for Tinn-R!
+>
+>We do not request only "negative" reports (i.e., bugs reports), but also
+>"positive" reports (i.e., information about successful installs and testes).
+>Thanks.
+>Best,
+>
+>The Tinn-R developers (Jos? Claudio Faria & Philippe Grosjean). 
+
+Hi.  I just installed that version; it looks good.  I couldn't see
+what the gutter was for, though.  In Delphi that's where debug
+breakpoints are set; do you use it for anything?
+
+One thing I've often thought it could be used for is to mark a section
+of the file to be the default submission.  As I'm editing a function
+or a section of a script,  I may want to resubmit it several times;
+it's inconvenient to use highlighting for this, because the
+highlighting is used in editing.
+
+Duncan Murdoch
+
+From phgrosjean at sciviews.org  Tue Nov  9 12:02:26 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Nov  9 12:02:47 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+Message-ID: <200411091104.iA9B4fl31761374@hedwig1.umh.ac.be>
+
+Hello,
+
+Following my two previous mails about Tinn-R and the R GUI API, I would like
+to start a discussion about the best toolkit and language to use to
+implement a GUI for R.
+
+Indeed, I am long waiting something around wxWidgets... But this seems to be
+further delayed:
+
+1) I put much hope on the James Wettenhall's R-wxPython package. However,
+despite its persistent attemps, it seems that there are still problems under
+Linux. Moreover, James has now other priorities and the package is left in
+an incomplete, experimental state,
+
+2) Related to this, I put much hope to Boa Constructor as the IDE to build a
+GUI using Python / wxWidgets for R... Unfortunatelly, wxPython changed a lot
+from version 2.4 to 2.5... And Boa Constructor is still not running well
+with wxPython 2.5 (latest version 0.3-1 tested),
+
+3) I look closely to Rpy, which seems to work well (but it needs to be
+recompiled for every R version, and it does not provide a solution by itself
+neither for the graphical toolkit, nor for the IDE),
+
+4) I am testing ActiveState Komodo, an excellent IDE for Perl/Tcl/Python
+(but not free). The pro version provides a nice GUI builder, but it uses
+only the Tk toolkit with a limited amount of extra widgets. This appears too
+limited for my GUI. I need, at least, a powerful code editor like Scintilla,
+and a reasonable HTML widget which support JavaScript and cascaded style
+sheets.
+
+5) Delphi/Kylix... This is a nice IDE (although not free), and it proves to
+give efficient GUIs, at least under Windows (see Tinn-R, for instance!). I
+don't like much this solution because it means for me to move from Microsoft
+language/IDE (mainly Visual Basic in the current SciViews-R), to Borland
+equivalent... If I have to rewrite everything, I would prefer to do it in a
+GPL language/environment!
+
+6) Java with Eclipse? Well, this is the JGR solution. I don't know Java and
+have lot of problems with the SJava / Rjava interface (well, I hope this
+will be solved in the future,... But for now?).
+
+So, for now, I am still stuck with my Windows-only solution for a R GUI,
+just because I do not have the full combination of a complete IDE with a
+feature-rich-enough graphical toolkit and a flawless R communication with
+it. All I can do, is to move as much code as possible into R... Hence, the
+GUI API.
+
+Any idea? Any suggestion?
+Thanks,
+
+Philippe Grosjean 
+
+..............................................<?}))><........
+ ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+ ) ) ) ) )   Mons-Hainaut University, Pentagone
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+ ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium  
+( ( ( ( (       
+ ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )      
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+ ) ) ) ) )
+..............................................................
+
+From blindglobe at gmail.com  Tue Nov  9 13:08:35 2004
+From: blindglobe at gmail.com (A.J. Rossini)
+Date: Tue Nov  9 13:08:44 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411091104.iA9B4fl31761374@hedwig1.umh.ac.be>
+References: <200411091104.iA9B4fl31761374@hedwig1.umh.ac.be>
+Message-ID: <1abe3fa90411090408426da4e0@mail.gmail.com>
+
+Lisp and Emacs.
+
+Of course :-).
+
+Platform independence, and, as shown by JDEE, has a nice set of
+modeling functions that can be applied.   CEDET provides UML style,
+should anyone figure out useful mappings (I'm not releasing my useless
+ones :-).  And given the similarity between the S4 object system and
+CLOS, one can leverage that as well.
+
+best,
+-tony
+
+
+
+On Tue, 9 Nov 2004 12:02:26 +0100, Philippe Grosjean
+<phgrosjean@sciviews.org> wrote:
+> Hello,
+> 
+> Following my two previous mails about Tinn-R and the R GUI API, I would like
+> to start a discussion about the best toolkit and language to use to
+> implement a GUI for R.
+> 
+> Indeed, I am long waiting something around wxWidgets... But this seems to be
+> further delayed:
+> 
+> 1) I put much hope on the James Wettenhall's R-wxPython package. However,
+> despite its persistent attemps, it seems that there are still problems under
+> Linux. Moreover, James has now other priorities and the package is left in
+> an incomplete, experimental state,
+> 
+> 2) Related to this, I put much hope to Boa Constructor as the IDE to build a
+> GUI using Python / wxWidgets for R... Unfortunatelly, wxPython changed a lot
+> from version 2.4 to 2.5... And Boa Constructor is still not running well
+> with wxPython 2.5 (latest version 0.3-1 tested),
+> 
+> 3) I look closely to Rpy, which seems to work well (but it needs to be
+> recompiled for every R version, and it does not provide a solution by itself
+> neither for the graphical toolkit, nor for the IDE),
+> 
+> 4) I am testing ActiveState Komodo, an excellent IDE for Perl/Tcl/Python
+> (but not free). The pro version provides a nice GUI builder, but it uses
+> only the Tk toolkit with a limited amount of extra widgets. This appears too
+> limited for my GUI. I need, at least, a powerful code editor like Scintilla,
+> and a reasonable HTML widget which support JavaScript and cascaded style
+> sheets.
+> 
+> 5) Delphi/Kylix... This is a nice IDE (although not free), and it proves to
+> give efficient GUIs, at least under Windows (see Tinn-R, for instance!). I
+> don't like much this solution because it means for me to move from Microsoft
+> language/IDE (mainly Visual Basic in the current SciViews-R), to Borland
+> equivalent... If I have to rewrite everything, I would prefer to do it in a
+> GPL language/environment!
+> 
+> 6) Java with Eclipse? Well, this is the JGR solution. I don't know Java and
+> have lot of problems with the SJava / Rjava interface (well, I hope this
+> will be solved in the future,... But for now?).
+> 
+> So, for now, I am still stuck with my Windows-only solution for a R GUI,
+> just because I do not have the full combination of a complete IDE with a
+> feature-rich-enough graphical toolkit and a flawless R communication with
+> it. All I can do, is to move as much code as possible into R... Hence, the
+> GUI API.
+> 
+> Any idea? Any suggestion?
+> Thanks,
+> 
+> Philippe Grosjean
+> 
+> ..............................................<?}))><........
+> ) ) ) ) )
+> ( ( ( ( (    Prof. Philippe Grosjean
+> ) ) ) ) )
+> ( ( ( ( (    Numerical Ecology of Aquatic Systems
+> ) ) ) ) )   Mons-Hainaut University, Pentagone
+> ( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+> ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium
+> ( ( ( ( (
+> ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+> ( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+> ) ) ) ) )
+> ( ( ( ( (    web:   http://www.umh.ac.be/~econum
+> ) ) ) ) )
+> ..............................................................
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+
+-- 
+
+best,
+-tony
+
+---
+A.J. Rossini
+blindglobe@gmail.com
+
+From phgrosjean at sciviews.org  Tue Nov  9 13:24:36 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Nov  9 13:25:08 2004
+Subject: [R-gui] Tinn-R beta test
+In-Reply-To: <h081p0dq0lu6332vftfns51kacpi86cti7@4ax.com>
+Message-ID: <200411091227.iA9CQoxM1581274@hedwig1.umh.ac.be>
+
+> Hi.  I just installed that version; it looks good.  I 
+> couldn't see what the gutter was for, though.  In Delphi 
+> that's where debug breakpoints are set; do you use it for anything?
+
+It is used to display bookmarks (set them with Ctrl+Shift+[0-9], navigate to
+them with Ctrl+[0-9]).
+
+> One thing I've often thought it could be used for is to mark 
+> a section of the file to be the default submission.  As I'm 
+> editing a function or a section of a script,  I may want to 
+> resubmit it several times; it's inconvenient to use 
+> highlighting for this, because the highlighting is used in editing.
+
+... Or may be a 'submit the whole function' tool would do the job. Excellent
+idea!
+
+Best,
+
+Philippe 
+
+> -----Original Message-----
+> From: Duncan Murdoch [mailto:murdoch@stats.uwo.ca] 
+> Sent: Tuesday, November 09, 2004 11:57 AM
+> To: Philippe Grosjean
+> Cc: r-sig-gui@stat.math.ethz.ch; "'Jos? Cl?udio Faria'"
+> Subject: Re: [R-gui] Tinn-R beta test
+> 
+> On Tue, 9 Nov 2004 11:23:31 +0100, "Philippe Grosjean"
+> <phgrosjean@sciviews.org> wrote:
+> 
+> >Hello,
+> >
+> >We have now decided to freeze the latest Tinn-R version 
+> (0.0.9.0 r1.13, 
+> >see
+> >http://www.sciviews.org/Tinn-R) and to proceed with a wider 
+> beta test. 
+> >We would like to end up with a very stable R code editor 
+> (under Windows 
+> >WIN98/2000/XP, sorry for the other platforms) by the end of 
+> the year. 
+> >So, this is a call among "R-SIG-GUI-GUYS":
+> >
+> >we need beta testers for Tinn-R!
+> >
+> >We do not request only "negative" reports (i.e., bugs reports), but 
+> >also "positive" reports (i.e., information about successful 
+> installs and testes).
+> >Thanks.
+> >Best,
+> >
+> >The Tinn-R developers (Jos? Claudio Faria & Philippe Grosjean). 
+> 
+> Hi.  I just installed that version; it looks good.  I 
+> couldn't see what the gutter was for, though.  In Delphi 
+> that's where debug breakpoints are set; do you use it for anything?
+> 
+> One thing I've often thought it could be used for is to mark 
+> a section of the file to be the default submission.  As I'm 
+> editing a function or a section of a script,  I may want to 
+> resubmit it several times; it's inconvenient to use 
+> highlighting for this, because the highlighting is used in editing.
+> 
+> Duncan Murdoch
+> 
+>
+
+From phgrosjean at sciviews.org  Tue Nov  9 13:36:11 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Nov  9 13:36:36 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <1abe3fa90411090408426da4e0@mail.gmail.com>
+Message-ID: <200411091238.iA9CcQrn1470546@hedwig1.umh.ac.be>
+
+A.J. Rossini wrote:
+
+> Lisp and Emacs.
+> 
+> Of course :-).
+
+I must admit I don't know much about Emacs. I installed it a while ago, and
+I use it when I can in order to learn it. But I don't see how I could use
+Emacs to build a GUI for R. Could you explain me, please.
+
+> Platform independence, and, as shown by JDEE, has a nice set of
+> modeling functions that can be applied.   CEDET provides UML style,
+> should anyone figure out useful mappings (I'm not releasing 
+> my useless ones :-).  And given the similarity between the S4 
+> object system and CLOS, one can leverage that as well.
+
+OK, now I think I figure out what you mean: you speak about using Emacs as a
+R IDE, isn't it? Excuse-me, I was not explicit enough. I am looking for an
+IDE _to build a platform independent GUI for R_, thus an IDE that would give
+me all I need to build the windows and dialog boxes quickly.
+
+Best,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+ ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+ ) ) ) ) )   Mons-Hainaut University, Pentagone
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+ ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium  
+( ( ( ( (       
+ ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )      
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+ ) ) ) ) )
+..............................................................
+
+From v.zemlys at post.skynet.lt  Tue Nov  9 13:41:49 2004
+From: v.zemlys at post.skynet.lt (Vaidotas Zemlys)
+Date: Tue Nov  9 13:46:53 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411091104.iA9B4fl31761374@hedwig1.umh.ac.be>
+References: <200411091104.iA9B4fl31761374@hedwig1.umh.ac.be>
+Message-ID: <1100004110.1640.6.camel@debian.skynet.vl>
+
+Hi,
+
+> 3) I look closely to Rpy, which seems to work well (but it needs to be
+> recompiled for every R version, and it does not provide a solution by itself
+> neither for the graphical toolkit, nor for the IDE),
+> 
+
+What about using pythons gtk bindings together with Rpy? Build
+apropriate gtk app and then bridge it with R using Rpy.  I do not know
+about portability though. It will certainly run on linux, but there
+could be some issues with Windows.
+
+Vaidotas Zemlys
+
+From david.whiting at ncl.ac.uk  Tue Nov  9 15:16:57 2004
+From: david.whiting at ncl.ac.uk (David Whiting)
+Date: Tue Nov  9 15:25:49 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411091238.iA9CcQrn1470546@hedwig1.umh.ac.be>
+References: <1abe3fa90411090408426da4e0@mail.gmail.com>
+	<200411091238.iA9CcQrn1470546@hedwig1.umh.ac.be>
+Message-ID: <20041109141657.GB2718@192.168.57.2>
+
+On Tue, Nov 09, 2004 at 01:36:11PM +0100, Philippe Grosjean wrote:
+> A.J. Rossini wrote:
+> 
+> > Lisp and Emacs.
+> > 
+> > Of course :-).
+> 
+> I must admit I don't know much about Emacs. I installed it a while ago, and
+> I use it when I can in order to learn it. But I don't see how I could use
+> Emacs to build a GUI for R. Could you explain me, please.
+
+Just recently I started playing with widgets in emacs. If/when I get
+time I'm going to explore this a little.
+
+http://www.xemacs.org/Documentation/21.5/html/widget.html
+
+But somehow I think this might not be what most people will want from a
+GUI :)
+
+
+-- 
+Dave Whiting
+
+From duncan at wald.ucdavis.edu  Tue Nov  9 16:35:01 2004
+From: duncan at wald.ucdavis.edu (Duncan Temple Lang)
+Date: Tue Nov  9 16:35:27 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <1100004110.1640.6.camel@debian.skynet.vl>
+References: <200411091104.iA9B4fl31761374@hedwig1.umh.ac.be>
+	<1100004110.1640.6.camel@debian.skynet.vl>
+Message-ID: <20041109153501.GA17087@wald.ucdavis.edu>
+
+Vaidotas Zemlys wrote:
+> Hi,
+> 
+> > 3) I look closely to Rpy, which seems to work well (but it needs to be
+> > recompiled for every R version, and it does not provide a solution by itself
+> > neither for the graphical toolkit, nor for the IDE),
+> > 
+> 
+> What about using pythons gtk bindings together with Rpy? Build
+> apropriate gtk app and then bridge it with R using Rpy.  I do not know
+> about portability though. It will certainly run on linux, but there
+> could be some issues with Windows.
+
+
+Just for the record, we have  direct Gtk bindings
+from R to Gtk. So there is no need to complicate matters
+introducing an intermediate layer, RPy and Python.
+
+I have been looking at upgrading the packages to support Gtk2.*
+
+> 
+> Vaidotas Zemlys
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Duncan Temple Lang                duncan@wald.ucdavis.edu
+Department of Statistics          work:  (530) 752-4782
+371 Kerr Hall                     fax:   (530) 752-7099
+One Shields Ave.
+University of California at Davis
+Davis, CA 95616, USA
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 184 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20041109/26323b27/attachment.bin
+From blindglobe at gmail.com  Tue Nov  9 16:48:44 2004
+From: blindglobe at gmail.com (A.J. Rossini)
+Date: Tue Nov  9 16:48:53 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411091238.iA9CcQrn1470546@hedwig1.umh.ac.be>
+References: <1abe3fa90411090408426da4e0@mail.gmail.com>
+	<200411091238.iA9CcQrn1470546@hedwig1.umh.ac.be>
+Message-ID: <1abe3fa9041109074861759c68@mail.gmail.com>
+
+No, you can build it.  There are a number of variations on the theme,
+ranging from using Emacs widgets (as David mentioned), to using
+R/S-PLUS as the backend for a spreadsheet within Emacs (old, old
+work), to using ESS to instantiate tcl/tk GUIs, to whatever.
+
+Just use your imagination ;-).
+
+But in all seriousness, it's not nearly as limiting as you are
+imagining, and much more flexible than most of the examples you've
+given.  There is always the problem of coding, though...
+
+best,
+-tony
+
+
+On Tue, 9 Nov 2004 13:36:11 +0100, Philippe Grosjean
+<phgrosjean@sciviews.org> wrote:
+> A.J. Rossini wrote:
+> 
+> > Lisp and Emacs.
+> >
+> > Of course :-).
+> 
+> I must admit I don't know much about Emacs. I installed it a while ago, and
+> I use it when I can in order to learn it. But I don't see how I could use
+> Emacs to build a GUI for R. Could you explain me, please.
+> 
+> > Platform independence, and, as shown by JDEE, has a nice set of
+> > modeling functions that can be applied.   CEDET provides UML style,
+> > should anyone figure out useful mappings (I'm not releasing
+> > my useless ones :-).  And given the similarity between the S4
+> > object system and CLOS, one can leverage that as well.
+> 
+> OK, now I think I figure out what you mean: you speak about using Emacs as a
+> R IDE, isn't it? Excuse-me, I was not explicit enough. I am looking for an
+> IDE _to build a platform independent GUI for R_, thus an IDE that would give
+> me all I need to build the windows and dialog boxes quickly.
+> 
+> Best,
+> 
+> 
+> 
+> Philippe Grosjean
+> 
+> ..............................................<?}))><........
+> ) ) ) ) )
+> ( ( ( ( (    Prof. Philippe Grosjean
+> ) ) ) ) )
+> ( ( ( ( (    Numerical Ecology of Aquatic Systems
+> ) ) ) ) )   Mons-Hainaut University, Pentagone
+> ( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+> ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium
+> ( ( ( ( (
+> ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+> ( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+> ) ) ) ) )
+> ( ( ( ( (    web:   http://www.umh.ac.be/~econum
+> ) ) ) ) )
+> ..............................................................
+> 
+> 
+
+
+-- 
+
+best,
+-tony
+
+---
+A.J. Rossini
+blindglobe@gmail.com
+
+From phgrosjean at sciviews.org  Tue Nov  9 17:05:48 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Nov  9 17:06:48 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <1abe3fa9041109074861759c68@mail.gmail.com>
+Message-ID: <200411091608.iA9G83AZ1306700@hedwig1.umh.ac.be>
+
+A.J. Rossini wrote:
+
+> No, you can build it.  There are a number of variations on 
+> the theme, ranging from using Emacs widgets (as David 
+> mentioned), to using R/S-PLUS as the backend for a 
+> spreadsheet within Emacs (old, old work), to using ESS to 
+> instantiate tcl/tk GUIs, to whatever.
+> 
+> Just use your imagination ;-).
+
+Is anybody actually working on some GUI implementations using Emacs-ESS,
+besides your trials, David, and your suggestions, Tony?
+
+I think it should be possible to make a mix between Emacs-ESS and its
+numerous potentials, and my GUI API for R, together with a little bit of
+tcltk. The priority would be to make Emacs-ESS more accessible and less
+intimidating for beginners (by hiding less used functions, by adding more
+toolbar buttons, by facilitating installation -John Fox's page about
+installing Emacs-ESS under Windows goes in this direction-...), then to
+implement something like an object explorer, a views display (in an Emacs
+buffer?), and the equivalent of the "docking windows" in SciViews R Console
+which displays menus/electronic reference cards/graph galeries/etc...
+
+I would be happy to collaborate with anybody willing to do so, but for now,
+I have too much work concentrating on the finalization of the R GUI API to
+start this myself. As I said, I know really too little about Emacs to be
+able to start such an entreprise alone.
+ 
+> But in all seriousness, it's not nearly as limiting as you 
+> are imagining, and much more flexible than most of the 
+> examples you've given.  There is always the problem of 
+> coding, though...
+
+Best,
+
+Philippe
+
+From phgrosjean at sciviews.org  Tue Nov  9 17:08:02 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue Nov  9 17:08:49 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <20041109153501.GA17087@wald.ucdavis.edu>
+Message-ID: <200411091610.iA9GAHQb1052696@hedwig1.umh.ac.be>
+
+ 
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> Duncan Temple Lang
+> Sent: Tuesday, November 09, 2004 4:35 PM
+> To: Vaidotas Zemlys
+> Cc: r-sig-gui@stat.math.ethz.ch
+> Subject: Re: [R-gui] Platform-independent GUI for R... again
+> 
+> Vaidotas Zemlys wrote:
+> > Hi,
+> > 
+> > > 3) I look closely to Rpy, which seems to work well (but 
+> it needs to 
+> > > be recompiled for every R version, and it does not provide a 
+> > > solution by itself neither for the graphical toolkit, nor for the 
+> > > IDE),
+> > > 
+> > 
+> > What about using pythons gtk bindings together with Rpy? Build 
+> > apropriate gtk app and then bridge it with R using Rpy.  I 
+> do not know 
+> > about portability though. It will certainly run on linux, but there 
+> > could be some issues with Windows.
+> 
+> 
+> Just for the record, we have  direct Gtk bindings from R to 
+> Gtk. So there is no need to complicate matters introducing an 
+> intermediate layer, RPy and Python.
+> 
+> I have been looking at upgrading the packages to support Gtk2.*
+
+Nice! Do you think it will run under Windows and MacOS too?
+
+Best,
+
+Philippe
+
+From jimrc at math.montana.edu  Tue Nov  9 17:59:28 2004
+From: jimrc at math.montana.edu (Jim Robison-Cox)
+Date: Tue Nov  9 17:59:45 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411091104.iA9B4fl31761374@hedwig1.umh.ac.be>
+Message-ID: <Pine.GSO.4.44.0411090954460.27738-100000@gauss1.math.montana.edu>
+
+
+
+
+On Tue, 9 Nov 2004, Philippe Grosjean wrote:
+
+> Hello,
+>
+> Following my two previous mails about Tinn-R and the R GUI API, I would like
+> to start a discussion about the best toolkit and language to use to
+> implement a GUI for R.
+>
+
+  As far as toolkits and languages go, has anyone investigated GNUstep?
+It is available for Linux, Windows, and, of course, Mac.
+Seems to be more active now due to the popularity of Cocoa.
+
+Jim
+
+Jim Robison-Cox               ____________
+Department of Math Sciences  |            |       phone: (406)994-5340
+2-214 Wilson Hall             \   BZN, MT |       FAX:   (406)994-1789
+Montana State University       |  *_______|
+Bozeman, MT 59717-2400          \_|      e-mail: jimrc@math.montana.edu
+
+From duncan at wald.ucdavis.edu  Tue Nov  9 18:03:32 2004
+From: duncan at wald.ucdavis.edu (Duncan Temple Lang)
+Date: Tue Nov  9 18:03:46 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411091610.iA9GAHQb1052696@hedwig1.umh.ac.be>
+References: <20041109153501.GA17087@wald.ucdavis.edu>
+	<200411091610.iA9GAHQb1052696@hedwig1.umh.ac.be>
+Message-ID: <20041109170332.GE17087@wald.ucdavis.edu>
+
+
+> Nice! Do you think it will run under Windows and MacOS too?
+
+Yes. There is a windows port of gtk+-2.4.13.
+And one can install gtk+...  on Mac using the X11 SDK.
+I don't believe there is a native Aqua port for gtk+-2.*,
+just gtk1.2.
+
+gtkhtml did not port to Windows for gtk+-1.2 because of the
+gnome related printing facilities. I am not certain
+about the state of affairs for gtkhtml with gtk+-2.*
+And there are additional html options for gtk. 
+
+
+   D.
+
+
+Philippe Grosjean wrote:
+>  
+> 
+> > -----Original Message-----
+> > From: r-sig-gui-bounces@stat.math.ethz.ch 
+> > [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> > Duncan Temple Lang
+> > Sent: Tuesday, November 09, 2004 4:35 PM
+> > To: Vaidotas Zemlys
+> > Cc: r-sig-gui@stat.math.ethz.ch
+> > Subject: Re: [R-gui] Platform-independent GUI for R... again
+> > 
+> > Vaidotas Zemlys wrote:
+> > > Hi,
+> > > 
+> > > > 3) I look closely to Rpy, which seems to work well (but 
+> > it needs to 
+> > > > be recompiled for every R version, and it does not provide a 
+> > > > solution by itself neither for the graphical toolkit, nor for the 
+> > > > IDE),
+> > > > 
+> > > 
+> > > What about using pythons gtk bindings together with Rpy? Build 
+> > > apropriate gtk app and then bridge it with R using Rpy.  I 
+> > do not know 
+> > > about portability though. It will certainly run on linux, but there 
+> > > could be some issues with Windows.
+> > 
+> > 
+> > Just for the record, we have  direct Gtk bindings from R to 
+> > Gtk. So there is no need to complicate matters introducing an 
+> > intermediate layer, RPy and Python.
+> > 
+> > I have been looking at upgrading the packages to support Gtk2.*
+> 
+> Nice! Do you think it will run under Windows and MacOS too?
+> 
+> Best,
+> 
+> Philippe
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Duncan Temple Lang                duncan@wald.ucdavis.edu
+Department of Statistics          work:  (530) 752-4782
+371 Kerr Hall                     fax:   (530) 752-7099
+One Shields Ave.
+University of California at Davis
+Davis, CA 95616, USA
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 184 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20041109/05a4471c/attachment.bin
+From sorenh at mail.dk  Tue Nov  9 19:24:41 2004
+From: sorenh at mail.dk (=?iso-8859-1?Q?S=F8ren_H=F8jsgaard?=)
+Date: Tue Nov  9 19:25:03 2004
+Subject: [R-gui] Tinn-R beta test
+References: <200411091025.iA9APjHD303120@hedwig1.umh.ac.be>
+Message-ID: <006701c4c689$615005b0$cf58a450@djf.agrsci.dk>
+
+Hi !
+First of all: A very good initiative. Installation without problems. Two 
+suggestions
+- Unless I save the file (presumably with an appropriate extension) I can 
+not submit R code.
+- I was searching for keyboard shortcuts (like Alt-p for submission of code 
+(fragments) as one does with RWinEdt.
+Best regards
+S?ren
+
+
+
+----- Original Message ----- 
+From: "Philippe Grosjean" <phgrosjean@sciviews.org>
+To: <r-sig-gui@stat.math.ethz.ch>
+Cc: "'Jos? Cl?udio Faria'" <joseclaudio.faria@terra.com.br>
+Sent: Tuesday, November 09, 2004 11:23 AM
+Subject: [R-gui] Tinn-R beta test
+
+
+Hello,
+
+We have now decided to freeze the latest Tinn-R version (0.0.9.0 r1.13, see
+http://www.sciviews.org/Tinn-R) and to proceed with a wider beta test. We
+would like to end up with a very stable R code editor (under Windows
+WIN98/2000/XP, sorry for the other platforms) by the end of the year. So,
+this is a call among "R-SIG-GUI-GUYS":
+
+we need beta testers for Tinn-R!
+
+We do not request only "negative" reports (i.e., bugs reports), but also
+"positive" reports (i.e., information about successful installs and testes).
+Thanks.
+Best,
+
+The Tinn-R developers (Jos? Claudio Faria & Philippe Grosjean).
+
+..............................................<?}))><........
+ ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+ ) ) ) ) )   Mons-Hainaut University, Pentagone
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+ ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium
+( ( ( ( (
+ ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+ ) ) ) ) )
+..............................................................
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+From joseclaudio.faria at terra.com.br  Wed Nov 10 02:59:56 2004
+From: joseclaudio.faria at terra.com.br (=?Windows-1252?Q?Jos=E9_Cl=E1udio_Faria?=)
+Date: Wed Nov 10 03:14:36 2004
+Subject: [R-gui] Tinn-R beta test
+References: <200411091227.iA9CQoxM1581274@hedwig1.umh.ac.be>
+Message-ID: <007901c4c6ca$a0263b10$02fea8c0@sapetinga>
+
+Duncan,
+
+Ok, Thank you.
+
+We will see how to implement your suggestion.
+
+Best,
+
+Jos? Cl?udio Faria - Prof. Adjunto/Estat?stica 
+UESC/DCET
+Brasil
+73-634.2779
+joseclaudio.faria@terra.com.br
+jc_faria@uesc.br
+jc_faria@uol.com.br
+----- Original Message ----- 
+From: "Philippe Grosjean" <phgrosjean@sciviews.org>
+To: "'Duncan Murdoch'" <murdoch@stats.uwo.ca>
+Cc: <r-sig-gui@stat.math.ethz.ch>; "'"'Jos? Cl?udio Faria'"'" <joseclaudio.faria@terra.com.br>
+Sent: Tuesday, November 09, 2004 9:24 AM
+Subject: RE: [R-gui] Tinn-R beta test
+
+
+> Hi.  I just installed that version; it looks good.  I 
+> couldn't see what the gutter was for, though.  In Delphi 
+> that's where debug breakpoints are set; do you use it for anything?
+
+It is used to display bookmarks (set them with Ctrl+Shift+[0-9], navigate to
+them with Ctrl+[0-9]).
+
+> One thing I've often thought it could be used for is to mark 
+> a section of the file to be the default submission.  As I'm 
+> editing a function or a section of a script,  I may want to 
+> resubmit it several times; it's inconvenient to use 
+> highlighting for this, because the highlighting is used in editing.
+
+... Or may be a 'submit the whole function' tool would do the job. Excellent
+idea!
+
+Best,
+
+Philippe 
+
+> -----Original Message-----
+> From: Duncan Murdoch [mailto:murdoch@stats.uwo.ca] 
+> Sent: Tuesday, November 09, 2004 11:57 AM
+> To: Philippe Grosjean
+> Cc: r-sig-gui@stat.math.ethz.ch; "'Jos? Cl?udio Faria'"
+> Subject: Re: [R-gui] Tinn-R beta test
+> 
+> On Tue, 9 Nov 2004 11:23:31 +0100, "Philippe Grosjean"
+> <phgrosjean@sciviews.org> wrote:
+> 
+> >Hello,
+> >
+> >We have now decided to freeze the latest Tinn-R version 
+> (0.0.9.0 r1.13, 
+> >see
+> >http://www.sciviews.org/Tinn-R) and to proceed with a wider 
+> beta test. 
+> >We would like to end up with a very stable R code editor 
+> (under Windows 
+> >WIN98/2000/XP, sorry for the other platforms) by the end of 
+> the year. 
+> >So, this is a call among "R-SIG-GUI-GUYS":
+> >
+> >we need beta testers for Tinn-R!
+> >
+> >We do not request only "negative" reports (i.e., bugs reports), but 
+> >also "positive" reports (i.e., information about successful 
+> installs and testes).
+> >Thanks.
+> >Best,
+> >
+> >The Tinn-R developers (Jos? Claudio Faria & Philippe Grosjean). 
+> 
+> Hi.  I just installed that version; it looks good.  I 
+> couldn't see what the gutter was for, though.  In Delphi 
+> that's where debug breakpoints are set; do you use it for anything?
+> 
+> One thing I've often thought it could be used for is to mark 
+> a section of the file to be the default submission.  As I'm 
+> editing a function or a section of a script,  I may want to 
+> resubmit it several times; it's inconvenient to use 
+> highlighting for this, because the highlighting is used in editing.
+> 
+> Duncan Murdoch
+> 
+>
+
+From blindglobe at gmail.com  Wed Nov 10 08:54:35 2004
+From: blindglobe at gmail.com (A.J. Rossini)
+Date: Wed Nov 10 08:55:26 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411091608.iA9G83AZ1306700@hedwig1.umh.ac.be>
+References: <1abe3fa9041109074861759c68@mail.gmail.com>
+	<200411091608.iA9G83AZ1306700@hedwig1.umh.ac.be>
+Message-ID: <1abe3fa9041109235450b26f5c@mail.gmail.com>
+
+I'm quite stalled on work until I settle into a permanent flat in late
+december  (I just relocated to Basel, Switzerland), but at that point
+I'll have a bit of time to finish up some of the IDE work that I've
+coded bits and pieces for.
+
+best,
+-tony
+
+
+
+On Tue, 9 Nov 2004 17:05:48 +0100, Philippe Grosjean
+<phgrosjean@sciviews.org> wrote:
+> A.J. Rossini wrote:
+> 
+> > No, you can build it.  There are a number of variations on
+> > the theme, ranging from using Emacs widgets (as David
+> > mentioned), to using R/S-PLUS as the backend for a
+> > spreadsheet within Emacs (old, old work), to using ESS to
+> > instantiate tcl/tk GUIs, to whatever.
+> >
+> > Just use your imagination ;-).
+> 
+> Is anybody actually working on some GUI implementations using Emacs-ESS,
+> besides your trials, David, and your suggestions, Tony?
+> 
+> I think it should be possible to make a mix between Emacs-ESS and its
+> numerous potentials, and my GUI API for R, together with a little bit of
+> tcltk. The priority would be to make Emacs-ESS more accessible and less
+> intimidating for beginners (by hiding less used functions, by adding more
+> toolbar buttons, by facilitating installation -John Fox's page about
+> installing Emacs-ESS under Windows goes in this direction-...), then to
+> implement something like an object explorer, a views display (in an Emacs
+> buffer?), and the equivalent of the "docking windows" in SciViews R Console
+> which displays menus/electronic reference cards/graph galeries/etc...
+> 
+> I would be happy to collaborate with anybody willing to do so, but for now,
+> I have too much work concentrating on the finalization of the R GUI API to
+> start this myself. As I said, I know really too little about Emacs to be
+> able to start such an entreprise alone.
+> 
+> > But in all seriousness, it's not nearly as limiting as you
+> > are imagining, and much more flexible than most of the
+> > examples you've given.  There is always the problem of
+> > coding, though...
+> 
+> Best,
+> 
+> Philippe
+> 
+> 
+
+
+-- 
+
+best,
+-tony
+
+---
+A.J. Rossini
+blindglobe@gmail.com
+
+From p-eco at rocketmail.com  Wed Nov 10 16:42:23 2004
+From: p-eco at rocketmail.com (Pierre ECOCHARD)
+Date: Wed Nov 10 16:46:50 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411091104.iA9B4fl31761374@hedwig1.umh.ac.be>
+Message-ID: <20041110154223.72111.qmail@web52705.mail.yahoo.com>
+
+> Following my two previous mails about Tinn-R and the
+> R GUI API, I would like
+> to start a discussion about the best toolkit and
+> language to use to
+> implement a GUI for R.
+> 
+> Indeed, I am long waiting something around
+> wxWidgets... But this seems to be
+> further delayed:
+> 
+(...)
+> 
+> So, for now, I am still stuck with my Windows-only
+> solution for a R GUI,
+> just because I do not have the full combination of a
+> complete IDE with a
+> feature-rich-enough graphical toolkit and a flawless
+> R communication with
+> it. All I can do, is to move as much code as
+> possible into R... Hence, the
+> GUI API.
+> 
+> Any idea? Any suggestion?
+
+
+Perhaps you should consider KDE+QT. Most KDE
+application can know easily be ported on windows
+(native -- no need to install an X server), provided
+someone has a QT licence. The Kexi project is a good
+example (http://www.koffice.org/kexi/).
+
+The RKWard project is active again since July
+(http://rkward.sourceforge.net). It could do with more
+developers, for sure.
+
+Pierre
+
+
+	
+
+	
+		
+Vous manquez d?espace pour stocker vos mails ?
+
+From daniele.medri at libero.it  Wed Nov 10 20:43:38 2004
+From: daniele.medri at libero.it (Daniele Medri)
+Date: Wed Nov 10 20:43:49 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <20041110154223.72111.qmail@web52705.mail.yahoo.com>
+References: <20041110154223.72111.qmail@web52705.mail.yahoo.com>
+Message-ID: <200411102043.38918.daniele.medri@libero.it>
+
+Alle 16:42, mercoled? 10 novembre 2004, Pierre ECOCHARD ha scritto:
+> Perhaps you should consider KDE+QT. Most KDE
+> application can know easily be ported on windows
+> (native -- no need to install an X server), provided
+> someone has a QT licence. The Kexi project is a good
+> example (http://www.koffice.org/kexi/).
+>
+> The RKWard project is active again since July
+> (http://rkward.sourceforge.net). It could do with more
+> developers, for sure.
+
+YES Pierre, it's right! RKWard is a great project and actually is the best API 
+realized for that purpose. Recently came sponsor too!
+
+-- 
+Daniele Medri - http://www.medri.org
+
+From phgrosjean at sciviews.org  Thu Nov 11 12:53:43 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Nov 11 12:54:10 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <1abe3fa9041109235450b26f5c@mail.gmail.com>
+Message-ID: <200411111153.iABBrh6H012448@outmx023.isp.belgacom.be>
+
+A.J. Rossini wrote:
+> I'm quite stalled on work until I settle into a permanent 
+> flat in late december  (I just relocated to Basel, 
+> Switzerland), but at that point I'll have a bit of time to 
+> finish up some of the IDE work that I've coded bits and pieces for.
+
+Good! As I previously said, I intend to design the R GUI API in a way it
+could be reused among GUI clients, and on all platforms supported by R
+itself. I want to make sure you will find there functions that will help you
+to add some GUI features to Emacs-ESS. I think you should look, among
+others, at svDialogs (dialog boxes), the various guiObjXXX functions in
+svGUI (to implement an object explorer), and the view/report methods in
+svViews. I am currently working on a manual that explains how all these
+functions work, and how they can be used to help implementing GUI features
+for R.
+
+Regarding the rest of the discussion, with various suggestions in favor of
+such or such graphical toolkit done by other people, I think I have to
+mention that the R GUI API is made in a way it is also independent from a
+particular graphical toolkit. In svDialogs, dialog boxes can be build using
+different graphical toolkits very easily and remain compatible with one
+other. As an example, I have dialog boxes build with tcltk, and the same
+ones build using R-wxPython (but this can be done with little effort using
+Gtk, KDE, etc... too, as soon as they are accessible from withing R!). With
+svDialogs, it is the end user that ultimately decides which graphical
+toolkit he prefers to use, not the programmer. The end user does so simply
+by specifying 'options(guiWidgets = "XXX")', where "XXX" could be "tcltk" or
+"wxPython" (currently), but also "Gtk", "Qt", "Fox" or whatever in the
+future... (see page 98 of the manual: 'toolkit-independent API and toolkit
+implementations', at ftp://ftp.umh.ac.be/pub/ftp_econum/Manual.pdf). In case
+a particular dialog box is not implemented in the choosen graphical toolkit,
+the program switches back automatically to the default one, defined using
+the plain 'tcltk' package only. Here we just need volunteers to implement
+toolkit-specific features of these dialog boxes.
+
+Well, I would say to conclude this little discussion that nobody really
+catches my request about a platform-independent solution for the GUI
+clients... It is not just menus and dialog boxes, it is something more
+complex, as SciViews R Console is... but only for Windows currently. It
+needs very sophisticated widgets, like a HTML browser widget CSS and
+javascript capabilities, an advanced code editor widget like Scintilla,
+etc...  These can be found in different places, but considering the coding
+difficulties, I am not yet convinced to switch to a different
+language/graphical toolkit/IDE than the ones I currently use. I think it is
+still too soon to move to another solution for that particular GUI client. I
+realize that the best I have to do is to continue its development until
+version 1.0 as it stands (i.e., a Windows-only solution), but to prepare the
+future and to devote more time and energy in buiding the
+platform-independent R GUI API, and as the utmost priority, to document,
+promote and collaborate with everybody wanting to discover or use the R GUI
+API I am setting up.
+
+The various topics I am willing to offer collaboration with the R GUI API
+are:
+1) help to further develop, debug and enhance the R GUI API itself, of
+course. In particular, I would be particularly happy with any initiative to
+implement dialog boxes proposed in svDialogs for various other graphical
+toolkits. Also, I have a first trial using AutoIt
+(http://www.hiddensoft.com/autoit3/; under Windows only, unfortunatelly) to
+automate tests of R functions involving GUI stuff (together with RUnit?).
+
+2) help in developing simple platform-independent GUI interfaces for most
+important features in this GUI API using the plain tcltk package provided
+with R (+ possibly the tcltk2 package in the SciViews bundle once it will be
+made platform-independent). Among others, this would consist in: (1) an
+object explorer, (2) a "views" display window (in the sense of those defined
+in svViews) and (3) menus/graph galeries/electronic reference cards, etc...
+as currently implemented in the docking windows of SciViews R Console.
+
+3) any initiative to continue the integration of Python + wxWidgets with R
+(it still remains my preferred way!), that is: either to continue James
+Wettenhall's project using RSPython + R-wxPython package, or a different
+solution, possibly using Rpy. I would definitely support dialog boxes with
+such a solution in my svDialogs package.
+
+4) I am interested by integration of various projects together. It is no
+longer a secret that I support R Commander and work on solutions to
+integrate it with SciViews-R. The SciViews R GUI API could possibly benefit
+to R Commander by means of its graphical toolkit-independent dialog boxes in
+the future. Also, I think Rpad could be a better choice for the report
+editor than the current SciViews R Report application (of course, Rpad is
+more than that...).
+
+5) I like the idea of an addition of GUI features to Emacs-ESS because this
+user interface is platform-independent, mature and powerful. I would be
+happy if the R GUI API could help somehow here. 
+
+As you can see, there is a lot to do, in addition to the writing and
+documentation of the R GUI API itself. It will ony make its way if I get
+help... So, it is up to you, "R-SIG-GUI-GUYS" to decide if it is worth
+developing and implementing solutions with the R GUI API or not!
+
+Best,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+ ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+ ) ) ) ) )   Mons-Hainaut University, Pentagone
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+ ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium  
+( ( ( ( (       
+ ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )      
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+ ) ) ) ) )
+..............................................................
+
+From blindglobe at gmail.com  Thu Nov 11 13:24:43 2004
+From: blindglobe at gmail.com (A.J. Rossini)
+Date: Thu Nov 11 13:24:55 2004
+Subject: [R-gui] Platform-independent GUI for R... again
+In-Reply-To: <200411111153.iABBrh6H012448@outmx023.isp.belgacom.be>
+References: <1abe3fa9041109235450b26f5c@mail.gmail.com>
+	<200411111153.iABBrh6H012448@outmx023.isp.belgacom.be>
+Message-ID: <1abe3fa9041111042425eb59f@mail.gmail.com>
+
+Good points all, and I'm in general agreement with most of your
+points.  I'll be looking at this again in mid December, probably;
+mostly due to resource issues.
+
+best,
+-tony
+
+
+On Thu, 11 Nov 2004 12:53:43 +0100, Philippe Grosjean
+<phgrosjean@sciviews.org> wrote:
+> A.J. Rossini wrote:
+> > I'm quite stalled on work until I settle into a permanent
+> > flat in late december  (I just relocated to Basel,
+> > Switzerland), but at that point I'll have a bit of time to
+> > finish up some of the IDE work that I've coded bits and pieces for.
+> 
+> Good! As I previously said, I intend to design the R GUI API in a way it
+> could be reused among GUI clients, and on all platforms supported by R
+> itself. I want to make sure you will find there functions that will help you
+> to add some GUI features to Emacs-ESS. I think you should look, among
+> others, at svDialogs (dialog boxes), the various guiObjXXX functions in
+> svGUI (to implement an object explorer), and the view/report methods in
+> svViews. I am currently working on a manual that explains how all these
+> functions work, and how they can be used to help implementing GUI features
+> for R.
+> 
+> Regarding the rest of the discussion, with various suggestions in favor of
+> such or such graphical toolkit done by other people, I think I have to
+> mention that the R GUI API is made in a way it is also independent from a
+> particular graphical toolkit. In svDialogs, dialog boxes can be build using
+> different graphical toolkits very easily and remain compatible with one
+> other. As an example, I have dialog boxes build with tcltk, and the same
+> ones build using R-wxPython (but this can be done with little effort using
+> Gtk, KDE, etc... too, as soon as they are accessible from withing R!). With
+> svDialogs, it is the end user that ultimately decides which graphical
+> toolkit he prefers to use, not the programmer. The end user does so simply
+> by specifying 'options(guiWidgets = "XXX")', where "XXX" could be "tcltk" or
+> "wxPython" (currently), but also "Gtk", "Qt", "Fox" or whatever in the
+> future... (see page 98 of the manual: 'toolkit-independent API and toolkit
+> implementations', at ftp://ftp.umh.ac.be/pub/ftp_econum/Manual.pdf). In case
+> a particular dialog box is not implemented in the choosen graphical toolkit,
+> the program switches back automatically to the default one, defined using
+> the plain 'tcltk' package only. Here we just need volunteers to implement
+> toolkit-specific features of these dialog boxes.
+> 
+> Well, I would say to conclude this little discussion that nobody really
+> catches my request about a platform-independent solution for the GUI
+> clients... It is not just menus and dialog boxes, it is something more
+> complex, as SciViews R Console is... but only for Windows currently. It
+> needs very sophisticated widgets, like a HTML browser widget CSS and
+> javascript capabilities, an advanced code editor widget like Scintilla,
+> etc...  These can be found in different places, but considering the coding
+> difficulties, I am not yet convinced to switch to a different
+> language/graphical toolkit/IDE than the ones I currently use. I think it is
+> still too soon to move to another solution for that particular GUI client. I
+> realize that the best I have to do is to continue its development until
+> version 1.0 as it stands (i.e., a Windows-only solution), but to prepare the
+> future and to devote more time and energy in buiding the
+> platform-independent R GUI API, and as the utmost priority, to document,
+> promote and collaborate with everybody wanting to discover or use the R GUI
+> API I am setting up.
+> 
+> The various topics I am willing to offer collaboration with the R GUI API
+> are:
+> 1) help to further develop, debug and enhance the R GUI API itself, of
+> course. In particular, I would be particularly happy with any initiative to
+> implement dialog boxes proposed in svDialogs for various other graphical
+> toolkits. Also, I have a first trial using AutoIt
+> (http://www.hiddensoft.com/autoit3/; under Windows only, unfortunatelly) to
+> automate tests of R functions involving GUI stuff (together with RUnit?).
+> 
+> 2) help in developing simple platform-independent GUI interfaces for most
+> important features in this GUI API using the plain tcltk package provided
+> with R (+ possibly the tcltk2 package in the SciViews bundle once it will be
+> made platform-independent). Among others, this would consist in: (1) an
+> object explorer, (2) a "views" display window (in the sense of those defined
+> in svViews) and (3) menus/graph galeries/electronic reference cards, etc...
+> as currently implemented in the docking windows of SciViews R Console.
+> 
+> 3) any initiative to continue the integration of Python + wxWidgets with R
+> (it still remains my preferred way!), that is: either to continue James
+> Wettenhall's project using RSPython + R-wxPython package, or a different
+> solution, possibly using Rpy. I would definitely support dialog boxes with
+> such a solution in my svDialogs package.
+> 
+> 4) I am interested by integration of various projects together. It is no
+> longer a secret that I support R Commander and work on solutions to
+> integrate it with SciViews-R. The SciViews R GUI API could possibly benefit
+> to R Commander by means of its graphical toolkit-independent dialog boxes in
+> the future. Also, I think Rpad could be a better choice for the report
+> editor than the current SciViews R Report application (of course, Rpad is
+> more than that...).
+> 
+> 5) I like the idea of an addition of GUI features to Emacs-ESS because this
+> user interface is platform-independent, mature and powerful. I would be
+> happy if the R GUI API could help somehow here.
+> 
+> As you can see, there is a lot to do, in addition to the writing and
+> documentation of the R GUI API itself. It will ony make its way if I get
+> help... So, it is up to you, "R-SIG-GUI-GUYS" to decide if it is worth
+> developing and implementing solutions with the R GUI API or not!
+> 
+> Best,
+> 
+> Philippe Grosjean
+> 
+> ..............................................<?}))><........
+> ) ) ) ) )
+> ( ( ( ( (    Prof. Philippe Grosjean
+> ) ) ) ) )
+> ( ( ( ( (    Numerical Ecology of Aquatic Systems
+> ) ) ) ) )   Mons-Hainaut University, Pentagone
+> ( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+> ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium
+> ( ( ( ( (
+> ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+> ( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+> ) ) ) ) )
+> ( ( ( ( (    web:   http://www.umh.ac.be/~econum
+> ) ) ) ) )
+> ..............................................................
+> 
+> 
+
+
+-- 
+
+best,
+-tony
+
+---
+A.J. Rossini
+blindglobe@gmail.com
+
+From phgrosjean at sciviews.org  Wed Nov 17 10:53:28 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Wed Nov 17 10:53:49 2004
+Subject: [R-gui] The hidden costs of GPL software?
+Message-ID: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+
+Hello,
+
+In the latest 'Scientific Computing World' magazine (issue 78, p. 22), there
+is a review on free statistical software by Felix Grant ("doesn't have to
+pay good money to obtain good statistics software"). As far as I know, this
+is the first time that R is even mentioned in this magazine, given that it
+usually discuss commercial products.
+
+In this article, the analysis of R is interesting. It is admitted that R is
+a great software with lots of potentials, but: "All in all, R was a good
+lesson in the price that may have to be paid for free software: I spent many
+hours relearning some quite basic things taken for granted in the commercial
+package." Those basic things are releated with data import, obtention of
+basic plots, etc... with a claim for a missing more intuitive GUI in order
+to smooth a little bit the learning curve.
+
+There are several R GUI projects ongoing, but these are progressing very
+slowly. The main reason is, I believe, that a relatively low number of
+programmers working on R are interested by this field. Most people wanting
+such a GUI are basic user that do not (cannot) contribute... And if they
+eventually become more knowledgeable, they tend to have other interests.
+
+So, is this analysis correct: are there hidden costs for free software like
+R in the time required to learn it? At least currently, for the people I
+know (biologists, ecologists, oceanographers, ...), this is perfectly true.
+This is even an insurmountable barrier for many of them I know, and they
+have given up (they come back to Statistica, Systat, or S-PLUS using
+exclusively functions they can reach through menus/dialog boxes).
+
+Of course, the solution is to have a decent GUI for R, but this is a lot of
+work, and I wonder if the intrinsic mechanism of GPL is not working against
+such a development (leading to a very low pool of programmers actively
+involved in the elaboration of such a GUI, in comparison to the very large
+pool of competent developers working on R itself).
+
+Do not misunderstand me: I don't give up with my GUI project, I am just
+wondering if there is a general, ineluctable mechanism that leads to the
+current R / R GUI situation as it stands,... and consequently to a "general
+rule" that there are indeed most of the time "hidden costs" in free
+software, due to the larger time required to learn it. I am sure there are
+counter-examples, however, my feeling is that, for Linux, Apache, etc... the
+GUI (if there is one) is often a way back in comparison to the potentials in
+the software, leading to a steep learning curve in order to use all these
+features.
+
+I would be interested by your impressions and ideas on this topic.
+
+Best regards,
+
+Philippe Grosjean  
+
+..............................................<?}))><........
+ ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+ ) ) ) ) )   Mons-Hainaut University, Pentagone
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+ ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium  
+( ( ( ( (       
+ ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )      
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+ ) ) ) ) )
+..............................................................
+
+From jps at srres.com  Wed Nov 17 11:49:24 2004
+From: jps at srres.com (Jan P. Smit)
+Date: Wed Nov 17 11:45:09 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+Message-ID: <419B2CB4.7010708@srres.com>
+
+Dear Phillippe,
+
+Very interesting. The URL of the article is 
+http://www.scientific-computing.com/scwsepoct04free_statistics.html.
+
+Best regards,
+
+Jan Smit
+
+
+Philippe Grosjean wrote:
+> Hello,
+> 
+> In the latest 'Scientific Computing World' magazine (issue 78, p. 22), there
+> is a review on free statistical software by Felix Grant ("doesn't have to
+> pay good money to obtain good statistics software"). As far as I know, this
+> is the first time that R is even mentioned in this magazine, given that it
+> usually discuss commercial products.
+> 
+> In this article, the analysis of R is interesting. It is admitted that R is
+> a great software with lots of potentials, but: "All in all, R was a good
+> lesson in the price that may have to be paid for free software: I spent many
+> hours relearning some quite basic things taken for granted in the commercial
+> package." Those basic things are releated with data import, obtention of
+> basic plots, etc... with a claim for a missing more intuitive GUI in order
+> to smooth a little bit the learning curve.
+> 
+> There are several R GUI projects ongoing, but these are progressing very
+> slowly. The main reason is, I believe, that a relatively low number of
+> programmers working on R are interested by this field. Most people wanting
+> such a GUI are basic user that do not (cannot) contribute... And if they
+> eventually become more knowledgeable, they tend to have other interests.
+> 
+> So, is this analysis correct: are there hidden costs for free software like
+> R in the time required to learn it? At least currently, for the people I
+> know (biologists, ecologists, oceanographers, ...), this is perfectly true.
+> This is even an insurmountable barrier for many of them I know, and they
+> have given up (they come back to Statistica, Systat, or S-PLUS using
+> exclusively functions they can reach through menus/dialog boxes).
+> 
+> Of course, the solution is to have a decent GUI for R, but this is a lot of
+> work, and I wonder if the intrinsic mechanism of GPL is not working against
+> such a development (leading to a very low pool of programmers actively
+> involved in the elaboration of such a GUI, in comparison to the very large
+> pool of competent developers working on R itself).
+> 
+> Do not misunderstand me: I don't give up with my GUI project, I am just
+> wondering if there is a general, ineluctable mechanism that leads to the
+> current R / R GUI situation as it stands,... and consequently to a "general
+> rule" that there are indeed most of the time "hidden costs" in free
+> software, due to the larger time required to learn it. I am sure there are
+> counter-examples, however, my feeling is that, for Linux, Apache, etc... the
+> GUI (if there is one) is often a way back in comparison to the potentials in
+> the software, leading to a steep learning curve in order to use all these
+> features.
+> 
+> I would be interested by your impressions and ideas on this topic.
+> 
+> Best regards,
+> 
+> Philippe Grosjean  
+> 
+> ..............................................<?}))><........
+>  ) ) ) ) )
+> ( ( ( ( (    Prof. Philippe Grosjean
+>  ) ) ) ) )
+> ( ( ( ( (    Numerical Ecology of Aquatic Systems
+>  ) ) ) ) )   Mons-Hainaut University, Pentagone
+> ( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+>  ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium  
+> ( ( ( ( (       
+>  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+> ( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+>  ) ) ) ) )      
+> ( ( ( ( (    web:   http://www.umh.ac.be/~econum
+>  ) ) ) ) )
+> ..............................................................
+> 
+> ______________________________________________
+> R-help@stat.math.ethz.ch mailing list
+> https://stat.ethz.ch/mailman/listinfo/r-help
+> PLEASE do read the posting guide! http://www.R-project.org/posting-guide.html
+>
+
+From Ted.Harding at nessie.mcc.ac.uk  Wed Nov 17 13:34:31 2004
+From: Ted.Harding at nessie.mcc.ac.uk ( (Ted Harding))
+Date: Wed Nov 17 13:48:10 2004
+Subject: [R-gui] RE: [R] The hidden costs of GPL software?
+In-Reply-To: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+Message-ID: <XFMail.041117123431.Ted.Harding@nessie.mcc.ac.uk>
+
+On 17-Nov-04 Philippe Grosjean wrote:
+> Hello,
+> 
+> In the latest 'Scientific Computing World' magazine
+> (issue 78, p. 22), there is a review on free statistical
+> software by Felix Grant ("doesn't have to pay good money
+> to obtain good statistics software"). As far as I know,
+> this is the first time that R is even mentioned in this
+> magazine, given that it usually discuss commercial products.
+
+Hi Philippe,
+Thanks for a most interesting post on this question. Further
+comments below. Felix Grant's article is excellent, and well
+balanced.
+
+> In this article, the analysis of R is interesting. It is
+> admitted that R is a great software with lots of potentials,
+> but: "All in all, R was a good lesson in the price that may
+> have to be paid for free software: I spent many hours
+> relearning some quite basic things taken for granted in the
+> commercial package." Those basic things are releated with
+> data import, obtention of basic plots, etc... with a claim
+> for a missing more intuitive GUI in order to smooth a little
+> bit the learning curve.
+
+It would better represent the balanced view of the article
+to further quote:
+
+  "In fact, the whole file menu in R looks either elegantly
+   uncluttered of frightenly obscure, depending on your point
+   of view."
+
+  "It [the effort of learning] is the price paid, just as the
+   dollars or euros for a commercial package would be. For
+   that price, I've learned a great deal -- and nor only
+   about R. And I shall remember it when I next have to find
+   a heavyweight solution for a big problem presented by a
+   small charitable client with an invisible budget. It's a
+   huge, awe-inspiring package -- easier to perceive as such
+   because the power is not hidden beneath a cosmetic veneer."
+
+This last remark is, in my view, particularly significant.
+See below.
+
+> There are several R GUI projects ongoing, but these are
+> progressing very slowly. The main reason is, I believe,
+> that a relatively low number of programmers working on R
+> are interested by this field. Most people wanting such a
+> GUI are basic user that do not (cannot) contribute... 
+> And if they eventually become more knowledgeable, they
+> tend to have other interests.
+> 
+> So, is this analysis correct: are there hidden costs for
+> free software like R in the time required to learn it?
+> At least currently, for the people I know (biologists,
+> ecologists, oceanographers, ...), this is perfectly true.
+> This is even an insurmountable barrier for many of them
+> I know, and they have given up (they come back to Statistica,
+> Systat, or S-PLUS using exclusively functions they can
+> reach through menus/dialog boxes).
+
+Non-GUI vs GUI is not intrinsically linked to Free Software
+as such. There are well-known FS programs which are essentially
+GUI-based -- as an easy example, consider all the FS Web
+Browsers such as Netscape, Mozilla, ... . If you want the
+graphics experiences offered by the Web, you're in a graphics
+screen anyway, and so it may as well be programmed around
+a GUI. Others, such as OpenOffice, have deliberately built
+on a GUI approach in order to emulate The Other Thing.
+
+There are a lot of FS programs which offer a GUI, usually
+somewhat on the basic side, which nonetheless encapsulates
+the entire functionality of the program and saves the user
+the task of composing a possibly complex command-line or
+even a script.
+
+The comment "hidden beneath a cosmetic veneer" is, in my
+view, somewhat directly linked to commercial software.
+If you sell software, you want a big market. So you want
+to include the people who will never learn how to work
+software from a command line; and the sweeter the taste of
+the eye candy, the more such people will feel enjoyment
+in using the software. The fact that their usage is limited
+to what has been pre-programmed into the menus is not going
+to affect many such people, since typically their useage
+is limited to a very small subset of what is in fact possible.
+This in turn leads, of course, to the phenomenon of
+"software-driven analysis", where people only do what the
+GUI allows (or, more precisely, easily allows); and this
+leads on in turn to a culture in which people tend to believe
+that Statistics is what they can do with a particular
+software package.
+
+S-Plus does its best to compromise: as well as GUI access
+to a pretty wide range of functions, there is the Command
+Line Window where the user can explicitly type in commands.
+(I dare say many R users, in S-Plus, may tend to work in
+the latter since they are already used to it.) But, as always
+in a GUI, one can tend to get lost in the ramifications.
+Also, things like the big arrays of tiny icons you get when
+you click on the "2D Plots" or "3D Plots" buttons in the
+S-Plus toolbar can be trying on the eyes and time-consuming
+to pick through.
+
+> Of course, the solution is to have a decent GUI for R,
+> but this is a lot of work, and I wonder if the intrinsic
+> mechanism of GPL is not working against such a development
+> (leading to a very low pool of programmers actively involved
+> in the elaboration of such a GUI, in comparison to the very
+> large pool of competent developers working on R itself).
+> 
+> Do not misunderstand me: I don't give up with my GUI project,
+> I am just wondering if there is a general, ineluctable
+> mechanism that leads to the current R / R GUI situation as
+> it stands,... and consequently to a "general rule" that
+> there are indeed most of the time "hidden costs" in free
+> software, due to the larger time required to learn it.
+> I am sure there are counter-examples, however, my feeling
+> is that, for Linux, Apache, etc... the GUI (if there is one)
+> is often a way back in comparison to the potentials in
+> the software, leading to a steep learning curve in order to
+> use all these features.
+
+Often, I think, in the Free Software world, people get involved
+because they want to produce something which achieves a task.
+Once they have a program which does that, then their aim is
+satisfied. The GUI, in many cases, would be additional work
+which would add nothing to what the software can do in terms
+of tasks to be achieved. So in such cases, yes, I would tend
+to agree that there is an intrinsic mechanism that discourages
+work on a GUI for its own sake. You can add to that the fact
+that once a developer has got to the point of creating such
+software, successful in the tasks, they may have got beyond
+the point at which they can readily sympathise with users who
+have not acquired such skills: they no longer perceive, from
+their own experience, that there is a problem.
+
+However, this leaves people like you, having colleagues who
+"come back to Statistica, Systat, or S-PLUS using exclusively
+functions they can reach through menus/dialog boxes." By this
+experience, you are aware of the problem, and rightly feel
+that they would be helped by having access to the sort of
+GUI/Menu interface that they are used to using.
+
+One genuine benefit that the GUI offers, especially to
+beginners with a particular software package, is that the
+resources of the software can perhaps more easily and rapidly
+be explored through the GUI, rather than searching laboriously
+through the documentation of functions, extra packages, and
+so on. This means that they more readily come to perceive
+what is available though of course this is limited to what
+the GUI will show them. But a good "Help" window can break
+that barrier.
+
+Perhaps R itself is less helpful than it might be in this
+respect. The R-help list bristles with queries of the form
+"How can I do X?", which I think is evidence of a problem.
+While some of these queries clearly originate from people
+who have taken no trouble to explore readily accessible
+information, many others can not be so easily dismissed.
+
+If you know something about what you're after, once you
+realise that a judiciously formulated "help.search" can
+throw up a lot of possibilities you are well on your way.
+So, for instance (as in a recent query about 2-D Fourier
+transform for spatial data) 'help.search("fourier")' gives
+relevant information.
+
+This, though, still fails for information in packages which
+you have not installed. Perhaps I'm about to reveal my own
+culpable ignorance here, but I'm not aware of a "full R info"
+package which would be installed as part of R-base, being
+a database of info about R-base itself and also every current
+additional package, such that a "help.search" would show
+all resources -- including those not installed -- which
+match a query (and flag the non-installed ones as such so
+that the user knows what to install for a particular purpose).
+
+Whether this needs to be supplemented by a GUI is a point
+that could be discussed from several points of view.
+Philippe's biological/oceanographic users no doubt would
+be considerably helped, provided they can in due course
+come to the point where they can start to work "beyond
+the GUI" (if indeed they need to).
+
+Personally, however, I find that GUI work is slower and
+more error-prone than command-line work. Swanning the
+mouse around the screen, visually idebtifying icons and
+buttons, clicking on this and that in order to see whether
+it's what you want, and so on, is much more time-consuming
+than typiing in a command.
+And God help you if you accidentally click on something
+destructive!
+
+I'll close with an immortal quotation (from Charles Curran,
+of the UK Unix Users Group):
+
+  "I can touch-type, but I can't touch-mouse"
+
+Best wishes to all,
+Ted.
+
+> I would be interested by your impressions and ideas on this topic.
+> 
+> Best regards,
+> 
+> Philippe Grosjean  
+> 
+> ..............................................<?}))><........
+
+                                                   /\
+                                                 /   |
+  .............................<?}))><........  :)    >=---
+                                                 \   |
+                                                   \/
+
+Best wishes to all,
+Ted.
+
+
+--------------------------------------------------------------------
+E-Mail: (Ted Harding) <Ted.Harding@nessie.mcc.ac.uk>
+Fax-to-email: +44 (0)870 094 0861  [NB: New number!]
+Date: 17-Nov-04                                       Time: 12:34:31
+------------------------------ XFMail ------------------------------
+
+From baron at psych.upenn.edu  Wed Nov 17 14:47:09 2004
+From: baron at psych.upenn.edu (Jonathan Baron)
+Date: Wed Nov 17 14:47:24 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <XFMail.041117123431.Ted.Harding@nessie.mcc.ac.uk>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+	<XFMail.041117123431.Ted.Harding@nessie.mcc.ac.uk>
+Message-ID: <20041117134709.GA3117@psych>
+
+On 11/17/04 12:34, Ted Harding wrote:
+>This, though, still fails for information in packages which
+>you have not installed. Perhaps I'm about to reveal my own
+>culpable ignorance here, but I'm not aware of a "full R info"
+>package which would be installed as part of R-base, being
+>a database of info about R-base itself and also every current
+>additional package, such that a "help.search" would show
+>all resources -- including those not installed -- which
+>match a query (and flag the non-installed ones as such so
+>that the user knows what to install for a particular purpose).
+
+This is one of the purpose of my R search page.  I have all
+packages installed.  You can also search the help list, etc., in
+the same search.  Some people have bookmarks for it.  Of course
+you need to be connected to the internet.
+
+I think that any attempt to replicate this for a single user, or
+even the packages, would be difficult.
+
+BUT, it might help to install just the help pages for all
+packages, without the packages themselves.  Then help.search()
+would find things.  (I have no interest in figuring out how to do
+this, but maybe someone else does.)
+
+Jon
+-- 
+Jonathan Baron, Professor of Psychology, University of Pennsylvania
+Home page: http://www.sas.upenn.edu/~baron
+R search page: http://finzi.psych.upenn.edu/
+
+From pburns at pburns.seanet.com  Wed Nov 17 15:27:49 2004
+From: pburns at pburns.seanet.com (Patrick Burns)
+Date: Wed Nov 17 15:29:58 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <419B2CB4.7010708@srres.com>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+	<419B2CB4.7010708@srres.com>
+Message-ID: <419B5FE5.8040009@pburns.seanet.com>
+
+I'm a big advocate -- perhaps even fanatic -- of  making R easier for
+novices in order to spread its use, but I'm not convinced that  a GUI
+(at least in the traditional form) is the most valuable approach.
+
+Perhaps an overly harsh summary of some of Ted Harding's statements
+is: You can make a truck easier to get into by taking off the wheels, but
+that doesn't make it more useful.
+
+In terms of GUIs, I think what R should focus on is the ability for  user's
+to make their own specialized GUI.  So that a knowledgeable programmer
+at an installation can create a system that is easy for unsophisticated
+users for the limited number of tasks that are to be done.  The ultimate
+users may not even need to know that R exists.
+
+I think Ted Harding was on  the mark when he said that it is the help
+system that needs enhancement.  I can imagine a system that gets the
+user to the right function and then helps fill in the arguments; all of the
+time pointing them towards the command line rather than away from
+it.
+
+The author of the referenced article highlighted some hidden costs of R,
+but did not highlight the hidden benefits (because they were hidden from
+him).  A big benefit of R is all of the bugs that aren't in it (which may or
+may not be due to its free status).
+
+Patrick Burns
+
+Burns Statistics
+patrick@burns-stat.com
++44 (0)20 8525 0696
+http://www.burns-stat.com
+(home of S Poetry and "A Guide for the Unwilling S User")
+
+Jan P. Smit wrote:
+
+> Dear Phillippe,
+>
+> Very interesting. The URL of the article is 
+> http://www.scientific-computing.com/scwsepoct04free_statistics.html.
+>
+> Best regards,
+>
+> Jan Smit
+>
+>
+> Philippe Grosjean wrote:
+>
+>> Hello,
+>>
+>> In the latest 'Scientific Computing World' magazine (issue 78, p. 
+>> 22), there
+>> is a review on free statistical software by Felix Grant ("doesn't 
+>> have to
+>> pay good money to obtain good statistics software"). As far as I 
+>> know, this
+>> is the first time that R is even mentioned in this magazine, given 
+>> that it
+>> usually discuss commercial products.
+>>
+[ ...]
+
+>>
+>
+>
+
+From murdoch at stats.uwo.ca  Wed Nov 17 15:57:05 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Wed Nov 17 15:58:22 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <419B5FE5.8040009@pburns.seanet.com>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+	<419B2CB4.7010708@srres.com> <419B5FE5.8040009@pburns.seanet.com>
+Message-ID: <2qomp0lbje3evtcp245vbe0lqgk2nfvore@4ax.com>
+
+On Wed, 17 Nov 2004 14:27:49 +0000, Patrick Burns
+<pburns@pburns.seanet.com> wrote :
+
+>In terms of GUIs, I think what R should focus on is the ability for  user's
+>to make their own specialized GUI.  So that a knowledgeable programmer
+>at an installation can create a system that is easy for unsophisticated
+>users for the limited number of tasks that are to be done.  The ultimate
+>users may not even need to know that R exists.
+
+I think there is (slow) movement towards that.  Certainly it's
+possible now (you can add menus to Rgui in Windows, you can do nice
+things like Rcmdr using TCL/TK on any platform).   However, designing
+a nice GUI is very hard work.
+
+>I think Ted Harding was on  the mark when he said that it is the help
+>system that needs enhancement.  I can imagine a system that gets the
+>user to the right function and then helps fill in the arguments; all of the
+>time pointing them towards the command line rather than away from
+>it.
+
+That would be helpful, and the only really difficult part would be the
+first part:  getting the user to the right function.  help.search()
+sometimes works, but often people ask for the wrong thing.
+
+After that, R knows a lot about the structure of its help files, so it
+could display all of the arguments with their defaults and the help
+text that corresponds to each argument, as well as the help text for
+the rest of the help file.
+
+Probably the main obstacle to getting this is finding someone with the
+time and interest to do it.
+
+Duncan Murdoch
+
+From Mike.Prager at noaa.gov  Wed Nov 17 21:55:11 2004
+From: Mike.Prager at noaa.gov (Mike Prager)
+Date: Wed Nov 17 21:55:28 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+Message-ID: <6.1.2.0.2.20041117151226.01eb1170@hermes.nos.noaa.gov>
+
+This has been an interesting discussion. I make the following comment with 
+hesitation, since I have neither the time nor the ability to implement it 
+myself.
+
+Using CLI software, an infrequent user has trouble remembering the known 
+functions needed and trouble finding new ones (especially as that user gets 
+older).  What might help is an added help facility more oriented towards 
+tasks, rather than structured around functions or packages.
+
+Such a help facility might have a tree structure.
+
+Want help?  Are you looking for information on (1) data manipulation or (2) 
+analysis?  If (1), do you want to to (3) import or export data, (4) 
+transform data, (5) reshape data, or (6) select data?  If (2), do you want 
+to (7) fit a model or (8) make a graph?  And so on....
+
+Once appropriate function(s) are located, the user would be directed (by 
+hyperlinks) to the existing help framework.
+
+That could help the problem of knowing what you want to do, but not what it 
+is called.  I think that "Introductory Statistics with R" is a step in that 
+direction for the basics, as MASS is for more complex matters.  The 
+question is whether such material can be incorporated into a help system 
+that will allow users to find, more easily, what they need.  That largely 
+depends, it seems to me, on a great deal of work by volunteers.
+
+I agree also with the suggestion that a dedicated editor (or add-in) that 
+could supply arguments for functions might be considerable help.
+
+MHP
+
+
+-- 
+Michael Prager, Ph.D.
+Population Dynamics Team, NMFS SE Fisheries Science Center
+NOAA Center for Coastal Fisheries and Habitat Research
+Beaufort, North Carolina  28516
+http://shrimp.ccfhrb.noaa.gov/~mprager/
+
+From phgrosjean at sciviews.org  Wed Nov 17 22:37:32 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Wed Nov 17 22:38:10 2004
+Subject: [R-gui] RE: [R] The hidden costs of GPL software?
+In-Reply-To: <419B96C9.3030108@pdf.com>
+Message-ID: <200411172137.iAHLbZad028789@outmx004.isp.belgacom.be>
+
+Thank you all (+ a couple of offline comments) on this topic.
+To summarize your comments:
+
+- "Hidden" costs, may be better called "indirect" costs are not so easy to
+calculate. In the cited paper
+http://www.scientific-computing.com/scwsepoct04free_statistics.html, there
+is an interesting advice from a people used to test and wrote about
+commercial software. Indeed, the whole context around the use of a
+(statistical) software should be taken into account, which would reveil also
+indirect costs for commercial packages. Indeed, it is the Total Cost of
+Ownership (TCO) that should be better considered in this context.
+
+- This discussion is connected with the many discussions pro/cons for a R
+GUI, or any other tool that will facilitate use of R, but loosing one big
+advantage: currently, you have to know what you are doing to get a result
+with R... What kind of nonsenses would we get from naive people if they can
+obtain results with no, or little knowledge?
+
+- R is viewed by some as a statistical development platform, mainly for the
+scientific community. It excels there, but, is it even desirable to get it
+also used "by the mass"?
+
+- ***Many of you claim for a better help system to find a function more
+easily, than for a GUI***. I think this point is very important and should
+be placed somewhere high in the "to do" list in order to make R more
+accessible to beginners/occasional users!
+
+- There is no possibility to make a commercial GUI for R (thanks to the
+GPL), and volunteer R developers tend to work on a problem until they get
+the solution they need... And this rarely lead to the development of a GUI
+on top of it, conserning statistical analyses. In this way, yes, there is an
+intrinsic mechanism that makes R a program by experts, for experts.
+
+- A GUI could cover only the bare essentials, is rather unflexible, etc...
+For all these reasons, how would it help to learn such a feature-rich
+environment as R? This is not the solution to the problem.
+
+- It is more a question of education: it takes so much time to find a
+function in a menu/dialog box, than to consult help pages to find the right
+function. However, some categories of people are more accustomished to click
+and drag that to read help pages!
+
+- GUIs, by providing access to a limited amount of analyses in an inflexible
+way, lead to the phenomenon of "software-driven analysis" where the way data
+are analyzed is dependent on the software used.
+
+- Only commercial software care about eye candy stuffs to get clients more
+happy to use their software (and thus to sell more); "hidden beneath a
+cosmetic veneer" in the original paper. R does not care, because there is
+nothing to sell. So, as a consequence, you face the bare power, but sorry,
+no eye candy!
+
+- GUI work is slower and more error-prone... So, this should be considered
+in the hidden costs AFTER the learning stage... in favor of R!
+
+- "User-friendly" software tend to make a lot of assumptions (to present the
+analysis in an easier way), and does not tell about it. These could lead to
+nonsenses in some case, and the user even don't know, precisely because
+these assumptions are not explained!
+
+- The author of the paper talks about hidden costs, but he does not talk
+about hidden benefits, because he does even not notice them: ***all the bugs
+that aren't in it*** (I add: transparence in code + possibility for everyone
+to propose a patch = a big part of the success of Open Source software,
+especially for data analysis software)!
+
+That's all, I think, for the summary!
+
+Otherwise:
+Patrick Burns <pburns@pburns.seanet.com> wrote :
+>[...]
+>I think Ted Harding was on  the mark when he said that it is the help 
+>system that needs enhancement.  I can imagine a system that gets the 
+>user to the right function and then helps fill in the arguments; all of 
+>the time pointing them towards the command line rather than away from 
+>it.
+
+Duncan Murdoch [murdoch@stats.uwo.ca] answered:
+>That would be helpful, and the only really difficult part would be the
+>first part:  getting the user to the right function.  help.search()
+>sometimes works, but often people ask for the wrong thing.
+
+>After that, R knows a lot about the structure of its help files, so it
+>could display all of the arguments with their defaults and the help text
+>that corresponds to each argument, as well as the help text for the rest
+>of the help file.
+
+>Probably the main obstacle to getting this is finding someone with the
+>time and interest to do it.
+
+Humm, excuse me, but I think that SciViews and JGR *already* do that,... So
+it appears that at least two people already spend their time and got their
+interest focused on this topic. Also, functions for such purposes will be
+added to the R GUI API... Meaning they will be available for a wider use.
+And I am close to a solution under Windows where hitting a combination of
+keys in ANY program will display a function tip with arguments, or a
+contextual completion list for R code.
+
+Finally:
+
+It seems that a GUI for R is not just lacking, it is purposedly lacking...
+And there are many argument in favor of this lack. OK for most R users. But
+could you, please, consider these examples:
+
+1) I teach basic biostat with R/SciViews-R/R Commander. It is a frank
+success and almost all my students install it on their computer and start
+using it...
+So, the next year, I teach them an advanced biostat course with R. I decide
+to give up with the GUI and to present analyses like PCA, MDS, LDA,
+clustering, etc... directly in R. For each analysis, I make a small script
+(10 lines or so), I explain it and show them how it works and how they can
+edit it to analyze other data. It is a fiasco! It seems that a psychological
+barrier induced by this unfamiliar object (the script) tends to obscure
+everything in the mind of my students. I got returns in this way: most of
+the students that started to use R seem disgusted after this second course,
+and they switch back to another software with a GUI! When I ask them, they
+say: SciViews-R/R commander is nice but limited to simple analyses. For
+other analyses, the R scripts are just too complex for me, so I prefer to
+use a different software.
+
+2) Second case: I write an original analysis and I want to make it widely
+available for oceanographers. Most of them do not want, and will never learn
+the S language. They obviously need a simple and easy GUI on top of my R
+function, because they want to run the analysis without knowing all the
+details...
+
+Obviously, these are concrete examples where a GUI should be a benefit...
+unless one consider that R should be restricted to experts only!
+
+Best regards,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+ ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+ ) ) ) ) )   Mons-Hainaut University, Pentagone
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+ ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium  
+( ( ( ( (       
+ ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )      
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+ ) ) ) ) )
+..............................................................
+
+From f.harrell at vanderbilt.edu  Wed Nov 17 23:55:54 2004
+From: f.harrell at vanderbilt.edu (Frank E Harrell Jr)
+Date: Thu Nov 18 00:11:21 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <419B5FE5.8040009@pburns.seanet.com>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>	<419B2CB4.7010708@srres.com>
+	<419B5FE5.8040009@pburns.seanet.com>
+Message-ID: <419BD6FA.3050205@vanderbilt.edu>
+
+Patrick Burns wrote:
+> I'm a big advocate -- perhaps even fanatic -- of  making R easier for
+> novices in order to spread its use, but I'm not convinced that  a GUI
+> (at least in the traditional form) is the most valuable approach.
+> 
+> Perhaps an overly harsh summary of some of Ted Harding's statements
+> is: You can make a truck easier to get into by taking off the wheels, but
+> that doesn't make it more useful.
+> 
+> In terms of GUIs, I think what R should focus on is the ability for  user's
+> to make their own specialized GUI.  So that a knowledgeable programmer
+> at an installation can create a system that is easy for unsophisticated
+> users for the limited number of tasks that are to be done.  The ultimate
+> users may not even need to know that R exists.
+> 
+> I think Ted Harding was on  the mark when he said that it is the help
+> system that needs enhancement.  I can imagine a system that gets the
+> user to the right function and then helps fill in the arguments; all of the
+> time pointing them towards the command line rather than away from
+> it.
+> 
+> The author of the referenced article highlighted some hidden costs of R,
+> but did not highlight the hidden benefits (because they were hidden from
+> him).  A big benefit of R is all of the bugs that aren't in it (which 
+> may or
+> may not be due to its free status).
+> 
+> Patrick Burns
+> 
+> Burns Statistics
+> patrick@burns-stat.com
+> +44 (0)20 8525 0696
+> http://www.burns-stat.com
+> (home of S Poetry and "A Guide for the Unwilling S User")
+> 
+> Jan P. Smit wrote:
+> 
+>> Dear Phillippe,
+>>
+>> Very interesting. The URL of the article is 
+>> http://www.scientific-computing.com/scwsepoct04free_statistics.html.
+>>
+>> Best regards,
+>>
+>> Jan Smit
+>>
+>>
+>> Philippe Grosjean wrote:
+>>
+>>> Hello,
+>>>
+>>> In the latest 'Scientific Computing World' magazine (issue 78, p. 
+>>> 22), there
+>>> is a review on free statistical software by Felix Grant ("doesn't 
+>>> have to
+>>> pay good money to obtain good statistics software"). As far as I 
+>>> know, this
+>>> is the first time that R is even mentioned in this magazine, given 
+>>> that it
+>>> usually discuss commercial products.
+>>>
+> [ ...]
+> 
+>>>
+
+I really agree with you Patrick.  To me the keys are having better help 
+search capabilities, linking help files to case studies or at least 
+detailed examples, having a navigator by keywords (a rudimentary one is 
+at http://biostat.mc.vanderbilt.edu/s/finder/finder.html), having a 
+great library of examples keyed by statistical goals (a la BUGS examples 
+guides), and having a menu-driven skeleton code generator that gives 
+beginners a starting script to edit to use their variable names, etc. 
+Also I think we need a discussion board that has a better "memory" for 
+new users, like some of the user forums currently on the web, or using a 
+wiki.
+
+Frank
+
+-- 
+Frank E Harrell Jr   Professor and Chair           School of Medicine
+                      Department of Biostatistics   Vanderbilt University
+
+From James.Callahan at CityofOrlando.net  Thu Nov 18 02:47:54 2004
+From: James.Callahan at CityofOrlando.net (James.Callahan@CityofOrlando.net)
+Date: Thu Nov 18 02:48:10 2004
+Subject: [R-gui] Auto-GUI: Automated Building of GUIs for Objects
+Message-ID: <OF9856B226.E61BC4E2-ON85256F50.0003832F-85256F50.0009B3BC@ci.orlando.fl.us>
+
+Developing a GUI for R is hard -- even at the conceptual level (let alone 
+coding) -- because there is neither a unique path, nor a unique 
+destination.
+
+First, There is no one definitive GUI toolkit in the open-source 
+community. Moreover, the type of person attracted to R development -- sees 
+50 different ways of accomplishing the task. The closest solution I have 
+seen is someone on this list developing an R interface to GUIs that 
+provides a common R interface to multiple GUI toolkits.
+
+Second, it is not clear what the GUI destination is. Given a clear idea of 
+the destination, R developers find or develop the tools they need.
+
+On 17-Nov-04 Philippe Grosjean wrote:
+
+>  2) Second case: I write an original analysis and I want to make it 
+widely
+>  available for oceanographers. Most of them do not want, and will never 
+learn
+>  the S language. They obviously need a simple and easy GUI on top of my 
+R
+>  function, because they want to run the analysis without knowing all the
+> details..."
+
+One thought I have been toying with is that of an "Auto-GUI" tool that 
+would look at an R object and attempt to build a GUI for it. The analogy 
+would be the "Auto-Form" tool in MS Access (or the better implementations 
+of the same idea in Lotus Approach or even in dBASE III). The DBMS looks 
+at the table and mechanically builds a form.  The user has requested that 
+Auto-GUI build an MS-Office style menu for an object. Auto-GUI looks at 
+the object, sees that it has a print method and attaches the "print 
+method" to "File-Print" option on the faux-Office menu.  Auto-GUI looks at 
+the data structure and provides a tabular view (spreadsheet like) view of 
+the data on one tab. Auto-GUI sees one or more plot methods and provides
+separate tabs for various plots (some more complex plots may be lazy 
+loaded, the plot isn't drawn till the user clicks on the tab). So far, 
+this just more or less recreates GNumeric or MS Excel. There should be a 
+model tab. But, what does a model look like in a GUI?
+
+To me, this is one of the core GUI questions, what does a model look like 
+in a GUI?   R has a standard syntax for describing a model on a command 
+line, but what does a model look like in a GUI? The now classic MS Office 
+GUI wraps a familiar menu around a visual representation of an object -- a 
+text document, a worksheet, a graph, a project, a photo, a database table, 
+a drawing, a map etc.. How should we visualize models and other R objects? 
+ What is a WYSIWYG representation of a model?
+
+A visual representation of a model could be:
+- a simplified (implicit, but not explicit matrix notation) equation -- 
+similar to the command line interface
+- a matrix equation rendered in HTML with hotspot links to visual 
+representations of the objects represented by the symbols in the equation
+- a stylized version of a graph -- I'm looking at a GGobi cloud of points 
+and I grab a "plane" symbol I want fitted through it. I twist the plane to 
+indicate I want to allow curvature.
+- a flowchart -- macroeconomic models are often depicted with flowcharts.
+- a tree with  right hand (independent) variables converging towards one 
+or more tiers of left hand (dependent) variables.
+
+I like the idea of a matrix equation rendered in HTML for output.  I am 
+frightened by the thought of students learning statistics as locations in 
+a particular vendor's report. the student learns to look in a particular 
+location on the output for a certain useful number.  Which is fine till 
+they switch between stat packages such as switching between SPSS and SAS 
+or SAS and R. If students are going to remember by location, then let them 
+remember the location in the context of a matrix equation. The Auto-GUI 
+with an output screen consisting of  a matrix equation rendered in HTML is 
+one possibility, but it still might not be the best way to do it.
+
+Suppose I have a graph of a histogram and then drag and drop a bell-shape 
+curve onto it -- what should happen? 
+
+Just some incomplete thoughts....
+
+Jim Callahan
+Management, Budget & Accounting
+City of Orlando
+(407) 246-3039 office
+(407) 234-3744 cell phone
+	[[alternative HTML version deleted]]
+
+From James.Callahan at CityofOrlando.net  Thu Nov 18 03:40:45 2004
+From: James.Callahan at CityofOrlando.net (James.Callahan@CityofOrlando.net)
+Date: Thu Nov 18 03:41:06 2004
+Subject: [R-gui] More doodles for a GUI: dy/dx and integral buttons
+In-Reply-To: <OF9856B226.E61BC4E2-ON85256F50.0003832F-85256F50.0009B3B0@LocalDomain>
+Message-ID: <OFC3D5587B.D0D7C781-ON85256F50.000B45BB-85256F50.000E8A53@ci.orlando.fl.us>
+
+More doodles for a GUI....dy/dx and integral buttons
+
+Some GIS programs have a magnifying glass to zoom in a portion of the map. 
+You click on the magnifying glass, the cursor becomes a magnifying glass 
+and you click on an area of the map with the magnifying glass and that 
+area of the map zooms in.
+
+Suppose you have a dy/dx tool. You graph on the screen, you click on the 
+dy/dx tool, the cursor becomes a dy/dx symbol. You hover over a portion of 
+the curve and a box pops up telling you the slope of the curve at that 
+point.  You click on the "elongated S" integral symbol and you find you 
+can paint an area under the curve (or equivalently you click on a paint 
+symbol to paint and then you click on the integral symbol to compute the 
+area). You then click on an equals sign and a box pops up telling you in 
+addition to the area under the curve -- the name of the method used to 
+calculate the area, the formula used and the numeric value for the area 
+complete with units.
+
+Not very useful in production, but what a teaching tool.
+
+I am not sure I would want that, but for the moment, I would hope our 
+minds would be free enough to imagine 
+(without being too constrained by implementation) what would be useful -- 
+and not just "File->Print."
+
+In some of the R graphics programs, you can already identify points by 
+clicking on them.
+
+How about a "jitter" button to apply jitter to a graph?
+
+A graph menu with a icons representing a histogram, a scatterplot, or a 
+q-q plot?
+
+How about adding confidence intervals / bands with just a few clicks?
+
+How do you move from isolated tricks like clicking on points -- to a 
+comprehensive GUI environment?
+
+How would the interface facilitate exploratory data analysis?
+
+How would the interface facilitate verifying the data was read in 
+correctly?
+
+How would the interface facilitate organizing and retrieving data?
+
+How do you visualize random number generation? Should we show a graph that 
+looks like a firing range with bullets being shot at it,
+perhaps with sound effects?
+
+Perhaps a tactile interface that would enable one to feel the weight of a 
+slice of a probability distribution, from the feather-light tail of a 
+distribution
+to a heavy lead weight towards the center of the distribution. Perhaps one 
+could feel the "leverage" of outliers?
+
+What would be truly useful?  What would be merely "cute?" and what would 
+get in the way?
+
+Jim Callahan
+Management, Budget & Accounting
+City of Orlando
+(407) 246-3039 office
+(407) 234-3744 cell phone
+	[[alternative HTML version deleted]]
+
+From zedshaw at zedshaw.com  Thu Nov 18 03:40:35 2004
+From: zedshaw at zedshaw.com (Zed Shaw)
+Date: Thu Nov 18 03:50:16 2004
+Subject: [R-gui] The hidden costs of GPL software?
+In-Reply-To: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+Message-ID: <1100745635.3177.31.camel@thamachine>
+
+Hi Everyone,
+
+I've been lurking on the list for a while, but found this thread very
+interesting.  Basically, I agree with Felix's article except it's
+assumption that these problems are open source only.  I've used plenty
+of crap commercial software as a professional programmer.
+
+I used to work on a GUI for R, but found that continuing was impossible
+for me.  Part of this was personal, but part was also related to how the
+R community thinks of GUIs.  In general I found that the R community was
+not that interested, and many people were violently opposed to a usable
+GUI.  In the end I felt that my time would be better spent on something
+that would actually be appreciated, rather than ridiculed as useless.
+
+Having said that, I really would like to give this advice to people
+trying to solve the "R needs a GUI" problem:
+
+*  One half of R is already a GUI.  If it's not, then why are there so
+many plotting functions?
+*  R is also a programming language.  All this talk about CLI vs GUI
+completely ignores this fact.
+*  There are incredibly fantastic GUIs for many other programming
+languages available.  Take a look at Eclipse for Java as a great example
+of how to create a platform for a language and not get in the way of the
+language.
+*  Rather than focusing on this false "CLI vs. GUI" dichotomy, maybe
+someone should sit down with users and analyze how they actually use the
+system.  I assume that the folks on the R list would be pretty good at
+analyzing user behavior.  These same people should also be good at
+researching language usability.
+*  I believe that you actually can have both CLI and GUI living hapily,
+but only after the "programming language", "data management", and
+"plotting" parts are componentized and separated.
+*  I found that R would need to go in one of two directions before a GUI
+is feasible:  more like a compiler, or more like a service.
+	* More like a compiler means to make R more like Python, Ruby, Perl,
+and other languages:  have a compiler, make byte code, use a VM, and
+have the UI (no matter what type) use this system.
+	* More like a service means to turn R into a separate service that is a
+"black box".  I tried this route with limited success by exposing the R
+interpreter with a CORBA wrapper.
+
+That's my .02 USD from having tried this once before.  I still use R
+professionally, but I just don't bother with improving it.
+
+I won't be responding to this message, but feel free to reply anyway.
+
+Zed
+
+On Wed, 2004-11-17 at 10:53 +0100, Philippe Grosjean wrote:
+> Hello,
+> 
+> In the latest 'Scientific Computing World' magazine (issue 78, p. 22), there
+> is a review on free statistical software by Felix Grant ("doesn't have to
+> pay good money to obtain good statistics software"). As far as I know, this
+> is the first time that R is even mentioned in this magazine, given that it
+> usually discuss commercial products.
+> 
+
+-- 
+Zed A. Shaw
+http://www.zedshaw.com/
+
+From arcane at arcanemethods.com  Thu Nov 18 07:48:02 2004
+From: arcane at arcanemethods.com (Bob Cain)
+Date: Thu Nov 18 07:47:18 2004
+Subject: [R-gui] Two distinct meanings of GUI
+Message-ID: <419C45A2.1060501@arcanemethods.com>
+
+There seem to be two distinct meanings being given to the 
+term GUI in realationship to R as used in this forum.
+
+Lately people have been talking about the GUI that surrounds 
+the use of the interpreter to write programs that solve 
+problems.  The second, which has been more what's been 
+talked about in the six months or so I've been here is the 
+API that R coders can use to _build_ GUI's for applications 
+implemented in R.
+
+I think good arguments can be made for keeping things fairly 
+simple in the first case but it is the second case, which I 
+think is of far more importance, that is not going to be 
+simple no matter what.  Considerations other than simplicity 
+dominate that discussion.
+
+Despite its origins, if you only consider the R language, 
+sans libraries, it is one of the finest interpreted 
+languages going and yields nothing general to its primary 
+application.  I would like to see the use of R spread in 
+other directions.  I'd like to see a digital signal 
+processing library developed with fast, compiled primatives 
+(FFT, root solvers, etc.) to displace Matlab.  (I only wish 
+S/R designers had been wiser in their treatment of array 
+index origin then Matlab but it appears far too late to fix 
+that oversight.)
+
+There are also audio applications I would like to write that 
+employ this (yet to be ported) DSP functionality and which 
+present to the end user nice, usable button, slider, 
+selector, waverform, etc., interfaces such as he is used to 
+with most modern applications.  Coming from a background 
+that includes APL and various compiled languages I simply 
+love the design of the R language and think it is time for R 
+to grow into new arenas beyond statistics.
+
+It seems to me that some of the people in recent discussions 
+are discussing one use of GUI while others are discussing 
+the other use and I'm just hoping to clarify the issues so 
+that it is clear what the arguments presented apply to.
+
+
+Bob
+-- 
+
+"Things should be described as simply as possible, but no 
+simpler."
+
+                                              A. Einstein
+
+From Pedro.Valero-Mora at uv.es  Thu Nov 18 10:03:36 2004
+From: Pedro.Valero-Mora at uv.es (Pedro Valero)
+Date: Thu Nov 18 10:03:58 2004
+Subject: [R-gui] Re: R-SIG-GUI Digest, Vol 20, Issue 7
+In-Reply-To: <200411171124.iAHBNuHq018945@hypatia.math.ethz.ch>
+References: <200411171124.iAHBNuHq018945@hypatia.math.ethz.ch>
+Message-ID: <6.2.0.14.0.20041117134006.07a3cb38@post.uv.es>
+
+Philippe,
+
+I think your impressions are quite accurate: experts on statistics are more 
+interested on programming statistical problems than user interfaces, and 
+non experts would like to have GUI's but they do not have the skills.
+You may think that this problem could be solved technically. If  tools for 
+programming graphical interfaces were available, experts might use them to 
+produce good GUI's. However, technique only is probably not enough. It is 
+necessary a culture that promotes this behaviour.
+We might learn from past similar experiences. An statistical environment 
+that enjoyed certain success before R came was Lisp-Stat. Lisp-Stat had 
+superb user interface capabilities at the time if came up. Capabilities 
+that, nowadays, are probably not very impressive but that, if available in 
+R, would be sufficient for many purposes. However, experience showed that 
+the people programming in Lisp-Stat very often did not put as much effort 
+on the graphical interface as they put on the statistical programming. 
+Lisp-Stat is now basically dead but we still can learn something from it: 
+programmers may not program user interfaces even though they have the tools.
+My impression is that commercial programs will continue leading the GUI 
+efforts in the close future. Free software written by statisticians 
+interested on statistics will not have the bells and whistles we are used 
+to see in commercial software in the close future. After all, software 
+companies estimate that the programming effort of  the GUI of a typical 
+application is about the 60% or 80% of the program. Only paid people is 
+probably to be very excited about carrying out this effort.
+The only solution I see for the problem is a change in attitude about the 
+importance of  the problem of user interfaces. This change of attitude 
+should lead to increasing the reward available at academic places for 
+working in this area. After all, at this moment, most of the people see the 
+statistical part as the "ice cream" and the interface as the "topping" of 
+statistical systems. In other words, not many people believe that the 
+interfaces, GUI or not, suppose an academic challenge that deserve academic 
+reward. As a consequence, there are not journals, books or conferences 
+discussing methods, techniques, case stories or comparisons of features of 
+people trying to develop good interfaces. The developments on this area do 
+not accumulate. Hence, if the attitude about developing interfaces does not 
+change, it is very difficult that many people will get involved on 
+programming them, and the progress is going to be very limited.
+You might remember the times were programming statistical software was a 
+second class activity and it did not deserve academical reward. Now, things 
+have changed and programmers of statistical software enjoy great reputation 
+for carrying out their work. So, books and papers on statistical systems 
+are among the most cited and read by everybody. Journals like JCGS, 
+encouraging the publication of papers with such contents have contributed 
+to such state of things. Who knows, programming of good interfaces might 
+reach a similar status some day.
+
+
+
+
+At 12:24 17/11/2004, you wrote:
+>Send R-SIG-GUI mailing list submissions to
+>         r-sig-gui@stat.math.ethz.ch
+>
+>To subscribe or unsubscribe via the World Wide Web, visit
+>         https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>or, via email, send a message with subject or body 'help' to
+>         r-sig-gui-request@stat.math.ethz.ch
+>
+>You can reach the person managing the list at
+>         r-sig-gui-owner@stat.math.ethz.ch
+>
+>When replying, please edit your Subject line so it is more specific
+>than "Re: Contents of R-SIG-GUI digest..."
+>
+>
+>Today's Topics:
+>
+>    1. The hidden costs of GPL software? (Philippe Grosjean)
+>    2. Re: [R] The hidden costs of GPL software? (Jan P. Smit)
+>
+>
+>----------------------------------------------------------------------
+>
+>Message: 1
+>Date: Wed, 17 Nov 2004 10:53:28 +0100
+>From: "Philippe Grosjean" <phgrosjean@sciviews.org>
+>Subject: [R-gui] The hidden costs of GPL software?
+>To: <r-help@stat.math.ethz.ch>, <r-sig-gui@stat.math.ethz.ch>
+>Message-ID: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+>Content-Type: text/plain;       charset="iso-8859-1"
+>
+>Hello,
+>
+>In the latest 'Scientific Computing World' magazine (issue 78, p. 22), there
+>is a review on free statistical software by Felix Grant ("doesn't have to
+>pay good money to obtain good statistics software"). As far as I know, this
+>is the first time that R is even mentioned in this magazine, given that it
+>usually discuss commercial products.
+>
+>In this article, the analysis of R is interesting. It is admitted that R is
+>a great software with lots of potentials, but: "All in all, R was a good
+>lesson in the price that may have to be paid for free software: I spent many
+>hours relearning some quite basic things taken for granted in the commercial
+>package." Those basic things are releated with data import, obtention of
+>basic plots, etc... with a claim for a missing more intuitive GUI in order
+>to smooth a little bit the learning curve.
+>
+>There are several R GUI projects ongoing, but these are progressing very
+>slowly. The main reason is, I believe, that a relatively low number of
+>programmers working on R are interested by this field. Most people wanting
+>such a GUI are basic user that do not (cannot) contribute... And if they
+>eventually become more knowledgeable, they tend to have other interests.
+>
+>So, is this analysis correct: are there hidden costs for free software like
+>R in the time required to learn it? At least currently, for the people I
+>know (biologists, ecologists, oceanographers, ...), this is perfectly true.
+>This is even an insurmountable barrier for many of them I know, and they
+>have given up (they come back to Statistica, Systat, or S-PLUS using
+>exclusively functions they can reach through menus/dialog boxes).
+>
+>Of course, the solution is to have a decent GUI for R, but this is a lot of
+>work, and I wonder if the intrinsic mechanism of GPL is not working against
+>such a development (leading to a very low pool of programmers actively
+>involved in the elaboration of such a GUI, in comparison to the very large
+>pool of competent developers working on R itself).
+>
+>Do not misunderstand me: I don't give up with my GUI project, I am just
+>wondering if there is a general, ineluctable mechanism that leads to the
+>current R / R GUI situation as it stands,... and consequently to a "general
+>rule" that there are indeed most of the time "hidden costs" in free
+>software, due to the larger time required to learn it. I am sure there are
+>counter-examples, however, my feeling is that, for Linux, Apache, etc... the
+>GUI (if there is one) is often a way back in comparison to the potentials in
+>the software, leading to a steep learning curve in order to use all these
+>features.
+>
+>I would be interested by your impressions and ideas on this topic.
+>
+>Best regards,
+>
+>Philippe Grosjean
+>
+>..............................................<?}))><........
+>  ) ) ) ) )
+>( ( ( ( (    Prof. Philippe Grosjean
+>  ) ) ) ) )
+>( ( ( ( (    Numerical Ecology of Aquatic Systems
+>  ) ) ) ) )   Mons-Hainaut University, Pentagone
+>( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+>  ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium
+>( ( ( ( (
+>  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+>( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+>  ) ) ) ) )
+>( ( ( ( (    web:   http://www.umh.ac.be/~econum
+>  ) ) ) ) )
+>..............................................................
+>
+>
+>
+>------------------------------
+>
+>Message: 2
+>Date: Wed, 17 Nov 2004 17:49:24 +0700
+>From: "Jan P. Smit" <jps@srres.com>
+>Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+>To: r-help@stat.math.ethz.ch, r-sig-gui@stat.math.ethz.ch
+>Cc: Philippe Grosjean <phgrosjean@sciviews.org>
+>Message-ID: <419B2CB4.7010708@srres.com>
+>Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+>
+>Dear Phillippe,
+>
+>Very interesting. The URL of the article is
+>http://www.scientific-computing.com/scwsepoct04free_statistics.html.
+>
+>Best regards,
+>
+>Jan Smit
+>
+>
+>Philippe Grosjean wrote:
+> > Hello,
+> >
+> > In the latest 'Scientific Computing World' magazine (issue 78, p. 22), 
+> there
+> > is a review on free statistical software by Felix Grant ("doesn't have to
+> > pay good money to obtain good statistics software"). As far as I know, this
+> > is the first time that R is even mentioned in this magazine, given that it
+> > usually discuss commercial products.
+> >
+> > In this article, the analysis of R is interesting. It is admitted that R is
+> > a great software with lots of potentials, but: "All in all, R was a good
+> > lesson in the price that may have to be paid for free software: I spent 
+> many
+> > hours relearning some quite basic things taken for granted in the 
+> commercial
+> > package." Those basic things are releated with data import, obtention of
+> > basic plots, etc... with a claim for a missing more intuitive GUI in order
+> > to smooth a little bit the learning curve.
+> >
+> > There are several R GUI projects ongoing, but these are progressing very
+> > slowly. The main reason is, I believe, that a relatively low number of
+> > programmers working on R are interested by this field. Most people wanting
+> > such a GUI are basic user that do not (cannot) contribute... And if they
+> > eventually become more knowledgeable, they tend to have other interests.
+> >
+> > So, is this analysis correct: are there hidden costs for free software like
+> > R in the time required to learn it? At least currently, for the people I
+> > know (biologists, ecologists, oceanographers, ...), this is perfectly true.
+> > This is even an insurmountable barrier for many of them I know, and they
+> > have given up (they come back to Statistica, Systat, or S-PLUS using
+> > exclusively functions they can reach through menus/dialog boxes).
+> >
+> > Of course, the solution is to have a decent GUI for R, but this is a lot of
+> > work, and I wonder if the intrinsic mechanism of GPL is not working against
+> > such a development (leading to a very low pool of programmers actively
+> > involved in the elaboration of such a GUI, in comparison to the very large
+> > pool of competent developers working on R itself).
+> >
+> > Do not misunderstand me: I don't give up with my GUI project, I am just
+> > wondering if there is a general, ineluctable mechanism that leads to the
+> > current R / R GUI situation as it stands,... and consequently to a "general
+> > rule" that there are indeed most of the time "hidden costs" in free
+> > software, due to the larger time required to learn it. I am sure there are
+> > counter-examples, however, my feeling is that, for Linux, Apache, 
+> etc... the
+> > GUI (if there is one) is often a way back in comparison to the 
+> potentials in
+> > the software, leading to a steep learning curve in order to use all these
+> > features.
+> >
+> > I would be interested by your impressions and ideas on this topic.
+> >
+> > Best regards,
+> >
+> > Philippe Grosjean
+> >
+> > ..............................................<?}))><........
+> >  ) ) ) ) )
+> > ( ( ( ( (    Prof. Philippe Grosjean
+> >  ) ) ) ) )
+> > ( ( ( ( (    Numerical Ecology of Aquatic Systems
+> >  ) ) ) ) )   Mons-Hainaut University, Pentagone
+> > ( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+> >  ) ) ) ) )   6, av du Champ de Mars, 7000 Mons, Belgium
+> > ( ( ( ( (
+> >  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+> > ( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+> >  ) ) ) ) )
+> > ( ( ( ( (    web:   http://www.umh.ac.be/~econum
+> >  ) ) ) ) )
+> > ..............................................................
+> >
+> > ______________________________________________
+> > R-help@stat.math.ethz.ch mailing list
+> > https://stat.ethz.ch/mailman/listinfo/r-help
+> > PLEASE do read the posting guide! 
+> http://www.R-project.org/posting-guide.html
+> >
+>
+>
+>
+>------------------------------
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+>End of R-SIG-GUI Digest, Vol 20, Issue 7
+>****************************************
+
+From tjrc at sanger.ac.uk  Thu Nov 18 11:27:02 2004
+From: tjrc at sanger.ac.uk (Tim Cutts)
+Date: Thu Nov 18 11:25:17 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <419B5FE5.8040009@pburns.seanet.com>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+	<419B2CB4.7010708@srres.com> <419B5FE5.8040009@pburns.seanet.com>
+Message-ID: <630CA0C2-394C-11D9-A2B1-000A95B2B140@sanger.ac.uk>
+
+
+On 17 Nov 2004, at 2:27 pm, Patrick Burns wrote:
+
+> I think Ted Harding was on  the mark when he said that it is the help
+> system that needs enhancement.  I can imagine a system that gets the
+> user to the right function and then helps fill in the arguments; all 
+> of the
+> time pointing them towards the command line rather than away from
+> it.
+
+I think this is spot on.  My situation is that I am a scientist turned 
+system administrator, and R is a package which I am increasingly being 
+asked to install for the use of scientists at this Institute.  I am by 
+no means a statistician;  the statistics I learned in A-level maths 
+almost 20 years ago were as far as I got, and most of that I have 
+forgotten.  But I like to have some understanding of the software 
+packages I am asked to support, so I've been looking at R with a view 
+to learning some of its more basic functions.  It looks potentially 
+very useful to me anyway for summarising activity on the supercomputing 
+cluster that I run.
+
+So I'm a newbie to R, armed with only a very basic knowledge of 
+statistics (I know the difference between a Normal and a Poisson 
+distribution at least, and with a bit of prodding could probably 
+remember a binomial distribution too).  I'm an experienced programmer 
+in several languages, and a PhD-level scientist.
+
+And yet I have still found R really quite hard to learn, and this is 
+principally because the on-line help is a reference manual.  I'm sure 
+it's a fabulous resource if you're a statistician who uses R every day, 
+but for me it's not very helpful.
+
+The R Intro PDF is good, but it would be nice if it were integrated 
+better, with hyperlinks to the reference documentation, or to other 
+parts of the introduction, for those platforms that support such things 
+(it looks like this was intended for MacOS X, which is the version I am 
+playing with for my own use, although the version I maintain for users 
+is on Linux [ and would be on Alpha/Tru64 too if I could get it to pass 
+its tests ]) but the on-line help link to the Intro on the Aqua R 
+version brings up a blank page, so I'm using the generic PDF document 
+instead.
+
+I think the GUI question has nothing to do with the hidden costs of the 
+GPL, or otherwise.  This is the age-old ease-of-use versus power and 
+capability argument.
+
+I don't think a fancy GUI is necessary - the GUI aspects that have been 
+added to R on Mac OS X are sufficient.  I get the impression that the 
+real power of R is the fact that really it's a programming language, 
+and should probably be treated and learned as such.  Quite apart from 
+the fact that a GUI will necessarily be a somewhat restricted subset of 
+the total functionality, and a lot slower to use once you've taken the 
+effort to learn the software, I think there is another danger, which I 
+have already seen in other pieces of software in the bioinformatics 
+community.  Users frequently run completely pointless analyses through 
+the GUI wrappers we provide.  The users using the command line 
+interfaces typically do much more sensible things.
+
+If you make a piece of software trivial for a user to use without 
+thinking about what they're doing, then the users won't think.  I may 
+not know much about statistics, but what little I do know is that 
+understanding exactly what form of analysis or significance test is 
+required to be meaningful is a real skill that takes a lot of 
+experience to master.   Having to perform that analysis with written 
+commands means that your method is recorded, and could be published, 
+and more importantly be checked and reproduced by other researchers.  
+It also gives you ample time to think about what you're doing, rather 
+than just bashing out a pretty graph which actually has no real meaning 
+whatsoever.
+
+Any GUI to R could (and should) be able to store the command line 
+equivalent to what it has just done, to satisfy the reproducible 
+criterion above, but I suspect it could still lead to some pretty 
+shoddy work being done by careless and lazy scientists, and we get 
+enough of that already.
+
+Tim
+
+-- 
+Dr Tim Cutts
+Informatics Systems Group, Wellcome Trust Sanger Institute
+GPG: 1024D/E3134233 FE3D 6C73 BBD6 726A A3F5  860B 3CDD 3F56 E313 4233
+
+From tjrc at sanger.ac.uk  Thu Nov 18 12:40:31 2004
+From: tjrc at sanger.ac.uk (Tim Cutts)
+Date: Thu Nov 18 12:38:38 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <630CA0C2-394C-11D9-A2B1-000A95B2B140@sanger.ac.uk>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+	<419B2CB4.7010708@srres.com> <419B5FE5.8040009@pburns.seanet.com>
+	<630CA0C2-394C-11D9-A2B1-000A95B2B140@sanger.ac.uk>
+Message-ID: <A7197ABA-3956-11D9-A2B1-000A95B2B140@sanger.ac.uk>
+
+
+On 18 Nov 2004, at 10:27 am, Tim Cutts wrote:
+
+> The R Intro PDF is good, but it would be nice if it were integrated 
+> better, with hyperlinks to the reference documentation, or to other 
+> parts of the introduction, for those platforms that support such 
+> things
+
+I should correct myself here, and note that there are some 
+cross-references within the PDF document, it's not completely devoid of 
+them.
+
+Tim
+
+-- 
+Dr Tim Cutts
+Informatics Systems Group, Wellcome Trust Sanger Institute
+GPG: 1024D/E3134233 FE3D 6C73 BBD6 726A A3F5  860B 3CDD 3F56 E313 4233
+
+From mwgrant2001 at yahoo.com  Thu Nov 18 12:24:01 2004
+From: mwgrant2001 at yahoo.com (Michael Grant)
+Date: Thu Nov 18 12:49:20 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+Message-ID: <20041118112401.43406.qmail@web54410.mail.yahoo.com>
+
+Hmmmm, interesting thread and minds will not be
+changed but regarding GUIs...I thought S (aka R) was a
+PROGRAMMING LANGUAGE with a statistical and numerical
+slant, and not a statistics application. ;O)  
+
+Certainly there is an important place for GUIs but I
+believe that it is very much overemphasized in modern
+computer culture. My experience and bias--and I
+started in the 1960's-- is that except for 'trivial'
+uses, GUIs are a detriment to any reasonably complex
+CREATIVE computational task. They are adequate for the
+simple, common task. But even then, typing a command
+or two is not overly taxing--- particularly when
+compared to navigating layer upon layer of submenus as
+is some times needed. If I need to, I will add a
+little syntactical sugaring when coding and move on. 
+
+GUIs encourage a passive approach to using computers
+when solving problems. In addition, it is regretable
+that a lot of people in the 'workplace' will carry out
+incomplete and/or incorrect quantitative work because
+of the real or perceived limitations of the particular
+(GUI) apps they are using. There is no inclination to
+go beyond the menu and even then many menu items
+gather 'electronic dust'.
+
+Finally, there are times for many of us when work
+'goes home' at the end of the day. That just comes
+with the territory. I (and most others) can not afford
+the luxury of S-plus, Statistica, SPSS, etc. at home.
+So in a sense there is a very real 'loss of
+productivity' cost associated with using commercial
+software. Now that does bring us around to supporting
+R doesn't it? (Mea culpa. And I resolve to do better!)
+What value does one put on the vitality of the R
+community?
+
+Best regards,
+Michael Grant, Ph.D. 
+
+* The requirements for creating packages are on
+target,  and have the desired impact on both the
+quality and breadth of R. 
+
+--- Philippe Grosjean <phgrosjean@sciviews.org> wrote:
+
+> Hello,
+> 
+> In the latest 'Scientific Computing World' magazine
+> (issue 78, p. 22), there
+> is a review on free statistical software by Felix
+> Grant ...2.)
+
+From mervyn.thomas at emphron.com  Thu Nov 18 14:23:37 2004
+From: mervyn.thomas at emphron.com (Mervyn Thomas)
+Date: Thu Nov 18 14:22:02 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <20041118112401.43406.qmail@web54410.mail.yahoo.com>
+References: <20041118112401.43406.qmail@web54410.mail.yahoo.com>
+Message-ID: <200411182323.38036.mervyn.thomas@emphron.com>
+
+I have found this discussion interesting, and Michael's comments seem to me to 
+be right on the money :)
+
+It seems to me that one thing we can learn from the commercial software world 
+is the benefit of defining the "market segments" for R, and of identifying 
+the needs and drivers of each segment. 
+
+A rough starting point for that definition might include the following 
+segments:
+
+1) A Statistical or machine learning researcher needing a rapid development 
+framework to implement and prototype her research;
+
+2) Consultant statisticians / data analysts needing a flexible modelling tool 
+in which to perform state-of-the-art analyses. A typical worker of this type 
+will use R daily; she will have a sophisticated knowledge of statistics, and 
+broad experience of programming.
+
+3) Application builders or system integrators needing to use R to deliver 
+packaged, and specialist functionality. A typical user of this type will have 
+sophisticated knowledge of information systems and software engineering, and 
+some knowledge of statistics.
+
+4) Scientists, or other non statistical and non IT professionals needing a 
+good solution for general purpose statistical analysis. Such a person will be 
+familiar with spreadsheets and other office productivity tools, will have 
+limited knowledge of statistics and limited knowledge of IT.
+
+
+The needs of these segments are very different. Segments 1,2 and 3 will 
+probably have little need for a GUI - but may benefit enormously from an IDE.
+
+Segment 3 will benefit from having a rapid development tool for building GUIs.
+
+Segment 4 will be looking for a GUI which insulates them from the technical 
+details of the statistical models, and from the need to program analyses.
+
+It seems to me that R addresses segments 1 and 2 brilliantly, that it has made 
+real progress in segment 3 (though much more could be done) and that in its 
+current form it makes little provision for segment 4.  
+
+If R were a commercial operation, the decision would be simple - what is the 
+size of each segment?, how much is each segment prepared to pay? what are the 
+emerging requirements of each segment? How easily can each segment be 
+supported with our existing architecture? what is the cost of providing for 
+each segment? 
+
+For a community it is more difficult - we all have a different profile in the 
+"market" and therefore have different needs and differences of opinion about 
+the best direction for the R project. I personally operate mostly in segment 
+2 - and I do not need and would not use a GUI. I don't want anything to get 
+in the way of the flexibility of a statistical language. I can't afford Splus 
+- so I just have to put up with the superior performance, stability and focus 
+of R :)  Whilst I may have sympathy for the needs of segment 4, I can't say 
+that I feel especially motivated to do anything about them.
+
+
+Kindest regards
+Mervyn Thomas
+
+From murdoch at stats.uwo.ca  Thu Nov 18 14:44:39 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Thu Nov 18 14:44:49 2004
+Subject: [R-gui] The hidden costs of GPL software?
+In-Reply-To: <1100745635.3177.31.camel@thamachine>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+	<1100745635.3177.31.camel@thamachine>
+Message-ID: <388pp0d37ddo9p808dg4fm8l09vu4c7kjr@4ax.com>
+
+On Wed, 17 Nov 2004 21:40:35 -0500, Zed Shaw <zedshaw@zedshaw.com>
+wrote :
+
+>I used to work on a GUI for R, but found that continuing was impossible
+>for me.  Part of this was personal, but part was also related to how the
+>R community thinks of GUIs.  In general I found that the R community was
+>not that interested, and many people were violently opposed to a usable
+>GUI.  In the end I felt that my time would be better spent on something
+>that would actually be appreciated, rather than ridiculed as useless.
+
+Building a nice GUI is definitely a lot of work, and not everyone will
+appreciate it.  But the same can be said about just about any other
+aspect of R.  You should go ahead with it if you like doing that sort
+of thing, or have a need for it:  and expect that some people will
+like your work, some won't, some will claim that their system is
+better, etc.
+
+>Having said that, I really would like to give this advice to people
+>trying to solve the "R needs a GUI" problem:
+>
+>*  One half of R is already a GUI.  If it's not, then why are there so
+>many plotting functions?
+
+Yes, there is definitely graphical output, and some limited graphical
+input.
+
+>*  R is also a programming language.  All this talk about CLI vs GUI
+>completely ignores this fact.
+>*  There are incredibly fantastic GUIs for many other programming
+>languages available.  Take a look at Eclipse for Java as a great example
+>of how to create a platform for a language and not get in the way of the
+>language.
+
+I've never used Eclipse.  The example I'd cite would be Delphi, and I
+know there are others.
+
+>*  Rather than focusing on this false "CLI vs. GUI" dichotomy, maybe
+>someone should sit down with users and analyze how they actually use the
+>system.  I assume that the folks on the R list would be pretty good at
+>analyzing user behavior.  These same people should also be good at
+>researching language usability.
+
+I'm not sure of that.  Being able to assess usability and user
+behaviour is a pretty specialized task.  There are probably some folks
+who can do that, but not very many.
+
+>*  I believe that you actually can have both CLI and GUI living hapily,
+>but only after the "programming language", "data management", and
+>"plotting" parts are componentized and separated.
+
+The plotting part is already separated:  there is a defined binary
+interface to the graphics system.
+
+Separating the language from the data may not be a good idea:  one of
+the goals of R is to allow language to be considered as data.  
+
+>*  I found that R would need to go in one of two directions before a GUI
+>is feasible:  more like a compiler, or more like a service.
+>	* More like a compiler means to make R more like Python, Ruby, Perl,
+>and other languages:  have a compiler, make byte code, use a VM, and
+>have the UI (no matter what type) use this system.
+>	* More like a service means to turn R into a separate service that is a
+>"black box".  I tried this route with limited success by exposing the R
+>interpreter with a CORBA wrapper.
+
+I think both of these directions are possible.  There has already been
+progress in making R look more like a compiler:  the idea of packages
+with namespaces is very much along that line.
+
+But R is also a service.  Here R is still lacking, in that the main
+interface to the service is through a teletype style interface.  ESS
+shows that it's possible to use this interface to put a new GUI on top
+of the service, but it would be a lot easier if the interface were
+done at a lower level, and if there were a clearer separation between
+user interface and service.  Designing this and getting it to work is
+very hard work.
+
+Duncan Murdoch
+
+From phgrosjean at sciviews.org  Thu Nov 18 16:24:31 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Nov 18 16:24:52 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <419BD6FA.3050205@vanderbilt.edu>
+Message-ID: <200411181524.iAIFOWUw004395@outmx011.isp.belgacom.be>
+
+Hello,
+
+I appreciate many comments and the various points of view, especially
+because there are a couple of clear explanations why several people do not
+need (or even do not want) a GUI for R!
+
+Another part of the discussion seems to switch to the never-ending question
+of "what kind of GUI"... which will never be answered, because there is not
+one best GUI, and it also depends on the use (both the application and the
+user). It's a long time I hesitate to propose in R-SIG-GUI + the R GUI
+projects web site to place a description for one or several "prototype"
+GUI(s) we would like for R, with the intention to include all the good ideas
+everybody has in this list.
+
+I never did that, because I am pretty sure it is useless! Now, I feel that
+one guy, with a clear view of what he wants, a lot of free time, a lot of
+energy, and some decent skills in programming, is actually required to make
+real what he has in his head! Indeed, it is such a huge work that several
+people are required! Here are the topics currently developed (sorry if I
+don't cite Bioconductor stuff: I don't know it):
+
+- Most of the "low-level" work is done, I think, like interface with
+graphical toolkits: tcltk by Peter Dalgaard, of course, but many others
+(Gtk, wxPython, ...), a better control of Rgui under Windows (ongoing,
+Duncan Murdoch), ESS, ... All this is already available, even if one could
+always argue that it is not optimal in some respects.
+
+- A better console (multiple-lines editing, syntax coloring, code tip
+presenting the syntax of a function when you type it, contextual completion
+list, ...). This is ongoing project in both JGR and SciViews-R.
+
+- A better table editor: RKward team.
+
+- A classical menus/dialog box approach: John Fox's R commander,
+
+- An object explorer: JGR, RKward, SciViews-R, experimental functions in R,
+
+- A "plug-in" approach, that is, a piece of code that brings a GUI for a
+targeted analysis and builds R code for you: RKward team, but also some
+functions in svDialogs (part of the SciViews bundle, R GUI API),
+
+- Interactive documents mixing formatted text, graphs, etc... with R
+input/output: Rpad, Sweave (not interactive), and some other,
+
+- Rich-formatted output of R objects (in/out, views, reporting,...): Eric
+Lecoutre's R2HTML + SciViews-R,
+
+- Code editor with interaction with R: Tinn-R, WinEdt, Emacs, and many
+others, 
+
+- IDE (humm, some code editors are not so far away from an IDE, but there is
+still some lack here),
+
+- A R GUI API: SciViews.
+
+I hope all these projects will continue, will mature, and their developers
+will ultimately realize that they provide complementary pieces of a giant
+puzzle and start to work together. This is when it will become most
+exciting! I hope also that it will result in an original GUI that keeps most
+of the spirit of R, that is, not a simplified point&click UI, leading to
+meaningless analyses by lazy people, but a real tool whose goal is to make R
+easier and faster to learn for beginner, and pretty usable for occasional
+users.
+
+May be, I am just a dreamer, but all I read in this discussion reinforce my
+conviction that an **innovative** GUI would be a good addition to R: most
+criticisms clearly relate to the kind of inflexible GUI, with a forest of
+menus and submenus, and other bad things one could find. I never, and will
+never advocate for such a GUI!
+
+For sure, the alternate GUI will only support you in writing R code, and
+will deliver plenty of help to achieve this goal. I think it is possible...
+with enough people collaborating in a common project! I think the later
+point is really the problem: not enough people, too many projects! Is it a
+consequence of the way R is developed (GPL)? Well, I think so, but only
+partly. It is also the consequence of ego (everybody wants to be the leader
+of his own project), and a lack of communication (R-SIG-GUI is not what one
+would call an active list!) Or, may be, a "good GUI" for R is a fuzzy target
+and it is not possible to cristallize enough power around a common goal: to
+reach it!
+
+Anyway, despite R GUI projects are progressing very slowly, I think only
+when we would have a "good GUI" available for R, we would be able to
+evaluate if there are really "hidden costs" in R, as Felix Grant suggests in
+his paper.
+
+Best regards and thank you all for your comments and suggestions.
+
+Philippe Grosjean
+
+From MSchwartz at MedAnalytics.com  Thu Nov 18 17:03:27 2004
+From: MSchwartz at MedAnalytics.com (Marc Schwartz)
+Date: Thu Nov 18 17:03:44 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <20041118112401.43406.qmail@web54410.mail.yahoo.com>
+References: <20041118112401.43406.qmail@web54410.mail.yahoo.com>
+Message-ID: <1100793807.28822.152.camel@horizons.localdomain>
+
+On Thu, 2004-11-18 at 03:24 -0800, Michael Grant wrote:
+> Hmmmm, interesting thread and minds will not be
+> changed but regarding GUIs...I thought S (aka R) was a
+> PROGRAMMING LANGUAGE with a statistical and numerical
+> slant, and not a statistics application. ;O)  
+
+>From the R web site:
+
+"R is a language and environment for statistical computing and
+graphics."
+
+
+I think that this is a critical point and that there is, to my mind, a
+false predicate at play here.
+
+That predicate is that somehow one should be able to rapidly learn R (or
+any programming language for that matter) solely via the available
+online reference help or via the freely provided documentation (whether
+via R Core or via Contributors).
+
+How many people here have learned to use C, FORTRAN, SAS, VBA, Perl or
+any other language strictly by using built-in reference help systems. If
+any, it will be a very small proportion.
+
+Sure, SAS comes with documentation that can be measured in hernia
+inducing tonnage, but at a substantial annual cost, which I have
+referenced here and elsewhere previously. R is free.
+
+Is there anyone who has learned to code in C that does not have a copy
+of K&R someplace on their shelf, probably along with copies of other
+both general and application specific C references published by
+Prentice-Hall, Addison-Wesley, McGraw-Hill or Hayden?
+
+It has been years since I actively coded in C, but I have almost 3
+shelves filled with C reference books. I have books dating back to the
+early 80's for 80x86 Assembly, MS-DOS/BIOS interrupts and Windows API
+technical references and other such books that I used to use on a daily
+basis in a former life.
+
+For Linux, I have two shelves filled with various O'Reilly and other
+references running the gambit from general Linux stuff to Perl,
+Procmail, Postfix, Bash, Regex, Emacs, Admin, Firewalls and others.
+
+For R, I have most of a shelf filled with multiple references, including
+three of the four editions of MASS (somehow I missed the 2nd edition). I
+have a copy of Peter's ISwR (because on occasion I have an acute attack
+of cerebral flatulence and have to go back to basics) along with copies
+of Pinheiro & Bates, Fox, Maindonald & Braun, Krause & Olson, Everitt &
+Rabe-Hesketh and V&R's S Programming. I have copies of the "White Book"
+and the "Green Book" and I have copies of Harrell and Therneau &
+Grambsch for specific applications of R.
+
+There are a fair number of already published books on R/S with more
+coming by Faraway, Heiberger & Holland, Verzani and others including a
+new series from Springer.
+
+My point being that the old philosophy of "No Pain, No Gain" is a
+component of the learning curve with R. R is not going to be for
+everybody. That's why there are other "point and click" statistical
+_applications_ like JMP (albeit not cheap). They are relatively easy,
+but at the same time, they are self-limiting. No single math/statistical
+"product" is going to meet the needs of the entire spectrum of the
+potential user space.
+
+As I have mentioned previously, I am a firm believer in Pareto's 80/20
+Rule. In this case, you develop a "product" to meet the needs of 80% of
+your target user space, because you will go "bankrupt" meeting the needs
+of the other 20%. Said differently, meeting the needs of the other 20%
+will consume 80% of your development resources, restricting your ability
+to meet the needs of the larger audience.
+
+Having spent 12 years previously with a commercial medical software
+company, I will also suggest that typically 20% of your user base will
+consume 80% of your support resources.
+
+I will also note that having been on both sides of that equation, the
+support provided here within this community is superb and has no peer in
+the commercial arena.
+
+In R's case, the 80% of the user space has perhaps been extended by the
+kind offerings of those who have made specialty packages available via
+CRAN, BioC and others.
+
+It takes a certain level of commitment and time with R to become
+effective with it.
+
+That commitment includes, in my mind, supplementing the available _free_
+documentation that has kindly been provided by R Core and others, with
+other available resources. That does not mean that everyone needs to get
+on Amazon.com and spend hundreds of $YOUR_MONETARY_UNIT on books. Many
+are available via libraries and/or other resources, especially for those
+here in academic environments.
+
+This is a community effort folks and not everything is going to be
+provided to you free of charge, with that notion being either in actual
+financial cost or time.
+
+It appears that, since this is not the first time this subject has come
+up, there is strong interest in building a c("new", "different",
+"better", ...) documentation/help system for R. That's fine. For those
+that have interest in pursuing this, perhaps the time has come for a
+group to form a new r-sig-doc list and move forward with the development
+of a framework for a new system that can be developed and implemented by
+that same group and then provided back to the community. 
+
+Writing technical and user documentation is a specialty skill set unto
+itself and perhaps those with the requisite skill sets will contribute
+them for the benefit of all.
+
+For those that do not have the skills and/or the time to contribute, I
+would urge you to financially contribute to the R Foundation in whatever
+way you can afford. Through that mechanism you will support the
+community at large and the future development and enhancement of R.
+
+There is no "hidden cost" here and certainly not one that is unique to
+GPL software. The cost is self-evident and it is measured in time and 
+$YOUR_MONETARY_UNITs. "Time is money" as they say and that is the same
+whether you are using GPL software or a commercial proprietary product. 
+
+A key difference here if any, is that none of us have paid anything for
+R, where a portion of that "revenue" would go to support a dedicated
+documentation team. In this case, it is "If you want it, you will need
+to design and build it."
+
+Best regards,
+
+Marc Schwartz
+
+From phgrosjean at sciviews.org  Thu Nov 18 17:49:33 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Nov 18 17:49:59 2004
+Subject: [R-gui] More doodles for a GUI: dy/dx and integral buttons
+In-Reply-To: <OFC3D5587B.D0D7C781-ON85256F50.000B45BB-85256F50.000E8A53@ci.orlando.fl.us>
+Message-ID: <200411181649.iAIGnYsu003845@outmx022.isp.belgacom.be>
+
+Hello,
+
+The way R graphics are constructed, most of this is either impossible, or
+very difficult. May be with the grid package?
+
+For the "graph galery", we would like to add one in SciViews-R (the one that
+is actually there is just a trial that will be reworked).
+
+Anyway, with GPL, the way to work is not to propose ideas to other, but if
+you find your ideas interesting enough, it is to implement them yourself,
+and to propose some piece of code to the others. I suggest you look at the
+code of the demo tkdensity in the package tcltk, see:
+> library(tcltk)
+> demo(tkdensity)
+as a first approach on how you can program some more interactivity in R
+graphs.
+Best,
+
+Philippe Grosjean
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> James.Callahan@CityofOrlando.net
+> Sent: Thursday, November 18, 2004 3:41 AM
+> To: r-sig-gui@stat.math.ethz.ch
+> Subject: [R-gui] More doodles for a GUI: dy/dx and integral buttons
+> 
+> More doodles for a GUI....dy/dx and integral buttons
+> 
+> Some GIS programs have a magnifying glass to zoom in a 
+> portion of the map. 
+> You click on the magnifying glass, the cursor becomes a 
+> magnifying glass and you click on an area of the map with the 
+> magnifying glass and that area of the map zooms in.
+> 
+> Suppose you have a dy/dx tool. You graph on the screen, you 
+> click on the dy/dx tool, the cursor becomes a dy/dx symbol. 
+> You hover over a portion of the curve and a box pops up 
+> telling you the slope of the curve at that point.  You click 
+> on the "elongated S" integral symbol and you find you can 
+> paint an area under the curve (or equivalently you click on a 
+> paint symbol to paint and then you click on the integral 
+> symbol to compute the area). You then click on an equals sign 
+> and a box pops up telling you in addition to the area under 
+> the curve -- the name of the method used to calculate the 
+> area, the formula used and the numeric value for the area 
+> complete with units.
+> 
+> Not very useful in production, but what a teaching tool.
+> 
+> I am not sure I would want that, but for the moment, I would 
+> hope our minds would be free enough to imagine (without being 
+> too constrained by implementation) what would be useful -- 
+> and not just "File->Print."
+> 
+> In some of the R graphics programs, you can already identify 
+> points by clicking on them.
+> 
+> How about a "jitter" button to apply jitter to a graph?
+> 
+> A graph menu with a icons representing a histogram, a 
+> scatterplot, or a q-q plot?
+> 
+> How about adding confidence intervals / bands with just a few clicks?
+> 
+> How do you move from isolated tricks like clicking on points 
+> -- to a comprehensive GUI environment?
+> 
+> How would the interface facilitate exploratory data analysis?
+> 
+> How would the interface facilitate verifying the data was 
+> read in correctly?
+> 
+> How would the interface facilitate organizing and retrieving data?
+> 
+> How do you visualize random number generation? Should we show 
+> a graph that looks like a firing range with bullets being 
+> shot at it, perhaps with sound effects?
+> 
+> Perhaps a tactile interface that would enable one to feel the 
+> weight of a slice of a probability distribution, from the 
+> feather-light tail of a distribution to a heavy lead weight 
+> towards the center of the distribution. Perhaps one could 
+> feel the "leverage" of outliers?
+> 
+> What would be truly useful?  What would be merely "cute?" and 
+> what would get in the way?
+> 
+> Jim Callahan
+> Management, Budget & Accounting
+> City of Orlando
+> (407) 246-3039 office
+> (407) 234-3744 cell phone
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+From phgrosjean at sciviews.org  Thu Nov 18 17:58:46 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Nov 18 17:59:16 2004
+Subject: [R-gui] Auto-GUI: Automated Building of GUIs for Objects
+In-Reply-To: <OF9856B226.E61BC4E2-ON85256F50.0003832F-85256F50.0009B3BC@ci.orlando.fl.us>
+Message-ID: <200411181658.iAIGwlta010862@outmx004.isp.belgacom.be>
+
+Interesting point of view.
+- For the 'Auto-GUI', look at guiDlgFunction() in package svDialogs
+(SciViews bundle, the R GUI API, downloadable from
+http://www.sciviews.org/SciViews-R) + the context menu in the object
+explorer in SciViews-R,
+- For the differents ways to look at/represent an object, look at 'views' in
+SciViews-R (accessible from the object explorer), or to the view() method
+implemented in svViews package (also in the SciViews bundle).
+
+Please, note that all this still works only under Windows (but it is
+currently ported to other platforms), and it is still in development (not
+completelly finalized, probably still buggy).
+
+Best,
+
+Philippe Grosjean
+ 
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> James.Callahan@CityofOrlando.net
+> Sent: Thursday, November 18, 2004 2:48 AM
+> To: r-sig-gui@stat.math.ethz.ch
+> Subject: [R-gui] Auto-GUI: Automated Building of GUIs for Objects
+> 
+> Developing a GUI for R is hard -- even at the conceptual 
+> level (let alone
+> coding) -- because there is neither a unique path, nor a 
+> unique destination.
+> 
+> First, There is no one definitive GUI toolkit in the 
+> open-source community. Moreover, the type of person attracted 
+> to R development -- sees 50 different ways of accomplishing 
+> the task. The closest solution I have seen is someone on this 
+> list developing an R interface to GUIs that provides a common 
+> R interface to multiple GUI toolkits.
+> 
+> Second, it is not clear what the GUI destination is. Given a 
+> clear idea of the destination, R developers find or develop 
+> the tools they need.
+> 
+> On 17-Nov-04 Philippe Grosjean wrote:
+> 
+> >  2) Second case: I write an original analysis and I want to make it
+> widely
+> >  available for oceanographers. Most of them do not want, and will 
+> > never
+> learn> >  the S language. They obviously need a simple and easy GUI 
+> on top of 
+> > my
+> R
+> >  function, because they want to run the analysis without 
+> knowing all 
+> > the details..."
+> 
+> One thought I have been toying with is that of an "Auto-GUI" 
+> tool that would look at an R object and attempt to build a 
+> GUI for it. The analogy would be the "Auto-Form" tool in MS 
+> Access (or the better implementations of the same idea in 
+> Lotus Approach or even in dBASE III). The DBMS looks at the 
+> table and mechanically builds a form.  The user has requested 
+> that Auto-GUI build an MS-Office style menu for an object. 
+> Auto-GUI looks at the object, sees that it has a print method 
+> and attaches the "print method" to "File-Print" option on the 
+> faux-Office menu.  Auto-GUI looks at the data structure and 
+> provides a tabular view (spreadsheet like) view of the data 
+> on one tab. Auto-GUI sees one or more plot methods and 
+> provides separate tabs for various plots (some more complex 
+> plots may be lazy loaded, the plot isn't drawn till the user 
+> clicks on the tab). So far, this just more or less recreates 
+> GNumeric or MS Excel. There should be a model tab. But, what 
+> does a model look like in a GUI?
+> 
+> To me, this is one of the core GUI questions, what does a 
+> model look like 
+> in a GUI?   R has a standard syntax for describing a model on 
+> a command 
+> line, but what does a model look like in a GUI? The now 
+> classic MS Office GUI wraps a familiar menu around a visual 
+> representation of an object -- a text document, a worksheet, 
+> a graph, a project, a photo, a database table, a drawing, a 
+> map etc.. How should we visualize models and other R objects? 
+>  What is a WYSIWYG representation of a model?
+> 
+> A visual representation of a model could be:
+> - a simplified (implicit, but not explicit matrix notation) 
+> equation -- similar to the command line interface
+> - a matrix equation rendered in HTML with hotspot links to 
+> visual representations of the objects represented by the 
+> symbols in the equation
+> - a stylized version of a graph -- I'm looking at a GGobi 
+> cloud of points and I grab a "plane" symbol I want fitted 
+> through it. I twist the plane to indicate I want to allow curvature.
+> - a flowchart -- macroeconomic models are often depicted with 
+> flowcharts.
+> - a tree with  right hand (independent) variables converging 
+> towards one or more tiers of left hand (dependent) variables.
+> 
+> I like the idea of a matrix equation rendered in HTML for 
+> output.  I am frightened by the thought of students learning 
+> statistics as locations in a particular vendor's report. the 
+> student learns to look in a particular location on the output 
+> for a certain useful number.  Which is fine till they switch 
+> between stat packages such as switching between SPSS and SAS 
+> or SAS and R. If students are going to remember by location, 
+> then let them remember the location in the context of a 
+> matrix equation. The Auto-GUI with an output screen 
+> consisting of  a matrix equation rendered in HTML is one 
+> possibility, but it still might not be the best way to do it.
+> 
+> Suppose I have a graph of a histogram and then drag and drop 
+> a bell-shape curve onto it -- what should happen? 
+> 
+> Just some incomplete thoughts....
+> 
+> Jim Callahan
+> Management, Budget & Accounting
+> City of Orlando
+> (407) 246-3039 office
+> (407) 234-3744 cell phone
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+From drf5n at maplepark.com  Thu Nov 18 18:14:55 2004
+From: drf5n at maplepark.com (David Forrest)
+Date: Thu Nov 18 18:15:17 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <6.1.2.0.2.20041117151226.01eb1170@hermes.nos.noaa.gov>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+	<6.1.2.0.2.20041117151226.01eb1170@hermes.nos.noaa.gov>
+Message-ID: <Pine.LNX.4.58.0411181102340.14150@maplepark.com>
+
+On Wed, 17 Nov 2004, Mike Prager wrote:
+
+...
+> Using CLI software, an infrequent user has trouble remembering the known
+> functions needed and trouble finding new ones (especially as that user gets
+> older).  What might help is an added help facility more oriented towards
+> tasks, rather than structured around functions or packages.
+...
+
+Another good (non-GUI) tool for the CLI is keyword completion.  R in ESS
+does this, giving you lists of possible functions, variables and objects,
+or feedback if there isn't any.  R's CLI completes, but only with
+filenames in the current directory.
+
+Dave
+-- 
+ Dave Forrest
+ drf@vims.edu                                    (804)684-7900w
+ drf5n@maplepark.com                             (804)642-0662h
+                                   http://maplepark.com/~drf5n/
+
+From andy_liaw at merck.com  Thu Nov 18 20:50:35 2004
+From: andy_liaw at merck.com (Liaw, Andy)
+Date: Thu Nov 18 20:52:13 2004
+Subject: [R-gui] RE: [R] The hidden costs of GPL software?
+Message-ID: <3A822319EB35174CA3714066D590DCD50994E33B@usrymx25.merck.com>
+
+> From: David Forrest
+> 
+> On Wed, 17 Nov 2004, Mike Prager wrote:
+> 
+> ...
+> > Using CLI software, an infrequent user has trouble 
+> remembering the known
+> > functions needed and trouble finding new ones (especially 
+> as that user gets
+> > older).  What might help is an added help facility more 
+> oriented towards
+> > tasks, rather than structured around functions or packages.
+> ...
+> 
+> Another good (non-GUI) tool for the CLI is keyword 
+> completion.  R in ESS
+> does this, giving you lists of possible functions, variables 
+> and objects,
+> or feedback if there isn't any.  R's CLI completes, but only with
+> filenames in the current directory.
+
+That works only if R was compiled with readline.  Thus it doesn't work that
+way on Windows, for example.  Completion still works on Windows under ESS
+though.
+
+Andy
+
+
+ 
+> Dave
+> -- 
+>  Dave Forrest
+>  drf@vims.edu                                    (804)684-7900w
+>  drf5n@maplepark.com                             (804)642-0662h
+>                                    http://maplepark.com/~drf5n/
+> 
+> ______________________________________________
+> R-help@stat.math.ethz.ch mailing list
+> https://stat.ethz.ch/mailman/listinfo/r-help
+> PLEASE do read the posting guide! 
+> http://www.R-project.org/posting-guide.html
+> 
+>
+
+From suz at michigan.gov  Thu Nov 18 22:04:51 2004
+From: suz at michigan.gov (Zhenming Su)
+Date: Thu Nov 18 22:05:25 2004
+Subject: [R-gui] Export2R: a utility to paste Excel data to R
+Message-ID: <s19cc831.094@gwcl1domg1v.state.mi.us>
+
+This is an Excel add-in to ease the transferring of data from Excel to
+R. It utilizes the AppActivate and SendKeys commands of VB to paste a
+command string "x <- read.table('clipboard',...)' on the R console
+window and thus paste a selected range of data set directly from Excel
+to R. Myself very much enjoy it and hope to share it with others. But
+use it at your own risk.
+
+You can download the program from: http://personal.www.umich.edu/~zsu/
+
+
+
+
+
+Zhenming Su, Ph.D.
+
+Institute for Fisheries Research
+212 Museums Annex Building
+1109 N. University Ave. 
+Ann Arbor, MI 48109-1084
+USA
+
+Phone: (734)663-3554 Ext. 123
+Fax: (734)663-9399
+Email: SUZ@michigan.gov
+
+From murdoch at stats.uwo.ca  Fri Nov 19 04:29:59 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Fri Nov 19 04:29:33 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <20041118112401.43406.qmail@web54410.mail.yahoo.com>
+References: <200411170955.iAH9toV21278008@hedwig1.umh.ac.be>
+	<20041118112401.43406.qmail@web54410.mail.yahoo.com>
+Message-ID: <38pqp0plva5eccu2qjrl1m1rgm9hjleh99@4ax.com>
+
+On Thu, 18 Nov 2004 03:24:01 -0800 (PST), Michael Grant
+<mwgrant2001@yahoo.com> wrote:
+
+>Hmmmm, interesting thread and minds will not be
+>changed but regarding GUIs...I thought S (aka R) was a
+>PROGRAMMING LANGUAGE with a statistical and numerical
+>slant, and not a statistics application. ;O)  
+>
+>Certainly there is an important place for GUIs but I
+>believe that it is very much overemphasized in modern
+>computer culture. My experience and bias--and I
+>started in the 1960's-- is that except for 'trivial'
+>uses, GUIs are a detriment to any reasonably complex
+>CREATIVE computational task. 
+
+I have to disagree with you.  What you say might be true about *bad*
+GUIs, but I find nothing more frustrating than the lack of programming
+support in R.
+
+What's a nice GUI for programming?
+
+You should be able to edit code, and have R parse the code that you
+are editing.  The current disconnect between the source file and what
+is in R makes debugging really painful.  I'd like to single step
+through a function, and when I spot the error, *edit it right there*.
+I'd like to be able to use the mouse to find the contents of a
+variable as I'm single stepping.  I'd like code-completion to be
+possible in the editor, and help hints based on what I'm typing.
+
+All of these things have existed for years in IDEs (i.e. programming
+GUIs), but most are not in R's GUIs.  
+
+>They are adequate for the
+>simple, common task. But even then, typing a command
+>or two is not overly taxing--- particularly when
+>compared to navigating layer upon layer of submenus as
+>is some times needed. If I need to, I will add a
+>little syntactical sugaring when coding and move on. 
+
+That's one sort of GUI that R could have, but it's not the only one,
+and it's not the one that I'd use.  However, I might start out
+students on it.  There's a big benefit to a list of suggestions as
+opposed to a big blank space.
+
+>GUIs encourage a passive approach to using computers
+>when solving problems. In addition, it is regretable
+>that a lot of people in the 'workplace' will carry out
+>incomplete and/or incorrect quantitative work because
+>of the real or perceived limitations of the particular
+>(GUI) apps they are using. There is no inclination to
+>go beyond the menu and even then many menu items
+>gather 'electronic dust'.
+
+A lot of people do incomplete or incorrect work because they don't
+know any better.  It doesn't matter if they're using a GUI or not,
+they'll do what they think they know, and get it wrong.
+
+Duncan Murdoch
+
+>Finally, there are times for many of us when work
+>'goes home' at the end of the day. That just comes
+>with the territory. I (and most others) can not afford
+>the luxury of S-plus, Statistica, SPSS, etc. at home.
+>So in a sense there is a very real 'loss of
+>productivity' cost associated with using commercial
+>software. Now that does bring us around to supporting
+>R doesn't it? (Mea culpa. And I resolve to do better!)
+>What value does one put on the vitality of the R
+>community?
+>
+>Best regards,
+>Michael Grant, Ph.D. 
+>
+>* The requirements for creating packages are on
+>target,  and have the desired impact on both the
+>quality and breadth of R. 
+>
+>--- Philippe Grosjean <phgrosjean@sciviews.org> wrote:
+>
+>> Hello,
+>> 
+>> In the latest 'Scientific Computing World' magazine
+>> (issue 78, p. 22), there
+>> is a review on free statistical software by Felix
+>> Grant ...2.)
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+From mwgrant2001 at yahoo.com  Fri Nov 19 13:37:04 2004
+From: mwgrant2001 at yahoo.com (Michael Grant)
+Date: Fri Nov 19 13:37:17 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <38pqp0plva5eccu2qjrl1m1rgm9hjleh99@4ax.com>
+Message-ID: <20041119123704.88798.qmail@web54401.mail.yahoo.com>
+
+
+--- Duncan Murdoch <murdoch@stats.uwo.ca> wrote:
+
+> On Thu, 18 Nov 2004 03:24:01 -0800 (PST), Michael
+> Grant
+> <mwgrant2001@yahoo.com> wrote:
+> 
+> >Hmmmm, interesting thread and minds will not be
+> >changed but regarding GUIs...I thought S (aka R)
+
+...
+
+> 
+> I have to disagree with you.  What you say might be
+> true about *bad*
+> GUIs, but I find nothing more frustrating than the
+> lack of programming
+> support in R.
+>
+> What's a nice GUI for programming?
+> 
+> You should be able to edit code, and have R parse
+> the code that you
+> are editing
+...
+[snip] [snip] [snip]
+... 
+> All of these things have existed for years in IDEs
+> (i.e. programming
+> GUIs), but most are not in R's GUIs.  
+
+I guess we'll just agree to disagree. :O)
+1.)The LACK of programming support? Isn't that a bit
+of an overstatement? There are materials available, as
+of ciurse you are aware. At one time or another many
+of us may find it difficult to determine some 'key'
+programming information at the moment. But you know
+something, I've  had that happen using the packages
+like you describe--this includes wired IDE help,
+original documentation, and 3rd party books. I accept
+that as a condition for using both free and commercial
+software. And if the particular burden is too great,
+then I don't use the product. Such is life :O)
+
+2.)As you indicate below, R doesn't not have a VB or
+VC++ style IDE. R doesn't have the development
+environment of Smalltalk or the commercial LISPs
+(sigh...) But, really, an IDE is a bit more than a
+GUI, wouldn't you agree? A GUI is just one component
+of an IDE.
+
+Perhaps part of our difference is how we view
+programming. I view it more as a form of expression
+using a LANGUAGE. Like any language, e.g., English,
+French, Chinese, you have to develop a degree of
+fluency to express yourself. Some people are
+comfortable working with a phrase book and others put
+more effort in to learn to converse sans book. Both
+approaches are quite legitimate in that either can get
+the job done. (And both can fail miserably!) 
+
+>From another perspective, I can not deny that having a
+real GUI would be nice at times even for a grump like
+myself. And not having such is a cost. But in my case
+that cost is not the deciding factor. The fact is, I
+by preference do a lot of coding--both at the
+quick/dirty scale and the project scale--in R that I
+could do in C/C++, FORTRAN, BASIC. I have those tools
+in commerical form with IDEs
+
+Why R? The turn around is so fast by comparison. R/S
+is language in which I can much more easily and
+quickly express myself.  The development team has done
+a lot of work developing my high-level language for me
+:O). (Note--my second hacking language is  lisp-stat,
+also an interpreted, higher functionality language.) I
+don't use most of R's capabilities, and 'not knowing
+that which I do not know' is not an issue. When I need
+something new I am able to learn it incrementally on
+top of what I already know.
+...
+> 
+> That's one sort of GUI that R could have, but it's
+> not the only one,
+> and it's not the one that I'd use.  However, I might
+> start out
+> students on it.  There's a big benefit to a list of
+> suggestions as
+> opposed to a big blank space.
+Did I suggest banning GUIs? I don't think so. Your
+world is one where there are benefit for your
+clients--the students. My world is turn around and
+documentation. Coding is easier to document than a
+complex sequence of menu actions. Indeed I would get
+laughed out of Dodge City if I documented a set of
+calculations: " next I clicked ...". It's that just
+different requirements lead to different needs.
+
+> 
+> >GUIs encourage a passive approach to using
+> computers
+> >when solving problems. In addition, it is
+> regretable
+...
+[snip]
+...
+> >gather 'electronic dust'.
+> 
+> A lot of people do incomplete or incorrect work
+> because they don't
+> know any better.  It doesn't matter if they're using
+> a GUI or not,
+> they'll do what they think they know, and get it
+> wrong.
+
+Of course that is the case, but the limitations in a
+given GUI is one more thing that puts such people in
+rationalized comfort-zone with their actions.
+(Typically I see this with EXCEL apps--99.9% of the
+people in my trade run away from statistical
+software.)
+More than once I have seen this occur in a senior
+scientist review capacity after management has seen
+the product and 'accepted' its results. Doom, doom,
+doom...shoot the messenger! Oh woe, oh woe!:O(.
+
+Best regards, Duncan
+Michael
+
+From blindglobe at gmail.com  Fri Nov 19 13:50:59 2004
+From: blindglobe at gmail.com (A.J. Rossini)
+Date: Fri Nov 19 13:51:08 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <20041119123704.88798.qmail@web54401.mail.yahoo.com>
+References: <38pqp0plva5eccu2qjrl1m1rgm9hjleh99@4ax.com>
+	<20041119123704.88798.qmail@web54401.mail.yahoo.com>
+Message-ID: <1abe3fa90411190450e0cf823@mail.gmail.com>
+
+Note that there are bits and pieces of IDE components within ESS,
+provided that you use some of the other tools available (in
+particular, ECB).  I've not finished integration, but it provides
+tools comparable to JDEE (the Emacs Java IDE), which isn't far off
+from Eclipse in many ways.
+
+Currently, it does provide limited source code navigation within the
+file, for example to functions and "data assignments".  Next would be
+some of the code generation tools, but that becomes tricky.
+
+Applications programming is NOT statistical programming, and this
+point needs to be hammered in, sometimes.  There is a duality with R
+(and similar interactive (not necessarily interpretive) programming
+languages used for data analysis such as Lisp, Perl, and Python)
+
+An IDE for statistical analysis is different than what one wants from
+a GUI, or from an IDE for applications programming.
+
+best,
+-tony
+
+On Fri, 19 Nov 2004 04:37:04 -0800 (PST), Michael Grant
+<mwgrant2001@yahoo.com> wrote:
+> 
+> --- Duncan Murdoch <murdoch@stats.uwo.ca> wrote:
+> 
+> > On Thu, 18 Nov 2004 03:24:01 -0800 (PST), Michael
+> > Grant
+> > <mwgrant2001@yahoo.com> wrote:
+> >
+> > >Hmmmm, interesting thread and minds will not be
+> > >changed but regarding GUIs...I thought S (aka R)
+> 
+> ...
+> 
+> >
+> > I have to disagree with you.  What you say might be
+> > true about *bad*
+> > GUIs, but I find nothing more frustrating than the
+> > lack of programming
+> > support in R.
+> >
+> > What's a nice GUI for programming?
+> >
+> > You should be able to edit code, and have R parse
+> > the code that you
+> > are editing
+> ...
+> [snip] [snip] [snip]
+> ...
+> > All of these things have existed for years in IDEs
+> > (i.e. programming
+> > GUIs), but most are not in R's GUIs.
+> 
+> I guess we'll just agree to disagree. :O)
+> 1.)The LACK of programming support? Isn't that a bit
+> of an overstatement? There are materials available, as
+> of ciurse you are aware. At one time or another many
+> of us may find it difficult to determine some 'key'
+> programming information at the moment. But you know
+> something, I've  had that happen using the packages
+> like you describe--this includes wired IDE help,
+> original documentation, and 3rd party books. I accept
+> that as a condition for using both free and commercial
+> software. And if the particular burden is too great,
+> then I don't use the product. Such is life :O)
+> 
+> 2.)As you indicate below, R doesn't not have a VB or
+> VC++ style IDE. R doesn't have the development
+> environment of Smalltalk or the commercial LISPs
+> (sigh...) But, really, an IDE is a bit more than a
+> GUI, wouldn't you agree? A GUI is just one component
+> of an IDE.
+> 
+> Perhaps part of our difference is how we view
+> programming. I view it more as a form of expression
+> using a LANGUAGE. Like any language, e.g., English,
+> French, Chinese, you have to develop a degree of
+> fluency to express yourself. Some people are
+> comfortable working with a phrase book and others put
+> more effort in to learn to converse sans book. Both
+> approaches are quite legitimate in that either can get
+> the job done. (And both can fail miserably!)
+> 
+> >From another perspective, I can not deny that having a
+> real GUI would be nice at times even for a grump like
+> myself. And not having such is a cost. But in my case
+> that cost is not the deciding factor. The fact is, I
+> by preference do a lot of coding--both at the
+> quick/dirty scale and the project scale--in R that I
+> could do in C/C++, FORTRAN, BASIC. I have those tools
+> in commerical form with IDEs
+> 
+> Why R? The turn around is so fast by comparison. R/S
+> is language in which I can much more easily and
+> quickly express myself.  The development team has done
+> a lot of work developing my high-level language for me
+> :O). (Note--my second hacking language is  lisp-stat,
+> also an interpreted, higher functionality language.) I
+> don't use most of R's capabilities, and 'not knowing
+> that which I do not know' is not an issue. When I need
+> something new I am able to learn it incrementally on
+> top of what I already know.
+> ...
+> >
+> > That's one sort of GUI that R could have, but it's
+> > not the only one,
+> > and it's not the one that I'd use.  However, I might
+> > start out
+> > students on it.  There's a big benefit to a list of
+> > suggestions as
+> > opposed to a big blank space.
+> Did I suggest banning GUIs? I don't think so. Your
+> world is one where there are benefit for your
+> clients--the students. My world is turn around and
+> documentation. Coding is easier to document than a
+> complex sequence of menu actions. Indeed I would get
+> laughed out of Dodge City if I documented a set of
+> calculations: " next I clicked ...". It's that just
+> different requirements lead to different needs.
+> 
+> >
+> > >GUIs encourage a passive approach to using
+> > computers
+> > >when solving problems. In addition, it is
+> > regretable
+> ...
+> [snip]
+> ...
+> > >gather 'electronic dust'.
+> >
+> > A lot of people do incomplete or incorrect work
+> > because they don't
+> > know any better.  It doesn't matter if they're using
+> > a GUI or not,
+> > they'll do what they think they know, and get it
+> > wrong.
+> 
+> Of course that is the case, but the limitations in a
+> given GUI is one more thing that puts such people in
+> rationalized comfort-zone with their actions.
+> (Typically I see this with EXCEL apps--99.9% of the
+> people in my trade run away from statistical
+> software.)
+> More than once I have seen this occur in a senior
+> scientist review capacity after management has seen
+> the product and 'accepted' its results. Doom, doom,
+> doom...shoot the messenger! Oh woe, oh woe!:O(.
+> 
+> Best regards, Duncan
+> Michael
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+
+-- 
+
+best,
+-tony
+
+---
+A.J. Rossini
+blindglobe@gmail.com
+
+From murdoch at stats.uwo.ca  Sat Nov 20 04:55:08 2004
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Sat Nov 20 04:54:36 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <1abe3fa90411190450e0cf823@mail.gmail.com>
+References: <38pqp0plva5eccu2qjrl1m1rgm9hjleh99@4ax.com>
+	<20041119123704.88798.qmail@web54401.mail.yahoo.com>
+	<1abe3fa90411190450e0cf823@mail.gmail.com>
+Message-ID: <eeetp0tlpeqpn6g6fc4ji1o4v2s7946l7s@4ax.com>
+
+On Fri, 19 Nov 2004 13:50:59 +0100, "A.J. Rossini"
+<blindglobe@gmail.com> wrote:
+
+>Note that there are bits and pieces of IDE components within ESS,
+>provided that you use some of the other tools available (in
+>particular, ECB).  I've not finished integration, but it provides
+>tools comparable to JDEE (the Emacs Java IDE), which isn't far off
+>from Eclipse in many ways.
+
+Yes, definitely, and if R itself had more of the infrastructure to
+support a full IDE, I imagine you'd expose it in ESS as soon as anyone
+did.
+
+>Currently, it does provide limited source code navigation within the
+>file, for example to functions and "data assignments".  Next would be
+>some of the code generation tools, but that becomes tricky.
+>
+>Applications programming is NOT statistical programming, and this
+>point needs to be hammered in, sometimes.  There is a duality with R
+>(and similar interactive (not necessarily interpretive) programming
+>languages used for data analysis such as Lisp, Perl, and Python)
+>
+>An IDE for statistical analysis is different than what one wants from
+>a GUI, or from an IDE for applications programming.
+
+I can see the need for differences between IDEs for interactive vs
+compiled operation, but what sorts of differences do you think are
+specific to statistical programming vs application programming?
+
+By the way, I think we're using "GUI" differently.  For reference,
+when I use it I'm distinguishing it from a teletype style command line
+interface.  In my usage, vi and Emacs are both GUIs (though vi is a
+pretty limited one).  Command line R is not.  Windows Rgui is mixed,
+in that the console acts like a teletype (you can only add input at
+the bottom), but there are also GUI elements.
+
+Duncan Murdoch
+
+From blindglobe at gmail.com  Mon Nov 22 07:33:05 2004
+From: blindglobe at gmail.com (A.J. Rossini)
+Date: Mon Nov 22 07:33:15 2004
+Subject: [R-gui] Re: [R] The hidden costs of GPL software?
+In-Reply-To: <eeetp0tlpeqpn6g6fc4ji1o4v2s7946l7s@4ax.com>
+References: <38pqp0plva5eccu2qjrl1m1rgm9hjleh99@4ax.com>
+	<20041119123704.88798.qmail@web54401.mail.yahoo.com>
+	<1abe3fa90411190450e0cf823@mail.gmail.com>
+	<eeetp0tlpeqpn6g6fc4ji1o4v2s7946l7s@4ax.com>
+Message-ID: <1abe3fa904112122331ac1ad3c@mail.gmail.com>
+
+I don't think we are using GUI differently.  I'll reference some
+experiments that I disliked that used Emacs/ESS pull-downs in much the
+same style as SPSS/Minitab/etc.
+
+More amusing, I actually got them to "write and evaluate" SAS
+equivalents for regression model fitting as well as the same for R.
+
+I didn't like them.  I'm not about to publish them.  They slowly
+become an RSI hazard.  The only nice use was that they were templates
+(and I should say that forming a general notion of statistical
+templates is on my "to-do" list, probably more like a "never-do"
+list).
+
+With respect to applications programming and "statistical
+programming", I could write a book.  Here is a subset of issues, and
+it's not complete:
+
+applications programs have to be mildly optimized (i.e. can't be too
+slow), and are generally left alone except for maintanance.
+Generally, there is a specification to which the program has to be
+written, and metrics for evaluation are based on code quality, not
+just the output.
+
+
+statistical programs (and I'm thinking "data analysis", not
+infrastructure coding or refactoring analytics to be more general)
+usually have to be "finished", rather than "almost done".   Usually no
+optimization is done, and extensions happen in a less specified way. 
+More importantly, in idea cases they follow but don't religiously obey
+an analysis plan (usually due to holes in the plan, not the program)
+and metrics are based on comprehensiveness of results rather than code
+metrics or the "path taken".
+
+Sometimes application programs have to be written to get the job done
+(thinking of applications programming as a subset) and other times,
+it's just a pile of code (or the GUI generated hodgepodge mix of MS
+Excel).
+
+best,
+-tony
+
+
+On Fri, 19 Nov 2004 22:55:08 -0500, Duncan Murdoch <murdoch@stats.uwo.ca> wrote:
+> On Fri, 19 Nov 2004 13:50:59 +0100, "A.J. Rossini"
+> <blindglobe@gmail.com> wrote:
+> 
+> >Note that there are bits and pieces of IDE components within ESS,
+> >provided that you use some of the other tools available (in
+> >particular, ECB).  I've not finished integration, but it provides
+> >tools comparable to JDEE (the Emacs Java IDE), which isn't far off
+> >from Eclipse in many ways.
+> 
+> Yes, definitely, and if R itself had more of the infrastructure to
+> support a full IDE, I imagine you'd expose it in ESS as soon as anyone
+> did.
+> 
+> >Currently, it does provide limited source code navigation within the
+> >file, for example to functions and "data assignments".  Next would be
+> >some of the code generation tools, but that becomes tricky.
+> >
+> >Applications programming is NOT statistical programming, and this
+> >point needs to be hammered in, sometimes.  There is a duality with R
+> >(and similar interactive (not necessarily interpretive) programming
+> >languages used for data analysis such as Lisp, Perl, and Python)
+> >
+> >An IDE for statistical analysis is different than what one wants from
+> >a GUI, or from an IDE for applications programming.
+> 
+> I can see the need for differences between IDEs for interactive vs
+> compiled operation, but what sorts of differences do you think are
+> specific to statistical programming vs application programming?
+> 
+> By the way, I think we're using "GUI" differently.  For reference,
+> when I use it I'm distinguishing it from a teletype style command line
+> interface.  In my usage, vi and Emacs are both GUIs (though vi is a
+> pretty limited one).  Command line R is not.  Windows Rgui is mixed,
+> in that the console acts like a teletype (you can only add input at
+> the bottom), but there are also GUI elements.
+> 
+> Duncan Murdoch
+> 
+
+
+-- 
+
+best,
+-tony
+
+---
+A.J. Rossini
+blindglobe@gmail.com
+
+From joseclaudio.faria at terra.com.br  Tue Nov 23 02:11:55 2004
+From: joseclaudio.faria at terra.com.br (=?Windows-1252?Q?Jos=E9_Cl=E1udio_Faria?=)
+Date: Tue Nov 23 02:12:34 2004
+Subject: [R-gui] and Re: [R] The hidden costs of GPL software
+Message-ID: <000701c4d0f9$75f32680$01fea8c0@sapetinga>
+
+Hi All,
+
+This has been an very interesting discussion!
+
+Advise:  excuse me, my English is not very good, but I woul like to participate
+               with same considerations.
+
+1: Tim said:
+> I don't think a fancy GUI is necessary... I get the impression that the
+> real power of R is the fact that really it's a programming language,
+> and should probably be treated and learned as such.
+
+I would like to agree with Tim and I think the user
+(novice or experienced) needs basically the resources of three
+or four basic R GUI projects:
+
+a) A good and simple, in principle, GUI (like SciViews and JGR)
+b) A good and simple, in principle, and basic tool to learn easily to write
+   S&R scripts (like Rcmdr), now intergrated with SciViews.
+c) A good and simple, in principle, scripts editor (like WinEdit and Tinn-R).
+   Tinn-R is now integrate with SciViews.
+
+PS: I don't work with Emacs + ESS and I think isn't adequate for the novice,
+    definitively, not.
+   
+So, SciViews is a good, in principle, GUI for R. The major problem, is to make
+it available in all plataforms suported for the R.
+
+I think that the R user, necessarily, must have disposition to learn
+S and R languages: The power and flexibility is there!!!
+
+The GUI will help the user in this intention. 
+
+2: Ted said:
+> One genuine benefit that the GUI offers, especially to
+> beginners with a particular software package, is that the
+> resources of the software can perhaps more easily and rapidly
+> be explored through the GUI, rather than searching laboriously
+> through the documentation of functions, extra packages, and
+> so on. This means that they more readily come to perceive
+> what is available though of course this is limited to what
+> the GUI will show them. But a good "Help" window can break
+> that barrier.
+
+Very good!
+
+> This, though, still fails for information in packages which
+> you have not installed.
+
+Idem!
+
+3: Jonathan Baron said:
+> This is one of the purpose of my R search page.  I have all
+> packages installed.  You can also search the help list, etc., in
+> the same search.  Some people have bookmarks for it.  Of course
+> you need to be connected to the internet.
+
+Thanks for your page Jon: very useful!
+
+4: Philippe said:
+> May be, I am just a "DREAMER", but all I read in this discussion reinforce my
+> conviction that an **innovative** GUI would be a good addition to R...
+> For sure, the alternate GUI will only support you in writing R code, and
+> will deliver plenty of help to achieve this goal.
+
+I Think that Philippe is correct.
+
+Perhaps Free Pascal and Lazarus (IDE for the Free Pascal) can be considered as
+an alternative to make an OS independent R GUI.
+
+Lazarus (http://www.lazarus.freepascal.org/) is the class libraries for
+Free Pascal that emulate Delphi.
+
+Free Pascal is a GPL'ed compiler that runs on Linux, Win32, OS/2, 68K and more.
+Free Pascal is designed to be able to understand and compile Delphi syntax.
+
+Best regards,
+
+Jos? Cl?udio Faria - Prof. Adjunto/Estat?stica 
+UESC/DCET
+Brasil
+73-634.2779
+joseclaudio.faria@terra.com.br
+jc_faria@uesc.br
+jc_faria@uol.com.br
+

@@ -1,0 +1,63 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-07",
+  "messages": [
+    {
+      "id": "msg-6ea55c326532",
+      "message_id": "<17581.12978.488153.907241@markov.math.csi.cuny.edu>",
+      "from_name": "verzani at math.csi.cuny.edu",
+      "from_email_hash": "b807e48d46a4dd62c3f942d742ee2674ab86ebefa69a6e8a05f6abb119c12cdb",
+      "date": "2006-07-06T11:56:34-04:00",
+      "subject": "[R-gui] New version (-17) of iWidgetsRGtk, pmg",
+      "subject_clean": "[R-gui] New version (-17) of iWidgetsRGtk, pmg",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "A new version (-17) of iWidgetsRGtk and pmg was uploaded to the\nwebsite http://www.math.csi.cuny.edu/pmg. The new version has a new\nwidget icheckboxgroup for selecting one or more from many, and some\nbug fixes.\n\n--John",
+      "body_snippet": "A new version (-17) of iWidgetsRGtk and pmg was uploaded to the\nwebsite http://www.math.csi.cuny.edu/pmg. The new version has a new\nwidget icheckboxgroup for selecting one or more from many, and some\n",
+      "thread_id": "thread-6ea55c326532",
+      "thread_depth": 0,
+      "month": "2006-07"
+    },
+    {
+      "id": "msg-67c0cd2d7124",
+      "message_id": "<6.2.0.14.0.20060727132940.038af390@sslmail.wu-wien.ac.at>",
+      "from_name": "Gunther Maier",
+      "from_email_hash": "dba85fabd69b20401e90a168981333318f02eec9349f04ef49e01bc52df6104d",
+      "date": "2006-07-27T13:33:12+02:00",
+      "subject": "[R-gui] new version of SimpleR, a Windows GUI to R",
+      "subject_clean": "[R-gui] new version of SimpleR, a Windows GUI to R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear colleagues,\nI would like to inform you that a new version of SimpleR, a Windows-based GUI for R is available at http://www-sre.wu-wien.ac.at/SimpleR . This version has new features for data management (subsetting of datasets, merging of datasets) and improved data handling functions. Please, send questions, comments and feedback to gunther.maier at wu-wien.ac.at .\n\nKind regards\nGunther Maier\n\n-----------------------------------------------------------------------\n*  Gunther Maier, University of Economics and Business Administration *\n*     Augasse 2-6, Vienna, Austria. (Gunther.Maier at wu-wien.ac.at)     *\n*      Newsletter Editor, European Regional Science Association       *",
+      "body_snippet": "Dear colleagues,\nI would like to inform you that a new version of SimpleR, a Windows-based GUI for R is available at http://www-sre.wu-wien.ac.at/SimpleR . This version has new features for data manag",
+      "thread_id": "thread-67c0cd2d7124",
+      "thread_depth": 0,
+      "month": "2006-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-6ea55c326532",
+      "subject": "[R-gui] New version (-17) of iWidgetsRGtk, pmg",
+      "message_count": 1,
+      "participants": [
+        "verzani at math.csi.cuny.edu"
+      ],
+      "started": "2006-07-06T11:56:34-04:00",
+      "last_reply": "2006-07-06T11:56:34-04:00",
+      "root_message_id": "msg-6ea55c326532"
+    },
+    {
+      "id": "thread-67c0cd2d7124",
+      "subject": "[R-gui] new version of SimpleR, a Windows GUI to R",
+      "message_count": 1,
+      "participants": [
+        "Gunther Maier"
+      ],
+      "started": "2006-07-27T13:33:12+02:00",
+      "last_reply": "2006-07-27T13:33:12+02:00",
+      "root_message_id": "msg-67c0cd2d7124"
+    }
+  ]
+}

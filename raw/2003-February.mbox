@@ -1,0 +1,154 @@
+From zedshaw@zedshaw.com  Fri Feb 21 08:26:52 2003
+From: zedshaw@zedshaw.com (Zed A. Shaw)
+Date: Fri, 21 Feb 2003 00:26:52 -0800
+Subject: [R-gui] [ANN] ObveRsive WoRkbench MS1 Release
+Message-ID: <3AE86C86-4576-11D7-A90A-00039391E298@zedshaw.com>
+
+Hi All,
+
+I just wanted to send out a quick note to everyone on r-devel and 
+r-sig-gui list announcing that the ObveRsive WoRkbench project has  
+made a milestone 1 (MS1) release.  The release is available for 
+Windows, Linux (i386/PPC), and Mac OSX.  This release really does 
+nothing R related yet, but it does have all the GUI elements we thought 
+important.  You'll be able to play with tables, wizards, and a console 
+element.
+
+Please go to http://obversive.sourceforge.net/ and check out the 
+"Downloads" section to get a release.  You can also post comments to 
+the main page as comments to the top news announcement.  Also, feel 
+free to e-mail me directly if you have comments or suggestions.
+
+Enjoy!
+
+-----
+Zed A. Shaw
+http://www.zedshaw.com/
+
+
+From deleeuw@stat.ucla.edu  Wed Feb 26 18:20:15 2003
+From: deleeuw@stat.ucla.edu (Jan de Leeuw)
+Date: Wed, 26 Feb 2003 10:20:15 -0800
+Subject: [R-gui] Re: [R-SIG-Mac]compiling r-devel on Darwin
+In-Reply-To: <p05200f00ba82ac40e0c7@[134.214.34.24]>
+Message-ID: <F3ECEC1A-49B6-11D7-9DCB-000393BB6D36@stat.ucla.edu>
+
+I'll look into it. But I also do not have this problem because in  
+R-devel I
+use the --with-blas="-framework vecLib" --with-lapack flags in  
+configure,
+which use Apple's BLAS/Lapack optimized for OS X.
+
+On Wednesday, Feb 26, 2003, at 09:54 US/Pacific, Jean Thioulouse wrote:
+
+>> I don't have this. What this says is that the modules in libg2c.a  
+>> have not been
+>> compiled with -fno-common., which indicates there is something wrong  
+>> with
+>> your g77 from fink. Make sure you have the latest OS 10.2 version. In  
+>> any case
+>> use the g77 from the unstable tree, and try "fink rebuild g77"
+>
+> I have done it, and I have now g77 3.1-20020420-5 instead of  
+> 3.1-20020420-4
+> with a new libg2c library, but I still have the same error.
+>
+> Jean
+>
+> --  
+> Jean Thioulouse - Equipe "Ecologie  Statistique" - UMR CNRS 5558
+> Universite Lyon 1, Bat. Mendel, 69622 Villeurbanne Cedex, France
+> Fax: (33) 4 78 89 27 19                  Tel: (33) 4 72 43 27 56
+>           http://pbil.univ-lyon1.fr/JTHome.html
+>
+>
+===
+Jan de Leeuw; Professor and Chair, UCLA Department of Statistics;
+Editor: Journal of Multivariate Analysis, Journal of Statistical  
+Software
+US mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554
+phone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu
+homepage: http://gifi.stat.ucla.edu
+   
+------------------------------------------------------------------------ 
+-------------------------
+           No matter where you go, there you are. --- Buckaroo Banzai
+                    http://gifi.stat.ucla.edu/sounds/nomatter.au
+   
+------------------------------------------------------------------------ 
+-------------------------
+
+
+From deleeuw@stat.ucla.edu  Thu Feb 27 02:19:42 2003
+From: deleeuw@stat.ucla.edu (Jan de Leeuw)
+Date: Wed, 26 Feb 2003 18:19:42 -0800
+Subject: [R-gui] nice combo on os x
+Message-ID: <EE913B7F-49F9-11D7-9DCB-000393BB6D36@stat.ucla.edu>
+
+You need
+
+(a) a recent OS X framework build of python, which also installs IDLE
+(b) a recent OS X framework build  of AquaTk (i.e. native Tcl/Tk)
+(c) a version of R compiled with AquaTk and without X11
+(d) a recent version of Rpy
+
+Now you can open IDLE and say
+
+ >> from rpy import *
+ >> r.quartz()
+ >> r.library("tcltk")
+ >> r.demo("tkdensity")
+
+This all works. You get the Aqua Tk widgets and the plotting in the
+quartz device. Windows can be brought to the foreground, minimized to  
+the
+dock, and widgets can be operated with the mouse. No X11 is required
+at all.
+
+===
+Jan de Leeuw; Professor and Chair, UCLA Department of Statistics;
+Editor: Journal of Multivariate Analysis, Journal of Statistical  
+Software
+US mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554
+phone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu
+homepage: http://gifi.stat.ucla.edu
+   
+------------------------------------------------------------------------ 
+-------------------------
+           No matter where you go, there you are. --- Buckaroo Banzai
+                    http://gifi.stat.ucla.edu/sounds/nomatter.au
+   
+------------------------------------------------------------------------ 
+-------------------------
+
+
+From mcmt84@yahoo.com  Fri Feb 28 20:03:35 2003
+From: mcmt84@yahoo.com (Tom Smith)
+Date: Fri, 28 Feb 2003 12:03:35 -0800 (PST)
+Subject: [R-gui] Texmacs as an R gui
+Message-ID: <20030228200335.86916.qmail@web41202.mail.yahoo.com>
+
+On thing to keep an eye on as an R gui is Texmacs
+(www.texmacs.org). It is a very good typesetting
+program, but it is designed to have connections to
+math programs like maxima or octave and now R. 
+
+Right now, they mainly work in a terminal mode. The
+advantage is that you can display graph results in
+line with the output. See the following link for an
+example:
+
+http://mail.gnu.org/archive/html/texmacs-dev/2002-11/ps00000.ps
+
+Which was buried in this email:
+
+http://mail.gnu.org/archive/html/texmacs-dev/2002-11/msg00262.html
+
+Eventually, they plan to also have workbook and
+spreadsheet type interfaces. See:
+
+http://mail.gnu.org/archive/html/texmacs-dev/2002-11/msg00256.html
+
+Mike
+
+

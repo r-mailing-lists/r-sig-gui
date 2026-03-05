@@ -1,0 +1,174 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2013-05",
+  "messages": [
+    {
+      "id": "msg-b285be088f90",
+      "message_id": "<F9C83CCA5A739048B168C5AFDF627A6B2B51791F@cscmlbe4.csc.es>",
+      "from_name": "SALAMERO at clinic.ub.es",
+      "from_email_hash": "3d5147807c04ad7dd4665fdf272aefbe7b01130b39e492ccac807d7d3b829bf4",
+      "date": "2013-05-08T13:01:11Z",
+      "subject": "[R-gui] Tktable colours",
+      "subject_clean": "[R-gui] Tktable colours",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130508/25493558/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130508/25493558/attachment.pl>",
+      "thread_id": "thread-b285be088f90",
+      "thread_depth": 0,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-6396e1cec2cd",
+      "message_id": "<68D81175-6283-4B7A-840A-EF2FD5DF7835@gmail.com>",
+      "from_name": "peter dalgaard",
+      "from_email_hash": "d2573f0c0a474184a9d96c815fc6bf37ff7c6392082069d810139c562d5a6f71",
+      "date": "2013-05-11T14:36:09+02:00",
+      "subject": "[R-gui] Tktable colours",
+      "subject_clean": "[R-gui] Tktable colours",
+      "in_reply_to": "<F9C83CCA5A739048B168C5AFDF627A6B2B51791F@cscmlbe4.csc.es>",
+      "references": [
+        "<F9C83CCA5A739048B168C5AFDF627A6B2B51791F@cscmlbe4.csc.es>"
+      ],
+      "body_plain": "On May 8, 2013, at 15:01 , <SALAMERO at clinic.ub.es> <SALAMERO at clinic.ub.es> wrote:\n\n> Dear list,\n> \n> Is some way to change the default font color when a cell is selected? By default the font turns to white, which is difficult to see against a pale background.\n\nYou need to consult the help for the underlying Tk widget. Offhand, my guess would be something like tkconfigure(tbl, highlightcolor=\"red\")\n-- \nPeter Dalgaard, Professor,\nCenter for Statistics, Copenhagen Business School\nSolbjerg Plads 3, 2000 Frederiksberg, Denmark\nPhone: (+45)38153501\nEmail: pd.mes at cbs.dk  Priv: PDalgd at gmail.com",
+      "body_snippet": "On May 8, 2013, at 15:01 , <SALAMERO at clinic.ub.es> <SALAMERO at clinic.ub.es> wrote:\n\n> Dear list,\n> \n> Is some way to change the default font color when a cell is selected? By default the font tur",
+      "thread_id": "thread-b285be088f90",
+      "thread_depth": 1,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-ea72e69ff1d0",
+      "message_id": "<8DE1414EF7543642ADDDC14F7BAEB47B0CB534DC@SPMBMR006.frxntnyc.frx2.com>",
+      "from_name": "Thames, Chandra",
+      "from_email_hash": "00d9c5f79114357c72fddcf08f1361a38eea3a86e7bbcb523c9fa43f00b54454",
+      "date": "2013-05-14T15:13:59Z",
+      "subject": "[R-gui] Creating a DataFrame object when you open a file",
+      "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/8a156cdf/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/8a156cdf/attachment.pl>",
+      "thread_id": "thread-ea72e69ff1d0",
+      "thread_depth": 0,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-30712f3719b4",
+      "message_id": "<CAOQ5Nyc3opo4GGAkWA0c-dUC-POCYHEAh392J2MJtB37aCtAdg@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2013-05-14T13:28:56-07:00",
+      "subject": "[R-gui] Creating a DataFrame object when you open a file",
+      "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
+      "in_reply_to": "<8DE1414EF7543642ADDDC14F7BAEB47B0CB534DC@SPMBMR006.frxntnyc.frx2.com>",
+      "references": [
+        "<8DE1414EF7543642ADDDC14F7BAEB47B0CB534DC@SPMBMR006.frxntnyc.frx2.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/ce50cffc/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/ce50cffc/attachment.pl>",
+      "thread_id": "thread-ea72e69ff1d0",
+      "thread_depth": 1,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-b9be8d81dd9b",
+      "message_id": "<8DE1414EF7543642ADDDC14F7BAEB47B0CB53605@SPMBMR006.frxntnyc.frx2.com>",
+      "from_name": "Thames, Chandra",
+      "from_email_hash": "00d9c5f79114357c72fddcf08f1361a38eea3a86e7bbcb523c9fa43f00b54454",
+      "date": "2013-05-14T21:10:57Z",
+      "subject": "[R-gui] Creating a DataFrame object when you open a file",
+      "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7b0147b1/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7b0147b1/attachment.pl>",
+      "thread_id": "thread-b9be8d81dd9b",
+      "thread_depth": 0,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-3b4cc7bb7156",
+      "message_id": "<CAOQ5NyfBp7pR7tB=3D2VS53fOBM7XDfAd-GVqt1Xre6X0t7B-A@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2013-05-14T14:21:10-07:00",
+      "subject": "[R-gui] Creating a DataFrame object when you open a file",
+      "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
+      "in_reply_to": "<8DE1414EF7543642ADDDC14F7BAEB47B0CB53605@SPMBMR006.frxntnyc.frx2.com>",
+      "references": [
+        "<8DE1414EF7543642ADDDC14F7BAEB47B0CB53605@SPMBMR006.frxntnyc.frx2.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7d01b817/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7d01b817/attachment.pl>",
+      "thread_id": "thread-b9be8d81dd9b",
+      "thread_depth": 1,
+      "month": "2013-05"
+    },
+    {
+      "id": "msg-75ac5e957f68",
+      "message_id": "<8DE1414EF7543642ADDDC14F7BAEB47B0CB53642@SPMBMR006.frxntnyc.frx2.com>",
+      "from_name": "Thames, Chandra",
+      "from_email_hash": "00d9c5f79114357c72fddcf08f1361a38eea3a86e7bbcb523c9fa43f00b54454",
+      "date": "2013-05-14T21:51:39Z",
+      "subject": "[R-gui] Creating a DataFrame object when you open a file",
+      "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/31878a77/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/31878a77/attachment.pl>",
+      "thread_id": "thread-75ac5e957f68",
+      "thread_depth": 0,
+      "month": "2013-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-b285be088f90",
+      "subject": "[R-gui] Tktable colours",
+      "message_count": 2,
+      "participants": [
+        "SALAMERO at clinic.ub.es",
+        "peter dalgaard"
+      ],
+      "started": "2013-05-08T13:01:11+00:00",
+      "last_reply": "2013-05-11T14:36:09+02:00",
+      "root_message_id": "msg-b285be088f90"
+    },
+    {
+      "id": "thread-ea72e69ff1d0",
+      "subject": "[R-gui] Creating a DataFrame object when you open a file",
+      "message_count": 2,
+      "participants": [
+        "Michael Lawrence",
+        "Thames, Chandra"
+      ],
+      "started": "2013-05-14T15:13:59+00:00",
+      "last_reply": "2013-05-14T13:28:56-07:00",
+      "root_message_id": "msg-ea72e69ff1d0"
+    },
+    {
+      "id": "thread-b9be8d81dd9b",
+      "subject": "[R-gui] Creating a DataFrame object when you open a file",
+      "message_count": 2,
+      "participants": [
+        "Michael Lawrence",
+        "Thames, Chandra"
+      ],
+      "started": "2013-05-14T21:10:57+00:00",
+      "last_reply": "2013-05-14T14:21:10-07:00",
+      "root_message_id": "msg-b9be8d81dd9b"
+    },
+    {
+      "id": "thread-75ac5e957f68",
+      "subject": "[R-gui] Creating a DataFrame object when you open a file",
+      "message_count": 1,
+      "participants": [
+        "Thames, Chandra"
+      ],
+      "started": "2013-05-14T21:51:39+00:00",
+      "last_reply": "2013-05-14T21:51:39+00:00",
+      "root_message_id": "msg-75ac5e957f68"
+    }
+  ]
+}

@@ -1,0 +1,397 @@
+From r.d.morey at rug.nl  Wed Jun  2 22:41:00 2010
+From: r.d.morey at rug.nl (Richard D. Morey)
+Date: Wed, 02 Jun 2010 22:41:00 +0200
+Subject: [R-gui] clipboard and RGtkDataFrame
+Message-ID: <4C06C1DC.3080005@rug.nl>
+
+Hi everyone,
+
+I have an treeview backed by an RGtkDataFrame that I would like to be 
+able to copy info from, into the OS clipboard. I've found the 
+documentation for gtk-clipboard here:
+
+http://rss.acs.unt.edu/Rdoc/library/RGtk2/html/gtk-Clipboards.html
+
+but it isn't clear to me how to copy to the clipboard. Anyone know any 
+good examples using RGtk2 to copy to the OS clipboard?
+
+Thanks,
+Richard Morey
+
+
+From lawrence.michael at gene.com  Thu Jun  3 03:03:43 2010
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Wed, 2 Jun 2010 18:03:43 -0700
+Subject: [R-gui] clipboard and RGtkDataFrame
+In-Reply-To: <4C06C1DC.3080005@rug.nl>
+References: <4C06C1DC.3080005@rug.nl>
+Message-ID: <AANLkTimMjO8zYkoRxJtvneUSNTx8e8FJxCfkjEYc3cW2@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100602/3d3b0083/attachment.pl>
+
+From R.D.Morey at rug.nl  Thu Jun  3 14:46:57 2010
+From: R.D.Morey at rug.nl (Richard Morey)
+Date: Thu, 03 Jun 2010 14:46:57 +0200
+Subject: [R-gui] clipboard and RGtkDataFrame
+In-Reply-To: <AANLkTimMjO8zYkoRxJtvneUSNTx8e8FJxCfkjEYc3cW2@mail.gmail.com>
+References: <4C06C1DC.3080005@rug.nl>
+	<AANLkTimMjO8zYkoRxJtvneUSNTx8e8FJxCfkjEYc3cW2@mail.gmail.com>
+Message-ID: <4C07A441.20901@rug.nl>
+
+Thanks! That worked like a charm.
+
+Richard
+
+Richard D. Morey
+Assistant Professor
+Psychometrics and Statistics
+Rijksuniversiteit Groningen / University of Groningen
+http://drsmorey.org/research/rdmorey
+
+
+Michael Lawrence wrote:
+> There is a demo() in the RGtk2 package.
+> 
+> Please let me know if you can't find it or if anything is unclear.
+> 
+> Michael
+> 
+> On Wed, Jun 2, 2010 at 1:41 PM, Richard D. Morey <r.d.morey at rug.nl
+> <mailto:r.d.morey at rug.nl>> wrote:
+> 
+>     Hi everyone,
+> 
+>     I have an treeview backed by an RGtkDataFrame that I would like to
+>     be able to copy info from, into the OS clipboard. I've found the
+>     documentation for gtk-clipboard here:
+> 
+>     http://rss.acs.unt.edu/Rdoc/library/RGtk2/html/gtk-Clipboards.html
+> 
+>     but it isn't clear to me how to copy to the clipboard. Anyone know
+>     any good examples using RGtk2 to copy to the OS clipboard?
+> 
+>     Thanks,
+>     Richard Morey
+> 
+>     _______________________________________________
+>     R-SIG-GUI mailing list
+>     R-SIG-GUI at stat.math.ethz.ch <mailto:R-SIG-GUI at stat.math.ethz.ch>
+>     https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+
+From adrian at waddell.ch  Thu Jun 24 20:17:56 2010
+From: adrian at waddell.ch (Adrian Waddell)
+Date: Thu, 24 Jun 2010 14:17:56 -0400
+Subject: [R-gui] Ask for the State of a Keyboard Key
+Message-ID: <4C23A154.4030601@waddell.ch>
+
+Dear GUI list,
+
+Is it possible in R to check whether a certain key is pressed or not.
+
+For example
+
+if(isKeyPressed("a")) {
+   cat("a is pressed\n")
+}else {
+   cat("a is not pressed\n")
+}
+
+I would like to use this function within tk events. For example when a 
+'<Button-1>' event calls foo(), I would like to know within foo() 
+whether the Shift key is pressed or not.
+
+I know that I could generate events when a key is pressed or released 
+(with focus on a tk toplevel window). However I would prefer a function 
+like isKeyPressed().
+
+Sincerely,
+
+Adrian Waddell
+
+
+From Greg.Snow at imail.org  Thu Jun 24 20:56:00 2010
+From: Greg.Snow at imail.org (Greg Snow)
+Date: Thu, 24 Jun 2010 12:56:00 -0600
+Subject: [R-gui] Ask for the State of a Keyboard Key
+In-Reply-To: <4C23A154.4030601@waddell.ch>
+References: <4C23A154.4030601@waddell.ch>
+Message-ID: <B37C0A15B8FB3C468B5BC7EBC7DA14CC6339CD8BEC@LP-EXMBVS10.CO.IHC.COM>
+
+Using Tk you can use the tkbind function to bind a keypress and/or keyrelease to run a function.  The usual mode is to have that function do whatever you plan, but you could have the keypress function update a list of keys currently pressed and the keyrelease function clear that key from the list, then your isKeyPressed function could just check to see if that key is in the list of currently pressed keys.
+
+The playSudoku function in the sudoku package is one example of binding keys, you can look at the code for an example.
+
+Note:  I think that the argument to the function you create/call is important in the Tk bindings.
+
+-- 
+Gregory (Greg) L. Snow Ph.D.
+Statistical Data Center
+Intermountain Healthcare
+greg.snow at imail.org
+801.408.8111
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> bounces at stat.math.ethz.ch] On Behalf Of Adrian Waddell
+> Sent: Thursday, June 24, 2010 12:18 PM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] Ask for the State of a Keyboard Key
+> 
+> Dear GUI list,
+> 
+> Is it possible in R to check whether a certain key is pressed or not.
+> 
+> For example
+> 
+> if(isKeyPressed("a")) {
+>    cat("a is pressed\n")
+> }else {
+>    cat("a is not pressed\n")
+> }
+> 
+> I would like to use this function within tk events. For example when a
+> '<Button-1>' event calls foo(), I would like to know within foo()
+> whether the Shift key is pressed or not.
+> 
+> I know that I could generate events when a key is pressed or released
+> (with focus on a tk toplevel window). However I would prefer a function
+> like isKeyPressed().
+> 
+> Sincerely,
+> 
+> Adrian Waddell
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From joaofgo at gmail.com  Thu Jun 24 23:40:50 2010
+From: joaofgo at gmail.com (=?ISO-8859-1?Q?=22Jo=E3o_G=2E=22?=)
+Date: Thu, 24 Jun 2010 22:40:50 +0100
+Subject: [R-gui] TclTk dynamic dropdown list combo box
+Message-ID: <4C23D0E2.6040405@gmail.com>
+
+Hi everyone,
+
+I'm trying to build a conditional or dynamic dropdown list that depends 
+on a value inserted in a tkentry field. The value in this field will be 
+used to subselect a data fame and so defining the values on the 
+dependent dropdown list.
+This kind of feature is very often found in web based forms, for 
+example: selecting a given state fills up a second dropdown that lists 
+all the cities in the first option. I'm not sure but probably a button 
+should be used to trigger the procedure.
+Up to now I've made no progress on doing this since all examples or 
+documentation only focus on static dropdowns.
+
+Thanks in advance,
+Jo?o.
+
+
+From Greg.Snow at imail.org  Thu Jun 24 23:50:23 2010
+From: Greg.Snow at imail.org (Greg Snow)
+Date: Thu, 24 Jun 2010 15:50:23 -0600
+Subject: [R-gui] TclTk dynamic dropdown list combo box
+In-Reply-To: <4C23D0E2.6040405@gmail.com>
+References: <4C23D0E2.6040405@gmail.com>
+Message-ID: <B37C0A15B8FB3C468B5BC7EBC7DA14CC6339CD8D4F@LP-EXMBVS10.CO.IHC.COM>
+
+Create and pack a combo box (possibly with dummy entries), then when you want to dynamically change the options call tkconfigure( comboboxobject, values = vectorwithvalues )
+
+I think that should work, but have not tested it specifically for your case (my tkexamp function in the TeachingDemos package does something like this, but not after an entry has been filled).
+
+-- 
+Gregory (Greg) L. Snow Ph.D.
+Statistical Data Center
+Intermountain Healthcare
+greg.snow at imail.org
+801.408.8111
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> bounces at stat.math.ethz.ch] On Behalf Of "Jo?o G."
+> Sent: Thursday, June 24, 2010 3:41 PM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] TclTk dynamic dropdown list combo box
+> 
+> Hi everyone,
+> 
+> I'm trying to build a conditional or dynamic dropdown list that depends
+> on a value inserted in a tkentry field. The value in this field will be
+> used to subselect a data fame and so defining the values on the
+> dependent dropdown list.
+> This kind of feature is very often found in web based forms, for
+> example: selecting a given state fills up a second dropdown that lists
+> all the cities in the first option. I'm not sure but probably a button
+> should be used to trigger the procedure.
+> Up to now I've made no progress on doing this since all examples or
+> documentation only focus on static dropdowns.
+> 
+> Thanks in advance,
+> Jo?o.
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From joaofgo at gmail.com  Fri Jun 25 00:16:56 2010
+From: joaofgo at gmail.com (=?ISO-8859-1?Q?=22Jo=E3o_G=2E=22?=)
+Date: Thu, 24 Jun 2010 23:16:56 +0100
+Subject: [R-gui] TclTk dynamic dropdown list combo box
+In-Reply-To: <B37C0A15B8FB3C468B5BC7EBC7DA14CC6339CD8D4F@LP-EXMBVS10.CO.IHC.COM>
+References: <4C23D0E2.6040405@gmail.com>
+	<B37C0A15B8FB3C468B5BC7EBC7DA14CC6339CD8D4F@LP-EXMBVS10.CO.IHC.COM>
+Message-ID: <4C23D958.4060604@gmail.com>
+
+Thank you! That worked out nicely.
+I leave here the code used in case it turns out useful for someone else:
+
+#
+##
+require(tcltk)
+tclRequire("BWidget")
+
+tt <- tktoplevel()
+tkwm.title(tt,"Test GUI")
+tkgrid(tklabel(tt,text="Test label"))
+ttframe<-tkframe(tt,relief="groove",borderwidth=2)
+
+x<<-cbind(x=rep(LETTERS[1:3],each=4),y=1:12)
+v<-tclVar("A")
+z<-x[x[,1]==tclvalue(v),2]
+
+entry.v<-tkentry(ttframe,width="30",textvariable=v)
+label.v<-tklabel(ttframe,text=tclvalue(v))
+tkconfigure(label.v,textvariable=v)
+
+tkgrid(entry.v)
+tkgrid(tklabel(ttframe,text=""))
+tkgrid(label.v)
+
+getVal<-function(){
+     z<-x[x[,1]==tclvalue(v),2]
+     tkconfigure(comboBox,values=z)
+}
+
+comboBox<-tkwidget(ttframe,"ComboBox",editable=FALSE,values=z)
+button.getValues<-tkbutton(ttframe,text="Get values",command=getVal)
+tkgrid(comboBox,button.getValues)
+tkgrid(ttframe)
+
+tkgrid(tklabel(tt,text=""))
+tkfocus(tt)
+
+#
+# Type B or C in the text entry field and press the button "Get values".
+# This will update the values in the dropdown field
+
+Best regards,
+Jo?o Gon?alves.
+
+24-06-2010 22:50, Greg Snow:
+> Create and pack a combo box (possibly with dummy entries), then when you want to dynamically change the options call tkconfigure( comboboxobject, values = vectorwithvalues )
+>
+> I think that should work, but have not tested it specifically for your case (my tkexamp function in the TeachingDemos package does something like this, but not after an entry has been filled).
+>
+>
+
+
+From jverzani at gmail.com  Fri Jun 25 17:59:25 2010
+From: jverzani at gmail.com (jverzani)
+Date: Fri, 25 Jun 2010 15:59:25 +0000 (UTC)
+Subject: [R-gui] TclTk dynamic dropdown list combo box
+References: <4C23D0E2.6040405@gmail.com>
+	<B37C0A15B8FB3C468B5BC7EBC7DA14CC6339CD8D4F@LP-EXMBVS10.CO.IHC.COM>
+	<4C23D958.4060604@gmail.com>
+Message-ID: <loom.20100625T175810-422@post.gmane.org>
+
+Jo?o G. <joaofgo <at> gmail.com> writes:
+
+> 
+> Thank you! That worked out nicely.
+> I leave here the code used in case it turns out useful for someone else:
+> 
+
+
+If you wanted to do this with gWidgetstcltk you could do this:
+
+library(gWidgets)
+options(guiToolkit="tcltk")
+
+d <- mtcars ## some data frame
+w <- gwindow()
+g <- ggroup(cont=w, horizontal=FALSE)
+namesCb <- gcombobox(names(d),selected=1, cont=g)
+valsCb <- gcombobox(c(""), cont=g)
+
+updateCb <- function(varname) {
+  valsCb[] <- d[[varname]]
+  svalue(valsCb, index=TRUE) <- 1
+}
+addHandlerChanged(namesCb, function(h,...) updateCb(svalue(h$obj)))
+updateCb(svalue(namesCb))
+
+
+--John
+
+
+From joaofgo at gmail.com  Mon Jun 28 12:32:30 2010
+From: joaofgo at gmail.com (=?ISO-8859-1?Q?Jo=E3o_Gon=E7alves?=)
+Date: Mon, 28 Jun 2010 11:32:30 +0100
+Subject: [R-gui] TclTk dynamic dropdown list combo box
+In-Reply-To: <loom.20100625T175810-422@post.gmane.org>
+References: <4C23D0E2.6040405@gmail.com>	<B37C0A15B8FB3C468B5BC7EBC7DA14CC6339CD8D4F@LP-EXMBVS10.CO.IHC.COM>	<4C23D958.4060604@gmail.com>
+	<loom.20100625T175810-422@post.gmane.org>
+Message-ID: <4C287A3E.7060008@gmail.com>
+
+Thank you for taking interest in this problem.
+Both solutions proposed worked out very smoothly. I'm certainly going to 
+use the gWidgets package more often in my future R projects.
+
+Best regards,
+Jo?o Gon?alves
+
+jverzani wrote:
+> Jo?o G.<joaofgo<at>  gmail.com>  writes:
+>
+>    
+>> Thank you! That worked out nicely.
+>> I leave here the code used in case it turns out useful for someone else:
+>>
+>>
+>> If you wanted to do this with gWidgetstcltk you could do this:
+>>
+>> library(gWidgets)
+>> options(guiToolkit="tcltk")
+>>
+>> d<- mtcars ## some data frame
+>> w<- gwindow()
+>> g<- ggroup(cont=w, horizontal=FALSE)
+>> namesCb<- gcombobox(names(d),selected=1, cont=g)
+>> valsCb<- gcombobox(c(""), cont=g)
+>>
+>> updateCb<- function(varname) {
+>>    valsCb[]<- d[[varname]]
+>>    svalue(valsCb, index=TRUE)<- 1
+>> }
+>> addHandlerChanged(namesCb, function(h,...) updateCb(svalue(h$obj)))
+>> updateCb(svalue(namesCb))
+>>
+>>
+>> --John
+>>
+>>
+>>
+
+

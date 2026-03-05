@@ -1,0 +1,183 @@
+From tshort at eprisolutions.com  Fri Apr 15 14:40:27 2005
+From: tshort at eprisolutions.com (Short, Tom)
+Date: Fri Apr 15 14:47:48 2005
+Subject: [R-gui] [ANN] New version of Rpad -- a web-based interface to R
+Message-ID: <FC4627EC695CD71180280003477108C501BBBA14@exchange.epripeac.com>
+
+An updated version of Rpad (0.9.2) is available at:
+
+http://www.rpad.org/Rpad/
+
+Rpad pages are interactive workbook-type sheets based on
+R. Rpad is an analysis package, a web-page designer, and a
+gui designer all wrapped in one.
+
+The main advance is that Rpad can be installed as an R
+package and run locally without messing with a server. This
+and other highlights are given below:
+
+(*) Run Rpad from R -- The main advance is that you can use
+it with your local installation of R. Install the Rpad package
+then type:
+  library(Rpad)
+  Rpad()
+The "local" version of Rpad uses a built-in web server to
+serve the Rpad pages to a browser locally. The web server is
+a mini-webserver implemented in Tcl and launched from within
+R. With Tcl handling the communication with the browser, the
+user can continue to use the command line. The main
+advantages of the local version are:
+
+  - Installation is easier.
+
+  - You can use Rpad pages along with R at the command line
+    or with another GUI like SciViews-R or R Commander.
+
+  - It makes debugging and testing Rpad pages easier.
+
+The disadvantage is that it's local only -- other's can't
+access your Rpad pages.
+
+A special thanks goes to Philippe Grosjean for this feature:
+Philippe came up with the idea of using Tcl for a webserver
+and helped get it into Rpad.
+
+(*) R package -- Both the local version of Rpad and the
+client-server version of Rpad are available as an R
+package. Directions are given for server
+configurations. I'll upload this to CRAN after more testing
+and feedback from r-sig-gui.
+
+(*) Windows support -- Both the local and the client-server
+version now work better on ms-windows. Rpad defaults to
+using the R's png device with the local version, so you
+don't have to have ghostscript installed. The server version
+has also been tested with apache, apache2, and IIS (with
+documentation).
+
+(*) Imagemaps -- The Rpad website has two new demos that
+show off Barry Rowlingson's imagemap package that works well
+with Rpad. With just a bit of javascript, it's possible to
+make some nicely interactive graphics. See the following:
+
+    http://www.rpad.org/Rpad/imagemap.Rpad
+    http://www.rpad.org/Rpad/mapdemo.Rpad
+
+(*) Reference cards -- Reference cards for both R/Rpad and
+for R have been updated. Thanks to Rashid Nassar and others
+for suggestions and corrections.
+
+    http://www.rpad.org/Rpad/Rpad-refcard.pdf
+    http://www.rpad.org/Rpad/R-refcard.pdf
+
+(*) Debian -- The easiest way to install the server version
+continues to be on Debian. Debian packages are available at
+the Rpad homepage. Rpad has been tested most extensively
+with Debian. Thanks to Dirk Eddelbuettel for help with
+packaging. 
+
+Please email me or post to r-sig-gui with feedback,
+questions, or bugs.
+
+- Tom
+
+Tom Short 
+EPRI Solutions, Inc.  
+
+	[[alternative HTML version deleted]]
+
+From wettenhall at wehi.EDU.AU  Wed Apr 27 04:41:42 2005
+From: wettenhall at wehi.EDU.AU (James Wettenhall)
+Date: Wed Apr 27 04:45:33 2005
+Subject: [R-gui] Spending less time on R-GUIs now
+In-Reply-To: <16954.4362.651342.351802@markov.math.csi.cuny.edu>
+References: <16954.4362.651342.351802@markov.math.csi.cuny.edu>
+Message-ID: <2497.192.168.65.113.1114569702.squirrel@homebase.wehi.edu.au>
+
+Hi,
+
+I was pleased to learn that my R-Tcl/Tk GUI projects - limmaGUI and
+affylmGUI - are considered (by my boss) to be worth continuing after I
+move from being a software developer to doing a PhD in bioinformatics
+(still in the same office).   Someone in my lab has agreed to take over
+these projects, but he is still in the learning stage.  So I will be
+spending less time on R-GUI things than I used to, but I'm still very
+interested in hearing about progress in the R-GUI community.  If anyone
+finds a webpage (or anything else) I created (e.g. related to R-Tcl/Tk or
+R-wxPython) which is terribly out-of-date and wants to take over
+responsibility for it, just drop me an email.  Thanks for all the helpful
+interactions on this list (and R-help) in the past.
+
+Best wishes,
+James
+
+From phgrosjean at sciviews.org  Wed Apr 27 14:15:26 2005
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Wed Apr 27 14:15:50 2005
+Subject: [R-gui] Spending less time on R-GUIs now
+In-Reply-To: <2497.192.168.65.113.1114569702.squirrel@homebase.wehi.edu.au>
+References: <16954.4362.651342.351802@markov.math.csi.cuny.edu>
+	<2497.192.168.65.113.1114569702.squirrel@homebase.wehi.edu.au>
+Message-ID: <426F825E.6060400@sciviews.org>
+
+Hello James,
+
+I hope you have good luck with your PhD work. I would be happy to 
+continue the developement of the R-Tcl/Tk page. There are certainly many 
+other people that can contribute to this page, like Peter Dalgaard 
+(obviously!), and John Fox, which has a long experience with R 
+commander, Duncan Murdoch, ... My idea is to convert it into a Mambo web 
+site, where various "developers" could edit or add pages individually to 
+the same site.
+
+As you know, I am definitely in favor of your R-wxPython approach, but 
+there, I have no time, neither competences. However, if the job is done 
+for Tcl/tK, it would be straightforward to add the R-wxPython + Boa 
+constructor, etc... pages to it.
+
+Best,
+
+Philippe
+
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Pentagone (3D08)
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+  ) ) ) ) )   8, av du Champ de Mars, 7000 Mons, Belgium
+( ( ( ( (
+  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.30.54
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+  ) ) ) ) )
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+  ) ) ) ) )          http://www.sciviews.org
+( ( ( ( (
+..............................................................
+
+James Wettenhall wrote:
+> Hi,
+> 
+> I was pleased to learn that my R-Tcl/Tk GUI projects - limmaGUI and
+> affylmGUI - are considered (by my boss) to be worth continuing after I
+> move from being a software developer to doing a PhD in bioinformatics
+> (still in the same office).   Someone in my lab has agreed to take over
+> these projects, but he is still in the learning stage.  So I will be
+> spending less time on R-GUI things than I used to, but I'm still very
+> interested in hearing about progress in the R-GUI community.  If anyone
+> finds a webpage (or anything else) I created (e.g. related to R-Tcl/Tk or
+> R-wxPython) which is terribly out-of-date and wants to take over
+> responsibility for it, just drop me an email.  Thanks for all the helpful
+> interactions on this list (and R-help) in the past.
+> 
+> Best wishes,
+> James
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+

@@ -1,0 +1,62 @@
+From ian.fellows at stat.ucla.edu  Sun Aug  4 20:27:20 2013
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Sun, 4 Aug 2013 11:27:20 -0700
+Subject: [R-gui] Help test new JGR launchers
+Message-ID: <5B4ACBA0-2EBD-438A-BEF6-DC27F9579B87@stat.ucla.edu>
+
+Hi All,
+
+While the current JGR R console launchers for Windows and Mac work well for most people, there is a minority for which the launchers fail. This can occur when R has unusual library paths, or in some cases upon upgrading R.
+
+For this reason I've created new windows and mac launchers which I hope will be more robust to the wide range of possible R installs, but I only have a few limited systems to test on.
+
+That is where you come in...
+
+If you are interested in giving them a try, please do the following:
+
+1. You will need to be able to install packages from source. If you run into trouble on this step, install rtools (on windows) or xcode (on mac).
+
+In R run:
+#ensure all dependancies are present...
+install.packages("JGR")
+
+#download and install new versions of iplots and JGR
+download.file("http://www.fellstat.com/files/JGR/iplots_1.1-6.tar.gz",
+	"iplots_1.1-6.tar.gz")
+install.packages("iplots_1.1-6.tar.gz",repos=NULL,type="source")
+download.file("http://www.fellstat.com/files/JGR/JGR_1.7-16.tar.gz",
+	"JGR_1.7-16.tar.gz")
+install.packages("JGR_1.7-16.tar.gz",repos=NULL,type="source")
+
+
+2. Now try launching the console from within R:
+
+library(JGR)
+launchJGR()
+
+3. Now try the new launchers. 
+
+If you are on a mac, download:
+http://www.fellstat.com/files/JGR/JGR2.dmg
+Double click on it to launch it to mount the image, and then double click on JGR.app
+
+If you are on windows, download and double click on:
+http://www.fellstat.com/files/JGR/jgr2.exe
+
+-------------------------------------------------------
+
+If you run into a problem, please help us debug it with the following information.
+
+1. The complete output and steps to reproduce the problem.
+
+2. In R and in JGR (if you can get it to run) include the complete output of:
+library(JGR)
+R.home()
+.libPaths()
+sessionInfo()
+
+
+Best,
+Ian
+
+

@@ -1,0 +1,689 @@
+From joseclaudio.faria at terra.com.br  Tue Oct  3 17:51:08 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Tue, 03 Oct 2006 12:51:08 -0300
+Subject: [R-gui] Tinn-R 1.18.6.5 released
+Message-ID: <452286EC.2070705@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.6.5) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help//English/Readme/HTML'.
+
+Shortly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Changes:
+
+1.18.6.5 (Oct/03/2006)
+
+  - Small bug related to Spell, that always broken when found
+    '<' or '<-' symbol, was fixed. The origin of this bug was
+    a component conflict (hard coded) among the HTML
+    brackets, declared as below:
+
+    OpenBracket: array[THTMLBracket] of PChar=('<', '<!--', '<%');
+    CloseBracket: array[THTMLBracket] of PChar=('>', '-->', '%>');
+
+    and the R assign symbols: '<-', '<<-', '->' and '->>'
+
+    So, if any file has HTML syntax (with any tags above) all
+    text among the declared brackets is free of speller. We
+    think it is now nice.
+
+  - Small bug associated to Project/Close entire project was
+    fixed.
+
+Regards,
+Tinn-R team
+
+
+From joseclaudio.faria at terra.com.br  Sat Oct  7 00:25:04 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Fri, 06 Oct 2006 19:25:04 -0300
+Subject: [R-gui] Tinn-R 1.18.6.6 released
+Message-ID: <4526D7C0.9050602@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.6.6) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help//English/Readme/HTML'.
+
+Changes:
+1.18.6.6 (Oct/06/2006)
+
+  - A new option 'Sort' was added to menu 'Tools'. This enables
+    you to sort entire file (any selection mode) or selection
+    (for while only for 'smNormal' and 'smColumn').
+
+  - Popup menu editor was reworked.
+
+  - Some icons of 'R explorer' were changed.
+
+Regards,
+Tinn-R team
+
+
+From ipsurweb at gmail.com  Sun Oct  8 06:52:14 2006
+From: ipsurweb at gmail.com (Jay Kerns)
+Date: Sun, 8 Oct 2006 00:52:14 -0400
+Subject: [R-gui] new version IPSUR_0.1-1 now available on CRAN
+Message-ID: <857a431c0610072152m5cbe176dh37adda4782a36526@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061008/75b9e80c/attachment.pl 
+
+From joseclaudio.faria at terra.com.br  Mon Oct  9 04:32:08 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sun, 08 Oct 2006 23:32:08 -0300
+Subject: [R-gui] Tinn-R 1.18.6.7 released
+Message-ID: <4529B4A8.5040606@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.6.7) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help//English/Readme/HTML'.
+
+Changes:
+1.18.6.7 (Oct/08/2006)
+
+  - A new option 'Organise screen' was added to the menu
+    'View' and the button associated to it was added to the
+    bar 'Tools'. This was, up to now, an old user's request,
+    and it enables you to fastly put the R Console on the top
+    of the screen and the Tinn-R on the bottom.
+
+  - 'Tools/Sort' was enhanced: it now maintain the file in
+    the original Top line position.
+
+  - The way as project files (*.tps) are opened was changed:
+    the textual file (by default) will not be opened anymore.
+    If you want, you can edit easily this file in the Project
+    interface.
+
+Regards,
+Tinn-R team
+
+
+From Graham.Williams at togaware.com  Mon Oct  9 22:21:53 2006
+From: Graham.Williams at togaware.com (Graham Williams)
+Date: Tue, 10 Oct 2006 06:21:53 +1000
+Subject: [R-gui] Rattle 2.1.57 released - GUI for Data Mining in R
+Message-ID: <20061009202153.GC1794@athene.togaware.com>
+
+Rattle provides a Gnome (RGtk2) based interface to R functionality for
+data mining. The aim is to provide a simple and intuitive interface
+that allows a user to quickly load data from a CSV file (or via ODBC),
+transform and explore the data, and build and evaluate models, knowing
+little about R. All R commands are logged and available for the user,
+as a tool to then begin interacting directly with R itself, if so
+desired. Rattle also exports a number of utility functions and the
+graphical user interface does not need to be run to deploy these.
+
+Rattle is in daily use in a number of real world data mining projects,
+including many at the Australian Taxation Office.
+
+Since the previous release of Rattle 2.1.8 on CRAN (Rattle is also
+available from rattle.togaware.com):
+
+* Extensive rework of the graphics/plotting component, including
+  addition of missing value correlation plots.
+
+* Evaluation plots have been enhanced for easier comparison of models.
+
+* Data exploration enhanced through use of rggobi
+
+Some features of Rattle:
+
+* Support for a number of popular data mining approaches: decision
+  trees (rpart), randomForest, SVM (kernlab), and boosting (gbm).
+
+* Model evaluation using ROCR and specially devised Risk Charts.
+
+* The project is hosted at code.google.com/p/rattle/
+
+* Rattle runs on GNU/Linux, Mac/OSX, and MS/Windows.
+
+Regards,
+Graham Williams
+
+
+From joseclaudio.faria at terra.com.br  Wed Oct 18 13:00:23 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Wed, 18 Oct 2006 08:00:23 -0300
+Subject: [R-gui] Tinn-R 1.18.6.9 released
+Message-ID: <45360947.4090009@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.6.9) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+Changes:
+1.18.6.9 (Oct/17/2006)
+
+  - The 'Application options' was a little reworked. It will
+    not organise the screen when closing the 'Application
+    options'. So it is necessary to toggle it on the main
+    menu 'View/Organise screen' or in the tool bar Tools.
+
+  - The options 'Send selection' will be enabled only if any
+    selection was done, otherwise not.
+
+  - Small bug associated with 'CTRL+W' shortcut, that was
+    closing two files, was fixed.
+
+Regards,
+Tinn-R team
+
+
+From gunther.maier at wu-wien.ac.at  Thu Oct 19 15:58:31 2006
+From: gunther.maier at wu-wien.ac.at (Gunther Maier)
+Date: Thu, 19 Oct 2006 15:58:31 +0200
+Subject: [R-gui] new version of SimpleR available
+Message-ID: <6.2.0.14.0.20061019155106.03740510@sslmail.wu-wien.ac.at>
+
+Dear colleagues,
+I would like to inform you that a new version (0.1.1) of SimpleR is available at http://www-sre.wu-wien.ac.at/SimpleR . The main reason for this version is that the development of SimpleR has switched from VB6 to VB.NET. Version 0.1.1 is the last one compiled under VB6, meaning this will be the last version that can be run without .NET framework. 
+
+If you have any comments, suggestions or requests concerning SimpleR, please, let me know.
+
+Kind regards
+Gunther Maier
+
+-----------------------------------------------------------------------
+*  Gunther Maier, University of Economics and Business Administration *
+*     Augasse 2-6, Vienna, Austria. (Gunther.Maier at wu-wien.ac.at)     *
+*      Newsletter Editor, European Regional Science Association       *
+
+
+From joseclaudio.faria at terra.com.br  Sat Oct 21 00:29:34 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Fri, 20 Oct 2006 19:29:34 -0300
+Subject: [R-gui] Tinn-R 1.18.6.10 released
+Message-ID: <45394DCE.7090606@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.6.10) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+Changes:
+1.18.6.10 (Oct/20/2006)
+
+  - Several parts of the source code were optimized.
+
+  - 'R explorer' performance was enhanced. So, you now can to
+    try to set the delay for computational synchronization
+    (Options/Main/Application/R/R server) to small values
+    (50, 80 or 100 ms, in harmony with your hardware). We
+    recommend to test different delays still to obtain good
+    performance.
+
+  - We recommend you to use the resources of 'R explorer'
+    under TCP/IP protocol (it makes the Rgui console more
+    clean). BTW, we have still some not solved problems with
+    'R output' under this protocol.
+
+  - Window About was reworked.
+
+Regards,
+Tinn-R team
+
+
+From joseclaudio.faria at terra.com.br  Tue Oct 24 16:47:11 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Tue, 24 Oct 2006 11:47:11 -0300
+Subject: [R-gui] Tinn-R 1.18.6.13 released
+Message-ID: <453E276F.5030306@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.6.13) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+Changes:
+1.18.6.13 (Oct/24/2006)
+
+  - Some parts of the source code were optimized.
+
+  - 'Tools/Sort' was enhanced: it now enables you to sort by
+    'Strings', 'Numbers' and 'Dates'.
+
+  - Popup menu associated with tabs was a little reworked.
+
+  - Speller now will advise when finishes de corrections.
+
+Regards,
+Tinn-R team
+
+
+From joseclaudio.faria at terra.com.br  Thu Oct 26 00:17:31 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Wed, 25 Oct 2006 19:17:31 -0300
+Subject: [R-gui] Tinn-R 1.18.7.0 released
+Message-ID: <453FE27B.3010806@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.7.0) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+Changes:
+1.18.7.0 (Oct/25/2006)
+
+  - All the HTML documentation of Tinn-R was easily remade,
+    we became very tired of the blue colour: txt2tags is an
+    exceptional tool!
+
+  - A new Tinn-R member (Enio Jelihovschi) is from now on,
+    the responsible for the production and quality of all
+    Tinn-R documentation. Welcome Enio, we wish you have a
+    good work on board.
+
+  - One new function was added both in the R toolbar and the
+    R menu: 'TCP/IP toogle connection'.
+
+Regards,
+Tinn-R team
+
+
+From sander at oomvanlieshout.net  Sun Oct 29 17:50:55 2006
+From: sander at oomvanlieshout.net (Sander Oom)
+Date: Sun, 29 Oct 2006 17:50:55 +0100
+Subject: [R-gui] R GUI for Linux (using Java)
+In-Reply-To: <4544A145.1050103@tlen.pl>
+References: <4544A145.1050103@tlen.pl>
+Message-ID: <4544DBEF.6060009@oomvanlieshout.net>
+
+Dear GJR(?),
+
+Great initiative to start a platform independent GUI for R focussed on
+Linux. I'm sure many users could benefit from this.
+
+I have limited time for science, including R, since I started a job as a
+consultant. However I am a member of the R GUI mailing list
+(r-sig-gui at stat.math.ethz.ch). Send your messages to this mailing list,
+and I am sure you will get helpful response. You will also get negative
+responses! Some people are happy the way things are. Do not pay too much
+attention to these and focus on the constructive critism. That will help
+the make LinR a good program.
+
+I would stick to the KISS principle. 'Keep it simple, stupid'
+(http://en.wikipedia.org/wiki/KISS_Principle). A good editor with syntax
+highlighting and commands to run R code in different ways. Stick to the
+shortcut commands as used by other editors like KATE. A package manager
+will be very useful. Be ware that ROOT priviliges are required!
+
+If you would like to contribute to an existing program, than have a look
+at JGR (http://rosuda.org/JGR):
+JGR (speak 'Jaguar') is a universal and unified Graphical User Interface
+for R (it actually abbreviates Java Gui for R). JGR was introduced at
+the useR! meeting in 2004.
+They seem to need support with the Linux port!
+
+Is this just a coincidence with these letters J G R?
+
+Hope this helps!
+
+Sander.
+
+gjr wrote:
+> Hello.
+> I've seen that You are interested in developing R GUI for Linux.
+> 
+> I'm a student and i'm angry at lack of full R-project linux port.
+> I decided to wrote something myself. Best choice is Java.
+> But i don't know what commponents add to this program.
+> I knot Tinn-R on Windows and i can take some ideas from.
+> But is it usable ?
+> I think things like hashing selected R code or sending only parts of code
+> is a standard. I would like to do a tool to easy manage of R packages.
+> What should i do more ? I need some ideas.
+> If You like i would send you a jar file.
+> Ill send you a screenshot of base program that i wrote in 2 hours.
+> 
+> If You have any ideas, questions please write.
+> 
+> Uh, I almost forgot. Its called Lin-R :)
+> 
+> ------------------------------------------------------------------------
+>
+
+
+From edd at debian.org  Sun Oct 29 18:54:02 2006
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sun, 29 Oct 2006 11:54:02 -0600
+Subject: [R-gui] R GUI for Linux (using Java)
+In-Reply-To: <4544DBEF.6060009@oomvanlieshout.net>
+References: <4544A145.1050103@tlen.pl>
+	<4544DBEF.6060009@oomvanlieshout.net>
+Message-ID: <17732.60090.201574.149635@basebud.nulle.part>
+
+
+On 29 October 2006 at 17:50, Sander Oom wrote:
+| Dear GJR(?),
+| 
+| Great initiative to start a platform independent GUI for R focussed on
+| Linux. I'm sure many users could benefit from this.
+| 
+| I have limited time for science, including R, since I started a job as a
+| consultant. However I am a member of the R GUI mailing list
+| (r-sig-gui at stat.math.ethz.ch). Send your messages to this mailing list,
+| and I am sure you will get helpful response. You will also get negative
+| responses! Some people are happy the way things are. Do not pay too much
+| attention to these and focus on the constructive critism. That will help
+| the make LinR a good program.
+| 
+| I would stick to the KISS principle. 'Keep it simple, stupid'
+| (http://en.wikipedia.org/wiki/KISS_Principle). A good editor with syntax
+| highlighting and commands to run R code in different ways. Stick to the
+| shortcut commands as used by other editors like KATE. A package manager
+| will be very useful. Be ware that ROOT priviliges are required!
+| 
+| If you would like to contribute to an existing program, than have a look
+| at JGR (http://rosuda.org/JGR):
+| JGR (speak 'Jaguar') is a universal and unified Graphical User Interface
+| for R (it actually abbreviates Java Gui for R). JGR was introduced at
+| the useR! meeting in 2004.
+| They seem to need support with the Linux port!
+
+I think you may be unaware that it installs and runs fine on a fully-featured
+Linux distribution.  On Debian or Ubuntu, all you need to do is to install
+the sun-java5-jdk (and to click once through the Java license thingie) as
+well as a recent R such as r-base-core_2.4.1. After which all you need to is
+
+$ sudo R CMD javareconf			# to set or refresh Java paths for R
+$ echo "install.packages("JGR",repos="http://cran.r-project.org",depend=TRUE)"\
+	| sudo R --slave
+
+and you have a working JGR --- which happens to be a working 'R GUI for Linux
+(using Java)" as per the Subject line :)
+
+I am sure that a FC, SuSE, Gentoo, ... system can be setup similarly.
+
+| Is this just a coincidence with these letters J G R?
+| 
+| Hope this helps!
+| 
+| Sander.
+| 
+| gjr wrote:
+| > Hello.
+| > I've seen that You are interested in developing R GUI for Linux.
+| > 
+| > I'm a student and i'm angry at lack of full R-project linux port.
+
+R has been developed and supported on Linux since "forever", i.e. the early
+1990s. What exactly do you think is missing?
+
+| > I decided to wrote something myself. Best choice is Java.
+| > But i don't know what commponents add to this program.
+| > I knot Tinn-R on Windows and i can take some ideas from.
+| > But is it usable ?
+| > I think things like hashing selected R code or sending only parts of code
+| > is a standard. I would like to do a tool to easy manage of R packages.
+
+Most of us are happy to send code snippets, regions, functions, buffers, ...
+to R using ESS from (X)Emacs.  
+
+A graphical package manager would be nice. JGR has one. 
+
+RGtk2 (or was it John's pmg?) has basic examples for it. The logic is already
+available inside R (install.packages(), available.packages(), etc) so I
+wouldn't reinvent that wheel.
+
+Dirk
+
+-- 
+Hell, there are no rules here - we're trying to accomplish something. 
+                                                  -- Thomas A. Edison
+
+
+From znmeb at cesmail.net  Sun Oct 29 19:10:04 2006
+From: znmeb at cesmail.net (M. Edward (Ed) Borasky)
+Date: Sun, 29 Oct 2006 10:10:04 -0800
+Subject: [R-gui] R GUI for Linux (using Java)
+In-Reply-To: <17732.60090.201574.149635@basebud.nulle.part>
+References: <4544A145.1050103@tlen.pl>	<4544DBEF.6060009@oomvanlieshout.net>
+	<17732.60090.201574.149635@basebud.nulle.part>
+Message-ID: <4544EE7C.6010402@cesmail.net>
+
+Dirk Eddelbuettel wrote:
+> I think you may be unaware that it installs and runs fine on a fully-featured
+> Linux distribution.  On Debian or Ubuntu, all you need to do is to install
+> the sun-java5-jdk (and to click once through the Java license thingie) as
+> well as a recent R such as r-base-core_2.4.1. After which all you need to is
+> 
+> $ sudo R CMD javareconf			# to set or refresh Java paths for R
+> $ echo "install.packages("JGR",repos="http://cran.r-project.org",depend=TRUE)"\
+> 	| sudo R --slave
+> 
+> and you have a working JGR --- which happens to be a working 'R GUI for Linux
+> (using Java)" as per the Subject line :)
+> 
+> I am sure that a FC, SuSE, Gentoo, ... system can be setup similarly.
+
+1. What's the minimum Java required? Does it need the JDK or will the
+JRE suffice?
+
+2. Will it work with R-2.4.0, or do I need to have something more recent?
+
+I can certainly test this all out and get it working on Gentoo. I have
+both 1.4 and 1.5 JDK, but I'm using the "stock" R-2.4.0 and don't plan
+to go beyond that until the next version gets into alpha testing.
+
+
+From edd at debian.org  Sun Oct 29 19:30:42 2006
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sun, 29 Oct 2006 12:30:42 -0600
+Subject: [R-gui] R GUI for Linux (using Java)
+In-Reply-To: <4544EE7C.6010402@cesmail.net>
+References: <4544A145.1050103@tlen.pl> <4544DBEF.6060009@oomvanlieshout.net>
+	<17732.60090.201574.149635@basebud.nulle.part>
+	<4544EE7C.6010402@cesmail.net>
+Message-ID: <17732.62291.210619.430331@basebud.nulle.part>
+
+
+On 29 October 2006 at 10:10, M. Edward (Ed) Borasky wrote:
+| Dirk Eddelbuettel wrote:
+| > I think you may be unaware that it installs and runs fine on a fully-featured
+| > Linux distribution.  On Debian or Ubuntu, all you need to do is to install
+| > the sun-java5-jdk (and to click once through the Java license thingie) as
+        ^^^^^^^^^^^^^
+
+That should answer question 1 below.
+
+| > well as a recent R such as r-base-core_2.4.1. After which all you need to
+                               ^^^^^^^^^^^^^^^^^
+
+Sorry - bad typo. That should have r-base-core_2.4.0. 
+
+| 1. What's the minimum Java required? Does it need the JDK or will the
+| JRE suffice?
+
+JDK.
+
+| 2. Will it work with R-2.4.0, or do I need to have something more recent?
+
+2.4.0 is fine.
+ 
+| I can certainly test this all out and get it working on Gentoo. I have
+| both 1.4 and 1.5 JDK, but I'm using the "stock" R-2.4.0 and don't plan
+| to go beyond that until the next version gets into alpha testing.
+
+I think 1.4 is fine but I am not sure. 1.5 works for me, and is pre-packaged
+by Sun and Ubuntu/Debian.
+
+Dirk
+
+-- 
+Hell, there are no rules here - we're trying to accomplish something. 
+                                                  -- Thomas A. Edison
+
+
+From lawremi at iastate.edu  Sun Oct 29 23:13:36 2006
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Sun, 29 Oct 2006 16:13:36 -0600
+Subject: [R-gui] R GUI for Linux (using Java)
+In-Reply-To: <17732.62291.210619.430331@basebud.nulle.part>
+References: <4544A145.1050103@tlen.pl> <4544DBEF.6060009@oomvanlieshout.net>
+	<17732.60090.201574.149635@basebud.nulle.part>
+	<4544EE7C.6010402@cesmail.net>
+	<17732.62291.210619.430331@basebud.nulle.part>
+Message-ID: <509e0620610291413u13c7e11bp40ec86b4cd832177@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061029/132020a8/attachment.pl 
+
+From joseclaudio.faria at terra.com.br  Mon Oct 30 00:56:29 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sun, 29 Oct 2006 20:56:29 -0300
+Subject: [R-gui] Tinn-R 1.18.7.2 released
+Message-ID: <45453FAD.4070207@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.7.2) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+Changes:
+1.18.7.2 (Oct/30/2006)
+- The 'Application options' was reworked a little bit. The
+   options enabling the user to set Tinn-R to always show
+   'Tips' and 'Completion' were removed. We think it was an
+   annoyance. Now, the triggers can be used to do that.
+
+- One new function was added both in the 'R toolbar' and
+   the 'R' menu: 'Toogle start/close'. It will enable the
+   user to start/close the preferred user 'Rgui'.
+
+- From now on, whenever the user starts R inside Tinn-R, it
+   will open automatically in the 'SDI mode', otherwise, in
+   the default mode defined in the 'Rconsole' configuration
+   file. Also, if there is any opened file, the 'R Working
+   Directory' will be set to its path. Otherwise, it will be
+   set to the default path (../bin) where R was installed.
+
+- Several parts of the source code were optimized.
+
+- The performance of the communication with the 'R server'
+   (under all protocols) was enhanced. Now the user can to
+   try to set the delay for computational synchronization
+   (Options/Main/Application/R/R server) to small values (50,
+   80 or 100 ms, in harmony with the hardware). We recommend
+   testing different delays until a good performance is
+   obtained.
+
+- A small bug, when closing the 'Rgui' and the choice of
+   'Cancel', was fixed.
+
+- Some icons of 'Controlling R' were remade.
+
+Regards,
+Tinn-R team
+
+
+From dusa.adrian at gmail.com  Mon Oct 30 11:42:58 2006
+From: dusa.adrian at gmail.com (Adrian Dusa)
+Date: Mon, 30 Oct 2006 12:42:58 +0200
+Subject: [R-gui] R GUI for Linux (using Java)
+In-Reply-To: <17732.62291.210619.430331@basebud.nulle.part>
+References: <4544A145.1050103@tlen.pl> <4544EE7C.6010402@cesmail.net>
+	<17732.62291.210619.430331@basebud.nulle.part>
+Message-ID: <200610301242.58868.dusa.adrian@gmail.com>
+
+Dear Dirk,
+
+On Sunday 29 October 2006 20:30, Dirk Eddelbuettel wrote:
+> [...snip...]
+> | > well as a recent R such as r-base-core_2.4.1. After which all you need
+> | > to
+>                                ^^^^^^^^^^^^^^^^^
+> Sorry - bad typo. That should have r-base-core_2.4.0.
+
+I've been looking for r-base-core_2.4.0 for Ubuntu on CRAN... any chance to 
+appear there soon? Kind of gave up on my habbit of compiling R from sources, 
+I was hoping to use Synaptic to install the most recent version.
+
+Thanks,
+Adrian
+
+-- 
+Adrian Dusa
+Romanian Social Data Archive
+1, Schitu Magureanu Bd
+050025 Bucharest sector 5
+Romania
+Tel./Fax: +40 21 3126618 \
+          +40 21 3120210 / int.101
+
+
+From edd at debian.org  Mon Oct 30 13:50:54 2006
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Mon, 30 Oct 2006 06:50:54 -0600
+Subject: [R-gui] R GUI for Linux (using Java)
+In-Reply-To: <200610301242.58868.dusa.adrian@gmail.com>
+References: <4544A145.1050103@tlen.pl> <4544EE7C.6010402@cesmail.net>
+	<17732.62291.210619.430331@basebud.nulle.part>
+	<200610301242.58868.dusa.adrian@gmail.com>
+Message-ID: <17733.62766.599961.988626@basebud.nulle.part>
+
+
+Adrian,
+
+On 30 October 2006 at 12:42, Adrian Dusa wrote:
+| Dear Dirk,
+| 
+| On Sunday 29 October 2006 20:30, Dirk Eddelbuettel wrote:
+| > [...snip...]
+| > | > well as a recent R such as r-base-core_2.4.1. After which all you need
+| > | > to
+| >                                ^^^^^^^^^^^^^^^^^
+| > Sorry - bad typo. That should have r-base-core_2.4.0.
+| 
+| I've been looking for r-base-core_2.4.0 for Ubuntu on CRAN... any chance to 
+| appear there soon? Kind of gave up on my habbit of compiling R from sources, 
+| I was hoping to use Synaptic to install the most recent version.
+
+I am actually not the volunteer in charge of that, see the R FAQ for details.
+It is also the wrong list as r-sig-debian is more on topic.  CC'ed and MFT
+set accordingly.
+
+Hth, Dirk
+
+-- 
+Hell, there are no rules here - we're trying to accomplish something. 
+                                                  -- Thomas A. Edison
+
+

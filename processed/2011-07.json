@@ -1,0 +1,159 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2011-07",
+  "messages": [
+    {
+      "id": "msg-9b8f02af4ac3",
+      "message_id": "<CALtXcnVZCXvu-QVu9Eh72pvF5PtaZB7RuA98pwYHC91p+vFOJg@mail.gmail.com>",
+      "from_name": "Leonid Landsman",
+      "from_email_hash": "21ae7f885ebab4a52de89695e503e69fdb9e76a4ce21a1e6417ec4f335a52bd7",
+      "date": "2011-07-18T11:28:32-04:00",
+      "subject": "[R-gui] GUI Builder for R",
+      "subject_clean": "[R-gui] GUI Builder for R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110718/ae0d6426/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110718/ae0d6426/attachment.pl>",
+      "thread_id": "thread-9b8f02af4ac3",
+      "thread_depth": 0,
+      "month": "2011-07"
+    },
+    {
+      "id": "msg-8425cac9409a",
+      "message_id": "<CAOyiOQGzPQ-hNuseKaDycHzSekK6RAn+Qcy2PWJmosZ6j2GTCg@mail.gmail.com>",
+      "from_name": "Sebastian Mellor",
+      "from_email_hash": "0b77b72327df036a820c76c75ac727d5f511f7ad66f2aac56d9760974d042867",
+      "date": "2011-07-19T14:20:41+01:00",
+      "subject": "[R-gui] Return value from gWidgets",
+      "subject_clean": "[R-gui] Return value from gWidgets",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/e36923c9/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/e36923c9/attachment.pl>",
+      "thread_id": "thread-8425cac9409a",
+      "thread_depth": 0,
+      "month": "2011-07"
+    },
+    {
+      "id": "msg-9cfcaf40ead4",
+      "message_id": "<CAOyiOQEwy3ge6xbbbapDmO5OXrmQfyKWVAKTBFMze_QTu2Gsog@mail.gmail.com>",
+      "from_name": "Sebastian Mellor",
+      "from_email_hash": "0b77b72327df036a820c76c75ac727d5f511f7ad66f2aac56d9760974d042867",
+      "date": "2011-07-19T15:28:32+01:00",
+      "subject": "[R-gui] Fwd: Return value from gWidgets",
+      "subject_clean": "[R-gui] Fwd: Return value from gWidgets",
+      "in_reply_to": "<CADx-4xCUhUQOO+VnwcvZLUM7ymPH2Ub=oR_KJm8RJq7R3eVhLg@mail.gmail.com>",
+      "references": [
+        "<CAOyiOQGzPQ-hNuseKaDycHzSekK6RAn+Qcy2PWJmosZ6j2GTCg@mail.gmail.com>",
+        "<CADx-4xCUhUQOO+VnwcvZLUM7ymPH2Ub=oR_KJm8RJq7R3eVhLg@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/a3afafc8/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/a3afafc8/attachment.pl>",
+      "thread_id": "thread-9cfcaf40ead4",
+      "thread_depth": 0,
+      "month": "2011-07"
+    },
+    {
+      "id": "msg-c1e4f6fc8e3e",
+      "message_id": "<4E2EE248.4030004@earthlink.net>",
+      "from_name": "Jim Burke",
+      "from_email_hash": "aedd48a61869f13bd70427910e60451b199d87cc9caf6e33381b742ac5526937",
+      "date": "2011-07-26T10:50:32-05:00",
+      "subject": "[R-gui] R for a historical timeline chart?",
+      "subject_clean": "[R-gui] R for a historical timeline chart?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "First, I don't know if R Sig Gui is the right list, so feel free to \nredirect me if this is so.\n\nI would like to produce a historical timeline chart.  For a general idea \nof what I want, go to the following web site. Scroll down until you find \nthe \"Jewelry History Timeline\" jpeg. Say we use a variation of this for \nbirth dates to annual birthdays for a family or group of friends.\nhttp://www.allaboutgemstones.com/gem_history.html\n\nAny pointers and example code would be appreciated.\n\nThanks,\nJim",
+      "body_snippet": "First, I don't know if R Sig Gui is the right list, so feel free to \nredirect me if this is so.\n\nI would like to produce a historical timeline chart.  For a general idea \nof what I want, go to the fol",
+      "thread_id": "thread-c1e4f6fc8e3e",
+      "thread_depth": 0,
+      "month": "2011-07"
+    },
+    {
+      "id": "msg-e44957d50268",
+      "message_id": "<OFB5BB16F1.C6693979-ON862578D9.0058B915-862578D9.0058FD98@usgs.gov>",
+      "from_name": "David L Lorenz",
+      "from_email_hash": "a16484f3e79ec693c259d867c374fd5e832a01e253da18a065716c0e7b30ee46",
+      "date": "2011-07-26T11:12:00-05:00",
+      "subject": "[R-gui] R for a historical timeline chart?",
+      "subject_clean": "[R-gui] R for a historical timeline chart?",
+      "in_reply_to": "<4E2EE248.4030004@earthlink.net>",
+      "references": [
+        "<4E2EE248.4030004@earthlink.net>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110726/80a6370c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110726/80a6370c/attachment.pl>",
+      "thread_id": "thread-c1e4f6fc8e3e",
+      "thread_depth": 1,
+      "month": "2011-07"
+    },
+    {
+      "id": "msg-ff22ab074759",
+      "message_id": "<8E3590214E4380489D2F8BF129B939F301BC49C0@amsdc1-s-03371.europe.shell.com>",
+      "from_name": "Wayne.W.Jones at shell.com",
+      "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
+      "date": "2011-07-27T09:17:11+02:00",
+      "subject": "[R-gui] R for a historical timeline chart?",
+      "subject_clean": "[R-gui] R for a historical timeline chart?",
+      "in_reply_to": "<OFB5BB16F1.C6693979-ON862578D9.0058B915-862578D9.0058FD98@usgs.gov>",
+      "references": [
+        "<4E2EE248.4030004@earthlink.net>",
+        "<OFB5BB16F1.C6693979-ON862578D9.0058B915-862578D9.0058FD98@usgs.gov>"
+      ],
+      "body_plain": "Hi Jim, \n\n\nThe plotrix package has a function for generating Gantt charts. \n\nSee\nhttp://finzi.psych.upenn.edu/R/library/plotrix/html/gantt.chart.html\n\n\nWayne\n\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at r-project.org\n[mailto:r-sig-gui-bounces at r-project.org] On Behalf Of David L Lorenz\nSent: 26 July 2011 17:12\nTo: Jim Burke\nCc: r-sig-gui-bounces at r-project.org; R Sig Gui\nSubject: Re: [R-gui] R for a historical timeline chart?\n\nJim,\n  Are you trying to develop a GUI for such a chart? If so, then this\nwould \nbe the place.\n  If not and your just looking for some software that creates a graph\nlike \nthat, I'd suggest looking for something that produces a Gantt chart. The\n\n\"Jewelry History Timeline\" looks much like that. Gannt charts are \ntypically used for planning, but could probably be tweaked to fit you \nneeds.\nDave\n\n\n\nFrom:\nJim Burke <j.burke at earthlink.net>\nTo:\nR Sig Gui <r-sig-gui at r-project.org>\nDate:\n07/26/2011 10:52 AM\nSubject:\n[R-gui] R for a historical timeline chart?\nSent by:\nr-sig-gui-bounces at r-project.org\n\n\n\nFirst, I don't know if R Sig Gui is the right list, so feel free to \nredirect me if this is so.\n\nI would like to produce a historical timeline chart.  For a general idea\n\nof what I want, go to the following web site. Scroll down until you find\n\nthe \"Jewelry History Timeline\" jpeg. Say we use a variation of this for \nbirth dates to annual birthdays for a family or group of friends.\nhttp://www.allaboutgemstones.com/gem_history.html\n\nAny pointers and example code would be appreciated.\n\nThanks,\nJim\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at r-project.org\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n\n\n\t[[alternative HTML version deleted]]\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at r-project.org\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi Jim, \n\n\nThe plotrix package has a function for generating Gantt charts. \n\nSee\nhttp://finzi.psych.upenn.edu/R/library/plotrix/html/gantt.chart.html\n\n\nWayne\n\n\n-----Original Message-----\nFrom: r-sig-g",
+      "thread_id": "thread-c1e4f6fc8e3e",
+      "thread_depth": 2,
+      "month": "2011-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-9b8f02af4ac3",
+      "subject": "[R-gui] GUI Builder for R",
+      "message_count": 1,
+      "participants": [
+        "Leonid Landsman"
+      ],
+      "started": "2011-07-18T11:28:32-04:00",
+      "last_reply": "2011-07-18T11:28:32-04:00",
+      "root_message_id": "msg-9b8f02af4ac3"
+    },
+    {
+      "id": "thread-8425cac9409a",
+      "subject": "[R-gui] Return value from gWidgets",
+      "message_count": 1,
+      "participants": [
+        "Sebastian Mellor"
+      ],
+      "started": "2011-07-19T14:20:41+01:00",
+      "last_reply": "2011-07-19T14:20:41+01:00",
+      "root_message_id": "msg-8425cac9409a"
+    },
+    {
+      "id": "thread-9cfcaf40ead4",
+      "subject": "[R-gui] Fwd: Return value from gWidgets",
+      "message_count": 1,
+      "participants": [
+        "Sebastian Mellor"
+      ],
+      "started": "2011-07-19T15:28:32+01:00",
+      "last_reply": "2011-07-19T15:28:32+01:00",
+      "root_message_id": "msg-9cfcaf40ead4"
+    },
+    {
+      "id": "thread-c1e4f6fc8e3e",
+      "subject": "[R-gui] R for a historical timeline chart?",
+      "message_count": 3,
+      "participants": [
+        "David L Lorenz",
+        "Jim Burke",
+        "Wayne.W.Jones at shell.com"
+      ],
+      "started": "2011-07-26T10:50:32-05:00",
+      "last_reply": "2011-07-27T09:17:11+02:00",
+      "root_message_id": "msg-c1e4f6fc8e3e"
+    }
+  ]
+}

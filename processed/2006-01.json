@@ -1,0 +1,144 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-01",
+  "messages": [
+    {
+      "id": "msg-ea3bdf4fef16",
+      "message_id": "<43B90ADA.6080000@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-01-02T08:13:30-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.1.5 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.1.5 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R\n(1.18.1.5) was released and is available (setup only) on SourceForge server: \nhttp://sourceforge.net/projects/tinn-r.\n\nTo see the changes, please, read: 'Help/From this version/English/Changes.txt'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R\n(1.18.1.5) was released and is available (setup only) on SourceForge server: \nhttp://sourceforge.net/projects/tinn-r.\n\nTo ",
+      "thread_id": "thread-ea3bdf4fef16",
+      "thread_depth": 0,
+      "month": "2006-01"
+    },
+    {
+      "id": "msg-8142f134a7d2",
+      "message_id": "<21c444b274f524d9770a4013894ff7f7@york.ac.uk>",
+      "from_name": "Zhesi He",
+      "from_email_hash": "f3bab98da22e3f55ce7c747caa67b0ed052ba1dff86c3046f595e495c433eee1",
+      "date": "2006-01-12T04:09:05Z",
+      "subject": "[R-gui] Tree and dendrogram view",
+      "subject_clean": "[R-gui] Tree and dendrogram view",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060112/36198ddb/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060112/36198ddb/attachment.pl",
+      "thread_id": "thread-8142f134a7d2",
+      "thread_depth": 0,
+      "month": "2006-01"
+    },
+    {
+      "id": "msg-fd3aa187d49c",
+      "message_id": "<df4421d99d59e5f8287d75d2e13b05c8@york.ac.uk>",
+      "from_name": "Zhesi He",
+      "from_email_hash": "f3bab98da22e3f55ce7c747caa67b0ed052ba1dff86c3046f595e495c433eee1",
+      "date": "2006-01-13T09:13:52Z",
+      "subject": "[R-gui] tkrplot load problem",
+      "subject_clean": "[R-gui] tkrplot load problem",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060113/95d403ac/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060113/95d403ac/attachment.pl",
+      "thread_id": "thread-fd3aa187d49c",
+      "thread_depth": 0,
+      "month": "2006-01"
+    },
+    {
+      "id": "msg-acfbdb63d004",
+      "message_id": "<43C80EFE.90503@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-01-13T17:35:10-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.1.6 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.1.6 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R\n(1.18.1.6) was released and is available (setup only) on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTo see the changes, please, read: 'Help/From this version/English/Changes.txt'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R\n(1.18.1.6) was released and is available (setup only) on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTo s",
+      "thread_id": "thread-acfbdb63d004",
+      "thread_depth": 0,
+      "month": "2006-01"
+    },
+    {
+      "id": "msg-d83291162e95",
+      "message_id": "<43C90483.5060804@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-01-14T11:02:43-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.1.7 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.1.7 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new stable version of the Tinn-R\n(1.18.1.7) was released and is available (setup only) on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTo see the changes, please, read: 'Help/From this version/English/Changes.txt'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new stable version of the Tinn-R\n(1.18.1.7) was released and is available (setup only) on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r",
+      "thread_id": "thread-d83291162e95",
+      "thread_depth": 0,
+      "month": "2006-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-ea3bdf4fef16",
+      "subject": "[R-gui] Tinn-R 1.18.1.5 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-01-02T08:13:30-03:00",
+      "last_reply": "2006-01-02T08:13:30-03:00",
+      "root_message_id": "msg-ea3bdf4fef16"
+    },
+    {
+      "id": "thread-8142f134a7d2",
+      "subject": "[R-gui] Tree and dendrogram view",
+      "message_count": 1,
+      "participants": [
+        "Zhesi He"
+      ],
+      "started": "2006-01-12T04:09:05+00:00",
+      "last_reply": "2006-01-12T04:09:05+00:00",
+      "root_message_id": "msg-8142f134a7d2"
+    },
+    {
+      "id": "thread-fd3aa187d49c",
+      "subject": "[R-gui] tkrplot load problem",
+      "message_count": 1,
+      "participants": [
+        "Zhesi He"
+      ],
+      "started": "2006-01-13T09:13:52+00:00",
+      "last_reply": "2006-01-13T09:13:52+00:00",
+      "root_message_id": "msg-fd3aa187d49c"
+    },
+    {
+      "id": "thread-acfbdb63d004",
+      "subject": "[R-gui] Tinn-R 1.18.1.6 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-01-13T17:35:10-03:00",
+      "last_reply": "2006-01-13T17:35:10-03:00",
+      "root_message_id": "msg-acfbdb63d004"
+    },
+    {
+      "id": "thread-d83291162e95",
+      "subject": "[R-gui] Tinn-R 1.18.1.7 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-01-14T11:02:43-03:00",
+      "last_reply": "2006-01-14T11:02:43-03:00",
+      "root_message_id": "msg-d83291162e95"
+    }
+  ]
+}

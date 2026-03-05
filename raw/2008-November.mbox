@@ -1,0 +1,1634 @@
+From sp2002s at ukr.net  Fri Nov  7 05:40:28 2008
+From: sp2002s at ukr.net (Andrew as)
+Date: Fri, 07 Nov 2008 06:40:28 +0200
+Subject: [R-gui] integrate Rcmdr into SciViews-K
+Message-ID: <E1KyJ92-000Hki-M9@ffe8.ukr.net>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081107/e424b129/attachment.pl>
+
+From phgrosjean at sciviews.org  Mon Nov 10 17:35:42 2008
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon, 10 Nov 2008 17:35:42 +0100
+Subject: [R-gui] integrate Rcmdr into SciViews-K
+In-Reply-To: <E1KyJ92-000Hki-M9@ffe8.ukr.net>
+References: <E1KyJ92-000Hki-M9@ffe8.ukr.net>
+Message-ID: <491862DE.7070903@sciviews.org>
+
+Hello,
+
+A series of Komodo snippets are in preparation. They are not exactly 
+identical to R Commander, but provide rather similar features.
+
+In the meantime, here is the current version of this toolbox. Just drop 
+the file to Komodo and select a directory with write access to 
+uncompress it. The "R reference" should then be available in the komodo 
+toolbox at right (make View -> Tabs -Toolbox if it is hidden).
+
+Best,
+
+Philippe Grosjean
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Belgium
+( ( ( ( (
+..............................................................
+
+Andrew as wrote:
+> Hello All  
+> I have a question on SciViews-K. In previous versions SciViews it was possible to integrate Rcmdr into SciViews. Now I can't find how to do it in Komodo Edit.  
+> Could you please advise on it.  
+> Best regards,  
+> Andrew
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: R reference (0.9).kpz
+Type: application/octet-stream
+Size: 87137 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081110/abb7581d/attachment-0001.obj>
+
+From groemp at tfh-berlin.de  Tue Nov 11 11:54:12 2008
+From: groemp at tfh-berlin.de (Ulrike Groemping)
+Date: Tue, 11 Nov 2008 02:54:12 -0800 (PST)
+Subject: [R-gui]  tcltk internationalization for built-in buttons
+Message-ID: <1226400852946-1484614.post@n2.nabble.com>
+
+
+Dear R-SIG-GUIs,
+
+documentation of getLanguage / setLanguage in tcltk2 pointed me towards the
+msgcat package in Tcl/Tk, and I used it for internationalizing my GUI
+entries - trying to avoid having to write individual tools like
+RcmdrTkmessagebox etc. I am an absolute Tcl/Tk beginner and still looking
+for the final strategy to do a larger GUI project in, currently working on
+Windows with R 2.8.0 or R 2.7.1 (behave identical). And one important aspect
+is internationalization.
+
+I have now managed to program my draft and not yet functional GUI in English
+and show it in German by using an msg file with msgcat. On my computer,
+everything shows well in German. Then I got the idea that it would be nice
+to show an msgcat example in the help for getLanguage/setLanguage, and I
+prepared a toy example for sending to Philippe (cf. below). However, while
+changing the language does change most messages, it does not work with
+built-in buttons - these remain German on my machine, even if I restart my
+computer after changing system settings for all language aspects I could
+find on my computer from German to English.
+
+I remember having read something like that from John, when he started
+internationalizing Rcmdr, but I had thought it would be long solved by now.
+Since internationalization appears to work at installation time (otherwise
+my buttons wouldn't be in German), and since there are many tcltk message
+files in the Tcl directory, it looks to me - as a possibly rather naive
+tcltk novice - that one would just have to find a way to reset some
+environment variable or otherwise direct tcltk to look in the right places. 
+
+Any thoughts on that ?
+
+Regards, Ulrike
+
+####### the toy example follows
+require(tcltk)
+### the following two lines must be executed BEFORE loading tcltk2
+### otherwise they do not work !!!
+tcl("::msgcat::mcload","C:/testdirectory")
+ilab <- function(lab)
+tclvalue(tcl("namespace","eval","::tcl::minidummy","::msgcat::mc",.Tcl.args(lab)))
+
+## mini example of German tcl message file
+## has to be saved under name de.msg 
+## in the testdirectory given above
+## without the comment character in lines below
+## (it is important to avoid line breaks within individual mset entries)
+#namespace eval ::tcl::minidummy {
+#   ::msgcat::mcset de "If you choose Yes, all unsaved inputs will be lost."
+"Wenn Sie Ja w?hlen, gehen alle noch nicht gespeicherten Eingaben verloren."
+#    ::msgcat::mcset de "Really Exit WITHOUT Save ?" "Wirklich OHNE
+Speichern Beenden ?"
+#    ::msgcat::mcset de "Yes pressed" "Ja gedr?ckt"
+#    ::msgcat::mcset de "No pressed" "Nein gedr?ckt"
+#}
+
+imsgboxtest <- function(){
+td <- tclvalue(tkmessageBox(message=ilab("If you choose Yes, all unsaved
+inputs will be lost."),
+             title=ilab("Really Exit WITHOUT Save
+?"),type="yesno",default="yes",icon="question"))
+       if (td == "yes") cat(paste(ilab("Yes pressed"),"\n")) else
+cat(paste(ilab("No pressed"),"\n"))
+}
+imsgboxtest()
+
+require(tcltk2)  ## ruins functionality of the load and function definition
+above
+                     ## if loaded too early!
+oldlang <- getLanguage()
+if (oldlang != "") {
+        # Switch to English and test a command that issues a warning
+        if (setLanguage("en_US")) imsgboxtest()
+        # Switch to French and test a command that issues a warning
+        if (setLanguage("fr_FR")) imsgboxtest()
+        # Switch to German and test a command that issues a warning
+        if (setLanguage("de_DE")) imsgboxtest()
+        # Restore previous language
+        setLanguage(oldlang) 
+}
+
+-- 
+View this message in context: http://n2.nabble.com/tcltk-internationalization-for-built-in-buttons-tp1484614p1484614.html
+Sent from the R Sig Gui mailing list archive at Nabble.com.
+
+
+From phgrosjean at sciviews.org  Tue Nov 11 14:36:53 2008
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue, 11 Nov 2008 14:36:53 +0100
+Subject: [R-gui] tcltk internationalization for built-in buttons
+Message-ID: <49198A75.9080606@sciviews.org>
+
+Hello Ulrike,
+
+I think that the reason why default buttons are not translated is
+because they are managed by Windows. You have no control on their text.
+Running on a Windows in English, you got those buttons in English,
+Windows in German -> buttons in German, etc...
+So, three options from there:
+
+1) You just assume that the end-users want the GUI in the same language
+as Windows,... or accept to have default buttons in Window's language if
+they switch to another internationalisation,
+
+2) Do the same as in R commander: rewrite the dialog boxes so that they
+don't use default Windows buttons (almost impossible for file
+open/close, dir choose, etc. dialog boxes)!
+
+3) Use AutoIt or AutoHotKey to change the default buttons messages (with
+lots of sweat, you can compile a satellite program to do so),... or with
+even more time and effort, compile a C function in R that calls the
+right API to change default buttons' messages in your dialog boxes.
+
+Sorry that I cannot give you a better solution...
+
+Oh yes, regarding translation of Tcl/Tk messages from within R, I really
+believe that translating these messages using the R mechanism instead of
+msgcat in Tcl is much better. That way, you centralize all translations
+(R functions and GUI elements) in a single translation file. It is the
+approach used by R Commander, by the way. So, you got inspiration from
+there for your own code.
+Best,
+
+Philippe
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Belgium
+( ( ( ( (
+..............................................................
+
+Ulrike Groemping wrote:
+> Dear R-SIG-GUIs,
+> 
+> documentation of getLanguage / setLanguage in tcltk2 pointed me towards the
+> msgcat package in Tcl/Tk, and I used it for internationalizing my GUI
+> entries - trying to avoid having to write individual tools like
+> RcmdrTkmessagebox etc. I am an absolute Tcl/Tk beginner and still looking
+> for the final strategy to do a larger GUI project in, currently working on
+> Windows with R 2.8.0 or R 2.7.1 (behave identical). And one important aspect
+> is internationalization.
+> 
+> I have now managed to program my draft and not yet functional GUI in English
+> and show it in German by using an msg file with msgcat. On my computer,
+> everything shows well in German. Then I got the idea that it would be nice
+> to show an msgcat example in the help for getLanguage/setLanguage, and I
+> prepared a toy example for sending to Philippe (cf. below). However, while
+> changing the language does change most messages, it does not work with
+> built-in buttons - these remain German on my machine, even if I restart my
+> computer after changing system settings for all language aspects I could
+> find on my computer from German to English.
+> 
+> I remember having read something like that from John, when he started
+> internationalizing Rcmdr, but I had thought it would be long solved by now.
+> Since internationalization appears to work at installation time (otherwise
+> my buttons wouldn't be in German), and since there are many tcltk message
+> files in the Tcl directory, it looks to me - as a possibly rather naive
+> tcltk novice - that one would just have to find a way to reset some
+> environment variable or otherwise direct tcltk to look in the right places. 
+> 
+> Any thoughts on that ?
+> 
+> Regards, Ulrike
+> 
+> ####### the toy example follows
+> require(tcltk)
+> ### the following two lines must be executed BEFORE loading tcltk2
+> ### otherwise they do not work !!!
+> tcl("::msgcat::mcload","C:/testdirectory")
+> ilab <- function(lab)
+> tclvalue(tcl("namespace","eval","::tcl::minidummy","::msgcat::mc",.Tcl.args(lab)))
+> 
+> ## mini example of German tcl message file
+> ## has to be saved under name de.msg 
+> ## in the testdirectory given above
+> ## without the comment character in lines below
+> ## (it is important to avoid line breaks within individual mset entries)
+> #namespace eval ::tcl::minidummy {
+> #   ::msgcat::mcset de "If you choose Yes, all unsaved inputs will be lost."
+> "Wenn Sie Ja w?hlen, gehen alle noch nicht gespeicherten Eingaben verloren."
+> #    ::msgcat::mcset de "Really Exit WITHOUT Save ?" "Wirklich OHNE
+> Speichern Beenden ?"
+> #    ::msgcat::mcset de "Yes pressed" "Ja gedr?ckt"
+> #    ::msgcat::mcset de "No pressed" "Nein gedr?ckt"
+> #}
+> 
+> imsgboxtest <- function(){
+> td <- tclvalue(tkmessageBox(message=ilab("If you choose Yes, all unsaved
+> inputs will be lost."),
+>              title=ilab("Really Exit WITHOUT Save
+> ?"),type="yesno",default="yes",icon="question"))
+>        if (td == "yes") cat(paste(ilab("Yes pressed"),"\n")) else
+> cat(paste(ilab("No pressed"),"\n"))
+> }
+> imsgboxtest()
+> 
+> require(tcltk2)  ## ruins functionality of the load and function definition
+> above
+>                      ## if loaded too early!
+> oldlang <- getLanguage()
+> if (oldlang != "") {
+>         # Switch to English and test a command that issues a warning
+>         if (setLanguage("en_US")) imsgboxtest()
+>         # Switch to French and test a command that issues a warning
+>         if (setLanguage("fr_FR")) imsgboxtest()
+>         # Switch to German and test a command that issues a warning
+>         if (setLanguage("de_DE")) imsgboxtest()
+>         # Restore previous language
+>         setLanguage(oldlang) 
+> }
+> 
+
+
+-- 
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Belgium
+( ( ( ( (
+..............................................................
+
+
+From groemp at tfh-berlin.de  Tue Nov 11 15:17:06 2008
+From: groemp at tfh-berlin.de (Ulrike Groemping)
+Date: Tue, 11 Nov 2008 06:17:06 -0800 (PST)
+Subject: [R-gui] tcltk internationalization for built-in buttons
+In-Reply-To: <49198A75.9080606@sciviews.org>
+References: <1226400852946-1484614.post@n2.nabble.com>
+	<49198A75.9080606@sciviews.org>
+Message-ID: <1226413026194-1485165.post@n2.nabble.com>
+
+
+Hello Philippe,
+
+I see now that I was being naive in assuming that resetting language
+settings in Windows would do anything to the buttons - they of course sell
+multilanguage support nowadays, and I seem to have a one-language-only
+version.
+
+I think that I can live with option 1). If users understand their Windows
+buttons, they will also understand the R buttons, and I can use my time
+better than spending it on 2) and 3). (Of course, users of Rcmdr will
+appreciate that buttons and messages match!)
+
+Regarding msgcat vs. R-internal, I only resorted to msgcat because I found
+it easier to find out how to use it. I think I will replace the ilab
+function in my toy example by a gettext version as soon as I find out how to
+do that (I suppose I can take that from the .onLoad function in Rcmdr).
+However, I cannot check that it works before I have packaged my package, can
+I ? That's a disadvantage of the R-internal approach vs. the msgcat approach
+at the stage I am currently in. 
+
+By the way, do you know why tcltk2 causes the two commands below to stop
+functioning?
+tcl("::msgcat::mcload","C:/testdirectory")
+ilab <- function(lab)
+tclvalue(tcl("namespace","eval","::tcl::minidummy","::msgcat::mc",.Tcl.args(lab)))
+
+Regards, Ulrike
+
+
+
+Philippe Grosjean wrote:
+> 
+> Hello Ulrike,
+> 
+> I think that the reason why default buttons are not translated is
+> because they are managed by Windows. You have no control on their text.
+> Running on a Windows in English, you got those buttons in English,
+> Windows in German -> buttons in German, etc...
+> So, three options from there:
+> 
+> 1) You just assume that the end-users want the GUI in the same language
+> as Windows,... or accept to have default buttons in Window's language if
+> they switch to another internationalisation,
+> 
+> 2) Do the same as in R commander: rewrite the dialog boxes so that they
+> don't use default Windows buttons (almost impossible for file
+> open/close, dir choose, etc. dialog boxes)!
+> 
+> 3) Use AutoIt or AutoHotKey to change the default buttons messages (with
+> lots of sweat, you can compile a satellite program to do so),... or with
+> even more time and effort, compile a C function in R that calls the
+> right API to change default buttons' messages in your dialog boxes.
+> 
+> Sorry that I cannot give you a better solution...
+> 
+> Oh yes, regarding translation of Tcl/Tk messages from within R, I really
+> believe that translating these messages using the R mechanism instead of
+> msgcat in Tcl is much better. That way, you centralize all translations
+> (R functions and GUI elements) in a single translation file. It is the
+> approach used by R Commander, by the way. So, you got inspiration from
+> there for your own code.
+> Best,
+> 
+> Philippe
+> ..............................................<?}))><........
+>   ) ) ) ) )
+> ( ( ( ( (    Prof. Philippe Grosjean
+>   ) ) ) ) )
+> ( ( ( ( (    Numerical Ecology of Aquatic Systems
+>   ) ) ) ) )   Mons-Hainaut University, Belgium
+> ( ( ( ( (
+> ..............................................................
+> 
+> Ulrike Groemping wrote:
+>> Dear R-SIG-GUIs,
+>> 
+>> documentation of getLanguage / setLanguage in tcltk2 pointed me towards
+>> the
+>> msgcat package in Tcl/Tk, and I used it for internationalizing my GUI
+>> entries - trying to avoid having to write individual tools like
+>> RcmdrTkmessagebox etc. I am an absolute Tcl/Tk beginner and still looking
+>> for the final strategy to do a larger GUI project in, currently working
+>> on
+>> Windows with R 2.8.0 or R 2.7.1 (behave identical). And one important
+>> aspect
+>> is internationalization.
+>> 
+>> I have now managed to program my draft and not yet functional GUI in
+>> English
+>> and show it in German by using an msg file with msgcat. On my computer,
+>> everything shows well in German. Then I got the idea that it would be
+>> nice
+>> to show an msgcat example in the help for getLanguage/setLanguage, and I
+>> prepared a toy example for sending to Philippe (cf. below). However,
+>> while
+>> changing the language does change most messages, it does not work with
+>> built-in buttons - these remain German on my machine, even if I restart
+>> my
+>> computer after changing system settings for all language aspects I could
+>> find on my computer from German to English.
+>> 
+>> I remember having read something like that from John, when he started
+>> internationalizing Rcmdr, but I had thought it would be long solved by
+>> now.
+>> Since internationalization appears to work at installation time
+>> (otherwise
+>> my buttons wouldn't be in German), and since there are many tcltk message
+>> files in the Tcl directory, it looks to me - as a possibly rather naive
+>> tcltk novice - that one would just have to find a way to reset some
+>> environment variable or otherwise direct tcltk to look in the right
+>> places. 
+>> 
+>> Any thoughts on that ?
+>> 
+>> Regards, Ulrike
+>> 
+>> ####### the toy example follows
+>> require(tcltk)
+>> ### the following two lines must be executed BEFORE loading tcltk2
+>> ### otherwise they do not work !!!
+>> tcl("::msgcat::mcload","C:/testdirectory")
+>> ilab <- function(lab)
+>> tclvalue(tcl("namespace","eval","::tcl::minidummy","::msgcat::mc",.Tcl.args(lab)))
+>> 
+>> ## mini example of German tcl message file
+>> ## has to be saved under name de.msg 
+>> ## in the testdirectory given above
+>> ## without the comment character in lines below
+>> ## (it is important to avoid line breaks within individual mset entries)
+>> #namespace eval ::tcl::minidummy {
+>> #   ::msgcat::mcset de "If you choose Yes, all unsaved inputs will be
+>> lost."
+>> "Wenn Sie Ja w?hlen, gehen alle noch nicht gespeicherten Eingaben
+>> verloren."
+>> #    ::msgcat::mcset de "Really Exit WITHOUT Save ?" "Wirklich OHNE
+>> Speichern Beenden ?"
+>> #    ::msgcat::mcset de "Yes pressed" "Ja gedr?ckt"
+>> #    ::msgcat::mcset de "No pressed" "Nein gedr?ckt"
+>> #}
+>> 
+>> imsgboxtest <- function(){
+>> td <- tclvalue(tkmessageBox(message=ilab("If you choose Yes, all unsaved
+>> inputs will be lost."),
+>>              title=ilab("Really Exit WITHOUT Save
+>> ?"),type="yesno",default="yes",icon="question"))
+>>        if (td == "yes") cat(paste(ilab("Yes pressed"),"\n")) else
+>> cat(paste(ilab("No pressed"),"\n"))
+>> }
+>> imsgboxtest()
+>> 
+>> require(tcltk2)  ## ruins functionality of the load and function
+>> definition
+>> above
+>>                      ## if loaded too early!
+>> oldlang <- getLanguage()
+>> if (oldlang != "") {
+>>         # Switch to English and test a command that issues a warning
+>>         if (setLanguage("en_US")) imsgboxtest()
+>>         # Switch to French and test a command that issues a warning
+>>         if (setLanguage("fr_FR")) imsgboxtest()
+>>         # Switch to German and test a command that issues a warning
+>>         if (setLanguage("de_DE")) imsgboxtest()
+>>         # Restore previous language
+>>         setLanguage(oldlang) 
+>> }
+>> 
+> 
+> 
+> -- 
+> ..............................................<?}))><........
+>   ) ) ) ) )
+> ( ( ( ( (    Prof. Philippe Grosjean
+>   ) ) ) ) )
+> ( ( ( ( (    Numerical Ecology of Aquatic Systems
+>   ) ) ) ) )   Mons-Hainaut University, Belgium
+> ( ( ( ( (
+> ..............................................................
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> 
+
+-- 
+View this message in context: http://n2.nabble.com/tcltk-internationalization-for-built-in-buttons-tp1484614p1485165.html
+Sent from the R Sig Gui mailing list archive at Nabble.com.
+
+
+From jfox at mcmaster.ca  Tue Nov 11 16:47:28 2008
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue, 11 Nov 2008 10:47:28 -0500
+Subject: [R-gui] tcltk internationalization for built-in buttons
+In-Reply-To: <1226413026194-1485165.post@n2.nabble.com>
+References: <1226400852946-1484614.post@n2.nabble.com>	<49198A75.9080606@sciviews.org>
+	<1226413026194-1485165.post@n2.nabble.com>
+Message-ID: <003a01c94414$cd279d90$6776d8b0$@ca>
+
+Dear Ulrike,
+
+Using gettext within R is really quite simple. You're probably aware of this, but just in case, you can consult Brian Ripley's article in the May 2005 R News, the section on internationalization and localization in the R Installation and Administration manual, and the document at <http://developer.r-project.org/Translations.html>. 
+
+Under Windows, you can check that that your translation is working by, e.g., setting the language in the target field of a shortcut to Rgui. For example, I typically check in Spanish with the target field set to C:\R\R-2.8.0\bin\Rgui.exe language=es. 
+
+I hope this helps,
+John
+
+------------------------------
+John Fox, Professor
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada
+web: socserv.mcmaster.ca/jfox
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+> bounces at stat.math.ethz.ch] On Behalf Of Ulrike Groemping
+> Sent: November-11-08 9:17 AM
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] tcltk internationalization for built-in buttons
+> 
+> 
+> Hello Philippe,
+> 
+> I see now that I was being naive in assuming that resetting language
+> settings in Windows would do anything to the buttons - they of course sell
+> multilanguage support nowadays, and I seem to have a one-language-only
+> version.
+> 
+> I think that I can live with option 1). If users understand their Windows
+> buttons, they will also understand the R buttons, and I can use my time
+> better than spending it on 2) and 3). (Of course, users of Rcmdr will
+> appreciate that buttons and messages match!)
+> 
+> Regarding msgcat vs. R-internal, I only resorted to msgcat because I found
+> it easier to find out how to use it. I think I will replace the ilab
+> function in my toy example by a gettext version as soon as I find out how to
+> do that (I suppose I can take that from the .onLoad function in Rcmdr).
+> However, I cannot check that it works before I have packaged my package, can
+> I ? That's a disadvantage of the R-internal approach vs. the msgcat approach
+> at the stage I am currently in.
+> 
+> By the way, do you know why tcltk2 causes the two commands below to stop
+> functioning?
+> tcl("::msgcat::mcload","C:/testdirectory")
+> ilab <- function(lab)
+> tclvalue(tcl("namespace","eval","::tcl::minidummy","::msgcat::mc",.Tcl.args(l
+> ab)))
+> 
+> Regards, Ulrike
+> 
+> 
+> 
+> Philippe Grosjean wrote:
+> >
+> > Hello Ulrike,
+> >
+> > I think that the reason why default buttons are not translated is
+> > because they are managed by Windows. You have no control on their text.
+> > Running on a Windows in English, you got those buttons in English,
+> > Windows in German -> buttons in German, etc...
+> > So, three options from there:
+> >
+> > 1) You just assume that the end-users want the GUI in the same language
+> > as Windows,... or accept to have default buttons in Window's language if
+> > they switch to another internationalisation,
+> >
+> > 2) Do the same as in R commander: rewrite the dialog boxes so that they
+> > don't use default Windows buttons (almost impossible for file
+> > open/close, dir choose, etc. dialog boxes)!
+> >
+> > 3) Use AutoIt or AutoHotKey to change the default buttons messages (with
+> > lots of sweat, you can compile a satellite program to do so),... or with
+> > even more time and effort, compile a C function in R that calls the
+> > right API to change default buttons' messages in your dialog boxes.
+> >
+> > Sorry that I cannot give you a better solution...
+> >
+> > Oh yes, regarding translation of Tcl/Tk messages from within R, I really
+> > believe that translating these messages using the R mechanism instead of
+> > msgcat in Tcl is much better. That way, you centralize all translations
+> > (R functions and GUI elements) in a single translation file. It is the
+> > approach used by R Commander, by the way. So, you got inspiration from
+> > there for your own code.
+> > Best,
+> >
+> > Philippe
+> > ..............................................<?}))><........
+> >   ) ) ) ) )
+> > ( ( ( ( (    Prof. Philippe Grosjean
+> >   ) ) ) ) )
+> > ( ( ( ( (    Numerical Ecology of Aquatic Systems
+> >   ) ) ) ) )   Mons-Hainaut University, Belgium
+> > ( ( ( ( (
+> > ..............................................................
+> >
+> > Ulrike Groemping wrote:
+> >> Dear R-SIG-GUIs,
+> >>
+> >> documentation of getLanguage / setLanguage in tcltk2 pointed me towards
+> >> the
+> >> msgcat package in Tcl/Tk, and I used it for internationalizing my GUI
+> >> entries - trying to avoid having to write individual tools like
+> >> RcmdrTkmessagebox etc. I am an absolute Tcl/Tk beginner and still looking
+> >> for the final strategy to do a larger GUI project in, currently working
+> >> on
+> >> Windows with R 2.8.0 or R 2.7.1 (behave identical). And one important
+> >> aspect
+> >> is internationalization.
+> >>
+> >> I have now managed to program my draft and not yet functional GUI in
+> >> English
+> >> and show it in German by using an msg file with msgcat. On my computer,
+> >> everything shows well in German. Then I got the idea that it would be
+> >> nice
+> >> to show an msgcat example in the help for getLanguage/setLanguage, and I
+> >> prepared a toy example for sending to Philippe (cf. below). However,
+> >> while
+> >> changing the language does change most messages, it does not work with
+> >> built-in buttons - these remain German on my machine, even if I restart
+> >> my
+> >> computer after changing system settings for all language aspects I could
+> >> find on my computer from German to English.
+> >>
+> >> I remember having read something like that from John, when he started
+> >> internationalizing Rcmdr, but I had thought it would be long solved by
+> >> now.
+> >> Since internationalization appears to work at installation time
+> >> (otherwise
+> >> my buttons wouldn't be in German), and since there are many tcltk message
+> >> files in the Tcl directory, it looks to me - as a possibly rather naive
+> >> tcltk novice - that one would just have to find a way to reset some
+> >> environment variable or otherwise direct tcltk to look in the right
+> >> places.
+> >>
+> >> Any thoughts on that ?
+> >>
+> >> Regards, Ulrike
+> >>
+> >> ####### the toy example follows
+> >> require(tcltk)
+> >> ### the following two lines must be executed BEFORE loading tcltk2
+> >> ### otherwise they do not work !!!
+> >> tcl("::msgcat::mcload","C:/testdirectory")
+> >> ilab <- function(lab)
+> >>
+> tclvalue(tcl("namespace","eval","::tcl::minidummy","::msgcat::mc",.Tcl.args(l
+> ab)))
+> >>
+> >> ## mini example of German tcl message file
+> >> ## has to be saved under name de.msg
+> >> ## in the testdirectory given above
+> >> ## without the comment character in lines below
+> >> ## (it is important to avoid line breaks within individual mset entries)
+> >> #namespace eval ::tcl::minidummy {
+> >> #   ::msgcat::mcset de "If you choose Yes, all unsaved inputs will be
+> >> lost."
+> >> "Wenn Sie Ja w?hlen, gehen alle noch nicht gespeicherten Eingaben
+> >> verloren."
+> >> #    ::msgcat::mcset de "Really Exit WITHOUT Save ?" "Wirklich OHNE
+> >> Speichern Beenden ?"
+> >> #    ::msgcat::mcset de "Yes pressed" "Ja gedr?ckt"
+> >> #    ::msgcat::mcset de "No pressed" "Nein gedr?ckt"
+> >> #}
+> >>
+> >> imsgboxtest <- function(){
+> >> td <- tclvalue(tkmessageBox(message=ilab("If you choose Yes, all unsaved
+> >> inputs will be lost."),
+> >>              title=ilab("Really Exit WITHOUT Save
+> >> ?"),type="yesno",default="yes",icon="question"))
+> >>        if (td == "yes") cat(paste(ilab("Yes pressed"),"\n")) else
+> >> cat(paste(ilab("No pressed"),"\n"))
+> >> }
+> >> imsgboxtest()
+> >>
+> >> require(tcltk2)  ## ruins functionality of the load and function
+> >> definition
+> >> above
+> >>                      ## if loaded too early!
+> >> oldlang <- getLanguage()
+> >> if (oldlang != "") {
+> >>         # Switch to English and test a command that issues a warning
+> >>         if (setLanguage("en_US")) imsgboxtest()
+> >>         # Switch to French and test a command that issues a warning
+> >>         if (setLanguage("fr_FR")) imsgboxtest()
+> >>         # Switch to German and test a command that issues a warning
+> >>         if (setLanguage("de_DE")) imsgboxtest()
+> >>         # Restore previous language
+> >>         setLanguage(oldlang)
+> >> }
+> >>
+> >
+> >
+> > --
+> > ..............................................<?}))><........
+> >   ) ) ) ) )
+> > ( ( ( ( (    Prof. Philippe Grosjean
+> >   ) ) ) ) )
+> > ( ( ( ( (    Numerical Ecology of Aquatic Systems
+> >   ) ) ) ) )   Mons-Hainaut University, Belgium
+> > ( ( ( ( (
+> > ..............................................................
+> >
+> > _______________________________________________
+> > R-SIG-GUI mailing list
+> > R-SIG-GUI at stat.math.ethz.ch
+> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> >
+> >
+> 
+> --
+> View this message in context: http://n2.nabble.com/tcltk-
+> internationalization-for-built-in-buttons-tp1484614p1485165.html
+> Sent from the R Sig Gui mailing list archive at Nabble.com.
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From groemp at tfh-berlin.de  Tue Nov 11 21:40:09 2008
+From: groemp at tfh-berlin.de (Ulrike Groemping)
+Date: Tue, 11 Nov 2008 12:40:09 -0800 (PST)
+Subject: [R-gui] tcltk internationalization for built-in buttons
+In-Reply-To: <003a01c94414$cd279d90$6776d8b0$@ca>
+References: <1226400852946-1484614.post@n2.nabble.com>
+	<49198A75.9080606@sciviews.org>
+	<1226413026194-1485165.post@n2.nabble.com>
+	<003a01c94414$cd279d90$6776d8b0$@ca>
+Message-ID: <1226436009237-1486813.post@n2.nabble.com>
+
+
+Dear John,
+
+thanks, I did not know Brian Ripley's R News article yet, though I did know
+the web sources on translation. I don't even have to change the language for
+checking translation, because I am always in a German system and program
+everything in English - if it works I see it in my language :-)
+
+I suppose I will have to create the po files for package-specific messages
+(that should be doable) and to somehow compile these into mo files (I don't
+quite know how to do that yet, I seem to have to install GNU gettext and
+take it from there). For my current prototype phase, I think I will simply
+stick with the msgcat solution and later replace the internationalization
+function with a function based on gettext. Since the main work work on the
+package will only start next year, I am currently only interested in fixing
+conceptual thoughts and checking principle feasibility of things I would
+like to include. 
+
+Thanks again, 
+Regards, Ulrike
+
+
+John Fox wrote:
+> 
+> Dear Ulrike,
+> 
+> Using gettext within R is really quite simple. You're probably aware of
+> this, but just in case, you can consult Brian Ripley's article in the May
+> 2005 R News, the section on internationalization and localization in the R
+> Installation and Administration manual, and the document at
+> <http://developer.r-project.org/Translations.html>. 
+> 
+> Under Windows, you can check that that your translation is working by,
+> e.g., setting the language in the target field of a shortcut to Rgui. For
+> example, I typically check in Spanish with the target field set to
+> C:\R\R-2.8.0\bin\Rgui.exe language=es. 
+> 
+> I hope this helps,
+> John
+> 
+> ------------------------------
+> John Fox, Professor
+> Department of Sociology
+> McMaster University
+> Hamilton, Ontario, Canada
+> web: socserv.mcmaster.ca/jfox
+> 
+> 
+>> -----Original Message-----
+>> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-
+>> bounces at stat.math.ethz.ch] On Behalf Of Ulrike Groemping
+>> Sent: November-11-08 9:17 AM
+>> To: r-sig-gui at stat.math.ethz.ch
+>> Subject: Re: [R-gui] tcltk internationalization for built-in buttons
+>> 
+>> 
+>> Hello Philippe,
+>> 
+>> I see now that I was being naive in assuming that resetting language
+>> settings in Windows would do anything to the buttons - they of course
+>> sell
+>> multilanguage support nowadays, and I seem to have a one-language-only
+>> version.
+>> 
+>> I think that I can live with option 1). If users understand their Windows
+>> buttons, they will also understand the R buttons, and I can use my time
+>> better than spending it on 2) and 3). (Of course, users of Rcmdr will
+>> appreciate that buttons and messages match!)
+>> 
+>> Regarding msgcat vs. R-internal, I only resorted to msgcat because I
+>> found
+>> it easier to find out how to use it. I think I will replace the ilab
+>> function in my toy example by a gettext version as soon as I find out how
+>> to
+>> do that (I suppose I can take that from the .onLoad function in Rcmdr).
+>> However, I cannot check that it works before I have packaged my package,
+>> can
+>> I ? That's a disadvantage of the R-internal approach vs. the msgcat
+>> approach
+>> at the stage I am currently in.
+>> 
+>> By the way, do you know why tcltk2 causes the two commands below to stop
+>> functioning?
+>> tcl("::msgcat::mcload","C:/testdirectory")
+>> ilab <- function(lab)
+>> tclvalue(tcl("namespace","eval","::tcl::minidummy","::msgcat::mc",.Tcl.args(l
+>> ab)))
+>> 
+>> Regards, Ulrike
+>> 
+>> 
+>> 
+>> Philippe Grosjean wrote:
+>> >
+>> > Hello Ulrike,
+>> >
+>> > I think that the reason why default buttons are not translated is
+>> > because they are managed by Windows. You have no control on their text.
+>> > Running on a Windows in English, you got those buttons in English,
+>> > Windows in German -> buttons in German, etc...
+>> > So, three options from there:
+>> >
+>> > 1) You just assume that the end-users want the GUI in the same language
+>> > as Windows,... or accept to have default buttons in Window's language
+>> if
+>> > they switch to another internationalisation,
+>> >
+>> > 2) Do the same as in R commander: rewrite the dialog boxes so that they
+>> > don't use default Windows buttons (almost impossible for file
+>> > open/close, dir choose, etc. dialog boxes)!
+>> >
+>> > 3) Use AutoIt or AutoHotKey to change the default buttons messages
+>> (with
+>> > lots of sweat, you can compile a satellite program to do so),... or
+>> with
+>> > even more time and effort, compile a C function in R that calls the
+>> > right API to change default buttons' messages in your dialog boxes.
+>> >
+>> > Sorry that I cannot give you a better solution...
+>> >
+>> > Oh yes, regarding translation of Tcl/Tk messages from within R, I
+>> really
+>> > believe that translating these messages using the R mechanism instead
+>> of
+>> > msgcat in Tcl is much better. That way, you centralize all translations
+>> > (R functions and GUI elements) in a single translation file. It is the
+>> > approach used by R Commander, by the way. So, you got inspiration from
+>> > there for your own code.
+>> > Best,
+>> >
+>> > Philippe
+>> > ..............................................<?}))><........
+>> >   ) ) ) ) )
+>> > ( ( ( ( (    Prof. Philippe Grosjean
+>> >   ) ) ) ) )
+>> > ( ( ( ( (    Numerical Ecology of Aquatic Systems
+>> >   ) ) ) ) )   Mons-Hainaut University, Belgium
+>> > ( ( ( ( (
+>> > ..............................................................
+>> >
+>> > Ulrike Groemping wrote:
+>> >> Dear R-SIG-GUIs,
+>> >>
+>> >> documentation of getLanguage / setLanguage in tcltk2 pointed me
+>> towards
+>> >> the
+>> >> msgcat package in Tcl/Tk, and I used it for internationalizing my GUI
+>> >> entries - trying to avoid having to write individual tools like
+>> >> RcmdrTkmessagebox etc. I am an absolute Tcl/Tk beginner and still
+>> looking
+>> >> for the final strategy to do a larger GUI project in, currently
+>> working
+>> >> on
+>> >> Windows with R 2.8.0 or R 2.7.1 (behave identical). And one important
+>> >> aspect
+>> >> is internationalization.
+>> >>
+>> >> I have now managed to program my draft and not yet functional GUI in
+>> >> English
+>> >> and show it in German by using an msg file with msgcat. On my
+>> computer,
+>> >> everything shows well in German. Then I got the idea that it would be
+>> >> nice
+>> >> to show an msgcat example in the help for getLanguage/setLanguage, and
+>> I
+>> >> prepared a toy example for sending to Philippe (cf. below). However,
+>> >> while
+>> >> changing the language does change most messages, it does not work with
+>> >> built-in buttons - these remain German on my machine, even if I
+>> restart
+>> >> my
+>> >> computer after changing system settings for all language aspects I
+>> could
+>> >> find on my computer from German to English.
+>> >>
+>> >> I remember having read something like that from John, when he started
+>> >> internationalizing Rcmdr, but I had thought it would be long solved by
+>> >> now.
+>> >> Since internationalization appears to work at installation time
+>> >> (otherwise
+>> >> my buttons wouldn't be in German), and since there are many tcltk
+>> message
+>> >> files in the Tcl directory, it looks to me - as a possibly rather
+>> naive
+>> >> tcltk novice - that one would just have to find a way to reset some
+>> >> environment variable or otherwise direct tcltk to look in the right
+>> >> places.
+>> >>
+>> >> Any thoughts on that ?
+>> >>
+>> >> Regards, Ulrike
+>> >>
+>> >> ####### the toy example follows
+>> >> require(tcltk)
+>> >> ### the following two lines must be executed BEFORE loading tcltk2
+>> >> ### otherwise they do not work !!!
+>> >> tcl("::msgcat::mcload","C:/testdirectory")
+>> >> ilab <- function(lab)
+>> >>
+>> tclvalue(tcl("namespace","eval","::tcl::minidummy","::msgcat::mc",.Tcl.args(l
+>> ab)))
+>> >>
+>> >> ## mini example of German tcl message file
+>> >> ## has to be saved under name de.msg
+>> >> ## in the testdirectory given above
+>> >> ## without the comment character in lines below
+>> >> ## (it is important to avoid line breaks within individual mset
+>> entries)
+>> >> #namespace eval ::tcl::minidummy {
+>> >> #   ::msgcat::mcset de "If you choose Yes, all unsaved inputs will be
+>> >> lost."
+>> >> "Wenn Sie Ja w?hlen, gehen alle noch nicht gespeicherten Eingaben
+>> >> verloren."
+>> >> #    ::msgcat::mcset de "Really Exit WITHOUT Save ?" "Wirklich OHNE
+>> >> Speichern Beenden ?"
+>> >> #    ::msgcat::mcset de "Yes pressed" "Ja gedr?ckt"
+>> >> #    ::msgcat::mcset de "No pressed" "Nein gedr?ckt"
+>> >> #}
+>> >>
+>> >> imsgboxtest <- function(){
+>> >> td <- tclvalue(tkmessageBox(message=ilab("If you choose Yes, all
+>> unsaved
+>> >> inputs will be lost."),
+>> >>              title=ilab("Really Exit WITHOUT Save
+>> >> ?"),type="yesno",default="yes",icon="question"))
+>> >>        if (td == "yes") cat(paste(ilab("Yes pressed"),"\n")) else
+>> >> cat(paste(ilab("No pressed"),"\n"))
+>> >> }
+>> >> imsgboxtest()
+>> >>
+>> >> require(tcltk2)  ## ruins functionality of the load and function
+>> >> definition
+>> >> above
+>> >>                      ## if loaded too early!
+>> >> oldlang <- getLanguage()
+>> >> if (oldlang != "") {
+>> >>         # Switch to English and test a command that issues a warning
+>> >>         if (setLanguage("en_US")) imsgboxtest()
+>> >>         # Switch to French and test a command that issues a warning
+>> >>         if (setLanguage("fr_FR")) imsgboxtest()
+>> >>         # Switch to German and test a command that issues a warning
+>> >>         if (setLanguage("de_DE")) imsgboxtest()
+>> >>         # Restore previous language
+>> >>         setLanguage(oldlang)
+>> >> }
+>> >>
+>> >
+>> >
+>> > --
+>> > ..............................................<?}))><........
+>> >   ) ) ) ) )
+>> > ( ( ( ( (    Prof. Philippe Grosjean
+>> >   ) ) ) ) )
+>> > ( ( ( ( (    Numerical Ecology of Aquatic Systems
+>> >   ) ) ) ) )   Mons-Hainaut University, Belgium
+>> > ( ( ( ( (
+>> > ..............................................................
+>> >
+>> > _______________________________________________
+>> > R-SIG-GUI mailing list
+>> > R-SIG-GUI at stat.math.ethz.ch
+>> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>> >
+>> >
+>> 
+>> --
+>> View this message in context: http://n2.nabble.com/tcltk-
+>> internationalization-for-built-in-buttons-tp1484614p1485165.html
+>> Sent from the R Sig Gui mailing list archive at Nabble.com.
+>> 
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> 
+
+-- 
+View this message in context: http://n2.nabble.com/tcltk-internationalization-for-built-in-buttons-tp1484614p1486813.html
+Sent from the R Sig Gui mailing list archive at Nabble.com.
+
+
+From Wayne.W.Jones at shell.com  Tue Nov 18 15:14:39 2008
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Tue, 18 Nov 2008 15:14:39 +0100
+Subject: [R-gui]  R web based application
+In-Reply-To: <1226436009237-1486813.post@n2.nabble.com>
+Message-ID: <8E3590214E4380489D2F8BF129B939F329D3D5@amsdc1-s-03371.europe.shell.com>
+
+
+
+Dear fellows, 
+
+I am looking in to porting an application I have written in R to an R web based application. 
+Can anyone suggest based on their own experiences what may be the best method to accomplish this?
+
+Regards, 
+
+Wayne
+
+----------------------------------------------------------------------------------------
+Wayne Jones
+Statistical Consultant
+Shell Global Solutions (UK)
+Shell Technology Centre Thornton, P.O. Box 1, Chester CH1 3SH, United Kingdom
+
+Tel: +44 (0) 151 373 5977 
+Fax: +44 (0) 151 373 5384 
+Mobile: +44 (0) 7896 536026
+Email: Wayne.W.Jones at shell.com
+Internet: www.shell.com/globalsolutions/statisticsandchemometrics
+
+Shell Global Solutions (UK) is a division of Shell Research Limited which has its Registered Office at Shell Centre, London SE1 7NA and is registered in England & Wales with No.539964.
+
+
+
+From dusa.adrian at gmail.com  Tue Nov 18 16:09:09 2008
+From: dusa.adrian at gmail.com (Adrian Dusa)
+Date: Tue, 18 Nov 2008 17:09:09 +0200
+Subject: [R-gui] R web based application
+In-Reply-To: <8E3590214E4380489D2F8BF129B939F329D3D5@amsdc1-s-03371.europe.shell.com>
+References: <8E3590214E4380489D2F8BF129B939F329D3D5@amsdc1-s-03371.europe.shell.com>
+Message-ID: <200811181709.09445.dusa.adrian@gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081118/3651b878/attachment.pl>
+
+From edd at debian.org  Tue Nov 18 16:14:32 2008
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Tue, 18 Nov 2008 09:14:32 -0600
+Subject: [R-gui] R web based application
+In-Reply-To: <8E3590214E4380489D2F8BF129B939F329D3D5@amsdc1-s-03371.europe.shell.com>
+References: <1226436009237-1486813.post@n2.nabble.com>
+	<8E3590214E4380489D2F8BF129B939F329D3D5@amsdc1-s-03371.europe.shell.com>
+Message-ID: <18722.56280.929055.236898@ron.nulle.part>
+
+
+Hi Wayne,
+
+Caveat:  I am not a web-developer.
+
+On 18 November 2008 at 15:14, Wayne.W.Jones at shell.com wrote:
+| I am looking in to porting an application I have written in R to an R web based application. 
+| Can anyone suggest based on their own experiences what may be the best method to accomplish this?
+
+I find the question somewhat under-specified:
+
+ - What are your goals? 
+ - What are your constraints?  
+ - Do you have restrictions in terms of the webserver and R backend or not?  
+ - Is this Rapid Development for one-offs, or rather industrial strength ?
+ - How many users?  
+ - How many concurrent users?  
+ - Light or heavy analysis?  
+
+You can do some pretty nice things with Rpad, but I have also been impressed
+with the bigger-iron stuff Greg Warnes does (did ?) around Zope.  There is
+more, but I guess you may get more useful answers if you provide more
+focussed questions.
+
+Cheers, Dirk
+
+-- 
+Three out of two people have difficulties with fractions.
+
+
+From jverzani at gmail.com  Tue Nov 18 16:17:19 2008
+From: jverzani at gmail.com (john verzani)
+Date: Tue, 18 Nov 2008 15:17:19 +0000 (UTC)
+Subject: [R-gui] R web based application
+References: <8E3590214E4380489D2F8BF129B939F329D3D5@amsdc1-s-03371.europe.shell.com>
+	<200811181709.09445.dusa.adrian@gmail.com>
+Message-ID: <loom.20081118T151605-139@post.gmane.org>
+
+Adrian Dusa <dusa.adrian <at> gmail.com> writes:
+
+> 
+> On Tuesday 18 November 2008, Wayne.W.Jones <at> shell.com wrote:
+> > Dear fellows,
+> >
+> > I am looking in to porting an application I have written in R to an R web
+> > based application. Can anyone suggest based on their own experiences what
+> > may be the best method to accomplish this?
+> 
+> I've had very satisfactory results with Rpad.
+> http://www.rpad.org/Rpad/
+> Adrian
+> 
+
+
+You may also want to look at gWidgetsWWW which uses the gWidgets API and Rpad to
+create dynamic web pages powered by R.
+
+
+From Wayne.W.Jones at shell.com  Tue Nov 18 16:56:33 2008
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Tue, 18 Nov 2008 16:56:33 +0100
+Subject: [R-gui] R web based application
+In-Reply-To: <18722.56280.929055.236898@ron.nulle.part>
+Message-ID: <8E3590214E4380489D2F8BF129B939F329D3DA@amsdc1-s-03371.europe.shell.com>
+
+
+Apologies for the rather general question. 
+
+Some more details: 
+
+ - What are your goals? 
+
+Port an application to a web based app. 
+
+ - What are your constraints?  
+
+Has to be a windows based web based solution. Our developers would probably prefer to use ASP.NET to build website.
+
+ - Do you have restrictions in terms of the webserver and R backend or not?  
+Will use windows IIS web server. 
+
+ - Is this Rapid Development for one-offs, or rather industrial strength ?
+Industrial strength, it has to be high quality. 
+
+ - How many users?  
+
+ - How many concurrent users?  
+
+Potentially hundreds of users and it has to handle concurrency probably up to a max of 8 users. 
+
+
+ - Light or heavy analysis?  
+
+Generally medium. 
+
+
+Has anyone implemneted a web based solution using the package rJAva?
+
+
+Wayne
+
+
+
+-----Original Message-----
+From: Dirk Eddelbuettel [mailto:edd at debian.org]
+Sent: 18 November 2008 15:15
+To: Jones, Wayne GSUK-GSEA/1
+Cc: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] R web based application
+
+
+
+Hi Wayne,
+
+Caveat:  I am not a web-developer.
+
+On 18 November 2008 at 15:14, Wayne.W.Jones at shell.com wrote:
+| I am looking in to porting an application I have written in R to an R web based application. 
+| Can anyone suggest based on their own experiences what may be the best method to accomplish this?
+
+I find the question somewhat under-specified:
+
+ - What are your goals? 
+ - What are your constraints?  
+ - Do you have restrictions in terms of the webserver and R backend or not?  
+ - Is this Rapid Development for one-offs, or rather industrial strength ?
+ - How many users?  
+ - How many concurrent users?  
+ - Light or heavy analysis?  
+
+You can do some pretty nice things with Rpad, but I have also been impressed
+with the bigger-iron stuff Greg Warnes does (did ?) around Zope.  There is
+more, but I guess you may get more useful answers if you provide more
+focussed questions.
+
+Cheers, Dirk
+
+-- 
+Three out of two people have difficulties with fractions.
+
+
+From tobias.verbeke at gmail.com  Wed Nov 19 08:42:52 2008
+From: tobias.verbeke at gmail.com (Tobias Verbeke)
+Date: Wed, 19 Nov 2008 08:42:52 +0100
+Subject: [R-gui] R web based application
+In-Reply-To: <8E3590214E4380489D2F8BF129B939F329D3DA@amsdc1-s-03371.europe.shell.com>
+References: <8E3590214E4380489D2F8BF129B939F329D3DA@amsdc1-s-03371.europe.shell.com>
+Message-ID: <4923C37C.3050001@telenet.be>
+
+Hi Waine,
+
+<snip>
+
+> Has anyone implemneted a web based solution using the package rJAva?
+
+No. rJava is a very low-level interface.
+We currently make use of the biocep framework
+
+http://www.biocep.net
+
+for making statistical applications available
+to scientists in a big pharma company and
+are very satisfied with the results so far.
+
+ From your description it seems to largely
+match your requirements.
+
+I put the software architect of this framework
+in cc; he is better placed to give you a detailed
+overview off-line (as we use only the top of
+the iceberg).
+
+Best,
+Tobias
+
+> -----Original Message-----
+> From: Dirk Eddelbuettel [mailto:edd at debian.org]
+> Sent: 18 November 2008 15:15
+> To: Jones, Wayne GSUK-GSEA/1
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] R web based application
+> 
+> 
+> 
+> Hi Wayne,
+> 
+> Caveat:  I am not a web-developer.
+> 
+> On 18 November 2008 at 15:14, Wayne.W.Jones at shell.com wrote:
+> | I am looking in to porting an application I have written in R to an R web based application. 
+> | Can anyone suggest based on their own experiences what may be the best method to accomplish this?
+> 
+> I find the question somewhat under-specified:
+> 
+>  - What are your goals? 
+>  - What are your constraints?  
+>  - Do you have restrictions in terms of the webserver and R backend or not?  
+>  - Is this Rapid Development for one-offs, or rather industrial strength ?
+>  - How many users?  
+>  - How many concurrent users?  
+>  - Light or heavy analysis?  
+> 
+> You can do some pretty nice things with Rpad, but I have also been impressed
+> with the bigger-iron stuff Greg Warnes does (did ?) around Zope.  There is
+> more, but I guess you may get more useful answers if you provide more
+> focussed questions.
+> 
+> Cheers, Dirk
+>
+
+
+From dusa.adrian at gmail.com  Wed Nov 19 18:00:17 2008
+From: dusa.adrian at gmail.com (Adrian Dusa)
+Date: Wed, 19 Nov 2008 19:00:17 +0200
+Subject: [R-gui] R web based application
+In-Reply-To: <4923C37C.3050001@telenet.be>
+References: <8E3590214E4380489D2F8BF129B939F329D3DA@amsdc1-s-03371.europe.shell.com>
+	<4923C37C.3050001@telenet.be>
+Message-ID: <200811191900.17752.dusa.adrian@gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081119/27a86cff/attachment.pl>
+
+From znmeb at cesmail.net  Fri Nov 21 16:36:29 2008
+From: znmeb at cesmail.net (M. Edward (Ed) Borasky)
+Date: Fri, 21 Nov 2008 07:36:29 -0800
+Subject: [R-gui] R web based application
+In-Reply-To: <8E3590214E4380489D2F8BF129B939F329D3DA@amsdc1-s-03371.europe.shell.com>
+References: <8E3590214E4380489D2F8BF129B939F329D3DA@amsdc1-s-03371.europe.shell.com>
+Message-ID: <4926D57D.7050807@cesmail.net>
+
+Wayne.W.Jones at shell.com wrote:
+> Apologies for the rather general question. 
+> 
+> Some more details: 
+> 
+>  - What are your goals? 
+> 
+> Port an application to a web based app. 
+> 
+>  - What are your constraints?  
+> 
+> Has to be a windows based web based solution. Our developers would probably prefer to use ASP.NET to build website.
+> 
+>  - Do you have restrictions in terms of the webserver and R backend or not?  
+> Will use windows IIS web server. 
+> 
+>  - Is this Rapid Development for one-offs, or rather industrial strength ?
+> Industrial strength, it has to be high quality. 
+> 
+>  - How many users?  
+> 
+>  - How many concurrent users?  
+> 
+> Potentially hundreds of users and it has to handle concurrency probably up to a max of 8 users. 
+> 
+> 
+>  - Light or heavy analysis?  
+> 
+> Generally medium. 
+> 
+> 
+> Has anyone implemneted a web based solution using the package rJAva?
+> 
+> 
+> Wayne
+> 
+> 
+> 
+> -----Original Message-----
+> From: Dirk Eddelbuettel [mailto:edd at debian.org]
+> Sent: 18 November 2008 15:15
+> To: Jones, Wayne GSUK-GSEA/1
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] R web based application
+> 
+> 
+> 
+> Hi Wayne,
+> 
+> Caveat:  I am not a web-developer.
+> 
+> On 18 November 2008 at 15:14, Wayne.W.Jones at shell.com wrote:
+> | I am looking in to porting an application I have written in R to an R web based application. 
+> | Can anyone suggest based on their own experiences what may be the best method to accomplish this?
+> 
+> I find the question somewhat under-specified:
+> 
+>  - What are your goals? 
+>  - What are your constraints?  
+>  - Do you have restrictions in terms of the webserver and R backend or not?  
+>  - Is this Rapid Development for one-offs, or rather industrial strength ?
+>  - How many users?  
+>  - How many concurrent users?  
+>  - Light or heavy analysis?  
+> 
+> You can do some pretty nice things with Rpad, but I have also been impressed
+> with the bigger-iron stuff Greg Warnes does (did ?) around Zope.  There is
+> more, but I guess you may get more useful answers if you provide more
+> focussed questions.
+> 
+> Cheers, Dirk
+> 
+
+Speaking of ASP.NET, are there packages that allow an ASP.NET 
+application to use an R back end for statistics? I went looking for 
+statistical back ends to ASP.NET and didn't find anything that I thought 
+was worth spending money for.
+
+
+-- 
+M. Edward (Ed) Borasky
+ruby-perspectives.blogspot.com/
+
+"A mathematician is a machine for turning coffee into theorems." -- 
+Alfr?d R?nyi via Paul Erd?s
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: znmeb.vcf
+Type: text/x-vcard
+Size: 148 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081121/3cf7a2ae/attachment.vcf>
+
+From erich.neuwirth at univie.ac.at  Fri Nov 21 16:46:45 2008
+From: erich.neuwirth at univie.ac.at (Erich Neuwirth)
+Date: Fri, 21 Nov 2008 16:46:45 +0100
+Subject: [R-gui] R web based application
+In-Reply-To: <4926D57D.7050807@cesmail.net>
+References: <8E3590214E4380489D2F8BF129B939F329D3DA@amsdc1-s-03371.europe.shell.com>
+	<4926D57D.7050807@cesmail.net>
+Message-ID: <4926D7E5.5090807@univie.ac.at>
+
+Did you have a look at this?
+
+http://www.msbi.nl/dnn/Default.aspx?tabid=159
+
+M. Edward (Ed) Borasky wrote:
+> Wayne.W.Jones at shell.com wrote:
+>> Apologies for the rather general question.
+>> Some more details:
+>>  - What are your goals?
+>> Port an application to a web based app.
+>>  - What are your constraints? 
+>> Has to be a windows based web based solution. Our developers would
+>> probably prefer to use ASP.NET to build website.
+>>
+>>  - Do you have restrictions in terms of the webserver and R backend or
+>> not?  Will use windows IIS web server.
+>>  - Is this Rapid Development for one-offs, or rather industrial
+>> strength ?
+>> Industrial strength, it has to be high quality.
+>>  - How many users? 
+>>  - How many concurrent users? 
+>> Potentially hundreds of users and it has to handle concurrency
+>> probably up to a max of 8 users.
+>>
+>>  - Light or heavy analysis? 
+>> Generally medium.
+>>
+>> Has anyone implemneted a web based solution using the package rJAva?
+>>
+>>
+>> Wayne
+>>
+>>
+>>
+>> -----Original Message-----
+>> From: Dirk Eddelbuettel [mailto:edd at debian.org]
+>> Sent: 18 November 2008 15:15
+>> To: Jones, Wayne GSUK-GSEA/1
+>> Cc: r-sig-gui at stat.math.ethz.ch
+>> Subject: Re: [R-gui] R web based application
+>>
+>>
+>>
+>> Hi Wayne,
+>>
+>> Caveat:  I am not a web-developer.
+>>
+>> On 18 November 2008 at 15:14, Wayne.W.Jones at shell.com wrote:
+>> | I am looking in to porting an application I have written in R to an
+>> R web based application. | Can anyone suggest based on their own
+>> experiences what may be the best method to accomplish this?
+>>
+>> I find the question somewhat under-specified:
+>>
+>>  - What are your goals?  - What are your constraints?   - Do you have
+>> restrictions in terms of the webserver and R backend or not?   - Is
+>> this Rapid Development for one-offs, or rather industrial strength ?
+>>  - How many users?   - How many concurrent users?   - Light or heavy
+>> analysis? 
+>> You can do some pretty nice things with Rpad, but I have also been
+>> impressed
+>> with the bigger-iron stuff Greg Warnes does (did ?) around Zope. 
+>> There is
+>> more, but I guess you may get more useful answers if you provide more
+>> focussed questions.
+>>
+>> Cheers, Dirk
+>>
+> 
+> Speaking of ASP.NET, are there packages that allow an ASP.NET
+> application to use an R back end for statistics? I went looking for
+> statistical back ends to ASP.NET and didn't find anything that I thought
+> was worth spending money for.
+> 
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> 
+> ------------------------------------------------------------------------
+> 
+> 
+> No virus found in this incoming message.
+> Checked by AVG - http://www.avg.com 
+> Version: 8.0.175 / Virus Database: 270.9.8/1800 - Release Date: 11/19/2008 6:55 PM
+> 
+
+-- 
+Erich Neuwirth, University of Vienna
+Faculty of Computer Science
+Computer Supported Didactics Working Group
+Visit our SunSITE at http://sunsite.univie.ac.at
+Phone: +43-1-4277-39464 Fax: +43-1-4277-39459
+
+
+From Wayne.W.Jones at shell.com  Fri Nov 21 16:49:58 2008
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Fri, 21 Nov 2008 16:49:58 +0100
+Subject: [R-gui] R web based application
+In-Reply-To: <4926D57D.7050807@cesmail.net>
+Message-ID: <8E3590214E4380489D2F8BF129B939F329D3FD@amsdc1-s-03371.europe.shell.com>
+
+
+Thanks to everyone for responding to my rather general query on building a web app with R. 
+
+I have decided to investigate in further detail ASP.NET and connect to R using R(D)Com, see http://sunsite.univie.ac.at/rcom/  .
+
+Indeed this method has already been partly tried and tested, see: 
+
+http://www.msbi.nl/R/Demo.htm from the Leiden University
+Medical Center website, for an example web app built with this arcitechture.
+
+Some details on implemenatation are given here: 
+
+http://www.msbi.nl/dnn/Default.aspx?tabid=159
+
+I will keep you posted on my progress. 
+
+Regards
+
+Wayne
+
+
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch]On Behalf Of M. Edward (Ed)
+Borasky
+Sent: 21 November 2008 15:36
+To: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] R web based application
+
+
+Wayne.W.Jones at shell.com wrote:
+> Apologies for the rather general question. 
+> 
+> Some more details: 
+> 
+>  - What are your goals? 
+> 
+> Port an application to a web based app. 
+> 
+>  - What are your constraints?  
+> 
+> Has to be a windows based web based solution. Our developers would probably prefer to use ASP.NET to build website.
+> 
+>  - Do you have restrictions in terms of the webserver and R backend or not?  
+> Will use windows IIS web server. 
+> 
+>  - Is this Rapid Development for one-offs, or rather industrial strength ?
+> Industrial strength, it has to be high quality. 
+> 
+>  - How many users?  
+> 
+>  - How many concurrent users?  
+> 
+> Potentially hundreds of users and it has to handle concurrency probably up to a max of 8 users. 
+> 
+> 
+>  - Light or heavy analysis?  
+> 
+> Generally medium. 
+> 
+> 
+> Has anyone implemneted a web based solution using the package rJAva?
+> 
+> 
+> Wayne
+> 
+> 
+> 
+> -----Original Message-----
+> From: Dirk Eddelbuettel [mailto:edd at debian.org]
+> Sent: 18 November 2008 15:15
+> To: Jones, Wayne GSUK-GSEA/1
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] R web based application
+> 
+> 
+> 
+> Hi Wayne,
+> 
+> Caveat:  I am not a web-developer.
+> 
+> On 18 November 2008 at 15:14, Wayne.W.Jones at shell.com wrote:
+> | I am looking in to porting an application I have written in R to an R web based application. 
+> | Can anyone suggest based on their own experiences what may be the best method to accomplish this?
+> 
+> I find the question somewhat under-specified:
+> 
+>  - What are your goals? 
+>  - What are your constraints?  
+>  - Do you have restrictions in terms of the webserver and R backend or not?  
+>  - Is this Rapid Development for one-offs, or rather industrial strength ?
+>  - How many users?  
+>  - How many concurrent users?  
+>  - Light or heavy analysis?  
+> 
+> You can do some pretty nice things with Rpad, but I have also been impressed
+> with the bigger-iron stuff Greg Warnes does (did ?) around Zope.  There is
+> more, but I guess you may get more useful answers if you provide more
+> focussed questions.
+> 
+> Cheers, Dirk
+> 
+
+Speaking of ASP.NET, are there packages that allow an ASP.NET 
+application to use an R back end for statistics? I went looking for 
+statistical back ends to ASP.NET and didn't find anything that I thought 
+was worth spending money for.
+
+
+-- 
+M. Edward (Ed) Borasky
+ruby-perspectives.blogspot.com/
+
+"A mathematician is a machine for turning coffee into theorems." -- 
+Alfr?d R?nyi via Paul Erd?s
+

@@ -1,0 +1,123 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2012-04",
+  "messages": [
+    {
+      "id": "msg-0b8fbbf07183",
+      "message_id": "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>",
+      "from_name": "Naveen Verma",
+      "from_email_hash": "6893bd78d570f6b592e2ed6d4b47d7b720979cc917a76ee4aa43b61e575d7fcf",
+      "date": "2012-04-09T23:43:22+05:30",
+      "subject": "[R-gui] GUI",
+      "subject_clean": "[R-gui] GUI",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/afa10b0c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/afa10b0c/attachment.pl>",
+      "thread_id": "thread-0b8fbbf07183",
+      "thread_depth": 0,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-e400d4f04050",
+      "message_id": "<CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2012-04-09T21:40:06+02:00",
+      "subject": "[R-gui] GUI",
+      "subject_clean": "[R-gui] GUI",
+      "in_reply_to": "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>",
+      "references": [
+        "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>"
+      ],
+      "body_plain": "On Mon, Apr 9, 2012 at 8:13 PM, Naveen Verma <naveensimla at gmail.com> wrote:\n> requested sir,\n> ? ? plz let me know, which package is more suitable to make GUI using R\n> with more features....\n>\nIf you want to use a GUI, look into Rcmdr and Deducer (and their\nplugins) and perhaps RStudio. If you want to build a GUI on top of R,\nsee the plugins just mentioned and packages such as gWidgets, traitr,\ntcltk2, etc.\n\nLiviu",
+      "body_snippet": "On Mon, Apr 9, 2012 at 8:13 PM, Naveen Verma <naveensimla at gmail.com> wrote:\n> requested sir,\n> ? ? plz let me know, which package is more suitable to make GUI using R\n> with more features....\n>\nIf ",
+      "thread_id": "thread-0b8fbbf07183",
+      "thread_depth": 1,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-0628a3908a0b",
+      "message_id": "<CAPJsq9=4O1GNRde5pcwdkWPoXFftyBTfddWqCCB27=AZXb9UvQ@mail.gmail.com>",
+      "from_name": "Tengfei Yin",
+      "from_email_hash": "d82ce0360c2ed5f8b64163b2810014be97163e92b83c00a740a5621e077a8a18",
+      "date": "2012-04-09T14:47:34-05:00",
+      "subject": "[R-gui] GUI",
+      "subject_clean": "[R-gui] GUI",
+      "in_reply_to": "<CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>",
+      "references": [
+        "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>",
+        "<CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/b80b5596/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/b80b5596/attachment.pl>",
+      "thread_id": "thread-0b8fbbf07183",
+      "thread_depth": 2,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-5c8795504e46",
+      "message_id": "<4F833FD1.4040500@statconn.com>",
+      "from_name": "Thomas Baier",
+      "from_email_hash": "5762e69a13d03708a4103e221968abd4bec529ad783ffdcb4c065a9f7a1c7e1d",
+      "date": "2012-04-09T22:00:17+02:00",
+      "subject": "[R-gui] GUI",
+      "subject_clean": "[R-gui] GUI",
+      "in_reply_to": "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>",
+      "references": [
+        "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>"
+      ],
+      "body_plain": "Naveen,\n\nif you are happy with the Windows platform, have a look at statconnDCOM\nand RExcel (http://rcom.univie.ac.at)\n\nBest,\nThomas\n\nOn 09.04.2012 20:13, Naveen Verma wrote:\n> requested sir,\n>      plz let me know, which package is more suitable to make GUI using R\n> with more features.... waiting for the response\n>                 thanks\n> \n\n\n-- \nThomas Baier <mailto:thomas at statconn.com>\nhttp://www.statconn.com/",
+      "body_snippet": "Naveen,\n\nif you are happy with the Windows platform, have a look at statconnDCOM\nand RExcel (http://rcom.univie.ac.at)\n\nBest,\nThomas\n\nOn 09.04.2012 20:13, Naveen Verma wrote:\n> requested sir,\n>      p",
+      "thread_id": "thread-0b8fbbf07183",
+      "thread_depth": 1,
+      "month": "2012-04"
+    },
+    {
+      "id": "msg-948c0e9c59e1",
+      "message_id": "<CAMwHe11_1kP8GAp44XgCSk2eRwFCY9NaeRzhSyTQPH=vxkhL+g@mail.gmail.com>",
+      "from_name": "Naveen Verma",
+      "from_email_hash": "b073b3681be2d85f00fda6290d768fd9d63fa087bb920a1dc22a523bc4866940",
+      "date": "2012-04-10T16:05:11+05:30",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 96, Issue 1",
+      "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 96, Issue 1",
+      "in_reply_to": "<mailman.13.1334052004.19777.r-sig-gui@r-project.org>",
+      "references": [
+        "<mailman.13.1334052004.19777.r-sig-gui@r-project.org>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120410/35252f09/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120410/35252f09/attachment.pl>",
+      "thread_id": "thread-948c0e9c59e1",
+      "thread_depth": 0,
+      "month": "2012-04"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0b8fbbf07183",
+      "subject": "[R-gui] GUI",
+      "message_count": 4,
+      "participants": [
+        "Liviu Andronic",
+        "Naveen Verma",
+        "Tengfei Yin",
+        "Thomas Baier"
+      ],
+      "started": "2012-04-09T23:43:22+05:30",
+      "last_reply": "2012-04-09T22:00:17+02:00",
+      "root_message_id": "msg-0b8fbbf07183"
+    },
+    {
+      "id": "thread-948c0e9c59e1",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 96, Issue 1",
+      "message_count": 1,
+      "participants": [
+        "Naveen Verma"
+      ],
+      "started": "2012-04-10T16:05:11+05:30",
+      "last_reply": "2012-04-10T16:05:11+05:30",
+      "root_message_id": "msg-948c0e9c59e1"
+    }
+  ]
+}

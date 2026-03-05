@@ -1,0 +1,1539 @@
+From niederlein-rstat at yahoo.de  Wed Aug  6 08:19:36 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Wed, 06 Aug 2008 08:19:36 +0200
+Subject: [R-gui] tutorial on gwidgets?
+Message-ID: <48994278.1000506@yahoo.de>
+
+Hello everybody,
+
+is there any nice tutorial how to use gwidgets? Of course, I've found how to 
+create simple elements like buttons, but I could not figure out for example how 
+to create a window with a special size and a gtree on the left side (taking the 
+whole height of the window) and some other elements on the right side...o 
+especially I'm looking for information about layout design possibilities... (or 
+limitations)
+
+Antje
+
+
+From albmont at centroin.com.br  Wed Aug  6 13:27:46 2008
+From: albmont at centroin.com.br (Alberto Monteiro)
+Date: Wed, 6 Aug 2008 09:27:46 -0200
+Subject: [R-gui] tutorial on gwidgets?
+In-Reply-To: <48994278.1000506@yahoo.de>
+References: <48994278.1000506@yahoo.de>
+Message-ID: <20080806112655.M39772@centroin.com.br>
+
+Antje asked:
+> 
+> is there any nice tutorial how to use gwidgets? Of course, I've 
+> found how to create simple elements like buttons, but I could not 
+> figure out for example how to create a window with a special size 
+> and a gtree on the left side (taking the whole height of the window) 
+> and some other elements on the right side...o especially I'm looking 
+> for information about layout design possibilities... (or limitations)
+> 
+I really would like to suggest the R-Wiki, but it seems that it was
+abandoned:
+
+http://wiki.r-project.org/
+
+Alberto Monteiro
+
+
+From niederlein-rstat at yahoo.de  Wed Aug  6 13:46:20 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Wed, 06 Aug 2008 13:46:20 +0200
+Subject: [R-gui] tutorial on gwidgets?
+In-Reply-To: <1218021349.6216.11.camel@renyi>
+References: <48994278.1000506@yahoo.de> <1218021349.6216.11.camel@renyi>
+Message-ID: <48998F0C.8070601@yahoo.de>
+
+Hi Tamas,
+
+thanks a lot for your answer.
+> Hi,
+> 
+> I would recommend to explore
+> http://wiener.math.csi.cuny.edu/pmg/gWidgets
+> especially the Examples section:
+> http://wiener.math.csi.cuny.edu/pmg/gWidgets/Examples
+> and the useR!2007 presentation:
+> http://wiener.math.csi.cuny.edu/pmg/gWidgets/useR2007_presentation.pdf
+> I hope it helps.
+
+These tutorials I already found but still I don't know how to create a flexible 
+layout. For example (simple one), I'd like to have a window with a text field 
+with fixed width on the one side (stretched over the whole height) and on the 
+remaining right side, I'd like to put a button with a fixed height but width 
+adjustet to the remaining space of the window.
+
+This code would not give me the layout I'd like to see and I don't know how to 
+do it (even with the tutorials mentioned)
+
+<pre>
+mainwin <- gwindow(title = "TestApplication", visible = TRUE, name=title)
+splitgroup <- ggroup(horizontal=TRUE, container=mainwin)
+
+gtext(text = "Here we go", width = 150, container=splitgroup)
+gbutton("push me", container = splitgroup, expand = TRUE)
+size(mainwin) <- c(500,500)
+</pre>
+
+I don't even know if there is any way to do what I want...
+
+Antje
+
+
+> 
+> Tamas
+> 
+> 
+> On Wed, 2008-08-06 at 08:19 +0200, Antje wrote:
+>> Hello everybody,
+>>
+>> is there any nice tutorial how to use gwidgets? Of course, I've found how to 
+>> create simple elements like buttons, but I could not figure out for example how 
+>> to create a window with a special size and a gtree on the left side (taking the 
+>> whole height of the window) and some other elements on the right side...o 
+>> especially I'm looking for information about layout design possibilities... (or 
+>> limitations)
+>>
+>> Antje
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+> 
+>
+
+
+From mflawren at fhcrc.org  Wed Aug  6 14:16:19 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Wed, 6 Aug 2008 05:16:19 -0700
+Subject: [R-gui] tutorial on gwidgets?
+In-Reply-To: <48998F0C.8070601@yahoo.de>
+References: <48994278.1000506@yahoo.de> <1218021349.6216.11.camel@renyi>
+	<48998F0C.8070601@yahoo.de>
+Message-ID: <509e0620808060516g3bccbdbdlbbb4c9b528720a77@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080806/c24bdbd9/attachment.pl>
+
+From maechler at stat.math.ethz.ch  Wed Aug  6 15:02:51 2008
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Wed, 6 Aug 2008 15:02:51 +0200
+Subject: [R-gui] tutorial on gwidgets?
+In-Reply-To: <20080806112655.M39772@centroin.com.br>
+References: <48994278.1000506@yahoo.de> <20080806112655.M39772@centroin.com.br>
+Message-ID: <18585.41211.275321.121945@stat.math.ethz.ch>
+
+>>>>> "AM" == Alberto Monteiro <albmont at centroin.com.br>
+>>>>>     on Wed, 6 Aug 2008 09:27:46 -0200 writes:
+
+    AM> Antje asked:
+    >> 
+    >> is there any nice tutorial how to use gwidgets? Of course, I've 
+    >> found how to create simple elements like buttons, but I could not 
+    >> figure out for example how to create a window with a special size 
+    >> and a gtree on the left side (taking the whole height of the window) 
+    >> and some other elements on the right side...o especially I'm looking 
+    >> for information about layout design possibilities... (or limitations)
+    >> 
+    AM> I really would like to suggest the R-Wiki, but it seems that it was
+    AM> abandoned:
+
+    AM> http://wiki.r-project.org/
+
+??? Why do you think the R-Wiki was abandoned?
+
+Regards,
+Martin Maechler, ETH Zurich
+
+
+From mflawren at fhcrc.org  Wed Aug  6 15:09:00 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Wed, 6 Aug 2008 06:09:00 -0700
+Subject: [R-gui] tutorial on gwidgets?
+In-Reply-To: <18585.41211.275321.121945@stat.math.ethz.ch>
+References: <48994278.1000506@yahoo.de> <20080806112655.M39772@centroin.com.br>
+	<18585.41211.275321.121945@stat.math.ethz.ch>
+Message-ID: <509e0620808060609v544cdcfet25bf89edfdc2957b@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080806/b6e274ea/attachment.pl>
+
+From jverzani at gmail.com  Wed Aug  6 16:18:55 2008
+From: jverzani at gmail.com (john verzani)
+Date: Wed, 6 Aug 2008 14:18:55 +0000 (UTC)
+Subject: [R-gui] tutorial on gwidgets?
+References: <48994278.1000506@yahoo.de> <1218021349.6216.11.camel@renyi>
+	<48998F0C.8070601@yahoo.de>
+	<509e0620808060516g3bccbdbdlbbb4c9b528720a77@mail.gmail.com>
+Message-ID: <loom.20080806T140709-981@post.gmane.org>
+
+Dear Tamas and Michael,
+
+Michael Lawrence <mflawren <at> fhcrc.org> writes:
+
+> 
+> On Wed, Aug 6, 2008 at 4:46 AM, Antje <niederlein-rstat <at> yahoo.de> wrote:
+> 
+> > Hi Tamas,
+> >
+> > thanks a lot for your answer.
+> >
+> >> Hi,
+> >>
+> >> I would recommend to explore
+> >> http://wiener.math.csi.cuny.edu/pmg/gWidgets
+> >> especially the Examples section:
+> >> http://wiener.math.csi.cuny.edu/pmg/gWidgets/Examples
+> >> and the useR!2007 presentation:
+> >> http://wiener.math.csi.cuny.edu/pmg/gWidgets/useR2007_presentation.pdf
+> >> I hope it helps.
+> >>
+> >
+
+SO far that's the documentation. I hope sometime to improve on it, but keep
+getting distracted. The latest one was gWidgetsWWW. My todo list for gWidgets is
+to rewrite the Rd files to better specify the API.  The comment about R-wiki
+being way out of date is likely true. I haven't put any efforts into keeping
+that up.
+
+> > These tutorials I already found but still I don't know how to create a
+> > flexible layout. For example (simple one), I'd like to have a window with a
+> > text field with fixed width on the one side (stretched over the whole
+> > height) and on the remaining right side, I'd like to put a button with a
+> > fixed height but width adjustet to the remaining space of the window.
+> >
+> > This code would not give me the layout I'd like to see and I don't know how
+> > to do it (even with the tutorials mentioned)
+> >
+> > <pre>
+> > mainwin <- gwindow(title = "TestApplication", visible = TRUE, name=title)
+> > splitgroup <- ggroup(horizontal=TRUE, container=mainwin)
+> >
+> > gtext(text = "Here we go", width = 150, container=splitgroup)
+> > gbutton("push me", container = splitgroup, expand = TRUE)
+> > size(mainwin) <- c(500,500)
+> > </pre>
+> >
+> > I don't even know if there is any way to do what I want...
+> >
+> 
+> It looks to me that the thing missing there is the vertical squashing of the
+> button on the right side. To do that, you'll want to use a vertical group on
+> the right side i.e. ggroup(horizontal=FALSE, container = splitgroup). Then
+> make the button not expand (in a vertical group it will always expand
+> horizontally), gbutton("push me", container = rightgroup, expand = FALSE).
+> 
+
+The buttons in RGtk2 always expand in one direction. To prevent that, a kludge
+is to place them in a group as Michael says. If you really want a horizontal
+group, you can nest groups:
+
+
+mainwin <- gwindow(title = "TestApplication 2", visible = TRUE, name=title)
+splitgroup <- ggroup(horizontal=TRUE, container=mainwin)
+
+gtext(text = "Here we go", width = 150, container=splitgroup)
+g = ggroup(horizontal=FALSE, expand=FALSE,container = splitgroup)
+gbutton("push me", container = g)
+size(mainwin) <- c(500,500)
+
+
+> I think that should help. The problem I have with gWidgets is that the
+> button labels seem misjustified. Does anyone else have this problem?
+> 
+
+Ughh, they should. I added the ability to specify an alignment via anchor but
+instead of centering the buttons by default I mistakenly placed them high and
+inside (to a right handed batter). I'll upload a fix today. Thanks for pointing
+it out.
+
+[to see, try:
+w <- gwindow("test of centered")
+g <- ggroup(horizontal=FALSE, cont=w)
+b1 <- gbutton("centered? Oops!", cont=g, expand=TRUE)
+b2 <- gbutton("centered? Should be", cont=g, anchor= c(0,0), expand=TRUE)
+
+]
+
+--John
+
+> Michael
+> 
+> >
+> > Antje
+> >
+> >
+> >
+> >> Tamas
+> >>
+> >>
+> >>
+> >> On Wed, 2008-08-06 at 08:19 +0200, Antje wrote:
+> >>
+> >>> Hello everybody,
+> >>>
+> >>> is there any nice tutorial how to use gwidgets? Of course, I've found how
+> >>> to create simple elements like buttons, but I could not figure out for
+> >>> example how to create a window with a special size and a gtree on the left
+> >>> side (taking the whole height of the window) and some other elements on the
+> >>> right side...o especially I'm looking for information about layout design
+> >>> possibilities... (or limitations)
+> >>>
+> >>> Antje
+> >>>
+> >>> _______________________________________________
+> >>> R-SIG-GUI mailing list
+> >>> R-SIG-GUI <at> stat.math.ethz.ch
+> >>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> >>>
+> >>>
+> >>
+> >>
+> > _______________________________________________
+> > R-SIG-GUI mailing list
+> > R-SIG-GUI <at> stat.math.ethz.ch
+> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> >
+> 
+> 	[[alternative HTML version deleted]]
+>
+
+
+From niederlein-rstat at yahoo.de  Thu Aug  7 15:10:43 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Thu, 07 Aug 2008 15:10:43 +0200
+Subject: [R-gui] gtree question
+Message-ID: <489AF453.7070603@yahoo.de>
+
+Hello there,
+
+now that I started with gwidgets, I'll have several question (I hope not too 
+stupid ones).
+I've started with a little application which uses a gpanedgroup to show a gtree 
+at the left side and something else on the other side.
+Gtree works fine except the fact that it produces 3 columns though my offspring 
+function returns a data.frame with 1 column only (two columns then remain 
+without content).
+Is there any way to delete these columns?
+And another question:
+If I expand my folders in the gtree and go deeper into the file structure, it 
+happens that the filenames are not displayed fully anymore because of too less 
+space. Can I make the gtree automatically horizontal scrollable (it can be 
+scrolled if I push the columns to a certain width).
+
+Thanks a lot for any help!
+Antje
+
+
+The code:
+
+# methods to update the file tree
+# ------------------------------------------------
+offspring <- function(path, user.data=NULL) {
+	if(length(path) > 0)
+       	directory <- paste(getwd(),"/",paste(path, 
+collapse="/"),sep="",collapse="")
+     	else
+       	directory <- getwd()
+
+	files <- data.frame(dir(path=directory))
+
+	rownames(files) <- dir(path=directory, full.names = TRUE)
+  	names(files)[1] <- "Files and Folders"
+  	return(files)
+}
+
+hasOffspring <- function(children,user.data=NULL, ...) {
+	return(file.info(rownames(children))$isdir)
+}
+
+icon.FUN <- function(children,user.data=NULL, ...) {
+	info <- file.info(rownames(children))
+	x <- rep("file", length=nrow(children))
+	x[info$isdir] <- "directory"
+	return(x)
+}
+# ------------------------------------------------
+
+
+# application
+# ------------------------------------------------
+mainwin <- gwindow(title = "TestApplication", visible = TRUE, name=title)
+pg <- gpanedgroup(container = mainwin)
+gtree(offspring, hasOffspring, icon.FUN = icon.FUN, container=pg)
+gtext(cont = pg)
+svalue(pg) <- 0.4
+
+# ------------------------------------------------
+
+
+From jverzani at gmail.com  Thu Aug  7 21:32:23 2008
+From: jverzani at gmail.com (john verzani)
+Date: Thu, 7 Aug 2008 19:32:23 +0000 (UTC)
+Subject: [R-gui] gtree question
+References: <489AF453.7070603@yahoo.de>
+Message-ID: <loom.20080807T192450-886@post.gmane.org>
+
+Antje <niederlein-rstat <at> yahoo.de> writes:
+
+Dear Antje,
+
+
+> 
+> Hello there,
+> 
+> now that I started with gwidgets, I'll have several question (
+> I hope not  too 
+> stupid ones).
+> I've started with a little application which uses a gpanedgroup 
+> to show a gtree 
+> at the left side and something else on the other side.
+> Gtree works fine except the fact that it produces 3 columns 
+> though my offspring 
+> function returns a data.frame with 1 column only (two columns 
+> then remain 
+> without content).
+> Is there any way to delete these columns?
+
+
+Thanks for pointing out this issue. I fixed it in a just-uploaded 
+version of gWidgetstcltk and I also found an issue with 
+gWidgetsRGtk2 with your example. Again, this is just fixed.
+
+The bug was the number of extra columns was set by the number of 
+words in your column title. In the new version, there is just one
+extra column and it has a small width.
+
+> And another question:
+> If I expand my folders in the gtree and go deeper into the file 
+> structure,  it 
+> happens that the filenames are not displayed fully anymore because 
+> of too less 
+> space. Can I make the gtree automatically horizontal scrollable 
+> (it can be 
+> scrolled if I push the columns to a certain width).
+> 
+
+I don't have that coded in but can look into it.
+
+
+> Thanks a lot for any help!
+> Antje
+> 
+
+Thanks for the report. --JOhn
+
+--code is cut --
+
+
+From mflawren at fhcrc.org  Thu Aug  7 21:51:39 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Thu, 7 Aug 2008 12:51:39 -0700
+Subject: [R-gui] gtree question
+In-Reply-To: <loom.20080807T192450-886@post.gmane.org>
+References: <489AF453.7070603@yahoo.de>
+	<loom.20080807T192450-886@post.gmane.org>
+Message-ID: <509e0620808071251m68af56bcufdfc5f95b0471e5d@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080807/ffe00d45/attachment.pl>
+
+From jverzani at gmail.com  Thu Aug  7 23:20:26 2008
+From: jverzani at gmail.com (john verzani)
+Date: Thu, 7 Aug 2008 21:20:26 +0000 (UTC)
+Subject: [R-gui] gtree question
+References: <489AF453.7070603@yahoo.de>
+	<loom.20080807T192450-886@post.gmane.org>
+	<509e0620808071251m68af56bcufdfc5f95b0471e5d@mail.gmail.com>
+Message-ID: <loom.20080807T205218-48@post.gmane.org>
+
+Michael Lawrence <mflawren <at> fhcrc.org> writes:
+
+> 
+> On Thu, Aug 7, 2008 at 12:32 PM, john verzani <jverzani <at> gmail.com> wrote:
+> 
+> > Antje <niederlein-rstat <at> yahoo.de> writes:
+> >
+> > Dear Antje,
+> >
+
+Michael is right. There are other ways to include a file chooser, especially in
+RGtk2. I think Antje was using the tcltk version though. Anyways, here are some
+ways:
+
+gfile() will open a dialog
+gfilebrowse() adds a button to initiate the dialog
+
+or as Michael points out, one can put in a RGtk2 object into gWidgets via the
+add method:
+
+w <- ggroup("test")
+g <- ggroup(cont = w)
+add(g, gtkButton("new button")
+
+but this isn't working directly for some reason with the file chooser widget.
+But putting into an intermediate Hbox  works:
+
+g <- ggroup(cont = T)
+fc <- gtkFileChooserWidgetNew("GTK_FILE_ACTION_SAVE")
+g1 <- gtkHBox(); g1$Add(fc)
+add(g, g1, expand=TRUE)
+
+--John
+
+
+From felix at nfrac.org  Fri Aug  8 04:50:16 2008
+From: felix at nfrac.org (Felix Andrews)
+Date: Fri, 8 Aug 2008 12:50:16 +1000
+Subject: [R-gui] gtree question
+In-Reply-To: <loom.20080807T205218-48@post.gmane.org>
+References: <489AF453.7070603@yahoo.de>
+	<loom.20080807T192450-886@post.gmane.org>
+	<509e0620808071251m68af56bcufdfc5f95b0471e5d@mail.gmail.com>
+	<loom.20080807T205218-48@post.gmane.org>
+Message-ID: <94730b8a0808071950s1d3add26nbc23da4af4198784@mail.gmail.com>
+
+On Fri, Aug 8, 2008 at 7:20 AM, john verzani <jverzani at gmail.com> wrote:
+
+> or as Michael points out, one can put in a RGtk2 object into gWidgets via the
+> add method:
+>
+> w <- ggroup("test")
+> g <- ggroup(cont = w)
+> add(g, gtkButton("new button")
+
+Is that documented anywhere? I had no idea you could mix gWidgets with
+RGtk2 widgets.
+
+
+
+-- 
+Felix Andrews / ???
+PhD candidate
+Integrated Catchment Assessment and Management Centre
+The Fenner School of Environment and Society
+The Australian National University (Building 48A), ACT 0200
+Beijing Bag, Locked Bag 40, Kingston ACT 2604
+http://www.neurofractal.org/felix/
+3358 543D AAC6 22C2 D336 80D9 360B 72DD 3E4C F5D8
+
+
+From mflawren at fhcrc.org  Fri Aug  8 05:09:33 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Thu, 7 Aug 2008 20:09:33 -0700
+Subject: [R-gui] gtree question
+In-Reply-To: <94730b8a0808071950s1d3add26nbc23da4af4198784@mail.gmail.com>
+References: <489AF453.7070603@yahoo.de>
+	<loom.20080807T192450-886@post.gmane.org>
+	<509e0620808071251m68af56bcufdfc5f95b0471e5d@mail.gmail.com>
+	<loom.20080807T205218-48@post.gmane.org>
+	<94730b8a0808071950s1d3add26nbc23da4af4198784@mail.gmail.com>
+Message-ID: <509e0620808072009w6020fd03k3af1fb64e13bbe17@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080807/cec69735/attachment.pl>
+
+From jverzani at gmail.com  Fri Aug  8 06:10:30 2008
+From: jverzani at gmail.com (john verzani)
+Date: Fri, 8 Aug 2008 04:10:30 +0000 (UTC)
+Subject: [R-gui] gtree question
+References: <489AF453.7070603@yahoo.de>
+	<loom.20080807T192450-886@post.gmane.org>
+	<509e0620808071251m68af56bcufdfc5f95b0471e5d@mail.gmail.com>
+	<loom.20080807T205218-48@post.gmane.org>
+	<94730b8a0808071950s1d3add26nbc23da4af4198784@mail.gmail.com>
+Message-ID: <loom.20080808T040138-885@post.gmane.org>
+
+Felix Andrews <felix <at> nfrac.org> writes:
+
+> 
+> On Fri, Aug 8, 2008 at 7:20 AM, john verzani <jverzani <at> gmail.com> wrote:
+> 
+> > or as Michael points out, one can put in a RGtk2 object into gWidgets via the
+> > add method:
+> >
+> > w <- ggroup("test")
+> > g <- ggroup(cont = w)
+> > add(g, gtkButton("new button")
+> 
+> Is that documented anywhere? I had no idea you could mix gWidgets with
+> RGtk2 widgets.
+> 
+
+Hi, well I thought I had it written down somewhere, but can't seem to find it. 
+
+In addition to add, the as.gWidgetsRGtk2 method can be used to coerce some RGtk2
+widgets into gWidgsts so that one can use the gWidgets methods:
+
+b = gtkButton("click me")
+b1 = as.gWidgetsRGtk2(b)
+svalue(b1)
+[1] "click me"
+
+
+Also, onc can also add a gWidgetsRGtk2 object to an RGtk2 container with
+getToolkitWidget, as follows:
+
+w = gtkWindow()
+b = gbutton("button")
+w$Add(getToolkitWidget(b))
+
+As Michael points out, this usage is only for RGtk2. The tcltk implementation
+doesn't allow it.
+
+--JOhn
+
+
+From niederlein-rstat at yahoo.de  Fri Aug  8 09:15:44 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Fri, 08 Aug 2008 09:15:44 +0200
+Subject: [R-gui] gtree question
+In-Reply-To: <loom.20080807T192450-886@post.gmane.org>
+References: <489AF453.7070603@yahoo.de>
+	<loom.20080807T192450-886@post.gmane.org>
+Message-ID: <489BF2A0.5020800@yahoo.de>
+
+Hi John,
+
+thanks a lot for your help!
+A very stupid question left - where can I find the updated version of the 
+gWidgetstcltk package?
+
+A general comment to the file chooser dialog suggestion:
+Due to the fact that I want to handle directories OR files in my application - 
+a file chooser would not really help me.
+I'd like to have an application where people can select a directory and do some 
+processing with all files of a special file type below or that people can 
+select this file type directly. Further, the tool should support the 
+functionality of a commercial application which provides this kind of layout 
+too. So it should be much more intuitive for the user to navigate within 
+familiar structures :-)
+
+Antje
+
+
+
+john verzani schrieb:
+> Antje <niederlein-rstat <at> yahoo.de> writes:
+> 
+> Dear Antje,
+> 
+> 
+>> Hello there,
+>>
+>> now that I started with gwidgets, I'll have several question (
+>> I hope not  too 
+>> stupid ones).
+>> I've started with a little application which uses a gpanedgroup 
+>> to show a gtree 
+>> at the left side and something else on the other side.
+>> Gtree works fine except the fact that it produces 3 columns 
+>> though my offspring 
+>> function returns a data.frame with 1 column only (two columns 
+>> then remain 
+>> without content).
+>> Is there any way to delete these columns?
+> 
+> 
+> Thanks for pointing out this issue. I fixed it in a just-uploaded 
+> version of gWidgetstcltk and I also found an issue with 
+> gWidgetsRGtk2 with your example. Again, this is just fixed.
+> 
+> The bug was the number of extra columns was set by the number of 
+> words in your column title. In the new version, there is just one
+> extra column and it has a small width.
+> 
+>> And another question:
+>> If I expand my folders in the gtree and go deeper into the file 
+>> structure,  it 
+>> happens that the filenames are not displayed fully anymore because 
+>> of too less 
+>> space. Can I make the gtree automatically horizontal scrollable 
+>> (it can be 
+>> scrolled if I push the columns to a certain width).
+>>
+> 
+> I don't have that coded in but can look into it.
+> 
+> 
+>> Thanks a lot for any help!
+>> Antje
+>>
+> 
+> Thanks for the report. --JOhn
+> 
+> --code is cut --
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From felix at nfrac.org  Fri Aug  8 09:35:00 2008
+From: felix at nfrac.org (Felix Andrews)
+Date: Fri, 8 Aug 2008 17:35:00 +1000
+Subject: [R-gui] gtkAccelMapAddEntry
+Message-ID: <94730b8a0808080035o30ac9363k995d0dea7ab7b951@mail.gmail.com>
+
+Hi,
+
+Has anyone managed to set up accelerator keys for menus with RGtk2?
+
+Looking at ?gtkAccelMapAddEntry it has an argument
+accel.key [numeric] the accelerator key
+...so how do you specify the key if it is numeric?
+
+Cheers
+Felix
+
+-- 
+Felix Andrews / ???
+http://www.neurofractal.org/felix/
+3358 543D AAC6 22C2 D336  80D9 360B 72DD 3E4C F5D8
+
+
+From mflawren at fhcrc.org  Fri Aug  8 16:28:58 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Fri, 8 Aug 2008 07:28:58 -0700
+Subject: [R-gui] gtkAccelMapAddEntry
+In-Reply-To: <94730b8a0808080035o30ac9363k995d0dea7ab7b951@mail.gmail.com>
+References: <94730b8a0808080035o30ac9363k995d0dea7ab7b951@mail.gmail.com>
+Message-ID: <509e0620808080728j18d21ef8p7588b9261463f5ca@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080808/008b2634/attachment.pl>
+
+From felix at nfrac.org  Sat Aug  9 03:41:47 2008
+From: felix at nfrac.org (Felix Andrews)
+Date: Sat, 9 Aug 2008 11:41:47 +1000
+Subject: [R-gui] gtkAccelMapAddEntry
+In-Reply-To: <509e0620808080728j18d21ef8p7588b9261463f5ca@mail.gmail.com>
+References: <94730b8a0808080035o30ac9363k995d0dea7ab7b951@mail.gmail.com>
+	<509e0620808080728j18d21ef8p7588b9261463f5ca@mail.gmail.com>
+Message-ID: <94730b8a0808081841n37639a7eh38b24104ecdf8ba0@mail.gmail.com>
+
+2008/8/9 Michael Lawrence <mflawren at fhcrc.org>:
+>
+>
+> 2008/8/8 Felix Andrews <felix at nfrac.org>
+>>
+>> Hi,
+>>
+>> Has anyone managed to set up accelerator keys for menus with RGtk2?
+>>
+>> Looking at ?gtkAccelMapAddEntry it has an argument
+>> accel.key [numeric] the accelerator key
+>> ...so how do you specify the key if it is numeric?
+>
+> That corresponds to the Gdk key code. Use apropos("GDK_") to list all of
+> those constants. Note that if you're not going to be changing the
+> accelerator at runtime, it's probably simpler to use gtkWidgetAddAccelerator
+> on your GtkMenuItem. I admit this could be documented better. But actually,
+> this stuff is really low-level. Why not use GtkUIManager?
+
+Ah - because I didn't know it existed. Thanks for the tip.
+
+
+>
+>>
+>> Cheers
+>> Felix
+>>
+>> --
+>> Felix Andrews / ???
+>> http://www.neurofractal.org/felix/
+>> 3358 543D AAC6 22C2 D336  80D9 360B 72DD 3E4C F5D8
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+
+
+
+-- 
+Felix Andrews / ???
+http://www.neurofractal.org/felix/
+3358 543D AAC6 22C2 D336  80D9 360B 72DD 3E4C F5D8
+
+
+From mflawren at fhcrc.org  Sat Aug  9 04:15:14 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Fri, 8 Aug 2008 19:15:14 -0700
+Subject: [R-gui] gtkAccelMapAddEntry
+In-Reply-To: <94730b8a0808081841n37639a7eh38b24104ecdf8ba0@mail.gmail.com>
+References: <94730b8a0808080035o30ac9363k995d0dea7ab7b951@mail.gmail.com>
+	<509e0620808080728j18d21ef8p7588b9261463f5ca@mail.gmail.com>
+	<94730b8a0808081841n37639a7eh38b24104ecdf8ba0@mail.gmail.com>
+Message-ID: <509e0620808081915w209a37f4j46c91063c9ea3f5a@mail.gmail.com>
+
+There is a good example of GtkUIManager usage in the appWindow demo
+included with RGtk2
+
+On 8/8/08, Felix Andrews <felix at nfrac.org> wrote:
+> 2008/8/9 Michael Lawrence <mflawren at fhcrc.org>:
+>>
+>>
+>> 2008/8/8 Felix Andrews <felix at nfrac.org>
+>>>
+>>> Hi,
+>>>
+>>> Has anyone managed to set up accelerator keys for menus with RGtk2?
+>>>
+>>> Looking at ?gtkAccelMapAddEntry it has an argument
+>>> accel.key [numeric] the accelerator key
+>>> ...so how do you specify the key if it is numeric?
+>>
+>> That corresponds to the Gdk key code. Use apropos("GDK_") to list all of
+>> those constants. Note that if you're not going to be changing the
+>> accelerator at runtime, it's probably simpler to use
+>> gtkWidgetAddAccelerator
+>> on your GtkMenuItem. I admit this could be documented better. But
+>> actually,
+>> this stuff is really low-level. Why not use GtkUIManager?
+>
+> Ah - because I didn't know it existed. Thanks for the tip.
+>
+>
+>>
+>>>
+>>> Cheers
+>>> Felix
+>>>
+>>> --
+>>> Felix Andrews / ???
+>>> http://www.neurofractal.org/felix/
+>>> 3358 543D AAC6 22C2 D336  80D9 360B 72DD 3E4C F5D8
+>>>
+>>> _______________________________________________
+>>> R-SIG-GUI mailing list
+>>> R-SIG-GUI at stat.math.ethz.ch
+>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+>>
+>
+>
+>
+> --
+> Felix Andrews / ???
+> http://www.neurofractal.org/felix/
+> 3358 543D AAC6 22C2 D336  80D9 360B 72DD 3E4C F5D8
+>
+
+
+From niederlein-rstat at yahoo.de  Mon Aug 18 10:23:42 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Mon, 18 Aug 2008 10:23:42 +0200
+Subject: [R-gui] gtree question
+Message-ID: <48A9318E.5080207@yahoo.de>
+
+Hello,
+
+I'd like to know how I can get the whole path if I doubleclick on an item of 
+the gtree.
+So far, I added a handler and printed the selection:
+
+dblClickTree <- function(h,...) {
+	print(svalue(h$obj))
+}
+
+gtree(offspring, hasOffspring, icon.FUN = icon.FUN, container=g1, expand=TRUE, 
+handler = dblClickTree)
+
+But I only get the element I've clicked on but not it's parent elements up to 
+the root of the tree.
+
+Can anybody help me to solve this?
+
+Antje
+
+
+From niederlein-rstat at yahoo.de  Mon Aug 18 12:41:22 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Mon, 18 Aug 2008 12:41:22 +0200
+Subject: [R-gui] gtree question
+In-Reply-To: <48A9318E.5080207@yahoo.de>
+References: <48A9318E.5080207@yahoo.de>
+Message-ID: <48A951D2.6040506@yahoo.de>
+
+I've found the solution :-)
+
+svalue(h$obj[])
+
+Antje
+
+
+
+Antje schrieb:
+> Hello,
+> 
+> I'd like to know how I can get the whole path if I doubleclick on an 
+> item of the gtree.
+> So far, I added a handler and printed the selection:
+> 
+> dblClickTree <- function(h,...) {
+>     print(svalue(h$obj))
+> }
+> 
+> gtree(offspring, hasOffspring, icon.FUN = icon.FUN, container=g1, 
+> expand=TRUE, handler = dblClickTree)
+> 
+> But I only get the element I've clicked on but not it's parent elements 
+> up to the root of the tree.
+> 
+> Can anybody help me to solve this?
+> 
+> Antje
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From niederlein-rstat at yahoo.de  Mon Aug 18 15:56:37 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Mon, 18 Aug 2008 15:56:37 +0200
+Subject: [R-gui] general design questions
+Message-ID: <48A97F95.4020503@yahoo.de>
+
+Hello,
+
+I try to develop a GUI with gWidgets (TclTk) but I guess my little application 
+already starts to be messy...
+
+First question: How shall I handle updates of widgets triggered by event 
+handling? So far, I simply took the widget-object I want to update as a global 
+variable but that's not a good style. Any suggestions how to handle this?
+
+Second question: What are my possibilities to stay flexible? For example: I 
+though it makes sense to use a gpanedgroup for a checkboxgroup with variable 
+number of items (to make it scrollable if it's getting too large). But this 
+does not work like I thought and the items simply disappear at the end of the 
+panel.
+
+Third question: How to structure the GUI? Builing, Sizing, Arraging, filling 
+with content (not every object has some initial content). For example, I 
+realized that I have to set the svalue for the gpanedgroup after adding the 
+objects.
+
+I don't know, but I have the impression to create my GUI quite unstructured and 
+I'm afraid to loose overview soon...
+
+The small examples for the usage of different components are very useful but 
+I'm looking for some hints on how to create a more complex application (what to 
+do when and how).
+
+Thanks a lot for every tip!
+
+Antje
+
+
+From mflawren at fhcrc.org  Mon Aug 18 16:22:26 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Mon, 18 Aug 2008 07:22:26 -0700
+Subject: [R-gui] general design questions
+In-Reply-To: <48A97F95.4020503@yahoo.de>
+References: <48A97F95.4020503@yahoo.de>
+Message-ID: <509e0620808180722q370eb96bo19c6461af96706cb@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080818/1b1e4c20/attachment.pl>
+
+From niederlein-rstat at yahoo.de  Tue Aug 19 10:38:46 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Tue, 19 Aug 2008 10:38:46 +0200
+Subject: [R-gui] general design questions
+In-Reply-To: <509e0620808180722q370eb96bo19c6461af96706cb@mail.gmail.com>
+References: <48A97F95.4020503@yahoo.de>
+	<509e0620808180722q370eb96bo19c6461af96706cb@mail.gmail.com>
+Message-ID: <48AA8696.3070900@yahoo.de>
+
+Hi Michael,
+
+thanks a lot for your answer.
+
+
+> On Mon, Aug 18, 2008 at 6:56 AM, Antje <niederlein-rstat at yahoo.de 
+> <mailto:niederlein-rstat at yahoo.de>> wrote:
+> 
+>     Hello,
+> 
+>     I try to develop a GUI with gWidgets (TclTk) but I guess my little
+>     application already starts to be messy...
+> 
+>     First question: How shall I handle updates of widgets triggered by
+>     event handling? So far, I simply took the widget-object I want to
+>     update as a global variable but that's not a good style. Any
+>     suggestions how to handle this?
+> 
+> 
+> It's possible to specify a "user" object when registering the callbacks, 
+> I think. The "user data" is then passed as the last parameter to the 
+> handler. Another good way to control the scoping is nesting environments 
+> (e.g. through closures). That is, your object does not need to be global 
+> (in the workspace) but it can be in a parent environment. In fact, 
+> global variables won't even work when you put your code into a 
+> namespaced pacakge, because the namespace will be locked.
+> 
+
+Can you give me a simple example, please? I'm not sure if I understand 
+correctly how this can work. (Or maybe there is already some kind of 
+documentation I can check for these possibilities...)
+
+> 
+>     Second question: What are my possibilities to stay flexible? For
+>     example: I though it makes sense to use a gpanedgroup for a
+>     checkboxgroup with variable number of items (to make it scrollable
+>     if it's getting too large). But this does not work like I thought
+>     and the items simply disappear at the end of the panel.
+> 
+> 
+> I don't think the paned group is what you want here. Split paned widgets 
+> are to allow the user to control the allocation of space in a GUI, 
+> usually in either the horizontal or vertical directions. If you're GUI 
+> is growing too large, you'll need to make it so that only a portion of 
+> the GUI is visible at once. One way to do that is with scrolled windows. 
+> See the use.scrollwindow parameter for ggroup().
+
+Oh, thanks a lot. I was not aware of the scrolling opportunity if the ggroup.
+
+>  
+> 
+> 
+>     Third question: How to structure the GUI? Builing, Sizing, Arraging,
+>     filling with content (not every object has some initial content).
+>     For example, I realized that I have to set the svalue for the
+>     gpanedgroup after adding the objects.
+> 
+> 
+> Well this is an art and depends on your GUI. Split panes are difficult 
+> in that they require one to specify a numeric value for the split 
+> position. This is a similar problem to specifying the initial size of a 
+> window. 
+
+Is there anything I can do beside, setting a fixed size with pixel values?
+For example if I'd like to initially maximze the window... (I know that it's 
+possible with TclTk).
+
+> The simplest way is just to guess a good initial position. This 
+> is usually not too bad. Adjusting the split automatically might not be a 
+> good idea, since it should be under the control of the user.
+
+Of course, I just set it initially.
+
+Ciao,
+Antje
+
+
+>  
+> 
+> 
+>     I don't know, but I have the impression to create my GUI quite
+>     unstructured and I'm afraid to loose overview soon...
+> 
+>     The small examples for the usage of different components are very
+>     useful but I'm looking for some hints on how to create a more
+>     complex application (what to do when and how).
+> 
+>     Thanks a lot for every tip!
+> 
+>     Antje
+> 
+>     _______________________________________________
+>     R-SIG-GUI mailing list
+>     R-SIG-GUI at stat.math.ethz.ch <mailto:R-SIG-GUI at stat.math.ethz.ch>
+>     https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+
+From mflawren at fhcrc.org  Tue Aug 19 15:17:15 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Tue, 19 Aug 2008 06:17:15 -0700
+Subject: [R-gui] general design questions
+In-Reply-To: <48AA8696.3070900@yahoo.de>
+References: <48A97F95.4020503@yahoo.de>
+	<509e0620808180722q370eb96bo19c6461af96706cb@mail.gmail.com>
+	<48AA8696.3070900@yahoo.de>
+Message-ID: <509e0620808190617k45a78bdesa54595f8b321a8d3@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080819/b5f11759/attachment.pl>
+
+From niederlein-rstat at yahoo.de  Wed Aug 20 10:46:57 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Wed, 20 Aug 2008 10:46:57 +0200
+Subject: [R-gui] general design questions
+In-Reply-To: <509e0620808190617k45a78bdesa54595f8b321a8d3@mail.gmail.com>
+References: <48A97F95.4020503@yahoo.de>	
+	<509e0620808180722q370eb96bo19c6461af96706cb@mail.gmail.com>	
+	<48AA8696.3070900@yahoo.de>
+	<509e0620808190617k45a78bdesa54595f8b321a8d3@mail.gmail.com>
+Message-ID: <48ABDA01.2020807@yahoo.de>
+
+Hi Michael,
+
+
+> On Tue, Aug 19, 2008 at 1:38 AM, Antje <niederlein-rstat at yahoo.de 
+> <mailto:niederlein-rstat at yahoo.de>> wrote:
+> 
+>     Hi Michael,
+> 
+>     thanks a lot for your answer.
+> 
+> 
+> 
+>         On Mon, Aug 18, 2008 at 6:56 AM, Antje
+>         <niederlein-rstat at yahoo.de <mailto:niederlein-rstat at yahoo.de>
+>         <mailto:niederlein-rstat at yahoo.de
+>         <mailto:niederlein-rstat at yahoo.de>>> wrote:
+> 
+>            Hello,
+> 
+>            I try to develop a GUI with gWidgets (TclTk) but I guess my
+>         little
+>            application already starts to be messy...
+> 
+>            First question: How shall I handle updates of widgets
+>         triggered by
+>            event handling? So far, I simply took the widget-object I want to
+>            update as a global variable but that's not a good style. Any
+>            suggestions how to handle this?
+> 
+> 
+>         It's possible to specify a "user" object when registering the
+>         callbacks, I think. The "user data" is then passed as the last
+>         parameter to the handler. Another good way to control the
+>         scoping is nesting environments (e.g. through closures). That
+>         is, your object does not need to be global (in the workspace)
+>         but it can be in a parent environment. In fact, global variables
+>         won't even work when you put your code into a namespaced
+>         pacakge, because the namespace will be locked.
+> 
+> 
+>     Can you give me a simple example, please? I'm not sure if I
+>     understand correctly how this can work. (Or maybe there is already
+>     some kind of documentation I can check for these possibilities...)
+> 
+> 
+> There's documentation and examples in the help for addHandler. It's the 
+> "action" parameter.
+
+And what about the "nesting environments"? I'm not sure if I'm aware of how 
+this works exactly (I know, that's rather poor... but maybe you can give me a 
+simple example?)
+
+>  
+> 
+> 
+> 
+>            Second question: What are my possibilities to stay flexible? For
+>            example: I though it makes sense to use a gpanedgroup for a
+>            checkboxgroup with variable number of items (to make it
+>         scrollable
+>            if it's getting too large). But this does not work like I thought
+>            and the items simply disappear at the end of the panel.
+> 
+> 
+>         I don't think the paned group is what you want here. Split paned
+>         widgets are to allow the user to control the allocation of space
+>         in a GUI, usually in either the horizontal or vertical
+>         directions. If you're GUI is growing too large, you'll need to
+>         make it so that only a portion of the GUI is visible at once.
+>         One way to do that is with scrolled windows. See the
+>         use.scrollwindow parameter for ggroup().
+> 
+> 
+>     Oh, thanks a lot. I was not aware of the scrolling opportunity if
+>     the ggroup.
+> 
+> 
+>          
+> 
+>            Third question: How to structure the GUI? Builing, Sizing,
+>         Arraging,
+>            filling with content (not every object has some initial content).
+>            For example, I realized that I have to set the svalue for the
+>            gpanedgroup after adding the objects.
+> 
+> 
+>         Well this is an art and depends on your GUI. Split panes are
+>         difficult in that they require one to specify a numeric value
+>         for the split position. This is a similar problem to specifying
+>         the initial size of a window.
+> 
+> 
+>     Is there anything I can do beside, setting a fixed size with pixel
+>     values?
+>     For example if I'd like to initially maximze the window... (I know
+>     that it's possible with TclTk).
+> 
+> 
+> I am not that familiar with tcl/tk but in general UI toolkits require 
+> you specify pixels for positions of things like that. If it's not so 
+> important for the user to be able to adjust the layout, why not just 
+> skip the paned widget? They're rarely very helpful.
+
+Hmm, I will use it for one case (where it's really useful). But currently, I 
+have problems to "activate" the scrolling for a ggroup...
+
+>  
+> 
+> 
+>         The simplest way is just to guess a good initial position. This
+>         is usually not too bad. Adjusting the split automatically might
+>         not be a good idea, since it should be under the control of the
+>         user.
+> 
+> 
+>     Of course, I just set it initially.
+> 
+>     Ciao,
+>     Antje
+> 
+> 
+>          
+> 
+>            I don't know, but I have the impression to create my GUI quite
+>            unstructured and I'm afraid to loose overview soon...
+> 
+>            The small examples for the usage of different components are very
+>            useful but I'm looking for some hints on how to create a more
+>            complex application (what to do when and how).
+> 
+>            Thanks a lot for every tip!
+> 
+>            Antje
+> 
+>            _______________________________________________
+>            R-SIG-GUI mailing list
+>            R-SIG-GUI at stat.math.ethz.ch
+>         <mailto:R-SIG-GUI at stat.math.ethz.ch>
+>         <mailto:R-SIG-GUI at stat.math.ethz.ch
+>         <mailto:R-SIG-GUI at stat.math.ethz.ch>>
+> 
+>            https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> 
+> 
+> 
+>
+
+
+From felix at nfrac.org  Fri Aug 22 11:59:54 2008
+From: felix at nfrac.org (Felix Andrews)
+Date: Fri, 22 Aug 2008 19:59:54 +1000
+Subject: [R-gui] gWidgets is slow
+Message-ID: <94730b8a0808220259h6bf2545albb0d21155f617f0d@mail.gmail.com>
+
+Hi gui people,
+
+Looking for some insight into the performance of gWidgets...
+
+I made a moderately complex GUI with about 75 interactive widgets,
+mostly gedit and gdroplist; I use ggroup, gframe and glayout. With
+gWidgetsRGtk2 it takes a full 45 seconds to load on my machine. With
+gWidgetstcltk it takes 23 seconds. It is painful to watch, you can see
+each widget being created and added in turn.
+
+So, can anyone suggest how gWidgets might be speeded up? Or are there
+tricks in usage that would make a big difference?
+
+I have tried laying out all the widgets in an invisible (or
+unattached) top-level container, and then making it visible at the
+end, but that seems to have no effect on the timing.
+
+A simple example with profiling...
+    Rprof(tmp <- tempfile())
+        { foo <- gwindow(); for (i in 1:10) gdroplist(letters[1:10], cont=foo) }
+    Rprof()
+    print(summaryRprof(tmp))
+    unlink(tmp)
+
+I ran a profile of my application's start-up, but I do not know enough
+about gWidgets to be able to see what is really going on. Here are the
+top few functions reported by Rprof() with the percent of time spent
+in each, by self and by total.
+
+$by.self    self.pct
+sub             6.7
+.Call           6.6
+inherits        5.5
+.identC         4.4
+FUN             3.5
+assign          3.3
+exists          3.0
+.Call.graphics  2.6
+doTryCatch      2.4
+match           2.3
+options         2.3
+standardGeneric 2.0
+tryCatch        2.0
+$               2.0
+getClassDef     2.0
+.RGtkCall       1.9
+as.GType        1.9
+unlist          1.9
+get             1.4
+ls              1.4
+substring       1.4
+sapply          1.2
+lapply          1.2
+.local          1.1
+
+$by.total   total.pct
+standardGeneric 89.9
+<Anonymous>     58.0
+tryCatch        27.3
+[<-             26.4
+tryCatchList    24.4
+gdroplist       24.3
+.leftBracket<-  23.6
+tryCatchOne     23.4
+try             23.2
+inherits        22.5
+.gdroplist      22.4
+match           21.8
+doTryCatch      20.5
+is.factor       20.3
+new             18.9
+%in%            18.7
+$               18.7
+lapply          17.6
+$.GObject       16.7
+glabel          16.3
+FUN             15.9
+getClassDef     15.3
+add             15.1
+
+
+> sessionInfo()
+R version 2.7.1 (2008-06-23)
+i386-pc-mingw32
+
+locale:
+LC_COLLATE=English_Australia.1252;LC_CTYPE=English_Australia.1252;LC_MONETARY=English_Australia.1252;LC_NUMERIC=C;LC_TIME=English_Australia.1252
+
+attached base packages:
+[1] tcltk     stats     graphics  grDevices utils     datasets
+methods   base
+
+other attached packages:
+[1] cairoDevice_2.8      RGtk2_2.12.6         gWidgetsRGtk2_0.0-38
+gWidgetstcltk_0.0-15
+[5] latticeExtra_0.5-1   lattice_0.17-13      RColorBrewer_1.0-2
+gWidgets_0.0-28
+
+loaded via a namespace (and not attached):
+[1] grid_2.7.1  tools_2.7.1
+
+
+-- 
+Felix Andrews / ???
+http://www.neurofractal.org/felix/
+3358 543D AAC6 22C2 D336 80D9 360B 72DD 3E4C F5D8
+
+
+From niederlein-rstat at yahoo.de  Mon Aug 25 15:25:41 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Mon, 25 Aug 2008 15:25:41 +0200
+Subject: [R-gui] use.scrollwindow not available for tcl/tk?
+Message-ID: <48B2B2D5.7040808@yahoo.de>
+
+Hi there,
+
+I was looking for a possibilities to display a long list of (long) strings. R 
+tells me that the scrolling option for ggroups is not available for tcl/tk.
+Is there anything else, I can use (I would need horizontal as well as vertical)???
+
+Thank you for any suggestion!
+
+Antje
+
+
+From mflawren at fhcrc.org  Mon Aug 25 16:33:23 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Mon, 25 Aug 2008 07:33:23 -0700
+Subject: [R-gui] use.scrollwindow not available for tcl/tk?
+In-Reply-To: <48B2B2D5.7040808@yahoo.de>
+References: <48B2B2D5.7040808@yahoo.de>
+Message-ID: <509e0620808250733j43dcdd7age2360da13ea2156d@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080825/85eddf4e/attachment.pl>
+
+From jverzani at gmail.com  Mon Aug 25 17:55:08 2008
+From: jverzani at gmail.com (john verzani)
+Date: Mon, 25 Aug 2008 15:55:08 +0000 (UTC)
+Subject: [R-gui] use.scrollwindow not available for tcl/tk?
+References: <48B2B2D5.7040808@yahoo.de>
+	<509e0620808250733j43dcdd7age2360da13ea2156d@mail.gmail.com>
+Message-ID: <loom.20080825T155329-765@post.gmane.org>
+
+Michael Lawrence <mflawren <at> fhcrc.org> writes:
+
+> 
+> I'd be really surprised if the gtable widget did not support scrolling by
+> itself.
+> 
+
+Hi, Michael is right. Only ggroup has no ability to scroll but putting a gtable
+widget into a ggroup container will have scrolling.
+
+--John
+
+
+From niederlein-rstat at yahoo.de  Tue Aug 26 07:53:46 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Tue, 26 Aug 2008 07:53:46 +0200
+Subject: [R-gui] use.scrollwindow not available for tcl/tk?
+In-Reply-To: <loom.20080825T155329-765@post.gmane.org>
+References: <48B2B2D5.7040808@yahoo.de>	<509e0620808250733j43dcdd7age2360da13ea2156d@mail.gmail.com>
+	<loom.20080825T155329-765@post.gmane.org>
+Message-ID: <48B39A6A.4060107@yahoo.de>
+
+Oh, thanks a lot guys,
+I completely forgot about this option :-)
+
+Antje
+
+
+
+john verzani schrieb:
+> Michael Lawrence <mflawren <at> fhcrc.org> writes:
+> 
+>> I'd be really surprised if the gtable widget did not support scrolling by
+>> itself.
+>>
+> 
+> Hi, Michael is right. Only ggroup has no ability to scroll but putting a gtable
+> widget into a ggroup container will have scrolling.
+> 
+> --John
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From niederlein-rstat at yahoo.de  Tue Aug 26 11:47:15 2008
+From: niederlein-rstat at yahoo.de (Antje)
+Date: Tue, 26 Aug 2008 11:47:15 +0200
+Subject: [R-gui] gtable question
+Message-ID: <48B3D123.3020801@yahoo.de>
+
+Hello,
+
+I wanted to display a table with only one column and I had some problems, so I 
+tried a very simple example and still got problems. Can anybody tell me what's 
+wrong with the second table?
+
+# that looks nice
+m <- getCRANmirrors()[,c(1,4)]
+gtable(m, cont = TRUE)
+
+# that looks weird, not showing the data but the rownames
+mm <- data.frame(m[,1])
+colnames(mm) <- "Name"
+gtable(mm, cont = TRUE)
+
+Thanks a lot for any help!
+
+Antje
+
+
+From jverzani at gmail.com  Tue Aug 26 17:07:30 2008
+From: jverzani at gmail.com (john verzani)
+Date: Tue, 26 Aug 2008 15:07:30 +0000 (UTC)
+Subject: [R-gui] gtable question
+References: <48B3D123.3020801@yahoo.de>
+Message-ID: <loom.20080826T150345-486@post.gmane.org>
+
+Antje <niederlein-rstat <at> yahoo.de> writes:
+
+> 
+> Hello,
+> 
+
+Thanks, that's a bug with the gtable code in gWidgetstcltk. I'll try to get a
+fix out soon. (I'm surprised you didn't also point out the odd column sizes in
+the first example.) In general gWidgetstcltk has not seen much testing, so feel
+free to email directly if you find such oddities.
+
+> I wanted to display a table with only one column and I had some problems, so I 
+> tried a very simple example and still got problems. Can anybody tell me what's 
+> wrong with the second table?
+> 
+> # that looks nice
+> m <- getCRANmirrors()[,c(1,4)]
+> gtable(m, cont = TRUE)
+> 
+> # that looks weird, not showing the data but the rownames
+> mm <- data.frame(m[,1])
+> colnames(mm) <- "Name"
+> gtable(mm, cont = TRUE)
+> 
+> Thanks a lot for any help!
+> 
+> Antje
+>
+
+
+From vallee.aurelien at gmail.com  Tue Aug 26 21:43:16 2008
+From: vallee.aurelien at gmail.com (=?ISO-8859-1?Q?Aur=E9lien_Vall=E9e?=)
+Date: Tue, 26 Aug 2008 21:43:16 +0200
+Subject: [R-gui] R Grammar
+Message-ID: <e15156010808261243o444a448apc8f0049d8cc149d9@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080826/390f964b/attachment.pl>
+
+From murdoch at stats.uwo.ca  Tue Aug 26 21:48:44 2008
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Tue, 26 Aug 2008 15:48:44 -0400
+Subject: [R-gui] R Grammar
+In-Reply-To: <e15156010808261243o444a448apc8f0049d8cc149d9@mail.gmail.com>
+References: <e15156010808261243o444a448apc8f0049d8cc149d9@mail.gmail.com>
+Message-ID: <48B45E1C.8060205@stats.uwo.ca>
+
+On 8/26/2008 3:43 PM, Aur?lien Vall?e wrote:
+> Hello,
+> 
+> I'm currently working on a Netbeans Platform IDE for R, and i wondered if an
+> R grammar is available somewhere on the internet, I need it for syntax
+> highlighting and code completion.
+
+The parser uses a grammar written in Bison, available in
+
+https://svn.r-project.org/R/trunk/src/main/gram.y
+
+The lexical scanner is handwritten (in the same file), so it'll be a bit 
+more work to decipher.
+
+Duncan Murdoch
+
+

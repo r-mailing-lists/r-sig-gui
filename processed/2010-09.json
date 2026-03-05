@@ -1,0 +1,407 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2010-09",
+  "messages": [
+    {
+      "id": "msg-ee74f7644166",
+      "message_id": "<101CBF5360343B45B9C9B0B05D71474C25BCAA@BALI.uhd.campus>",
+      "from_name": "Hodgess, Erin",
+      "from_email_hash": "9a43d72d3c5a93c98a7b509fb8aef328797f49fac98830a099e885b965325eac",
+      "date": "2010-09-06T19:42:32-05:00",
+      "subject": "[R-gui] using Microsoft foundation classes with C++ and R",
+      "subject_clean": "[R-gui] using Microsoft foundation classes with C++ and R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100906/3288b3a6/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100906/3288b3a6/attachment.pl>",
+      "thread_id": "thread-ee74f7644166",
+      "thread_depth": 0,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-e70391388983",
+      "message_id": "<L5D3F82D0FE9C4e5c82515DDC3F3D0152.1283835195.srvmail.ow.ks@MHS>",
+      "from_name": "Thomas Baier",
+      "from_email_hash": "ab6de99ef98e369d9b3f1b3c3d0b7665ba6fbcacda7da77be98a43a688bba489",
+      "date": "2010-09-07T06:53:16+02:00",
+      "subject": "[R-gui] using Microsoft foundation classes with C++ and R",
+      "subject_clean": "[R-gui] using Microsoft foundation classes with C++ and R",
+      "in_reply_to": "<101CBF5360343B45B9C9B0B05D71474C25BCAA@BALI.uhd.campus>",
+      "references": [],
+      "body_plain": "Erin,\n\nyes, of course. Have a look at statconnDCOM and rcom (download from \nhttp://rcom.univie.ac.at/) for embedding R into an MFC app and vice \nversa. Example code is included.\n\nBest,\nThomas\n\nHodgess, Erin wrote:\n> Dear R GUI People:\n> \n> Have any of you used the Microsoft foundation classes with C++ and R,\n> please? \n> \n> Thanks,\n> Erin\n> \n> \n> Erin M. Hodgess, PhD\n> Associate Professor\n> Department of Computer and Mathematical Sciences University of\n> Houston - Downtown mailto: hodgesse at uhd.edu\n> \n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Erin,\n\nyes, of course. Have a look at statconnDCOM and rcom (download from \nhttp://rcom.univie.ac.at/) for embedding R into an MFC app and vice \nversa. Example code is included.\n\nBest,\nThomas\n\nHodgess",
+      "thread_id": "thread-ee74f7644166",
+      "thread_depth": 1,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-d206f0d22651",
+      "message_id": "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>",
+      "from_name": "Hodgess, Erin",
+      "from_email_hash": "9a43d72d3c5a93c98a7b509fb8aef328797f49fac98830a099e885b965325eac",
+      "date": "2010-09-16T00:45:56-05:00",
+      "subject": "[R-gui] Sliders and combo Boxes",
+      "subject_clean": "[R-gui] Sliders and combo Boxes",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/30fa68c5/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/30fa68c5/attachment.pl>",
+      "thread_id": "thread-d206f0d22651",
+      "thread_depth": 0,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-61d7dfe71b0c",
+      "message_id": "<4C91CB95.8070702@statistik.tu-dortmund.de>",
+      "from_name": "Uwe Ligges",
+      "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
+      "date": "2010-09-16T09:47:33+02:00",
+      "subject": "[R-gui] Sliders and combo Boxes",
+      "subject_clean": "[R-gui] Sliders and combo Boxes",
+      "in_reply_to": "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>"
+      ],
+      "body_plain": "On 16.09.2010 07:45, Hodgess, Erin wrote:\n> Dear R GUI People:\n>\n> I have 2 questions please:\n> a. Is there a function for a slider that runs from a sequence of dates, rather than the usual 0 - 100, please?\n> b. Is there a combo box which allows for multiple selections, please?  For instance, if you have a list of countries, then you could select several (or all) of the countries.\n\n\nErin,\n\nwhich of the hundreds of GUI frameworks are we talking about?\n\n\nUwe\n\n\n> Thanks in advance!\n> Sincerely,\n> Erin\n>\n>\n> Erin M. Hodgess, PhD\n> Associate Professor\n> Department of Computer and Mathematical Sciences\n> University of Houston - Downtown\n> mailto: hodgesse at uhd.edu\n>\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "On 16.09.2010 07:45, Hodgess, Erin wrote:\n> Dear R GUI People:\n>\n> I have 2 questions please:\n> a. Is there a function for a slider that runs from a sequence of dates, rather than the usual 0 - 100, p",
+      "thread_id": "thread-d206f0d22651",
+      "thread_depth": 1,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-50ad24591abf",
+      "message_id": "<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>",
+      "from_name": "Wayne.W.Jones at shell.com",
+      "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
+      "date": "2010-09-16T10:11:45+02:00",
+      "subject": "[R-gui] Sliders and combo Boxes",
+      "subject_clean": "[R-gui] Sliders and combo Boxes",
+      "in_reply_to": "<4C91CB95.8070702@statistik.tu-dortmund.de>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>",
+        "<4C91CB95.8070702@statistik.tu-dortmund.de>"
+      ],
+      "body_plain": "Hi Erin, \n\nWhy not have a look at the package rpanel. \n\nSee the following examples in the package rpanel: \n\n>library(rpanel)\n>?rp.listbox\n>?rp.slider\n\nYou could very easily modify the slider to display dates rather than a\nnumber from 1:100. \n\nHope this helps, \n\nWayne\n\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at stat.math.ethz.ch\n[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Uwe Ligges\nSent: 16 September 2010 08:48\nTo: Hodgess, Erin\nCc: r-sig-gui at stat.math.ethz.ch\nSubject: Re: [R-gui] Sliders and combo Boxes\n\n\n\nOn 16.09.2010 07:45, Hodgess, Erin wrote:\n> Dear R GUI People:\n>\n> I have 2 questions please:\n> a. Is there a function for a slider that runs from a sequence of\ndates, rather than the usual 0 - 100, please?\n> b. Is there a combo box which allows for multiple selections, please?\nFor instance, if you have a list of countries, then you could select\nseveral (or all) of the countries.\n\n\nErin,\n\nwhich of the hundreds of GUI frameworks are we talking about?\n\n\nUwe\n\n\n> Thanks in advance!\n> Sincerely,\n> Erin\n>\n>\n> Erin M. Hodgess, PhD\n> Associate Professor\n> Department of Computer and Mathematical Sciences\n> University of Houston - Downtown\n> mailto: hodgesse at uhd.edu\n>\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at stat.math.ethz.ch\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi Erin, \n\nWhy not have a look at the package rpanel. \n\nSee the following examples in the package rpanel: \n\n>library(rpanel)\n>?rp.listbox\n>?rp.slider\n\nYou could very easily modify the slider to displa",
+      "thread_id": "thread-d206f0d22651",
+      "thread_depth": 2,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-e2b86e7850ab",
+      "message_id": "<586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>",
+      "from_name": "Hodgess, Erin",
+      "from_email_hash": "9a43d72d3c5a93c98a7b509fb8aef328797f49fac98830a099e885b965325eac",
+      "date": "2010-09-16T10:47:08-05:00",
+      "subject": "[R-gui] Sliders and combo Boxes",
+      "subject_clean": "[R-gui] Sliders and combo Boxes",
+      "in_reply_to": null,
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>",
+        "<4C91CB95.8070702@statistik.tu-dortmund.de>",
+        "<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/690716ee/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/690716ee/attachment.pl>",
+      "thread_id": "thread-d206f0d22651",
+      "thread_depth": 3,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-01ef4f77ec06",
+      "message_id": "<AANLkTinQcS8LMQH=KJA-DGPoUE-Vb2r=9GAyZsgEHXcy@mail.gmail.com>",
+      "from_name": "Yihui Xie",
+      "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
+      "date": "2010-09-16T11:44:45-05:00",
+      "subject": "[R-gui] Sliders and combo Boxes",
+      "subject_clean": "[R-gui] Sliders and combo Boxes",
+      "in_reply_to": "<586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>",
+        "<4C91CB95.8070702@statistik.tu-dortmund.de>",
+        "<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>",
+        "<586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>"
+      ],
+      "body_plain": "For the second question, base R has a simple function select.list()\nwhich allows you to do multiple selections.\n\nRegards,\nYihui\n--\nYihui Xie <xieyihui at gmail.com>\nPhone: 515-294-2465 Web: http://yihui.name\nDepartment of Statistics, Iowa State University\n2215 Snedecor Hall, Ames, IA\n\n\n\nOn Thu, Sep 16, 2010 at 10:47 AM, Hodgess, Erin <HodgessE at uhd.edu> wrote:\n> Hi Wayne and Uwe:\n>\n> The rp.slider will be perfect.\n>\n> The rp.listbox will only let you select one option. ?My ultimate goal is to have something that will let you select several options, if possible\n>\n> I've been looking in the Tcl/tk options.\n>\n> Thanks,\n> Erin\n>\n>\n> Erin M. Hodgess, PhD\n> Associate Professor\n> Department of Computer and Mathematical Sciences\n> University of Houston - Downtown\n> mailto: hodgesse at uhd.edu\n>\n>\n> ________________________________\n>\n> From: Wayne.W.Jones at shell.com [mailto:Wayne.W.Jones at shell.com]\n> Sent: Thu 9/16/2010 3:11 AM\n> To: ligges at statistik.tu-dortmund.de; Hodgess, Erin\n> Cc: r-sig-gui at stat.math.ethz.ch\n> Subject: RE: [R-gui] Sliders and combo Boxes\n>\n>\n>\n> Hi Erin,\n>\n> Why not have a look at the package rpanel.\n>\n> See the following examples in the package rpanel:\n>\n>>library(rpanel)\n>>?rp.listbox\n>>?rp.slider\n>\n> You could very easily modify the slider to display dates rather than a\n> number from 1:100.\n>\n> Hope this helps,\n>\n> Wayne\n>\n>\n> -----Original Message-----\n> From: r-sig-gui-bounces at stat.math.ethz.ch\n> [mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Uwe Ligges\n> Sent: 16 September 2010 08:48\n> To: Hodgess, Erin\n> Cc: r-sig-gui at stat.math.ethz.ch\n> Subject: Re: [R-gui] Sliders and combo Boxes\n>\n>\n>\n> On 16.09.2010 07:45, Hodgess, Erin wrote:\n>> Dear R GUI People:\n>>\n>> I have 2 questions please:\n>> a. Is there a function for a slider that runs from a sequence of\n> dates, rather than the usual 0 - 100, please?\n>> b. Is there a combo box which allows for multiple selections, please?\n> For instance, if you have a list of countries, then you could select\n> several (or all) of the countries.\n>\n>\n> Erin,\n>\n> which of the hundreds of GUI frameworks are we talking about?\n>\n>\n> Uwe\n>\n>\n>> Thanks in advance!\n>> Sincerely,\n>> Erin\n>>\n>>\n>> Erin M. Hodgess, PhD\n>> Associate Professor\n>> Department of Computer and Mathematical Sciences\n>> University of Houston - Downtown\n>> mailto: hodgesse at uhd.edu\n>>\n>>\n>> ? ? ? [[alternative HTML version deleted]]\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at stat.math.ethz.ch\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>\n>\n>\n>\n> ? ? ? ?[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "For the second question, base R has a simple function select.list()\nwhich allows you to do multiple selections.\n\nRegards,\nYihui\n--\nYihui Xie <xieyihui at gmail.com>\nPhone: 515-294-2465 Web: http://yih",
+      "thread_id": "thread-d206f0d22651",
+      "thread_depth": 4,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-c0377518bd70",
+      "message_id": "<B37C0A15B8FB3C468B5BC7EBC7DA14CC633C849D25@LP-EXMBVS10.CO.IHC.COM>",
+      "from_name": "Greg Snow",
+      "from_email_hash": "d2f9bb4886b25a9f732759fe05a19061c499befbba553fe79bba4cc9f00cec28",
+      "date": "2010-09-16T11:31:46-06:00",
+      "subject": "[R-gui] Sliders and combo Boxes",
+      "subject_clean": "[R-gui] Sliders and combo Boxes",
+      "in_reply_to": "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>"
+      ],
+      "body_plain": "For the Tk slider and dates, it does not do it directly, but you could set the slider to go across a set of numbers (possibly the Julian date number), suppress the display of the numerical value and instead have a linked label that would show the corresponding date and would update as the slider moves.\n\nThe TK combo box does not allow for multiple selection, but the Tk list box does, just set selectmode to either \"multiple\" or \"extended\".\n\n-- \nGregory (Greg) L. Snow Ph.D.\nStatistical Data Center\nIntermountain Healthcare\ngreg.snow at imail.org\n801.408.8111\n\n\n> -----Original Message-----\n> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-\n> bounces at stat.math.ethz.ch] On Behalf Of Hodgess, Erin\n> Sent: Wednesday, September 15, 2010 11:46 PM\n> To: r-sig-gui at stat.math.ethz.ch\n> Subject: [R-gui] Sliders and combo Boxes\n> \n> Dear R GUI People:\n> \n> I have 2 questions please:\n> a. Is there a function for a slider that runs from a sequence of dates,\n> rather than the usual 0 - 100, please?\n> b. Is there a combo box which allows for multiple selections, please?\n> For instance, if you have a list of countries, then you could select\n> several (or all) of the countries.\n> \n> Thanks in advance!\n> Sincerely,\n> Erin\n> \n> \n> Erin M. Hodgess, PhD\n> Associate Professor\n> Department of Computer and Mathematical Sciences\n> University of Houston - Downtown\n> mailto: hodgesse at uhd.edu\n> \n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "For the Tk slider and dates, it does not do it directly, but you could set the slider to go across a set of numbers (possibly the Julian date number), suppress the display of the numerical value and i",
+      "thread_id": "thread-d206f0d22651",
+      "thread_depth": 1,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-75f7c5669c74",
+      "message_id": "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>",
+      "from_name": "Hodgess, Erin",
+      "from_email_hash": "9a43d72d3c5a93c98a7b509fb8aef328797f49fac98830a099e885b965325eac",
+      "date": "2010-09-16T16:22:48-05:00",
+      "subject": "[R-gui] Good Tcl/tk widget reference?",
+      "subject_clean": "[R-gui] Good Tcl/tk widget reference?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/ef1db347/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/ef1db347/attachment.pl>",
+      "thread_id": "thread-75f7c5669c74",
+      "thread_depth": 0,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-5acf5ccc5147",
+      "message_id": "<4C929A15.9010809@bht-berlin.de>",
+      "from_name": "Ulrike Grömping",
+      "from_email_hash": "99e1e46e1e0d7b77c1611da747e86cd6a4102b778c9e34ec69a028711516dbf9",
+      "date": "2010-09-17T00:28:37+02:00",
+      "subject": "[R-gui] Good Tcl/tk widget reference?",
+      "subject_clean": "[R-gui] Good Tcl/tk widget reference?",
+      "in_reply_to": "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>"
+      ],
+      "body_plain": "Erin,\n\nthere is one that comes with your R installation, at least if you are on \nWindows. On my Windoes R 2.11.0, this is the path:\n\nC:\\Programme\\R\\R-2.11.0\\Tcl\\doc\\tcltk85.chm\n\nBest, Ulrike\n\nHodgess, Erin schrieb:\n> Hello again.\n>\n>  \n>\n> First, thanks for all for the great help on sliders, etc.\n>\n>  \n>\n> Next, what is a good reference for Tcl/tk that would include the options\n> for widgets, please?\n>\n>  \n>\n> Thanks again very much!!\n>\n> Sincerely,\n>\n> Erin\n>\n>  \n>\n>  \n>\n> Erin M. Hodgess, Ph.D.\n>\n> Associate Professor\n>\n> Department of Computer and Mathematical Sciences\n>\n> University of Houston - Downtown\n>\n> mailto: hodgesse at uhd.edu\n>\n>  \n>\n>  \n>\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Erin,\n\nthere is one that comes with your R installation, at least if you are on \nWindows. On my Windoes R 2.11.0, this is the path:\n\nC:\\Programme\\R\\R-2.11.0\\Tcl\\doc\\tcltk85.chm\n\nBest, Ulrike\n\nHodgess,",
+      "thread_id": "thread-75f7c5669c74",
+      "thread_depth": 1,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-5035ef9ed960",
+      "message_id": "<8E3590214E4380489D2F8BF129B939F30146D28F@amsdc1-s-03371.europe.shell.com>",
+      "from_name": "Wayne.W.Jones at shell.com",
+      "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
+      "date": "2010-09-17T11:02:03+02:00",
+      "subject": "[R-gui] Sliders and combo Boxes",
+      "subject_clean": "[R-gui] Sliders and combo Boxes",
+      "in_reply_to": "<586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA206DAE5C@BALI.uhd.campus>",
+        "<4C91CB95.8070702@statistik.tu-dortmund.de>",
+        "<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>",
+        "<586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100917/50359cd1/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100917/50359cd1/attachment.pl>",
+      "thread_id": "thread-d206f0d22651",
+      "thread_depth": 4,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-da861cb7ba8d",
+      "message_id": "<B37C0A15B8FB3C468B5BC7EBC7DA14CC633C962538@LP-EXMBVS10.CO.IHC.COM>",
+      "from_name": "Greg Snow",
+      "from_email_hash": "d2f9bb4886b25a9f732759fe05a19061c499befbba553fe79bba4cc9f00cec28",
+      "date": "2010-09-17T14:29:30-06:00",
+      "subject": "[R-gui] Good Tcl/tk widget reference?",
+      "subject_clean": "[R-gui] Good Tcl/tk widget reference?",
+      "in_reply_to": "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>"
+      ],
+      "body_plain": "I don't know of a single good reference, installed with R is the help files for tcltk, this has lots of detail including all the options and that information, but it is in the tcl syntax, not R and translating to R can be tricky in some cases.\n\nThere were a couple of tutorials examples in the R newsletter (now the R journal) a few years back that gave a good starting place, but not the detail on all widgets etc.\n\nI personally often refer to the perlTk book, but that is only helpful for those of us with experience in Perl and I still need to translate to R syntax.\n\nSo the only real option is to combine various things, the tcl documentation, examples of R syntax (the newsletter and existing code), and a bit of trial and error to figure out what works.\n\nThe one upside is that you can ask questions without fear of getting a RTFM response.\n\nI think Tk with R is still a bit too much of a niche area that no one has written the document yet that covers everything that you want.\n\nHope this helps a little, sorry it is not what you had hoped for.\n\n-- \nGregory (Greg) L. Snow Ph.D.\nStatistical Data Center\nIntermountain Healthcare\ngreg.snow at imail.org\n801.408.8111\n\n\n> -----Original Message-----\n> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-\n> bounces at stat.math.ethz.ch] On Behalf Of Hodgess, Erin\n> Sent: Thursday, September 16, 2010 3:23 PM\n> To: r-sig-gui at stat.math.ethz.ch\n> Subject: [R-gui] Good Tcl/tk widget reference?\n> \n> Hello again.\n> \n> \n> \n> First, thanks for all for the great help on sliders, etc.\n> \n> \n> \n> Next, what is a good reference for Tcl/tk that would include the\n> options\n> for widgets, please?\n> \n> \n> \n> Thanks again very much!!\n> \n> Sincerely,\n> \n> Erin\n> \n> \n> \n> \n> \n> Erin M. Hodgess, Ph.D.\n> \n> Associate Professor\n> \n> Department of Computer and Mathematical Sciences\n> \n> University of Houston - Downtown\n> \n> mailto: hodgesse at uhd.edu\n> \n> \n> \n> \n> \n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "I don't know of a single good reference, installed with R is the help files for tcltk, this has lots of detail including all the options and that information, but it is in the tcl syntax, not R and tr",
+      "thread_id": "thread-75f7c5669c74",
+      "thread_depth": 1,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-b43d5201240a",
+      "message_id": "<19603.54749.172709.326543@max.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2010-09-17T15:55:57-05:00",
+      "subject": "[R-gui] Good Tcl/tk widget reference?",
+      "subject_clean": "[R-gui] Good Tcl/tk widget reference?",
+      "in_reply_to": "<B37C0A15B8FB3C468B5BC7EBC7DA14CC633C962538@LP-EXMBVS10.CO.IHC.COM>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>",
+        "<B37C0A15B8FB3C468B5BC7EBC7DA14CC633C962538@LP-EXMBVS10.CO.IHC.COM>"
+      ],
+      "body_plain": "On 17 September 2010 at 14:29, Greg Snow wrote:\n| I personally often refer to the perlTk book, but that is only helpful for those of us with experience in Perl and I still need to translate to R syntax.\n\nSame here. When I used to program a little with the tcltk package, I often\nalternated between O'Reilly's PerlTk book and the trusted site put togther by\nJames Wettenhall well over five years ago:\n\nhttp://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/\n\nHth, Dirk\n\n-- \nDirk Eddelbuettel | edd at debian.org | http://dirk.eddelbuettel.com",
+      "body_snippet": "On 17 September 2010 at 14:29, Greg Snow wrote:\n| I personally often refer to the perlTk book, but that is only helpful for those of us with experience in Perl and I still need to translate to R synta",
+      "thread_id": "thread-75f7c5669c74",
+      "thread_depth": 2,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-eebc925893b2",
+      "message_id": "<4C96A509.1040701@waddell.ch>",
+      "from_name": "Adrian Waddell",
+      "from_email_hash": "afd6ae43637c0691d909168b5aa7407cdbf975683ad29c432cf4cd72092f8fda",
+      "date": "2010-09-19T20:04:25-04:00",
+      "subject": "[R-gui] Good Tcl/tk widget reference?",
+      "subject_clean": "[R-gui] Good Tcl/tk widget reference?",
+      "in_reply_to": "<19603.54749.172709.326543@max.nulle.part>",
+      "references": [
+        "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>",
+        "<B37C0A15B8FB3C468B5BC7EBC7DA14CC633C962538@LP-EXMBVS10.CO.IHC.COM>",
+        "<19603.54749.172709.326543@max.nulle.part>"
+      ],
+      "body_plain": "Hello all,\n\nThe tcltk R package provides wrapper functions to tcl and the naive tk\nextension itself. So I suggest you read a tcl/tk book. I can recommend\nPractical Programming in Tcl and Tk by Brent Welch.\n\nI have started writing some slides explaining the tcltk R package but I\nran out of time for the moment. However, I plan to write more slides by\nthe end of October which should cover geometry managers (pack, maybe\ngrid) and the connection between the functions provided by the tcltk R\npackage and the naive Tk commands. You can find these slides here:\n\nhttp://www.stats.uwaterloo.ca/stats_navigation/StatSoftware/Essential-Software/\n\nGreetings,\n\nAdrian Waddell\n\n\n\nOn 09/17/2010 04:55 PM, Dirk Eddelbuettel wrote:\n> \n> On 17 September 2010 at 14:29, Greg Snow wrote:\n> | I personally often refer to the perlTk book, but that is only helpful for those of us with experience in Perl and I still need to translate to R syntax.\n> \n> Same here. When I used to program a little with the tcltk package, I often\n> alternated between O'Reilly's PerlTk book and the trusted site put togther by\n> James Wettenhall well over five years ago:\n> \n> http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/\n> \n> Hth, Dirk\n>",
+      "body_snippet": "Hello all,\n\nThe tcltk R package provides wrapper functions to tcl and the naive tk\nextension itself. So I suggest you read a tcl/tk book. I can recommend\nPractical Programming in Tcl and Tk by Brent W",
+      "thread_id": "thread-75f7c5669c74",
+      "thread_depth": 3,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-72f9a1eabdf8",
+      "message_id": "<992ACCE01A51114BB0258DC52F76B7A607A51E06@ACT001CL03EX03.agdaff.gov.au>",
+      "from_name": "Story, Paul",
+      "from_email_hash": "6de2737dc5922962b43e9583f59a198ecb7d474c7f30d6b6c164ef0a3ec0f8ac",
+      "date": "2010-09-22T10:45:51+10:00",
+      "subject": "[R-gui] unsubscribe [SEC=UNCLASSIFIED]",
+      "subject_clean": "[R-gui] unsubscribe [SEC=UNCLASSIFIED]",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/e6fe5529/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/e6fe5529/attachment.pl>",
+      "thread_id": "thread-72f9a1eabdf8",
+      "thread_depth": 0,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-0db95c9ef41b",
+      "message_id": "<992ACCE01A51114BB0258DC52F76B7A607A51E08@ACT001CL03EX03.agdaff.gov.au>",
+      "from_name": "Story, Paul",
+      "from_email_hash": "6de2737dc5922962b43e9583f59a198ecb7d474c7f30d6b6c164ef0a3ec0f8ac",
+      "date": "2010-09-22T10:46:27+10:00",
+      "subject": "[R-gui] unsubscribe [SEC=UNCLASSIFIED]",
+      "subject_clean": "[R-gui] unsubscribe [SEC=UNCLASSIFIED]",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/6a0f0454/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/6a0f0454/attachment.pl>",
+      "thread_id": "thread-0db95c9ef41b",
+      "thread_depth": 0,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-d7def49003bc",
+      "message_id": "<52C938A8-5077-406F-BBCC-54F199F07791@stat.ucla.edu>",
+      "from_name": "Ian Fellows",
+      "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
+      "date": "2010-09-25T10:01:10-07:00",
+      "subject": "[R-gui] Deducer 0.4-1 and JGR 1.7-2 released",
+      "subject_clean": "[R-gui] Deducer 0.4-1 and JGR 1.7-2 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi All,\n\nI would like to announce the release of Deducer 0.4-1 and JGR 1.7-2 to CRAN. The updates should be propagating through the mirrors over the next few days. On the Deducer side we have a number of nice improvements:\n\n1. A new Text Field Widget for plug-ins is included, which is better suited for entering/displaying numeric and short string fields than TextAreaWidget.\n2. A new Object Chooser Widget is included, which allows the user to select an object from their workspace, possibly of a specific class.\n3. Fixed combobox bug on Mac OS 64-bit.\n4. Factor editor and Recode dialog handle empty strings.\n5. Created menu items for common plotting templates.\n\nThe new JGR includes stability fixes along with a few new features.\n\nBug fixes:\n1. Fixed MacOS JavaGD resize deadlock bug\n2. Fixed 100% CPU on start-up bug reported on some UNIX systems.\n3. Interrupt R button fixed on unix systems \n\nNew Features:\n1. Graphics device save support for png, jpeg, bmp, and tiff\n2. User control over the menu system has been improved. Added ability to insert new menus, menu items, separators, and sub-menus. Menus and menu items can also be removed.\n\n\nIan Fellows",
+      "body_snippet": "Hi All,\n\nI would like to announce the release of Deducer 0.4-1 and JGR 1.7-2 to CRAN. The updates should be propagating through the mirrors over the next few days. On the Deducer side we have a number",
+      "thread_id": "thread-d7def49003bc",
+      "thread_depth": 0,
+      "month": "2010-09"
+    },
+    {
+      "id": "msg-f35f6cfaa646",
+      "message_id": "<AANLkTiksLt8NZyYuYQFQjdE0zfqHsOkCGgOtFYqzPbEz@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2010-09-25T22:45:17+03:00",
+      "subject": "[R-gui] Deducer 0.4-1 and JGR 1.7-2 released",
+      "subject_clean": "[R-gui] Deducer 0.4-1 and JGR 1.7-2 released",
+      "in_reply_to": "<52C938A8-5077-406F-BBCC-54F199F07791@stat.ucla.edu>",
+      "references": [
+        "<52C938A8-5077-406F-BBCC-54F199F07791@stat.ucla.edu>"
+      ],
+      "body_plain": "On Sat, Sep 25, 2010 at 8:01 PM, Ian Fellows <ian.fellows at stat.ucla.edu> wrote:\n> 2. Fixed 100% CPU on start-up bug reported on some UNIX systems.\n> 3. Interrupt R button fixed on unix systems\n>\nGreat news! Thanks a lot for these two. Regards\nLiviu",
+      "body_snippet": "On Sat, Sep 25, 2010 at 8:01 PM, Ian Fellows <ian.fellows at stat.ucla.edu> wrote:\n> 2. Fixed 100% CPU on start-up bug reported on some UNIX systems.\n> 3. Interrupt R button fixed on unix systems\n>\nGr",
+      "thread_id": "thread-d7def49003bc",
+      "thread_depth": 1,
+      "month": "2010-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-ee74f7644166",
+      "subject": "[R-gui] using Microsoft foundation classes with C++ and R",
+      "message_count": 2,
+      "participants": [
+        "Hodgess, Erin",
+        "Thomas Baier"
+      ],
+      "started": "2010-09-06T19:42:32-05:00",
+      "last_reply": "2010-09-07T06:53:16+02:00",
+      "root_message_id": "msg-ee74f7644166"
+    },
+    {
+      "id": "thread-d206f0d22651",
+      "subject": "[R-gui] Sliders and combo Boxes",
+      "message_count": 7,
+      "participants": [
+        "Greg Snow",
+        "Hodgess, Erin",
+        "Uwe Ligges",
+        "Wayne.W.Jones at shell.com",
+        "Yihui Xie"
+      ],
+      "started": "2010-09-16T00:45:56-05:00",
+      "last_reply": "2010-09-17T11:02:03+02:00",
+      "root_message_id": "msg-d206f0d22651"
+    },
+    {
+      "id": "thread-75f7c5669c74",
+      "subject": "[R-gui] Good Tcl/tk widget reference?",
+      "message_count": 5,
+      "participants": [
+        "Adrian Waddell",
+        "Dirk Eddelbuettel",
+        "Greg Snow",
+        "Hodgess, Erin",
+        "Ulrike Grömping"
+      ],
+      "started": "2010-09-16T16:22:48-05:00",
+      "last_reply": "2010-09-19T20:04:25-04:00",
+      "root_message_id": "msg-75f7c5669c74"
+    },
+    {
+      "id": "thread-72f9a1eabdf8",
+      "subject": "[R-gui] unsubscribe [SEC=UNCLASSIFIED]",
+      "message_count": 1,
+      "participants": [
+        "Story, Paul"
+      ],
+      "started": "2010-09-22T10:45:51+10:00",
+      "last_reply": "2010-09-22T10:45:51+10:00",
+      "root_message_id": "msg-72f9a1eabdf8"
+    },
+    {
+      "id": "thread-0db95c9ef41b",
+      "subject": "[R-gui] unsubscribe [SEC=UNCLASSIFIED]",
+      "message_count": 1,
+      "participants": [
+        "Story, Paul"
+      ],
+      "started": "2010-09-22T10:46:27+10:00",
+      "last_reply": "2010-09-22T10:46:27+10:00",
+      "root_message_id": "msg-0db95c9ef41b"
+    },
+    {
+      "id": "thread-d7def49003bc",
+      "subject": "[R-gui] Deducer 0.4-1 and JGR 1.7-2 released",
+      "message_count": 2,
+      "participants": [
+        "Ian Fellows",
+        "Liviu Andronic"
+      ],
+      "started": "2010-09-25T10:01:10-07:00",
+      "last_reply": "2010-09-25T22:45:17+03:00",
+      "root_message_id": "msg-d7def49003bc"
+    }
+  ]
+}

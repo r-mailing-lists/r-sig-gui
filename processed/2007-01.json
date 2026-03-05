@@ -1,0 +1,244 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2007-01",
+  "messages": [
+    {
+      "id": "msg-e079500c0e4e",
+      "message_id": "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>",
+      "from_name": "Stephen Eglen",
+      "from_email_hash": "5a7334007cf151111cfb34118f7d7b7dae52f6bac7a6b6c6eac0b8cd5c757984",
+      "date": "2007-01-08T17:46:33Z",
+      "subject": "[R-gui] Idle/timer callbacks in tk widgets",
+      "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI have some spatiotemporal data that I currently visualise by doing a\nsimple loop, along the lines of:\n\nfor (t in 1:100) {\n  plot.data(t)\n}\n\nplot.data(t) is a simple function that displays a 2-d plot in an R\nwindow of the data at time t.\n\nThis is okay, but quite restrictive (e.g. currently I have to Ctrl-C\nto break out of the loop); I'd like to build a simple GUI (in tk) that\nwould provide a slider to control where to start showing the data\nfrom, and start/stop buttons to control display of the data.\n\nI've looked at some of the online resources (including the very useful\nset of tk scripts at\nhttp://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/ but I can't seem\nto find anything like this.  Ousterhout's book (Tcl and the Tk\nToolkit) mentions on page 400 timer events, such as\nTk_CreateTimerHandler, which may be useful.  But has anyone ventured\nin this direction before?\n\nThanks, Stephen\n\np.s. The link to GraspeR on\n  http://www.sciviews.org/_rgui/projects/TclTk.html is broken; a newer\nlink is http://www.cscf.ch/grasp/grasp-r/index.html",
+      "body_snippet": "Hi,\n\nI have some spatiotemporal data that I currently visualise by doing a\nsimple loop, along the lines of:\n\nfor (t in 1:100) {\n  plot.data(t)\n}\n\nplot.data(t) is a simple function that displays a 2-d ",
+      "thread_id": "thread-e079500c0e4e",
+      "thread_depth": 0,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-f9bf867383a0",
+      "message_id": "<45A29EFD.7000305@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard",
+      "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
+      "date": "2007-01-08T20:43:57+01:00",
+      "subject": "[R-gui] Idle/timer callbacks in tk widgets",
+      "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
+      "in_reply_to": "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>",
+      "references": [
+        "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>"
+      ],
+      "body_plain": "Stephen Eglen wrote:\n> Hi,\n>\n> I have some spatiotemporal data that I currently visualise by doing a\n> simple loop, along the lines of:\n>\n> for (t in 1:100) {\n>   plot.data(t)\n> }\n>\n> plot.data(t) is a simple function that displays a 2-d plot in an R\n> window of the data at time t.\n>\n> This is okay, but quite restrictive (e.g. currently I have to Ctrl-C\n> to break out of the loop); I'd like to build a simple GUI (in tk) that\n> would provide a slider to control where to start showing the data\n> from, and start/stop buttons to control display of the data.\n>   \nI'm not quite sure exactly what you want, but I think you might want to \ncheck out Tcl's \"after\" command, e.g.\n\nf <- function() {tcl(\"puts\", n) ; if (n <<- n-1) tcl(\"after\", 1000, f)}\n\nn <- 10\n\nf()\n\n> I've looked at some of the online resources (including the very useful\n> set of tk scripts at\n> http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/ but I can't seem\n> to find anything like this.  Ousterhout's book (Tcl and the Tk\n> Toolkit) mentions on page 400 timer events, such as\n> Tk_CreateTimerHandler, which may be useful.  But has anyone ventured\n> in this direction before?\n>\n> Thanks, Stephen\n>\n> p.s. The link to GraspeR on\n>   http://www.sciviews.org/_rgui/projects/TclTk.html is broken; a newer\n> link is http://www.cscf.ch/grasp/grasp-r/index.html\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Stephen Eglen wrote:\n> Hi,\n>\n> I have some spatiotemporal data that I currently visualise by doing a\n> simple loop, along the lines of:\n>\n> for (t in 1:100) {\n>   plot.data(t)\n> }\n>\n> plot.data(t) is ",
+      "thread_id": "thread-e079500c0e4e",
+      "thread_depth": 1,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-a70fbf45592c",
+      "message_id": "<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2007-01-08T14:50:01-06:00",
+      "subject": "[R-gui] Idle/timer callbacks in tk widgets",
+      "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
+      "in_reply_to": "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>",
+      "references": [
+        "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070108/5a52c72a/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070108/5a52c72a/attachment.pl",
+      "thread_id": "thread-e079500c0e4e",
+      "thread_depth": 1,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-6a2d4d26116e",
+      "message_id": "<17826.54061.853784.748586@notch.damtp.cam.ac.uk>",
+      "from_name": "Stephen Eglen",
+      "from_email_hash": "5a7334007cf151111cfb34118f7d7b7dae52f6bac7a6b6c6eac0b8cd5c757984",
+      "date": "2007-01-08T23:26:37Z",
+      "subject": "[R-gui] Idle/timer callbacks in tk widgets",
+      "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
+      "in_reply_to": "<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>",
+      "references": [
+        "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>",
+        "<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>"
+      ],
+      "body_plain": "Dear `Peter, Michael, list,\n\nThanks for your responses.  I have now tried both suggestions (of\nusing the \"after\" command, and Sys.sleep() within a loop).  from my\npreliminary expts, it seems that both methods do what I want.  The\n\"after\" first method also seems to have the advantage of not blocking\nthe R prompt while the movie is playing.  \n\nFor the archives (and for others if interested) I'll send my test\nscript tomorrow to the list.\n\nBest wishes, Stephen\n\n\n > I admit I am not familiar with the tcltk package, but it sounds to me that\n > you want to yield to the GUI event loop and check whether the stop button\n > has been pressed.  Calling Sys.sleep(1) in the loop will allow the button\n > handler to be called. Just have it set some flag that lets you break out of\n > the loop.",
+      "body_snippet": "Dear `Peter, Michael, list,\n\nThanks for your responses.  I have now tried both suggestions (of\nusing the \"after\" command, and Sys.sleep() within a loop).  from my\npreliminary expts, it seems that both",
+      "thread_id": "thread-e079500c0e4e",
+      "thread_depth": 2,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-ff1064568095",
+      "message_id": "<17827.37823.462228.474366@notch.damtp.cam.ac.uk>",
+      "from_name": "Stephen Eglen",
+      "from_email_hash": "5a7334007cf151111cfb34118f7d7b7dae52f6bac7a6b6c6eac0b8cd5c757984",
+      "date": "2007-01-09T13:08:15Z",
+      "subject": "[R-gui] Idle/timer callbacks in tk widgets",
+      "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
+      "in_reply_to": "<17826.54061.853784.748586@notch.damtp.cam.ac.uk>",
+      "references": [
+        "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>",
+        "<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>",
+        "<17826.54061.853784.748586@notch.damtp.cam.ac.uk>"
+      ],
+      "body_plain": "> \n > For the archives (and for others if interested) I'll send my test\n > script tomorrow to the list.\n\nHere it is.  \n\nStephen\n\n\n\n## Simple example of playing a movie in tcltk.\n## Tue 09 Jan 2007\n## Use the 'after' command to repeatedly call the plot function after\n## some delay.  (I tried an alternative method for running the movie,\n## go.callback2, for those interested, but go.callback seems\n## preferable.)\n\nlibrary(tcltk)\n\n## Some dummy data.\nnpts <- 1000\nstep.size <- 40                         #how many data points to show.\ndata <- sin(4*pi * 1:npts/npts)\n\npause.time <- 100                       #delay in msec\n\nmovie.time <- tclVar(1)                 # current start time of frame.\nmovie.show <- tclVar(1)                 # \"1\" for on, \"0\" for off.\n\n\nshow.plot <- function(..., update.win=TRUE) {\n  ## Update the plot window.\n  ## TODO: check that beg/end times are suitable.\n  start.time <- as.numeric(tclvalue(movie.time))\n  \n  x <- floor(start.time) + (1:step.size)\n  plot(x, data[x], ylim=c(-1, 1), bty='n', lwd=3, col='red',\n       main='dummy data', type='l', yaxt='n')\n\n  if ( update.win && (tclvalue(movie.show)==\"1\")) {\n    next.time <- start.time + step.size\n    if (next.time < length(data)) {\n      ## Still have more to show...\n      tclvalue(movie.time) <- as.character(next.time)\n      tcl(\"after\", pause.time, show.plot)\n    } else {\n      tclvalue(movie.show) == \"0\"     #for consistency.\n    }\n  }\n  \n}\n\nstop.callback <- function() {\n  ## Callback for the stop button.\n  tclvalue(movie.show) <- \"0\"\n}\n\ngo.callback <- function() {\n  ## Callback for the go button.\n  tclvalue(movie.show) <- \"1\"\n  show.plot()\n}\n\ngo.callback2 <- function() {\n\n  ## Alternative callback for the go button.  This uses a for loop to\n  ## control the movie; however, while the movie is running, the R\n  ## prompt is blocked (although the tk GUI is still responsive).\n  \n  print(\"Alternate go callback\")\n  tclvalue(movie.show) <- \"1\"\n\n  looping <- TRUE\n\n  while(looping) {\n    show.plot(update.win=FALSE)\n    cur.time <- as.numeric(tclvalue(movie.time))\n    if ( (tclvalue(movie.show) == \"0\") || cur.time >= length(data)) {\n      looping <- FALSE\n      tclvalue(movie.show) <- \"0\"       #needed iff at end of data.\n    } else {\n      Sys.sleep(pause.time/1000)        #1000 needed to give time in sec.\n      tclvalue(movie.time) <-\n        as.character( cur.time + step.size)\n    }\n  }\n}\n\nshow.plot.scale <- function(...) {\n  ## Callback for the scale widget.\n  show.plot(update.win=FALSE)\n}\n\nmovie.window <- function() {\n  ## Create a control window and show it.\n  \n  ## Init the vars?\n  tclvalue(movie.time) <- \"1\"\n  \n  \n  ## Create base frame.\n  base <- tktoplevel()\n  spec.frame <- tkframe(base, borderwidth=2)\n  tkwm.title(base, \"Movie player\")\n  \n  beg.time <- 1\n  end.time <- length(data)\n  scale <- tkscale(spec.frame, command=show.plot.scale,\n                   from = beg.time,\n                   to =   end.time, \n                   showvalue=TRUE,\n                   variable=movie.time,\n                   resolution=5,\n                   orient=\"horiz\")\n  \n  go.but   <- tkbutton(spec.frame, text=\"Go\",   command=go.callback2)\n  prev.but <- tkbutton(spec.frame, text=\"Stop\", command=stop.callback)\n  \n\n  ## Add buttons, one row at a time, using the grid manager.\n  tkgrid(scale, columnspan=2)\n  tkgrid(go.but, prev.but)\n  \n  tkpack(spec.frame)\n\n}\n\n\n\nmovie.window()",
+      "body_snippet": "> \n > For the archives (and for others if interested) I'll send my test\n > script tomorrow to the list.\n\nHere it is.  \n\nStephen\n\n\n\n## Simple example of playing a movie in tcltk.\n## Tue 09 Jan 2007\n## ",
+      "thread_id": "thread-e079500c0e4e",
+      "thread_depth": 3,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-c47b2e5446ce",
+      "message_id": "<45A3A0DD.5000409@stats.uwo.ca>",
+      "from_name": "Duncan Murdoch",
+      "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
+      "date": "2007-01-09T09:04:13-05:00",
+      "subject": "[R-gui] Idle/timer callbacks in tk widgets",
+      "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
+      "in_reply_to": "<17827.37823.462228.474366@notch.damtp.cam.ac.uk>",
+      "references": [
+        "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>",
+        "<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>",
+        "<17826.54061.853784.748586@notch.damtp.cam.ac.uk>",
+        "<17827.37823.462228.474366@notch.damtp.cam.ac.uk>"
+      ],
+      "body_plain": "On 1/9/2007 8:08 AM, Stephen Eglen wrote:\n>  > \n>  > For the archives (and for others if interested) I'll send my test\n>  > script tomorrow to the list.\n> \n> Here it is.  \n\nI did a similar thing in the tkrgl package (recently uploaded to CRAN), \nto control rotating rgl plots.\n\nA few differences:\n\nI queried the system clock to set the amount of rotation, so it would \nappear to rotate at a continuous rate even if the update wasn't serviced \nregularly.\n\nI used tcl(\"after\", \"idle\", onIdle) to trigger the next update.  This is \nsupposed to avoid callbacks when the system is busy, but it still makes \na bit too much impact on the system.  Probably the best low impact way \nwould be to follow a fixed delay with an \"idle\" delay, to guarantee a \nminimum delay time.\n\nI defined all the event handling functions within one wrapper function, \nso they had access to its variables through lexical scoping, without \nexposing them all to the whole world.\n\nHere's some of the code (just for the \"up\" rotation, there's a lot of \nrepetitiveness for other kinds of rotation.  The repetition could be \nreduced by just setting the rotation axis and direction, but it doesn't \nreally seem worth the effort).  Improvements would be welcome.\n\nDuncan Murdoch\n\n\nspinControl <- function(base, dev = rgl.cur()){\n\n# This creates a control that can be put in the tk container called base\n\n\tslider <- tclVar(100)  # this controls the rotation rate\n\n\tcontinuous <- tclVar(0) # this controls whether rotation continues on \nits own\n\t\n\tbuttonPress <- NULL\n\tdirection <- NULL\n\t\n\tlastTime <- proc.time()[3]  # this records the last time the display \nwas updated\n\n\ttimeDiff <- 0\n\n         # Here's a typical rotation function:\n\n\trotateUp <- function(){\n\t\tangle <- timeDiff*as.numeric(tclObj(slider))*pi/180\n\t\tpar3d(userMatrix = rotationMatrix(-angle, 1,0,0) %*% par3d(\"userMatrix\"))\n\t}\n\n\n\trotate <- function(){\n\t    \told <- rgl.cur()\n\t    \ton.exit(rgl.set(old))\t\n\t    \tif (buttonPress) {\n\t\t    if ((currentTime <- proc.time()[3]) > lastTime) {\n\t\t\ttimeDiff <<- currentTime - lastTime\n\t\t\tlastTime <<- currentTime\n\t\t\tfor (device in dev) {\n\t\t\t    rgl.set(device)\n\t\t\t    if (direction == \"up\")\n\t\t\t\t    rotateUp()\n\n...\n\t\t\t}\n\t\t    }\n\t\t    tcl(\"after\",5,rotate) # rotation is continuous as long as the \nbutton is pressed.\n\t    }\n\n\t}\n\n\t# rotation button callback functions\n\t# note that \"...\" argument is necessary\n\tupButtonPress <- function(...){\n\t\tbuttonPress <<- TRUE\n\t\tlastTime <<- proc.time()[3]\n\t\tdirection <<- \"up\"\n\t\trotate()\n\t}\n\n...\n\n         onIdle <- function(...){\n         \tbuttonPress <<- TRUE\n         \trotate()\n         \tbuttonPress <<- FALSE\n\t\tif (as.numeric(tclObj(continuous)))\n\t\t    tcl(\"after\", \"idle\", onIdle)\n\t}\n\nThe idle rotation only happens if the continuous variable is non-zero \nwhen a button is released.  It's connected to a checkbox.\n      \t\n\tbuttonRelease <- function(...){\n\t\tbuttonPress <<- FALSE\n\t\tif (as.numeric(tclObj(continuous)))\n\t\t    tcl(\"after\", \"idle\", onIdle)\n\t}\n\n  ....\n}\n\nDuncan Murdoch",
+      "body_snippet": "On 1/9/2007 8:08 AM, Stephen Eglen wrote:\n>  > \n>  > For the archives (and for others if interested) I'll send my test\n>  > script tomorrow to the list.\n> \n> Here it is.  \n\nI did a similar thing in th",
+      "thread_id": "thread-e079500c0e4e",
+      "thread_depth": 4,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-672881cbecd6",
+      "message_id": "<200701191811.51369.santos@supagro.inra.fr>",
+      "from_name": "Filipe Santos",
+      "from_email_hash": "adf1ae6f6322111cdf1df8cd41cde3c4af70ea01ec10842fde4118f904eb9b20",
+      "date": "2007-01-19T18:11:48+01:00",
+      "subject": "[R-gui] Refreshing the GUI and packing images",
+      "subject_clean": "[R-gui] Refreshing the GUI and packing images",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all\n\nI'm developing a grafical interface for Geneland that is presently one of the \nR packages available.\n\nMy first question is about refreshing the interface while running a very long \nprocess.\n\n\nrun<-function(){\n\n        tttry <- tktoplevel()\n        tkwm.geometry(tttry, \"+200+200\")\n        tkwm.title(tttry,\"wait\")\n        warn<-tklabel(tttry,image=imagepleasewait)\n        tkpack(warn)                        \n        tkfocus(tttry)\n        tcl(\"update\")\n                \n        print(\"Starting...\")\n\n        validate <- 1\n    \n        onIdle <- function(){\n          if (validate)==1){\n            Sys.sleep(0.1)\n            tkconfigure(warn,image=imagepleasewait)\n            tcl(\"after\",\"idle\", onIdle())\n          }\n          else\n            tkdestroy(tttry)\n        }\n        onIdle()\n\n        mcmcFmodel(...)   \n        \n        validate <- 0\n}\n\nIf I remove the onIdle funtion the GUI stucks when I'm executing the \nmcmcFmodel, if I leave it neves calls mcmcFmodel. Then I thought that there \ncould exist a fork() equivalent in R or somehow send a process to background \nbut I couldn't find anyway to make that with R-base package.\n\nMy second question is in which directory images are supposed to be packed?\nR has a strict directory rules for packages and there is no documentation \nregarding where should images for GUIs be putten. I was looking at SciViews \npackage and they distribute that under a directory called gui.\n\nBest regards\n\nFilipe Santos",
+      "body_snippet": "Dear all\n\nI'm developing a grafical interface for Geneland that is presently one of the \nR packages available.\n\nMy first question is about refreshing the interface while running a very long \nprocess.\n",
+      "thread_id": "thread-672881cbecd6",
+      "thread_depth": 0,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-ec5f47572967",
+      "message_id": "<244933.16127.qm@web32410.mail.mud.yahoo.com>",
+      "from_name": "as ming",
+      "from_email_hash": "0f5d927213f24d0d559c170e5301e7b206113060fb42ac70861cbc2a38b277d7",
+      "date": "2007-01-20T23:57:09-08:00",
+      "subject": "[R-gui] copy graphs from tabbed notebook widget",
+      "subject_clean": "[R-gui] copy graphs from tabbed notebook widget",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi, All:\n\nI created several plots in R and associated them with\ntabbed notebook widget (created from the\nexample on the R tcl/tk page \nhttp://www.sciviews.org/_rgui).  The plot itself is\ncreated by tkrplot.\n What I'd llike to do is to save the current plot\nassociated with the active tab. I searched\nonline and couldn't get it done. Your help is well\nappreciated!\n\n\nI am attaching this example code from that website. \nBasically, when I click tab \"B\",\nI want to save the corresponding plot. I used\n\"CopytoClipboard\" button. But it always\ncopies the last plot, ie. tab Z's plot.\n\nI guess I need handle the imglist as a list, but it\ndidn't allow me to do.\n\n####### modified example code ############\n\nlibrary(tcltk)\nlibrary(tkrplot)\ntclRequire(\"Iwidgets\")\n\ntt <- tktoplevel()\ntkpack(tn <- tkwidget(tt, \"iwidgets::tabnotebook\"))\ntkconfigure(tn,                         #\nprettyfication taken from incrtcl\n            tabpos=\"n\",\n            width=1050,\n            height=850,\n            angle=0,\n            bevelamount=2,\n            gap=2,\n            margin=2,\n            tabborders=0,\n            tabbackground=\"white\",\n            background=\"lightgray\",\n            backdrop=\"lightgray\")\n\nnm <- LETTERS[1:26]\nfor (t in 1:length(nm)) {\n    tbn <- tclvalue(tkadd(tn, label=nm[t]))\n    tkpack(tbw <- .Tk.newwin(tbn))\n    tkpack(fr <- tkframe(tbw))\n    tkpack(lb <- tklabel(fr, text=paste(\"This is tab\",\nnm[t])))\n    ID <- paste(tn$ID, evalq(num.subwin<-num.subwin+1,\ntn$env), sep=\".\")\n    win <- .Tk.newwin(ID)\n    assign(ID, tbw, envir = tn$env)\n    assign(\"parent\", tn, envir = tbw$env)\n\n    imglist <- tkrplot(fr,function() {\n         X <- t + (1:20)\n         plot(X)}, hscale= 1.5, vscale= 1.5)\n    CopyToClip <- function()\n   {\n       tkrreplot(imglist)\n   }\n    copy.but <- tkbutton(tbw,text=paste(\"Copy to\nClipboard\", nm[t]),command=CopyToClip)\n    tkpack(imglist)\n    tkpack(copy.but)    \n\n\n    #list(tbw,fr,lb) # return all three in case you\nneed them later\n}\ntkbind(tt, \"<Destroy>\", function() tkdestroy(tn))\ntkselect(tn, 0)\n\n\n\n \n____________________________________________________________________________________\nCheap talk?",
+      "body_snippet": "Hi, All:\n\nI created several plots in R and associated them with\ntabbed notebook widget (created from the\nexample on the R tcl/tk page \nhttp://www.sciviews.org/_rgui).  The plot itself is\ncreated by tk",
+      "thread_id": "thread-ec5f47572967",
+      "thread_depth": 0,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-331d10754ef0",
+      "message_id": "<45B7AECA.7070108@uhb.fr>",
+      "from_name": "NOEL Yvonnick",
+      "from_email_hash": "6b0c1beb7700ad7ed9305cad83d011377781980ebe20349aefdf56be0114ff43",
+      "date": "2007-01-24T20:08:58+01:00",
+      "subject": "[R-gui] as.numeric(\".1\") under RGtk2",
+      "subject_clean": "[R-gui] as.numeric(\".1\") under RGtk2",
+      "in_reply_to": "<Pine.LNX.4.64.0701241735170.28321@gannet.stats.ox.ac.uk>",
+      "references": [
+        "<45B7895A.6090309@uhb.fr>",
+        "<17847.36829.31217.7004@stat.math.ethz.ch>",
+        "<45B793F6.9060507@uhb.fr>",
+        "<Pine.LNX.4.64.0701241735170.28321@gannet.stats.ox.ac.uk>"
+      ],
+      "body_plain": "Prof Brian Ripley a ?crit :\n> I can reproduce this via\n> \n>> Sys.setlocale(\"LC_NUMERIC\", \"fr_FR\")\n> [1] \"fr_FR\"\n> Warning message:\n> setting 'LC_NUMERIC' may cause R to function strangely in: \n> setlocale(category, locale)\n>> as.numeric(\",1\")\n> [1] 0,1\n>> as.numeric(\".1\")\n> [1] NA\n> Warning message:\n> NAs introduced by coercion\n> \n> Assuming you have not done that anywhere, it should not happen. If you \n> have, you were warned.  (Have you tried starting R with --vanilla to be \n> sure?)\n> \n> as.numeric() is using strtod which should only be affected by the locale \n> category LC_NUMERIC, and R itself does not set LC_NUMERIC.  So either \n> you or some rogue OS function must have, unless there is a pretty major \n> bug in the OS.  (Just using a UTF-8 fr_FR locale does not do it on \n> either of the Linux variants I tried.)\n\nThanks for these helpful indications. This seems to be related to the \nRGtk2 package :\n\n# Before loading RGtk2\n > as.numeric(\".1\")\n[1] 0.1\n > as.numeric(\",1\")\n[1] NA\nWarning message:\nNAs introduits lors de la conversion automatique\n# After library loading\n > library(\"RGtk2\")\n > as.numeric(\".1\")\n[1] NA\nWarning message:\nNAs introduits lors de la conversion automatique\n > as.numeric(\",1\")\n[1] 0,1\n\nI send a copy of this post to the RGtk2 package maintainers.\n\nThanks for your help,\n\nYvonnick Noel, PhD.\nDpt of Psychology\nU. of Rennes\nFrance",
+      "body_snippet": "Prof Brian Ripley a ?crit :\n> I can reproduce this via\n> \n>> Sys.setlocale(\"LC_NUMERIC\", \"fr_FR\")\n> [1] \"fr_FR\"\n> Warning message:\n> setting 'LC_NUMERIC' may cause R to function strangely in: \n> setlo",
+      "thread_id": "thread-331d10754ef0",
+      "thread_depth": 0,
+      "month": "2007-01"
+    },
+    {
+      "id": "msg-555bc1081a20",
+      "message_id": "<509e0620701241838u39d4fe5bt20b0015b7dce21f5@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2007-01-24T20:38:55-06:00",
+      "subject": "[R-gui] as.numeric(\".1\") under RGtk2",
+      "subject_clean": "[R-gui] as.numeric(\".1\") under RGtk2",
+      "in_reply_to": "<45B7AECA.7070108@uhb.fr>",
+      "references": [
+        "<45B7895A.6090309@uhb.fr>",
+        "<17847.36829.31217.7004@stat.math.ethz.ch>",
+        "<45B793F6.9060507@uhb.fr>",
+        "<Pine.LNX.4.64.0701241735170.28321@gannet.stats.ox.ac.uk>",
+        "<45B7AECA.7070108@uhb.fr>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070124/c0b767c1/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070124/c0b767c1/attachment.pl",
+      "thread_id": "thread-331d10754ef0",
+      "thread_depth": 1,
+      "month": "2007-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-e079500c0e4e",
+      "subject": "[R-gui] Idle/timer callbacks in tk widgets",
+      "message_count": 6,
+      "participants": [
+        "Duncan Murdoch",
+        "Michael Lawrence",
+        "Peter Dalgaard",
+        "Stephen Eglen"
+      ],
+      "started": "2007-01-08T17:46:33+00:00",
+      "last_reply": "2007-01-09T09:04:13-05:00",
+      "root_message_id": "msg-e079500c0e4e"
+    },
+    {
+      "id": "thread-672881cbecd6",
+      "subject": "[R-gui] Refreshing the GUI and packing images",
+      "message_count": 1,
+      "participants": [
+        "Filipe Santos"
+      ],
+      "started": "2007-01-19T18:11:48+01:00",
+      "last_reply": "2007-01-19T18:11:48+01:00",
+      "root_message_id": "msg-672881cbecd6"
+    },
+    {
+      "id": "thread-ec5f47572967",
+      "subject": "[R-gui] copy graphs from tabbed notebook widget",
+      "message_count": 1,
+      "participants": [
+        "as ming"
+      ],
+      "started": "2007-01-20T23:57:09-08:00",
+      "last_reply": "2007-01-20T23:57:09-08:00",
+      "root_message_id": "msg-ec5f47572967"
+    },
+    {
+      "id": "thread-331d10754ef0",
+      "subject": "[R-gui] as.numeric(\".1\") under RGtk2",
+      "message_count": 2,
+      "participants": [
+        "Michael Lawrence",
+        "NOEL Yvonnick"
+      ],
+      "started": "2007-01-24T20:08:58+01:00",
+      "last_reply": "2007-01-24T20:38:55-06:00",
+      "root_message_id": "msg-331d10754ef0"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+From deleeuw@stat.ucla.edu  Sun Jan  5 17:48:36 2003
+From: deleeuw@stat.ucla.edu (Jan de Leeuw)
+Date: Sun, 5 Jan 2003 09:48:36 -0800
+Subject: [R-gui] Rpy in Pycrust/Pyshell
+Message-ID: <EAB1A589-20D5-11D7-9038-000393BB6D36@stat.ucla.edu>
+
+This refers to earlier emails about the MacPython-2.3 build (with
+pyobjc, Rpy, wxPython) on http://gifi.stat.ucla.edu/pub
+
+If you want to use Rpy (R from Python) in Pycrust or Pyshell (the
+Python GUI's that come with wxPython) then you have to recompile
+libR.dylib by commenting out the two lines in src/main/dounzip.c
+that use the variable unz_copyright (just put // at the beginning of the
+line). This solves the problem that unz_copyright is already
+defined in the wxWindows dynamic libraries. Now Rpy loads fine
+and you can R away from Pycrust (including X11 plotting).
+
+Some of you may wonder why it is good to R from Python. The
+brief answer is that you can also Python from Python -- i.e. you
+can do many other things from the same GUI that you cannot do
+in R (Cocoa programming, wxWindows programming), and
+you can also combine all this in Python scripts. And you
+basically get a bunch of new GUI's for R for free: on OS X these are
+IDLE, PythonIDE, Pycrust/Pyshell, and the command-line
+interfaces provided by python and pythonw.
+
+===
+Jan de Leeuw; Professor and Chair, UCLA Department of Statistics;
+Editor: Journal of Multivariate Analysis, Journal of Statistical  
+Software
+US mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554
+phone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu
+homepage: http://gifi.stat.ucla.edu
+   
+------------------------------------------------------------------------ 
+-------------------------
+           No matter where you go, there you are. --- Buckaroo Banzai
+                    http://gifi.stat.ucla.edu/sounds/nomatter.au
+   
+------------------------------------------------------------------------ 
+-------------------------
+
+

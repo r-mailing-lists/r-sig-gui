@@ -1,0 +1,126 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2009-03",
+  "messages": [
+    {
+      "id": "msg-17671299ae87",
+      "message_id": "<68b1e2610903190128oa5f46bak128c086c98a5f99d@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2009-03-19T09:28:40+01:00",
+      "subject": "[R-gui] system() fails in JGR",
+      "subject_clean": "[R-gui] system() fails in JGR",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all,\nI initially sent this e-mail to r-help, with no luck, so I'm forwarding here.\n\nJGR seems unable to report the results of system() commands.\nIn a command-line R session:\n> system(\"pwd\")\n/home/liviu\n> system(\"acpitool\")\n AC adapter     : on-line\n Thermal zone 1 : ok, 67 C\n> system(\"asdf\")\nsh: asdf: command not found\n\nIn JGR:\n> system(\"pwd\")\n> system(\"ls -F\")\n> system(\"acpitool\")\n> system(\"asdf\")\n\n\nWould this JGR, or my system configuration at fault?\nLiviu\n\n\nSystem info:\n> sessionInfo()\nR version 2.8.1 (2008-12-22)\ni686-pc-linux-gnu\n\nlocale:\nLC_CTYPE=en_GB.UTF-8;LC_NUMERIC=C;LC_TIME=en_GB.UTF-8;LC_COLLATE=en_GB.UTF-8;LC_MONETARY=C;LC_MESSAGES=en_GB.UTF-8;LC_PAPER=en_GB.UTF-8;LC_NAME=C;LC_ADDRESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=en_GB.UTF-8;LC_IDENTIFICATION=C\n\nattached base packages:\n[1] datasets  utils     stats     graphics  grDevices methods   base\n\nother attached packages:\n [1] JGR_1.6-3     iplots_1.1-3  JavaGD_0.5-2  rJava_0.6-2   PolynomF_0.93\n [6] financial_0.1 WhatIf_1.5-4  lpSolve_5.6.4 Zelig_3.4-3   boot_1.2-35\n[11] MASS_7.2-45\n\nliviu at localhost ~ $ uname -a\nLinux localhost 2.6.22-gentoo-r5-0.5 #3 Sat Mar 14 12:22:37 CET 2009\ni686 Intel(R) Pentium(R) M processor 1.60GHz GenuineIntel GNU/Linux\n\n\n--\nDo you know how to read?\nhttp://www.alienetworks.com/srtest.cfm\nDo you know how to write?\nhttp://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail",
+      "body_snippet": "Dear all,\nI initially sent this e-mail to r-help, with no luck, so I'm forwarding here.\n\nJGR seems unable to report the results of system() commands.\nIn a command-line R session:\n> system(\"pwd\")\n/home",
+      "thread_id": "thread-17671299ae87",
+      "thread_depth": 0,
+      "month": "2009-03"
+    },
+    {
+      "id": "msg-28b5031ab0cd",
+      "message_id": "<8BA495B9B6774D739755C435E5ECE47B@gpbdmx>",
+      "from_name": "Ian Fellows",
+      "from_email_hash": "d12bb521d01a14c5c9364007086c61200d7898178507ef5d276c14223c822c6b",
+      "date": "2009-03-19T09:50:05-07:00",
+      "subject": "[R-gui] system() fails in JGR",
+      "subject_clean": "[R-gui] system() fails in JGR",
+      "in_reply_to": "<68b1e2610903190128oa5f46bak128c086c98a5f99d@mail.gmail.com>",
+      "references": [],
+      "body_plain": "Hi Liviu,\n\nI can confirm the problem on windows and mac, though I don't have a\nsolution. At least in windows it might have something to do with the     \n\nif (CharacterMode == RGui)\n\nstatement in sys-win32.c do_system function. But I'm not familiar enough\nwith the internals to solve this.\n\nI'm forwarding this a mailing list that deals with java <-> R.\n\n\nCheers,\nIan\n\n\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at stat.math.ethz.ch\n[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Liviu Andronic\nSent: Thursday, March 19, 2009 1:29 AM\nTo: R-SIG-GUI Mailing List\nSubject: [R-gui] system() fails in JGR\n\nDear all,\nI initially sent this e-mail to r-help, with no luck, so I'm forwarding\nhere.\n\nJGR seems unable to report the results of system() commands.\nIn a command-line R session:\n> system(\"pwd\")\n/home/liviu\n> system(\"acpitool\")\n AC adapter     : on-line\n Thermal zone 1 : ok, 67 C\n> system(\"asdf\")\nsh: asdf: command not found\n\nIn JGR:\n> system(\"pwd\")\n> system(\"ls -F\")\n> system(\"acpitool\")\n> system(\"asdf\")\n\n\nWould this JGR, or my system configuration at fault?\nLiviu\n\n\nSystem info:\n> sessionInfo()\nR version 2.8.1 (2008-12-22)\ni686-pc-linux-gnu\n\nlocale:\nLC_CTYPE=en_GB.UTF-8;LC_NUMERIC=C;LC_TIME=en_GB.UTF-8;LC_COLLATE=en_GB.UTF-8\n;LC_MONETARY=C;LC_MESSAGES=en_GB.UTF-8;LC_PAPER=en_GB.UTF-8;LC_NAME=C;LC_ADD\nRESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=en_GB.UTF-8;LC_IDENTIFICATION=C\n\nattached base packages:\n[1] datasets  utils     stats     graphics  grDevices methods   base\n\nother attached packages:\n [1] JGR_1.6-3     iplots_1.1-3  JavaGD_0.5-2  rJava_0.6-2   PolynomF_0.93\n [6] financial_0.1 WhatIf_1.5-4  lpSolve_5.6.4 Zelig_3.4-3   boot_1.2-35\n[11] MASS_7.2-45\n\nliviu at localhost ~ $ uname -a\nLinux localhost 2.6.22-gentoo-r5-0.5 #3 Sat Mar 14 12:22:37 CET 2009\ni686 Intel(R) Pentium(R) M processor 1.60GHz GenuineIntel GNU/Linux\n\n\n--\nDo you know how to read?\nhttp://www.alienetworks.com/srtest.cfm\nDo you know how to write?\nhttp://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at stat.math.ethz.ch\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi Liviu,\n\nI can confirm the problem on windows and mac, though I don't have a\nsolution. At least in windows it might have something to do with the     \n\nif (CharacterMode == RGui)\n\nstatement in sys-w",
+      "thread_id": "thread-17671299ae87",
+      "thread_depth": 1,
+      "month": "2009-03"
+    },
+    {
+      "id": "msg-3646357da228",
+      "message_id": "<D5FEF59F-6CA6-45E3-B47C-CB072A6F46BD@r-project.org>",
+      "from_name": "Simon Urbanek",
+      "from_email_hash": "4b8015e605c1e8a78e0fc166d7f94d0bc9cab6230366ee1dfdd8a0de17b4b371",
+      "date": "2009-03-19T18:24:18-04:00",
+      "subject": "[R-gui] [stats-rosuda-devel]  system() fails in JGR",
+      "subject_clean": "[R-gui] [stats-rosuda-devel]  system() fails in JGR",
+      "in_reply_to": "<8BA495B9B6774D739755C435E5ECE47B@gpbdmx>",
+      "references": [
+        "<8BA495B9B6774D739755C435E5ECE47B@gpbdmx>"
+      ],
+      "body_plain": "On Mar 19, 2009, at 12:50 , Ian Fellows wrote:\n\n> Hi Liviu,\n>\n> I can confirm the problem on windows and mac, though I don't have a\n> solution. At least in windows it might have something to do with the\n>\n> if (CharacterMode == RGui)\n>\n> statement in sys-win32.c do_system function. But I'm not familiar  \n> enough\n> with the internals to solve this.\n>\n\nThis has nothing to do with it - use system(.., intern=TRUE) if you  \nwant R to capture the results. Otherwise the process output goes to  \nstdout/stderr instead.\n\nCheers,\nSimon\n\n\n\n> I'm forwarding this a mailing list that deals with java <-> R.\n>\n>\n> Cheers,\n> Ian\n>\n>\n>\n> -----Original Message-----\n> From: r-sig-gui-bounces at stat.math.ethz.ch\n> [mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Liviu  \n> Andronic\n> Sent: Thursday, March 19, 2009 1:29 AM\n> To: R-SIG-GUI Mailing List\n> Subject: [R-gui] system() fails in JGR\n>\n> Dear all,\n> I initially sent this e-mail to r-help, with no luck, so I'm  \n> forwarding\n> here.\n>\n> JGR seems unable to report the results of system() commands.\n> In a command-line R session:\n>> system(\"pwd\")\n> /home/liviu\n>> system(\"acpitool\")\n> AC adapter     : on-line\n> Thermal zone 1 : ok, 67 C\n>> system(\"asdf\")\n> sh: asdf: command not found\n>\n> In JGR:\n>> system(\"pwd\")\n>> system(\"ls -F\")\n>> system(\"acpitool\")\n>> system(\"asdf\")\n>\n>\n> Would this JGR, or my system configuration at fault?\n> Liviu\n>\n>\n> System info:\n>> sessionInfo()\n> R version 2.8.1 (2008-12-22)\n> i686-pc-linux-gnu\n>\n> locale:\n> LC_CTYPE \n> =en_GB.UTF-8;LC_NUMERIC=C;LC_TIME=en_GB.UTF-8;LC_COLLATE=en_GB.UTF-8\n> ;LC_MONETARY \n> =C;LC_MESSAGES=en_GB.UTF-8;LC_PAPER=en_GB.UTF-8;LC_NAME=C;LC_ADD\n> RESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=en_GB.UTF-8;LC_IDENTIFICATION=C\n>\n> attached base packages:\n> [1] datasets  utils     stats     graphics  grDevices methods   base\n>\n> other attached packages:\n> [1] JGR_1.6-3     iplots_1.1-3  JavaGD_0.5-2  rJava_0.6-2    \n> PolynomF_0.93\n> [6] financial_0.1 WhatIf_1.5-4  lpSolve_5.6.4 Zelig_3.4-3    \n> boot_1.2-35\n> [11] MASS_7.2-45\n>\n> liviu at localhost ~ $ uname -a\n> Linux localhost 2.6.22-gentoo-r5-0.5 #3 Sat Mar 14 12:22:37 CET 2009\n> i686 Intel(R) Pentium(R) M processor 1.60GHz GenuineIntel GNU/Linux\n>\n>\n> --\n> Do you know how to read?\n> http://www.alienetworks.com/srtest.cfm\n> Do you know how to write?\n> http://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>\n> _______________________________________________\n> stats-rosuda-devel mailing list\n> stats-rosuda-devel at listserv.uni-augsburg.de\n> http://mailman.rz.uni-augsburg.de/mailman/listinfo/stats-rosuda-devel\n>\n>",
+      "body_snippet": "On Mar 19, 2009, at 12:50 , Ian Fellows wrote:\n\n> Hi Liviu,\n>\n> I can confirm the problem on windows and mac, though I don't have a\n> solution. At least in windows it might have something to do with t",
+      "thread_id": "thread-17671299ae87",
+      "thread_depth": 2,
+      "month": "2009-03"
+    },
+    {
+      "id": "msg-29a83f5365fa",
+      "message_id": "<49CA28DC.80006@waddell.ch>",
+      "from_name": "Adrian Waddell",
+      "from_email_hash": "afd6ae43637c0691d909168b5aa7407cdbf975683ad29c432cf4cd72092f8fda",
+      "date": "2009-03-25T08:51:40-04:00",
+      "subject": "[R-gui] tkcanvas: resize window",
+      "subject_clean": "[R-gui] tkcanvas: resize window",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello all,\n\nI'm using tkcanvas in a similar way as shown in demo(tkcanvas).\n\nI would like to add a window resizing functionality where the canvas \nobjects scale to the window (canvas) size. In order to make the resizing \nsmooth, I would like to only display the window size (e.g. \"423x356\") \nwhile resizing and then once the mouse button is released, the original \ncanvas content should rescale to the window size.\n\nThe '<Configure>' event can be used to display the current window size.\n\nWhat is the name of the event that should trigger the redrawing (i.e. \nrelease mouse button from resizing the window) ?\n\nAnd how do I get the current canvas size (maybe you can comment on the \nattached code) ?\n\ntt <- tktoplevel()\ncanvas <- tkcanvas(tt, relief=\"raised\", width = 200, height = 200)\ntkpack(canvas, fill = 'both', expand = TRUE)\n\n## Get whole Window Size, (but I need canvas size)\nas.numeric(unlist(strsplit(as.character(tkwm.geometry(tt)),c('[+x]'))))\n\n## stays 200,200, regardless if the window gets resized\ntkcget(canvas,width = NULL)\ntkcget(canvas,height = NULL)\n\n\nSincerely,\n\nAdrian Waddell",
+      "body_snippet": "Hello all,\n\nI'm using tkcanvas in a similar way as shown in demo(tkcanvas).\n\nI would like to add a window resizing functionality where the canvas \nobjects scale to the window (canvas) size. In order t",
+      "thread_id": "thread-29a83f5365fa",
+      "thread_depth": 0,
+      "month": "2009-03"
+    },
+    {
+      "id": "msg-06cbfb12ea21",
+      "message_id": "<87ocvmg12c.fsf@jonasstein.de>",
+      "from_name": "Jonas Stein",
+      "from_email_hash": "0a6644a809a2f4383b1421fe4dfc123bfeeef567ae971f9ac65a0526e993e49a",
+      "date": "2009-03-27T21:31:23+01:00",
+      "subject": "[R-gui] Emacs ESS automatic start with split windows",
+      "subject_clean": "[R-gui] Emacs ESS automatic start with split windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nif i run \nemacs test.py \nemacs starts with a split window. The upper buffer is an editor the one\nbelow is the interpreter. \n\nI want the same for R, when i run emacs test.R\n\nMy ESS settings are now:\n\n=====================================\n/.emacs.d$ cat ess.el\n\n;; ESS --------------------\n;; http://www.emacswiki.org/cgi-bin/wiki/EmacsSpeaksStatistics\n  (setq ess-ask-for-ess-directory nil)\n  (setq ess-local-process-name \"R\")\n  (setq ansi-color-for-comint-mode 'filter)\n  (setq comint-prompt-read-only 0)\n  (setq comint-scroll-to-bottom-on-input t)\n  (setq comint-scroll-to-bottom-on-output t)\n  (setq comint-move-point-for-output t)\n=====================================\n\n\nCan i adjust ESS to start always with this screenlayout?\n\nThank you,\n\n-- \nJonas Stein <news at jonasstein.de>",
+      "body_snippet": "Hi,\n\nif i run \nemacs test.py \nemacs starts with a split window. The upper buffer is an editor the one\nbelow is the interpreter. \n\nI want the same for R, when i run emacs test.R\n\nMy ESS settings are no",
+      "thread_id": "thread-06cbfb12ea21",
+      "thread_depth": 0,
+      "month": "2009-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-17671299ae87",
+      "subject": "[R-gui] system() fails in JGR",
+      "message_count": 3,
+      "participants": [
+        "Ian Fellows",
+        "Liviu Andronic",
+        "Simon Urbanek"
+      ],
+      "started": "2009-03-19T09:28:40+01:00",
+      "last_reply": "2009-03-19T18:24:18-04:00",
+      "root_message_id": "msg-17671299ae87"
+    },
+    {
+      "id": "thread-29a83f5365fa",
+      "subject": "[R-gui] tkcanvas: resize window",
+      "message_count": 1,
+      "participants": [
+        "Adrian Waddell"
+      ],
+      "started": "2009-03-25T08:51:40-04:00",
+      "last_reply": "2009-03-25T08:51:40-04:00",
+      "root_message_id": "msg-29a83f5365fa"
+    },
+    {
+      "id": "thread-06cbfb12ea21",
+      "subject": "[R-gui] Emacs ESS automatic start with split windows",
+      "message_count": 1,
+      "participants": [
+        "Jonas Stein"
+      ],
+      "started": "2009-03-27T21:31:23+01:00",
+      "last_reply": "2009-03-27T21:31:23+01:00",
+      "root_message_id": "msg-06cbfb12ea21"
+    }
+  ]
+}

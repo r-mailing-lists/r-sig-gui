@@ -1,0 +1,292 @@
+From ian.fellows at stat.ucla.edu  Tue Jan  4 07:26:30 2011
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Mon, 3 Jan 2011 22:26:30 -0800
+Subject: [R-gui] New version of the JGR R Console released
+Message-ID: <D814F59C-3B1F-426C-BD7A-CD21B1B82A9B@stat.ucla.edu>
+
+JGR Version 1.7-4 has been released to CRAN and is propagating across the mirrors. 
+
+
+JGR Description:
+Java GUI for R - cross-platform, universal and unified Graphical User Interface for R. For full functionality on Windows and Mac OS X JGR requires a start application which depends on your OS. This can be downloaded from JGR's website: http://rforge.net/JGR/
+
+
+Changes and Features:
+1. In editor, run on an empty selection runs line and advances caret.
+
+2. The editor now has an option to format ugly / poorly written R code. Simply select the ugly code you wish to beautify then hit the "Format Selection" menu option, and the code will be reformatted using good style guidelines (See also the formatR package).
+
+3. A preference item controlling italicized comments has been added.
+
+4. The data loader uses the to.data.frame=TRUE in the read.spss function for .sav files
+ 
+
+
+From c.farrow at compserv.gla.ac.uk  Thu Jan  6 12:54:01 2011
+From: c.farrow at compserv.gla.ac.uk (Colin Farrow)
+Date: Thu, 06 Jan 2011 11:54:01 +0000
+Subject: [R-gui] Error running New version (1.7-4) of the JGR R Console
+Message-ID: <4D25AD59.8020809@compserv.gla.ac.uk>
+
+I have just installed successfully version 1.7-4 of JGR, but when I run 
+it I get the following
+
+Loading required package: iplots
+Error in dyn.load(file, DLLpath = DLLpath, ...) :
+unable to load shared object 
+'/usr/local/R-2.12.0/library/tool/libs/tools.so':
+/usr/local/R-2.12.0/library/tools/libs/tools.so: undefined symbol: 
+R_NaString
+
+Loading required package: JGR
+Error in dyn.load(file, DLLpath = DLLpath, ...) :
+   unable to load shared object 
+'/usr/local/R-2.12.0/library/tools/libs/tools.so':
+   /usr/local/R-2.12.0/library/tools/libs/tools.so: undefined symbol: 
+R_NaString
+
+Error: could not find function ".getModels"
+Error: could not find function ".getDataObjects"
+Error: could not find function ".getOtherObjects"
+Error: could not find function ".getFunctionsInWS"
+which repeats ad infinitum
+
+/usr/local/R-2.12.0/library/tools/libs/tools.so does exist
+
+Can anyone offer any suggestions for further diagnosing or fixing this?
+
+Thank you,
+Colin.
+
+R version 2.12.0 (2010-10-15)
+Platform: i686-pc-linux-gnu (32-bit)
+
+
+
+-- 
+Colin Farrow
+Computing Service, University of Glasgow, Glasgow G12 8QQ
+Tel: 0141 330 4862, Email: c.farrow at compserv.gla.ac.uk
+---
+
+
+From c.farrow at compserv.gla.ac.uk  Mon Jan 10 12:13:05 2011
+From: c.farrow at compserv.gla.ac.uk (Colin Farrow)
+Date: Mon, 10 Jan 2011 11:13:05 +0000
+Subject: [R-gui] Error running New version (1.7-4) of the JGR R Console
+In-Reply-To: <4D25AD59.8020809@compserv.gla.ac.uk>
+References: <4D25AD59.8020809@compserv.gla.ac.uk>
+Message-ID: <4D2AE9C1.3090700@compserv.gla.ac.uk>
+
+hmm, mea culpa. Removing an old instance of R and then reinstalling R, 
+JGR and its reequisites has fixed the problem.
+
+On 06/01/11 11:54, Colin Farrow wrote:
+> I have just installed successfully version 1.7-4 of JGR, but when I run
+> it I get the following
+>
+> Loading required package: iplots
+> Error in dyn.load(file, DLLpath = DLLpath, ...) :
+> unable to load shared object
+> '/usr/local/R-2.12.0/library/tool/libs/tools.so':
+> /usr/local/R-2.12.0/library/tools/libs/tools.so: undefined symbol:
+> R_NaString
+>
+> Loading required package: JGR
+> Error in dyn.load(file, DLLpath = DLLpath, ...) :
+> unable to load shared object
+> '/usr/local/R-2.12.0/library/tools/libs/tools.so':
+> /usr/local/R-2.12.0/library/tools/libs/tools.so: undefined symbol:
+> R_NaString
+>
+> Error: could not find function ".getModels"
+> Error: could not find function ".getDataObjects"
+> Error: could not find function ".getOtherObjects"
+> Error: could not find function ".getFunctionsInWS"
+> which repeats ad infinitum
+>
+> /usr/local/R-2.12.0/library/tools/libs/tools.so does exist
+>
+> Can anyone offer any suggestions for further diagnosing or fixing this?
+>
+> Thank you,
+> Colin.
+>
+> R version 2.12.0 (2010-10-15)
+> Platform: i686-pc-linux-gnu (32-bit)
+>
+>
+>
+
+-- 
+Colin Farrow
+Computing Service, University of Glasgow, Glasgow G12 8QQ
+Tel: 0141 330 4862, Email: c.farrow at compserv.gla.ac.uk
+---
+
+
+From harsh.107 at gmail.com  Mon Jan 17 06:24:39 2011
+From: harsh.107 at gmail.com (Harshad Shrikhande)
+Date: Mon, 17 Jan 2011 10:54:39 +0530
+Subject: [R-gui] Reg help in using SciViews R!
+Message-ID: <AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/91873898/attachment.pl>
+
+From phgrosjean at sciviews.org  Mon Jan 17 10:03:31 2011
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon, 17 Jan 2011 10:03:31 +0100
+Subject: [R-gui] Reg help in using SciViews R!
+In-Reply-To: <AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>
+References: <AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>
+Message-ID: <4D3405E3.3070106@sciviews.org>
+
+Harshad,
+
+The R packages are just one side of the GUI. You have also to install 
+Komodo Edit and SciViews-K, see http://www.sciviews.org/SciViews-K.
+Best,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons University, Belgium
+( ( ( ( (
+..............................................................
+
+On 17/01/11 06:24, Harshad Shrikhande wrote:
+> Hi Guys,
+>
+>      I am a newbie at using Project-R for my analysis work. Till now, I have
+> been using the command-line interface of R. But now, I want some help
+> regarding using SciViews - the GUI API for Project R. Though I installed the
+> packages in SciViews, I can't find a way to start the GUI and program in S
+> language.
+>
+>     I would like your help in this regard. Please revert back as soon as
+> possible.
+>
+> Thank You.
+> Harshad Shrikhande
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+
+
+From harsh.107 at gmail.com  Mon Jan 17 10:43:47 2011
+From: harsh.107 at gmail.com (Harshad Shrikhande)
+Date: Mon, 17 Jan 2011 15:13:47 +0530
+Subject: [R-gui] Reg help in using SciViews R!
+In-Reply-To: <4D3405E3.3070106@sciviews.org>
+References: <AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>
+	<4D3405E3.3070106@sciviews.org>
+Message-ID: <AANLkTi=Wf4SJABjHHBjXCcRzCVZ-0ruVBYhycqzyDkfC@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/43d31109/attachment.pl>
+
+From Thomas.Taverner at pnl.gov  Tue Jan 25 23:06:51 2011
+From: Thomas.Taverner at pnl.gov (Taverner, Thomas)
+Date: Tue, 25 Jan 2011 14:06:51 -0800
+Subject: [R-gui] RGtk2Extras package for dataframe editing and easy dialog
+	creation
+In-Reply-To: <4D2AE9C1.3090700@compserv.gla.ac.uk>
+References: <4D25AD59.8020809@compserv.gla.ac.uk>
+	<4D2AE9C1.3090700@compserv.gla.ac.uk>
+Message-ID: <127B60EF19BB9F4FB94D157AA8BF3D0A93323B0E6A@EMAIL06.pnl.gov>
+
+Dear useRs,
+
+This is to announce the RGtk2Extras R package currently in 0.5.1.
+
+This package provides useful extras for R programmers who wish to create graphic user interfaces. It is based on GTK, using Michael Lawrence's RGtk2 package and John Verzani's gWidgets, and some ideas from John Verzani's traitr package.
+
+The first major feature of RGtk2Extras, the run.dialog function, is an interface for creating simple front-ends to R functions using a terse markup scheme. No GUI knowledge is required; if you can write an R function, you can create a dialog for it.
+
+An example:
+
+    # A function with one argument, N
+
+  Histogram = function(N) hist(rnorm(N))
+
+    # Dialog markup list for the function Histogram
+    # Create the main dialog label with the first "label=" (optional)
+    # Then (this is the important bit!) specify N.integerItem, where 
+    #   (1) N is the function argument
+    #   (2) integerItem is the type of widget to use, see ?run.dialog
+    #   (3) the value 50 is the default
+    # Then with the second "label=" add a label for the N item (optional)
+
+  Histogram.dialog = list(label = "A density-plotting histogram dialog",
+    N.integerItem = 50, label = "Value of N")
+  
+    # Run the dialog.
+    # The returned list "a" has elements "args" for dialog arguments
+    # and "retval" for the return value.
+    # With auto.assign=TRUE, the return value is stored in "Histogram_output".
+    # run.dialog also does error handling and supports interrupts for 
+    # long running tasks, see ?run.dialog
+
+  a <- run.dialog(Histogram, auto.assign=FALSE)
+
+A more complex demo example, thanks to Graham Williams:
+
+  demo(MakeAngle)
+
+
+The second feature of RGtk2Extras is gtkDfEdit, an editable spreadsheet widget designed for editing data matrices and data frames. It's also based on RGtk2. This was released earlier as RGtk2DfEdit which was then folded into RGtk2Extras.
+
+The gtkDfEdit spreadsheet is quite full featured and has been designed to be familiar to Excel users, while allowing most of the data frames and factor operations that are possible from the R command line.
+
+Data frame columns are type-aware and there is a factor editor. Most functions can be accessed from right clicking on data columns or cells. There is undo, cross platform copy/paste, sorting, cell filling, and data loading capabilities. See ?gtkDfEdit.
+
+The widget provided by gtkDfEdit() can be integrated into larger RGtk2 based user interfaces, or its standalone wrapper dfedit() can be used as a straight replacement for edit.data.frame().
+
+There is also a rudimentary API for manipulating and binding event handlers to the spreadsheet. See ?gtkDfEditDoTask and ?gtkDfEditSetActionHandler.
+
+# Edit the iris data frame
+# Note the blank row at the bottom to allow pasting into rows below.
+x = dfedit(iris)
+
+# Example user interactions
+1. Right click the "Species" column or column header to see or change the data type. Click "Edit Factors" to change factor levels or ordering.
+
+2. Right click a column header and then click "Sort" to sort columns
+
+3. Right click column header and change data type by selecting "Character"/"Integer" etc. Factors can be changed to integer levels ("To Factor Levels") or integers ("To Factor Ordering")
+
+4. Right click column header to insert or delete columns or change column name.
+
+5. Select a submatrix of numbers within "iris" and press the "=" key to bring up the Command Editor, then type "hist" in the command field and "OK" to create a histogram of the submatrix; "function(x) hist(x)" works as well.
+
+6. Select a submatrix within "iris" and press Ctrl-V or right-click and select Copy to copy into an external spreadsheet; Ctrl-C works to paste into the data frame. Ctrl-Shift-V copies submatrix and row and column names.
+
+7. Select a range of cells within "Species" column and right-click to select "Fill in Cycles" to fill cyclic factors.
+
+8. Right click left hand corner cell to open CSV file into editor or save as file.
+
+9. Right click left hand corner cell to set columns to default Excel-style column headers.
+
+10. Ctrl-Z to undo previous edits. 
+# End of examples
+
+RGtk2Extras is still in a beta stage of development. It is hosted on r-forge.r-project.org/R/?group_id=924. Comments and suggestions appreciated; email thomas.taverner _AT_ pnl.gov
+
+Thanks to the entire R community for their work, particularly the R Development Core Team, Michael Lawrence and John Verzani, and also Graham Williams and Iago Conde for comments.
+
+Tom
+
+

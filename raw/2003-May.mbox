@@ -1,0 +1,1530 @@
+From phgrosjean at sciviews.org  Mon May  5 15:14:01 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon May  5 14:15:33 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <6mvvavk97rgg4e1fraiifnfqtelsmidb29@4ax.com>
+Message-ID: <MABBLJDICACNFOLGIHJOGENNDGAA.phgrosjean@sciviews.org>
+
+Duncan Murdoch wrote (about a suggestion to make a java R GUI):
+
+>I think the issue is that it's hard now to write any GUI at all,
+>because too much UI is in R itself.  As we move towards a separation
+>of UI and computation, it may well make sense to write a GUI in Java.
+
+Yes, I fully agree. This is indeed the main, and leading idea of the
+SciViews project: a separation of the frontend and the backend.
+
+Otherwise, I was interested by the way this thread is deviated from its
+orginal question about impression on the preview version of SciViews (RE:
+[R-gui] Re: [R] Feedback about SciViews?). Now, we are once again discussing
+which language to use to make a R GUI. I say once again, because it is at
+least the fourth, or the fifth time we have this discussion. Well, if there
+is something new, where is the problem? Indeed, there is not much new
+ideas... nor much more people that move from just giving their own
+impression to a more active behaviour. I understand that, because starting a
+large project like a R GUI is a big task, and not everybody is willing to
+spend a large part of its time and energy to coordinate such a project.
+
+OK, that said, you must realize that, in our (almost) perfect community of
+voluntair developers that makes the success of R, the initiation of a R GUI
+project is not only a matter of deciding which tool to use in a global and
+free discussion within the community. It is rather more fueled by one, or a
+few people that actually decide to sacrifice a large amount of their time to
+start and coordinate a project. Initiation of such a project is depending on
+various criteria, among them:
+
+1) the time the project starts (languages and graphical toolkits are
+evolving rapidly, so, it is almost certain that an option taken today would
+not necessarily be the same choice if it was done tomorrow; however, when a
+project actually starts, many decisions have to be taken, and not delayed
+till tomorrow!),
+
+2) the skills, the tastes and the working habits of the people that initiate
+a project.
+
+3) the needs, I mean, someone that starts a project does it because he feel
+there is a lack somewhere and its intention is to fill the gap. For R GUI,
+early discussions last year ended with a conclusion that a
+platform-independent GUI should be preferred, but if there is too much
+difficulties to reach this independence, then, Windows users should be
+targetted first (I was surprised at that time that Macinthosh users where
+not reacting,... but at least they do from time to time).
+
+Keep this in mind.
+
+Also, I would say that, if R GUI projects are not evolving rapidly today, it
+is precisely because many developers are still wandering which major choices
+(like language, graphical toolkit, way to interface R) they would take.
+Please, realize now that some people one moving forward. There ARE R GUI
+projects in course: SciViews, ObveRsive, Poor Man's GUI, StatPaper,... (see
+http://www.r-project.org/GUI). This implies these major choices have already
+been done, and also for some projects, it means that several hundreds, or
+even thousands of hours of work have been already invested. Please, respect
+this. From now, there are two choices:
+
+1) You help in a constructive way these project to move forward,
+
+2) or, you are really unhappy to the choices they did, and more importantly,
+YOU EXACTLY KNOW WHY (that is, having a vague idea on what should be good is
+one thing, but are you really, really sure you master all the problems?
+Certainly not, until you actually start designing and coding the
+application!). This means also that, before critisizing choices made in the
+current projects, or proposing alternatives, you must really have the same
+skills as people that already worked the question of making a R GUI... Well,
+fortunatelly, there are several people like that in our community.
+
+To conclude this very long mail (sorry)! I ask the question again: I am
+really interested by constructive suggestions and remarks about the first
+implementation of a R GUI, as it is done in the SciViews project
+(Insider)... and keep in mind that the main objectives of SciViews are:
+
+1) Investigate a separation of the backend and frontend, while offering very
+robust interprocess communication and control and,
+
+2) Design an original GUI that is as much ergonomic, powerful, efficient,
+and pleasant to use as it could be in the field of statistical and data
+analysis.
+
+The fact that it is a Windows-dependent solution is, I believe, less
+important that the solutions it could provide to these two topics, and that
+could be transposed into other systems/languages, when thay will be
+optimized.
+
+Best,
+
+Philippe Grosjean
+
+...........]<(({?<...............<?}))><...............................
+ ) ) ) ) )
+( ( ( ( (       Dr. Philippe Grosjean
+ ) ) ) ) )
+( ( ( ( (       LOV, UMR 7093
+ ) ) ) ) )      Station Zoologique
+( ( ( ( (       Observatoire Oceanologique
+ ) ) ) ) )      BP 28
+( ( ( ( (       06234 Villefranche sur mer cedex
+ ) ) ) ) )      France
+( ( ( ( (
+ ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34
+( ( ( ( (
+ ) ) ) ) )      e-mail: phgrosjean@sciviews.org
+( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)
+ ) ) ) ) )
+.......................................................................
+
+From maechler at stat.math.ethz.ch  Mon May  5 15:46:42 2003
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Mon May  5 14:46:58 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <MABBLJDICACNFOLGIHJOGENNDGAA.phgrosjean@sciviews.org>
+References: <6mvvavk97rgg4e1fraiifnfqtelsmidb29@4ax.com>
+	<MABBLJDICACNFOLGIHJOGENNDGAA.phgrosjean@sciviews.org>
+Message-ID: <16054.23858.148789.846907@gargle.gargle.HOWL>
+
+Philippe,
+
+I think I owe you an apology for my initial remark
+(paraphrased "I want platforma independence!") that may have
+seemed much more negative than it was meant.
+I'm still glad for the discussion that evolved even though I
+agree that many things said were similar to the discussions
+several months ago. 
+
+I do agree with you and several other discussants that it may be
+a worthwhile effort to provide one R gui on one platform to try
+out ideas, get feedback, improve, etc. 
+Hence a big "thank you" to the authors of the examples being done!
+
+Contrary to what others have said here, I do believe however
+that even in the front end (the GUI) many things can and should be
+abstracted in a platform independent way -- even though other
+things will be platform specific:
+- The "U" part of the GUI is always a human, with fingers for 
+  typing and clicking and the visual system. {Yes I do know that UIs
+  for handicapped people are worth a big effort as well!}. 
+- Even the harware part of the UI is relatively similar on all 
+  platforms: Color Screen, keyboard, mouse {one problem being the	
+  stubborn idea of Apple to keep one button-mice}.  
+These are the reasons why there are several toolkits available cross
+platforms. 
+
+So thanks again to all the contributors of the latest
+discussion -- and particularly to Philippe for his work on the
+GUI web page, the mailing list in addition to the specific work
+on Sciviews!
+
+--
+Martin Maechler <maechler@stat.math.ethz.ch>	http://stat.ethz.ch/~maechler/
+Seminar fuer Statistik, ETH-Zentrum  LEO C16	Leonhardstr. 27
+ETH (Federal Inst. Technology)	8092 Zurich	SWITZERLAND
+phone: x-41-1-632-3408		fax: ...-1228			<><
+
+From rossini at blindglobe.net  Mon May  5 07:43:00 2003
+From: rossini at blindglobe.net (A.J. Rossini)
+Date: Mon May  5 15:48:02 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <MABBLJDICACNFOLGIHJOGENNDGAA.phgrosjean@sciviews.org> ("Philippe
+	Grosjean"'s message of "Mon, 5 May 2003 14:14:01 +0200")
+References: <MABBLJDICACNFOLGIHJOGENNDGAA.phgrosjean@sciviews.org>
+Message-ID: <87bryho6fv.fsf@jeeves.blindglobe.net>
+
+"Philippe Grosjean" <phgrosjean@sciviews.org> writes:
+
+> The fact that it is a Windows-dependent solution is, I believe, less
+> important that the solutions it could provide to these two topics, and that
+> could be transposed into other systems/languages, when thay will be
+> optimized.
+
+Of course, it keeps some of us from being able to easily check it out
+without wasting lots of time, unless it happens to run under
+Wine... (which I'll let someone else check; I'm a bit too busy these
+days). 
+
+best,
+-tony
+
+-- 
+A.J. Rossini rossini@u.washington.edu http://software.biostat.washington.edu/ 
+Biostatistics, U Washington and Fred Hutchinson Cancer Research Center
+
+FHCRC:Tu: 206-667-7025 (fax=4812)|Voicemail is pretty sketchy/use Email 
+UW  : Th: 206-543-1044 (fax=3286)|Change last 4 digits of phone to FAX 
+
+CONFIDENTIALITY NOTICE: This e-mail message and any attachments ... {{dropped}}
+
+From thomas.friedrichsmeier at ruhr-uni-bochum.de  Tue May  6 17:34:13 2003
+From: thomas.friedrichsmeier at ruhr-uni-bochum.de (Thomas Friedrichsmeier)
+Date: Tue May  6 16:43:47 2003
+Subject: [R-gui] Re: [R] Feedback about SciViews?
+In-Reply-To: <16054.23858.148789.846907@gargle.gargle.HOWL>
+References: <6mvvavk97rgg4e1fraiifnfqtelsmidb29@4ax.com>
+	<MABBLJDICACNFOLGIHJOGENNDGAA.phgrosjean@sciviews.org>
+	<16054.23858.148789.846907@gargle.gargle.HOWL>
+Message-ID: <200305061634.14006.thomas.friedrichsmeier@ruhr-uni-bochum.de>
+
+Hi!
+
+> Contrary to what others have said here, I do believe however
+> that even in the front end (the GUI) many things can and should be
+> abstracted in a platform independent way -- even though other
+> things will be platform specific:
+> - The "U" part of the GUI is always a human, with fingers for
+>   typing and clicking and the visual system. {Yes I do know that UIs
+>   for handicapped people are worth a big effort as well!}.
+> - Even the harware part of the UI is relatively similar on all
+>   platforms: Color Screen, keyboard, mouse {one problem being the
+>   stubborn idea of Apple to keep one button-mice}.
+> These are the reasons why there are several toolkits available cross
+> platforms.
+
+It is indeed pointless to discuss, whether _the_ frontend should be realized 
+in a platform independet way or not. As Philippe pointed out, there are 
+several frontend projects going on, and there simply is not the _one_ way to 
+do this. If you feel, a platform independet solution is the way to go, well, 
+there are projects working on cross-platform solutions. If you want to see 
+those prosper, and think you can make useful contributions to those projects 
+- I don't think anybody is going to turn down an offer to help.
+However, as Phlippe pointed out, too, throwing in very general and abstract 
+thoughts about how things should be done, is not going to have any effect at 
+all, except annoying those who've already put hard work into the things you 
+criticise.
+
+Thomas
+
+From jfox at mcmaster.ca  Mon May 12 21:31:53 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue May 13 02:31:54 2003
+Subject: [R-gui] basic-statistics GUI for R
+Message-ID: <5.1.0.14.2.20030512202648.01e3a448@mcmail.cis.mcmaster.ca>
+
+Dear R-gui list members,
+
+I've written a basic-statistics GUI for R using the tcltk package. I'd be 
+grateful if members of this list took a look at what I've done to offer 
+comments and suggestions. Here's some orienting information. (Of course, 
+please feel free to ignore this long-winded message if it isn't of interest).
+
+The GUI consists of a window, which I call the "R Commander," containing 
+several menus, buttons, and information fields. (The menu tree, etc., are 
+shown at the end of this message.) In addition, the Commander window 
+contains a log/script box.
+
+The menus lead to simple dialog boxes, the general contents of which are 
+more or less obvious from the names of the menu items. These boxes have a 
+common structure, including a help button leading to the help page for a 
+relevant function.
+
+Commands generated via the dialog are posted to the R session window, along 
+with printed output, and to the log window. Lines in the log window may be 
+edited and (re)submitted for execution.
+
+Commands access a current or active data set (data frame). When a new data 
+set is read (from a text file, from an attached package, or imported), it 
+becomes the active data set. The user can also select an active data set 
+from among data frames currently in memory.
+
+In addition to standard packages, the Commander uses some functions in my 
+car package. I should mention that the scatterplot and scatterplot.matrix 
+functions in the car package currently generate warning messages. This is 
+not a problem specific to the Commander and will be fixed in the next 
+release of car.
+
+My object in designing and implementing this GUI was to cover the content 
+of a basic-statistics course. The target text was Moore's The Basic 
+Practice of Statistics, Second Edition (Freeman, 2000), which is the text 
+that I use for a two-semester introduction to statistics for undergraduate 
+sociology majors. The R Commander implements the content of this text plus 
+some additional material (e.g., linear and generalized linear models).
+
+I must confess that I'm not terribly enamored of menu/dialog box interfaces 
+to statistical software, but I do feel that these interfaces have a role 
+for introductory and occasional use. The Commander interface is not 
+innovative, but I hope that it's simple and familiar. One of my design 
+goals was to wean users from the GUI to writing commands, which is one 
+motivation for the log/script window.
+
+It should be relatively easy for me to add statistical functionality to the 
+R Commander, and I'd appreciate suggestions for what you'd like to see 
+implemented. Please remember, however, that my intention is to keep things 
+simple and basic. In particular, I don't like extensive menu/dialog-box 
+interfaces to large statistical systems that attempt to provide access to 
+every option and procedure. In R, of course, which relies on scores of 
+contributed packages, this is not feasible anyway.
+
+I'm making the GUI available as the Rcmdr package. For now, you can get a 
+copy of the package (or a version compiled for Windows) from my web site. 
+When I've had a chance to assimilate people's suggestions, I'll contribute 
+the package to CRAN. I should mention that I've only tested the package 
+under Windows, but my intention is for it to work on other platforms as 
+well. I'd very much appreciate learning whether it does. You can find the 
+package, along with a screen shot, at 
+<http://www.socsci.mcmaster.ca/jfox/Misc/Rcmdr/>.
+
+On Windows, the package works properly only with the single-document Rgui 
+interface (sdi). Under the default multiple-document interface (mdi), Tk 
+dialog boxes don't stay on top of the main R window. I think that this is a 
+known problem with the tcltk package under Windows. (If anyone knows a 
+solution, I'd appreciate learning of it -- I prefer the sdi, but most of my 
+students do not.)
+
+Finally, I'd like to mention that I found Peter Dalgaard's marvellous tcktk 
+package a pleasure to work with.
+
+Thanks for your attention,
+  John
+
+
+
+R Commander menu tree:
+
+File - Read data set from text file
+     |- Read data set from attached package
+     |- Import data - from SPSS data set
+     |             |- from Minitab data set
+     |- Save log as
+
+Data - Select active data set
+     |- List data sets in packages
+     |- Recode variable
+     |- Compute new variable
+
+Statistics - Summaries - Numerical summaries
+           |           |- Frequency distribution
+           |           |- Table of statistics
+           |           |- Correlation matrix
+           |- Contingency Tables - Two-way table
+           |                    |- Multi-way table
+           |- Means - Single-sample t-test
+           |       |- Independent-samples t-test
+           |       |- Paired t-test
+           |       |- One-way ANOVA
+           |       |- Multi-way ANOVA
+           |- Proportions - Single-sample proportion test
+           |             |- Two-sample proportions test
+           |- Variances - Two-variances F-test
+           |           |- Bartlett's test
+           |           |- Levene's test
+           |- Nonparametric tests - Two-sample Wilcoxon test
+           |                     |- Paired-samples Wilcoxon test
+           |                     |- Kruskal-Wallis test
+           |- Fit models - Linear regression
+                        |- Linear model
+                        |- Generalized linear model
+
+Graphs - Histogram
+       |- Stem-and-leaf display
+       |- Boxplot
+       |- Scatterplot
+       |- Scatterplot matrix
+       |- Bar graph
+       |- Pie chart
+
+Models - Select active model
+       |- Summarize model
+       |- ANOVA table
+       |- Basic diagnostic plots
+       |- Component+residual plots
+       |- Added-variable plots
+
+Distributions - Normal distribution - Normal quantiles
+              |                     |- Normal probabilities
+              |- t distribution - t quantiles
+              |                |- t probabilities
+              |- Chi-squared distribution - Chi-squared quantiles
+              |                          |- Chi-squared probabilities
+              |- F distribution - F quantiles
+              |                |- F probabilities
+              |- Binomial distribution - Binomial quantiles
+                                      |- Binomial tail probabilities
+                                      |- Binomial probabilities
+
+
+Buttons: Edit data set; View data set; Submit (lines from the log/script 
+window)
+
+Information fields: active data set; active model
+
+Check box: Log commands
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From maechler at stat.math.ethz.ch  Tue May 13 11:02:55 2003
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Tue May 13 10:03:08 2003
+Subject: [R-gui] basic-statistics GUI for R
+In-Reply-To: <5.1.0.14.2.20030512202648.01e3a448@mcmail.cis.mcmaster.ca>
+References: <5.1.0.14.2.20030512202648.01e3a448@mcmail.cis.mcmaster.ca>
+Message-ID: <16064.42671.282705.335759@gargle.gargle.HOWL>
+
+Thanks a lot! {finally something I can try on Linux! ;-)}
+
+I think your general concept --- work with one *active dataset*
+makes very much sense when a "simple easy GUI" is the goal.
+
+A few notes from playing (on Linux):
+- I miss the [Quit] or [Close] option in the [File] menu.
+
+- I'm running with R-patched and seem unable to get a dataset
+  from an attached package via the 1st entry of  [File].
+
+  The error message is a bit embarassing (I don't know for whom):
+
+  >> Warning: The use of _ is soon to be removed: you will be warned repeatedly
+  >> Warning: The use of _ is soon to be removed: you will be warned repeatedly
+  >> Error in parse(file, n, text, prompt) : parse error
+
+- Hence I couldn't try much else but the [Distribution] menu
+  which was quite nice.
+
+- I wonder if the  [Data] and [File] menus shouldn't be merged
+  or organized differently.  
+  To play with Rcmdr, I'd want to load a standard dataset, i.e. 
+  [File] -> [Read data set from attached package].
+  But then, the  *list* of available data sets is not available
+  there, but from the  [Data] menu only.
+
+- "R CMD check Rcmdr"  (using R-patched on Linux) was ok apart
+  from the fact that many files had "wrong permissions", namely
+  they had the "x" (execution) flag set -- typical for files
+  created in windows.
+  
+  To fix permissions for R packages, recently, Tony (Rossini)
+  posted a small sh-script to one of the Bioconductor lists --
+  which I have slightly improved and attach here.
+
+-------------- next part --------------
+#!/bin/sh
+## Fix R permissions (unix shell script)
+find . -type d -print | xargs chmod 755
+find . -type f -a \! -name configure -print | xargs chmod 644
+-------------- next part --------------
+
+---
+
+BTW, I started  "library(Rcmdr)"  from ESS  which is a bit
+awkward, but I'm sure nobody in your target audience will have
+this problem! ;-)
+But in any case, for a non-Windows environment (maybe even
+unconditionally for consistency ?), 
+I think you (Rcmdr) should set
+   options(pager = tkpager)
+such that clicking the [Help] button will use a nice tcltk pager
+window.
+[Note that you should keep the previous pager setting and reset the
+ pager to that, once Rcmdr is left]
+
+High regards,
+Martin
+
+    <........>
+
+    JohnF> R Commander menu tree:
+
+    JohnF> File - Read data set from text file
+    JohnF> |- Read data set from attached package
+    JohnF> |- Import data - from SPSS data set
+    JohnF> |             |- from Minitab data set
+    JohnF> |- Save log as
+
+    JohnF> Data - Select active data set
+    JohnF> |- List data sets in packages
+    JohnF> |- Recode variable
+    JohnF> |- Compute new variable
+
+    JohnF> Statistics - Summaries - Numerical summaries
+    JohnF> |           |- Frequency distribution
+    JohnF> |           |- Table of statistics
+    JohnF> |           |- Correlation matrix
+    JohnF> |- Contingency Tables - Two-way table
+    JohnF> |                    |- Multi-way table
+    JohnF> |- Means - Single-sample t-test
+    JohnF> |       |- Independent-samples t-test
+    JohnF> |       |- Paired t-test
+    JohnF> |       |- One-way ANOVA
+    JohnF> |       |- Multi-way ANOVA
+    JohnF> |- Proportions - Single-sample proportion test
+    JohnF> |             |- Two-sample proportions test
+    JohnF> |- Variances - Two-variances F-test
+    JohnF> |           |- Bartlett's test
+    JohnF> |           |- Levene's test
+    JohnF> |- Nonparametric tests - Two-sample Wilcoxon test
+    JohnF> |                     |- Paired-samples Wilcoxon test
+    JohnF> |                     |- Kruskal-Wallis test
+    JohnF> |- Fit models - Linear regression
+    JohnF> |- Linear model
+    JohnF> |- Generalized linear model
+
+    JohnF> Graphs - Histogram
+    JohnF> |- Stem-and-leaf display
+    JohnF> |- Boxplot
+    JohnF> |- Scatterplot
+    JohnF> |- Scatterplot matrix
+    JohnF> |- Bar graph
+    JohnF> |- Pie chart
+
+    JohnF> Models - Select active model
+    JohnF> |- Summarize model
+    JohnF> |- ANOVA table
+    JohnF> |- Basic diagnostic plots
+    JohnF> |- Component+residual plots
+    JohnF> |- Added-variable plots
+
+    JohnF> Distributions - Normal distribution - Normal quantiles
+    JohnF> |                     |- Normal probabilities
+    JohnF> |- t distribution - t quantiles
+    JohnF> |                |- t probabilities
+    JohnF> |- Chi-squared distribution - Chi-squared quantiles
+    JohnF> |                          |- Chi-squared probabilities
+    JohnF> |- F distribution - F quantiles
+    JohnF> |                |- F probabilities
+    JohnF> |- Binomial distribution - Binomial quantiles
+    JohnF> |- Binomial tail probabilities
+    JohnF> |- Binomial probabilities
+
+
+    JohnF> Buttons: Edit data set; View data set; Submit (lines from the log/script 
+    JohnF> window)
+
+    JohnF> Information fields: active data set; active model
+
+    JohnF> Check box: Log commands
+
+    JohnF> -----------------------------------------------------
+    JohnF> John Fox
+    JohnF> Department of Sociology
+    JohnF> McMaster University
+    JohnF> Hamilton, Ontario, Canada L8S 4M4
+    JohnF> email: jfox@mcmaster.ca
+    JohnF> phone: 905-525-9140x23604
+    JohnF> web: www.socsci.mcmaster.ca/jfox
+
+From jfox at mcmaster.ca  Tue May 13 10:05:24 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue May 13 15:05:29 2003
+Subject: [R-gui] basic-statistics GUI for R
+In-Reply-To: <16064.42671.282705.335759@gargle.gargle.HOWL>
+References: <5.1.0.14.2.20030512202648.01e3a448@mcmail.cis.mcmaster.ca>
+	<5.1.0.14.2.20030512202648.01e3a448@mcmail.cis.mcmaster.ca>
+Message-ID: <5.1.0.14.2.20030513083904.01ea49d0@mcmail.cis.mcmaster.ca>
+
+Dear Martin,
+
+At 10:02 AM 5/13/2003 +0200, you wrote:
+>Thanks a lot! {finally something I can try on Linux! ;-)}
+>
+>I think your general concept --- work with one *active dataset*
+>makes very much sense when a "simple easy GUI" is the goal.
+>
+>A few notes from playing (on Linux):
+>- I miss the [Quit] or [Close] option in the [File] menu.
+
+This was just laziness. I'll add a [Close] item and prompt for saving the log.
+
+
+>- I'm running with R-patched and seem unable to get a dataset
+>   from an attached package via the 1st entry of  [File].
+>
+>   The error message is a bit embarassing (I don't know for whom):
+>
+>   >> Warning: The use of _ is soon to be removed: you will be warned 
+> repeatedly
+>   >> Warning: The use of _ is soon to be removed: you will be warned 
+> repeatedly
+>   >> Error in parse(file, n, text, prompt) : parse error
+
+Needless to say, none of this happens under Windows. Since I want the 
+package to be portable across platforms, this is distressing.
+
+I never use underscores, and so the warnings shouldn't originate from my 
+code!  The only line in the function called by [File] -> [Read data set 
+from an attached package] that involves a parse is
+
+         check <- try(eval(parse(text=logger(paste("data(", dsnameValue, 
+")", sep="")))),
+             silent=TRUE)
+
+and an error here should have been intercepted. It's hard to debug this by 
+long distance, but I wonder if I could impose on you to try two things?
+
+(1) get a traceback
+
+(2) try to read data via [File] -> [Read data set from text file], which 
+invokes read.table().
+
+>- Hence I couldn't try much else but the [Distribution] menu
+>   which was quite nice.
+
+Not terribly exciting in the absence of data, I'm afraid.
+
+>- I wonder if the  [Data] and [File] menus shouldn't be merged
+>   or organized differently.
+>   To play with Rcmdr, I'd want to load a standard dataset, i.e.
+>   [File] -> [Read data set from attached package].
+>   But then, the  *list* of available data sets is not available
+>   there, but from the  [Data] menu only.
+
+The general rationale was to put input and output operations under the File 
+menu and other operations on data sets in the Data menu. I wouldn't want to 
+merge the menus, but organizing them differently might make sense, even if 
+it's only to duplicate one or two menu items.
+
+>- "R CMD check Rcmdr"  (using R-patched on Linux) was ok apart
+>   from the fact that many files had "wrong permissions", namely
+>   they had the "x" (execution) flag set -- typical for files
+>   created in windows.
+>
+>   To fix permissions for R packages, recently, Tony (Rossini)
+>   posted a small sh-script to one of the Bioconductor lists --
+>   which I have slightly improved and attach here.
+>
+>#!/bin/sh
+>## Fix R permissions (unix shell script)
+>find . -type d -print | xargs chmod 755
+>find . -type f -a \! -name configure -print | xargs chmod 644
+>
+>---
+
+I guess that I should add this information to my web page for Linux/Unix 
+users (until the package is ready for contribution to CRAN).
+
+>BTW, I started  "library(Rcmdr)"  from ESS  which is a bit
+>awkward, but I'm sure nobody in your target audience will have
+>this problem! ;-)
+>But in any case, for a non-Windows environment (maybe even
+>unconditionally for consistency ?),
+>I think you (Rcmdr) should set
+>    options(pager = tkpager)
+>such that clicking the [Help] button will use a nice tcltk pager
+>window.
+>[Note that you should keep the previous pager setting and reset the
+>  pager to that, once Rcmdr is left]
+
+I like compiled html help in Windows, so perhaps I should add a switch 
+determining whether one of the Windows help options is set, and use the 
+tkpager otherwise.
+
+Thank you very much for your comments,
+
+  John
+
+
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From jfox at mcmaster.ca  Tue May 13 15:30:01 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue May 13 20:30:17 2003
+Subject: [R-gui] basic-statistics GUI for R [2]
+In-Reply-To: <16064.42671.282705.335759@gargle.gargle.HOWL>
+References: <5.1.0.14.2.20030512202648.01e3a448@mcmail.cis.mcmaster.ca>
+	<5.1.0.14.2.20030512202648.01e3a448@mcmail.cis.mcmaster.ca>
+Message-ID: <5.1.0.14.2.20030513142250.01e8b2a0@mcmail.cis.mcmaster.ca>
+
+Dear Martin,
+
+At 10:02 AM 5/13/2003 +0200, Martin Maechler wrote:
+. . .
+
+>- I'm running with R-patched and seem unable to get a dataset
+>   from an attached package via the 1st entry of  [File].
+>
+>   The error message is a bit embarassing (I don't know for whom):
+>
+>   >> Warning: The use of _ is soon to be removed: you will be warned 
+> repeatedly
+>   >> Warning: The use of _ is soon to be removed: you will be warned 
+> repeatedly
+>   >> Error in parse(file, n, text, prompt) : parse error
+
+. . .
+
+
+I revived my Linux machine (running Red Hat 7.0), did some necessary 
+updating, installed R. 1.7.0 (from the rpm on CRAN), and installed the car 
+and Rcmdr packages. Everything works fine for me, though I noticed that 
+some of my font choices weren't ideal under X11  -- I'll probably deal with 
+these via options(). I'm not sure why you experienced problems, though it 
+might have something to do with running under ESS.
+
+(By the way, I'm grateful to Jan Leeuw for checking Rcmdr under Mac OS X.)
+
+Regards,
+  John
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From maechler at stat.math.ethz.ch  Wed May 14 10:14:23 2003
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Wed May 14 09:14:32 2003
+Subject: [R-gui] basic-statistics GUI for R [2]
+In-Reply-To: <5.1.0.14.2.20030513142250.01e8b2a0@mcmail.cis.mcmaster.ca>
+References: <5.1.0.14.2.20030512202648.01e3a448@mcmail.cis.mcmaster.ca>
+	<5.1.0.14.2.20030513142250.01e8b2a0@mcmail.cis.mcmaster.ca>
+Message-ID: <16065.60623.54188.369845@gargle.gargle.HOWL>
+
+>>>>> "JohnF" == John Fox <jfox@mcmaster.ca>
+>>>>>     on Tue, 13 May 2003 14:30:01 -0400 writes:
+
+    JohnF> Dear Martin, At 10:02 AM 5/13/2003 +0200, Martin
+    JohnF> Maechler wrote: . . .
+
+    >> - I'm running with R-patched and seem unable to get a
+    >> dataset from an attached package via the 1st entry of
+    >> [File].
+    >> 
+    >> The error message is a bit embarassing (I don't know for
+    >> whom):
+    >> 
+    >> >> Warning: The use of _ is soon to be removed: you will
+    >> be warned repeatedly >> Warning: The use of _ is soon to
+    >> be removed: you will be warned repeatedly >> Error in
+    >> parse(file, n, text, prompt) : parse error
+
+    JohnF> . . .
+
+
+    JohnF> I revived my Linux machine (running Red Hat 7.0), did
+    JohnF> some necessary updating, installed R. 1.7.0 (from the
+    JohnF> rpm on CRAN), and installed the car and Rcmdr
+    JohnF> packages. Everything works fine for me, though I
+    JohnF> noticed that some of my font choices weren't ideal
+    JohnF> under X11 -- I'll probably deal with these via
+    JohnF> options(). I'm not sure why you experienced problems,
+    JohnF> though it might have something to do with running
+    JohnF> under ESS.
+
+Yes, indeed!
+Running R from a simple "terminal" instead of ESS
+doesn't show the problem.
+
+Martin
+
+From x.sole at ico.scs.es  Thu May 15 19:03:07 2003
+From: x.sole at ico.scs.es (=?iso-8859-1?Q?Xavier_Sol=E9?=)
+Date: Thu May 15 18:06:09 2003
+Subject: [R-gui] problems with rcmdr
+Message-ID: <00d201c31afb$79ab0370$2400a8c0@sercxs>
+
+Hello listers,
+
+I have installed (succesfully?) packages car and rcmdr under my windows xp
+machine, but when I try to start rcmdr I get this error:
+
+--------------------
+> library(rcmdr)
+
+Attaching package 'car':
+
+
+        The following object(s) are masked from package:base :
+
+         dfbeta dfbeta.lm dfbetas dfbetas.lm hatvalues hatvalues.lm
+influence influence.glm influence.lm rstudent rstudent.glm rstudent.lm
+
+Error in .path.package(package = "Rcmdr") :
+        none of the packages are loaded
+Error in runHook(".onAttach", ns, dirname(nspath), nsname) :
+        .onAttach failed
+Error in library(rcmdr) : package/namespace load failed
+
+--------------------
+
+Could someone help me? I'm using R 1.7.
+
+Thank you very much,
+
+Xavier.
+
+From jfox at mcmaster.ca  Thu May 15 13:44:35 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu May 15 18:43:55 2003
+Subject: [R-gui] problems with rcmdr
+In-Reply-To: <00d201c31afb$79ab0370$2400a8c0@sercxs>
+Message-ID: <5.1.0.14.2.20030515124000.01ea0670@mcmail.cis.mcmaster.ca>
+
+Dear Xavier,
+
+I haven't seen this problem before, and I've installed and run Rcmdr 
+successfully on Windows XP under R1.7.0. I'm not sure what the origin of 
+the problem is, but here are some clues:
+
+(1) The .onAttach function for the package loads three packages tlctk, car, 
+and foreign (in that order). Clearly, you've gotten at least as far as car.
+
+(2) I note that you have an older version of car. The version meant for R 
+1.7.0 won't give you warnings about masked objects, since these functions 
+have been incorporated in the base package.
+
+(3) I notice that you didn't capitalize Rcmdr in the library command. I'm 
+not sure that this matters (under Windows), but it might.
+
+Please let me know if you get any farther with this.
+
+Sorry for the problem,
+  John
+
+At 06:03 PM 5/15/2003 +0200, Xavier Sol? wrote:
+>Hello listers,
+>
+>I have installed (succesfully?) packages car and rcmdr under my windows xp
+>machine, but when I try to start rcmdr I get this error:
+>
+>--------------------
+> > library(rcmdr)
+>
+>Attaching package 'car':
+>
+>
+>         The following object(s) are masked from package:base :
+>
+>          dfbeta dfbeta.lm dfbetas dfbetas.lm hatvalues hatvalues.lm
+>influence influence.glm influence.lm rstudent rstudent.glm rstudent.lm
+>
+>Error in .path.package(package = "Rcmdr") :
+>         none of the packages are loaded
+>Error in runHook(".onAttach", ns, dirname(nspath), nsname) :
+>         .onAttach failed
+>Error in library(rcmdr) : package/namespace load failed
+>
+>--------------------
+>
+>Could someone help me? I'm using R 1.7.
+>
+>Thank you very much,
+>
+>Xavier.
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From jfox at mcmaster.ca  Fri May 16 08:53:50 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Fri May 16 13:53:49 2003
+Subject: [R-gui] new version of Rcmdr
+Message-ID: <5.1.0.14.2.20030516074704.01e523a8@mcmail.cis.mcmaster.ca>
+
+Dear list members,
+
+I've prepared a new version of the Rcmdr package that I announced to the 
+list several days ago. From the CHANGES file:
+
+     Version 0.6-0
+
+     o Rather than being hard-wired, menus are now configured in the 
+menus/Rcmdr-menus.txt file and can be modified or supplemented by the user 
+(suggested by Frank Harrell).
+
+     o Allow font-size selection via options("Rcmdr.fontsize") for text in 
+the log window.
+
+     o Set pager to tkpager (suggested by Martin Maechler).
+
+     o Added "Exit" menu items; intercept R Commander window close 
+(suggested by Martin Maechler).
+
+     o Cleaned up menus and dialog boxes.
+
+     o Added ability to load log files.
+
+     o Reorganized items on File and Data menus (suggested by Martin Maechler).
+
+     o Added point-identification to scatterplots (suggested by Bob Andersen).
+
+
+The most significant change is the first, since it makes it relatively 
+simple to customize the menus. The ability to load as well as to save log 
+files provides a scripting facility.
+
+As before, I'm interested in comments and suggestions. I plan to submit the 
+package soon to CRAN. You can still find the package, and a version 
+compiled for Windows, at <http://www.socsci.mcmaster.ca/jfox/Misc/Rcmdr/>.
+
+Thanks,
+  John
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From edd at debian.org  Sun May 18 12:06:45 2003
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sun May 18 18:06:58 2003
+Subject: [R-gui] "GUI locked" with Rcmdr
+Message-ID: <20030518160645.GA972@sonny.eddelbuettel.com>
+
+
+Hi all,
+
+I discussed this briefly with John Fox who cannot reproduce it on his RH
+system and suggested I raise the issue here to see if anybody else has the
+same or similar problem:  
+
+- when I lauch the R Commander via 'library(Rcmdr)' in a normal interactive
+session, two things happen. I get the R prompt back, but it does not take
+any input whatsoever; only CTRL-c breaks this. The Commander GUI appears,
+but also refuses to take any input. The window manager cannot close the GUI,
+and I have to resort to xkill(1).  This is on Debian "testing" under KDE
+3.1.1 with the Debian testing version of R 1.7.0.  
+
+- when do   echo "library(Rcmdr)" | R --slave   the Commander starts and
+exists.
+
+I fixed both problems in a three-line patch using Peter's usual trick of
+adding a global boolean variable, and to tkwait() for it.  John obviously
+saw no need for the patch as he cannot reproduce the problem.
+
+So:  anybody else having any weird tcltk / R / window manager interactions?
+Any idea what I could tweak or alter?
+
+Cheers, Dirk
+
+-- 
+Don't drink and derive. Alcohol and analysis don't mix.
+
+From jfox at mcmaster.ca  Sun May 18 13:55:48 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Sun May 18 18:55:29 2003
+Subject: [R-gui] "GUI locked" with Rcmdr
+In-Reply-To: <20030518160645.GA972@sonny.eddelbuettel.com>
+Message-ID: <5.1.0.14.2.20030518124915.01e9a398@mcmail.cis.mcmaster.ca>
+
+Dear Dirk,
+
+At 11:06 AM 5/18/2003 -0500, Dirk Eddelbuettel wrote:
+
+>I discussed this briefly with John Fox who cannot reproduce it on his RH
+>system and suggested I raise the issue here to see if anybody else has the
+>same or similar problem:
+>
+>- when I lauch the R Commander via 'library(Rcmdr)' in a normal interactive
+>session, two things happen. I get the R prompt back, but it does not take
+>any input whatsoever; only CTRL-c breaks this. The Commander GUI appears,
+>but also refuses to take any input. The window manager cannot close the GUI,
+>and I have to resort to xkill(1).  This is on Debian "testing" under KDE
+>3.1.1 with the Debian testing version of R 1.7.0.
+>
+>- when do   echo "library(Rcmdr)" | R --slave   the Commander starts and
+>exists.
+>
+>I fixed both problems in a three-line patch using Peter's usual trick of
+>adding a global boolean variable, and to tkwait() for it.  John obviously
+>saw no need for the patch as he cannot reproduce the problem.
+>
+>So:  anybody else having any weird tcltk / R / window manager interactions?
+>Any idea what I could tweak or alter?
+
+Thanks for posing this question on the list. Perhaps someone will respond 
+with information that will help me to understand better what's going on.
+
+By the way, I'm happy to add your patch to the code, and will do so for the 
+version that I'll post to my web site soon. What was unclear to me is 
+whether it's necessary to have calls to tkwait sprinkled through the code. 
+I think that I understand now that the issue arises only with respect to 
+the Commander window. (Is that correct?) Since my goal was to write a 
+simple basic-stats GUI that works cross-platform, I do feel that it is 
+important for it to work on common Linux distributions.
+
+Thanks for your help,
+  John
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From jfox at mcmaster.ca  Mon May 19 22:05:47 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue May 20 03:05:36 2003
+Subject: [R-gui] further on the Rcmdr package
+Message-ID: <5.1.0.14.2.20030519210305.01e3f298@mcmail.cis.mcmaster.ca>
+
+Dear R-Gui list members,
+
+I've posted another version of the Rcmdr package to my web site, at 
+<http://www.socsci.mcmaster.ca/jfox/Misc/Rcmdr/>.
+
+Changes include many more input-error checks and improvements to a number 
+of dialogs, including e.g. the ability to specify a subsetting expression 
+for models.
+
+A partly unresolved issue is the problem raised by Dirk Eddelbuettel on 
+Sunday: Dirk found that both the R session and the Commander windows locked 
+up after the Rcmdr package was loaded on his Debian Linux system. Following 
+Dirk's suggestion, I've added an option to Rcmdr to call tkwait until the 
+Commander window is closed. Apparently this solves the problem that Dirk 
+experienced, but an unfortunate consequence is that the command prompt in 
+the R session is disabled until the Commander window is closed. Although 
+this isn't a fatal problem -- commands can still be entered through the 
+GUI, including via the log/script window -- it would be nice to be able to 
+enter commands directly at the command prompt as well. I can do this when 
+the call to tkwait is bypassed on Windows systems and on my Red Hat Linux 
+system. Since no one else reported the problem, I assume that the package 
+also works without the call to tkwait on a number of other systems.
+
+I'd appreciate some information and advice from those more experienced with 
+Tcl/Tk than I. In particular, why does the call to tkwait appear necessary 
+on at least one system but not on others? Is there a better way to resolve 
+the issue than to provide an option?
+
+Another, though smaller, unresolved issue has to do with my inability to 
+use the Rcmdr package (or any tcltk-based code) with R under the MDI in 
+Windows. Can anyone tell me what the source of the problem is (that is, why 
+dialog boxes won't stay in front of the R-GUI window)? Is it likely that 
+the problem will be fixed? I actually prefer the SDI, but notice that most 
+of my students like the MDI, which is the default when the Windows 
+distribution of R is installed.
+
+As usual, comments and suggestions are appreciated. I expect that I'll 
+submit a version of the Rcmdr package to CRAN soon.
+
+Thanks for your help,
+  John
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From phgrosjean at sciviews.org  Tue May 20 03:50:55 2003
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue May 20 08:52:12 2003
+Subject: [R-gui] further on the Rcmdr package
+Message-ID: <200305200250.AA3129213380@sciviews.org>
+
+I am away in a symposium, so, I could not check your issues myself. However, I also experience the problem of Tcl/Tk dialog boxes appearing behind RGui. Apparently, RGui and Tcl run in separate processes and Windows consider they are two unrelated applications.
+
+I would like to support your various dialog boxes in SciViews. It will require very minor adjustments, and you will got a MDI with better behaviour of TclTk dialog boxes under Windows.
+
+Best,
+
+Philippe Grosjean
+
+
+---------- Original Message ----------------------------------
+From: John Fox <jfox@mcmaster.ca>
+Date:  Mon, 19 May 2003 21:05:47 -0400
+
+>Dear R-Gui list members,
+>
+>I've posted another version of the Rcmdr package to my web site, at 
+><http://www.socsci.mcmaster.ca/jfox/Misc/Rcmdr/>.
+>
+>Changes include many more input-error checks and improvements to a number 
+>of dialogs, including e.g. the ability to specify a subsetting expression 
+>for models.
+>
+>A partly unresolved issue is the problem raised by Dirk Eddelbuettel on 
+>Sunday: Dirk found that both the R session and the Commander windows locked 
+>up after the Rcmdr package was loaded on his Debian Linux system. Following 
+>Dirk's suggestion, I've added an option to Rcmdr to call tkwait until the 
+>Commander window is closed. Apparently this solves the problem that Dirk 
+>experienced, but an unfortunate consequence is that the command prompt in 
+>the R session is disabled until the Commander window is closed. Although 
+>this isn't a fatal problem -- commands can still be entered through the 
+>GUI, including via the log/script window -- it would be nice to be able to 
+>enter commands directly at the command prompt as well. I can do this when 
+>the call to tkwait is bypassed on Windows systems and on my Red Hat Linux 
+>system. Since no one else reported the problem, I assume that the package 
+>also works without the call to tkwait on a number of other systems.
+>
+>I'd appreciate some information and advice from those more experienced with 
+>Tcl/Tk than I. In particular, why does the call to tkwait appear necessary 
+>on at least one system but not on others? Is there a better way to resolve 
+>the issue than to provide an option?
+>
+>Another, though smaller, unresolved issue has to do with my inability to 
+>use the Rcmdr package (or any tcltk-based code) with R under the MDI in 
+>Windows. Can anyone tell me what the source of the problem is (that is, why 
+>dialog boxes won't stay in front of the R-GUI window)? Is it likely that 
+>the problem will be fixed? I actually prefer the SDI, but notice that most 
+>of my students like the MDI, which is the default when the Windows 
+>distribution of R is installed.
+>
+>As usual, comments and suggestions are appreciated. I expect that I'll 
+>submit a version of the Rcmdr package to CRAN soon.
+>
+>Thanks for your help,
+>  John
+>-----------------------------------------------------
+>John Fox
+>Department of Sociology
+>McMaster University
+>Hamilton, Ontario, Canada L8S 4M4
+>email: jfox@mcmaster.ca
+>phone: 905-525-9140x23604
+>web: www.socsci.mcmaster.ca/jfox
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+--
+..............................................................
+ ) ) ) ) )      
+( ( ( ( (       Philippe Grosjean 
+( ( ( ( ( 	Marine Biol. Lab., ULB, Belgium 
+ ) ) ) ) )	Mariculture & Biostatistic  
+( ( ( ( (               	           		     
+ ) ) ) ) )	SciViews project coordinator
+( ( ( ( ( 	(http://www.sciviews.org)	    
+ ) ) ) ) )	email:phgrosje@ulb.ac.be 
+( ( ( ( (                     	        
+..............................................................
+
+
+--
+
+From jfox at mcmaster.ca  Tue May 20 09:50:02 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue May 20 14:49:25 2003
+Subject: [R-gui] further on the Rcmdr package
+In-Reply-To: <200305200250.AA3129213380@sciviews.org>
+Message-ID: <5.1.0.14.2.20030520084102.01e4b168@mcmail.cis.mcmaster.ca>
+
+Dear Phillipe,
+
+I tried the Rcmdr package with Sci Views 0.1.104, which is what I have 
+installed on my machine. The Commander window and dialog boxes appear to 
+work fine. The only problem that I noted -- which is significant, of course 
+-- is that printed output doesn't appear in the R window.
+
+By the way, I think that it's OK at this point to add a link on the R GUI 
+Project page to the Rcmdr page on my web site.
+
+Thanks for this,
+  John
+
+At 02:50 AM 5/20/2003 -0400, Philippe Grosjean wrote:
+>I am away in a symposium, so, I could not check your issues myself. 
+>However, I also experience the problem of Tcl/Tk dialog boxes appearing 
+>behind RGui. Apparently, RGui and Tcl run in separate processes and 
+>Windows consider they are two unrelated applications.
+>
+>I would like to support your various dialog boxes in SciViews. It will 
+>require very minor adjustments, and you will got a MDI with better 
+>behaviour of TclTk dialog boxes under Windows.
+>
+>Best,
+>
+>Philippe Grosjean
+>
+>
+>---------- Original Message ----------------------------------
+>From: John Fox <jfox@mcmaster.ca>
+>Date:  Mon, 19 May 2003 21:05:47 -0400
+>
+> >Dear R-Gui list members,
+> >
+> >I've posted another version of the Rcmdr package to my web site, at
+> ><http://www.socsci.mcmaster.ca/jfox/Misc/Rcmdr/>.
+> >
+> >Changes include many more input-error checks and improvements to a number
+> >of dialogs, including e.g. the ability to specify a subsetting expression
+> >for models.
+> >
+> >A partly unresolved issue is the problem raised by Dirk Eddelbuettel on
+> >Sunday: Dirk found that both the R session and the Commander windows locked
+> >up after the Rcmdr package was loaded on his Debian Linux system. Following
+> >Dirk's suggestion, I've added an option to Rcmdr to call tkwait until the
+> >Commander window is closed. Apparently this solves the problem that Dirk
+> >experienced, but an unfortunate consequence is that the command prompt in
+> >the R session is disabled until the Commander window is closed. Although
+> >this isn't a fatal problem -- commands can still be entered through the
+> >GUI, including via the log/script window -- it would be nice to be able to
+> >enter commands directly at the command prompt as well. I can do this when
+> >the call to tkwait is bypassed on Windows systems and on my Red Hat Linux
+> >system. Since no one else reported the problem, I assume that the package
+> >also works without the call to tkwait on a number of other systems.
+> >
+> >I'd appreciate some information and advice from those more experienced with
+> >Tcl/Tk than I. In particular, why does the call to tkwait appear necessary
+> >on at least one system but not on others? Is there a better way to resolve
+> >the issue than to provide an option?
+> >
+> >Another, though smaller, unresolved issue has to do with my inability to
+> >use the Rcmdr package (or any tcltk-based code) with R under the MDI in
+> >Windows. Can anyone tell me what the source of the problem is (that is, why
+> >dialog boxes won't stay in front of the R-GUI window)? Is it likely that
+> >the problem will be fixed? I actually prefer the SDI, but notice that most
+> >of my students like the MDI, which is the default when the Windows
+> >distribution of R is installed.
+> >
+> >As usual, comments and suggestions are appreciated. I expect that I'll
+> >submit a version of the Rcmdr package to CRAN soon.
+> >
+> >Thanks for your help,
+> >  John
+> >-----------------------------------------------------
+> >John Fox
+> >Department of Sociology
+> >McMaster University
+> >Hamilton, Ontario, Canada L8S 4M4
+> >email: jfox@mcmaster.ca
+> >phone: 905-525-9140x23604
+> >web: www.socsci.mcmaster.ca/jfox
+> >
+> >_______________________________________________
+> >R-SIG-GUI mailing list
+> >R-SIG-GUI@stat.math.ethz.ch
+> >https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+> >
+>
+>--
+>..............................................................
+>  ) ) ) ) )
+>( ( ( ( (       Philippe Grosjean
+>( ( ( ( (       Marine Biol. Lab., ULB, Belgium
+>  ) ) ) ) )      Mariculture & Biostatistic
+>( ( ( ( (
+>  ) ) ) ) )      SciViews project coordinator
+>( ( ( ( (       (http://www.sciviews.org)
+>  ) ) ) ) )      email:phgrosje@ulb.ac.be
+>( ( ( ( (
+>..............................................................
+>
+>
+>--
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From p.dalgaard at biostat.ku.dk  Wed May 21 23:06:05 2003
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard BSA)
+Date: Thu May 22 00:06:08 2003
+Subject: [R-gui] further on the Rcmdr package
+In-Reply-To: <5.1.0.14.2.20030519210305.01e3f298@mcmail.cis.mcmaster.ca>
+References: <5.1.0.14.2.20030519210305.01e3f298@mcmail.cis.mcmaster.ca>
+Message-ID: <x2brxweyqq.fsf@biostat.ku.dk>
+
+John Fox <jfox@mcmaster.ca> writes:
+
+> A partly unresolved issue is the problem raised by Dirk Eddelbuettel
+> on Sunday: Dirk found that both the R session and the Commander
+> windows locked up after the Rcmdr package was loaded on his Debian
+> Linux system. Following Dirk's suggestion, I've added an option to
+> Rcmdr to call tkwait until the Commander window is closed. Apparently
+> this solves the problem that Dirk experienced, but an unfortunate
+> consequence is that the command prompt in the R session is disabled
+> until the Commander window is closed. Although this isn't a fatal
+> problem -- commands can still be entered through the GUI, including
+> via the log/script window -- it would be nice to be able to enter
+> commands directly at the command prompt as well. I can do this when
+> the call to tkwait is bypassed on Windows systems and on my Red Hat
+> Linux system. Since no one else reported the problem, I assume that
+> the package also works without the call to tkwait on a number of other
+> systems.
+
+This is definitely not supposed to happen, so perhaps a little session
+with gdb to figure out where things are getting stuck? I do have some
+suspicions about interference between R and threaded Tcl libs, but
+Dirk knows about that.
+
+> Another, though smaller, unresolved issue has to do with my inability
+> to use the Rcmdr package (or any tcltk-based code) with R under the
+> MDI in Windows. Can anyone tell me what the source of the problem is
+> (that is, why dialog boxes won't stay in front of the R-GUI window)?
+> Is it likely that the problem will be fixed? I actually prefer the
+> SDI, but notice that most of my students like the MDI, which is the
+> default when the Windows distribution of R is installed.
+
+It might be useful to query the Tcl community on that one. Various
+ideas have been suggested, see for instance a search on
+groups.google.com for
+
+  tk Windows "always on top"
+ 
+Another, more radical idea could be to get the usual MDI code to
+generate a blank window for the Rcmdr, get the hWnd of it somehow and
+then use tktoplevel(....,use=hWnd,....). There are several unknowns in
+that equation, though.
+
+> As usual, comments and suggestions are appreciated. I expect that I'll
+> submit a version of the Rcmdr package to CRAN soon.
+
+I played with it briefly. A few random comments:
+
+- Loading packages and installing them from CRAN could be added
+  quite easily (there's a bit of stuff in the tkStartGUI
+  function, which you'd be welcome to lift).
+
+- It shouldn't be hard to create a list of loadable datasets and
+  select from it.
+
+- Perhaps, use with(dataframe, ...) instead of attach/detach
+  constructs?
+
+- It's not easy to find out how to convert variables to factors. If
+  categorical variables come in as numerics, there are lots of things
+  that you cannot do, so the user needs a way to identify and solve
+  the problem quickly.
+
+- The recode syntax is a bit arcane. I think SAS/Analyst does this
+  kind of stuff with a table.
+
+
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From jfox at mcmaster.ca  Wed May 21 21:26:26 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu May 22 02:27:00 2003
+Subject: [R-gui] further on the Rcmdr package
+In-Reply-To: <x2brxweyqq.fsf@biostat.ku.dk>
+References: <5.1.0.14.2.20030519210305.01e3f298@mcmail.cis.mcmaster.ca>
+	<5.1.0.14.2.20030519210305.01e3f298@mcmail.cis.mcmaster.ca>
+Message-ID: <5.1.0.14.2.20030521200851.01e51b40@mcmail.cis.mcmaster.ca>
+
+Dear Peter,
+
+
+At 12:11 AM 5/22/2003 +0200, Peter Dalgaard BSA wrote:
+>John Fox <jfox@mcmaster.ca> writes:
+>
+> > A partly unresolved issue is the problem raised by Dirk Eddelbuettel
+> > on Sunday: Dirk found that both the R session and the Commander
+> > windows locked up after the Rcmdr package was loaded on his Debian
+> > Linux system. Following Dirk's suggestion, I've added an option to
+> > Rcmdr to call tkwait until the Commander window is closed. Apparently
+> > this solves the problem that Dirk experienced, but an unfortunate
+> > consequence is that the command prompt in the R session is disabled
+> > until the Commander window is closed. Although this isn't a fatal
+> > problem -- commands can still be entered through the GUI, including
+> > via the log/script window -- it would be nice to be able to enter
+> > commands directly at the command prompt as well. I can do this when
+> > the call to tkwait is bypassed on Windows systems and on my Red Hat
+> > Linux system. Since no one else reported the problem, I assume that
+> > the package also works without the call to tkwait on a number of other
+> > systems.
+>
+>This is definitely not supposed to happen, so perhaps a little session
+>with gdb to figure out where things are getting stuck? I do have some
+>suspicions about interference between R and threaded Tcl libs, but
+>Dirk knows about that.
+
+As I mentioned, I haven't been able to duplicate this problem on my Red Hat 
+Linux system and no one else has reported it. I guess that for now I'll 
+leave things as they are, allowing tkwait to be invoked as an option.
+
+> > Another, though smaller, unresolved issue has to do with my inability
+> > to use the Rcmdr package (or any tcltk-based code) with R under the
+> > MDI in Windows. Can anyone tell me what the source of the problem is
+> > (that is, why dialog boxes won't stay in front of the R-GUI window)?
+> > Is it likely that the problem will be fixed? I actually prefer the
+> > SDI, but notice that most of my students like the MDI, which is the
+> > default when the Windows distribution of R is installed.
+>
+>It might be useful to query the Tcl community on that one. Various
+>ideas have been suggested, see for instance a search on
+>groups.google.com for
+>
+>   tk Windows "always on top"
+>
+>Another, more radical idea could be to get the usual MDI code to
+>generate a blank window for the Rcmdr, get the hWnd of it somehow and
+>then use tktoplevel(....,use=hWnd,....). There are several unknowns in
+>that equation, though.
+
+I'll take a look at what Google turns up, as you suggest. I don't think 
+that I have the knowledge to mess with the MDI code, I'm afraid.
+
+> > As usual, comments and suggestions are appreciated. I expect that I'll
+> > submit a version of the Rcmdr package to CRAN soon.
+>
+>I played with it briefly. A few random comments:
+>
+>- Loading packages and installing them from CRAN could be added
+>   quite easily (there's a bit of stuff in the tkStartGUI
+>   function, which you'd be welcome to lift).
+
+I tried to avoid duplicating functionality in the Windows R-GUI menus. It 
+might be useful, however, to provide this facility on non-Windows systems, 
+so I'll think about this one.
+
+>- It shouldn't be hard to create a list of loadable datasets and
+>   select from it.
+
+I tried that and decided that the list, even with just the minimal packages 
+attached, is too long. That's why I settled for generating the list into a 
+pager window. Had I not restricted myself to the standard Tk widget 
+set  (or perhaps been more imaginative), I might have come up with a better 
+solution.
+
+>- Perhaps, use with(dataframe, ...) instead of attach/detach
+>   constructs?
+
+It's not hard to do this, and it would be a better solution if users never 
+saw the code generated, but one of the objects is to help inexperienced 
+users learn the commands, which are echoed to the log window. Again, I'll 
+think about this one.
+
+>- It's not easy to find out how to convert variables to factors. If
+>   categorical variables come in as numerics, there are lots of things
+>   that you cannot do, so the user needs a way to identify and solve
+>   the problem quickly.
+
+I had this suggestion from Bob Andersen as well (along with a suggestion to 
+provide for reordering factor categories). At present, one could use the 
+compute dialog, with as.factor(variable), or the recode dialog. It won't be 
+hard to add a "convert numeric to factor" dialog, so I'll put this on the list.
+
+>- The recode syntax is a bit arcane. I think SAS/Analyst does this
+>   kind of stuff with a table.
+
+I believe that the problem here is with the help file, which is for the 
+recode function in the car package. My general strategy with help buttons 
+was to call up existing help files. This was mostly due to laziness, and in 
+some cases, such as the recode dialog, it doesn't work very well. I plan to 
+write new help files where that seems desirable. I think that it's quite 
+easy to enter "recode directives" one per line -- e.g.,
+
+  lo:30 = "low"
+  30:50 = "medium"
+  50:hi = "high"
+
+There are other formats that the dialog accepts as well. Of course, not 
+everyone will agree that this is a natural syntax.
+
+Thank you for your help (and for the great resource that you made available 
+in the tcktk package),
+  John
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From edd at debian.org  Wed May 21 21:23:55 2003
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Thu May 22 03:24:43 2003
+Subject: [R-gui] further on the Rcmdr package
+In-Reply-To: <5.1.0.14.2.20030521200851.01e51b40@mcmail.cis.mcmaster.ca>
+References: <5.1.0.14.2.20030519210305.01e3f298@mcmail.cis.mcmaster.ca>
+	<5.1.0.14.2.20030519210305.01e3f298@mcmail.cis.mcmaster.ca>
+	<5.1.0.14.2.20030521200851.01e51b40@mcmail.cis.mcmaster.ca>
+Message-ID: <20030522012355.GA6278@sonny.eddelbuettel.com>
+
+On Wed, May 21, 2003 at 08:26:26PM -0400, John Fox wrote:
+> >This is definitely not supposed to happen, so perhaps a little session
+> >with gdb to figure out where things are getting stuck? I do have some
+> >suspicions about interference between R and threaded Tcl libs, but
+> >Dirk knows about that.
+> 
+> As I mentioned, I haven't been able to duplicate this problem on my Red Hat 
+> Linux system and no one else has reported it. I guess that for now I'll 
+> leave things as they are, allowing tkwait to be invoked as an option.
+
+I had forgotten about the threaded Tcl issue, thanks to Peter for reminding
+us. So the problem may well specific to Debian, in which sense it is more
+our problem than yours. So let's put that on a back burner for now.
+
+> >- It shouldn't be hard to create a list of loadable datasets and
+> >  select from it.
+> 
+> I tried that and decided that the list, even with just the minimal packages 
+> attached, is too long. That's why I settled for generating the list into a 
+
+Could you make it two-tiered? One level for packages, one for datasets?
+
+Cheers, Dirk
+
+-- 
+Don't drink and derive. Alcohol and analysis don't mix.
+

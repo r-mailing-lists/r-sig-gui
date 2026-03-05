@@ -1,0 +1,221 @@
+From wettenhall at wehi.edu.au  Fri Aug  8 18:09:15 2003
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Aug  8 09:08:54 2003
+Subject: [R-gui] Tktable on Mac OSX with X11, systemWindowBody color
+Message-ID: <Pine.LNX.4.44.0308081646590.6333-100000@unix28.alpha.wehi.edu.au>
+
+Hi,
+
+I'm doing some testing of my R/TclTk application on Mac OSX with 
+Apple X11 (based on Xfree86), (with Tcl/Tk installed via the 
+Apple Developer Tools) and I've come across a problem 
+when trying to use the table widget in Tktable:
+
+This works fine in wish (the Tcl/Tk interpreter) :
+% package require Tktable
+% toplevel .tt
+% table .tt.table1
+% pack .tt.table1
+
+But when I try it in R (even when using the low-level .Tcl(...) 
+interface which should be similar to wish:
+
+> library(tcltk)
+> addTclPath("/Library/Tcl")
+> .Tcl("package require Tktable")
+> .Tcl("toplevel .tt")
+> .Tcl("table .tt.table1")
+  Error ...
+    [tcl] unknown color name "systemWindowBody".
+
+"grep systemWindowBody *" in the Tktable package directory 
+revealed just one reference to it, in the binary file, 
+libTktable2.8.dylib
+I don't have the Tcl/Tk source handy and I couldn't find 
+systemWindowBody in the R source or in the tcltk 
+R package source.
+
+Has anyone come across this problem before?
+
+Searching the web, I found some of the Mac Tk source:
+http://www.openmash.org/lxr/source/mac/tkMacDefault.h
+which has:
+#define NORMAL_BG       "systemWindowBody"
+and the "NORMAL_BG" page says 
+"Defined as a preprocessor macro".
+which didn't help me much.  
+
+I even tried things like:
+  .Tcl("set systemWindowBody gray")
+   Sys.putenv("systemWindowBody","gray")
+with no success.
+
+Regards,
+James
+
+From p.dalgaard at biostat.ku.dk  Fri Aug  8 09:26:38 2003
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard BSA)
+Date: Fri Aug  8 10:26:39 2003
+Subject: [R-gui] Tktable on Mac OSX with X11, systemWindowBody color
+In-Reply-To: <Pine.LNX.4.44.0308081646590.6333-100000@unix28.alpha.wehi.edu.au>
+References: <Pine.LNX.4.44.0308081646590.6333-100000@unix28.alpha.wehi.edu.au>
+Message-ID: <x21xvwblbm.fsf@biostat.ku.dk>
+
+James Wettenhall <wettenhall@wehi.edu.au> writes:
+
+> Hi,
+> 
+> I'm doing some testing of my R/TclTk application on Mac OSX with 
+> Apple X11 (based on Xfree86), (with Tcl/Tk installed via the 
+> Apple Developer Tools) and I've come across a problem 
+> when trying to use the table widget in Tktable:
+> 
+> This works fine in wish (the Tcl/Tk interpreter) :
+> % package require Tktable
+> % toplevel .tt
+> % table .tt.table1
+> % pack .tt.table1
+> 
+> But when I try it in R (even when using the low-level .Tcl(...) 
+> interface which should be similar to wish:
+> 
+> > library(tcltk)
+> > addTclPath("/Library/Tcl")
+> > .Tcl("package require Tktable")
+> > .Tcl("toplevel .tt")
+> > .Tcl("table .tt.table1")
+>   Error ...
+>     [tcl] unknown color name "systemWindowBody".
+> 
+> "grep systemWindowBody *" in the Tktable package directory 
+> revealed just one reference to it, in the binary file, 
+> libTktable2.8.dylib
+> I don't have the Tcl/Tk source handy and I couldn't find 
+> systemWindowBody in the R source or in the tcltk 
+> R package source.
+
+Beats me, but you might try a query on comp.lang.tcl. Presumably, wish
+is somehow loading the system colors on startup, and this doesn't
+happen with the R/Tcl interpreter. 
+
+BTW, have you tried the tkAqua stuff?
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From wettenhall at wehi.edu.au  Mon Aug 11 19:02:14 2003
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Mon Aug 11 10:01:51 2003
+Subject: [R-gui] Re: [MACTCL] Re: systemWindowBody color (fwd)
+Message-ID: <Pine.LNX.4.44.0308111755290.28187-100000@unix28.alpha.wehi.edu.au>
+
+Here's a very helpful reply from Jan de Leeuw to my 
+question about trying to use Tktable with R in X11 on Mac OSX.  
+I'll have to double-check with my I.T. administrators to 
+find out which version of R is installed on the Macs, and make 
+sure that R is not accessing both an Aqua version of Tcl/Tk AND 
+an X11 version!
+
+Regards.
+James
+
+---------- Forwarded message ----------
+Date: Sun, 10 Aug 2003 20:53:35 -0700
+From: Jan de Leeuw <deleeuw@stat.ucla.edu>
+To: tcl-mac@lists.sourceforge.net
+Cc: James Wettenhall <wettenhall@wehi.edu.au>
+Subject: Re: [MACTCL] Re: systemWindowBody color
+
+There are three R's for OS X: the Carbon/CFM R (rapidly fading)
+which allows no Tcl/Tk interaction, the Darwin/X11 CLI version
+which you use with X11 Tcl/Tk from CVS or Fink, and the
+Aqua R (still in beta) which you use with the Aqua Tcl/Tk
+(currently does not work, but has worked in the past).
+
+You cannot use Aqua versions of Tcl/Tk with the Darwin/X11
+version, because you will get into problems with the Aqua
+windowmanager (SetFrontProcess).
+
+What I have done in the past is use IDLE (the Python GUI
+with tkinter), load Rpy (the Python interface to R), and then
+use Aqua Tcl/Tk from R running in IDLE. This works, but
+it is needlessly complicated. The Aqua R, when fixed for
+R-1.8.0, will be the better solution.
+
+See http://gifi.stat.ucla.edu/pub as well as
+http://www.economia.unimi.it/R/
+===
+Jan de Leeuw; Professor and Chair, UCLA Department of Statistics;
+Editor: Journal of Multivariate Analysis, Journal of Statistical  
+Software
+US mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554
+phone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu
+homepage: http://gifi.stat.ucla.edu
+   
+------------------------------------------------------------------------ 
+-------------------------
+           No matter where you go, there you are. --- Buckaroo Banzai
+                    http://gifi.stat.ucla.edu/sounds/nomatter.au
+
+From p.dalgaard at biostat.ku.dk  Sun Aug 24 22:32:27 2003
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard BSA)
+Date: Sun Aug 24 23:35:15 2003
+Subject: [R-gui] Tcltk changes in R 1.8.0 
+Message-ID: <x265kmpwcm.fsf@biostat.ku.dk>
+
+I have committed a set of changes to the tcltk package for R-1.8.0.
+The most important changes are
+
+1) Support for Tcl arrays, which should come in handy for people
+   playing with things like the tkTable extension. Basically these
+   work like tclVar objects but can be subscripted (notice that these
+   beasts are associative - like a Perl hash - rather than objects of
+   set dimensions). Basic usage goes like this:
+
+> x <- tclArray() # create array object
+> x[[2]]<-123
+> x[[2]]
+<Tcl> 123
+> x[["2"]] # the index is really a string
+<Tcl> 123
+
+> x[[1,2]]<-"abc"
+> x[["1,2"]] # multiple indices are pasted together
+<Tcl> abc
+> x[[1,2]]
+<Tcl> abc
+
+> x[["a"]] <- pi
+> x$a # usual list notation works too
+<Tcl> 3.14159265359
+
+2) A new set of routines, .Tcl.objv and .Tcl.args.objv work together
+   to allow calls to Tcl to be done without first constructing a Tcl
+   command in its string representation form. This creates a
+   substantial efficiency gain, by elimiting a large amount of
+   "quoting hell", and also by pushing some operations to C code. The
+   basic tkcmd() function (which underlies almost everything else) has
+   been changed to used those two functions. This should be mostly
+   transparent to existing code, but it may break code that uses some
+   (little advertised) features of the old interface. Apart from overt
+   bugs, the only source of breakage that I am aware of is that a
+   vector of length > 1 used to be converted to multiple arguments;
+   now it becomes a single Tcl list object. The feature allowed you to
+   do things like tkinsert(mylistbox, "end", vector.of.entries), but
+   it got in the way in other contexts and overall I think it was a
+   misfeature.
+
+Please try this out on your favourite tcltk codes and tell me ASAP if
+anything breaks. Also, please tell me if there are still things that
+you cannot do cleanly (i.e. without paste()-ing things together to
+form .Tcl calls).
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+

@@ -1,0 +1,659 @@
+From pauljohn32 at gmail.com  Tue Jun 19 22:05:18 2012
+From: pauljohn32 at gmail.com (Paul Johnson)
+Date: Tue, 19 Jun 2012 15:05:18 -0500
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle in
+	Winbugs?
+Message-ID: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+
+I'd like to have an R program that allows users to design regression
+equations by dragging variables around in a canvas, to interactively
+build path diagrams that lead to regressions. The diagrams would
+generate code that would run, and then results would somehow be linked
+to the drawings, perhaps showing coefficients on the edges or such.
+
+I'd like this thing to facilitate multilevel modeling if possible, but
+I'd settle to just have a pallet of variable "nodes" that can be
+pulled out of a box on the side and re-positioned in the canvas, with
+arrows pointing in and out. If that could generate code to run glm,
+I'd be happy.
+
+Then I'd like to generalize this so that the nodes could represent
+latent variables in a structural equation model.  Maybe I'd fiddle it
+up to write code for fitting with lavaan's estimators.
+
+Has anybody tried to do such a thing?  Anybody know where to start?
+
+If you were doing this, which of the graphical programming
+environments would you suggest?  I want this to work more-or-less well
+on all platforms. I've Googled enough to know it is not easy to decide
+which path to follow.  My first idea was to imitate the design of
+programs that draw mind maps, but they are mostly based on Java, which
+in my experience is hard to support for diverse platforms. Still, the
+JGR project seems to do well with it, so I'm not absolutely opposed.
+
+I've been looking at GTK2, QT4, WXwidgets and tcltk. Judging from what
+I read in the email lists of various development projects, perhaps QT4
+is the least troublesome multi-platform gui library, but it is not
+entirely open/free.  QT, of course, is the underlying framework of the
+KDE desktop.  My favorite editor, LyX, is written with QT, so I am
+sure it works. The Gambit game theory project chose WX.  It appears to
+me that tcltk is constantly on the brink of extinction, and yet new
+versions pop out now and then.
+
+In WinBUGS, there's a graphical model designer called Doodle that is
+quite pleasing to me, but it seems there must be something wrong with
+it because nobody boasts about it very much :(
+
+pj
+-- 
+Paul E. Johnson
+Professor, Political Science ? ?Assoc. Director
+1541 Lilac Lane, Room 504 ? ? Center for Research Methods
+University of Kansas ? ? ? ? ? ? ? University of Kansas
+http://pj.freefaculty.org ? ? ? ? ? ?http://quant.ku.edu
+
+
+From ian.fellows at stat.ucla.edu  Tue Jun 19 22:57:46 2012
+From: ian.fellows at stat.ucla.edu (Ian Fellows)
+Date: Tue, 19 Jun 2012 13:57:46 -0700
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle
+	in Winbugs?
+In-Reply-To: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+References: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+Message-ID: <6BB674DA-01D1-49C6-99C8-0731FCCA264C@stat.ucla.edu>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120619/80a290ad/attachment.pl>
+
+From joe at rstudio.org  Tue Jun 19 23:31:43 2012
+From: joe at rstudio.org (Joe Cheng [RStudio])
+Date: Tue, 19 Jun 2012 14:31:43 -0700
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle
+	in Winbugs?
+In-Reply-To: <6BB674DA-01D1-49C6-99C8-0731FCCA264C@stat.ucla.edu>
+References: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+	<6BB674DA-01D1-49C6-99C8-0731FCCA264C@stat.ucla.edu>
+Message-ID: <CANEHzON6Pfi0gE2XvjU5yyv-_0=9-gKj7XsX2SHaE6cFF0d=7Q@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120619/213ac7f1/attachment.pl>
+
+From 538280 at gmail.com  Mon Jun 25 19:19:11 2012
+From: 538280 at gmail.com (Greg Snow)
+Date: Mon, 25 Jun 2012 11:19:11 -0600
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle
+	in Winbugs?
+In-Reply-To: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+References: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+Message-ID: <CAFEqCdxJ6o36rBoEfPzXrUw55Jx0m8AqbOCbShvEnTMZDmWNgQ@mail.gmail.com>
+
+Look at the TkIdentify function in the TeachingDemos package.  It does
+not do what you want completely, but it shows an example of dragging
+and dropping labels within a plot in R.  You could do something
+similar with your variable names to drag and drop them to different
+locations (and possibly arrows or lines).  Then you just need to
+decide how to use the position information to build your model.
+However, this seems rather complicated, how will you indicate
+interactions or non-linearity?  I could see this for very basic
+models, but not for more general ones.
+
+On Tue, Jun 19, 2012 at 2:05 PM, Paul Johnson <pauljohn32 at gmail.com> wrote:
+> I'd like to have an R program that allows users to design regression
+> equations by dragging variables around in a canvas, to interactively
+> build path diagrams that lead to regressions. The diagrams would
+> generate code that would run, and then results would somehow be linked
+> to the drawings, perhaps showing coefficients on the edges or such.
+>
+> I'd like this thing to facilitate multilevel modeling if possible, but
+> I'd settle to just have a pallet of variable "nodes" that can be
+> pulled out of a box on the side and re-positioned in the canvas, with
+> arrows pointing in and out. If that could generate code to run glm,
+> I'd be happy.
+>
+> Then I'd like to generalize this so that the nodes could represent
+> latent variables in a structural equation model. ?Maybe I'd fiddle it
+> up to write code for fitting with lavaan's estimators.
+>
+> Has anybody tried to do such a thing? ?Anybody know where to start?
+>
+> If you were doing this, which of the graphical programming
+> environments would you suggest? ?I want this to work more-or-less well
+> on all platforms. I've Googled enough to know it is not easy to decide
+> which path to follow. ?My first idea was to imitate the design of
+> programs that draw mind maps, but they are mostly based on Java, which
+> in my experience is hard to support for diverse platforms. Still, the
+> JGR project seems to do well with it, so I'm not absolutely opposed.
+>
+> I've been looking at GTK2, QT4, WXwidgets and tcltk. Judging from what
+> I read in the email lists of various development projects, perhaps QT4
+> is the least troublesome multi-platform gui library, but it is not
+> entirely open/free. ?QT, of course, is the underlying framework of the
+> KDE desktop. ?My favorite editor, LyX, is written with QT, so I am
+> sure it works. The Gambit game theory project chose WX. ?It appears to
+> me that tcltk is constantly on the brink of extinction, and yet new
+> versions pop out now and then.
+>
+> In WinBUGS, there's a graphical model designer called Doodle that is
+> quite pleasing to me, but it seems there must be something wrong with
+> it because nobody boasts about it very much :(
+>
+> pj
+> --
+> Paul E. Johnson
+> Professor, Political Science ? ?Assoc. Director
+> 1541 Lilac Lane, Room 504 ? ? Center for Research Methods
+> University of Kansas ? ? ? ? ? ? ? University of Kansas
+> http://pj.freefaculty.org ? ? ? ? ? ?http://quant.ku.edu
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+
+-- 
+Gregory (Greg) L. Snow Ph.D.
+538280 at gmail.com
+
+
+From pauljohn32 at gmail.com  Mon Jun 25 22:13:15 2012
+From: pauljohn32 at gmail.com (Paul Johnson)
+Date: Mon, 25 Jun 2012 15:13:15 -0500
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle
+	in Winbugs?
+In-Reply-To: <CAFEqCdxJ6o36rBoEfPzXrUw55Jx0m8AqbOCbShvEnTMZDmWNgQ@mail.gmail.com>
+References: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+	<CAFEqCdxJ6o36rBoEfPzXrUw55Jx0m8AqbOCbShvEnTMZDmWNgQ@mail.gmail.com>
+Message-ID: <CAErODj_1QE2wOgduFO7rb5mVPqp3utHJSAQatSK7JfgF-=uFWA@mail.gmail.com>
+
+So, just to be blunt:
+
+You like working with tcltk?
+
+I mean, I know your package is written with it, but do like it? Do you
+sometimes wish you were working with QT or GTK? That's the hard
+decision for me at the moment.
+
+pj
+
+
+On Mon, Jun 25, 2012 at 12:19 PM, Greg Snow <538280 at gmail.com> wrote:
+> Look at the TkIdentify function in the TeachingDemos package. ?It does
+> not do what you want completely, but it shows an example of dragging
+> and dropping labels within a plot in R. ?You could do something
+> similar with your variable names to drag and drop them to different
+> locations (and possibly arrows or lines). ?Then you just need to
+> decide how to use the position information to build your model.
+> However, this seems rather complicated, how will you indicate
+> interactions or non-linearity? ?I could see this for very basic
+> models, but not for more general ones.
+>
+> On Tue, Jun 19, 2012 at 2:05 PM, Paul Johnson <pauljohn32 at gmail.com> wrote:
+>> I'd like to have an R program that allows users to design regression
+>> equations by dragging variables around in a canvas, to interactively
+>> build path diagrams that lead to regressions. The diagrams would
+>> generate code that would run, and then results would somehow be linked
+>> to the drawings, perhaps showing coefficients on the edges or such.
+>>
+>> I'd like this thing to facilitate multilevel modeling if possible, but
+>> I'd settle to just have a pallet of variable "nodes" that can be
+>> pulled out of a box on the side and re-positioned in the canvas, with
+>> arrows pointing in and out. If that could generate code to run glm,
+>> I'd be happy.
+>>
+>> Then I'd like to generalize this so that the nodes could represent
+>> latent variables in a structural equation model. ?Maybe I'd fiddle it
+>> up to write code for fitting with lavaan's estimators.
+>>
+>> Has anybody tried to do such a thing? ?Anybody know where to start?
+>>
+>> If you were doing this, which of the graphical programming
+>> environments would you suggest? ?I want this to work more-or-less well
+>> on all platforms. I've Googled enough to know it is not easy to decide
+>> which path to follow. ?My first idea was to imitate the design of
+>> programs that draw mind maps, but they are mostly based on Java, which
+>> in my experience is hard to support for diverse platforms. Still, the
+>> JGR project seems to do well with it, so I'm not absolutely opposed.
+>>
+>> I've been looking at GTK2, QT4, WXwidgets and tcltk. Judging from what
+>> I read in the email lists of various development projects, perhaps QT4
+>> is the least troublesome multi-platform gui library, but it is not
+>> entirely open/free. ?QT, of course, is the underlying framework of the
+>> KDE desktop. ?My favorite editor, LyX, is written with QT, so I am
+>> sure it works. The Gambit game theory project chose WX. ?It appears to
+>> me that tcltk is constantly on the brink of extinction, and yet new
+>> versions pop out now and then.
+>>
+>> In WinBUGS, there's a graphical model designer called Doodle that is
+>> quite pleasing to me, but it seems there must be something wrong with
+>> it because nobody boasts about it very much :(
+>>
+>> pj
+>> --
+>> Paul E. Johnson
+>> Professor, Political Science ? ?Assoc. Director
+>> 1541 Lilac Lane, Room 504 ? ? Center for Research Methods
+>> University of Kansas ? ? ? ? ? ? ? University of Kansas
+>> http://pj.freefaculty.org ? ? ? ? ? ?http://quant.ku.edu
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at r-project.org
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+>
+> --
+> Gregory (Greg) L. Snow Ph.D.
+> 538280 at gmail.com
+
+
+
+-- 
+Paul E. Johnson
+Professor, Political Science ? ?Assoc. Director
+1541 Lilac Lane, Room 504 ? ? Center for Research Methods
+University of Kansas ? ? ? ? ? ? ? University of Kansas
+http://pj.freefaculty.org ? ? ? ? ? ?http://quant.ku.edu
+
+
+From adrian at waddell.ch  Tue Jun 26 04:14:50 2012
+From: adrian at waddell.ch (Adrian Waddell)
+Date: Mon, 25 Jun 2012 22:14:50 -0400
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle
+	in Winbugs?
+In-Reply-To: <CAErODj_1QE2wOgduFO7rb5mVPqp3utHJSAQatSK7JfgF-=uFWA@mail.gmail.com>
+References: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+	<CAFEqCdxJ6o36rBoEfPzXrUw55Jx0m8AqbOCbShvEnTMZDmWNgQ@mail.gmail.com>
+	<CAErODj_1QE2wOgduFO7rb5mVPqp3utHJSAQatSK7JfgF-=uFWA@mail.gmail.com>
+Message-ID: <B5E5C041-452B-41F3-947F-92706D274435@waddell.ch>
+
+Hello all,
+
+I can not speak for QT nor GTK, but for tcl/tk, Java2d and the HTML5 canvas I can.
+
+The tk canvas widget offers you some nice things out of the box: i.e. you can draw some shape onto the tk canvas and give it a tag. You then can specify what should happen if a user moves the mouse over a shape with some specific tag, or clicks on it etc... (Event bindings).
+
+In Java2d and the HTML5 canvas (to my knowledge), out of the box, you listen to events and then need to figure out yourself what shape/element the mouse was over at the time of the event. You probably would want to use a framework such as Piccolo2d for Java or another scene graph implementation, but the decision on the best framework might not be easy to make, and you also need to learn these frameworks. Often, these frameworks and also the Java2d library itself make use of patterns. Hence, if you are new to programming or have not read any books on patterns you might find the way things are done a bit complicated. In this case, tcl/tk is good.
+
+You also need to consider what Ian previously wrote: tcl/tk works pretty much with most R installations.
+
+Your project sounds quite involved. You may consider to use tk to create a working prototype and then assess the situation new.
+
+Personally, I like tcl/tk, but I would choose something else for a large scale project. However then I would probably also stick to the language with the best integration for a particular toolkit, i.e. Java or C++ often times. You will find many threads on stackoverflow on toolkit1 vs toolkit2. Qt and Gtk+ are probably the most popular ones at this time. (And of course the HTML 5 canvas, which is early wave however).
+
+If you decide on a toolkit, let me/us know and maybe I/we can give you some input on how to start.
+
+Adrian
+
+
+
+
+On 12-06-25 04:13 PM, Paul Johnson wrote:
+> So, just to be blunt:
+> 
+> You like working with tcltk?
+> 
+> I mean, I know your package is written with it, but do like it? Do you
+> sometimes wish you were working with QT or GTK? That's the hard
+> decision for me at the moment.
+> 
+> pj
+> 
+> 
+> On Mon, Jun 25, 2012 at 12:19 PM, Greg Snow <538280 at gmail.com> wrote:
+>> Look at the TkIdentify function in the TeachingDemos package.  It does
+>> not do what you want completely, but it shows an example of dragging
+>> and dropping labels within a plot in R.  You could do something
+>> similar with your variable names to drag and drop them to different
+>> locations (and possibly arrows or lines).  Then you just need to
+>> decide how to use the position information to build your model.
+>> However, this seems rather complicated, how will you indicate
+>> interactions or non-linearity?  I could see this for very basic
+>> models, but not for more general ones.
+>> 
+>> On Tue, Jun 19, 2012 at 2:05 PM, Paul Johnson <pauljohn32 at gmail.com> wrote:
+>>> I'd like to have an R program that allows users to design regression
+>>> equations by dragging variables around in a canvas, to interactively
+>>> build path diagrams that lead to regressions. The diagrams would
+>>> generate code that would run, and then results would somehow be linked
+>>> to the drawings, perhaps showing coefficients on the edges or such.
+>>> 
+>>> I'd like this thing to facilitate multilevel modeling if possible, but
+>>> I'd settle to just have a pallet of variable "nodes" that can be
+>>> pulled out of a box on the side and re-positioned in the canvas, with
+>>> arrows pointing in and out. If that could generate code to run glm,
+>>> I'd be happy.
+>>> 
+>>> Then I'd like to generalize this so that the nodes could represent
+>>> latent variables in a structural equation model.  Maybe I'd fiddle it
+>>> up to write code for fitting with lavaan's estimators.
+>>> 
+>>> Has anybody tried to do such a thing?  Anybody know where to start?
+>>> 
+>>> If you were doing this, which of the graphical programming
+>>> environments would you suggest?  I want this to work more-or-less well
+>>> on all platforms. I've Googled enough to know it is not easy to decide
+>>> which path to follow.  My first idea was to imitate the design of
+>>> programs that draw mind maps, but they are mostly based on Java, which
+>>> in my experience is hard to support for diverse platforms. Still, the
+>>> JGR project seems to do well with it, so I'm not absolutely opposed.
+>>> 
+>>> I've been looking at GTK2, QT4, WXwidgets and tcltk. Judging from what
+>>> I read in the email lists of various development projects, perhaps QT4
+>>> is the least troublesome multi-platform gui library, but it is not
+>>> entirely open/free.  QT, of course, is the underlying framework of the
+>>> KDE desktop.  My favorite editor, LyX, is written with QT, so I am
+>>> sure it works. The Gambit game theory project chose WX.  It appears to
+>>> me that tcltk is constantly on the brink of extinction, and yet new
+>>> versions pop out now and then.
+>>> 
+>>> In WinBUGS, there's a graphical model designer called Doodle that is
+>>> quite pleasing to me, but it seems there must be something wrong with
+>>> it because nobody boasts about it very much :(
+>>> 
+>>> pj
+>>> --
+>>> Paul E. Johnson
+>>> Professor, Political Science    Assoc. Director
+>>> 1541 Lilac Lane, Room 504     Center for Research Methods
+>>> University of Kansas               University of Kansas
+>>> http://pj.freefaculty.org            http://quant.ku.edu
+>>> 
+>>> _______________________________________________
+>>> R-SIG-GUI mailing list
+>>> R-SIG-GUI at r-project.org
+>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>> 
+>> 
+>> 
+>> --
+>> Gregory (Greg) L. Snow Ph.D.
+>> 538280 at gmail.com
+> 
+> 
+> 
+
+
+From murdoch.duncan at gmail.com  Mon Jun 25 22:20:14 2012
+From: murdoch.duncan at gmail.com (Duncan Murdoch)
+Date: Mon, 25 Jun 2012 16:20:14 -0400
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle
+ in Winbugs?
+In-Reply-To: <CAErODj_1QE2wOgduFO7rb5mVPqp3utHJSAQatSK7JfgF-=uFWA@mail.gmail.com>
+References: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+	<CAFEqCdxJ6o36rBoEfPzXrUw55Jx0m8AqbOCbShvEnTMZDmWNgQ@mail.gmail.com>
+	<CAErODj_1QE2wOgduFO7rb5mVPqp3utHJSAQatSK7JfgF-=uFWA@mail.gmail.com>
+Message-ID: <4FE8C7FE.8050509@stats.uwo.ca>
+
+On 25/06/2012 4:13 PM, Paul Johnson wrote:
+> So, just to be blunt:
+>
+> You like working with tcltk?
+>
+> I mean, I know your package is written with it, but do like it? Do you
+> sometimes wish you were working with QT or GTK? That's the hard
+> decision for me at the moment.
+
+One advantage of tcltk is that installation is easy:  R does it for you 
+on Windows, and it's likely there on Linux.  Only MacOS needs a little 
+user work, but not much.  RGtk2 has improved in the installation of 
+support libs, but it is still a two-step process on Windows, and I would 
+suspect it will fail for many users who don't have the right permissions.
+
+Duncan Murdoch
+
+>
+> pj
+>
+>
+> On Mon, Jun 25, 2012 at 12:19 PM, Greg Snow <538280 at gmail.com> wrote:
+> > Look at the TkIdentify function in the TeachingDemos package.  It does
+> > not do what you want completely, but it shows an example of dragging
+> > and dropping labels within a plot in R.  You could do something
+> > similar with your variable names to drag and drop them to different
+> > locations (and possibly arrows or lines).  Then you just need to
+> > decide how to use the position information to build your model.
+> > However, this seems rather complicated, how will you indicate
+> > interactions or non-linearity?  I could see this for very basic
+> > models, but not for more general ones.
+> >
+> > On Tue, Jun 19, 2012 at 2:05 PM, Paul Johnson <pauljohn32 at gmail.com> wrote:
+> >> I'd like to have an R program that allows users to design regression
+> >> equations by dragging variables around in a canvas, to interactively
+> >> build path diagrams that lead to regressions. The diagrams would
+> >> generate code that would run, and then results would somehow be linked
+> >> to the drawings, perhaps showing coefficients on the edges or such.
+> >>
+> >> I'd like this thing to facilitate multilevel modeling if possible, but
+> >> I'd settle to just have a pallet of variable "nodes" that can be
+> >> pulled out of a box on the side and re-positioned in the canvas, with
+> >> arrows pointing in and out. If that could generate code to run glm,
+> >> I'd be happy.
+> >>
+> >> Then I'd like to generalize this so that the nodes could represent
+> >> latent variables in a structural equation model.  Maybe I'd fiddle it
+> >> up to write code for fitting with lavaan's estimators.
+> >>
+> >> Has anybody tried to do such a thing?  Anybody know where to start?
+> >>
+> >> If you were doing this, which of the graphical programming
+> >> environments would you suggest?  I want this to work more-or-less well
+> >> on all platforms. I've Googled enough to know it is not easy to decide
+> >> which path to follow.  My first idea was to imitate the design of
+> >> programs that draw mind maps, but they are mostly based on Java, which
+> >> in my experience is hard to support for diverse platforms. Still, the
+> >> JGR project seems to do well with it, so I'm not absolutely opposed.
+> >>
+> >> I've been looking at GTK2, QT4, WXwidgets and tcltk. Judging from what
+> >> I read in the email lists of various development projects, perhaps QT4
+> >> is the least troublesome multi-platform gui library, but it is not
+> >> entirely open/free.  QT, of course, is the underlying framework of the
+> >> KDE desktop.  My favorite editor, LyX, is written with QT, so I am
+> >> sure it works. The Gambit game theory project chose WX.  It appears to
+> >> me that tcltk is constantly on the brink of extinction, and yet new
+> >> versions pop out now and then.
+> >>
+> >> In WinBUGS, there's a graphical model designer called Doodle that is
+> >> quite pleasing to me, but it seems there must be something wrong with
+> >> it because nobody boasts about it very much :(
+> >>
+> >> pj
+> >> --
+> >> Paul E. Johnson
+> >> Professor, Political Science    Assoc. Director
+> >> 1541 Lilac Lane, Room 504     Center for Research Methods
+> >> University of Kansas               University of Kansas
+> >> http://pj.freefaculty.org            http://quant.ku.edu
+> >>
+> >> _______________________________________________
+> >> R-SIG-GUI mailing list
+> >> R-SIG-GUI at r-project.org
+> >> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> >
+> >
+> >
+> > --
+> > Gregory (Greg) L. Snow Ph.D.
+> > 538280 at gmail.com
+>
+>
+>
+
+
+From ggrothendieck at gmail.com  Tue Jun 26 15:56:46 2012
+From: ggrothendieck at gmail.com (Gabor Grothendieck)
+Date: Tue, 26 Jun 2012 09:56:46 -0400
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle
+	in Winbugs?
+In-Reply-To: <4FE8C7FE.8050509@stats.uwo.ca>
+References: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+	<CAFEqCdxJ6o36rBoEfPzXrUw55Jx0m8AqbOCbShvEnTMZDmWNgQ@mail.gmail.com>
+	<CAErODj_1QE2wOgduFO7rb5mVPqp3utHJSAQatSK7JfgF-=uFWA@mail.gmail.com>
+	<4FE8C7FE.8050509@stats.uwo.ca>
+Message-ID: <CAP01uRmb5rBeVUAgUjsF9bbE5Uz6u1_fhcrKb4v7Fe-e3UwShQ@mail.gmail.com>
+
+On Mon, Jun 25, 2012 at 4:20 PM, Duncan Murdoch
+<murdoch.duncan at gmail.com> wrote:
+> On 25/06/2012 4:13 PM, Paul Johnson wrote:
+>>
+>> So, just to be blunt:
+>>
+>> You like working with tcltk?
+>>
+>> I mean, I know your package is written with it, but do like it? Do you
+>> sometimes wish you were working with QT or GTK? That's the hard
+>> decision for me at the moment.
+>
+>
+> One advantage of tcltk is that installation is easy: ?R does it for you on
+> Windows, and it's likely there on Linux. ?Only MacOS needs a little user
+> work, but not much. ?RGtk2 has improved in the installation of support libs,
+> but it is still a two-step process on Windows, and I would suspect it will
+> fail for many users who don't have the right permissions.
+>
+
+One way that this could be improved would be if tcl/tk and the tcltk R
+package were included in all R distributions or at least the ones that
+the R core group has control over.
+
+-- 
+Statistics & Software Consulting
+GKX Group, GKX Associates Inc.
+tel: 1-877-GKX-GROUP
+email: ggrothendieck at gmail.com
+
+
+From 538280 at gmail.com  Tue Jun 26 21:35:48 2012
+From: 538280 at gmail.com (Greg Snow)
+Date: Tue, 26 Jun 2012 13:35:48 -0600
+Subject: [R-gui] regression diagram builder thingie? Maybe like Doodle
+	in Winbugs?
+In-Reply-To: <CAErODj_1QE2wOgduFO7rb5mVPqp3utHJSAQatSK7JfgF-=uFWA@mail.gmail.com>
+References: <CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>
+	<CAFEqCdxJ6o36rBoEfPzXrUw55Jx0m8AqbOCbShvEnTMZDmWNgQ@mail.gmail.com>
+	<CAErODj_1QE2wOgduFO7rb5mVPqp3utHJSAQatSK7JfgF-=uFWA@mail.gmail.com>
+Message-ID: <CAFEqCdxhxEDKxYfXs2NBUKn9SLGDQ1tPF7roWtZmqZxR1t15rw@mail.gmail.com>
+
+I do prefer to work in basic tcltk.  Part of that may be my
+background.  I started doing Tk guis using Perl/Tk before using it in
+R (and still sometimes refer to my Perl projects/books even when using
+it in R).  I have looked at some of the other tools occasionally but
+have yet to see any advantages in them that would make it worth my
+time to learn another toolset (not saying that they are bad or have
+nothing to add, just that the apparent effort for me to learn them is
+more than the perceived benefit that I would get).  Now if I were
+starting from scratch (not already having experience with Tk) then it
+might make more sense to start with a different tool.
+
+On Mon, Jun 25, 2012 at 2:13 PM, Paul Johnson <pauljohn32 at gmail.com> wrote:
+> So, just to be blunt:
+>
+> You like working with tcltk?
+>
+> I mean, I know your package is written with it, but do like it? Do you
+> sometimes wish you were working with QT or GTK? That's the hard
+> decision for me at the moment.
+>
+> pj
+>
+>
+> On Mon, Jun 25, 2012 at 12:19 PM, Greg Snow <538280 at gmail.com> wrote:
+>> Look at the TkIdentify function in the TeachingDemos package. ?It does
+>> not do what you want completely, but it shows an example of dragging
+>> and dropping labels within a plot in R. ?You could do something
+>> similar with your variable names to drag and drop them to different
+>> locations (and possibly arrows or lines). ?Then you just need to
+>> decide how to use the position information to build your model.
+>> However, this seems rather complicated, how will you indicate
+>> interactions or non-linearity? ?I could see this for very basic
+>> models, but not for more general ones.
+>>
+>> On Tue, Jun 19, 2012 at 2:05 PM, Paul Johnson <pauljohn32 at gmail.com> wrote:
+>>> I'd like to have an R program that allows users to design regression
+>>> equations by dragging variables around in a canvas, to interactively
+>>> build path diagrams that lead to regressions. The diagrams would
+>>> generate code that would run, and then results would somehow be linked
+>>> to the drawings, perhaps showing coefficients on the edges or such.
+>>>
+>>> I'd like this thing to facilitate multilevel modeling if possible, but
+>>> I'd settle to just have a pallet of variable "nodes" that can be
+>>> pulled out of a box on the side and re-positioned in the canvas, with
+>>> arrows pointing in and out. If that could generate code to run glm,
+>>> I'd be happy.
+>>>
+>>> Then I'd like to generalize this so that the nodes could represent
+>>> latent variables in a structural equation model. ?Maybe I'd fiddle it
+>>> up to write code for fitting with lavaan's estimators.
+>>>
+>>> Has anybody tried to do such a thing? ?Anybody know where to start?
+>>>
+>>> If you were doing this, which of the graphical programming
+>>> environments would you suggest? ?I want this to work more-or-less well
+>>> on all platforms. I've Googled enough to know it is not easy to decide
+>>> which path to follow. ?My first idea was to imitate the design of
+>>> programs that draw mind maps, but they are mostly based on Java, which
+>>> in my experience is hard to support for diverse platforms. Still, the
+>>> JGR project seems to do well with it, so I'm not absolutely opposed.
+>>>
+>>> I've been looking at GTK2, QT4, WXwidgets and tcltk. Judging from what
+>>> I read in the email lists of various development projects, perhaps QT4
+>>> is the least troublesome multi-platform gui library, but it is not
+>>> entirely open/free. ?QT, of course, is the underlying framework of the
+>>> KDE desktop. ?My favorite editor, LyX, is written with QT, so I am
+>>> sure it works. The Gambit game theory project chose WX. ?It appears to
+>>> me that tcltk is constantly on the brink of extinction, and yet new
+>>> versions pop out now and then.
+>>>
+>>> In WinBUGS, there's a graphical model designer called Doodle that is
+>>> quite pleasing to me, but it seems there must be something wrong with
+>>> it because nobody boasts about it very much :(
+>>>
+>>> pj
+>>> --
+>>> Paul E. Johnson
+>>> Professor, Political Science ? ?Assoc. Director
+>>> 1541 Lilac Lane, Room 504 ? ? Center for Research Methods
+>>> University of Kansas ? ? ? ? ? ? ? University of Kansas
+>>> http://pj.freefaculty.org ? ? ? ? ? ?http://quant.ku.edu
+>>>
+>>> _______________________________________________
+>>> R-SIG-GUI mailing list
+>>> R-SIG-GUI at r-project.org
+>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+>>
+>>
+>> --
+>> Gregory (Greg) L. Snow Ph.D.
+>> 538280 at gmail.com
+>
+>
+>
+> --
+> Paul E. Johnson
+> Professor, Political Science ? ?Assoc. Director
+> 1541 Lilac Lane, Room 504 ? ? Center for Research Methods
+> University of Kansas ? ? ? ? ? ? ? University of Kansas
+> http://pj.freefaculty.org ? ? ? ? ? ?http://quant.ku.edu
+
+
+
+-- 
+Gregory (Greg) L. Snow Ph.D.
+538280 at gmail.com
+
+
+From naveensimla at gmail.com  Thu Jun 28 20:35:25 2012
+From: naveensimla at gmail.com (Naveen Verma)
+Date: Fri, 29 Jun 2012 00:05:25 +0530
+Subject: [R-gui] QSAR development
+Message-ID: <CAAuWHB-LN6O1tKUp4=vUNu13L8v=ajYik6mioVHcM-+cpME0SA@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120629/5d88ce47/attachment.ksh>
+

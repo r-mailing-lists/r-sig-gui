@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2013-08",
+  "messages": [
+    {
+      "id": "msg-da2a10ae9f08",
+      "message_id": "<5B4ACBA0-2EBD-438A-BEF6-DC27F9579B87@stat.ucla.edu>",
+      "from_name": "Ian Fellows",
+      "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
+      "date": "2013-08-04T11:27:20-07:00",
+      "subject": "[R-gui] Help test new JGR launchers",
+      "subject_clean": "[R-gui] Help test new JGR launchers",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi All,\n\nWhile the current JGR R console launchers for Windows and Mac work well for most people, there is a minority for which the launchers fail. This can occur when R has unusual library paths, or in some cases upon upgrading R.\n\nFor this reason I've created new windows and mac launchers which I hope will be more robust to the wide range of possible R installs, but I only have a few limited systems to test on.\n\nThat is where you come in...\n\nIf you are interested in giving them a try, please do the following:\n\n1. You will need to be able to install packages from source. If you run into trouble on this step, install rtools (on windows) or xcode (on mac).\n\nIn R run:\n#ensure all dependancies are present...\ninstall.packages(\"JGR\")\n\n#download and install new versions of iplots and JGR\ndownload.file(\"http://www.fellstat.com/files/JGR/iplots_1.1-6.tar.gz\",\n\t\"iplots_1.1-6.tar.gz\")\ninstall.packages(\"iplots_1.1-6.tar.gz\",repos=NULL,type=\"source\")\ndownload.file(\"http://www.fellstat.com/files/JGR/JGR_1.7-16.tar.gz\",\n\t\"JGR_1.7-16.tar.gz\")\ninstall.packages(\"JGR_1.7-16.tar.gz\",repos=NULL,type=\"source\")\n\n\n2. Now try launching the console from within R:\n\nlibrary(JGR)\nlaunchJGR()\n\n3. Now try the new launchers. \n\nIf you are on a mac, download:\nhttp://www.fellstat.com/files/JGR/JGR2.dmg\nDouble click on it to launch it to mount the image, and then double click on JGR.app\n\nIf you are on windows, download and double click on:\nhttp://www.fellstat.com/files/JGR/jgr2.exe\n\n-------------------------------------------------------\n\nIf you run into a problem, please help us debug it with the following information.\n\n1. The complete output and steps to reproduce the problem.\n\n2. In R and in JGR (if you can get it to run) include the complete output of:\nlibrary(JGR)\nR.home()\n.libPaths()\nsessionInfo()\n\n\nBest,\nIan",
+      "body_snippet": "Hi All,\n\nWhile the current JGR R console launchers for Windows and Mac work well for most people, there is a minority for which the launchers fail. This can occur when R has unusual library paths, or ",
+      "thread_id": "thread-da2a10ae9f08",
+      "thread_depth": 0,
+      "month": "2013-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-da2a10ae9f08",
+      "subject": "[R-gui] Help test new JGR launchers",
+      "message_count": 1,
+      "participants": [
+        "Ian Fellows"
+      ],
+      "started": "2013-08-04T11:27:20-07:00",
+      "last_reply": "2013-08-04T11:27:20-07:00",
+      "root_message_id": "msg-da2a10ae9f08"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2012-01",
+  "messages": [
+    {
+      "id": "msg-dd74a458e6a3",
+      "message_id": "<CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>",
+      "from_name": "Brett Magill",
+      "from_email_hash": "ccc7a7d22d9c9a314e460d7b958640cb28ef0b3652e915f5f6385b2afbe12041",
+      "date": "2012-01-03T00:54:00-06:00",
+      "subject": "[R-gui] R Model Building and Evaluation Tool",
+      "subject_clean": "[R-gui] R Model Building and Evaluation Tool",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello all,\n\nTo anyone who is interested, I'm trying to learn a bit more about\ndeveloping applications in R with user interfaces. I've been playing\naround with gWidgets to develop a model building interface.\n\nI'd appreciate any comments, suggestions, or guidance on how to better\nstructure my R code and organize the programming task. In addition,\nany suggestions for features and improvement to this fledgling project\nwould be welcomed.\n\nThe code and some screenshots are available here...\n\nhttp://r-rime.blogspot.com/\n\nThanks!",
+      "body_snippet": "Hello all,\n\nTo anyone who is interested, I'm trying to learn a bit more about\ndeveloping applications in R with user interfaces. I've been playing\naround with gWidgets to develop a model building inte",
+      "thread_id": "thread-dd74a458e6a3",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-30726b4043ed",
+      "message_id": "<418D4C3D-569C-4554-B424-F32D5ABA616E@stat.ucla.edu>",
+      "from_name": "Ian Fellows",
+      "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
+      "date": "2012-01-02T23:33:55-08:00",
+      "subject": "[R-gui] R Model Building and Evaluation Tool",
+      "subject_clean": "[R-gui] R Model Building and Evaluation Tool",
+      "in_reply_to": "<CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>",
+      "references": [
+        "<CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120102/6bd8a4e3/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120102/6bd8a4e3/attachment.pl>",
+      "thread_id": "thread-dd74a458e6a3",
+      "thread_depth": 1,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-ec9f0a1b5d51",
+      "message_id": "<4F04185E.2040101@free.fr>",
+      "from_name": "Yvonnick Noel",
+      "from_email_hash": "4a8e8356a36785813382f2b1e51a112dac54d5364f1a8d6900043564f32f62ed",
+      "date": "2012-01-04T10:14:06+01:00",
+      "subject": "[R-gui] R Model Building and Evaluation Tool",
+      "subject_clean": "[R-gui] R Model Building and Evaluation Tool",
+      "in_reply_to": "<mailman.13.1325588404.12217.r-sig-gui@r-project.org>",
+      "references": [
+        "<mailman.13.1325588404.12217.r-sig-gui@r-project.org>"
+      ],
+      "body_plain": "Hi Brett,\n\n> To anyone who is interested, I'm trying to learn a bit more about\n> developing applications in R with user interfaces. I've been playing\n> around with gWidgets to develop a model building interface.\n>\n> I'd appreciate any comments, suggestions, or guidance on how to better\n> structure my R code and organize the programming task. In addition,\n> any suggestions for features and improvement to this fledgling project\n> would be welcomed.\n\nI found the proto package to be most useful in structuring the code \nwhile developing my R2STATS interface for GLM and GLMM.\n\nProto uses a prototype approach, as you would infer from the name, but \ncan be used in an object-oriented approach as well.\n\nHTH,\n\nYvonnick Noel\nUniversity of Britanny at Rennes\nDepartment of Psychology\nFrance",
+      "body_snippet": "Hi Brett,\n\n> To anyone who is interested, I'm trying to learn a bit more about\n> developing applications in R with user interfaces. I've been playing\n> around with gWidgets to develop a model building",
+      "thread_id": "thread-ec9f0a1b5d51",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-22328ba89fcb",
+      "message_id": "<4F1E8AFC.3050606@gmail.com>",
+      "from_name": "Rainer M Krug",
+      "from_email_hash": "e11b90edace280d0de30dfc4fa9de87a9a079d3f2c2f179123fa9e4ae628223d",
+      "date": "2012-01-24T11:42:04+01:00",
+      "subject": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
+      "subject_clean": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nHi\n\nI remember seeing a GUI for R, which used graphical modeler approach\nto build the analysis - similar to stella. But I can't find the name\nat the moment.\n\nCould somebody point me in the right direction? I googled, but got all\nother stuff, but not what I am looking for.\n\nCheers,\n\nRainer\n\n\n- -- \nRainer M. Krug, PhD (Conservation Ecology, SUN), MSc (Conservation\nBiology, UCT), Dipl. Phys. (Germany)\n\nCentre of Excellence for Invasion Biology\nStellenbosch University\nSouth Africa\n\nTel :       +33 - (0)9 53 10 27 44\nCell:       +33 - (0)6 85 62 59 98\nFax :       +33 - (0)9 58 10 27 44\n\nFax (D):    +49 - (0)3 21 21 25 22 44\n\nemail:      Rainer at krugs.de\n\nSkype:      RMkrug\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.11 (GNU/Linux)\nComment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/\n\niEYEARECAAYFAk8eivwACgkQoYgNqgF2egr8HACfUbEqTeHHiKngBs7agaitCqzZ\n2uwAoIAlHlOWvnIOV/CSAMdszmKLFMeh\n=GXc6\n-----END PGP SIGNATURE-----",
+      "body_snippet": "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nHi\n\nI remember seeing a GUI for R, which used graphical modeler approach\nto build the analysis - similar to stella. But I can't find the name\nat the mome",
+      "thread_id": "thread-22328ba89fcb",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-f91121e21701",
+      "message_id": "<4F1E97F4.2050002@gmail.com>",
+      "from_name": "Rainer M Krug",
+      "from_email_hash": "e11b90edace280d0de30dfc4fa9de87a9a079d3f2c2f179123fa9e4ae628223d",
+      "date": "2012-01-24T12:37:24+01:00",
+      "subject": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
+      "subject_clean": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
+      "in_reply_to": "<4F1E9249.8060605@univie.ac.at>",
+      "references": [
+        "<4F1E8AFC.3050606@gmail.com>",
+        "<4F1E9249.8060605@univie.ac.at>"
+      ],
+      "body_plain": "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn 24/01/12 12:13, Erich Neuwirth wrote:\n> Are you looking for this: http://www.red-r.org/\n\nThanks - exactly that one.\n\nCheers,\n\nRainer\n\n> \n> \n> On 1/24/2012 11:42 AM, Rainer M Krug wrote:\n>> Hi\n>> \n>> I remember seeing a GUI for R, which used graphical modeler \n>> approach to build the analysis - similar to stella. But I can't \n>> find the name at the moment.\n>> \n>> Could somebody point me in the right direction? I googled, but\n>> got all other stuff, but not what I am looking for.\n>> \n>> Cheers,\n>> \n>> Rainer\n>> \n>> \n>> \n>> _______________________________________________ R-SIG-GUI mailing\n>>  list R-SIG-GUI at r-project.org \n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n\n\n- -- \nRainer M. Krug, PhD (Conservation Ecology, SUN), MSc (Conservation\nBiology, UCT), Dipl. Phys. (Germany)\n\nCentre of Excellence for Invasion Biology\nStellenbosch University\nSouth Africa\n\nTel :       +33 - (0)9 53 10 27 44\nCell:       +33 - (0)6 85 62 59 98\nFax :       +33 - (0)9 58 10 27 44\n\nFax (D):    +49 - (0)3 21 21 25 22 44\n\nemail:      Rainer at krugs.de\n\nSkype:      RMkrug\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.11 (GNU/Linux)\nComment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/\n\niEYEARECAAYFAk8el/QACgkQoYgNqgF2egqthQCdEiKtW9KFo5uQgwI8ImUSDmQZ\nlPYAni+h1CV+NDRPui/6mNmHjcXdgK/0\n=uHLk\n-----END PGP SIGNATURE-----",
+      "body_snippet": "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn 24/01/12 12:13, Erich Neuwirth wrote:\n> Are you looking for this: http://www.red-r.org/\n\nThanks - exactly that one.\n\nCheers,\n\nRainer\n\n> \n> \n> On 1/24/",
+      "thread_id": "thread-f91121e21701",
+      "thread_depth": 0,
+      "month": "2012-01"
+    },
+    {
+      "id": "msg-f3de00f5d323",
+      "message_id": "<02BF89F8F8F5434281FB674D2BC513C3742238D192@SBKMXSMB09.win.dowjones.net>",
+      "from_name": "Alpert, William",
+      "from_email_hash": "28541db3112cebcd377990bb6409aac403e2619037d67aad2d2838ed1bb64cc8",
+      "date": "2012-01-24T09:17:59-05:00",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 95, Issue 3",
+      "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 95, Issue 3",
+      "in_reply_to": "<mailman.15.1327402804.19300.r-sig-gui@r-project.org>",
+      "references": [
+        "<mailman.15.1327402804.19300.r-sig-gui@r-project.org>"
+      ],
+      "body_plain": "Red-R ?\n\nBill Alpert\nBarron's\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-project.org] On Behalf Of r-sig-gui-request at r-project.org\nSent: Tuesday, January 24, 2012 6:00 AM\nTo: r-sig-gui at r-project.org\nSubject: R-SIG-GUI Digest, Vol 95, Issue 3\n\nSend R-SIG-GUI mailing list submissions to\n\tr-sig-gui at r-project.org\n\nTo subscribe or unsubscribe via the World Wide Web, visit\n\thttps://stat.ethz.ch/mailman/listinfo/r-sig-gui\nor, via email, send a message with subject or body 'help' to\n\tr-sig-gui-request at r-project.org\n\nYou can reach the person managing the list at\n\tr-sig-gui-owner at r-project.org\n\nWhen replying, please edit your Subject line so it is more specific than \"Re: Contents of R-SIG-GUI digest...\"\n\n\nToday's Topics:\n\n   1. Looking for specific GUI - know it exists but can't remember\n      the name.... (Rainer M Krug)\n\n\n----------------------------------------------------------------------\n\nMessage: 1\nDate: Tue, 24 Jan 2012 11:42:04 +0100\nFrom: Rainer M Krug <r.m.krug at gmail.com>\nTo: r-sig-gui at r-project.org\nSubject: [R-gui] Looking for specific GUI - know it exists but can't\n\tremember the name....\nMessage-ID: <4F1E8AFC.3050606 at gmail.com>\nContent-Type: text/plain; charset=ISO-8859-1\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nHi\n\nI remember seeing a GUI for R, which used graphical modeler approach to build the analysis - similar to stella. But I can't find the name at the moment.\n\nCould somebody point me in the right direction? I googled, but got all other stuff, but not what I am looking for.\n\nCheers,\n\nRainer\n\n\n- --\nRainer M. Krug, PhD (Conservation Ecology, SUN), MSc (Conservation Biology, UCT), Dipl. Phys. (Germany)\n\nCentre of Excellence for Invasion Biology Stellenbosch University South Africa\n\nTel :       +33 - (0)9 53 10 27 44\nCell:       +33 - (0)6 85 62 59 98\nFax :       +33 - (0)9 58 10 27 44\n\nFax (D):    +49 - (0)3 21 21 25 22 44\n\nemail:      Rainer at krugs.de\n\nSkype:      RMkrug\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.11 (GNU/Linux)\nComment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/\n\niEYEARECAAYFAk8eivwACgkQoYgNqgF2egr8HACfUbEqTeHHiKngBs7agaitCqzZ\n2uwAoIAlHlOWvnIOV/CSAMdszmKLFMeh\n=GXc6\n-----END PGP SIGNATURE-----\n\n\n\n------------------------------\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at r-project.org\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n\nEnd of R-SIG-GUI Digest, Vol 95, Issue 3",
+      "body_snippet": "Red-R ?\n\nBill Alpert\nBarron's\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at r-project.org [mailto:r-sig-gui-bounces at r-project.org] On Behalf Of r-sig-gui-request at r-project.org\nSent: Tue",
+      "thread_id": "thread-f3de00f5d323",
+      "thread_depth": 0,
+      "month": "2012-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-dd74a458e6a3",
+      "subject": "[R-gui] R Model Building and Evaluation Tool",
+      "message_count": 2,
+      "participants": [
+        "Brett Magill",
+        "Ian Fellows"
+      ],
+      "started": "2012-01-03T00:54:00-06:00",
+      "last_reply": "2012-01-02T23:33:55-08:00",
+      "root_message_id": "msg-dd74a458e6a3"
+    },
+    {
+      "id": "thread-ec9f0a1b5d51",
+      "subject": "[R-gui] R Model Building and Evaluation Tool",
+      "message_count": 1,
+      "participants": [
+        "Yvonnick Noel"
+      ],
+      "started": "2012-01-04T10:14:06+01:00",
+      "last_reply": "2012-01-04T10:14:06+01:00",
+      "root_message_id": "msg-ec9f0a1b5d51"
+    },
+    {
+      "id": "thread-f3de00f5d323",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 95, Issue 3",
+      "message_count": 1,
+      "participants": [
+        "Alpert, William"
+      ],
+      "started": "2012-01-24T09:17:59-05:00",
+      "last_reply": "2012-01-24T09:17:59-05:00",
+      "root_message_id": "msg-f3de00f5d323"
+    },
+    {
+      "id": "thread-22328ba89fcb",
+      "subject": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
+      "message_count": 1,
+      "participants": [
+        "Rainer M Krug"
+      ],
+      "started": "2012-01-24T11:42:04+01:00",
+      "last_reply": "2012-01-24T11:42:04+01:00",
+      "root_message_id": "msg-22328ba89fcb"
+    },
+    {
+      "id": "thread-f91121e21701",
+      "subject": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
+      "message_count": 1,
+      "participants": [
+        "Rainer M Krug"
+      ],
+      "started": "2012-01-24T12:37:24+01:00",
+      "last_reply": "2012-01-24T12:37:24+01:00",
+      "root_message_id": "msg-f91121e21701"
+    }
+  ]
+}

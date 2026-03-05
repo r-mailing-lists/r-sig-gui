@@ -1,0 +1,94 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2013-09",
+  "messages": [
+    {
+      "id": "msg-74214bf94862",
+      "message_id": "<522E66CA.2020708@rub.de>",
+      "from_name": "Thomas Glogowski",
+      "from_email_hash": "ec34243694b0599dff381eed03676ba12ac7b37baa7201723e149fd68be664cd",
+      "date": "2013-09-10T02:24:42+02:00",
+      "subject": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "subject_clean": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Greetings,\n\nim trying to show a simple plot-window in a GtkDrawingArea of a GTK3+\napp. I thought it would be possible to use the CairoDevice-Package and\nhand the DrawingArea generated in my GTK-App via a DLL over to the\nCairoDeviceDriver, but I was unable to figure out, how.\nAs far as I understand a call to the DLL via \".C\" does not work, because\na DrawingArea is not a basic C-Type.\nUsing \".Call\" (even for simple test calls without transferring\nparameters) always end up in a crash to RGUI. Registering my\nDLL-transfer-function (I'm not sure wether this is necessary or not)\ndoesn't work either, because I lack the necessary lib-files to compile\nthe register-function (I'm using VS2010). The entire project is based on\nVS2010 so using the RTools and gcc to build R from source to obtain the\nlib-files is no option.\n\nAny hints are greatly appreciated.\n\nkind regards, Thomas",
+      "body_snippet": "Greetings,\n\nim trying to show a simple plot-window in a GtkDrawingArea of a GTK3+\napp. I thought it would be possible to use the CairoDevice-Package and\nhand the DrawingArea generated in my GTK-App vi",
+      "thread_id": "thread-74214bf94862",
+      "thread_depth": 0,
+      "month": "2013-09"
+    },
+    {
+      "id": "msg-fa090a69cac0",
+      "message_id": "<CAOQ5NydK-uH4GsD1JTd=4ODvHs3=5qw489UdrL82P7v3F6Fe-g@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2013-09-10T14:05:51-07:00",
+      "subject": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "subject_clean": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "in_reply_to": "<522E66CA.2020708@rub.de>",
+      "references": [
+        "<522E66CA.2020708@rub.de>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130910/7b8bde0f/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130910/7b8bde0f/attachment.pl>",
+      "thread_id": "thread-74214bf94862",
+      "thread_depth": 1,
+      "month": "2013-09"
+    },
+    {
+      "id": "msg-824d2c184021",
+      "message_id": "<loom.20130924T005120-550@post.gmane.org>",
+      "from_name": "Thomas Glogowski",
+      "from_email_hash": "ec34243694b0599dff381eed03676ba12ac7b37baa7201723e149fd68be664cd",
+      "date": "2013-09-23T23:23:25Z",
+      "subject": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "subject_clean": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "in_reply_to": null,
+      "references": [
+        "<522E66CA.2020708@rub.de>",
+        "<CAOQ5NydK-uH4GsD1JTd=4ODvHs3=5qw489UdrL82P7v3F6Fe-g@mail.gmail.com>"
+      ],
+      "body_plain": "Michael Lawrence <lawrence.michael <at> gene.com> writes:\n\n> \n> The objects in RGtk2 (and cairoDevice) are externalptr objects in R. One\n> approach would be to create an externalptr in C, and then call some R code\n> that sets the class attribute accordingly, i.e., to the result of\n> gTypeGetAncestors(\"GtkDrawingArea\"), and then calls asCairoDevice() on that\n> object.\n> \n> Michael\n> \n\nThank's Michael but I don't understand how to do what you've explained. How\ncan I change an external pointer (created in C) to be an\nGtkDrawingArea using R?\n\nWhat I've tried so far is:\n\n-1-store the existing GtkDrawingArea* from my app in a DLL callable variable\n-2-set up a DrawingArea in R with: DA <- gtkDrawingArea\n-3-call the DLL-function with .Call (\"R_Interface_get_da\", DA )\n-4-the DLL-function R_Interface_get_da takes DA as an SEXP and lets it point\nto the variable created in step 1 (i.e. my apps DrawingArea).\n\nDoing it that way I thought DA would be an object of the correct class\nallready, because I only let it point to some other DrawingArea. But that\ndoesn't work in conjunction with asCairoDevice.\n\n\n\nThomas",
+      "body_snippet": "Michael Lawrence <lawrence.michael <at> gene.com> writes:\n\n> \n> The objects in RGtk2 (and cairoDevice) are externalptr objects in R. One\n> approach would be to create an externalptr in C, and then cal",
+      "thread_id": "thread-74214bf94862",
+      "thread_depth": 2,
+      "month": "2013-09"
+    },
+    {
+      "id": "msg-a65577551d65",
+      "message_id": "<CAOQ5NycTy_WLo=OCGgXynNC0EN6LW9wp+V-JY8J+STkRMcrpdg@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
+      "date": "2013-09-23T17:33:16-07:00",
+      "subject": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "subject_clean": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "in_reply_to": "<loom.20130924T005120-550@post.gmane.org>",
+      "references": [
+        "<522E66CA.2020708@rub.de>",
+        "<CAOQ5NydK-uH4GsD1JTd=4ODvHs3=5qw489UdrL82P7v3F6Fe-g@mail.gmail.com>",
+        "<loom.20130924T005120-550@post.gmane.org>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130923/698d5174/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130923/698d5174/attachment.pl>",
+      "thread_id": "thread-74214bf94862",
+      "thread_depth": 3,
+      "month": "2013-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-74214bf94862",
+      "subject": "[R-gui] embedding R in GTK+ (GtkDrawingArea)",
+      "message_count": 4,
+      "participants": [
+        "Michael Lawrence",
+        "Thomas Glogowski"
+      ],
+      "started": "2013-09-10T02:24:42+02:00",
+      "last_reply": "2013-09-23T17:33:16-07:00",
+      "root_message_id": "msg-74214bf94862"
+    }
+  ]
+}

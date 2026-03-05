@@ -1,0 +1,1021 @@
+From 10133msb at comb.es  Thu Jun  5 21:01:17 2008
+From: 10133msb at comb.es (Manel Salamero)
+Date: Thu,  5 Jun 2008 21:01:17 +0200
+Subject: [R-gui] always on top
+Message-ID: <200806052101.AA149160092@comb.es>
+
+Some year ago James Wettenhall give a solution to keep Tk windows always on top, which uses a dll downloaded from http://www.jessikat.fsnet.co.uk/dll.zip. Now this link doesn't work. Someone knows were to download it or other alternative?
+
+Thanks, Manel
+
+
+From phgrosjean at sciviews.org  Fri Jun  6 11:19:37 2008
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Fri, 06 Jun 2008 11:19:37 +0200
+Subject: [R-gui] always on top
+In-Reply-To: <200806052101.AA149160092@comb.es>
+References: <200806052101.AA149160092@comb.es>
+Message-ID: <48490129.7040407@sciviews.org>
+
+Hello,
+
+This trick works on Windows (only) and does not require any additional 
+components:
+
+library(tcltk)
+top <- tktoplevel()
+if (.Platform$OS.type == "windows") {
+     tcl("wm", "attributes", top, topmost = 1)
+	
+     # You may also be interested by this one:
+     tcl("wm", "attributes", top, toolwindow = 1)
+}
+
+Best,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Belgium
+( ( ( ( (
+..............................................................
+
+Manel Salamero wrote:
+> Some year ago James Wettenhall give a solution to keep Tk windows always on top, which uses a dll downloaded from http://www.jessikat.fsnet.co.uk/dll.zip. Now this link doesn't work. Someone knows were to download it or other alternative?
+> 
+> Thanks, Manel
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From spluque at gmail.com  Fri Jun 13 05:13:55 2008
+From: spluque at gmail.com (Sebastian P. Luque)
+Date: Thu, 12 Jun 2008 22:13:55 -0500
+Subject: [R-gui] embedding R graphics in Tk widgets
+Message-ID: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+
+Hi,
+
+Several years ago I was looking for ways to embed R graphics into Tk
+widgets, and abandoned the idea after finding out it was way too
+difficult, at least for my purposes.  More recently, I looked again and
+found Luke Tierney's trkplot, which allows one to do just this.
+However, there seem to be limitations like inability to resize the
+graphs along with the widgets.  That's not a big encumbrance in my case,
+but the difficulty in accessing the R plot's coordinates is.  The only
+guidance I could find was that in James Wettenhall:
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/InteractiveTkrPlot.html
+
+but it issues an enigmatic message for the calculated coordinates:
+
+"Label Point Closest to These Approximate Plot Coordinates"
+
+Is that the best approach available, or are there better alternatives?
+
+My idea is to implement an integrated interface for a plotting utility I
+wrote for package diveMove, which gathers pairs of coordinates from
+mouse clicks (in standard unembedded graphs for now):
+
+---<---------------cut here---------------start-------------->---
+install.packages("diveMove")  # from any CRAN
+data(divesTDR)
+depth.zoc <- zoc(getTime(divesTDR), getDepth(divesTDR), offset=3)
+coords <- plotTD(getTime(divesTDR), depth.zoc)
+---<---------------cut here---------------end---------------->---
+
+Clicking on the "Zero-Offset Correct a Range" button, followed by a pair
+of clicks in the graph, gathers coordinates using locator().  Because
+users may need to zoom and pan across different scales, it is important
+to allow for resizing of the plot.
+
+Any recommendations on how to embed R graphics on Tk widgets, and
+gathering coordinates as above, would be much appreciated.  Thanks.
+
+
+Cheers,
+
+-- 
+Seb
+
+
+From mflawren at fhcrc.org  Fri Jun 13 05:46:34 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Thu, 12 Jun 2008 20:46:34 -0700
+Subject: [R-gui] embedding R graphics in Tk widgets
+In-Reply-To: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+Message-ID: <509e0620806122046kd9d0d15ifd9d6c079d75546a@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080612/1c646678/attachment.pl>
+
+From spluque at gmail.com  Fri Jun 13 06:05:27 2008
+From: spluque at gmail.com (Sebastian P. Luque)
+Date: Thu, 12 Jun 2008 23:05:27 -0500
+Subject: [R-gui] embedding R graphics in Tk widgets
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<509e0620806122046kd9d0d15ifd9d6c079d75546a@mail.gmail.com>
+Message-ID: <87wskudlo8.fsf@patagonia.sebmags.homelinux.org>
+
+On Thu, 12 Jun 2008 20:46:34 -0700,
+"Michael Lawrence" <mflawren at fhcrc.org> wrote:
+
+> Well, this doesn't really solve your Tk problem, but you could
+> integrate graphics with a GUI using cairoDevice and RGtk2. The
+> cairoDevice package supports resizing, and using par("plt") and
+> par("usr") as in the tkrplot example you cited allows for mapping
+> between device and data coordinates.
+
+> See the playwith package for an example of interactive graphics using
+> cairoDevice.
+
+Thanks Michael, I'll look at the code, but trying playwith() gave a few
+errors, although the package installed ok:
+
+---<---------------cut here---------------start-------------->---
+R> playwith(plot(treering2, xlim=c(0,300)), 
++         time.mode = TRUE,
++         labels = paste(time(treering2), "CE"))
+Loading required package: RGtk2
+Error in plot.new() : figure margins too large
+R> Error in if (playState$is.lattice) { : argument is of length zero
+R> sessionInfo()
+R version 2.7.0 (2008-04-22) 
+x86_64-pc-linux-gnu 
+
+locale:
+LC_CTYPE=en_CA.UTF-8;LC_NUMERIC=C;LC_TIME=en_CA.UTF-8;LC_COLLATE=en_CA.UTF-8;LC_MONETARY=C;LC_MESSAGES=en_CA.UTF-8;LC_PAPER=en_CA.UTF-8;LC_NAME=C;LC_ADDRESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=en_CA.UTF-8;LC_IDENTIFICATION=C
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] RGtk2_2.12.5-3  playwith_0.8.51 lattice_0.17-8 
+
+loaded via a namespace (and not attached):
+[1] cairoDevice_2.8      gridBase_0.4-3       gWidgets_0.0-28      gWidgetsRGtk2_0.0-35 tools_2.7.0         
+---<---------------cut here---------------end---------------->---
+
+But I guess I can see how to work with CairoDevice and RGtk2 by looking
+at the source.  Thanks.
+
+
+-- 
+Seb
+
+
+From mflawren at fhcrc.org  Fri Jun 13 06:27:16 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Thu, 12 Jun 2008 21:27:16 -0700
+Subject: [R-gui] embedding R graphics in Tk widgets
+In-Reply-To: <87wskudlo8.fsf@patagonia.sebmags.homelinux.org>
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<509e0620806122046kd9d0d15ifd9d6c079d75546a@mail.gmail.com>
+	<87wskudlo8.fsf@patagonia.sebmags.homelinux.org>
+Message-ID: <509e0620806122127x19ff2ea7me43282cf14b9d7b9@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080612/74e3ff1b/attachment.pl>
+
+From felix at nfrac.org  Fri Jun 13 07:20:24 2008
+From: felix at nfrac.org (Felix Andrews)
+Date: Fri, 13 Jun 2008 15:20:24 +1000
+Subject: [R-gui] embedding R graphics in Tk widgets
+In-Reply-To: <87wskudlo8.fsf@patagonia.sebmags.homelinux.org>
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<509e0620806122046kd9d0d15ifd9d6c079d75546a@mail.gmail.com>
+	<87wskudlo8.fsf@patagonia.sebmags.homelinux.org>
+Message-ID: <94730b8a0806122220x19993900qf7f6cf03cd0d55d3@mail.gmail.com>
+
+I have heard about this "figure margins too large" error a few times,
+always on Linux.
+
+It sounds like the window is being created too small. I do not know
+why. (Does the new playwith window look very small? It is supposed to
+be 640 x 500 pixels by default.)
+
+A work-around would be to resize the window to make it larger, then
+re-do the playwith() call, or click on the "reload" button in the
+playwith window.
+
+Regards,
+Felix
+
+
+On Fri, Jun 13, 2008 at 2:05 PM, Sebastian P. Luque <spluque at gmail.com> wrote:
+> On Thu, 12 Jun 2008 20:46:34 -0700,
+> "Michael Lawrence" <mflawren at fhcrc.org> wrote:
+>
+>> Well, this doesn't really solve your Tk problem, but you could
+>> integrate graphics with a GUI using cairoDevice and RGtk2. The
+>> cairoDevice package supports resizing, and using par("plt") and
+>> par("usr") as in the tkrplot example you cited allows for mapping
+>> between device and data coordinates.
+>
+>> See the playwith package for an example of interactive graphics using
+>> cairoDevice.
+>
+> Thanks Michael, I'll look at the code, but trying playwith() gave a few
+> errors, although the package installed ok:
+>
+> ---<---------------cut here---------------start-------------->---
+> R> playwith(plot(treering2, xlim=c(0,300)),
+> +         time.mode = TRUE,
+> +         labels = paste(time(treering2), "CE"))
+> Loading required package: RGtk2
+> Error in plot.new() : figure margins too large
+> R> Error in if (playState$is.lattice) { : argument is of length zero
+> R> sessionInfo()
+> R version 2.7.0 (2008-04-22)
+> x86_64-pc-linux-gnu
+>
+> locale:
+> LC_CTYPE=en_CA.UTF-8;LC_NUMERIC=C;LC_TIME=en_CA.UTF-8;LC_COLLATE=en_CA.UTF-8;LC_MONETARY=C;LC_MESSAGES=en_CA.UTF-8;LC_PAPER=en_CA.UTF-8;LC_NAME=C;LC_ADDRESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=en_CA.UTF-8;LC_IDENTIFICATION=C
+>
+> attached base packages:
+> [1] grid      stats     graphics  grDevices utils     datasets  methods   base
+>
+> other attached packages:
+> [1] RGtk2_2.12.5-3  playwith_0.8.51 lattice_0.17-8
+>
+> loaded via a namespace (and not attached):
+> [1] cairoDevice_2.8      gridBase_0.4-3       gWidgets_0.0-28      gWidgetsRGtk2_0.0-35 tools_2.7.0
+> ---<---------------cut here---------------end---------------->---
+>
+> But I guess I can see how to work with CairoDevice and RGtk2 by looking
+> at the source.  Thanks.
+>
+>
+> --
+> Seb
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+
+-- 
+Felix Andrews / ???
+PhD candidate
+Integrated Catchment Assessment and Management Centre
+The Fenner School of Environment and Society
+The Australian National University (Building 48A), ACT 0200
+Beijing Bag, Locked Bag 40, Kingston ACT 2604
+http://www.neurofractal.org/felix/
+3358 543D AAC6 22C2 D336 80D9 360B 72DD 3E4C F5D8
+
+
+From Wayne.W.Jones at shell.com  Fri Jun 13 09:37:32 2008
+From: Wayne.W.Jones at shell.com (Wayne.W.Jones at shell.com)
+Date: Fri, 13 Jun 2008 08:37:32 +0100
+Subject: [R-gui] embedding R graphics in Tk widgets
+In-Reply-To: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+Message-ID: <77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>
+
+
+Hi Sebastian, 
+
+The package rpanel (see www.stats.gla.ac.uk/~adrian/rpanel/) makes it really easy to embed plots into tcltk widgets. 
+
+
+Try the following in R: 
+
+#----------------------------------------------------------------------------------------
+install.packages("rpanel")
+require(tkrplot)
+library(rpanel)
+my.action<-function(panel,x,y){print(c(x,y)); return(panel)}
+rpplot <- rp.control(title = "Demonstration of rp.tkrplot", h = 1)
+
+redraw <- function(panel) {
+       rp.tkrreplot(panel, tkrp)
+}
+
+rp.tkrplot(rpplot, tkrp, function(panel) plot(1:20, (1:20)^panel$h),action=my.action)
+rp.slider(rpplot, h, action = redraw, from = 0.05, to = 2.00, resolution = 0.05)
+#----------------------------------------------------------------------------------------
+
+
+When you left click on the plot the function "my.action" prints the x,y pixel coordinates of the point you clicked in the graph. I have written functions in the past which map the pixel coordinates to the grpahical user coords. 
+Then it picks out the nearest point. 
+
+This is still slightly messy though! It is not possible to generalise the process of mapping pixel coordinates with the graphical user coords. It can depend on the settings of the users PC etc. 
+
+The developers of rpanel are aware of this and may, in the future, build a locator function in the rpanel package. 
+
+I hope this helps. 
+
+Regards
+
+Wayne
+
+
+
+
+
+
+
+
+
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch]On Behalf Of Sebastian P.
+Luque
+Sent: 13 June 2008 04:14
+To: r-sig-gui at stat.math.ethz.ch
+Subject: [R-gui] embedding R graphics in Tk widgets
+
+
+Hi,
+
+Several years ago I was looking for ways to embed R graphics into Tk
+widgets, and abandoned the idea after finding out it was way too
+difficult, at least for my purposes.  More recently, I looked again and
+found Luke Tierney's trkplot, which allows one to do just this.
+However, there seem to be limitations like inability to resize the
+graphs along with the widgets.  That's not a big encumbrance in my case,
+but the difficulty in accessing the R plot's coordinates is.  The only
+guidance I could find was that in James Wettenhall:
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/InteractiveTkrPlot.html
+
+but it issues an enigmatic message for the calculated coordinates:
+
+"Label Point Closest to These Approximate Plot Coordinates"
+
+Is that the best approach available, or are there better alternatives?
+
+My idea is to implement an integrated interface for a plotting utility I
+wrote for package diveMove, which gathers pairs of coordinates from
+mouse clicks (in standard unembedded graphs for now):
+
+---<---------------cut here---------------start-------------->---
+install.packages("diveMove")  # from any CRAN
+data(divesTDR)
+depth.zoc <- zoc(getTime(divesTDR), getDepth(divesTDR), offset=3)
+coords <- plotTD(getTime(divesTDR), depth.zoc)
+---<---------------cut here---------------end---------------->---
+
+Clicking on the "Zero-Offset Correct a Range" button, followed by a pair
+of clicks in the graph, gathers coordinates using locator().  Because
+users may need to zoom and pan across different scales, it is important
+to allow for resizing of the plot.
+
+Any recommendations on how to embed R graphics on Tk widgets, and
+gathering coordinates as above, would be much appreciated.  Thanks.
+
+
+Cheers,
+
+-- 
+Seb
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From felix at nfrac.org  Fri Jun 13 10:24:30 2008
+From: felix at nfrac.org (Felix Andrews)
+Date: Fri, 13 Jun 2008 18:24:30 +1000
+Subject: [R-gui] embedding R graphics in Tk widgets
+In-Reply-To: <77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>
+Message-ID: <94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>
+
+Here is the same using the playwith package:
+
+library(playwith)
+playwith(plot(1:20, (1:20)^cur.time),
+    time.vector=seq(0.05,2,by=0.05))
+
+When you click on the plot, the location (in plot coordinates) is
+shown inside the window.
+
+However, I must admit that this is somewhat of a special case, and in
+fact the "time.vector" and "time.mode" are not really intended to be
+used this way. I would like to make it easy to add widgets like
+sliders, numeric inputs and toggles, that are linked to variables in
+the plot. This is currently possible but more complicated than is
+warranted.
+
+Felix
+
+
+On Fri, Jun 13, 2008 at 5:37 PM,  <Wayne.W.Jones at shell.com> wrote:
+>
+> Hi Sebastian,
+>
+> The package rpanel (see www.stats.gla.ac.uk/~adrian/rpanel/) makes it really easy to embed plots into tcltk widgets.
+>
+>
+> Try the following in R:
+>
+> #----------------------------------------------------------------------------------------
+> install.packages("rpanel")
+> require(tkrplot)
+> library(rpanel)
+> my.action<-function(panel,x,y){print(c(x,y)); return(panel)}
+> rpplot <- rp.control(title = "Demonstration of rp.tkrplot", h = 1)
+>
+> redraw <- function(panel) {
+>       rp.tkrreplot(panel, tkrp)
+> }
+>
+> rp.tkrplot(rpplot, tkrp, function(panel) plot(1:20, (1:20)^panel$h),action=my.action)
+> rp.slider(rpplot, h, action = redraw, from = 0.05, to = 2.00, resolution = 0.05)
+> #----------------------------------------------------------------------------------------
+>
+>
+> When you left click on the plot the function "my.action" prints the x,y pixel coordinates of the point you clicked in the graph. I have written functions in the past which map the pixel coordinates to the grpahical user coords.
+> Then it picks out the nearest point.
+>
+> This is still slightly messy though! It is not possible to generalise the process of mapping pixel coordinates with the graphical user coords. It can depend on the settings of the users PC etc.
+>
+> The developers of rpanel are aware of this and may, in the future, build a locator function in the rpanel package.
+>
+> I hope this helps.
+>
+> Regards
+>
+> Wayne
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch
+> [mailto:r-sig-gui-bounces at stat.math.ethz.ch]On Behalf Of Sebastian P.
+> Luque
+> Sent: 13 June 2008 04:14
+> To: r-sig-gui at stat.math.ethz.ch
+> Subject: [R-gui] embedding R graphics in Tk widgets
+>
+>
+> Hi,
+>
+> Several years ago I was looking for ways to embed R graphics into Tk
+> widgets, and abandoned the idea after finding out it was way too
+> difficult, at least for my purposes.  More recently, I looked again and
+> found Luke Tierney's trkplot, which allows one to do just this.
+> However, there seem to be limitations like inability to resize the
+> graphs along with the widgets.  That's not a big encumbrance in my case,
+> but the difficulty in accessing the R plot's coordinates is.  The only
+> guidance I could find was that in James Wettenhall:
+>
+> http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/InteractiveTkrPlot.html
+>
+> but it issues an enigmatic message for the calculated coordinates:
+>
+> "Label Point Closest to These Approximate Plot Coordinates"
+>
+> Is that the best approach available, or are there better alternatives?
+>
+> My idea is to implement an integrated interface for a plotting utility I
+> wrote for package diveMove, which gathers pairs of coordinates from
+> mouse clicks (in standard unembedded graphs for now):
+>
+> ---<---------------cut here---------------start-------------->---
+> install.packages("diveMove")  # from any CRAN
+> data(divesTDR)
+> depth.zoc <- zoc(getTime(divesTDR), getDepth(divesTDR), offset=3)
+> coords <- plotTD(getTime(divesTDR), depth.zoc)
+> ---<---------------cut here---------------end---------------->---
+>
+> Clicking on the "Zero-Offset Correct a Range" button, followed by a pair
+> of clicks in the graph, gathers coordinates using locator().  Because
+> users may need to zoom and pan across different scales, it is important
+> to allow for resizing of the plot.
+>
+> Any recommendations on how to embed R graphics on Tk widgets, and
+> gathering coordinates as above, would be much appreciated.  Thanks.
+>
+>
+> Cheers,
+>
+> --
+> Seb
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+
+-- 
+Felix Andrews / ???
+PhD candidate
+Integrated Catchment Assessment and Management Centre
+The Fenner School of Environment and Society
+The Australian National University (Building 48A), ACT 0200
+Beijing Bag, Locked Bag 40, Kingston ACT 2604
+http://www.neurofractal.org/felix/
+3358 543D AAC6 22C2 D336 80D9 360B 72DD 3E4C F5D8
+
+
+From giov.martin at googlemail.com  Fri Jun 13 11:33:47 2008
+From: giov.martin at googlemail.com (giovanni martin)
+Date: Fri, 13 Jun 2008 11:33:47 +0200
+Subject: [R-gui] delete me
+Message-ID: <f2d5ac830806130233h55d34450s3fdff4f19b943419@mail.gmail.com>
+
+
+From spluque at gmail.com  Fri Jun 13 21:50:51 2008
+From: spluque at gmail.com (Sebastian P. Luque)
+Date: Fri, 13 Jun 2008 14:50:51 -0500
+Subject: [R-gui] embedding R graphics in Tk widgets
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>
+	<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>
+Message-ID: <87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>
+
+Hi,
+
+Thanks everyone.  To summarize:
+
+- Embedding of R graphics is trivial with several packages: tkrplot,
+  rpanel, playwith.  The first two do it through behind-the-scenes
+  tcltk, while playwith plays with (couldn't resist it :-) GTK+ and
+  Cairo.
+
+- Of these, the most versatile approach seems to be that taken by
+  playwith because it allows for resizing of the R graphics, and
+  straightforward access to plot coordinates and locator()-like
+  functionality.
+
+Looks like I should have a closer look at playwith's code.  Can you
+suggest what parts of the code would be useful in the context of the
+code in my first post?
+
+Michael -- resizing and/or calling playwith() again as you suggested
+solved the problem, although it didn't seem too small (the plot was
+drawn properly, independently of the size at which it was redrawn).
+However, there some further errors:
+
+
+
+On Fri, 13 Jun 2008 18:24:30 +1000,
+"Felix Andrews" <felix at nfrac.org> wrote:
+
+> Here is the same using the playwith package:
+
+> library(playwith)
+> playwith(plot(1:20, (1:20)^cur.time),
+> time.vector=seq(0.05,2,by=0.05))
+
+> When you click on the plot, the location (in plot coordinates) is
+> shown inside the window.
+
+It didn't show anything on the window after clicking.  The following
+message was shown in the command-line upon resizing:
+
+Error in if (playState$is.lattice) { : argument is of length zero
+
+
+Cheers,
+
+-- 
+Seb
+
+
+From felix at nfrac.org  Sat Jun 14 03:55:36 2008
+From: felix at nfrac.org (Felix Andrews)
+Date: Sat, 14 Jun 2008 11:55:36 +1000
+Subject: [R-gui] embedding R graphics in Tk widgets
+In-Reply-To: <87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>
+	<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>
+	<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>
+Message-ID: <94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>
+
+Actually, I would not recommend looking at the playwith code for what
+you want to do. The playwith code is quite complicated because it
+tries hard to work in many different cases.
+
+For most applications you can use the gWidgets package with
+gWidgetsRGtk2, rather than RGtk2 directly. That will make it easier,
+with a more R-friendly syntax. Take a look at the gWidgets vignette.
+Note that only gWidgetsRGtk2 supports an embedded, interactive device.
+
+If you do decide to use RGtk2 directly, maybe look at
+demo(rgtkplot, package="RGtk2")
+
+Since cairoDevice is a proper interactive device, it is resizable, and
+you can use locator() or grid.locator() as usual.
+
+Alternatively you could try to use the playwith API to create the
+interaction tools you want.
+
+You should be aware that any solution based on RGtk2 will require GTK+
+to be installed by your users, whereas TclTk is bundled with R.
+
+
+
+On Sat, Jun 14, 2008 at 5:50 AM, Sebastian P. Luque <spluque at gmail.com> wrote:
+> Hi,
+>
+> Thanks everyone.  To summarize:
+>
+> - Embedding of R graphics is trivial with several packages: tkrplot,
+>  rpanel, playwith.  The first two do it through behind-the-scenes
+>  tcltk, while playwith plays with (couldn't resist it :-) GTK+ and
+>  Cairo.
+>
+> - Of these, the most versatile approach seems to be that taken by
+>  playwith because it allows for resizing of the R graphics, and
+>  straightforward access to plot coordinates and locator()-like
+>  functionality.
+>
+> Looks like I should have a closer look at playwith's code.  Can you
+> suggest what parts of the code would be useful in the context of the
+> code in my first post?
+>
+> Michael -- resizing and/or calling playwith() again as you suggested
+> solved the problem, although it didn't seem too small (the plot was
+> drawn properly, independently of the size at which it was redrawn).
+> However, there some further errors:
+>
+>
+>
+> On Fri, 13 Jun 2008 18:24:30 +1000,
+> "Felix Andrews" <felix at nfrac.org> wrote:
+>
+>> Here is the same using the playwith package:
+>
+>> library(playwith)
+>> playwith(plot(1:20, (1:20)^cur.time),
+>> time.vector=seq(0.05,2,by=0.05))
+>
+>> When you click on the plot, the location (in plot coordinates) is
+>> shown inside the window.
+>
+> It didn't show anything on the window after clicking.  The following
+> message was shown in the command-line upon resizing:
+>
+> Error in if (playState$is.lattice) { : argument is of length zero
+
+This error is caused by the initial error... does it work if you re-do
+the playwith() call?
+
+
+
+>
+>
+> Cheers,
+>
+> --
+> Seb
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+
+-- 
+Felix Andrews / ???
+PhD candidate
+Integrated Catchment Assessment and Management Centre
+The Fenner School of Environment and Society
+The Australian National University (Building 48A), ACT 0200
+Beijing Bag, Locked Bag 40, Kingston ACT 2604
+http://www.neurofractal.org/felix/
+3358 543D AAC6 22C2 D336 80D9 360B 72DD 3E4C F5D8
+
+
+From mflawren at fhcrc.org  Sat Jun 14 04:17:12 2008
+From: mflawren at fhcrc.org (Michael Lawrence)
+Date: Fri, 13 Jun 2008 19:17:12 -0700
+Subject: [R-gui] embedding R graphics in Tk widgets
+In-Reply-To: <94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>
+	<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>
+	<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>
+	<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>
+Message-ID: <509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080613/5f38df4f/attachment.pl>
+
+From spluque at gmail.com  Mon Jun 16 14:48:26 2008
+From: spluque at gmail.com (Sebastian P. Luque)
+Date: Mon, 16 Jun 2008 07:48:26 -0500
+Subject: [R-gui] embedding R graphics in Tk widgets
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>
+	<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>
+	<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>
+	<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>
+	<509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>
+Message-ID: <87abhllf51.fsf@patagonia.sebmags.homelinux.org>
+
+Hi again,
+
+Reading the vignette("gWidgets") and the RNews article, which show
+arguments 'h', and '...' for handler functions that update an embedded
+plot.  However, it's not clear what these arguments are doing, and if I
+leave the latter out of my handler function (also a plot updater), I get
+the following error:
+
+Error in handler(...) : 
+  unused argument(s) (list(obj = <S4 object of class "gSliderRGtk">, action = NULL), <pointer: 0x3bf8e60>)
+
+as soon as I change any slider, etc.  What are these arguments for?
+Thanks!
+
+
+Cheers,
+
+-- 
+Seb
+
+
+From jverzani at gmail.com  Thu Jun 19 04:14:18 2008
+From: jverzani at gmail.com (jverzani)
+Date: Thu, 19 Jun 2008 02:14:18 +0000 (UTC)
+Subject: [R-gui] embedding R graphics in Tk widgets
+References: <8763sef2mk.fsf@patagonia.sebmags.homelinux.org>
+	<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>
+	<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>
+	<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>
+	<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>
+	<509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>
+	<87abhllf51.fsf@patagonia.sebmags.homelinux.org>
+Message-ID: <loom.20080619T020819-746@post.gmane.org>
+
+Sebastian P. Luque <spluque <at> gmail.com> writes:
+
+> 
+> Hi again,
+> 
+> Reading the vignette("gWidgets") and the RNews article, which show
+> arguments 'h', and '...' for handler functions that update an embedded
+> plot.  However, it's not clear what these arguments are doing, and if I
+> leave the latter out of my handler function (also a plot updater), I get
+> the following error:
+> 
+> Error in handler(...) : 
+>   unused argument(s) (list(obj = <S4 object of class "gSliderRGtk">, action =
+NULL), <pointer: 0x3bf8e60>)
+> 
+> as soon as I change any slider, etc.  What are these arguments for?
+> Thanks!
+> 
+> Cheers,
+> 
+
+The handlers in the various toolkits have several different arguments, none of
+course being standard. The ... is to accommodate these. Whereas, the first
+argument for a handler, called "h" from the iWidgets background of gWidgets, is
+a list containing components "obj" to refer to the object that the handler is
+called on, such as the slider in your example, and "action" which just passes
+along the action= argument. (Some widgets have additional components, such as
+"dropdata" or "x" and "y".) The h$obj construction allows you to avoid global
+variables. So the following are equivalent:
+
+sl = gslider(cont=gwindow(), handler = function(h,...) print(svalue(sl)))
+
+and
+
+sl = gslider(cont=gwindow(), handler = function(h,...) print(svalue(h$obj)))
+
+
+Hope that clarifies the situation. --John
+
+
+From yvonnick.noel at free.fr  Wed Jun 25 11:58:44 2008
+From: yvonnick.noel at free.fr (NOEL Yvonnick)
+Date: Wed, 25 Jun 2008 11:58:44 +0200
+Subject: [R-gui] svalue(gtable)
+Message-ID: <486216D4.1000702@free.fr>
+
+Hello,
+
+
+Many thanks to John Verzani and Michael Lawrence for providing those 
+very useful libraries gWidgets and RGtk2.
+
+I am facing the following problem with some code that used to work: the 
+gWidgets command svalue(some.gtable.widget) does not seem to work.
+
+I can reproduce the error by using the first example in the gtable help 
+file:
+
+m <- getCRANmirrors()[,c(1,4)]
+setCRAN <- function(URL) { ## see chooseCRANmirror
+   repos = getOption("repos")
+   repos["CRAN"] <- gsub("/$", "", URL)
+   options(repos=repos)
+}
+w <- gwindow("gtable example",width=400)
+gp = ggroup(horizontal=FALSE, cont=w)
+tab <- gtable(m, chosencol = 2, cont=gp, expand=TRUE,
+     handler = function(h,...) setCRAN(svalue(h$obj)))
+bg <- ggroup(cont=gp)
+addSpring(bg)
+gbutton("dismiss", cont=bg, handler = function(h,...) dispose(w))
+
+Then, selecting one of the elements, and trying to get access to the 
+gtable value, I get:
+
+ > svalue(tab)
+Error in function (classes, fdef, mtable)  :
+   unable to find an inherited method for function ".svalue", for 
+signature "gGridRGtk", "guiWidgetsToolkitRGtk2", "NULL", "NULL"
+
+Is this a problem related to the recent redefinition of the svalue 
+method as generic?
+
+Thanks a lot,
+
+Yvonnick Noel, PhD
+University of Brittany at Rennes, France
+
+
+From jverzani at gmail.com  Thu Jun 26 04:43:51 2008
+From: jverzani at gmail.com (jverzani)
+Date: Thu, 26 Jun 2008 02:43:51 +0000 (UTC)
+Subject: [R-gui] svalue(gtable)
+References: <486216D4.1000702@free.fr>
+Message-ID: <loom.20080626T024018-287@post.gmane.org>
+
+NOEL Yvonnick <yvonnick.noel <at> free.fr> writes:
+
+> 
+> Hello,
+...
+> I can reproduce the error by using the first example in the gtable help 
+> file:
+> 
+> m <- getCRANmirrors()[,c(1,4)]
+> setCRAN <- function(URL) { ## see chooseCRANmirror
+>    repos = getOption("repos")
+>    repos["CRAN"] <- gsub("/$", "", URL)
+>    options(repos=repos)
+> }
+> w <- gwindow("gtable example",width=400)
+> gp = ggroup(horizontal=FALSE, cont=w)
+> tab <- gtable(m, chosencol = 2, cont=gp, expand=TRUE,
+>      handler = function(h,...) setCRAN(svalue(h$obj)))
+> bg <- ggroup(cont=gp)
+> addSpring(bg)
+> gbutton("dismiss", cont=bg, handler = function(h,...) dispose(w))
+y> 
+> Then, selecting one of the elements, and trying to get access to the 
+> gtable value, I get:
+> 
+>  > svalue(tab)
+> Error in function (classes, fdef, mtable)  :
+>    unable to find an inherited method for function ".svalue", for 
+> signature "gGridRGtk", "guiWidgetsToolkitRGtk2", "NULL", "NULL"
+> 
+> Is this a problem related to the recent redefinition of the svalue 
+> method as generic?
+> 
+> Thanks a lot,
+> 
+> Yvonnick Noel, PhD
+> University of Brittany at Rennes, France
+> 
+
+Hi,
+
+I don't see this problem with my version of RGtk2. Can you email me offline with
+your version of gWidgets, gWidgetsRgtk2 and R so I can check?I did make a minor
+change to .svalue as there was a mistake in the signature. It may have
+introduced the error you see.
+
+--John
+
+
+From larryh at zebra.us.udel.edu  Fri Jun 27 19:55:47 2008
+From: larryh at zebra.us.udel.edu (H. Lawrence Hotchkiss)
+Date: Fri, 27 Jun 2008 13:55:47 -0400 (EDT)
+Subject: [R-gui] Lattice graphics
+Message-ID: <200806271757.m5RHvSh2024332@zebra.us.udel.edu>
+
+Hi,
+
+I have not been able to control the tick-mark locations and labels in a 
+wireframe plot.  I've been using the scales= option, like this:
+
+       scales=list(arrows=FALSE,
+          x=list(at=seq(-3,3),labels=paste("-3":"3")),
+          y=list(at=seq(-3,3),labels=paste("-3":"3")) ),
+
+If there are no dimnames on the input matrix, I get 3 tick marks and three 
+labels bunched at the low end of the x and y axes. But if there are dimnames on 
+the input matrix, I get a bunch of uninterpretable overprints.
+
+If I designate tick.number=7 instead of at=, I get 7 tickmarks, but not at the 
+correct locations. And the labels are started in the second position ("-2") 
+leaving the last one printed "NULL". (I can fix this by prepending a "dummy" 
+value to the labels labels=paste("-4":"3") ).
+
+The help for wireframe (and cloud) says the following:
+
+Other components that work in the scales argument of xyplot etc. should also 
+work here (as long as they make sense), including explicit specification of tick 
+mark locations and labels. (Not everything is implemented yet, but if you find 
+something that should work but does not, feel free to bug the maintainer.)
+
+I wonder if at= and labels= lists are among the features that don't work yet.
+
+I'm running R 2.7.0 for Windows and just downloaded the lattice package to be 
+sure I have the latest version.
+
+Here are selected examples:
+
+------------------------------------------------------------------------------
+# Generate input data
+x <- matrix(round(seq(-3.4,3.4,0.2), 2), ncol=1);
+f_xy <- dnorm(x)%*%t(dnorm(x))
+
+# No specification of tick location or labels
+wireframe(f_xy, col="blue", pretty=TRUE, drape=TRUE,
+       scales=list(arrows=FALSE),
+       xlab=list(expression(x)),
+       ylab=list(expression(y)),
+       zlab=list(expression(f[xy])),
+       main="Bivariate Normal Density")
+
+# Specification of tick location and labels, using x & y sub lists of
+# scales.  Bunches 3 tick marks and 3 values at the low end of
+# the x and y axes.
+wireframe(f_xy, col="blue", pretty=TRUE, drape=TRUE,
+       scales=list(arrows=FALSE,
+          x=list(at=seq(-3,3),labels=paste("-3":"3")),
+          y=list(at=seq(-3,3),labels=paste("-3":"3")) ),
+       xlab=list(expression(x)),
+       ylab=list(expression(y)),
+       zlab=list(expression(f[xy])),
+       main="Bivariate Normal Density")
+
+# Add dimnames to f_xy. Set to "", dimnames that I do not want in the
+# graph labels. This works, except that there still is no control
+# over the location of the tick marks.
+vnames <- rep("",35); ii <- 0
+for(i in 1:7) {
+  ii <- ii+3
+  vnames[ii] <- paste(x[ii])
+  ii <- ii+2
+}
+dimnames(f_xy) <- list(vnames,vnames)
+wireframe(f_xy, col="blue", pretty=TRUE, drape=TRUE,
+       scales=list(arrows=FALSE,x=list(tick.number=7)),
+       xlab=list(expression(x)),
+       ylab=list(expression(y)),
+       zlab=list(expression(f[xy])),
+       main="Bivariate Normal Density")
+------------------------------------------------------------------------------
+
+Thanks,
+
+Larry Hotchkiss
+
+
+
+Larry Hotchkiss
+University of Delaware
+IT User Services -- Smith Hall
+Newark, DE 19716 
+302-831-1989  larryh at zebra.us.udel.edu
+
+

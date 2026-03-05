@@ -1,0 +1,630 @@
+From S.J.Eglen at damtp.cam.ac.uk  Mon Jan  8 18:46:33 2007
+From: S.J.Eglen at damtp.cam.ac.uk (Stephen Eglen)
+Date: Mon, 8 Jan 2007 17:46:33 +0000
+Subject: [R-gui] Idle/timer callbacks in tk widgets
+Message-ID: <17826.33657.684851.903979@notch.damtp.cam.ac.uk>
+
+Hi,
+
+I have some spatiotemporal data that I currently visualise by doing a
+simple loop, along the lines of:
+
+for (t in 1:100) {
+  plot.data(t)
+}
+
+plot.data(t) is a simple function that displays a 2-d plot in an R
+window of the data at time t.
+
+This is okay, but quite restrictive (e.g. currently I have to Ctrl-C
+to break out of the loop); I'd like to build a simple GUI (in tk) that
+would provide a slider to control where to start showing the data
+from, and start/stop buttons to control display of the data.
+
+I've looked at some of the online resources (including the very useful
+set of tk scripts at
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/ but I can't seem
+to find anything like this.  Ousterhout's book (Tcl and the Tk
+Toolkit) mentions on page 400 timer events, such as
+Tk_CreateTimerHandler, which may be useful.  But has anyone ventured
+in this direction before?
+
+Thanks, Stephen
+
+p.s. The link to GraspeR on
+  http://www.sciviews.org/_rgui/projects/TclTk.html is broken; a newer
+link is http://www.cscf.ch/grasp/grasp-r/index.html
+
+
+From p.dalgaard at biostat.ku.dk  Mon Jan  8 20:43:57 2007
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Mon, 08 Jan 2007 20:43:57 +0100
+Subject: [R-gui] Idle/timer callbacks in tk widgets
+In-Reply-To: <17826.33657.684851.903979@notch.damtp.cam.ac.uk>
+References: <17826.33657.684851.903979@notch.damtp.cam.ac.uk>
+Message-ID: <45A29EFD.7000305@biostat.ku.dk>
+
+Stephen Eglen wrote:
+> Hi,
+>
+> I have some spatiotemporal data that I currently visualise by doing a
+> simple loop, along the lines of:
+>
+> for (t in 1:100) {
+>   plot.data(t)
+> }
+>
+> plot.data(t) is a simple function that displays a 2-d plot in an R
+> window of the data at time t.
+>
+> This is okay, but quite restrictive (e.g. currently I have to Ctrl-C
+> to break out of the loop); I'd like to build a simple GUI (in tk) that
+> would provide a slider to control where to start showing the data
+> from, and start/stop buttons to control display of the data.
+>   
+I'm not quite sure exactly what you want, but I think you might want to 
+check out Tcl's "after" command, e.g.
+
+f <- function() {tcl("puts", n) ; if (n <<- n-1) tcl("after", 1000, f)}
+
+n <- 10
+
+f()
+
+> I've looked at some of the online resources (including the very useful
+> set of tk scripts at
+> http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/ but I can't seem
+> to find anything like this.  Ousterhout's book (Tcl and the Tk
+> Toolkit) mentions on page 400 timer events, such as
+> Tk_CreateTimerHandler, which may be useful.  But has anyone ventured
+> in this direction before?
+>
+> Thanks, Stephen
+>
+> p.s. The link to GraspeR on
+>   http://www.sciviews.org/_rgui/projects/TclTk.html is broken; a newer
+> link is http://www.cscf.ch/grasp/grasp-r/index.html
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From lawremi at iastate.edu  Mon Jan  8 21:50:01 2007
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Mon, 8 Jan 2007 14:50:01 -0600
+Subject: [R-gui] Idle/timer callbacks in tk widgets
+In-Reply-To: <17826.33657.684851.903979@notch.damtp.cam.ac.uk>
+References: <17826.33657.684851.903979@notch.damtp.cam.ac.uk>
+Message-ID: <509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070108/5a52c72a/attachment.pl 
+
+From S.J.Eglen at damtp.cam.ac.uk  Tue Jan  9 00:26:37 2007
+From: S.J.Eglen at damtp.cam.ac.uk (Stephen Eglen)
+Date: Mon, 8 Jan 2007 23:26:37 +0000
+Subject: [R-gui] Idle/timer callbacks in tk widgets
+In-Reply-To: <509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>
+References: <17826.33657.684851.903979@notch.damtp.cam.ac.uk>
+	<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>
+Message-ID: <17826.54061.853784.748586@notch.damtp.cam.ac.uk>
+
+Dear `Peter, Michael, list,
+
+Thanks for your responses.  I have now tried both suggestions (of
+using the "after" command, and Sys.sleep() within a loop).  from my
+preliminary expts, it seems that both methods do what I want.  The
+"after" first method also seems to have the advantage of not blocking
+the R prompt while the movie is playing.  
+
+For the archives (and for others if interested) I'll send my test
+script tomorrow to the list.
+
+Best wishes, Stephen
+
+
+ > I admit I am not familiar with the tcltk package, but it sounds to me that
+ > you want to yield to the GUI event loop and check whether the stop button
+ > has been pressed.  Calling Sys.sleep(1) in the loop will allow the button
+ > handler to be called. Just have it set some flag that lets you break out of
+ > the loop.
+
+
+From S.J.Eglen at damtp.cam.ac.uk  Tue Jan  9 14:08:15 2007
+From: S.J.Eglen at damtp.cam.ac.uk (Stephen Eglen)
+Date: Tue, 9 Jan 2007 13:08:15 +0000
+Subject: [R-gui] Idle/timer callbacks in tk widgets
+In-Reply-To: <17826.54061.853784.748586@notch.damtp.cam.ac.uk>
+References: <17826.33657.684851.903979@notch.damtp.cam.ac.uk>
+	<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>
+	<17826.54061.853784.748586@notch.damtp.cam.ac.uk>
+Message-ID: <17827.37823.462228.474366@notch.damtp.cam.ac.uk>
+
+ > 
+ > For the archives (and for others if interested) I'll send my test
+ > script tomorrow to the list.
+
+Here it is.  
+
+Stephen
+
+
+
+## Simple example of playing a movie in tcltk.
+## Tue 09 Jan 2007
+## Use the 'after' command to repeatedly call the plot function after
+## some delay.  (I tried an alternative method for running the movie,
+## go.callback2, for those interested, but go.callback seems
+## preferable.)
+
+library(tcltk)
+
+## Some dummy data.
+npts <- 1000
+step.size <- 40                         #how many data points to show.
+data <- sin(4*pi * 1:npts/npts)
+
+pause.time <- 100                       #delay in msec
+
+movie.time <- tclVar(1)                 # current start time of frame.
+movie.show <- tclVar(1)                 # "1" for on, "0" for off.
+
+
+show.plot <- function(..., update.win=TRUE) {
+  ## Update the plot window.
+  ## TODO: check that beg/end times are suitable.
+  start.time <- as.numeric(tclvalue(movie.time))
+  
+  x <- floor(start.time) + (1:step.size)
+  plot(x, data[x], ylim=c(-1, 1), bty='n', lwd=3, col='red',
+       main='dummy data', type='l', yaxt='n')
+
+  if ( update.win && (tclvalue(movie.show)=="1")) {
+    next.time <- start.time + step.size
+    if (next.time < length(data)) {
+      ## Still have more to show...
+      tclvalue(movie.time) <- as.character(next.time)
+      tcl("after", pause.time, show.plot)
+    } else {
+      tclvalue(movie.show) == "0"     #for consistency.
+    }
+  }
+  
+}
+
+stop.callback <- function() {
+  ## Callback for the stop button.
+  tclvalue(movie.show) <- "0"
+}
+
+go.callback <- function() {
+  ## Callback for the go button.
+  tclvalue(movie.show) <- "1"
+  show.plot()
+}
+
+go.callback2 <- function() {
+
+  ## Alternative callback for the go button.  This uses a for loop to
+  ## control the movie; however, while the movie is running, the R
+  ## prompt is blocked (although the tk GUI is still responsive).
+  
+  print("Alternate go callback")
+  tclvalue(movie.show) <- "1"
+
+  looping <- TRUE
+
+  while(looping) {
+    show.plot(update.win=FALSE)
+    cur.time <- as.numeric(tclvalue(movie.time))
+    if ( (tclvalue(movie.show) == "0") || cur.time >= length(data)) {
+      looping <- FALSE
+      tclvalue(movie.show) <- "0"       #needed iff at end of data.
+    } else {
+      Sys.sleep(pause.time/1000)        #1000 needed to give time in sec.
+      tclvalue(movie.time) <-
+        as.character( cur.time + step.size)
+    }
+  }
+}
+
+show.plot.scale <- function(...) {
+  ## Callback for the scale widget.
+  show.plot(update.win=FALSE)
+}
+
+movie.window <- function() {
+  ## Create a control window and show it.
+  
+  ## Init the vars?
+  tclvalue(movie.time) <- "1"
+  
+  
+  ## Create base frame.
+  base <- tktoplevel()
+  spec.frame <- tkframe(base, borderwidth=2)
+  tkwm.title(base, "Movie player")
+  
+  beg.time <- 1
+  end.time <- length(data)
+  scale <- tkscale(spec.frame, command=show.plot.scale,
+                   from = beg.time,
+                   to =   end.time, 
+                   showvalue=TRUE,
+                   variable=movie.time,
+                   resolution=5,
+                   orient="horiz")
+  
+  go.but   <- tkbutton(spec.frame, text="Go",   command=go.callback2)
+  prev.but <- tkbutton(spec.frame, text="Stop", command=stop.callback)
+  
+
+  ## Add buttons, one row at a time, using the grid manager.
+  tkgrid(scale, columnspan=2)
+  tkgrid(go.but, prev.but)
+  
+  tkpack(spec.frame)
+
+}
+
+
+
+movie.window()
+
+
+From murdoch at stats.uwo.ca  Tue Jan  9 15:04:13 2007
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Tue, 09 Jan 2007 09:04:13 -0500
+Subject: [R-gui] Idle/timer callbacks in tk widgets
+In-Reply-To: <17827.37823.462228.474366@notch.damtp.cam.ac.uk>
+References: <17826.33657.684851.903979@notch.damtp.cam.ac.uk>	<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>	<17826.54061.853784.748586@notch.damtp.cam.ac.uk>
+	<17827.37823.462228.474366@notch.damtp.cam.ac.uk>
+Message-ID: <45A3A0DD.5000409@stats.uwo.ca>
+
+On 1/9/2007 8:08 AM, Stephen Eglen wrote:
+>  > 
+>  > For the archives (and for others if interested) I'll send my test
+>  > script tomorrow to the list.
+> 
+> Here it is.  
+
+I did a similar thing in the tkrgl package (recently uploaded to CRAN), 
+to control rotating rgl plots.
+
+A few differences:
+
+I queried the system clock to set the amount of rotation, so it would 
+appear to rotate at a continuous rate even if the update wasn't serviced 
+regularly.
+
+I used tcl("after", "idle", onIdle) to trigger the next update.  This is 
+supposed to avoid callbacks when the system is busy, but it still makes 
+a bit too much impact on the system.  Probably the best low impact way 
+would be to follow a fixed delay with an "idle" delay, to guarantee a 
+minimum delay time.
+
+I defined all the event handling functions within one wrapper function, 
+so they had access to its variables through lexical scoping, without 
+exposing them all to the whole world.
+
+Here's some of the code (just for the "up" rotation, there's a lot of 
+repetitiveness for other kinds of rotation.  The repetition could be 
+reduced by just setting the rotation axis and direction, but it doesn't 
+really seem worth the effort).  Improvements would be welcome.
+
+Duncan Murdoch
+
+
+spinControl <- function(base, dev = rgl.cur()){
+
+# This creates a control that can be put in the tk container called base
+
+	slider <- tclVar(100)  # this controls the rotation rate
+
+	continuous <- tclVar(0) # this controls whether rotation continues on 
+its own
+	
+	buttonPress <- NULL
+	direction <- NULL
+	
+	lastTime <- proc.time()[3]  # this records the last time the display 
+was updated
+
+	timeDiff <- 0
+
+         # Here's a typical rotation function:
+
+	rotateUp <- function(){
+		angle <- timeDiff*as.numeric(tclObj(slider))*pi/180
+		par3d(userMatrix = rotationMatrix(-angle, 1,0,0) %*% par3d("userMatrix"))
+	}
+
+
+	rotate <- function(){
+	    	old <- rgl.cur()
+	    	on.exit(rgl.set(old))	
+	    	if (buttonPress) {
+		    if ((currentTime <- proc.time()[3]) > lastTime) {
+			timeDiff <<- currentTime - lastTime
+			lastTime <<- currentTime
+			for (device in dev) {
+			    rgl.set(device)
+			    if (direction == "up")
+				    rotateUp()
+
+...
+			}
+		    }
+		    tcl("after",5,rotate) # rotation is continuous as long as the 
+button is pressed.
+	    }
+
+	}
+
+	# rotation button callback functions
+	# note that "..." argument is necessary
+	upButtonPress <- function(...){
+		buttonPress <<- TRUE
+		lastTime <<- proc.time()[3]
+		direction <<- "up"
+		rotate()
+	}
+
+...
+
+         onIdle <- function(...){
+         	buttonPress <<- TRUE
+         	rotate()
+         	buttonPress <<- FALSE
+		if (as.numeric(tclObj(continuous)))
+		    tcl("after", "idle", onIdle)
+	}
+
+The idle rotation only happens if the continuous variable is non-zero 
+when a button is released.  It's connected to a checkbox.
+      	
+	buttonRelease <- function(...){
+		buttonPress <<- FALSE
+		if (as.numeric(tclObj(continuous)))
+		    tcl("after", "idle", onIdle)
+	}
+
+  ....
+}
+
+Duncan Murdoch
+
+
+From santos at ensam.inra.fr  Fri Jan 19 18:11:48 2007
+From: santos at ensam.inra.fr (Filipe Santos)
+Date: Fri, 19 Jan 2007 18:11:48 +0100
+Subject: [R-gui] Refreshing the GUI and packing images
+Message-ID: <200701191811.51369.santos@supagro.inra.fr>
+
+Dear all
+
+I'm developing a grafical interface for Geneland that is presently one of the 
+R packages available.
+
+My first question is about refreshing the interface while running a very long 
+process.
+
+
+run<-function(){
+
+        tttry <- tktoplevel()
+        tkwm.geometry(tttry, "+200+200")
+        tkwm.title(tttry,"wait")
+        warn<-tklabel(tttry,image=imagepleasewait)
+        tkpack(warn)                        
+        tkfocus(tttry)
+        tcl("update")
+                
+        print("Starting...")
+
+        validate <- 1
+    
+        onIdle <- function(){
+          if (validate)==1){
+            Sys.sleep(0.1)
+            tkconfigure(warn,image=imagepleasewait)
+            tcl("after","idle", onIdle())
+          }
+          else
+            tkdestroy(tttry)
+        }
+        onIdle()
+
+        mcmcFmodel(...)   
+        
+        validate <- 0
+}
+
+If I remove the onIdle funtion the GUI stucks when I'm executing the 
+mcmcFmodel, if I leave it neves calls mcmcFmodel. Then I thought that there 
+could exist a fork() equivalent in R or somehow send a process to background 
+but I couldn't find anyway to make that with R-base package.
+
+My second question is in which directory images are supposed to be packed?
+R has a strict directory rules for packages and there is no documentation 
+regarding where should images for GUIs be putten. I was looking at SciViews 
+package and they distribute that under a directory called gui.
+
+Best regards
+
+Filipe Santos
+
+
+From bbxxus at yahoo.com  Sun Jan 21 08:57:09 2007
+From: bbxxus at yahoo.com (as ming)
+Date: Sat, 20 Jan 2007 23:57:09 -0800 (PST)
+Subject: [R-gui] copy graphs from tabbed notebook widget
+Message-ID: <244933.16127.qm@web32410.mail.mud.yahoo.com>
+
+Hi, All:
+
+I created several plots in R and associated them with
+tabbed notebook widget (created from the
+example on the R tcl/tk page 
+http://www.sciviews.org/_rgui).  The plot itself is
+created by tkrplot.
+ What I'd llike to do is to save the current plot
+associated with the active tab. I searched
+online and couldn't get it done. Your help is well
+appreciated!
+
+
+I am attaching this example code from that website. 
+Basically, when I click tab "B",
+I want to save the corresponding plot. I used
+"CopytoClipboard" button. But it always
+copies the last plot, ie. tab Z's plot.
+
+I guess I need handle the imglist as a list, but it
+didn't allow me to do.
+
+####### modified example code ############
+
+library(tcltk)
+library(tkrplot)
+tclRequire("Iwidgets")
+
+tt <- tktoplevel()
+tkpack(tn <- tkwidget(tt, "iwidgets::tabnotebook"))
+tkconfigure(tn,                         #
+prettyfication taken from incrtcl
+            tabpos="n",
+            width=1050,
+            height=850,
+            angle=0,
+            bevelamount=2,
+            gap=2,
+            margin=2,
+            tabborders=0,
+            tabbackground="white",
+            background="lightgray",
+            backdrop="lightgray")
+
+nm <- LETTERS[1:26]
+for (t in 1:length(nm)) {
+    tbn <- tclvalue(tkadd(tn, label=nm[t]))
+    tkpack(tbw <- .Tk.newwin(tbn))
+    tkpack(fr <- tkframe(tbw))
+    tkpack(lb <- tklabel(fr, text=paste("This is tab",
+nm[t])))
+    ID <- paste(tn$ID, evalq(num.subwin<-num.subwin+1,
+tn$env), sep=".")
+    win <- .Tk.newwin(ID)
+    assign(ID, tbw, envir = tn$env)
+    assign("parent", tn, envir = tbw$env)
+
+    imglist <- tkrplot(fr,function() {
+         X <- t + (1:20)
+         plot(X)}, hscale= 1.5, vscale= 1.5)
+    CopyToClip <- function()
+   {
+       tkrreplot(imglist)
+   }
+    copy.but <- tkbutton(tbw,text=paste("Copy to
+Clipboard", nm[t]),command=CopyToClip)
+    tkpack(imglist)
+    tkpack(copy.but)    
+
+
+    #list(tbw,fr,lb) # return all three in case you
+need them later
+}
+tkbind(tt, "<Destroy>", function() tkdestroy(tn))
+tkselect(tn, 0)
+
+
+
+ 
+____________________________________________________________________________________
+Cheap talk?
+
+
+From lawremi at iastate.edu  Thu Jan 25 03:38:55 2007
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Wed, 24 Jan 2007 20:38:55 -0600
+Subject: [R-gui] as.numeric(".1") under RGtk2
+In-Reply-To: <45B7AECA.7070108@uhb.fr>
+References: <45B7895A.6090309@uhb.fr>
+	<17847.36829.31217.7004@stat.math.ethz.ch> <45B793F6.9060507@uhb.fr>
+	<Pine.LNX.4.64.0701241735170.28321@gannet.stats.ox.ac.uk>
+	<45B7AECA.7070108@uhb.fr>
+Message-ID: <509e0620701241838u39d4fe5bt20b0015b7dce21f5@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070124/c0b767c1/attachment.pl 
+
+From yvonnick.noel at uhb.fr  Wed Jan 24 20:08:58 2007
+From: yvonnick.noel at uhb.fr (NOEL Yvonnick)
+Date: Wed, 24 Jan 2007 20:08:58 +0100
+Subject: [R-gui] as.numeric(".1") under RGtk2
+In-Reply-To: <Pine.LNX.4.64.0701241735170.28321@gannet.stats.ox.ac.uk>
+References: <45B7895A.6090309@uhb.fr>
+	<17847.36829.31217.7004@stat.math.ethz.ch>
+	<45B793F6.9060507@uhb.fr>
+	<Pine.LNX.4.64.0701241735170.28321@gannet.stats.ox.ac.uk>
+Message-ID: <45B7AECA.7070108@uhb.fr>
+
+Prof Brian Ripley a ?crit :
+> I can reproduce this via
+> 
+>> Sys.setlocale("LC_NUMERIC", "fr_FR")
+> [1] "fr_FR"
+> Warning message:
+> setting 'LC_NUMERIC' may cause R to function strangely in: 
+> setlocale(category, locale)
+>> as.numeric(",1")
+> [1] 0,1
+>> as.numeric(".1")
+> [1] NA
+> Warning message:
+> NAs introduced by coercion
+> 
+> Assuming you have not done that anywhere, it should not happen. If you 
+> have, you were warned.  (Have you tried starting R with --vanilla to be 
+> sure?)
+> 
+> as.numeric() is using strtod which should only be affected by the locale 
+> category LC_NUMERIC, and R itself does not set LC_NUMERIC.  So either 
+> you or some rogue OS function must have, unless there is a pretty major 
+> bug in the OS.  (Just using a UTF-8 fr_FR locale does not do it on 
+> either of the Linux variants I tried.)
+
+Thanks for these helpful indications. This seems to be related to the 
+RGtk2 package :
+
+# Before loading RGtk2
+ > as.numeric(".1")
+[1] 0.1
+ > as.numeric(",1")
+[1] NA
+Warning message:
+NAs introduits lors de la conversion automatique
+# After library loading
+ > library("RGtk2")
+ > as.numeric(".1")
+[1] NA
+Warning message:
+NAs introduits lors de la conversion automatique
+ > as.numeric(",1")
+[1] 0,1
+
+I send a copy of this post to the RGtk2 package maintainers.
+
+Thanks for your help,
+
+Yvonnick Noel, PhD.
+Dpt of Psychology
+U. of Rennes
+France
+
+

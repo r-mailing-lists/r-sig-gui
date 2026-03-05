@@ -1,0 +1,195 @@
+From cjpauw at gmail.com  Wed Nov 23 08:31:34 2011
+From: cjpauw at gmail.com (christiaan pauw)
+Date: Wed, 23 Nov 2011 09:31:34 +0200
+Subject: [R-gui] Mixing GUI packages
+Message-ID: <CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/7ee6ca57/attachment.pl>
+
+From dan.putler at sauder.ubc.ca  Wed Nov 23 09:01:42 2011
+From: dan.putler at sauder.ubc.ca (Dan Putler)
+Date: Wed, 23 Nov 2011 00:01:42 -0800
+Subject: [R-gui] Mixing GUI packages
+In-Reply-To: <CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>
+References: <CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>
+Message-ID: <4ECCA866.7070005@sauder.ubc.ca>
+
+Hi Christiaan,
+
+This is (as you probably expect) an "it depends" question for at least 
+two reasons. One thing that complicates everything is the underlying 
+widget toolkit that is being used. The goal of gWidgets is to be 
+agnostic with respect to the underlying GUI toolkit, but seems to have 
+the most functionality under GTK2 (via the RGTK package), while both 
+fgui and rpanel use Tcl/Tk  (via the tcltk package). gWidgets will work 
+with Tcl/Tk and the tcltk package, but you may want to make sure you can 
+get the functionality you want from gWidgets when using Tcl/Tk. Mixing 
+GTK2 and Tcl/Tk in even a loosely coupled setup seems like asking for 
+trouble (and the installation process for novice Mac users could be 
+really trying). The second question is how tightly integrated do you 
+want all the various dialogs you create to be? If they are very loose, 
+you may well be OK using a number of different high level R GUI 
+"frameworks". However, I can see where maintenance of the system you 
+develop could be a real headache, particularly if you want the 
+components to be tightly integrated. The upshot, if you can base 
+everything on using the R tcltk package as the foundation, then what you 
+are proposing is probably do-able, but by mixing and matching higher 
+level R GUI frameworks you may be trading-off short-term implementation 
+gains for long-term maintenance headaches. Personally, in this situation 
+I would stick with the higher level GUI framework that is the most 
+flexible, even it it is not the easiest for creating "quick and dirty" 
+user dialog boxes.
+
+Dan
+
+On 11/22/2011 11:31 PM, christiaan pauw wrote:
+> Hi Everybody
+>
+> I have to make a gui for a collection of my functions in order to make it
+> easier for my colleagues (who are very code-shy and function strictly in a
+> point and click environment).
+>
+> I have trawled the web for documentation and have come to the preliminary
+> conclusion that I am going to use the gWidgets package for this task but
+> fgui and rpanel seems to make some aspects easy to implement.
+>
+> Is it feasible to use gWidgets, fgui as well as rpanel in one
+> implementation or should one stick to one of these and do everything with
+> the one gui package?
+>
+> regards
+> Christiaan
+>
+> 	[[alternative HTML version deleted]]
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From lawrence.michael at gene.com  Wed Nov 23 12:42:13 2011
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Wed, 23 Nov 2011 03:42:13 -0800
+Subject: [R-gui] Mixing GUI packages
+In-Reply-To: <CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>
+References: <CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>
+Message-ID: <CAOQ5NyenprmwvBGEwfuJwZC-mLWKPSSvqLzGarg-WBp5np2rWA@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/1d8cef8d/attachment.pl>
+
+From cjpauw at gmail.com  Wed Nov 23 18:49:08 2011
+From: cjpauw at gmail.com (christiaan pauw)
+Date: Wed, 23 Nov 2011 19:49:08 +0200
+Subject: [R-gui] Mixing GUI packages
+In-Reply-To: <4ECCA866.7070005@sauder.ubc.ca>
+References: <CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>
+	<4ECCA866.7070005@sauder.ubc.ca>
+Message-ID: <CAJESSmbv+t705Hz+L-GLpZDpJ5f0Xjp4y43N+3Up_Mg0g3Y76g@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/2643ef77/attachment.pl>
+
+From lawrence.michael at gene.com  Wed Nov 23 18:54:40 2011
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Wed, 23 Nov 2011 09:54:40 -0800
+Subject: [R-gui] Mixing GUI packages
+In-Reply-To: <CAJESSmbv+t705Hz+L-GLpZDpJ5f0Xjp4y43N+3Up_Mg0g3Y76g@mail.gmail.com>
+References: <CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>
+	<4ECCA866.7070005@sauder.ubc.ca>
+	<CAJESSmbv+t705Hz+L-GLpZDpJ5f0Xjp4y43N+3Up_Mg0g3Y76g@mail.gmail.com>
+Message-ID: <CAOQ5Nyfow4v2R154J5kOAt6vn0EGsFR9p-M4E-AE94GbDZ2yzQ@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20111123/7a9aa2cc/attachment.pl>
+
+From cjpauw at gmail.com  Mon Nov 28 21:35:47 2011
+From: cjpauw at gmail.com (christiaan pauw)
+Date: Mon, 28 Nov 2011 22:35:47 +0200
+Subject: [R-gui] file load dialog with traitr
+Message-ID: <CAJESSmaGoMA4FzXnRe+OmTjAMhy3c+CVq7ai6EFiCgwjg7q34A@mail.gmail.com>
+
+Hi Everybody
+
+I have learned about the traitr package recently following a
+suggestion from this list. I think this package has massive potential.
+I am working through the documentation to try to build up a sufficient
+understanding to enable me to build a gui environment for my
+functions.
+
+One of the common tasks is loading a file. After reading the vignette
+, I attempted to write a dialog to load a .Rda file (below) since this
+is a very common task. It doesn't work. Can someone please help me
+spot the mistake?
+
+Thanks in advance
+Christiaan
+
+# Simple Load GUI (but it doesn't work)
+require(traitr)
+
+dlg <- aDialog(items=list(
+                 file=fileItem(""),
+                 assign.to=stringItem("", label="Assign to:")
+                  ),
+               title="Load a .Rda file",
+               help_string="Select a file, then load",               )
+
+dlg$OK_handler <- function(.) {
+  out <- .$do_call("load",.$get_file())
+  assign.to <- .$get_assign.to()
+  assign(assign.to, out, envir=.GlobalEnv)
+}
+dlg$make_gui()
+
+(R:3012): Gtk-WARNING **: Unable to find default local directory monitor type
+
+(R:3012): Gtk-WARNING **: Unable to find default local directory monitor type
+Error in file$to_R : object of type 'closure' is not subsettable
+
+-- 
+Christiaan Pauw
+Nova Institute
+www.nova.org.za
+
+
+From jverzani at gmail.com  Tue Nov 29 00:10:55 2011
+From: jverzani at gmail.com (j verzani)
+Date: Mon, 28 Nov 2011 23:10:55 +0000
+Subject: [R-gui] file load dialog with traitr
+References: <CAJESSmaGoMA4FzXnRe+OmTjAMhy3c+CVq7ai6EFiCgwjg7q34A@mail.gmail.com>
+Message-ID: <loom.20111129T000747-328@post.gmane.org>
+
+christiaan pauw <cjpauw <at> gmail.com> writes:
+
+> 
+> Hi Everybody
+
+.. snip ..
+
+> (R:3012): Gtk-WARNING **: Unable to find default local 
+>  directory monitor type
+> 
+> (R:3012): Gtk-WARNING **: Unable to find default local 
+> directory monitor type
+> Error in file$to_R : object of type 'closure' is not subsettable
+> 
+
+
+I'm not able to reconstruct this error, which makes me think it 
+might be fixed  with the r-forge version. It might also be the 
+use of "file: as the name, as file  is a function, hence 
+the file$to_R error.
+
+
+Have fun,
+
+John
+
+

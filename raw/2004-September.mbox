@@ -1,0 +1,52 @@
+From TShort at epri-peac.com  Tue Sep 14 17:35:11 2004
+From: TShort at epri-peac.com (Short, Tom)
+Date: Tue Sep 14 17:30:15 2004
+Subject: [R-gui] Announcing Rpad, a web-based workbook-style interface for R
+Message-ID: <41470FAF.4000806@epri-peac.com>
+
+Rpad is an interactive, web-based analysis program. Rpad pages are
+interactive workbook-type sheets based on R. Rpad is an analysis package, a
+web-page designer, and a gui designer all wrapped in one.
+
+For more information and demonstrations, please see:
+
+http://www.Rpad.org/Rpad/
+
+Key features include:
+
+(*) WYSIWYG editing -- The page is editable, so you can add comments or
+change the code or input data.
+
+(*) GUI's -- Create GUI elements with R or with the Rpad interface.
+
+(*) Fast -- No browser refreshes.
+
+(*) HTML output -- Create fancy HTML output using Eric Lecoutre's R2HTML.
+
+(*) Simple plotting -- Has convenience functions to simplify creation and
+presentation of web-friendly graphics.
+
+(*) Flexible -- You can add features in a number of ways with javascript
+and/or R.
+
+(*) Cross platform -- Rpad pages work in Internet Explorer v5.5 or greater
+and Mozilla (Firefox or Suite). The server-side code works in Apache in
+Linux or Windows (although not as well in Windows).
+
+(*) Open source -- Rpad brings together several powerful open-source
+technologies, specifically: R, Mozile, HTMLArea, Statistics-R-0.02,
+JSCookMenu, Apache, and R2HTML.
+
+Feel free to use the r-sig-gui mailing list for any feedback on Rpad, the
+demonstration pages, and especially for feedback and questions on
+installing your own Rpad server.
+
+- Tom
+
+-- 
+Tom Short
+EPRI PEAC, www.epri-peac.com
+
+T. A. Short, Electric Power Distribution Handbook, CRC Press, 2004.
+http://www.crcpress.com/shopping_cart/products/product_detail.asp?sku=1791
+

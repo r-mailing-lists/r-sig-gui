@@ -1,0 +1,195 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2007-11",
+  "messages": [
+    {
+      "id": "msg-016ace4e19af",
+      "message_id": "<4733423F.2030803@ualr.edu>",
+      "from_name": "shweta",
+      "from_email_hash": "ef08c080347486e407ed29d818851edd6193aea90e32c43e0eb0f8a8cce90776",
+      "date": "2007-11-08T11:07:11-06:00",
+      "subject": "[R-gui] runif function",
+      "subject_clean": "[R-gui] runif function",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi ,\n\nI was trying to generate random data in R using the runif function. But \nI am not sure how do I combine the x and y to get a 2d array/matrix in a \nvariable z.\nAs seen below I am getting the same numbers in x as 1 and in y as 2.1 \nrespectively. I would like to get different & random numbers in x & y.\n\nPlease let me know.\n\nx <- array(runif(N,1),dim=c(N,1))\n > x\n     [,1]\n[1,]    1\n[2,]    1\n[3,]    1\n[4,]    1\n[5,]    1\n[6,]    1\n[7,]    1\n[8,]    1\n[9,]    1\n[10,]    1\n > y <- array(2*x + runif(N,1)/10)\n > y\n[1] 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1\n\nThanks & Regards,\nShweta.",
+      "body_snippet": "Hi ,\n\nI was trying to generate random data in R using the runif function. But \nI am not sure how do I combine the x and y to get a 2d array/matrix in a \nvariable z.\nAs seen below I am getting the same",
+      "thread_id": "thread-016ace4e19af",
+      "thread_depth": 0,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-c71e256c71cd",
+      "message_id": "<47334ACC.6050707@ualr.edu>",
+      "from_name": "shweta",
+      "from_email_hash": "ef08c080347486e407ed29d818851edd6193aea90e32c43e0eb0f8a8cce90776",
+      "date": "2007-11-08T11:43:40-06:00",
+      "subject": "[R-gui] Using runif function in R",
+      "subject_clean": "[R-gui] Using runif function in R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi ,\n\nI was trying to generate random data in R using the runif function. But \nI am not sure how do I combine the x and y to get a 2d array/matrix in a \nvariable z.\nAs seen below I am getting the same numbers in x as 1 and in y as 2.1 \nrespectively. I would like to get different & random numbers in x & y.\n\nPlease let me know.\n\nx <- array(runif(N,1),dim=c(N,1))\n > x\n    [,1]\n[1,]    1\n[2,]    1\n[3,]    1\n[4,]    1\n[5,]    1\n[6,]    1\n[7,]    1\n[8,]    1\n[9,]    1\n[10,]    1\n > y <- array(2*x + runif(N,1)/10)\n > y\n[1] 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1\n\nThanks & Regards,\nShweta.",
+      "body_snippet": "Hi ,\n\nI was trying to generate random data in R using the runif function. But \nI am not sure how do I combine the x and y to get a 2d array/matrix in a \nvariable z.\nAs seen below I am getting the same",
+      "thread_id": "thread-c71e256c71cd",
+      "thread_depth": 0,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-ea11a8523111",
+      "message_id": "<8D934154-3BFE-4FA6-914B-3887426A553F@gmail.com>",
+      "from_name": "Charilaos Skiadas",
+      "from_email_hash": "983c2b1003be35a5cf23d12111c3d21cfa275576566eb9cb10c2d0ec255221bf",
+      "date": "2007-11-08T17:47:09-05:00",
+      "subject": "[R-gui] runif function",
+      "subject_clean": "[R-gui] runif function",
+      "in_reply_to": "<4733423F.2030803@ualr.edu>",
+      "references": [
+        "<4733423F.2030803@ualr.edu>"
+      ],
+      "body_plain": "On Nov 8, 2007, at 12:07 PM, shweta wrote:\n\n> Hi ,\n>\n> I was trying to generate random data in R using the runif function.  \n> But\n> I am not sure how do I combine the x and y to get a 2d array/matrix  \n> in a\n> variable z.\n> As seen below I am getting the same numbers in x as 1 and in y as 2.1\n> respectively. I would like to get different & random numbers in x & y.\n>\n> Please let me know.\n\nLooking at ?runif, you can see that the syntax for runif is: runif(n,  \nmin=0, max=1)\n\nSo when you call runif(N,1), what you really call is runif \n(N,min=1,max=1), so you are asking R to generate random numbers  \nbetween 1 and 1. Of course they will all be equal to 1. Try runif(N),  \nor specify both a min and a max.\n\nPS: Not sure what this has to do with GUI though, isn't that more  \nappropriate to R-help instead of r-sig-gui?\n\n> x <- array(runif(N,1),dim=c(N,1))\n>> x\n>      [,1]\n> [1,]    1\n> [2,]    1\n> [3,]    1\n> [4,]    1\n> [5,]    1\n> [6,]    1\n> [7,]    1\n> [8,]    1\n> [9,]    1\n> [10,]    1\n>> y <- array(2*x + runif(N,1)/10)\n>> y\n> [1] 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1 2.1\n>\n> Thanks & Regards,\n> Shweta.\n\nHaris Skiadas\nDepartment of Mathematics and Computer Science\nHanover College",
+      "body_snippet": "On Nov 8, 2007, at 12:07 PM, shweta wrote:\n\n> Hi ,\n>\n> I was trying to generate random data in R using the runif function.  \n> But\n> I am not sure how do I combine the x and y to get a 2d array/matrix",
+      "thread_id": "thread-016ace4e19af",
+      "thread_depth": 1,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-93c4b21e845b",
+      "message_id": "<18231.13840.92362.529835@ron.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2007-11-11T11:04:16-06:00",
+      "subject": "[R-gui] Using runif function in R",
+      "subject_clean": "[R-gui] Using runif function in R",
+      "in_reply_to": "<47334ACC.6050707@ualr.edu>",
+      "references": [
+        "<47334ACC.6050707@ualr.edu>"
+      ],
+      "body_plain": "Shweta,\n\nJust three days ago, in a random act of kindness, Charilaos told you in no\nuncertain terms \n\n   PS: Not sure what this has to do with GUI though, isn't that more  \n   appropriate to R-help instead of r-sig-gui?\n\nWhich part of this was unclear?\n\nCharilaos also told you what you were doing wrong with your call to runif.\nYou are still making the same mistake.\n\nPlease go back and read his reply.  And please stop posting material that has\nnothing to do with R and GUIs to the list devoted to R and GUIs.  \n\nThanks, Dirk\n\n-- \nThree out of two people have difficulties with fractions.",
+      "body_snippet": "Shweta,\n\nJust three days ago, in a random act of kindness, Charilaos told you in no\nuncertain terms \n\n   PS: Not sure what this has to do with GUI though, isn't that more  \n   appropriate to R-help in",
+      "thread_id": "thread-c71e256c71cd",
+      "thread_depth": 1,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-8c5d53d46a57",
+      "message_id": "<4737C834.4060602@ualr.edu>",
+      "from_name": "shweta",
+      "from_email_hash": "ef08c080347486e407ed29d818851edd6193aea90e32c43e0eb0f8a8cce90776",
+      "date": "2007-11-11T21:27:48-06:00",
+      "subject": "[R-gui] Using runif function in R",
+      "subject_clean": "[R-gui] Using runif function in R",
+      "in_reply_to": "<18231.13840.92362.529835@ron.nulle.part>",
+      "references": [
+        "<47334ACC.6050707@ualr.edu>",
+        "<18231.13840.92362.529835@ron.nulle.part>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071111/b5265ddb/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071111/b5265ddb/attachment.pl",
+      "thread_id": "thread-c71e256c71cd",
+      "thread_depth": 2,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-3c17c1c2d863",
+      "message_id": "<47381FCE.3000600@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2007-11-12T10:41:34+01:00",
+      "subject": "[R-gui] Using runif function in R",
+      "subject_clean": "[R-gui] Using runif function in R",
+      "in_reply_to": "<4737C834.4060602@ualr.edu>",
+      "references": [
+        "<47334ACC.6050707@ualr.edu>",
+        "<18231.13840.92362.529835@ron.nulle.part>",
+        "<4737C834.4060602@ualr.edu>"
+      ],
+      "body_plain": "Hello All,\n\nSorry, this is my fault! But anyway, please, do post general questions \nto R-Help mailing list, and reserve R-SIG-GUI for GUI-specific questions \non R.\nHave a nice day,\n\nPhilippe\n\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Belgium\n( ( ( ( (\n..............................................................\n\nshweta wrote:\n> Dirk,\n> \n> The first time I sent the mail , I got a mail saying that the list \n> moderator has to review it for approval and was not posted. Thats the \n> reason why I sent the mail again (3 days ago) which was posted (and I \n> did get a answer from Charilaos and I also replied apologizing for \n> sending it to R-GUI list instead of a R-general list).\n> \n> But now, it seems that after 3 days the moderator has approved the \n> earlier mail and posted it. I guess I should have canceled the previous \n> posting to avoid this.\n> \n> I hope that now it is clear that I am not making the same mistake again \n> and its the same mail send 3 days ago that is being posted now.\n> \n> Also, I would like to apologize to the members in the R-GUI mailing \n> list, since they all must be getting the same mail 2 times and causing a \n> inconvenience.\n> \n> \n> Regards,\n> Shweta.\n> \n> \n> Dirk Eddelbuettel wrote:\n>> Shweta,\n>>\n>> Just three days ago, in a random act of kindness, Charilaos told you in no\n>> uncertain terms \n>>\n>>    PS: Not sure what this has to do with GUI though, isn't that more  \n>>    appropriate to R-help instead of r-sig-gui?\n>>\n>> Which part of this was unclear?\n>>\n>> Charilaos also told you what you were doing wrong with your call to runif.\n>> You are still making the same mistake.\n>>\n>> Please go back and read his reply.  And please stop posting material that has\n>> nothing to do with R and GUIs to the list devoted to R and GUIs.  \n>>\n>> Thanks, Dirk\n>>\n>>   \n> \n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Hello All,\n\nSorry, this is my fault! But anyway, please, do post general questions \nto R-Help mailing list, and reserve R-SIG-GUI for GUI-specific questions \non R.\nHave a nice day,\n\nPhilippe\n\n........",
+      "thread_id": "thread-c71e256c71cd",
+      "thread_depth": 3,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-a8f1c5b4f990",
+      "message_id": "<c86bda880711170705n2ea3736wfe697680e4e6eab2@mail.gmail.com>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "1c617eddedb86787eb21c0f1fea6ae273f7a339d35a851ebdf1c616666990248",
+      "date": "2007-11-17T13:05:49-02:00",
+      "subject": "[R-gui] Tinn-R 1.19.3.1 released",
+      "subject_clean": "[R-gui] Tinn-R 1.19.3.1 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.19.3.1) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R is a R script editor under OS Windows.\n\nRegards,\nTinn-R team\n-- \n///\\\\\\///\\\\\\///\\\\\\///\\\\\\///\\\\\\///\\\\\\///\\\\\\///\\\\\\\nJose Claudio Faria\nEstatistica - prof. Titular\nUESC/DCET/Brasil\njoseclaudio.faria at gmail.com\njoseclaudio.faria at terra.com.br\n///\\\\\\///\\\\\\///\\\\\\///\\\\\\///\\\\\\///\\\\\\///\\\\\\///\\\\\\",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.19.3.1) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r\n\nTinn-R",
+      "thread_id": "thread-a8f1c5b4f990",
+      "thread_depth": 0,
+      "month": "2007-11"
+    },
+    {
+      "id": "msg-1d9431875875",
+      "message_id": "<2264.132.166.74.140.1196429915.squirrel@webmail.lsce.ipsl.fr>",
+      "from_name": "T. Marthews",
+      "from_email_hash": "f4764415130c3871840a46afc22d544dd4c6dcd1dc81a796f1f7ee5869b83a38",
+      "date": "2007-11-30T14:38:35+01:00",
+      "subject": "[R-gui] Something odd about Windows GUI with the menu command",
+      "subject_clean": "[R-gui] Something odd about Windows GUI with the menu command",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear R-sig-gui,\n\nI'm using R 2.5.1 for Windows. Here's an interesting one (perhaps!):\n\nIf I have the Console window about 80 characters wide, I can do the\nfollowing commands:\n\n\n>\n> a=c(\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\")\n> menu(a)\n\n 1: Jan   2: Feb   3: Mar   4: Apr   5: May   6: Jun   7: Jul   8: Aug\n 9: Sep  10: Oct  11: Nov  12: Dec\n\nSelection: 13\nEnter an item from the menu, or 0 to exit\nSelection: 3\n[1] 3\n>\n>\n\n...which is pretty much what one would expect. However, if I make the\nConsole window about twice as wide and do the same commands, I get:\n\n>\n>\n> a=c(\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\")\n> menu(a)\n\n 1: Jan   2: Feb   3: Mar   4: Apr   5: May   6: Jun   7: Jul   8: Aug  \n9: Sep  10: Oct  11: Nov  12: Dec   1: Jan   2: Feb   3: Mar   4: Apr  \n5: May   6: Jun   7: Jul   8: Aug\n\n\nSelection: 13\nEnter an item from the menu, or 0 to exit\nSelection: 3\n[1] 3\n>\n>\n\nMy question is: where do those extra non-existent menu options come from?\n\nThanks to anyone who has time to look at this.\n\nToby",
+      "body_snippet": "Dear R-sig-gui,\n\nI'm using R 2.5.1 for Windows. Here's an interesting one (perhaps!):\n\nIf I have the Console window about 80 characters wide, I can do the\nfollowing commands:\n\n\n>\n> a=c(\"Jan\",\"Feb\",\"Ma",
+      "thread_id": "thread-1d9431875875",
+      "thread_depth": 0,
+      "month": "2007-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-016ace4e19af",
+      "subject": "[R-gui] runif function",
+      "message_count": 2,
+      "participants": [
+        "Charilaos Skiadas",
+        "shweta"
+      ],
+      "started": "2007-11-08T11:07:11-06:00",
+      "last_reply": "2007-11-08T17:47:09-05:00",
+      "root_message_id": "msg-016ace4e19af"
+    },
+    {
+      "id": "thread-c71e256c71cd",
+      "subject": "[R-gui] Using runif function in R",
+      "message_count": 4,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Philippe Grosjean",
+        "shweta"
+      ],
+      "started": "2007-11-08T11:43:40-06:00",
+      "last_reply": "2007-11-12T10:41:34+01:00",
+      "root_message_id": "msg-c71e256c71cd"
+    },
+    {
+      "id": "thread-a8f1c5b4f990",
+      "subject": "[R-gui] Tinn-R 1.19.3.1 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2007-11-17T13:05:49-02:00",
+      "last_reply": "2007-11-17T13:05:49-02:00",
+      "root_message_id": "msg-a8f1c5b4f990"
+    },
+    {
+      "id": "thread-1d9431875875",
+      "subject": "[R-gui] Something odd about Windows GUI with the menu command",
+      "message_count": 1,
+      "participants": [
+        "T. Marthews"
+      ],
+      "started": "2007-11-30T14:38:35+01:00",
+      "last_reply": "2007-11-30T14:38:35+01:00",
+      "root_message_id": "msg-1d9431875875"
+    }
+  ]
+}

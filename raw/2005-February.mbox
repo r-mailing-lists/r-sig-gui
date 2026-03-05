@@ -1,0 +1,983 @@
+From corinna at eskimo.com  Thu Feb  3 17:51:11 2005
+From: corinna at eskimo.com (Corinna)
+Date: Thu Feb  3 17:51:48 2005
+Subject: [R-gui] base package not found in 01- Basic Test
+Message-ID: <4202567F.8060700@eskimo.com>
+
+Hello list,
+
+I have problems installing the R(D)COM server.  As mentioned in the 
+documentation, when I run "01 - Basic Test" I get an error stating that 
+the base package cannot be opened.
+
+Here are the contents of my Sys.getenv().  Can you please help?  Thank you,
+
+Adrian Dragulescu
+
+                                                                                                                                                                             
+"1"
+                                                                                                                                                                                                                                                  
+OS
+                                                                                                                                                                                                                                        
+"Windows_NT"
+                                                                                                                                                                                                                                                
+Path
+"c:\\R\\rw1091\\bin;C:\\Program 
+Files\\TeXLive\\bin\\win32;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\Program 
+Files\\Common Files\\Adaptec 
+Shared\\System;c:\\Temporary\\Applications\\Utilities;c:\\Emacs\\ess-5.1.24\\lisp" 
+
+                                                                                                                                                                                                                                             
+PATHEXT
+                                                                                                                                                                                                  
+".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH"
+                                                                                                                                                                                                                              
+PROCESSOR_ARCHITECTURE
+                                                                                                                                                                                                                                               
+"x86"
+                                                                                                                                                                                                                                
+PROCESSOR_IDENTIFIER
+                                                                                                                                                                                                    
+"x86 Family 15 Model 2 Stepping 7, GenuineIntel"
+                                                                                                                                                                                                                                     
+PROCESSOR_LEVEL
+                                                                                                                                                                                                                                                
+"15"
+                                                                                                                                                                                                                                  
+PROCESSOR_REVISION
+                                                                                                                                                                                                                                              
+"0207"
+                                                                                                                                                                                                                                        
+ProgramFiles
+                                                                                                                                                                                                                                 
+"C:\\Program Files"
+                                                                                                                                                                                                                                              
+R_HOME
+                                                                                                                                                                                                                                     
+"C:\\R\\rw1091"
+                                                                                                                                                                                                                                              
+R_LIBS
+                                                                                                                                                                                                                            
+"c:\\R\\rw1091\\library"
+                                                                                                                                                                                                                                              
+R_USER
+                                                                                                                                                                                                                                     
+"C:\\R\\rw1091"
+                                                                                                                                                                                                                                         
+SESSIONNAME
+                                                                                                                                                                                                                                           
+"Console"
+                                                                                                                                                                                                                                         
+SystemDrive
+                                                                                                                                                                                                                                                
+"C:"
+                                                                                                                                                                                                                                          
+SystemRoot
+                                                                                                                                                                                                                                       
+"C:\\WINDOWS"
+                                                                                                                                                                                                                                                
+TEMP
+                                                                                                                                                                                                            
+"C:\\DOCUME~1\\CORINN~1\\LOCALS~1\\Temp"
+                                                                                                                                                                                                                                            
+TEXMFCNF
+                                                                                                                                                                                                      
+"C:\\Program Files\\TeXLive\\texmf-var\\web2c"
+                                                                                                                                                                                                                                           
+TEXMFTEMP
+                                                                                                                                                                                                                  
+"C:\\Program Files\\TeXLive\\temp"
+                                                                                                                                                                                                                                                 
+TMP
+                                                                                                                                                                                                            
+"C:\\DOCUME~1\\CORINN~1\\LOCALS~1\\Temp"
+                                                                                                                                                                                                                                          
+USERDOMAIN
+                                                                                                                                                                                                                                          
+"DHY7D021"
+                                                                                                                                                                                                                                            
+USERNAME
+                                                                                                                                                                                                                                    
+"Corinna Woller"
+                                                                                                                                                                                                                                         
+USERPROFILE
+                                                                                                                                                                                                        
+"C:\\Documents and Settings\\Corinna Woller"
+                                                                                                                                                                                                                                              
+windir
+                                                                                                                                                                                                                                       
+"C:\\WINDOWS"
+ >
+
+From hillview at paradise.net.nz  Thu Feb 24 09:48:25 2005
+From: hillview at paradise.net.nz (Ian Laurenson)
+Date: Thu Feb 24 09:33:29 2005
+Subject: [R-gui] OpenOffice.org and R
+Message-ID: <1109234905.2381.6.camel@localhost>
+
+I am investigating integrating OpenOffice.org with R.
+
+Before I start on such a project I thought I would check:
+
+Has anyone else has started such a project?
+
+If so, does anyone have a contact or web address so that I can see if I
+can help?
+
+If not, can anyone give me additional pointers for getting started on
+such a project?
+I am aware of:
+http://cran.r-project.org/doc/manuals/R-exts.html#Linking-GUIs-and-other-front_002dends-to-R) 
+
+Does anyone have a wish list for what they would like when using both
+OpenOffice.org and R?
+
+I am getting proficient with OpenOffice.org's API and have used R a
+little. I am aware of Gnumeric and its integration with R and am in the
+process of looking into it further (very early days).
+
+For examples of my OpenOffice.org work see:
+http://homepages.paradise.net.nz/hillview/OOo/
+
+Thanks, Ian Laurenson
+
+From ellis at stat.harvard.edu  Thu Feb 24 09:41:01 2005
+From: ellis at stat.harvard.edu (Byron Ellis)
+Date: Thu Feb 24 09:41:17 2005
+Subject: [R-gui] OpenOffice.org and R
+In-Reply-To: <1109234905.2381.6.camel@localhost>
+References: <1109234905.2381.6.camel@localhost>
+Message-ID: <d7ceda23b2bca736ff57f6580d9bd5b5@stat.harvard.edu>
+
+I think there was something involving R and AbiWord out of the Omegahat  
+side of things, but I don't know of anything involving OpenOffice.
+
+On Feb 24, 2005, at 12:48 AM, Ian Laurenson wrote:
+
+> I am investigating integrating OpenOffice.org with R.
+>
+> Before I start on such a project I thought I would check:
+>
+> Has anyone else has started such a project?
+>
+> If so, does anyone have a contact or web address so that I can see if I
+> can help?
+>
+> If not, can anyone give me additional pointers for getting started on
+> such a project?
+> I am aware of:
+> http://cran.r-project.org/doc/manuals/R-exts.html#Linking-GUIs-and- 
+> other-front_002dends-to-R)
+>
+> Does anyone have a wish list for what they would like when using both
+> OpenOffice.org and R?
+>
+> I am getting proficient with OpenOffice.org's API and have used R a
+> little. I am aware of Gnumeric and its integration with R and am in the
+> process of looking into it further (very early days).
+>
+> For examples of my OpenOffice.org work see:
+> http://homepages.paradise.net.nz/hillview/OOo/
+>
+> Thanks, Ian Laurenson
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+---
+Byron Ellis (ellis@stat.harvard.edu)
+"Oook" -- The Librarian
+
+From phgrosjean at sciviews.org  Thu Feb 24 11:16:32 2005
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Feb 24 11:17:04 2005
+Subject: [R-gui] OpenOffice.org and R
+In-Reply-To: <1109234905.2381.6.camel@localhost>
+References: <1109234905.2381.6.camel@localhost>
+Message-ID: <421DA980.205@sciviews.org>
+
+Hello,
+
+This is very interesting! I have always resisted to anything that could 
+mix R and Microsoft Office, because I believe it is against the Open 
+Source phylosophy. Of course, with OpenOffice, no problems!
+
+There are many ways where interaction between R and OpenOffice would be 
+a mutual benefit. Usually, the one that come to the mind is to use R as 
+a powerful calculation engine for oOOCalc. Indeed, you will find ideas 
+in RGnumeric in OmegaHat, and also in RExcel (part of the R(D)Com server).
+
+Other ways where interaction between R and OpenOffice could be interesting:
+
+1) Using oOOCalc as a powerful replacement of the data editor in R: 
+function edit(mydataframe) opens the dataframe in oOOCalc and changes 
+made are transmitted back to R.
+
+2) Using oOOWriter as a "notebook ? la Mathematica" editor, that is, 
+mixing plain text with calculations and graphs interactively generated by R.
+
+3) Using oOOWriter as a report editor (see for instance the reporting 
+features in the SciViews bundle on CRAN).
+
+and perhaps:
+
+4) Using oOOWriter as a WYSIWYG help files (.Rd) editor.
+
+
+Now, regarding the way you make R and oOO collaborate, there are again 
+many possibilities. Besides the shared library under Unix, and the 
+R.dll, or R(D)Com server in Windows, I think the optimal communication 
+would:
+- require no changes in R, and no recompilation,
+- be bidirectional,
+- allow communication with R even when it is busy calculating something 
+(in the case you can interact with R both at the command line and with 
+the external client simultaneously),
+- allow connecting/disconnecting (hot plug) to a running R session that 
+was not started initially to interact with your client application,
+- work the same way on all supported platforms.
+
+Clearly, solutions proposed in 
+http://cran.r-project.org/doc/manuals/R-exts.html#Linking-GUIs-and-other-front_002dends-to-R 
+do not match one or several items in this wishlist. Also, all of them 
+use R as a server exclusively, that is, you cannot interact with R as 
+usual at the command line at the same time you plug it into you client 
+(well, you have to program your own console window in the client app to 
+get a control of R through command line). Indeed, there are 
+circumstances where you would prefer to keep both a direct and indirect 
+interaction with R. Options 1, 2 and 4 above  may fall in this category.
+
+With Tom Short (the author of Rpad), we have started exploring the 
+possibilities to use sockets by means of Tcl. Tcl (tcltk R package) is 
+now widely usable with R, and it is possible to write a very powerful 
+socket server with this language. You will find a first implementation 
+of it in svSocket package (part of the SciViews bundle), and also a more 
+advanced one to exchange HTML data in Rpad. I think this is a promising 
+approach because it matches all items in the wishlist: it works the same 
+on all platforms; it permits hot plug no mather the way R was started 
+(console, Rgui under Windows, Emacs-ESS, ...), etc.
+
+Oh yes, and speaking about it, these is also the ESS mode of R (Emacs) 
+that could inspire you another way to embed R in oOO.
+
+Finally, I would say that I am willing to help in your entreprise. If 
+you decide to use part or all of the R GUI API I am implementing in the 
+SciViews bundle, I can surely help you to use it (documentation is only 
+partial for the moment). I can also add, or adapt functions of this API 
+to make it more efficient in the context of your developments for oOO.
+
+Best,
+
+Philippe Grosjean
+
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons-Hainaut University, Pentagone (3D08)
+( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+  ) ) ) ) )   8, av du Champ de Mars, 7000 Mons, Belgium
+( ( ( ( (
+  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.30.54
+( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+  ) ) ) ) )
+( ( ( ( (    web:   http://www.umh.ac.be/~econum
+  ) ) ) ) )          http://www.sciviews.org
+( ( ( ( (
+..............................................................
+
+Ian Laurenson wrote:
+> I am investigating integrating OpenOffice.org with R.
+> 
+> Before I start on such a project I thought I would check:
+> 
+> Has anyone else has started such a project?
+> 
+> If so, does anyone have a contact or web address so that I can see if I
+> can help?
+> 
+> If not, can anyone give me additional pointers for getting started on
+> such a project?
+> I am aware of:
+> http://cran.r-project.org/doc/manuals/R-exts.html#Linking-GUIs-and-other-front_002dends-to-R) 
+> 
+> Does anyone have a wish list for what they would like when using both
+> OpenOffice.org and R?
+> 
+> I am getting proficient with OpenOffice.org's API and have used R a
+> little. I am aware of Gnumeric and its integration with R and am in the
+> process of looking into it further (very early days).
+> 
+> For examples of my OpenOffice.org work see:
+> http://homepages.paradise.net.nz/hillview/OOo/
+> 
+> Thanks, Ian Laurenson
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+From daniele.medri at libero.it  Thu Feb 24 13:42:37 2005
+From: daniele.medri at libero.it (Daniele Medri)
+Date: Thu Feb 24 13:42:50 2005
+Subject: [R-gui] OpenOffice.org and R
+In-Reply-To: <421DA980.205@sciviews.org>
+References: <1109234905.2381.6.camel@localhost> <421DA980.205@sciviews.org>
+Message-ID: <200502241342.37185.daniele.medri@libero.it>
+
+Dears,
+
+Alle 11:16, gioved? 24 febbraio 2005, Philippe Grosjean ha scritto:
+[cut]
+> Other ways where interaction between R and OpenOffice could be interesting:
+>
+> 1) Using oOOCalc as a powerful replacement of the data editor in R:
+> function edit(mydataframe) opens the dataframe in oOOCalc and changes
+> made are transmitted back to R.
+
+Probably, these are things that could be a warm-up stage before something more 
+powerfull. oOO calc has widgets for that I suppose.
+
+> 2) Using oOOWriter as a "notebook ? la Mathematica" editor, that is,
+> mixing plain text with calculations and graphs interactively generated by
+> R.
+
+Personally, I don't like this way... but with a <component> that link R to oOO 
+could be "easy" open a terminal like console with R <somewhere> in OOwriter 
+to do that.
+
+> 3) Using oOOWriter as a report editor (see for instance the reporting
+> features in the SciViews bundle on CRAN).
+
+very nice!
+
+> 4) Using oOOWriter as a WYSIWYG help files (.Rd) editor.
+
+IMHO the features is "have help file write-able with any editor", the way to 
+write these is a user choice. Yes, WYSIWYG could help a bit.. :)
+
+> Now, regarding the way you make R and oOO collaborate, there are again
+> many possibilities. Besides the shared library under Unix, and the
+> R.dll, or R(D)Com server in Windows, I think the optimal communication
+> would:
+> - require no changes in R, and no recompilation,
+
+good.
+
+> - be bidirectional,
+
+good.
+
+> - allow communication with R even when it is busy calculating something
+> (in the case you can interact with R both at the command line and with
+> the external client simultaneously),
+
+I don't know exactly what you mean, but I am thinking about <something> like 
+SAS server-client do with many processes-threads. IMHO this is a powerfull 
+features that could trasform R in a killer app for companies that have data 
+on servers and analyst with clients. Probably this point contrast with first 
+point, either if R has/hasn't this capability.
+
+Following this way, could be very good to collaborate with a database project 
+team like Postgresql (for example). Many apps have connection with this 
+software (eg. GIS) and actually exist a PL/R too.
+
+With the same interest could be GNUe project, a free software ERP that already 
+have an applications server ready.
+
+> - allow connecting/disconnecting (hot plug) to a running R session that
+> was not started initially to interact with your client application,
+
+an application server.. look at GNUe -www.gnue.org
+
+> - work the same way on all supported platforms.
+
+good.
+
+> Clearly, solutions proposed in
+> http://cran.r-project.org/doc/manuals/R-exts.html#Linking-GUIs-and-other-fr
+>ont_002dends-to-R do not match one or several items in this wishlist. Also,
+> all of them use R as a server exclusively, that is, you cannot interact
+> with R as usual at the command line at the same time you plug it into you
+> client (well, you have to program your own console window in the client app
+> to get a control of R through command line). Indeed, there are
+> circumstances where you would prefer to keep both a direct and indirect
+> interaction with R. Options 1, 2 and 4 above  may fall in this category.
+>
+> With Tom Short (the author of Rpad), we have started exploring the
+> possibilities to use sockets by means of Tcl. Tcl (tcltk R package) is
+> now widely usable with R, and it is possible to write a very powerful
+> socket server with this language. You will find a first implementation
+> of it in svSocket package (part of the SciViews bundle), and also a more
+> advanced one to exchange HTML data in Rpad. I think this is a promising
+> approach because it matches all items in the wishlist: it works the same
+> on all platforms; it permits hot plug no mather the way R was started
+> (console, Rgui under Windows, Emacs-ESS, ...), etc.
+
+are you working with wxWidgets too?
+Tcltk is a reality, but widgets are not so good, not so beauty.
+
+> Finally, I would say that I am willing to help in your entreprise. If
+> you decide to use part or all of the R GUI API I am implementing in the
+> SciViews bundle, I can surely help you to use it (documentation is only
+> partial for the moment). I can also add, or adapt functions of this API
+> to make it more efficient in the context of your developments for oOO.
+
+..your proposal is a good way to follow and, IMHO all could appreciate the 
+existance of ideas and real solutions.
+
+>From an analyst/user point of view (that use Sciviews+R / SAS on windows, or R 
+terminal either on win/linux) I found all these ideas good, but not *enough*.
+IMHO, I could be very-very happy with:
+
+1. On R front,  start R as a server to handle multiple connection from 
+R-client through unix socket or tcp/ip. This feature should be part of 
+r-project directly. Many free software implementation has this already done 
+and could be an "easy" port.
+
+2. On oOO front, have an additional application that share db widgets with the 
+new access-like app, share spreadsheet widget with Calc for data entry and 
+could communicate with R-server as a client, either locally and remotly for 
+datas. On oOO front, this new app should be a diagram editor like SAS 
+Enterprise Miner or SPSS Clementine, with code editing capabilities and a 
+terminal like console to R, good enough for the oOO target of users. These 
+features should be part of oOO project.
+
+Again: what kind of widgets/toolkits? I found Gtk the best choice in terms of 
+quality, "freely" available, multi-platform. Novell is working hard to extend 
+windows support too, and this is very good.
+
+RECAP
+
+talk about with R-core team about "server" feature,
+talk about with oOO team for a new app in analysis direction.
+
+
+bye
+-- 
+Daniele Medri - http://www.medri.org
+
+"There is a risk that data analysts will see patterns that are merely a
+result of looking too hard. Under torture, the data readily yield false
+confessions."
+
+From phgrosjean at sciviews.org  Thu Feb 24 14:59:52 2005
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Feb 24 15:00:29 2005
+Subject: [R-gui] OpenOffice.org and R
+In-Reply-To: <200502241342.37185.daniele.medri@libero.it>
+References: <1109234905.2381.6.camel@localhost> <421DA980.205@sciviews.org>
+	<200502241342.37185.daniele.medri@libero.it>
+Message-ID: <421DDDD8.4020509@sciviews.org>
+
+Just a little comment on what Daniele Medri said:
+
+ > are you working with wxWidgets too?
+ > Tcltk is a reality, but widgets are not so good, not so beauty.
+
+I agree that tk is a little outdated: many widgets and features missing. 
+However, it works with R quite good through the tcltk package. There is 
+also tile, a project to "revitalize tk widgets". I make tcltk2, a R 
+package to enhance tk widgets in R using tile and others. However, I 
+develop it under Windows, and there is still a little work to do to make 
+sure it compiles and works on all supported platforms.
+
+Otherwise, svDialog in the SciViews bundle is designed in a way that it 
+is independent from particular widgets. There is a demonstration of the 
+same dialog boxes implemented either in tk, or in wxWidgets (using James 
+Wettenhall R-wxPythyon package). The problem is: R-wxPython is still 
+experimental and incomplete, and James does not seems to have time 
+enough to continue its development.
+
+For the rest, one thing I know: I *hate* the look-and-feel of Gtk under 
+Windows.
+
+Best,
+
+PhG
+
+
+Daniele Medri wrote:
+> Dears,
+> 
+> Alle 11:16, gioved? 24 febbraio 2005, Philippe Grosjean ha scritto:
+> [cut]
+> 
+>>Other ways where interaction between R and OpenOffice could be interesting:
+>>
+>>1) Using oOOCalc as a powerful replacement of the data editor in R:
+>>function edit(mydataframe) opens the dataframe in oOOCalc and changes
+>>made are transmitted back to R.
+> 
+> 
+> Probably, these are things that could be a warm-up stage before something more 
+> powerfull. oOO calc has widgets for that I suppose.
+> 
+> 
+>>2) Using oOOWriter as a "notebook ? la Mathematica" editor, that is,
+>>mixing plain text with calculations and graphs interactively generated by
+>>R.
+> 
+> 
+> Personally, I don't like this way... but with a <component> that link R to oOO 
+> could be "easy" open a terminal like console with R <somewhere> in OOwriter 
+> to do that.
+> 
+> 
+>>3) Using oOOWriter as a report editor (see for instance the reporting
+>>features in the SciViews bundle on CRAN).
+> 
+> 
+> very nice!
+> 
+> 
+>>4) Using oOOWriter as a WYSIWYG help files (.Rd) editor.
+> 
+> 
+> IMHO the features is "have help file write-able with any editor", the way to 
+> write these is a user choice. Yes, WYSIWYG could help a bit.. :)
+> 
+> 
+>>Now, regarding the way you make R and oOO collaborate, there are again
+>>many possibilities. Besides the shared library under Unix, and the
+>>R.dll, or R(D)Com server in Windows, I think the optimal communication
+>>would:
+>>- require no changes in R, and no recompilation,
+> 
+> 
+> good.
+> 
+> 
+>>- be bidirectional,
+> 
+> 
+> good.
+> 
+> 
+>>- allow communication with R even when it is busy calculating something
+>>(in the case you can interact with R both at the command line and with
+>>the external client simultaneously),
+> 
+> 
+> I don't know exactly what you mean, but I am thinking about <something> like 
+> SAS server-client do with many processes-threads. IMHO this is a powerfull 
+> features that could trasform R in a killer app for companies that have data 
+> on servers and analyst with clients. Probably this point contrast with first 
+> point, either if R has/hasn't this capability.
+> 
+> Following this way, could be very good to collaborate with a database project 
+> team like Postgresql (for example). Many apps have connection with this 
+> software (eg. GIS) and actually exist a PL/R too.
+> 
+> With the same interest could be GNUe project, a free software ERP that already 
+> have an applications server ready.
+> 
+> 
+>>- allow connecting/disconnecting (hot plug) to a running R session that
+>>was not started initially to interact with your client application,
+> 
+> 
+> an application server.. look at GNUe -www.gnue.org
+> 
+> 
+>>- work the same way on all supported platforms.
+> 
+> 
+> good.
+> 
+> 
+>>Clearly, solutions proposed in
+>>http://cran.r-project.org/doc/manuals/R-exts.html#Linking-GUIs-and-other-fr
+>>ont_002dends-to-R do not match one or several items in this wishlist. Also,
+>>all of them use R as a server exclusively, that is, you cannot interact
+>>with R as usual at the command line at the same time you plug it into you
+>>client (well, you have to program your own console window in the client app
+>>to get a control of R through command line). Indeed, there are
+>>circumstances where you would prefer to keep both a direct and indirect
+>>interaction with R. Options 1, 2 and 4 above  may fall in this category.
+>>
+>>With Tom Short (the author of Rpad), we have started exploring the
+>>possibilities to use sockets by means of Tcl. Tcl (tcltk R package) is
+>>now widely usable with R, and it is possible to write a very powerful
+>>socket server with this language. You will find a first implementation
+>>of it in svSocket package (part of the SciViews bundle), and also a more
+>>advanced one to exchange HTML data in Rpad. I think this is a promising
+>>approach because it matches all items in the wishlist: it works the same
+>>on all platforms; it permits hot plug no mather the way R was started
+>>(console, Rgui under Windows, Emacs-ESS, ...), etc.
+> 
+> 
+> are you working with wxWidgets too?
+> Tcltk is a reality, but widgets are not so good, not so beauty.
+> 
+> 
+>>Finally, I would say that I am willing to help in your entreprise. If
+>>you decide to use part or all of the R GUI API I am implementing in the
+>>SciViews bundle, I can surely help you to use it (documentation is only
+>>partial for the moment). I can also add, or adapt functions of this API
+>>to make it more efficient in the context of your developments for oOO.
+> 
+> 
+> ..your proposal is a good way to follow and, IMHO all could appreciate the 
+> existance of ideas and real solutions.
+> 
+>>From an analyst/user point of view (that use Sciviews+R / SAS on windows, or R 
+> terminal either on win/linux) I found all these ideas good, but not *enough*.
+> IMHO, I could be very-very happy with:
+> 
+> 1. On R front,  start R as a server to handle multiple connection from 
+> R-client through unix socket or tcp/ip. This feature should be part of 
+> r-project directly. Many free software implementation has this already done 
+> and could be an "easy" port.
+> 
+> 2. On oOO front, have an additional application that share db widgets with the 
+> new access-like app, share spreadsheet widget with Calc for data entry and 
+> could communicate with R-server as a client, either locally and remotly for 
+> datas. On oOO front, this new app should be a diagram editor like SAS 
+> Enterprise Miner or SPSS Clementine, with code editing capabilities and a 
+> terminal like console to R, good enough for the oOO target of users. These 
+> features should be part of oOO project.
+> 
+> Again: what kind of widgets/toolkits? I found Gtk the best choice in terms of 
+> quality, "freely" available, multi-platform. Novell is working hard to extend 
+> windows support too, and this is very good.
+> 
+> RECAP
+> 
+> talk about with R-core team about "server" feature,
+> talk about with oOO team for a new app in analysis direction.
+> 
+> 
+> bye
+
+From duncan at wald.ucdavis.edu  Thu Feb 24 15:17:24 2005
+From: duncan at wald.ucdavis.edu (Duncan Temple Lang)
+Date: Thu Feb 24 15:17:52 2005
+Subject: [R-gui] OpenOffice.org and R
+In-Reply-To: <421DA980.205@sciviews.org>
+References: <1109234905.2381.6.camel@localhost> <421DA980.205@sciviews.org>
+Message-ID: <20050224141724.GA9802@wald.ucdavis.edu>
+
+Philippe Grosjean wrote:
+> Hello,
+> 
+> This is very interesting! I have always resisted to anything that could 
+> mix R and Microsoft Office, because I believe it is against the Open 
+> Source phylosophy. Of course, with OpenOffice, no problems!
+
+
+R is consistent with non-Open source use so connecting to Excel is
+not against the philosophy. We have connections to Oracle, Excel, etc.
+Compile R on Solaris using Sun's compilers...
+I believe  one very important aspect of R is the dissemination and
+practice of good statistical techniques.
+
+
+Connecting to available tools that people use and will
+continue to use is a good thing and often better than having new
+basic tools that are platform independent and equally inferior on all.
+The specific connection here is that Excel is what an awful lot
+of people use. oOO calc is there too. So is Gnumeric. Use them
+since otherwise we are going to have to write a whole lot of new  software
+that already exists and that people want to use, and most importantly
+that requires careful design by people specializing in those areas.
+Fix and extend the bits that don't work. I believe that is an
+important aspect of the Open Source philosophy
+
+
+
+
+
+> 
+> There are many ways where interaction between R and OpenOffice would be 
+> a mutual benefit. Usually, the one that come to the mind is to use R as 
+> a powerful calculation engine for oOOCalc. Indeed, you will find ideas 
+> in RGnumeric in OmegaHat, and also in RExcel (part of the R(D)Com server).
+> 
+> Other ways where interaction between R and OpenOffice could be interesting:
+> 
+> 1) Using oOOCalc as a powerful replacement of the data editor in R: 
+> function edit(mydataframe) opens the dataframe in oOOCalc and changes 
+> made are transmitted back to R.
+> 
+> 2) Using oOOWriter as a "notebook ? la Mathematica" editor, that is, 
+> mixing plain text with calculations and graphs interactively generated by R.
+> 
+> 3) Using oOOWriter as a report editor (see for instance the reporting 
+> features in the SciViews bundle on CRAN).
+> 
+> and perhaps:
+> 
+> 4) Using oOOWriter as a WYSIWYG help files (.Rd) editor.
+> 
+> 
+> Now, regarding the way you make R and oOO collaborate, there are again 
+> many possibilities. Besides the shared library under Unix, and the 
+> R.dll, or R(D)Com server in Windows, I think the optimal communication 
+> would:
+> - require no changes in R, and no recompilation,
+> - be bidirectional,
+> - allow communication with R even when it is busy calculating something 
+> (in the case you can interact with R both at the command line and with 
+> the external client simultaneously),
+
+For that you need R to be capable of doing two things at once.
+Multiple interpreters and threads are on the horizon,
+perhaps some movement this summer.  However, 
+assuming the mechanism is there, I believe there is an enormous
+number of details to consider about the semantics.
+
+
+> - allow connecting/disconnecting (hot plug) to a running R session that 
+> was not started initially to interact with your client application,
+> - work the same way on all supported platforms.
+> 
+> Clearly, solutions proposed in 
+> http://cran.r-project.org/doc/manuals/R-exts.html#Linking-GUIs-and-other-front_002dends-to-R 
+> do not match one or several items in this wishlist. Also, all of them use R 
+> as a server exclusively, that is, you cannot interact with R as usual at 
+> the command line at the same time you plug it into you client (well, you 
+> have to program your own console window in the client app to get a control 
+> of R through command line). Indeed, there are circumstances where you would 
+> prefer to keep both a direct and indirect interaction with R. Options 1, 2 
+> and 4 above  may fall in this category.
+> 
+> With Tom Short (the author of Rpad), we have started exploring the 
+> possibilities to use sockets by means of Tcl. Tcl (tcltk R package) is 
+> now widely usable with R, and it is possible to write a very powerful 
+> socket server with this language. You will find a first implementation 
+> of it in svSocket package (part of the SciViews bundle), and also a more 
+> advanced one to exchange HTML data in Rpad. I think this is a promising 
+> approach because it matches all items in the wishlist: it works the same 
+> on all platforms; it permits hot plug no mather the way R was started 
+> (console, Rgui under Windows, Emacs-ESS, ...), etc.
+
+
+So you are (re)inventing inter-process communication.
+And  specific to a small number of applications.
+And are you going to add a security layer, object lifetime
+or are you going to have objects? and all the other aspects
+of DCOM and CORBA that already exist, that many applications 
+can already use.  Why o why do we always  want to come up 
+with inferior reinventions of something that already exists
+without exploring how to make  the current setup work better?
+The socket approach does not match  all the items on your wishlist.
+
+ D.
+
+
+
+
+> 
+> Oh yes, and speaking about it, these is also the ESS mode of R (Emacs) 
+> that could inspire you another way to embed R in oOO.
+> 
+> Finally, I would say that I am willing to help in your entreprise. If 
+> you decide to use part or all of the R GUI API I am implementing in the 
+> SciViews bundle, I can surely help you to use it (documentation is only 
+> partial for the moment). I can also add, or adapt functions of this API 
+> to make it more efficient in the context of your developments for oOO.
+> 
+> Best,
+> 
+> Philippe Grosjean
+> 
+> ..............................................<?}))><........
+>  ) ) ) ) )
+> ( ( ( ( (    Prof. Philippe Grosjean
+>  ) ) ) ) )
+> ( ( ( ( (    Numerical Ecology of Aquatic Systems
+>  ) ) ) ) )   Mons-Hainaut University, Pentagone (3D08)
+> ( ( ( ( (    Academie Universitaire Wallonie-Bruxelles
+>  ) ) ) ) )   8, av du Champ de Mars, 7000 Mons, Belgium
+> ( ( ( ( (
+>  ) ) ) ) )   phone: + 32.65.37.34.97, fax: + 32.65.37.30.54
+> ( ( ( ( (    email: Philippe.Grosjean@umh.ac.be
+>  ) ) ) ) )
+> ( ( ( ( (    web:   http://www.umh.ac.be/~econum
+>  ) ) ) ) )          http://www.sciviews.org
+> ( ( ( ( (
+> ..............................................................
+> 
+> Ian Laurenson wrote:
+> >I am investigating integrating OpenOffice.org with R.
+> >
+> >Before I start on such a project I thought I would check:
+> >
+> >Has anyone else has started such a project?
+> >
+> >If so, does anyone have a contact or web address so that I can see if I
+> >can help?
+> >
+> >If not, can anyone give me additional pointers for getting started on
+> >such a project?
+> >I am aware of:
+> >http://cran.r-project.org/doc/manuals/R-exts.html#Linking-GUIs-and-other-front_002dends-to-R) 
+> >
+> >Does anyone have a wish list for what they would like when using both
+> >OpenOffice.org and R?
+> >
+> >I am getting proficient with OpenOffice.org's API and have used R a
+> >little. I am aware of Gnumeric and its integration with R and am in the
+> >process of looking into it further (very early days).
+> >
+> >For examples of my OpenOffice.org work see:
+> >http://homepages.paradise.net.nz/hillview/OOo/
+> >
+> >Thanks, Ian Laurenson
+> >
+> >_______________________________________________
+> >R-SIG-GUI mailing list
+> >R-SIG-GUI@stat.math.ethz.ch
+> >https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> >
+> >
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Duncan Temple Lang                duncan@wald.ucdavis.edu
+Department of Statistics          work:  (530) 752-4782
+371 Kerr Hall                     fax:   (530) 752-7099
+One Shields Ave.
+University of California at Davis
+Davis, CA 95616, USA
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 184 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20050224/2609ddbe/attachment.bin
+From p.dalgaard at biostat.ku.dk  Thu Feb 24 15:24:17 2005
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Thu Feb 24 15:30:06 2005
+Subject: [R-gui] OpenOffice.org and R
+In-Reply-To: <421DDDD8.4020509@sciviews.org>
+References: <1109234905.2381.6.camel@localhost> <421DA980.205@sciviews.org>
+	<200502241342.37185.daniele.medri@libero.it>
+	<421DDDD8.4020509@sciviews.org>
+Message-ID: <x2y8de11f2.fsf@biostat.ku.dk>
+
+Philippe Grosjean <phgrosjean@sciviews.org> writes:
+
+> Just a little comment on what Daniele Medri said:
+> 
+>  > are you working with wxWidgets too?
+>  > Tcltk is a reality, but widgets are not so good, not so beauty.
+> 
+> I agree that tk is a little outdated: many widgets and features
+> missing. However, it works with R quite good through the tcltk
+> package. There is also tile, a project to "revitalize tk widgets". I
+> make tcltk2, a R package to enhance tk widgets in R using tile and
+> others. However, I develop it under Windows, and there is still a
+> little work to do to make sure it compiles and works on all supported
+> platforms.
+
+Heh, yes, it is a constant toss-up whether we will find a manageable
+interface to a better GUI system, or whether Tk itself will develop to
+something more desirable. Tile is sort of a sidetrack in my view; it
+prettifies, but doesn't add (much?) functionality. I'd much rather see
+a canvas that was powerful enough to support an R graphics device (the
+standard one has serious problems with clipping). Has anyone been
+playing around Zinc on Windows?
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From tshort at eprisolutions.com  Thu Feb 24 15:35:47 2005
+From: tshort at eprisolutions.com (Short, Tom)
+Date: Thu Feb 24 15:39:52 2005
+Subject: [R-gui] OpenOffice.org and R
+Message-ID: <FC4627EC695CD71180280003477108C501BBB8DE@exchange.epripeac.com>
+
+This topic has come up before, and others have expressed interest in making
+the connection. Here's one I found:
+
+https://stat.ethz.ch/pipermail/r-devel/2003-July/027039.html
+
+You might want to contact them to see if they made any progress.
+
+> With Tom Short (the author of Rpad), we have started exploring the 
+> possibilities to use sockets by means of Tcl. Tcl (tcltk R 
+> package) is 
+> now widely usable with R, and it is possible to write a very powerful 
+> socket server with this language. You will find a first 
+> implementation 
+> of it in svSocket package (part of the SciViews bundle), and 
+> also a more 
+> advanced one to exchange HTML data in Rpad. I think this is a 
+> promising 
+> approach because it matches all items in the wishlist: it 
+> works the same 
+> on all platforms; it permits hot plug no mather the way R was started 
+> (console, Rgui under Windows, Emacs-ESS, ...), etc.
+
+I agree with Philippe--the Tcl socket interface is a good way to communicate
+between OOo and R. It works well, and you can use the command line at the
+same time as you use the OOo user interface. Just from some quick googling,
+it appears that OOo has support for using sockets for interprocess
+communication. Hopefully, you can access this with OOo's scripting language.
+
+If you create a workbook-style interface with writer, then we might even be
+able to "export" the file to an Rpad application that could be hosted on a
+server. Also, an OOo workbook could be signifantly more powerful than an
+Rpad workbook. You could directly insert postscript graphics (Rpad is
+limited to PNG and other web-compatible graphics), and of course, the
+editing is more powerful in OOo. As Rpad and Sciviews do, your could
+probably use Eric Lecoutre's R2HTML package to have R generate formatted
+output that can be "pasted' into OOo writer or calc. This is effective for
+generating formatted reports and for notebook-style interfaces.
+
+Tom Short
+
+http://www.Rpad.org/Rpad -- Interactive, web-based engineering solutions.
+
+	[[alternative HTML version deleted]]
+
+From daniele.medri at libero.it  Thu Feb 24 16:33:34 2005
+From: daniele.medri at libero.it (Daniele Medri)
+Date: Thu Feb 24 16:33:53 2005
+Subject: [R-gui] OpenOffice.org and R
+In-Reply-To: <421DDDD8.4020509@sciviews.org>
+References: <1109234905.2381.6.camel@localhost>
+	<200502241342.37185.daniele.medri@libero.it>
+	<421DDDD8.4020509@sciviews.org>
+Message-ID: <200502241633.34692.daniele.medri@libero.it>
+
+Alle 14:59, gioved? 24 febbraio 2005, Philippe Grosjean ha scritto:
+> For the rest, one thing I know: I *hate* the look-and-feel of Gtk under
+> Windows.
+
+On tcltk:
+eheh, my relative happiness on tcltk grew-up if someone talk about Motif as 
+solution for a R gui in any existing/supported platform! :))
+
+IMHO:
+wxWidgets is a good toolkit now, but Gtk is an investment for the future. I am 
+thinking about Novell support (previous mail) and the way to Mono/.Net. Gtk 
+binding to Java is also a good feature for gui development, compiled as 
+native or class with gcc recently capabilities.
+
+-- 
+Daniele Medri - http://www.medri.org
+
+"There is a risk that data analysts will see patterns that are merely a
+result of looking too hard. Under torture, the data readily yield false
+confessions."
+

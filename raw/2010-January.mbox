@@ -1,0 +1,135 @@
+From z.krizek at gmail.com  Wed Jan  6 14:18:16 2010
+From: z.krizek at gmail.com (zeljko krizek)
+Date: Wed, 6 Jan 2010 14:18:16 +0100
+Subject: [R-gui] rJava- Question about a building R-GUI and Buttons Event
+Message-ID: <c40522e31001060518g1aa2cf92mb78414940d6e58ce@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100106/ed0364cf/attachment.pl>
+
+From jverzani at gmail.com  Wed Jan  6 15:02:09 2010
+From: jverzani at gmail.com (john verzani)
+Date: Wed, 6 Jan 2010 14:02:09 +0000 (UTC)
+Subject: [R-gui] rJava- Question about a building R-GUI and Buttons Event
+References: <c40522e31001060518g1aa2cf92mb78414940d6e58ce@mail.gmail.com>
+Message-ID: <loom.20100106T145539-63@post.gmane.org>
+
+zeljko krizek <z.krizek <at> gmail.com> writes:
+
+> 
+> Hi there,
+> 
+> can someone say tome is there a sample of Buling simple GUI Window in R
+> using rJava package. In this window should be also one button with handling
+> (in R) of click event.
+> 
+> If some one press this button in window, that I can catch this event wiht  R
+> or Java function
+> to start some user code to start simple calculation.
+> 
+
+Dear Zak,
+
+In the gWidgetsrJava package is some code to deal with this that is mostly taken
+from Simon Urbanek's iWidgets package. It is a bit of a chore to track down as
+there is some R code and a Java class. If you aren't committed to rJava (you
+mentioned rpanel) the RGtk2 package is much easier to use from within R.
+
+--John
+
+> Similar functionality as in package RPanel but without bugs in with
+> list-object.
+> 
+..snip..
+> 
+> Thanks
+> in advance
+> 
+> Zak
+> 
+> 	[[alternative HTML version deleted]]
+>
+
+
+From z.krizek at gmail.com  Mon Jan 11 23:28:38 2010
+From: z.krizek at gmail.com (zeljko krizek)
+Date: Mon, 11 Jan 2010 23:28:38 +0100
+Subject: [R-gui] Question about a gTable in r package "gWidgets"
+Message-ID: <c40522e31001111428p6a5fc06cib534bc767c3f84b5@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100111/59047497/attachment.pl>
+
+From jverzani at gmail.com  Tue Jan 12 16:52:57 2010
+From: jverzani at gmail.com (john verzani)
+Date: Tue, 12 Jan 2010 15:52:57 +0000 (UTC)
+Subject: [R-gui] Question about a gTable in r package &quot;
+	gWidgets&quot; 
+References: <c40522e31001111428p6a5fc06cib534bc767c3f84b5@mail.gmail.com>
+Message-ID: <loom.20100112T164931-899@post.gmane.org>
+
+zeljko krizek <z.krizek <at> gmail.com> writes:
+
+> 
+> Hi there !
+> 
+> Can someone say to me (send a sample) how can I select one value in a
+> populated gTable element without to click in a list.
+> 
+> The scope is following.
+> 
+> I want to populate such a gTable with a list of entries and to make a kind
+> of sugestion to the user, i want to select first element in the list before
+> user can make any action.
+> 
+> I found the method svalue().
+> With this method I can only get already selected value but I cannot select
+> anything programmatically in a gTable.
+
+Dear Zak, that method can select programaticaly by row index or value:
+
+g <- gtable(mtcars, cont = gwindow("test"))
+svalue(g, index=TRUE) <- 1 ## by index
+svalue(g) <- 22.8          ## or by value
+
+For the latter, the constructor has an argument chosencol, which by default is
+the first column. In this example, the values aren't unique, so the choice is
+maybe not as expected.
+
+--John
+
+
+> 
+> Thanks in advance
+> 
+> Zak
+> 
+> 	[[alternative HTML version deleted]]
+>
+
+
+From jverzani at gmail.com  Fri Jan 15 22:03:37 2010
+From: jverzani at gmail.com (john verzani)
+Date: Fri, 15 Jan 2010 21:03:37 +0000 (UTC)
+Subject: [R-gui] [ANN] New package traitr for producing GUIs
+Message-ID: <loom.20100115T215545-706@post.gmane.org>
+
+Dear list,
+
+I found myself reading the manual for the Traits UI python module and thought it
+sounded like a neat way to write basic dialogs. As such, I made a package,
+traitr, that somewhat follows the spirit of that python module. The basic idea
+is that one specifies a model for a GUI using a set of predefined item types.
+(The GUI is provided by gWidgetsRGtk2.) The view for the model can be automatic,
+or customized with a fairly simple syntax. The controller aspect is implemented
+by defining suitably named methods. The vignette gives several examples. It
+simplifies the writing of basic GUIs, which is a far as I've gone with it as of
+now. 
+
+http://cran.r-project.org/web/packages/traitr/index.html
+
+Comments and suggestions are most welcome. --John
+
+

@@ -1,0 +1,38 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2018-02",
+  "messages": [
+    {
+      "id": "msg-23950f58edb0",
+      "message_id": "<CAMaajRfEAZa2K8ChmTUH7bWhLH=d14uk+2ATJB_UQp50CgozmA@mail.gmail.com>",
+      "from_name": "Raju Lpm",
+      "from_email_hash": "aca44a7c5964ca136d7b19852d7b84ce00d30d7498c42e4e9897608b23a402cc",
+      "date": "2018-02-28T11:41:19+05:30",
+      "subject": "[R-gui] Fwd: how to implement scroll down when scatter plot have huge amount of data?",
+      "subject_clean": "[R-gui] Fwd: how to implement scroll down when scatter plot have huge amount of data?",
+      "in_reply_to": "<CAMaajRdcNhYGs8O9pF_qZiCr0C87xFMzwQ1OOs3q=c1F70Tv+Q@mail.gmail.com>",
+      "references": [
+        "<CAMaajRdcNhYGs8O9pF_qZiCr0C87xFMzwQ1OOs3q=c1F70Tv+Q@mail.gmail.com>"
+      ],
+      "body_plain": "Hello,\n\nPlease do the needful for below requirement.... how to implement scroll\ndown when scatter plot have huge amount of data?\n\n\nRequirement: Need output like this right side of the scroll down when huge\namount of data on the scatter plot (GGPLOT2)\n1st chart: implemented in Tableau, but I need scroll down and up for\nscatter plot in R console or R shiny...\n\n\n\nI got the below output, but here there is no scroll down and up, entire\nreports displayed in one page*, but how do I implement scroll down and up\nfor scatter plot(ggplot2), like 1st chart*\n\n\n\n\n\nThanks,\nRaju\n\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20180228/7dcd2980/attachment-0001.html>\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: image.png\nType: image/png\nSize: 1010693 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20180228/7dcd2980/attachment-0002.png>\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: image.png\nType: image/png\nSize: 571665 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20180228/7dcd2980/attachment-0003.png>",
+      "body_snippet": "Hello,\n\nPlease do the needful for below requirement.... how to implement scroll\ndown when scatter plot have huge amount of data?\n\n\nRequirement: Need output like this right side of the scroll down when",
+      "thread_id": "thread-23950f58edb0",
+      "thread_depth": 0,
+      "month": "2018-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-23950f58edb0",
+      "subject": "[R-gui] Fwd: how to implement scroll down when scatter plot have huge amount of data?",
+      "message_count": 1,
+      "participants": [
+        "Raju Lpm"
+      ],
+      "started": "2018-02-28T11:41:19+05:30",
+      "last_reply": "2018-02-28T11:41:19+05:30",
+      "root_message_id": "msg-23950f58edb0"
+    }
+  ]
+}

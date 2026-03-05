@@ -1,0 +1,1759 @@
+From ifellows at ucsd.edu  Mon Jun 15 23:48:14 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Mon, 15 Jun 2009 14:48:14 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+Message-ID: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+
+Hello all,
+
+I have just released the first per-alpha version of a new GUI project to
+CRAN, and am seeking some feedback from the community.
+
+The package is called Deducer, and it is designed to be a free easy to use
+alternative to proprietary software such as SPSS, and Minitab. It has a menu
+system to do common data manipulation and data analysis tasks, and an
+excel-like spreadsheet in which to view and edit data frames. The goal of
+the project is to two fold.
+
+1. Provide an intuitive interface so that non-technical users can learn and
+perform analyses without programming getting in their way.
+2. Increase the efficiency of expert R users when performing common tasks by
+replacing hundreds of keystrokes with a few mouse clicks. Also, as much as
+the GUI should get in their way if they just want to do some programming.
+
+Deducer's dialogs are built on top of the Java based R console JGR. To use
+Deducer follow these three steps:
+
+1. Download and install JGR from: http://jgr.markushelbig.org/Download.html
+2. Open JGR and at the prompt enter: install.packages("Deducer")
+3. Enter: library(Deducer)     ##you should now see Data and Analysis menus
+
+
+Any comments, suggestions or bug reports are greatly appreciated. 
+
+Thank you,
+Ian Fellows
+
+
+
+
+
+The version released to CRAN has the following menu features:
+Data manipulation:
+	1. Factor editor
+	2. Variable recoding
+	3. data sorting
+	4. data frame merging
+	5. transposing a data frame
+	6. subseting
+
+Analysis:
+	1. Frequencies
+	2. Descriptives
+	3. Contingency tables
+		a. Nicely formatted tables with optional
+			i. Percentages
+			ii. Expected counts
+			iii. Residuals
+		b. Statistical tests
+			i. chi-squared 
+			ii. likelihood ratio
+			iii. fisher's exact
+			iv. mantel haenszel
+			v. kendall's tau
+			vi. spearman's rho
+			vii. kruskal-wallis
+			viii. mid-p values for all exact/monte carlo tests
+	4. One sample tests
+		a. T-test
+		b. Shapiro-wilk
+		c. Histogram/box-plot summaries
+	5. Two sample tests
+		a. T-test (student and welch)
+		b. Permutation test
+		c. Wilcoxon
+		d. Brunner-munzel
+		e. Kolmogorov-smirnov
+		f. Jitter/box-plot group comparison
+	6. K-sample tests
+		a. Anova (usual and welch)
+		b. Kruskal-wallis
+		c. Jitter/boxplot comparison
+	7. Correlation
+		a. Nicely formatted correlation matrices
+		b. Pearson's
+		c. Kendall's
+		d. Spearman's
+		e. Scatterplot paneled array
+		f. Circle plot
+		g. Full correlation matrix plot
+
+
+
+Known issues:
+  On some systems, using the "packages & data" menu from within the data
+viewer causes the program to hang.
+
+
+From ifellows at ucsd.edu  Tue Jun 16 00:08:12 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Mon, 15 Jun 2009 15:08:12 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+Message-ID: <38453FA519BB40E39A8C0C9D8A101866@gpbdmx>
+
+>2. Increase the efficiency of expert R users when performing common tasks 
+>by replacing hundreds of keystrokes with a few mouse clicks. Also, as much 
+>as the GUI should get in their way if they just want to do some
+programming.
+
+Err, as much as POSSIBLE the GUI should NOT get in their way :)
+
+
+From tom at limepepper.co.uk  Tue Jun 16 00:13:56 2009
+From: tom at limepepper.co.uk (Tom Hodder)
+Date: Mon, 15 Jun 2009 23:13:56 +0100
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+References: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+Message-ID: <4A36C7A4.2010704@limepepper.co.uk>
+
+Ian Fellows wrote:
+> 1. Download and install JGR from: http://jgr.markushelbig.org/Download.html
+> 2. Open JGR and at the prompt enter: install.packages("Deducer")
+> 3. Enter: library(Deducer)     ##you should now see Data and Analysis menus
+>   
+Hi,
+
+I am not seeing any additional menus appear after completing those steps...?
+
+Tom
+
+
+From ifellows at ucsd.edu  Tue Jun 16 00:23:28 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Mon, 15 Jun 2009 15:23:28 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <4A36C7A4.2010704@limepepper.co.uk>
+Message-ID: <C98E8FDEF2EE43E6853A8584D2DF3981@gpbdmx>
+
+Thanks for looking Tom.
+
+Are you entering "library(Deducer)" from within the JGR console?
+
+What version of JGR are you using? The version number is displayed on the
+splash screen at start up, and should be 1.6-7.
+
+What operating system are you using? 
+
+Is your R up to date? i.e. Version 2.9.0
+
+Are there any warnings/errors?
+
+Ian
+
+
+-----Original Message-----
+From: Tom Hodder [mailto:tom at limepepper.co.uk] 
+Sent: Monday, June 15, 2009 3:14 PM
+To: Fellows, Ian
+Cc: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+
+Ian Fellows wrote:
+> 1. Download and install JGR from:
+http://jgr.markushelbig.org/Download.html
+> 2. Open JGR and at the prompt enter: install.packages("Deducer")
+> 3. Enter: library(Deducer)     ##you should now see Data and Analysis
+menus
+>   
+Hi,
+
+I am not seeing any additional menus appear after completing those steps...?
+
+Tom
+
+
+From tom at limepepper.co.uk  Tue Jun 16 00:30:00 2009
+From: tom at limepepper.co.uk (Tom Hodder)
+Date: Mon, 15 Jun 2009 23:30:00 +0100
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <C98E8FDEF2EE43E6853A8584D2DF3981@gpbdmx>
+References: <C98E8FDEF2EE43E6853A8584D2DF3981@gpbdmx>
+Message-ID: <4A36CB68.60102@limepepper.co.uk>
+
+Ian Fellows wrote:
+> Thanks for looking Tom.
+>
+> Are you entering "library(Deducer)" from within the JGR console?
+>
+> What version of JGR are you using? The version number is displayed on the
+> splash screen at start up, and should be 1.6-7.
+>
+> What operating system are you using? 
+>
+> Is your R up to date? i.e. Version 2.9.0
+>
+> Are there any warnings/errors?
+>
+>   
+[root at localhost ~]# rpm -qa | grep R-core
+R-core-2.9.0-2.fc10.x86_64
+[root at localhost ~]# java -version
+java version "1.6.0_0"
+OpenJDK Runtime Environment (IcedTea6 1.5) (fedora-18.b16.fc10-x86_64)
+OpenJDK 64-Bit Server VM (build 14.0-b15, mixed mode)
+[root at localhost ~]# cat /etc/redhat-release
+Fedora release 10 (Cambridge)
+
+JGR is 1.6-7
+
+I am running the following in the JGR console;
+
+"> library(Deducer)
+Loading required package: ggplot2
+Loading required package: proto
+Loading required package: grid
+Loading required package: reshape
+Loading required package: plyr
+
+Attaching package: 'ggplot2'
+
+
+    The following object(s) are masked from package:grid :
+
+     nullGrob "
+
+There are no errors to either the JGR or R console
+
+Tom
+
+
+From ifellows at ucsd.edu  Tue Jun 16 01:06:12 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Mon, 15 Jun 2009 16:06:12 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <4A36CB68.60102@limepepper.co.uk>
+Message-ID: <C8802D0F3E6C41E79CFA46298E6E5F2B@gpbdmx>
+
+
+I haven't tested with Linux, only windows and os x. Swing is supposed to be
+cross platform, but some times these things don't work quite as planned.
+
+I just installed fresh on a windows machine from CRAN which worked okay but
+I did notice one potential problem. The JGR launcher will download the
+newest dev version of JGR (1.7) if no version is currently present. So,
+there is an additional step of opening the native R console and entering
+install.packages("JGR").
+
+This is not the problem on your system, as you are running 1.6-7. I'll have
+to find a linux machine and do some testing to figure out what is going on.
+As I said, this is very much in the pre-alpha stage, so this is useful
+information for me. Does anyone else have this problem?
+
+Thanks,
+ian
+
+
+-----Original Message-----
+From: Tom Hodder [mailto:tom at limepepper.co.uk] 
+Sent: Monday, June 15, 2009 3:30 PM
+To: Fellows, Ian
+Cc: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+
+Ian Fellows wrote:
+> Thanks for looking Tom.
+>
+> Are you entering "library(Deducer)" from within the JGR console?
+>
+> What version of JGR are you using? The version number is displayed on the
+> splash screen at start up, and should be 1.6-7.
+>
+> What operating system are you using? 
+>
+> Is your R up to date? i.e. Version 2.9.0
+>
+> Are there any warnings/errors?
+>
+>   
+[root at localhost ~]# rpm -qa | grep R-core
+R-core-2.9.0-2.fc10.x86_64
+[root at localhost ~]# java -version
+java version "1.6.0_0"
+OpenJDK Runtime Environment (IcedTea6 1.5) (fedora-18.b16.fc10-x86_64)
+OpenJDK 64-Bit Server VM (build 14.0-b15, mixed mode)
+[root at localhost ~]# cat /etc/redhat-release
+Fedora release 10 (Cambridge)
+
+JGR is 1.6-7
+
+I am running the following in the JGR console;
+
+"> library(Deducer)
+Loading required package: ggplot2
+Loading required package: proto
+Loading required package: grid
+Loading required package: reshape
+Loading required package: plyr
+
+Attaching package: 'ggplot2'
+
+
+    The following object(s) are masked from package:grid :
+
+     nullGrob "
+
+There are no errors to either the JGR or R console
+
+Tom
+
+
+From ifellows at ucsd.edu  Tue Jun 16 01:16:33 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Mon, 15 Jun 2009 16:16:33 -0700
+Subject: [R-gui] biocep plugin
+In-Reply-To: <4A36CA59.80401@gmail.com>
+Message-ID: <3219E8C8B500434992C0562BE7CBA4B2@gpbdmx>
+
+Karim,
+
+Thanks for your suggestion. My most immediate goal is stick closely to the R
+console, so as to remain as familiar as possible to potential R users. That
+said, plugging Deducer in to biocept as it plugs into JGR is certainly
+something to consider down the road.
+
+Ian
+
+-----Original Message-----
+From: Karim Chine [mailto:karim.chine at gmail.com] 
+Sent: Monday, June 15, 2009 3:25 PM
+To: Fellows, Ian
+Subject: biocep plugin
+
+Hi Ian,
+
+Do you know about biocep ( www.biocep.net ) ?. What you've done would be
+a perfect candidate to become a plugin.
+I would be available to give you an overview of the platform and show
+you how to create plugins if you wish.
+
+Best,
+
+-Karim
+
+
+From ggrothendieck at gmail.com  Tue Jun 16 13:57:04 2009
+From: ggrothendieck at gmail.com (Gabor Grothendieck)
+Date: Tue, 16 Jun 2009 07:57:04 -0400
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <C8802D0F3E6C41E79CFA46298E6E5F2B@gpbdmx>
+References: <4A36CB68.60102@limepepper.co.uk>
+	<C8802D0F3E6C41E79CFA46298E6E5F2B@gpbdmx>
+Message-ID: <971536df0906160457w30de6435w588e69a608f4e449@mail.gmail.com>
+
+What version of Windows and JGR did you try?  I haven't been able
+to get JGR to work on Windows Vista with R 2.9 and JGR 1.6.7 or
+JGR 1.6.6 (the prior version of JGR).
+
+When I run jgr.exe it seems to install something the first time and
+on subsequent calls to jgr.exe without arguments it tries to install
+it again but fails.
+
+Since calling it without args fails, I tried this as well as numerous
+variations of arguments as well as using or not using
+ R_LIBS, R_LIBS_USER, etc. e.g.
+
+setlocal
+set R_LIBS_USER=%USERPROFILE%\Documents\R\win-library\2.9
+set R_HOME=C:\PROGRA~1\R\R-29~1.X
+jgr.exe --libpath=%R_LIBS_USER% --rhome=%R_HOME%
+endlocal
+
+but in all cases JGR opens and then immediately closes.
+
+With the prior version of JGR, 1.6.6, the above hung and I had to kill it with
+task manager.   Also with the prior version of task manager if I removed
+the R_LIBS_USER line then it would open but give a huge number of
+errors and the user library would not be on .libPaths().
+
+
+
+On Mon, Jun 15, 2009 at 7:06 PM, Ian Fellows<ifellows at ucsd.edu> wrote:
+>
+> I haven't tested with Linux, only windows and os x. Swing is supposed to be
+> cross platform, but some times these things don't work quite as planned.
+>
+> I just installed fresh on a windows machine from CRAN which worked okay but
+> I did notice one potential problem. The JGR launcher will download the
+> newest dev version of JGR (1.7) if no version is currently present. So,
+> there is an additional step of opening the native R console and entering
+> install.packages("JGR").
+>
+> This is not the problem on your system, as you are running 1.6-7. I'll have
+> to find a linux machine and do some testing to figure out what is going on.
+> As I said, this is very much in the pre-alpha stage, so this is useful
+> information for me. Does anyone else have this problem?
+>
+> Thanks,
+> ian
+>
+>
+> -----Original Message-----
+> From: Tom Hodder [mailto:tom at limepepper.co.uk]
+> Sent: Monday, June 15, 2009 3:30 PM
+> To: Fellows, Ian
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>
+> Ian Fellows wrote:
+>> Thanks for looking Tom.
+>>
+>> Are you entering "library(Deducer)" from within the JGR console?
+>>
+>> What version of JGR are you using? The version number is displayed on the
+>> splash screen at start up, and should be 1.6-7.
+>>
+>> What operating system are you using?
+>>
+>> Is your R up to date? i.e. Version 2.9.0
+>>
+>> Are there any warnings/errors?
+>>
+>>
+> [root at localhost ~]# rpm -qa | grep R-core
+> R-core-2.9.0-2.fc10.x86_64
+> [root at localhost ~]# java -version
+> java version "1.6.0_0"
+> OpenJDK Runtime Environment (IcedTea6 1.5) (fedora-18.b16.fc10-x86_64)
+> OpenJDK 64-Bit Server VM (build 14.0-b15, mixed mode)
+> [root at localhost ~]# cat /etc/redhat-release
+> Fedora release 10 (Cambridge)
+>
+> JGR is 1.6-7
+>
+> I am running the following in the JGR console;
+>
+> "> library(Deducer)
+> Loading required package: ggplot2
+> Loading required package: proto
+> Loading required package: grid
+> Loading required package: reshape
+> Loading required package: plyr
+>
+> Attaching package: 'ggplot2'
+>
+>
+> ? ?The following object(s) are masked from package:grid :
+>
+> ? ? nullGrob "
+>
+> There are no errors to either the JGR or R console
+>
+> Tom
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From ggrothendieck at gmail.com  Tue Jun 16 15:42:20 2009
+From: ggrothendieck at gmail.com (Gabor Grothendieck)
+Date: Tue, 16 Jun 2009 09:42:20 -0400
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <971536df0906160457w30de6435w588e69a608f4e449@mail.gmail.com>
+References: <4A36CB68.60102@limepepper.co.uk>
+	<C8802D0F3E6C41E79CFA46298E6E5F2B@gpbdmx> 
+	<971536df0906160457w30de6435w588e69a608f4e449@mail.gmail.com>
+Message-ID: <971536df0906160642jeda326q661699a3a8006343@mail.gmail.com>
+
+Just a correction. The version of JGR I was using is 1.7.0.
+
+On Tue, Jun 16, 2009 at 7:57 AM, Gabor
+Grothendieck<ggrothendieck at gmail.com> wrote:
+> What version of Windows and JGR did you try? ?I haven't been able
+> to get JGR to work on Windows Vista with R 2.9 and JGR 1.6.7 or
+> JGR 1.6.6 (the prior version of JGR).
+>
+> When I run jgr.exe it seems to install something the first time and
+> on subsequent calls to jgr.exe without arguments it tries to install
+> it again but fails.
+>
+> Since calling it without args fails, I tried this as well as numerous
+> variations of arguments as well as using or not using
+> ?R_LIBS, R_LIBS_USER, etc. e.g.
+>
+> setlocal
+> set R_LIBS_USER=%USERPROFILE%\Documents\R\win-library\2.9
+> set R_HOME=C:\PROGRA~1\R\R-29~1.X
+> jgr.exe --libpath=%R_LIBS_USER% --rhome=%R_HOME%
+> endlocal
+>
+> but in all cases JGR opens and then immediately closes.
+>
+> With the prior version of JGR, 1.6.6, the above hung and I had to kill it with
+> task manager. ? Also with the prior version of task manager if I removed
+> the R_LIBS_USER line then it would open but give a huge number of
+> errors and the user library would not be on .libPaths().
+>
+>
+>
+> On Mon, Jun 15, 2009 at 7:06 PM, Ian Fellows<ifellows at ucsd.edu> wrote:
+>>
+>> I haven't tested with Linux, only windows and os x. Swing is supposed to be
+>> cross platform, but some times these things don't work quite as planned.
+>>
+>> I just installed fresh on a windows machine from CRAN which worked okay but
+>> I did notice one potential problem. The JGR launcher will download the
+>> newest dev version of JGR (1.7) if no version is currently present. So,
+>> there is an additional step of opening the native R console and entering
+>> install.packages("JGR").
+>>
+>> This is not the problem on your system, as you are running 1.6-7. I'll have
+>> to find a linux machine and do some testing to figure out what is going on.
+>> As I said, this is very much in the pre-alpha stage, so this is useful
+>> information for me. Does anyone else have this problem?
+>>
+>> Thanks,
+>> ian
+>>
+>>
+>> -----Original Message-----
+>> From: Tom Hodder [mailto:tom at limepepper.co.uk]
+>> Sent: Monday, June 15, 2009 3:30 PM
+>> To: Fellows, Ian
+>> Cc: r-sig-gui at stat.math.ethz.ch
+>> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>>
+>> Ian Fellows wrote:
+>>> Thanks for looking Tom.
+>>>
+>>> Are you entering "library(Deducer)" from within the JGR console?
+>>>
+>>> What version of JGR are you using? The version number is displayed on the
+>>> splash screen at start up, and should be 1.6-7.
+>>>
+>>> What operating system are you using?
+>>>
+>>> Is your R up to date? i.e. Version 2.9.0
+>>>
+>>> Are there any warnings/errors?
+>>>
+>>>
+>> [root at localhost ~]# rpm -qa | grep R-core
+>> R-core-2.9.0-2.fc10.x86_64
+>> [root at localhost ~]# java -version
+>> java version "1.6.0_0"
+>> OpenJDK Runtime Environment (IcedTea6 1.5) (fedora-18.b16.fc10-x86_64)
+>> OpenJDK 64-Bit Server VM (build 14.0-b15, mixed mode)
+>> [root at localhost ~]# cat /etc/redhat-release
+>> Fedora release 10 (Cambridge)
+>>
+>> JGR is 1.6-7
+>>
+>> I am running the following in the JGR console;
+>>
+>> "> library(Deducer)
+>> Loading required package: ggplot2
+>> Loading required package: proto
+>> Loading required package: grid
+>> Loading required package: reshape
+>> Loading required package: plyr
+>>
+>> Attaching package: 'ggplot2'
+>>
+>>
+>> ? ?The following object(s) are masked from package:grid :
+>>
+>> ? ? nullGrob "
+>>
+>> There are no errors to either the JGR or R console
+>>
+>> Tom
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+>
+
+
+From romain.francois at dbmail.com  Tue Jun 16 16:26:30 2009
+From: romain.francois at dbmail.com (Romain Francois)
+Date: Tue, 16 Jun 2009 16:26:30 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <4A36C7A4.2010704@limepepper.co.uk>
+References: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+	<4A36C7A4.2010704@limepepper.co.uk>
+Message-ID: <4A37AB96.8090509@dbmail.com>
+
+Hi,
+
+Same problem with a fedora 10/R-devel/JGR 1.6-7.
+
+I see this after loading the package within JGR which does not look good:
+
+ > .deducer
+[1] "Java-Object<null>"
+
+Not easy to help more as you don't include the java code within the 
+source package. I don't know what a "org/rosuda/deducer/Deducer" object 
+is supposed to be.
+
+If you wanted to include java code in the R package, you could follow 
+these:
+http://romainfrancois.blog.free.fr/index.php?post/2009/03/26/Hello-Java-World
+http://romainfrancois.blog.free.fr/index.php?post/2009/03/27/Document-java-software-with-%22R-CMD-build%22%2C-ant%2C-and-javadoc
+
+Apparently, the problem is in the .First.lib function, and something 
+happens if I replace this line:
+
+.jpackage(pkgname,"Deducer.jar")
+
+by this line:
+
+.jpackage(pkgname)
+
+The deducer.jar file does not have a capital D when it is on my machine, 
+so case sensitive operating systems have a problem with it.
+
+Cheers,
+
+Romain
+
+Tom Hodder wrote:
+> Ian Fellows wrote:
+>> 1. Download and install JGR from: 
+>> http://jgr.markushelbig.org/Download.html
+>> 2. Open JGR and at the prompt enter: install.packages("Deducer")
+>> 3. Enter: library(Deducer)     ##you should now see Data and Analysis 
+>> menus
+>>   
+> Hi,
+>
+> I am not seeing any additional menus appear after completing those 
+> steps...?
+>
+> Tom
+
+-- 
+Romain Francois
+Independent R Consultant
++33(0) 6 28 91 30 30
+http://romainfrancois.blog.free.fr
+
+
+From ifellows at ucsd.edu  Tue Jun 16 18:11:23 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Tue, 16 Jun 2009 09:11:23 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <4A37AB96.8090509@dbmail.com>
+Message-ID: <C2423CFA7B5748878A9E0A1740CF1FBC@gpbdmx>
+
+That was a stupid typo... fixed in dev
+
+You said the "something" happens when you use .jpackage(pkgname). Does that
+mean that you see the menu items and data viewer?
+
+As for sources, I should have mentioned where to get them in the first
+place. The package sources are available on rforge.net.
+
+Package:
+http://www.rforge.net/Deducer/svn.html
+java sources:
+http://www.rforge.net/org/svn.html
+
+You can install the latest dev version with:
+install.packages("Deducer",,"http://rforge.net/",type="source")
+
+It should be noted that JGR is transitioning to a new backend (starting with
+1.7), so Deducer in its works with the current CRAN version (1.6-7). 
+
+
+Ian
+
+-----Original Message-----
+From: Romain Francois [mailto:romain.francois at dbmail.com] 
+Sent: Tuesday, June 16, 2009 7:27 AM
+To: Tom Hodder
+Cc: Fellows, Ian; r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+
+Hi,
+
+Same problem with a fedora 10/R-devel/JGR 1.6-7.
+
+I see this after loading the package within JGR which does not look good:
+
+ > .deducer
+[1] "Java-Object<null>"
+
+Not easy to help more as you don't include the java code within the 
+source package. I don't know what a "org/rosuda/deducer/Deducer" object 
+is supposed to be.
+
+If you wanted to include java code in the R package, you could follow 
+these:
+http://romainfrancois.blog.free.fr/index.php?post/2009/03/26/Hello-Java-Worl
+d
+http://romainfrancois.blog.free.fr/index.php?post/2009/03/27/Document-java-s
+oftware-with-%22R-CMD-build%22%2C-ant%2C-and-javadoc
+
+Apparently, the problem is in the .First.lib function, and something 
+happens if I replace this line:
+
+.jpackage(pkgname,"Deducer.jar")
+
+by this line:
+
+.jpackage(pkgname)
+
+The deducer.jar file does not have a capital D when it is on my machine, 
+so case sensitive operating systems have a problem with it.
+
+Cheers,
+
+Romain
+
+Tom Hodder wrote:
+> Ian Fellows wrote:
+>> 1. Download and install JGR from: 
+>> http://jgr.markushelbig.org/Download.html
+>> 2. Open JGR and at the prompt enter: install.packages("Deducer")
+>> 3. Enter: library(Deducer)     ##you should now see Data and Analysis 
+>> menus
+>>   
+> Hi,
+>
+> I am not seeing any additional menus appear after completing those 
+> steps...?
+>
+> Tom
+
+-- 
+Romain Francois
+Independent R Consultant
++33(0) 6 28 91 30 30
+http://romainfrancois.blog.free.fr
+
+
+From landronimirc at gmail.com  Tue Jun 16 18:54:12 2009
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Tue, 16 Jun 2009 18:54:12 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+References: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+Message-ID: <68b1e2610906160954r654ab0afsed618bb085d81ba9@mail.gmail.com>
+
+Dear Ian,
+
+On 6/15/09, Ian Fellows <ifellows at ucsd.edu> wrote:
+>  I have just released the first per-alpha version of a new GUI project to
+>  CRAN, and am seeking some feedback from the community.
+>
+First, thank you for your effort.
+
+I installed Deducer using
+install.packages("Deducer",,"http://rforge.net/",type="source")
+
+and I get similar issues as reported previously: nothing happens in
+JGR when loading Deducer. I'm on Gentoo Linux. Please let me know if
+further information could be of help.
+Liviu
+
+
+From ifellows at ucsd.edu  Tue Jun 16 18:59:03 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Tue, 16 Jun 2009 09:59:03 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <4A37CA6E.5020907@dbmail.com>
+Message-ID: <896D8973A13B4A37B52F0DA7F5C54D7D@gpbdmx>
+
+That screen shot looks right. If you load a data frame into your workspace,
+you'll be able to see and edit it in the viewer. The data and analysis menus
+Contain the dialogs used for analysis.
+
+> Interesting. Can you elaborate on that ?
+JGR is moving from accessing JRI directly to using REngine, which is a bit
+safer.
+
+Ian
+
+-----Original Message-----
+From: Romain Francois [mailto:romain.francois at dbmail.com] 
+Sent: Tuesday, June 16, 2009 9:38 AM
+To: Fellows, Ian
+Cc: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+
+Ian Fellows wrote:
+> That was a stupid typo... fixed in dev
+>
+> You said the "something" happens when you use .jpackage(pkgname). Does
+that
+> mean that you see the menu items and data viewer?
+>   
+It brings another JFrame (see the screenshot)
+
+> As for sources, I should have mentioned where to get them in the first
+> place. The package sources are available on rforge.net.
+>   
+Would still be a good move to ship java source together with R source in 
+the **source** package that goes on CRAN
+
+> Package:
+> http://www.rforge.net/Deducer/svn.html
+> java sources:
+> http://www.rforge.net/org/svn.html
+>
+> You can install the latest dev version with:
+> install.packages("Deducer",,"http://rforge.net/",type="source")
+>
+> It should be noted that JGR is transitioning to a new backend (starting
+with
+> 1.7), so Deducer in its works with the current CRAN version (1.6-7). 
+>   
+Interesting. Can you elaborate on that ?
+
+>
+> Ian
+>
+> -----Original Message-----
+> From: Romain Francois [mailto:romain.francois at dbmail.com] 
+> Sent: Tuesday, June 16, 2009 7:27 AM
+> To: Tom Hodder
+> Cc: Fellows, Ian; r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>
+> Hi,
+>
+> Same problem with a fedora 10/R-devel/JGR 1.6-7.
+>
+> I see this after loading the package within JGR which does not look good:
+>
+>  > .deducer
+> [1] "Java-Object<null>"
+>
+> Not easy to help more as you don't include the java code within the 
+> source package. I don't know what a "org/rosuda/deducer/Deducer" object 
+> is supposed to be.
+>
+> If you wanted to include java code in the R package, you could follow 
+> these:
+>
+http://romainfrancois.blog.free.fr/index.php?post/2009/03/26/Hello-Java-Worl
+> d
+>
+http://romainfrancois.blog.free.fr/index.php?post/2009/03/27/Document-java-s
+> oftware-with-%22R-CMD-build%22%2C-ant%2C-and-javadoc
+>
+> Apparently, the problem is in the .First.lib function, and something 
+> happens if I replace this line:
+>
+> .jpackage(pkgname,"Deducer.jar")
+>
+> by this line:
+>
+> .jpackage(pkgname)
+>
+> The deducer.jar file does not have a capital D when it is on my machine, 
+> so case sensitive operating systems have a problem with it.
+>
+> Cheers,
+>
+> Romain
+>
+> Tom Hodder wrote:
+>   
+>> Ian Fellows wrote:
+>>     
+>>> 1. Download and install JGR from: 
+>>> http://jgr.markushelbig.org/Download.html
+>>> 2. Open JGR and at the prompt enter: install.packages("Deducer")
+>>> 3. Enter: library(Deducer)     ##you should now see Data and Analysis 
+>>> menus
+>>>   
+>>>       
+>> Hi,
+>>
+>> I am not seeing any additional menus appear after completing those 
+>> steps...?
+>>
+>> Tom
+>>     
+>
+>   
+
+
+-- 
+Romain Francois
+Independent R Consultant
++33(0) 6 28 91 30 30
+http://romainfrancois.blog.free.fr
+
+
+From ifellows at ucsd.edu  Tue Jun 16 19:11:47 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Tue, 16 Jun 2009 10:11:47 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <971536df0906160642jeda326q661699a3a8006343@mail.gmail.com>
+Message-ID: <CB1DC76750F2446385316DEFBD761357@gpbdmx>
+
+I'm using XP, but I tested an earlier version on Vista. It looks like the
+launcher is having some trouble finding your installation. I don't have much
+to do with the launcher, so I've forwarded your message to an appropriate
+list. I'll see if I can test on a vista machine some time today.
+
+Ian
+
+-----Original Message-----
+From: Gabor Grothendieck [mailto:ggrothendieck at gmail.com] 
+Sent: Tuesday, June 16, 2009 6:42 AM
+To: Fellows, Ian
+Cc: r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+
+Just a correction. The version of JGR I was using is 1.7.0.
+
+On Tue, Jun 16, 2009 at 7:57 AM, Gabor
+Grothendieck<ggrothendieck at gmail.com> wrote:
+> What version of Windows and JGR did you try? ?I haven't been able
+> to get JGR to work on Windows Vista with R 2.9 and JGR 1.6.7 or
+> JGR 1.6.6 (the prior version of JGR).
+>
+> When I run jgr.exe it seems to install something the first time and
+> on subsequent calls to jgr.exe without arguments it tries to install
+> it again but fails.
+>
+> Since calling it without args fails, I tried this as well as numerous
+> variations of arguments as well as using or not using
+> ?R_LIBS, R_LIBS_USER, etc. e.g.
+>
+> setlocal
+> set R_LIBS_USER=%USERPROFILE%\Documents\R\win-library\2.9
+> set R_HOME=C:\PROGRA~1\R\R-29~1.X
+> jgr.exe --libpath=%R_LIBS_USER% --rhome=%R_HOME%
+> endlocal
+>
+> but in all cases JGR opens and then immediately closes.
+>
+> With the prior version of JGR, 1.6.6, the above hung and I had to kill it
+with
+> task manager. ? Also with the prior version of task manager if I removed
+> the R_LIBS_USER line then it would open but give a huge number of
+> errors and the user library would not be on .libPaths().
+>
+>
+>
+> On Mon, Jun 15, 2009 at 7:06 PM, Ian Fellows<ifellows at ucsd.edu> wrote:
+>>
+>> I haven't tested with Linux, only windows and os x. Swing is supposed to
+be
+>> cross platform, but some times these things don't work quite as planned.
+>>
+>> I just installed fresh on a windows machine from CRAN which worked okay
+but
+>> I did notice one potential problem. The JGR launcher will download the
+>> newest dev version of JGR (1.7) if no version is currently present. So,
+>> there is an additional step of opening the native R console and entering
+>> install.packages("JGR").
+>>
+>> This is not the problem on your system, as you are running 1.6-7. I'll
+have
+>> to find a linux machine and do some testing to figure out what is going
+on.
+>> As I said, this is very much in the pre-alpha stage, so this is useful
+>> information for me. Does anyone else have this problem?
+>>
+>> Thanks,
+>> ian
+>>
+>>
+>> -----Original Message-----
+>> From: Tom Hodder [mailto:tom at limepepper.co.uk]
+>> Sent: Monday, June 15, 2009 3:30 PM
+>> To: Fellows, Ian
+>> Cc: r-sig-gui at stat.math.ethz.ch
+>> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>>
+>> Ian Fellows wrote:
+>>> Thanks for looking Tom.
+>>>
+>>> Are you entering "library(Deducer)" from within the JGR console?
+>>>
+>>> What version of JGR are you using? The version number is displayed on
+the
+>>> splash screen at start up, and should be 1.6-7.
+>>>
+>>> What operating system are you using?
+>>>
+>>> Is your R up to date? i.e. Version 2.9.0
+>>>
+>>> Are there any warnings/errors?
+>>>
+>>>
+>> [root at localhost ~]# rpm -qa | grep R-core
+>> R-core-2.9.0-2.fc10.x86_64
+>> [root at localhost ~]# java -version
+>> java version "1.6.0_0"
+>> OpenJDK Runtime Environment (IcedTea6 1.5) (fedora-18.b16.fc10-x86_64)
+>> OpenJDK 64-Bit Server VM (build 14.0-b15, mixed mode)
+>> [root at localhost ~]# cat /etc/redhat-release
+>> Fedora release 10 (Cambridge)
+>>
+>> JGR is 1.6-7
+>>
+>> I am running the following in the JGR console;
+>>
+>> "> library(Deducer)
+>> Loading required package: ggplot2
+>> Loading required package: proto
+>> Loading required package: grid
+>> Loading required package: reshape
+>> Loading required package: plyr
+>>
+>> Attaching package: 'ggplot2'
+>>
+>>
+>> ? ?The following object(s) are masked from package:grid :
+>>
+>> ? ? nullGrob "
+>>
+>> There are no errors to either the JGR or R console
+>>
+>> Tom
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+>
+
+
+From ggrothendieck at gmail.com  Tue Jun 16 19:53:25 2009
+From: ggrothendieck at gmail.com (Gabor Grothendieck)
+Date: Tue, 16 Jun 2009 13:53:25 -0400
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <CB1DC76750F2446385316DEFBD761357@gpbdmx>
+References: <971536df0906160642jeda326q661699a3a8006343@mail.gmail.com> 
+	<CB1DC76750F2446385316DEFBD761357@gpbdmx>
+Message-ID: <971536df0906161053md3d4076w81c99aa08d3cca10@mail.gmail.com>
+
+Note from my prior message that I did explicitly use --rhome=
+just in case to be sure the launcher could find my installation.
+Also from the output of rversions.bat we see that R is listed in
+the registry.   Is there anything else it needs?
+
+C:\tmp2>R --version
+R version 2.9.0 Patched (2009-06-04 r48708)
+Copyright (C) 2009 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+...snip...
+C:\tmp2> rem rversions.bat shows R versions found in registry
+C:\tmp2> rem http://batchfiles.googlecode.com
+C:\tmp2>rversions.bat
+R-2.10.x
+R-2.5.1
+R-2.6.0
+R-2.6.0alpha
+R-2.6.2
+R-2.7.x
+R-2.8.0pat
+R-2.8.x
+R-2.9.0dev
+R-2.9.x
+
+On Tue, Jun 16, 2009 at 1:11 PM, Ian Fellows<ifellows at ucsd.edu> wrote:
+> I'm using XP, but I tested an earlier version on Vista. It looks like the
+> launcher is having some trouble finding your installation. I don't have much
+> to do with the launcher, so I've forwarded your message to an appropriate
+> list. I'll see if I can test on a vista machine some time today.
+>
+> Ian
+>
+> -----Original Message-----
+> From: Gabor Grothendieck [mailto:ggrothendieck at gmail.com]
+> Sent: Tuesday, June 16, 2009 6:42 AM
+> To: Fellows, Ian
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>
+> Just a correction. The version of JGR I was using is 1.7.0.
+>
+> On Tue, Jun 16, 2009 at 7:57 AM, Gabor
+> Grothendieck<ggrothendieck at gmail.com> wrote:
+>> What version of Windows and JGR did you try? ?I haven't been able
+>> to get JGR to work on Windows Vista with R 2.9 and JGR 1.6.7 or
+>> JGR 1.6.6 (the prior version of JGR).
+>>
+>> When I run jgr.exe it seems to install something the first time and
+>> on subsequent calls to jgr.exe without arguments it tries to install
+>> it again but fails.
+>>
+>> Since calling it without args fails, I tried this as well as numerous
+>> variations of arguments as well as using or not using
+>> ?R_LIBS, R_LIBS_USER, etc. e.g.
+>>
+>> setlocal
+>> set R_LIBS_USER=%USERPROFILE%\Documents\R\win-library\2.9
+>> set R_HOME=C:\PROGRA~1\R\R-29~1.X
+>> jgr.exe --libpath=%R_LIBS_USER% --rhome=%R_HOME%
+>> endlocal
+>>
+>> but in all cases JGR opens and then immediately closes.
+>>
+>> With the prior version of JGR, 1.6.6, the above hung and I had to kill it
+> with
+>> task manager. ? Also with the prior version of task manager if I removed
+>> the R_LIBS_USER line then it would open but give a huge number of
+>> errors and the user library would not be on .libPaths().
+>>
+>>
+>>
+>> On Mon, Jun 15, 2009 at 7:06 PM, Ian Fellows<ifellows at ucsd.edu> wrote:
+>>>
+>>> I haven't tested with Linux, only windows and os x. Swing is supposed to
+> be
+>>> cross platform, but some times these things don't work quite as planned.
+>>>
+>>> I just installed fresh on a windows machine from CRAN which worked okay
+> but
+>>> I did notice one potential problem. The JGR launcher will download the
+>>> newest dev version of JGR (1.7) if no version is currently present. So,
+>>> there is an additional step of opening the native R console and entering
+>>> install.packages("JGR").
+>>>
+>>> This is not the problem on your system, as you are running 1.6-7. I'll
+> have
+>>> to find a linux machine and do some testing to figure out what is going
+> on.
+>>> As I said, this is very much in the pre-alpha stage, so this is useful
+>>> information for me. Does anyone else have this problem?
+>>>
+>>> Thanks,
+>>> ian
+>>>
+>>>
+>>> -----Original Message-----
+>>> From: Tom Hodder [mailto:tom at limepepper.co.uk]
+>>> Sent: Monday, June 15, 2009 3:30 PM
+>>> To: Fellows, Ian
+>>> Cc: r-sig-gui at stat.math.ethz.ch
+>>> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>>>
+>>> Ian Fellows wrote:
+>>>> Thanks for looking Tom.
+>>>>
+>>>> Are you entering "library(Deducer)" from within the JGR console?
+>>>>
+>>>> What version of JGR are you using? The version number is displayed on
+> the
+>>>> splash screen at start up, and should be 1.6-7.
+>>>>
+>>>> What operating system are you using?
+>>>>
+>>>> Is your R up to date? i.e. Version 2.9.0
+>>>>
+>>>> Are there any warnings/errors?
+>>>>
+>>>>
+>>> [root at localhost ~]# rpm -qa | grep R-core
+>>> R-core-2.9.0-2.fc10.x86_64
+>>> [root at localhost ~]# java -version
+>>> java version "1.6.0_0"
+>>> OpenJDK Runtime Environment (IcedTea6 1.5) (fedora-18.b16.fc10-x86_64)
+>>> OpenJDK 64-Bit Server VM (build 14.0-b15, mixed mode)
+>>> [root at localhost ~]# cat /etc/redhat-release
+>>> Fedora release 10 (Cambridge)
+>>>
+>>> JGR is 1.6-7
+>>>
+>>> I am running the following in the JGR console;
+>>>
+>>> "> library(Deducer)
+>>> Loading required package: ggplot2
+>>> Loading required package: proto
+>>> Loading required package: grid
+>>> Loading required package: reshape
+>>> Loading required package: plyr
+>>>
+>>> Attaching package: 'ggplot2'
+>>>
+>>>
+>>> ? ?The following object(s) are masked from package:grid :
+>>>
+>>> ? ? nullGrob "
+>>>
+>>> There are no errors to either the JGR or R console
+>>>
+>>> Tom
+>>>
+>>> _______________________________________________
+>>> R-SIG-GUI mailing list
+>>> R-SIG-GUI at stat.math.ethz.ch
+>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>>
+>>
+>
+>
+
+
+From romain.francois at dbmail.com  Tue Jun 16 18:38:06 2009
+From: romain.francois at dbmail.com (Romain Francois)
+Date: Tue, 16 Jun 2009 18:38:06 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <C2423CFA7B5748878A9E0A1740CF1FBC@gpbdmx>
+References: <C2423CFA7B5748878A9E0A1740CF1FBC@gpbdmx>
+Message-ID: <4A37CA6E.5020907@dbmail.com>
+
+Ian Fellows wrote:
+> That was a stupid typo... fixed in dev
+>
+> You said the "something" happens when you use .jpackage(pkgname). Does that
+> mean that you see the menu items and data viewer?
+>   
+It brings another JFrame (see the screenshot)
+
+> As for sources, I should have mentioned where to get them in the first
+> place. The package sources are available on rforge.net.
+>   
+Would still be a good move to ship java source together with R source in 
+the **source** package that goes on CRAN
+
+> Package:
+> http://www.rforge.net/Deducer/svn.html
+> java sources:
+> http://www.rforge.net/org/svn.html
+>
+> You can install the latest dev version with:
+> install.packages("Deducer",,"http://rforge.net/",type="source")
+>
+> It should be noted that JGR is transitioning to a new backend (starting with
+> 1.7), so Deducer in its works with the current CRAN version (1.6-7). 
+>   
+Interesting. Can you elaborate on that ?
+
+>
+> Ian
+>
+> -----Original Message-----
+> From: Romain Francois [mailto:romain.francois at dbmail.com] 
+> Sent: Tuesday, June 16, 2009 7:27 AM
+> To: Tom Hodder
+> Cc: Fellows, Ian; r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>
+> Hi,
+>
+> Same problem with a fedora 10/R-devel/JGR 1.6-7.
+>
+> I see this after loading the package within JGR which does not look good:
+>
+>  > .deducer
+> [1] "Java-Object<null>"
+>
+> Not easy to help more as you don't include the java code within the 
+> source package. I don't know what a "org/rosuda/deducer/Deducer" object 
+> is supposed to be.
+>
+> If you wanted to include java code in the R package, you could follow 
+> these:
+> http://romainfrancois.blog.free.fr/index.php?post/2009/03/26/Hello-Java-Worl
+> d
+> http://romainfrancois.blog.free.fr/index.php?post/2009/03/27/Document-java-s
+> oftware-with-%22R-CMD-build%22%2C-ant%2C-and-javadoc
+>
+> Apparently, the problem is in the .First.lib function, and something 
+> happens if I replace this line:
+>
+> .jpackage(pkgname,"Deducer.jar")
+>
+> by this line:
+>
+> .jpackage(pkgname)
+>
+> The deducer.jar file does not have a capital D when it is on my machine, 
+> so case sensitive operating systems have a problem with it.
+>
+> Cheers,
+>
+> Romain
+>
+> Tom Hodder wrote:
+>   
+>> Ian Fellows wrote:
+>>     
+>>> 1. Download and install JGR from: 
+>>> http://jgr.markushelbig.org/Download.html
+>>> 2. Open JGR and at the prompt enter: install.packages("Deducer")
+>>> 3. Enter: library(Deducer)     ##you should now see Data and Analysis 
+>>> menus
+>>>   
+>>>       
+>> Hi,
+>>
+>> I am not seeing any additional menus appear after completing those 
+>> steps...?
+>>
+>> Tom
+>>     
+>
+>   
+
+
+-- 
+Romain Francois
+Independent R Consultant
++33(0) 6 28 91 30 30
+http://romainfrancois.blog.free.fr
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Screenshot.png
+Type: image/png
+Size: 164584 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090616/f1162fca/attachment-0001.png>
+
+From vitosmail at rambler.ru  Wed Jun 17 09:57:12 2009
+From: vitosmail at rambler.ru (Vitalie S.)
+Date: Wed, 17 Jun 2009 09:57:12 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+References: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+Message-ID: <op.uvnsdmm6dacko8@tir-070312.staff.few.eur.nl>
+
+
+> 2. Increase the efficiency of expert R users when performing common  
+> tasks by
+> replacing hundreds of keystrokes with a few mouse clicks.
+
+Nice idea indeed. Akin to Rcmder. But as Rcmder Deducer uses obscure  
+editor as platform. It's highly improbable that an "expert" user of R  
+would use JGR for their work.
+
+I wonder, why not to direct this valuable effort towards  extending fully  
+customizable editors like ESS or SciViews-K  
+(http://www.sciviews.org/SciViews-K/index.html  )?
+
+This would nicely facilitate  beginner's start with advanced editors as  
+well.
+
+Vitalie.
+
+
+From romain.francois at dbmail.com  Wed Jun 17 10:13:24 2009
+From: romain.francois at dbmail.com (Romain Francois)
+Date: Wed, 17 Jun 2009 10:13:24 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <896D8973A13B4A37B52F0DA7F5C54D7D@gpbdmx>
+References: <896D8973A13B4A37B52F0DA7F5C54D7D@gpbdmx>
+Message-ID: <4A38A5A4.9090603@dbmail.com>
+
+Ian Fellows wrote:
+> That screen shot looks right. If you load a data frame into your workspace,
+> you'll be able to see and edit it in the viewer. The data and analysis menus
+> Contain the dialogs used for analysis.
+>   
+Ah ok. I assumed the new menu would be added to the existing console 
+window.
+
+>> Interesting. Can you elaborate on that ?
+>>     
+> JGR is moving from accessing JRI directly to using REngine, which is a bit
+> safer.
+>
+> Ian
+>
+> -----Original Message-----
+> From: Romain Francois [mailto:romain.francois at dbmail.com] 
+> Sent: Tuesday, June 16, 2009 9:38 AM
+> To: Fellows, Ian
+> Cc: r-sig-gui at stat.math.ethz.ch
+> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>
+> Ian Fellows wrote:
+>   
+>> That was a stupid typo... fixed in dev
+>>
+>> You said the "something" happens when you use .jpackage(pkgname). Does
+>>     
+> that
+>   
+>> mean that you see the menu items and data viewer?
+>>   
+>>     
+> It brings another JFrame (see the screenshot)
+>
+>   
+>> As for sources, I should have mentioned where to get them in the first
+>> place. The package sources are available on rforge.net.
+>>   
+>>     
+> Would still be a good move to ship java source together with R source in 
+> the **source** package that goes on CRAN
+>
+>   
+>> Package:
+>> http://www.rforge.net/Deducer/svn.html
+>> java sources:
+>> http://www.rforge.net/org/svn.html
+>>
+>> You can install the latest dev version with:
+>> install.packages("Deducer",,"http://rforge.net/",type="source")
+>>
+>> It should be noted that JGR is transitioning to a new backend (starting
+>>     
+> with
+>   
+>> 1.7), so Deducer in its works with the current CRAN version (1.6-7). 
+>>   
+>>     
+> Interesting. Can you elaborate on that ?
+>
+>   
+>> Ian
+>>
+>> -----Original Message-----
+>> From: Romain Francois [mailto:romain.francois at dbmail.com] 
+>> Sent: Tuesday, June 16, 2009 7:27 AM
+>> To: Tom Hodder
+>> Cc: Fellows, Ian; r-sig-gui at stat.math.ethz.ch
+>> Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+>>
+>> Hi,
+>>
+>> Same problem with a fedora 10/R-devel/JGR 1.6-7.
+>>
+>> I see this after loading the package within JGR which does not look good:
+>>
+>>  > .deducer
+>> [1] "Java-Object<null>"
+>>
+>> Not easy to help more as you don't include the java code within the 
+>> source package. I don't know what a "org/rosuda/deducer/Deducer" object 
+>> is supposed to be.
+>>
+>> If you wanted to include java code in the R package, you could follow 
+>> these:
+>>
+>>     
+> http://romainfrancois.blog.free.fr/index.php?post/2009/03/26/Hello-Java-Worl
+>   
+>> d
+>>
+>>     
+> http://romainfrancois.blog.free.fr/index.php?post/2009/03/27/Document-java-s
+>   
+>> oftware-with-%22R-CMD-build%22%2C-ant%2C-and-javadoc
+>>
+>> Apparently, the problem is in the .First.lib function, and something 
+>> happens if I replace this line:
+>>
+>> .jpackage(pkgname,"Deducer.jar")
+>>
+>> by this line:
+>>
+>> .jpackage(pkgname)
+>>
+>> The deducer.jar file does not have a capital D when it is on my machine, 
+>> so case sensitive operating systems have a problem with it.
+>>
+>> Cheers,
+>>
+>> Romain
+>>
+>> Tom Hodder wrote:
+>>   
+>>     
+>>> Ian Fellows wrote:
+>>>     
+>>>       
+>>>> 1. Download and install JGR from: 
+>>>> http://jgr.markushelbig.org/Download.html
+>>>> 2. Open JGR and at the prompt enter: install.packages("Deducer")
+>>>> 3. Enter: library(Deducer)     ##you should now see Data and Analysis 
+>>>> menus
+>>>>   
+>>>>       
+>>>>         
+>>> Hi,
+>>>
+>>> I am not seeing any additional menus appear after completing those 
+>>> steps...?
+>>>
+>>> Tom
+>>>     
+>>>       
+>>   
+>>     
+>
+>
+>   
+
+
+-- 
+Romain Francois
+Independent R Consultant
++33(0) 6 28 91 30 30
+http://romainfrancois.blog.free.fr
+
+
+From vitosmail at rambler.ru  Wed Jun 17 10:17:35 2009
+From: vitosmail at rambler.ru (Vitalie S.)
+Date: Wed, 17 Jun 2009 10:17:35 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <op.uvnsdmm6dacko8@tir-070312.staff.few.eur.nl>
+References: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+	<op.uvnsdmm6dacko8@tir-070312.staff.few.eur.nl>
+Message-ID: <op.uvntblajdacko8@tir-070312.staff.few.eur.nl>
+
+
+> I wonder, why not to direct this valuable effort towards  extending  
+> fully customizable editors like ESS or SciViews-K  
+> (http://www.sciviews.org/SciViews-K/index.html  )?
+
+Put another way: Would it be  possible (potentially) to call Deducer from  
+ESS independently of JGR?
+
+
+From landronimirc at gmail.com  Wed Jun 17 12:40:54 2009
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Wed, 17 Jun 2009 12:40:54 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <op.uvnsdmm6dacko8@tir-070312.staff.few.eur.nl>
+References: <36A0777DDC3E4320A61E47A6536F9026@gpbdmx>
+	<op.uvnsdmm6dacko8@tir-070312.staff.few.eur.nl>
+Message-ID: <68b1e2610906170340o4151dcb0r5e98de374102c798@mail.gmail.com>
+
+Hello,
+
+On 6/17/09, Vitalie S. <vitosmail at rambler.ru> wrote:
+>  Nice idea indeed. Akin to Rcmder. But as Rcmder Deducer uses obscure editor
+> as platform. It's highly improbable that an "expert" user of R would use JGR
+> for their work.
+>
+>  I wonder, why not to direct this valuable effort towards  extending fully customizable
+> editors like ESS or SciViews-K (http://www.sciviews.org/SciViews-K/index.html
+>  )?
+>
+>  This would nicely facilitate  beginner's start with advanced editors as well.
+>
+In my view Rcmdr, and JGR are perfect environments for R novices, and
+for additions similar to Deducer.
+
+While Rcmdr certainly would not seem the editor of the power-user, its
+menus can be used in just about any R setting; simply require(Rcmdr)
+in the underlying R terminal (be it rterm, JGR, or other), and use its
+menus for routine stuff on the terminal workspace. (Rcmdr can also be
+configured to display the menus only, and redirect all output to the
+underlying console; it can thus be viewed as a useful toolbox to any R
+session.)
+
+Concerning JGR, again, it would hardly be the *editor* of the
+power-user. However, it is among the most advanced and friendly R
+terminals around. It is much helpful to beginners, and adding
+statistical menus to it can only improve users' transition to R. I
+believe JGR is a good choice to add statistical menus.
+
+Best,
+Liviu
+
+
+From ifellows at ucsd.edu  Wed Jun 17 17:28:23 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Wed, 17 Jun 2009 08:28:23 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <4A38A5A4.9090603@dbmail.com>
+Message-ID: <CFFA6381BB1448C1AFDFECBEC8F0EDE7@gpbdmx>
+
+
+>Ah ok. I assumed the new menu would be added to the existing console 
+>window.
+
+Looking at your screen shot, you have the menus in the console... The 'Data'
+and 'Analysis' menus are new.
+
+Cheers,
+ian
+
+
+From romain.francois at dbmail.com  Wed Jun 17 17:32:00 2009
+From: romain.francois at dbmail.com (Romain Francois)
+Date: Wed, 17 Jun 2009 17:32:00 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <CFFA6381BB1448C1AFDFECBEC8F0EDE7@gpbdmx>
+References: <CFFA6381BB1448C1AFDFECBEC8F0EDE7@gpbdmx>
+Message-ID: <4A390C70.4010704@dbmail.com>
+
+Ian Fellows wrote:
+>> Ah ok. I assumed the new menu would be added to the existing console 
+>> window.
+>>     
+>
+> Looking at your screen shot, you have the menus in the console... The 'Data'
+> and 'Analysis' menus are new.
+>   
+
+Thank you. I understand it now. Sorry for my confusion.
+
+> Cheers,
+> ian
+>
+>   
+
+
+-- 
+Romain Francois
+Independent R Consultant
++33(0) 6 28 91 30 30
+http://romainfrancois.blog.free.fr
+
+
+From ifellows at ucsd.edu  Wed Jun 17 18:28:09 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Wed, 17 Jun 2009 09:28:09 -0700
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <op.uvnsdmm6dacko8@tir-070312.staff.few.eur.nl>
+Message-ID: <D73131C9712E4D9E8AB52606804340A2@gpbdmx>
+
+
+Vitalie,
+
+Thanks for the comments.
+
+Regarding Rcmdr... I really like what Dr. Fox has done with it, but have
+found that the GUI is a bit clunky (due to the toolkit) and doesn't really
+help me do my analyses faster (which is NOT one of its stated goals). For
+example, if I want to do 10 t-tests, I have to go through the t-test dialog
+10 times, and each time it doesn't remember what my options were the last
+time. To do the same thing in Deducer requires 6 mouse clicks, and the
+result is given in a nicely formatted table.
+
+Regarding JGR... I'm interested to know what features you would like to see
+in JGR to make it fit your needs more. There are a couple of newer features
+which have made it suit my needs better. We recently added preference items
+to change the output and command colors, as well as the editor syntax
+coloring which can now psuedo-emulate the coloring of emacs, xcode, ecplise,
+vim, and visual studio. Auto-tabbing was also added, though it is simplistic
+as of yet. What features would you like to see in a console?
+
+Regarding other platforms... Right now the code is tied into JGR, but it
+wouldn't be too hard to port it to a different platform. JGR has the
+advantage that it is fully Java based, which make the development of Deducer
+easier. I don't really know much about ess or sciviews, but in order to be
+used, a platform would need 1. access to rJava 2. a way to enter commands
+into the terminal from java 3. a way to add menu items and hook them up to
+java methods. For the time being I'm pretty committed to using JGR, when
+Deducer is more mature I'll think about supporting others. 
+
+
+Ian
+
+-----Original Message-----
+From: Vitalie S. [mailto:vitosmail at rambler.ru] 
+Sent: Wednesday, June 17, 2009 12:57 AM
+To: Fellows, Ian; r-sig-gui at stat.math.ethz.ch
+Subject: Re: [R-gui] Seeking comments/testers for a new GUI
+
+
+> 2. Increase the efficiency of expert R users when performing common  
+> tasks by
+> replacing hundreds of keystrokes with a few mouse clicks.
+
+Nice idea indeed. Akin to Rcmder. But as Rcmder Deducer uses obscure  
+editor as platform. It's highly improbable that an "expert" user of R  
+would use JGR for their work.
+
+I wonder, why not to direct this valuable effort towards  extending fully  
+customizable editors like ESS or SciViews-K  
+(http://www.sciviews.org/SciViews-K/index.html  )?
+
+This would nicely facilitate  beginner's start with advanced editors as  
+well.
+
+Vitalie.
+
+
+From vitosmail at rambler.ru  Thu Jun 18 20:11:58 2009
+From: vitosmail at rambler.ru (Vitalie S.)
+Date: Thu, 18 Jun 2009 20:11:58 +0200
+Subject: [R-gui] Seeking comments/testers for a new GUI
+In-Reply-To: <D73131C9712E4D9E8AB52606804340A2@gpbdmx>
+References: <D73131C9712E4D9E8AB52606804340A2@gpbdmx>
+Message-ID: <op.uvqfh8g4dacko8@tir-070312.staff.few.eur.nl>
+
+
+
+> Regarding JGR... I'm interested to know what features you would like to  
+> see
+> in JGR to make it fit your needs more.
+Main thing for any power user of an interactive programing  language are  
+shortkeys:
+  - Basic navigation keys  
+(http://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html#Moving-Point).  
+Mouse is a trap. With proper short keys for code navigation  
+(words,sentences,paragraphs, code chunks (sexps)) one becomes k-folds more  
+efficient.
+
+  - Sending code from editor in different ways (line, paragraph, function,  
+selection). And potentially combination of those - say if text is  
+selected, then region is executed if not, one line is sent to console and  
+the cursor is moved to the next one.
+
+  - All short keys are better be customizable, like in emacs or  lyx - one  
+startup file with simple description of associated commands.
+
+> There are a couple of newer features
+> which have made it suit my needs better. We recently added preference  
+> items
+> to change the output and command colors, as well as the editor syntax
+> coloring which can now psuedo-emulate the coloring of emacs, xcode,  
+> ecplise,
+> vim, and visual studio. Auto-tabbing was also added, though it is  
+> simplistic
+> as of yet. What features would you like to see in a console?
+>
+
+JGR still lacks "previous matching input" behavior - only those lines are  
+recalled that match starting string in command window.
+
+Navigation by keys through previous output can be useful. Execution of  
+previous lines from output window are of great help(probably quite a task  
+for JGR since that window is not editable).
+
+Other things like code folding and outlining in editor, point sensitive  
+help are of not that much importance but could improve efficiency as well.
+
+> Regarding other platforms... Right now the code is tied into JGR, but it
+> wouldn't be too hard to port it to a different platform. JGR has the
+> advantage that it is fully Java based, which make the development of  
+> Deducer
+> easier. I don't really know much about ess or sciviews, but in order to  
+> be
+> used, a platform would need 1. access to rJava 2. a way to enter commands
+> into the terminal from java 3. a way to add menu items and hook them up  
+> to
+> java methods. For the time being I'm pretty committed to using JGR, when
+> Deducer is more mature I'll think about supporting others.
+>
+Deducer is a great fit, no doubt about that. R lack of internal  
+spreadsheet is sometimes annoying. In my view, if Deducer could replace  
+R's edit() command then not only JGR users but the whole community would  
+benefit enormously. Just to find a way to link it to R process. I don't  
+know much about rJava or how ESS internals work but taking into  
+consideration versatility of emacs that probably won't be a problem. For  
+instance Rcmder works reasonably well with ESS and all other guis; Why not  
+a stand alone Deducer?
+
+Thanks again for sharing the application. A very useful start indeed.
+
+Best,
+Vitalie.
+
+

@@ -1,0 +1,60 @@
+From aaike at mac.com  Mon Nov 28 21:58:24 2005
+From: aaike at mac.com (Aaike De Wever)
+Date: Mon, 28 Nov 2005 21:58:24 +0100
+Subject: [R-gui] Dutch localisation file
+Message-ID: <785CC9D2-746F-4392-BA4B-E087EAC458A4@mac.com>
+
+Hello,
+
+I prepared a dutch localisation for the R-Gui, I am not sure if this  
+is the right place to submit it, but the documentation pointed to  
+this list.
+
+?
+Best regards,
+--
+Aaike De Wever
+aaike at mac.com
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20051128/a4c0094c/attachment-0002.html
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: res-nl.tar.gz
+Type: application/x-gzip
+Size: 307176 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20051128/a4c0094c/res-nl.tar-0001.gz
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20051128/a4c0094c/attachment-0003.html
+
+From murdoch at stats.uwo.ca  Tue Nov 29 22:59:21 2005
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Tue, 29 Nov 2005 16:59:21 -0500
+Subject: [R-gui] Dutch localisation file
+In-Reply-To: <785CC9D2-746F-4392-BA4B-E087EAC458A4@mac.com>
+References: <785CC9D2-746F-4392-BA4B-E087EAC458A4@mac.com>
+Message-ID: <438CCF39.7050407@stats.uwo.ca>
+
+On 11/28/2005 3:58 PM, Aaike De Wever wrote:
+> Hello,
+> 
+> I prepared a dutch localisation for the R-Gui, I am not sure if this is the 
+> right place to submit it, but the documentation pointed to this list.
+> 
+
+No, this list is for discussion of GUI issues: more speculative than 
+day-to-day operations.  The web page
+
+http://developer.r-project.org/Translations.html
+
+gives instructions on preparing a translation and submitting it. I think 
+yours consists of Mac-GUI translations, so it should go to the Mac-GUI 
+authors:  Simon Urbanek  and Stefano Iacus (but I'm not a Mac user, so 
+apologies if I've got the authorship wrong).
+
+Duncan Murdoch
+
+

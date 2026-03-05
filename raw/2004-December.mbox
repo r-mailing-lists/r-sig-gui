@@ -1,0 +1,92 @@
+From r.lambkin at retroscreen.com  Wed Dec 22 14:55:06 2004
+From: r.lambkin at retroscreen.com (Rob Lambkin)
+Date: Wed Dec 22 14:52:10 2004
+Subject: [R-gui] SIMPLE GUI
+Message-ID: <9CBBD5F72866034E9F64187D288A7ED552FFEC@romulus.retroscreen.com>
+
+Hi
+ 
+I am pretty new to R and much of the discussion in this group is way
+over my head. I am a researcher not a statistician or programmer.
+ 
+I wonder if you guys could help though, I currently use SPSS, but would
+like to consider R.
+ 
+Is there a simple GUI that has most of the basic functions available?
+ 
+How convertible is SPSS syntax to R?
+ 
+What is the best way to make a custom GUI for R, which would run certain
+syntaxes (e.g., calc the mean of variable X) from a drop down menu
+interface.
+ 
+Thanks for your help in advance
+ 
+Rob
+ 
+ 
+
+	[[alternative HTML version deleted]]
+
+From jfox at mcmaster.ca  Wed Dec 22 17:53:27 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Wed Dec 22 17:53:32 2004
+Subject: [R-gui] SIMPLE GUI
+In-Reply-To: <9CBBD5F72866034E9F64187D288A7ED552FFEC@romulus.retroscreen.com>
+Message-ID: <20041222165326.FTAL2034.tomts20-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear Rob,
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of Rob Lambkin
+> Sent: Wednesday, December 22, 2004 8:55 AM
+> To: r-sig-gui@stat.math.ethz.ch
+> Subject: [R-gui] SIMPLE GUI
+> 
+> Hi
+>  
+> I am pretty new to R and much of the discussion in this group 
+> is way over my head. I am a researcher not a statistician or 
+> programmer.
+>  
+> I wonder if you guys could help though, I currently use SPSS, 
+> but would like to consider R.
+>  
+> Is there a simple GUI that has most of the basic functions available?
+>  
+
+You might take a look at the Rcmdr package, which provides a
+basic-statistics GUI for R, but it provides access to only a small fraction
+of what's available in R.
+
+> How convertible is SPSS syntax to R?
+>  
+
+Not at all. R implements the S language.
+
+> What is the best way to make a custom GUI for R, which would 
+> run certain syntaxes (e.g., calc the mean of variable X) from 
+> a drop down menu interface.
+>  
+
+At present, the easiest route is probably via the tcltk package. That, for
+example, is what the Rcmdr package uses.
+
+I hope this helps,
+ John
+
+> Thanks for your help in advance
+>  
+> Rob
+>  
+>  
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+

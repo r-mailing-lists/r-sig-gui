@@ -1,0 +1,172 @@
+From joseclaudio.faria at terra.com.br  Sun Mar  5 05:35:45 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sun, 05 Mar 2006 01:35:45 -0300
+Subject: [R-gui] Tinn-R 1.18.2.0 released
+Message-ID: <440A6AA1.8030903@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.2.0) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help/This version/English/Changes.txt'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From joseclaudio.faria at terra.com.br  Thu Mar  9 03:01:00 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Wed, 08 Mar 2006 23:01:00 -0300
+Subject: [R-gui] Tinn-R 1.18.2.0 released
+Message-ID: <440F8C5C.8030708@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.2.1) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help/This version/English/Changes.txt'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From joseclaudio.faria at terra.com.br  Thu Mar 16 21:20:12 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Thu, 16 Mar 2006 17:20:12 -0300
+Subject: [R-gui] Tinn-R 1.18.3.0 released
+Message-ID: <4419C87C.1070600@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.3.0) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help/This version/English/Changes.txt'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From verzani at math.csi.cuny.edu  Wed Mar 22 20:34:28 2006
+From: verzani at math.csi.cuny.edu (verzani at math.csi.cuny.edu)
+Date: Wed, 22 Mar 2006 14:34:28 -0500
+Subject: [R-gui] New version of pmg using RGtk2 package
+Message-ID: <17441.42692.388670.47533@markov.math.csi.cuny.edu>
+
+Dear All,
+
+I've ported over my pmg GUI to RGtk2, the R bindings for GTK2 provided
+by Michael Lawrence. PMG is a simple menu-driven GUI, ala RCommander,
+written using the GTK toolkit. PMG is not as feature rich as
+RCommander, but has some differences such as drag and drop. The main
+advantages of moving to RGtk2 are cross-patform portability, and a
+significantly enhanced toolkit. RGtk2 is at http://www.ggobi.org/RGtk2
+
+This new port rewrote the backend of pmg to use the iwidget API of
+Simon Urbanek. This API makes creating new dialogs relatively
+easy. The new iWidgetsRGtk package provides this API and many
+extensions to it. These extensions incorporate most of the SVDIalogs
+suggested for R GUIs in the SciViews documentation. It is my hope that
+people will find this package useful, even if they have not interest
+in the pmg package.
+
+The packages are found at http://www.math.csi.cuny.edu/pmg.
+
+The iWidgetsRGtk package has a lengthy vignette detailing how the
+package may be used.
+
+I'd appreciate any feedback. These packages haven't been tested too
+much and I'd be thankful for bug reports.
+
+John
+-- 
+o---------------------------------------------------------------------o
+|  John Verzani                            verzani at math.csi.cuny.edu  |
+|  CUNY/CSI			       www.math.csi.cuny.edu/verzani  |
+|  Dept. of Mathematics, 1S-215	                        718 982 3623  |
+|  Staten Island, NY 10314	       	          (fax) 718 982 3631  |
+o---------------------------------------------------------------------o
+
+
+From lawremi at iastate.edu  Fri Mar 24 20:04:58 2006
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Fri, 24 Mar 2006 13:04:58 -0600
+Subject: [R-gui] Cairo graphics device for Windows and RGtk2 2.8.2 released
+Message-ID: <442442DA.604@iastate.edu>
+
+Dear all,
+
+I have managed to build the Cairo R graphics device for Windows. This 
+lets you embed R graphics in RGtk2 interfaces on Windows.
+
+I have also uploaded a minor bugfix release of RGtk2.
+Changes:
+- New demo showing integration with Cairo graphics device
+- Some demo fixes, bugs reported by Bill Morphet.
+- Fixed an RGtkDataFrame bug reported by John Verzani.
+
+Please download new versions at http://www.ggobi.org/rgtk2
+
+Thanks,
+Michael Lawrence
+
+
+From joseclaudio.faria at terra.com.br  Wed Mar 29 01:10:37 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Tue, 28 Mar 2006 20:10:37 -0300
+Subject: [R-gui] Tinn-R 1.18.4.3 released
+Message-ID: <4429C26D.3040605@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.4.3) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under *OS Windows*.
+
+Two useful tools for file conversion were added:
+- deplate (http://deplate.sourceforge.net/index.php) and
+- txt2tags (http://txt2tags.sourceforge.net).
+
+For *deplate* was proposed the extension '.dlpt' and for
+*txt2tags* Tinn-R recognizes '.t2t'. The basic highilighters, based in XML,
+were proposed for both, we hope the users help us in the development.
+
+Also, the interface for syntax colors preferences for both are different
+of the already known Tinn-R interface. So, consider that it is working
+nice but will be temporary.
+
+Tinn-R now enables you to compile LaTeX files (MikTeX, http://www.miktex.org)
+and view the DVI and PDF results (Yap and Acrobat) and also to see 'HTML'
+files in your preferred browser starting from Tinn-R.
+
+To see all changes, please, read: 'Help/English/Changes (html)'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+

@@ -1,0 +1,2802 @@
+From Soren.Hojsgaard at agrsci.dk  Tue Apr  6 17:31:21 2004
+From: Soren.Hojsgaard at agrsci.dk (=?iso-8859-1?Q?S=F8ren_H=F8jsgaard?=)
+Date: Tue Apr  6 17:31:28 2004
+Subject: [R-gui] Editor in R
+Message-ID: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972B@DJFPOST01.djf.agrsci.dk>
+
+Dear all,
+I have used R (Windows) for teaching statistics to agronomists and biologists - and they love R!! Yet there is one immediate short coming of R: The lack of an integrated editor. A plain editor (e.g. similar to notepad in windows) in which people can write their code, highlight the piece of code they wish to "submit" and then press a single key to have it pasted into R. 
+
+For the audience I have in mind, using emacs is way too complicated. WinEdt with the R-extension is probably also too difficult for them (though I have not tried), and at it certainly would move the focus away from statistics to get these technical things "up-and-running". 
+
+If I knew how to make such a simple editor within R (as an add-on package) then I would do it - but this goes way beyond my capabilities. I would therefore like to encourage anyone in the GUI group with such technical skills to make such an editor. It would be appreciated by many R-beginners...
+
+Best regards
+S?ren H?jsgaard
+
+From p.dalgaard at biostat.ku.dk  Tue Apr  6 18:06:33 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Tue Apr  6 18:09:00 2004
+Subject: [R-gui] Editor in R
+In-Reply-To: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972B@DJFPOST01.djf.agrsci.dk>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972B@DJFPOST01.djf.agrsci.dk>
+Message-ID: <x24qrxozue.fsf@biostat.ku.dk>
+
+S?ren H?jsgaard <Soren.Hojsgaard@agrsci.dk> writes:
+
+> If I knew how to make such a simple editor within R (as an add-on
+> package) then I would do it - but this goes way beyond my
+> capabilities. I would therefore like to encourage anyone in the GUI
+> group with such technical skills to make such an editor. It would be
+> appreciated by many R-beginners...
+
+One problem with this is that you all too easily find yourself
+reinventing emacs...
+
+However, the shortest route would seem to be using the tcltk
+interface. There is already a rudimentary scripting widget, which you
+should be able to extend quite easily. See
+
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/evalRcode.html
+
+(this is actually from my own R News paper (2002) but James is doing
+such a great job of keeping these examples working...)
+
+As it stands, this widget only allows you to send the entire contents
+of the widget, but a "Run selection" item should be well within your
+abilities to add. A scrollbar would be nice too (you can scroll text
+without it, but people tend to be unable to find out how). And adding
+keyboard shortcuts, and, and, ....
+
+Also, you might consider source(textConnection(tkget(... )),
+echo=TRUE) instead of the current parse+eval code.
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From jfox at mcmaster.ca  Tue Apr  6 19:56:48 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue Apr  6 19:56:51 2004
+Subject: [R-gui] Editor in R
+In-Reply-To: <x24qrxozue.fsf@biostat.ku.dk>
+Message-ID: <web-29100612@cgpsrv2.cis.mcmaster.ca>
+
+Dear Peter and S?ren,
+
+The Rcmdr package, which is based on the tcltk package, incorporates a
+simple script editor that permits execution of a line or selected
+region of code. Simple editing operations (copy, paste, etc.) are
+supported, but there are limitations, such as the inability to extend
+individual commands over several lines. 
+
+This simple editor serves the purpose of the Rcmdr package, so I
+haven't been motivated to improve it, but perhaps it could provide the
+basis for something better.
+
+Regards,
+ John
+
+On 06 Apr 2004 18:06:33 +0200
+ Peter Dalgaard <p.dalgaard@biostat.ku.dk> wrote:
+> S?ren H?jsgaard <Soren.Hojsgaard@agrsci.dk> writes:
+> 
+> > If I knew how to make such a simple editor within R (as an add-on
+> > package) then I would do it - but this goes way beyond my
+> > capabilities. I would therefore like to encourage anyone in the GUI
+> > group with such technical skills to make such an editor. It would
+> be
+> > appreciated by many R-beginners...
+> 
+> One problem with this is that you all too easily find yourself
+> reinventing emacs...
+> 
+> However, the shortest route would seem to be using the tcltk
+> interface. There is already a rudimentary scripting widget, which you
+> should be able to extend quite easily. See
+> 
+> http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/evalRcode.html
+> 
+> (this is actually from my own R News paper (2002) but James is doing
+> such a great job of keeping these examples working...)
+> 
+> As it stands, this widget only allows you to send the entire contents
+> of the widget, but a "Run selection" item should be well within your
+> abilities to add. A scrollbar would be nice too (you can scroll text
+> without it, but people tend to be unable to find out how). And adding
+> keyboard shortcuts, and, and, ....
+> 
+> Also, you might consider source(textConnection(tkget(... )),
+> echo=TRUE) instead of the current parse+eval code.
+> 
+> -- 
+>    O__  ---- Peter Dalgaard             Blegdamsvej 3  
+>   c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+>  (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45)
+> 35327918
+> ~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45)
+> 35327907
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+--------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada
+http://socserv.mcmaster.ca/jfox/
+
+From dagorret at eco.unrc.edu.ar  Tue Apr  6 21:56:26 2004
+From: dagorret at eco.unrc.edu.ar (Carlos Dagorret)
+Date: Tue Apr  6 21:58:05 2004
+Subject: [R-gui] GUI in Delphi?
+Message-ID: <200404061953.QAA11954@linuxeco.eco.unrc.edu.ar>
+
+They know some GUI, or project of GUI carried out in Delphi or Kylix.  
+ 
+
+	[[alternative HTML version deleted]]
+
+From arcane at arcanemethods.com  Wed Apr  7 01:02:21 2004
+From: arcane at arcanemethods.com (Bob Cain)
+Date: Wed Apr  7 01:02:35 2004
+Subject: [R-gui] wxWindows
+Message-ID: <407336FD.7050704@arcanemethods.com>
+
+Please bear with a noobie here that doesn't know R's history.
+
+Has anyone investigated integrating wxWindows as the GUI 
+interface for R?  It is cross platform and looks very well 
+thought out.  I did a brief evaluation of it for a project I 
+was considering a while back and came away fairly impressed 
+although I'm far from a GUI expert.
+
+
+Thanks,
+
+Bob
+-- 
+
+"Things should be described as simply as possible, but no 
+simpler."
+
+                                              A. Einstein
+
+From dmurdoch at pair.com  Wed Apr  7 04:03:43 2004
+From: dmurdoch at pair.com (Duncan Murdoch)
+Date: Wed Apr  7 04:03:43 2004
+Subject: [R-gui] wxWindows
+In-Reply-To: <407336FD.7050704@arcanemethods.com>
+References: <407336FD.7050704@arcanemethods.com>
+Message-ID: <b8o670plj4atkbj6i54g0it78t2qfb02bp@4ax.com>
+
+On Tue, 06 Apr 2004 16:02:21 -0700, you wrote:
+
+>Please bear with a noobie here that doesn't know R's history.
+>
+>Has anyone investigated integrating wxWindows as the GUI 
+>interface for R?  It is cross platform and looks very well 
+>thought out.  I did a brief evaluation of it for a project I 
+>was considering a while back and came away fairly impressed 
+>although I'm far from a GUI expert.
+
+It has been suggested before and is a likely candidate, but it's hard
+to write a front-end for R, and nobody has done that one yet.
+
+Duncan Murdoch
+
+From paul.kristiansen at une.edu.au  Wed Apr  7 05:15:55 2004
+From: paul.kristiansen at une.edu.au (Paul Kristiansen)
+Date: Wed Apr  7 05:16:02 2004
+Subject: [R-gui] Editor in R
+In-Reply-To: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972B@DJFPOST01.djf.agrsci.dk>
+Message-ID: <20040407031556.6E2AC7F5F@mailhub1.une.edu.au>
+
+Hi S?ren and others
+
+I have used the WinEdt extension myself (a middle-level S+/R user) and with
+some novice R users.
+
+I find that it is relatively simple to set up. You need two ZIP files. They
+can be installed from the R menus. Then just type one command in R and its
+done. See ReadMe.txt at http://cran.r-project.org/contrib/extra/winedt/ for
+details. Open an existing script file, or type some basic code in a new
+file, and start working.  R-WinEdt is easy to use, especially if one uses
+the short cut keys rather than the icons, but the icons make it simple for
+novices.
+
+It is shareware though, unlike R itself.
+
+Regards
+Paul
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dr Paul Kristiansen
+Associate Lecturer in Agricultural Systems
+Agronomy and Soil Science
+Rural Science & Agriculture
+University of New England
+Armidale 2351
+AUSTRALIA
+ 
+Phone: (02) 6773-2962
+Fax: (02) 6773-3238
+Email: paul.kristiansen@une.edu.au
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+
+
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> S?ren H?jsgaard
+> Sent: Wednesday, 7 April 2004 1:31 AM
+> To: r-sig-gui@stat.math.ethz.ch
+> Subject: [R-gui] Editor in R
+> 
+> Dear all,
+> I have used R (Windows) for teaching statistics to 
+> agronomists and biologists - and they love R!! Yet there is 
+> one immediate short coming of R: The lack of an integrated 
+> editor. A plain editor (e.g. similar to notepad in windows) 
+> in which people can write their code, highlight the piece of 
+> code they wish to "submit" and then press a single key to 
+> have it pasted into R. 
+> 
+> For the audience I have in mind, using emacs is way too 
+> complicated. WinEdt with the R-extension is probably also too 
+> difficult for them (though I have not tried), and at it 
+> certainly would move the focus away from statistics to get 
+> these technical things "up-and-running". 
+> 
+> If I knew how to make such a simple editor within R (as an 
+> add-on package) then I would do it - but this goes way beyond 
+> my capabilities. I would therefore like to encourage anyone 
+> in the GUI group with such technical skills to make such an 
+> editor. It would be appreciated by many R-beginners...
+> 
+> Best regards
+> S?ren H?jsgaard
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+From ligges at statistik.uni-dortmund.de  Wed Apr  7 08:31:32 2004
+From: ligges at statistik.uni-dortmund.de (Uwe Ligges)
+Date: Wed Apr  7 08:31:28 2004
+Subject: [R-gui] Editor in R
+In-Reply-To: <20040407031556.6E2AC7F5F@mailhub1.une.edu.au>
+References: <20040407031556.6E2AC7F5F@mailhub1.une.edu.au>
+Message-ID: <4073A044.6080807@statistik.uni-dortmund.de>
+
+Paul Kristiansen wrote:
+> Hi S?ren and others
+> 
+> I have used the WinEdt extension myself (a middle-level S+/R user) and with
+> some novice R users.
+> 
+> I find that it is relatively simple to set up. You need two ZIP files. They
+> can be installed from the R menus. Then just type one command in R and its
+> done. See ReadMe.txt at http://cran.r-project.org/contrib/extra/winedt/ for
+> details. Open an existing script file, or type some basic code in a new
+> file, and start working.  R-WinEdt is easy to use, especially if one uses
+> the short cut keys rather than the icons, but the icons make it simple for
+> novices.
+> 
+> It is shareware though, unlike R itself.
+
+The editor WinEdt is Shareware, the extension R-WinEdt is free.
+
+Best,
+Uwe
+
+
+> Regards
+> Paul
+> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> Dr Paul Kristiansen
+> Associate Lecturer in Agricultural Systems
+> Agronomy and Soil Science
+> Rural Science & Agriculture
+> University of New England
+> Armidale 2351
+> AUSTRALIA
+>  
+> Phone: (02) 6773-2962
+> Fax: (02) 6773-3238
+> Email: paul.kristiansen@une.edu.au
+> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+>
+
+From Soren.Hojsgaard at agrsci.dk  Wed Apr  7 11:31:30 2004
+From: Soren.Hojsgaard at agrsci.dk (=?iso-8859-1?Q?S=F8ren_H=F8jsgaard?=)
+Date: Wed Apr  7 11:31:32 2004
+Subject: SV: [R-gui] Editor in R
+Message-ID: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972C@DJFPOST01.djf.agrsci.dk>
+
+Dear all, 
+Thanks for the replies on creating a plain simple editor for the beginners use of R. There seems to be many opinions on this subject, and that is very stimulating. Based on the replies I have made such a small editor (using tcltk) called "R Mini Commander", rmc(), and it can be found at
+
+http://www.jbs.agrsci.dk/~sorenh/Misc/Misc.html
+
+It is a first simple shot, and it could certainly be improved by
+- syntax highlighting
+- parenthesis matching
+- scroll bars
+- and numerous other things
+
+-- but it works, and I believe that the agronomists, biologists and even veterinarians can get it up and running. Comments are most appreciated.
+
+Best regards
+S?ren H?jsgaard
+
+From chris.jackson at imperial.ac.uk  Wed Apr  7 12:35:06 2004
+From: chris.jackson at imperial.ac.uk (Chris Jackson)
+Date: Wed Apr  7 13:19:33 2004
+Subject: [R-gui] Editor in R
+Message-ID: <4073D95A.10406@imperial.ac.uk>
+
+Dear Soren and others,
+
+Good news - I have written exactly what you describe, an integrated 
+editor in the Windows R GUI,  in the internals rather than as an add-on. 
+(see discussion on R-devel at the end of February). With the help of the 
+Windows R maintainers I'll be aiming to get this into the release of R 
+following 1.9.0.
+
+Chris
+
+(sorry for any threading breakage - was subscribed to digest)
+
+-- 
+Christopher Jackson <chris.jackson@imperial.ac.uk>, Research Associate,
+Department of Epidemiology and Public Health, Imperial College
+School of Medicine, Norfolk Place, London W2 1PG, tel. 020 759 43371
+
+From wettenhall at wehi.EDU.AU  Wed Apr  7 15:35:54 2004
+From: wettenhall at wehi.EDU.AU (wettenhall@wehi.EDU.AU)
+Date: Wed Apr  7 15:37:33 2004
+Subject: [R-gui] Editor in R and Tk/Windows focus problems
+In-Reply-To: <x24qrxozue.fsf@biostat.ku.dk>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972B@DJFPOST01.djf.agrsci.dk>
+	<x24qrxozue.fsf@biostat.ku.dk>
+Message-ID: <2156.192.168.65.113.1081344954.squirrel@wehimail.wehi.edu.au>
+
+Apologies if people get multiple copies of recent emails.  We just
+upgraded to Fedora, and I've been having pine/email problems...
+
+S?ren,
+
+Great start with the Tcl/Tk editor for R.  A bit more
+work to do to compete with some of the sophisticated editors at
+http://www.sciviews.org/_rgui/projects/Editors.html
+
+but I think it's worth doing!
+
+You may want to try the command:
+tksearch(txt,"foo","0.0","end")
+to search for "foo" between line 0, column 0 of the text widget
+and the end.  A result like "4.5" means "foo" was found on line
+4, column 5.  This could be useful for parenthesis matching.
+
+tkindex(txt,"insert") should give you the current cursor
+position.
+
+WINDOWS FOCUSING PROBLEMS
+
+While I think a Tcl/Tk IDE/script editor for R is a great idea,
+Windows users may be concerned about the problem of Tk windows
+repeatedly hiding behind the RGui window (or RGui/GraphApp
+stealing the focus).  This is particularly a problem if I have
+my Windows taskbar on autohide.  When I move my mouse from the
+taskbar to the (maximized) RGui window, the taskbar disappears
+but so do any Tk windows run from R.
+
+I'm trying to look into the GraphApp code to see if I can find
+any clues.  Maybe one ugly way would be :
+
+tktoplevel(use=GraphAppRConsoleWindowID)
+
+where that window ID would have to be made
+available from the C code in R-devel/src/gnuwin32/  ???
+
+>From the Tk toplevel help...
+
+Command-Line Name: -use
+Database Name: use
+Database Class: Use
+This option is used for embedding. If the value isn't an empty
+string, it must be the the window identifier of a container
+window, specified as a hexadecimal string like the ones returned
+by the winfo id command. The toplevel widget will be created as
+a child of the given container instead of the root window for
+the screen. If the container window is in a Tk application, it
+must be a frame or toplevel widget for which the -container
+option was specified. This option may not be changed with the
+configure widget command.
+
+
+Regards,
+James
+
+From jfox at mcmaster.ca  Wed Apr  7 16:23:16 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Wed Apr  7 16:23:17 2004
+Subject: [R-gui] Editor in R and Tk/Windows focus problems
+In-Reply-To: <2156.192.168.65.113.1081344954.squirrel@wehimail.wehi.edu.au>
+Message-ID: <20040407142314.JZDL7304.tomts22-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear James, 
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> wettenhall@wehi.EDU.AU
+> Sent: Wednesday, April 07, 2004 8:36 AM
+> To: p.dalgaard@biostat.ku.dk
+> Cc: Soren.Hojsgaard@agrsci.dk; r-sig-gui@stat.math.ethz.ch
+> Subject: Re: [R-gui] Editor in R and Tk/Windows focus problems
+> 
+> Apologies if people get multiple copies of recent emails.  We 
+> just upgraded to Fedora, and I've been having pine/email problems...
+> 
+> S?ren,
+> 
+> Great start with the Tcl/Tk editor for R.  A bit more work to 
+> do to compete with some of the sophisticated editors at 
+> http://www.sciviews.org/_rgui/projects/Editors.html
+> 
+> but I think it's worth doing!
+> 
+> You may want to try the command:
+> tksearch(txt,"foo","0.0","end")
+> to search for "foo" between line 0, column 0 of the text 
+> widget and the end.  A result like "4.5" means "foo" was 
+> found on line 4, column 5.  This could be useful for 
+> parenthesis matching.
+> 
+> tkindex(txt,"insert") should give you the current cursor position.
+> 
+
+The minimal editor in the Rcmdr package script window has standard editing
+operations such as Find, Copy, Paste, etc. (along with some other stuff,
+such as a submit button), accessible from the window menu and a right-click
+context menu, so it wouldn't be hard simply to use this code.
+
+> WINDOWS FOCUSING PROBLEMS
+> 
+> While I think a Tcl/Tk IDE/script editor for R is a great 
+> idea, Windows users may be concerned about the problem of Tk 
+> windows repeatedly hiding behind the RGui window (or 
+> RGui/GraphApp stealing the focus).  This is particularly a 
+> problem if I have my Windows taskbar on autohide.  When I 
+> move my mouse from the taskbar to the (maximized) RGui 
+> window, the taskbar disappears but so do any Tk windows run from R.
+> 
+
+It would be nice to fix this problem, which I believe only occurs with the
+multiple-document interface.
+
+Regards,
+ John
+
+
+> I'm trying to look into the GraphApp code to see if I can 
+> find any clues.  Maybe one ugly way would be :
+> 
+> tktoplevel(use=GraphAppRConsoleWindowID)
+> 
+> where that window ID would have to be made available from the 
+> C code in R-devel/src/gnuwin32/  ???
+> 
+> >From the Tk toplevel help...
+> 
+> Command-Line Name: -use
+> Database Name: use
+> Database Class: Use
+> This option is used for embedding. If the value isn't an 
+> empty string, it must be the the window identifier of a 
+> container window, specified as a hexadecimal string like the 
+> ones returned by the winfo id command. The toplevel widget 
+> will be created as a child of the given container instead of 
+> the root window for the screen. If the container window is in 
+> a Tk application, it must be a frame or toplevel widget for 
+> which the -container option was specified. This option may 
+> not be changed with the configure widget command.
+> 
+> 
+> Regards,
+> James
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From wettenhall at wehi.edu.au  Thu Apr  8 11:28:33 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Apr  8 11:30:43 2004
+Subject: [R-gui] Tk/Windows focus problems
+In-Reply-To: <20040407142314.JZDL7304.tomts22-srv.bellnexxia.net@JohnDesktop8300>
+References: <20040407142314.JZDL7304.tomts22-srv.bellnexxia.net@JohnDesktop8300>
+Message-ID: <Pine.LNX.4.58.0404081915010.21864@unix28.alpha.wehi.edu.au>
+
+Hi,
+
+I had a look at the R-Devel thread when John Fox introduced 
+RCmdr and Peter Dalgaard suggested searching Google Groups for 
+tk Windows "always on top"
+
+So I found at least one way to keep Tk windows on top.  But it 
+keeps them on top of everything (except for other always_on_top 
+windows), not just RGui.
+
+Download 
+http://www.jessikat.fsnet.co.uk/dll.zip
+from 
+http://www.jessikat.fsnet.co.uk/docdll.html
+
+Extract it somewhere, (let's say C:\dllTcl)
+
+Now in R,
+
+library(tcltk)
+setwd("c:/dllTcl")
+dir()
+.Tcl("load dll10.dll")
+tt <- tktoplevel()
+
+hWnd  <- tkwm.frame(tt)
+success <- tkcmd("::dll::call","user32.dll","SetWindowPos","i",
+  tclvalue(tkcmd("list","i",tclvalue(hWnd))),
+  tclvalue(tkcmd("list","i","-1")),
+  c("i","0"),c("i","0"),c("i","0"),c("i","0"),c("i","0x13"))
+
+# Now window tt should stay on top of RGui!
+
+I also tried tktoplevel(use=RGuiWindowID), but that didn't work.  
+The Tk windows still insisted on hiding behind RGui.
+
+I got the RGui window ID using the perl module Win32::GuiTest 
+from:
+http://triumvir.org/prog/perl/guitest/
+
+The webpage provides a script (Spy--) which gives you window 
+IDs.
+
+Regards
+James
+
+--------------------------------------------------------------------------
+James Wettenhall                                  Tel: (+61 3) 9345 2629
+Division of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852
+The Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au
+ of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    
+1G Royal Parade,
+Parkville, Vic 3050, Australia
+http://www.wehi.edu.au
+
+From dmurdoch at pair.com  Thu Apr  8 14:23:49 2004
+From: dmurdoch at pair.com (Duncan Murdoch)
+Date: Thu Apr  8 14:23:45 2004
+Subject: [R-gui] Editor in R and Tk/Windows focus problems
+In-Reply-To: <2156.192.168.65.113.1081344954.squirrel@wehimail.wehi.edu.au>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972B@DJFPOST01.djf.agrsci.dk>
+	<x24qrxozue.fsf@biostat.ku.dk>
+	<2156.192.168.65.113.1081344954.squirrel@wehimail.wehi.edu.au>
+Message-ID: <4sga70dckh2ep6rteep5nfrvvj80c2n8mt@4ax.com>
+
+On Wed, 7 Apr 2004 23:35:54 +1000 (EST), wettenhall@wehi.EDU.AU wrote 
+>While I think a Tcl/Tk IDE/script editor for R is a great idea,
+>Windows users may be concerned about the problem of Tk windows
+>repeatedly hiding behind the RGui window (or RGui/GraphApp
+>stealing the focus). 
+
+I'd suggest switching to SDI mode.  
+
+[ In another message...]
+
+>So I found at least one way to keep Tk windows on top.  But it 
+>keeps them on top of everything (except for other always_on_top 
+>windows), not just RGui.
+
+In 1.9.0, you'll be able (by a bringToTop() call, or a right click
+menu entry) to designate any R SDI window to always stay on top.  One
+problem we had at first was that dialogs would be hidden behind the
+stay on top windows; I fixed that, but you'll still have that problem
+if you have a Tk window stay on top without asking an R window to stay
+on top.
+
+Duncan Murdoch
+
+From p.dalgaard at biostat.ku.dk  Thu Apr  8 14:44:48 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Thu Apr  8 14:47:27 2004
+Subject: [R-gui] Tk/Windows focus problems
+In-Reply-To: <Pine.LNX.4.58.0404081915010.21864@unix28.alpha.wehi.edu.au>
+References: <20040407142314.JZDL7304.tomts22-srv.bellnexxia.net@JohnDesktop8300>
+	<Pine.LNX.4.58.0404081915010.21864@unix28.alpha.wehi.edu.au>
+Message-ID: <x2k70q3agv.fsf@biostat.ku.dk>
+
+James Wettenhall <wettenhall@wehi.edu.au> writes:
+
+> I also tried tktoplevel(use=RGuiWindowID), but that didn't work.  
+> The Tk windows still insisted on hiding behind RGui.
+
+This surprises me a bit. I'd expect that -use winID  would not touch
+the management of a window (that's sort of the point, innit?). So even
+though it's quite unlikely that you didn't think the same thing: How
+exactly did you create RGuiWindowID? Did it actually create an MDI
+document? 
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From wettenhall at wehi.EDU.AU  Thu Apr  8 18:06:42 2004
+From: wettenhall at wehi.EDU.AU (wettenhall@wehi.EDU.AU)
+Date: Thu Apr  8 18:08:21 2004
+Subject: [R-gui] Tk/Windows focus problems
+In-Reply-To: <x2k70q3agv.fsf@biostat.ku.dk>
+References: <20040407142314.JZDL7304.tomts22-srv.bellnexxia.net@JohnDesktop8300>
+	<Pine.LNX.4.58.0404081915010.21864@unix28.alpha.wehi.edu.au>
+	<x2k70q3agv.fsf@biostat.ku.dk>
+Message-ID: <4099.138.217.56.9.1081440402.squirrel@homebase.wehi.edu.au>
+
+Hi,
+
+I'm posting ONLY TO THE R-SIG-GUI LIST in case I was boring anyone.
+
+It seems that there is interest in some more details about my
+investigations of tktoplevel(use=RGuiWindowID), so here goes...
+
+In this investigation, I'm only focusing (get it?) on plain Tk windows with
+nothing in them.  I can still reproduce annoying behaviour under Windows OS
+with these simple Tk windows, although some users of my R-Tcl/Tk GUI claim
+that the annoying focus problems occur when they get up to one particular
+entry box or listbox in the GUI. I have not tested that sort of thing yet.
+
+To clarify how I am getting window IDs, I have installed (in Windows XP),
+R 1.8.1, ActivePerl-5.6.1, the Win32:GuiTest perl module (on CPAN),
+and the spy.pl script from
+http://triumvir.org/prog/perl/guitest/guitest-spy.html
+
+Firstly, I begin an RGui 1.8.1 MDI (Multiple Document Interface) session.
+
+Then from a DOS window:
+
+C:\>perl spy.pl | grep R
+...
++0x00050112, 'RGui', Rgui Workspace
++++0x0004014C, 'R Console', Rgui Document
+++0x00040102, 'TOOLBAR', Rgui
++++0x00040104, '', Rgui
++++0x000400F4, '', Rgui
++++0x000400F2, '', Rgui
++++0x0004010E, '', Rgui
++++0x00040108, '', Rgui
++++0x00050106, '', Rgui
++++0x000400E8, '', Rgui
++++0x000600F0, '', Rgui
+...
+C:\>
+
+library(tcltk)
+tt1 <- tktoplevel(use="0x00050112")  # The RGui Workspace Window ID
+
+Result: If RGui is maximized, it goes back to "normal/unmaximized" size. 
+No "Tk" window appears, i.e. tt1 now points to the main RGui window.
+
+To confirm this:
+tkwm.title(tt1,"Hello")
+"Hello" now appears in the title bar of the main RGui window.
+
+tt1a <- tktoplevel(tt1)
+
+A normal Tk window appears.  Now if I set my Taskbar on autohide, and move
+the mouse from the taskbar up to Rgui, the tt1a window will hide behind
+RGui.  If I turn off taskbar-autohide, then I cannot get tt1a to disappear
+just by moving the mouse, but if I click on the console window within RGui,
+then tt1a will hide behind the RGui window.
+
+
+Now I'm trying SDI (Single Document Interface) mode instead of MDI.
+(I have to restart RGui).
+
+C:\>perl spy.pl | grep R
+...
++0x00060112, 'R Console', Rgui
+...
+
+library(tcltk)
+tt1 <- tktoplevel(use="0x00060112")
+Now tt1 now points to the main RGui window/Console window.
+(They are THE SAME THING for SDI).
+
+To confirm that tt1 points to the RGui/Console window:
+tkwm.title(tt1,"Hello")
+Now Hello appears in the title bar of the RGui/Console window.
+
+tt1a <- tktoplevel(tt1)
+
+OK, now I don't have the same problem. I can move my mouse up from the
+autohide-taskbar to the RGui/RConsole SDI window and tt1a stays there
+happily.  But maybe getting the window handle/ID/pointer with spy.pl
+wasn't necessary.  Maybe it was just SDI that solved it.  Let's see:
+
+tt2 <- tktoplevel()
+
+OK, this behaves just the same as tt1a, i.e. in SDI when just using a
+plain Tk window with nothing in it, I find it hard to show evidence of
+the Tk/Windows-focus annoying behaviour I've been complaining about.
+
+
+OK, now back to MDI mode...
+
+C:\>perl spy.pl | grep R
+...
++0x000C0112, 'RGui', Rgui Workspace
++++0x000900F4, 'R Console', Rgui Document
+++0x001F0292, 'TOOLBAR', Rgui
++++0x00150252, '', Rgui
++++0x001301AA, '', Rgui
++++0x0016026E, '', Rgui
++++0x000A027A, '', Rgui
++++0x00060276, '', Rgui
++++0x001F024C, '', Rgui
++++0x00150204, '', Rgui
++++0x000E01A4, '', Rgui
+...
+
+OK, now here's where things start to get interesting...
+
+Now I use the R Console ID in tktoplevel(use=...) instead of
+the RGui ID :
+
+library(tcltk)
+tt2 <- tktoplevel(use="0x000900F4")
+The first time I did this (above), it took quite a while
+(a couple of seconds), but didn't give an error or warning.
+
+tt2a <- tktoplevel(tt2)
+
+OK, now I can happily move my mouse from the autohiding-taskbar onto
+the RGui workspace window and/or Console window while RGui is in MDI
+mode and my tt2a window doesn't disappear behind RGui.
+
+When I drag tt2a around with the mouse and release it so that it is
+half-overlapping with RGui, it seems to be random which window is on top
+after I release the mouse (tt2a or RGui).  Reminds me of a lecture on
+flip-flops: "Avoid race-conditions at all costs!"  I don't claim this is
+reproducible on all Windows systems - I haven't tried.  But I should say
+that this happens in all the cases above too, I was just trying extra hard
+to find annoying focus behaviour in this case, because moving the mouse
+from the taskbar didn't cause a problem.
+
+When I tried using the console window ID a second time,
+RGui crashed.  Maybe I was asking for too much here...
+
+tt3 <- tktoplevel(use="0x000900F4")
+
+R for Windows GUI front-end has encountered a problem and needs to close. 
+We are sorry for the inconvenience.
+...
+Please tell Microsoft about this problem.
+
+
+Hope this hasn't bored you to tears!
+
+Regards,
+James
+
+From p.dalgaard at biostat.ku.dk  Thu Apr  8 20:59:26 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Thu Apr  8 21:02:04 2004
+Subject: [R-gui] Tk/Windows focus problems
+In-Reply-To: <4099.138.217.56.9.1081440402.squirrel@homebase.wehi.edu.au>
+References: <20040407142314.JZDL7304.tomts22-srv.bellnexxia.net@JohnDesktop8300>
+	<Pine.LNX.4.58.0404081915010.21864@unix28.alpha.wehi.edu.au>
+	<x2k70q3agv.fsf@biostat.ku.dk>
+	<4099.138.217.56.9.1081440402.squirrel@homebase.wehi.edu.au>
+Message-ID: <x2ekqy47ox.fsf@biostat.ku.dk>
+
+wettenhall@wehi.edu.au writes:
+
+> Hi,
+> 
+> I'm posting ONLY TO THE R-SIG-GUI LIST in case I was boring anyone.
+
+Not at all. WhatYouDo != WhatIThoughtYou'dDo, so if we combine the
+two, maybe we can finally get somewhere with this.
+ 
+> To clarify how I am getting window IDs, I have installed (in Windows XP),
+> R 1.8.1, ActivePerl-5.6.1, the Win32:GuiTest perl module (on CPAN),
+> and the spy.pl script from
+> http://triumvir.org/prog/perl/guitest/guitest-spy.html
+
+OK for now, in the longer perspective, I think we can just extract
+that info from the GraphApp structures.
+
+> library(tcltk)
+> tt1 <- tktoplevel(use="0x00050112")  # The RGui Workspace Window ID
+> 
+> Result: If RGui is maximized, it goes back to "normal/unmaximized" size. 
+> No "Tk" window appears, i.e. tt1 now points to the main RGui window.
+> 
+> To confirm this:
+> tkwm.title(tt1,"Hello")
+> "Hello" now appears in the title bar of the main RGui window.
+
+Fine, shows that basic procedure work, but I think you're on the wrong
+track by tacking onto the root MDI window.
+ 
+> tt1a <- tktoplevel(tt1)
+
+Now this I suspect is the wrong idea. This just creates a new window
+which Tk thinks is a child of tt1, but I don't think that implies that
+it becomes part of the MDI group, so you get the same behaviour as
+without the use=... stuff. 
+
+[SDI stuff omitted]
+
+> OK, now back to MDI mode...
+
+> Now I use the R Console ID in tktoplevel(use=...) instead of
+> the RGui ID :
+> 
+> library(tcltk)
+> tt2 <- tktoplevel(use="0x000900F4")
+> The first time I did this (above), it took quite a while
+> (a couple of seconds), but didn't give an error or warning.
+> 
+> tt2a <- tktoplevel(tt2)
+
+I still don't think that's what you want to do...
+
+I'd be much more interested in what happens if you do something like
+tkbutton(tt2). Or maybe you don't want to try that with the console
+window, so how about hijacking a graphics window instead? The
+perspective could be to modify toplevel so that it generates blank
+(MDI-controlled) windows from GraphApp, which we just keep using from
+then on.
+
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From hodgess at gator.uhd.edu  Wed Apr 14 19:25:32 2004
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Wed Apr 14 19:20:04 2004
+Subject: [R-gui] [Rgui sig] IWidgets?
+Message-ID: <200404141725.i3EHPWb30261@gator.dt.uh.edu>
+
+Hi R Gui People!
+
+There are such things as IWidgets, which have things like
+radiobox (not radiobutton!) and feedback.
+
+Does anyone know if those IWidgets are operational with the tcltk
+library, please?
+
+Thanks in advance!
+
+Sincerely,
+Erin Hodgess
+mailto: hodgess@gator.uhd.edu
+
+From edd at debian.org  Wed Apr 14 19:34:42 2004
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Wed Apr 14 19:34:48 2004
+Subject: [R-gui] [Rgui sig] IWidgets?
+In-Reply-To: <200404141725.i3EHPWb30261@gator.dt.uh.edu>
+References: <200404141725.i3EHPWb30261@gator.dt.uh.edu>
+Message-ID: <20040414173442.GA18494@sonny.eddelbuettel.com>
+
+On Wed, Apr 14, 2004 at 12:25:32PM -0500, Erin Hodgess wrote:
+> Hi R Gui People!
+> 
+> There are such things as IWidgets, which have things like
+> radiobox (not radiobutton!) and feedback.
+> 
+> Does anyone know if those IWidgets are operational with the tcltk
+> library, please?
+
+Sure are, but you need to download and install them, e.g. via the
+ActiveState Tcl binaries if you're on Windows. You also need to tell R about
+it using the MY_TCLTK env.variable.
+
+James Wettenhall's treasure of a site for R/tcltk has examples (though his
+may be for Bwidgets), the mechanics is the same.
+
+A simple self-contained example using the IWidgets calendar widget follows.
+
+library(tcltk)
+tclRequire("Iwidgets")
+tt <- tktoplevel()
+cal <- tkwidget(tt, "iwidgets::calendar")
+tkconfigure(cal, command=function(...)cat(tclvalue(tkget(cal))))
+tkpack(cal)
+
+
+Hth, Dirk
+
+-- 
+The relationship between the computed price and reality is as yet unknown.  
+                                             -- From the pac(8) manual page
+
+From hodgess at gator.uhd.edu  Sat Apr 17 00:00:03 2004
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Fri Apr 16 23:54:05 2004
+Subject: [R-gui] [R gui] buttonbox
+Message-ID: <200404162200.i3GM03a12500@gator.dt.uh.edu>
+
+Dear R Gui People:
+
+I am trying to convert some Iwidget code for tcl/tk use on 
+R.
+
+R 1.8.1 Windows
+
+Ok.
+
+Here is the Iwidget code:
+package require Iwidgets 4.0
+
+iwidgets::buttonbox .bb 
+
+.bb add OK -text OK -command "puts OK" 
+.bb add Apply -text Apply -command "puts Apply"
+.bb add Cancel -text Cancel -command "puts Cancel"
+.bb default OK
+
+pack .bb -expand yes -fill both
+
+So I know that I'll start with
+library(tcltk)
+tclRequire("Iwidgets")
+bb <- tkwidget(tt,"iwidgets::buttonbox")
+
+
+.
+.
+.
+tkpack(bb,expand="y",fill="both")
+
+It's that stuff in the middle that I'm stuck on.
+
+Any suggestions, please?
+
+Or does anyone have a good book reference to practice with please?
+
+Thanks yet again!
+Sincerely,
+Erin Hodgess
+Associate Professor
+Department of Computer and Mathematical Sciences
+University of Houston - Downtown
+mailto: hodgess@gator.uhd.edu
+
+From p.dalgaard at biostat.ku.dk  Sat Apr 17 00:32:43 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Sat Apr 17 00:35:59 2004
+Subject: [R-gui] [R gui] buttonbox
+In-Reply-To: <200404162200.i3GM03a12500@gator.dt.uh.edu>
+References: <200404162200.i3GM03a12500@gator.dt.uh.edu>
+Message-ID: <x2oeprwo38.fsf@biostat.ku.dk>
+
+Erin Hodgess <hodgess@gator.uhd.edu> writes:
+
+> Here is the Iwidget code:
+> package require Iwidgets 4.0
+> 
+> iwidgets::buttonbox .bb 
+> 
+> .bb add OK -text OK -command "puts OK" 
+> .bb add Apply -text Apply -command "puts Apply"
+> .bb add Cancel -text Cancel -command "puts Cancel"
+> .bb default OK
+> 
+> pack .bb -expand yes -fill both
+> 
+> So I know that I'll start with
+> library(tcltk)
+> tclRequire("Iwidgets")
+> bb <- tkwidget(tt,"iwidgets::buttonbox")
+> 
+> 
+> .
+> .
+> .
+> tkpack(bb,expand="y",fill="both")
+
+> It's that stuff in the middle that I'm stuck on.
+> 
+> Any suggestions, please?
+
+I would guess that you could do
+
+  tkcmd(bb, "add", "OK", text="OK", command="puts OK") 
+
+or (same thing really)
+
+  tkadd(bb, "OK", text="OK", command="puts OK") 
+
+There's no tkdefault(), though - unless you create the function
+yourself.
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From p.dalgaard at biostat.ku.dk  Sat Apr 17 01:05:34 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Sat Apr 17 01:08:46 2004
+Subject: [R-gui] [R gui] buttonbox
+In-Reply-To: <x2oeprwo38.fsf@biostat.ku.dk>
+References: <200404162200.i3GM03a12500@gator.dt.uh.edu>
+	<x2oeprwo38.fsf@biostat.ku.dk>
+Message-ID: <x2k70fwmkh.fsf@biostat.ku.dk>
+
+Peter Dalgaard <p.dalgaard@biostat.ku.dk> writes:
+
+> I would guess that you could do
+> 
+>   tkcmd(bb, "add", "OK", text="OK", command="puts OK") 
+> 
+> or (same thing really)
+> 
+>   tkadd(bb, "OK", text="OK", command="puts OK") 
+
+Sorry, I was a bit asleep there: "puts OK" is of course Tcl, and may
+or may not print something where you want it to (but probably not into
+the Windows console, e.g.). More likely you'd want an R callback something
+like 
+
+...command=quote(cat("OK\n"))...
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From uth at zhwin.ch  Sat Apr 17 12:11:53 2004
+From: uth at zhwin.ch (=?Windows-1252?Q?=22Untern=E4hrer_Thomas=2C_uth=22?=)
+Date: Sat Apr 17 12:12:41 2004
+Subject: [R-gui] [R gui] buttonbox
+Message-ID: <53A181E56FB0694ABFD212F8AEDA7F6F1AB96D@langouste.zhwin.ch>
+
+
+Hi,
+
+A really good tcl-book can be found at http://www.beedub.com/book/.
+It's probably not what you are looking for but could help other R-tcl-users.
+
+Thomas
+
+
+
+
+-----Original Message-----
+From:	Erin Hodgess [mailto:hodgess@gator.uhd.edu]
+Sent:	Sat 4/17/2004 12:00 AM
+To:	r-sig-gui@stat.math.ethz.ch
+Cc:	
+Subject:	[R-gui] [R gui] buttonbox
+Dear R Gui People:
+
+I am trying to convert some Iwidget code for tcl/tk use on 
+R.
+
+R 1.8.1 Windows
+
+Ok.
+
+Here is the Iwidget code:
+package require Iwidgets 4.0
+
+iwidgets::buttonbox .bb 
+
+.bb add OK -text OK -command "puts OK" 
+.bb add Apply -text Apply -command "puts Apply"
+.bb add Cancel -text Cancel -command "puts Cancel"
+.bb default OK
+
+pack .bb -expand yes -fill both
+
+So I know that I'll start with
+library(tcltk)
+tclRequire("Iwidgets")
+bb <- tkwidget(tt,"iwidgets::buttonbox")
+
+
+.
+.
+.
+tkpack(bb,expand="y",fill="both")
+
+It's that stuff in the middle that I'm stuck on.
+
+Any suggestions, please?
+
+Or does anyone have a good book reference to practice with please?
+
+Thanks yet again!
+Sincerely,
+Erin Hodgess
+Associate Professor
+Department of Computer and Mathematical Sciences
+University of Houston - Downtown
+mailto: hodgess@gator.uhd.edu
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From enrique.bengoechea at credit-suisse.com  Tue Apr 20 12:26:39 2004
+From: enrique.bengoechea at credit-suisse.com (Enrique Bengoechea)
+Date: Tue Apr 20 12:27:06 2004
+Subject: [R-gui] MainFrame Tk BWidget
+Message-ID: <OFA49DF025.8D0CFE34-ONC1256E7C.00389181@csintra.net>
+
+Hi,
+
+I'm started building a Tk GUI for a R-based app, and I've successfully build an initial prototype.
+
+Nevertheless, I'm now trying to use the MainFrame BWidget distributed with ActiveTcl 8.4.6, and I don't know how can I set its menu option. This option expects a list whose each five elements describe one cascade menu. Could someone point to me how can I
+pass a list? I haven't found anything similar in the docs nor the useful examples compiled by James Wettenhall.
+
+Any help welcomed. Sorry if this is easy, these are my first trials with Tk and R.
+
+Regards,
+
+Enrique Bengoechea
+___________________________________________________________________________
+
+Enrique Bengoechea
+Investment Consulting - CREDIT SUISSE Spain
+
+From p.dalgaard at biostat.ku.dk  Tue Apr 20 13:25:49 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Tue Apr 20 13:29:15 2004
+Subject: [R-gui] MainFrame Tk BWidget
+In-Reply-To: <OFA49DF025.8D0CFE34-ONC1256E7C.00389181@csintra.net>
+References: <OFA49DF025.8D0CFE34-ONC1256E7C.00389181@csintra.net>
+Message-ID: <x2llkq6gci.fsf@biostat.ku.dk>
+
+Enrique Bengoechea <enrique.bengoechea@credit-suisse.com> writes:
+
+> Hi,
+> 
+> I'm started building a Tk GUI for a R-based app, and I've
+> successfully build an initial prototype.
+> 
+> Nevertheless, I'm now trying to use the MainFrame BWidget
+> distributed with ActiveTcl 8.4.6, and I don't know how can I set its
+> menu option. This option expects a list whose each five elements
+> describe one cascade menu. Could someone point to me how can I pass
+> a list? I haven't found anything similar in the docs nor the useful
+> examples compiled by James Wettenhall.
+> 
+> Any help welcomed. Sorry if this is easy, these are my first trials
+> with Tk and R.
+
+Do you have an example of how this works in Tcl? Usually, a list can
+be passed as a character vector from R.
+
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From wettenhall at wehi.edu.au  Tue Apr 20 16:34:31 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Tue Apr 20 16:30:45 2004
+Subject: [R-gui] MainFrame Tk BWidget
+In-Reply-To: <x2llkq6gci.fsf@biostat.ku.dk>
+Message-ID: <Pine.LNX.4.44.0404202320360.20767-100000@unix24.alpha.wehi.edu.au>
+
+Enrique,
+
+Have a look at the BWidget demos that come with ActiveTcl.  
+
+For your amusement, here are my efforts to totally confuse 
+myself about the MainFrame widget.  Does it require "." as a 
+parent?  What difference does having a menu make?
+Three cases below.
+(1) A MainFrame widget with no menu and with parent tt
+(2) A MainFrame widget with a menu and with parent tt
+(3) A MainFrame widget with a menu and with parent .
+
+(1) A MainFrame widget with no menu and with parent tt
+library(tcltk)
+tt <- tktoplevel()
+tclRequire("BWidget")
+mainFrame <- tkwidget(tt,"MainFrame")
+tkdestroy(mainFrame) # Optional
+tkdestroy(tt)
+# Notes:  No problems with Case (1).  :)
+
+
+(2) A MainFrame widget with a menu and with parent tt
+library(tcltk)
+tt <- tktoplevel()
+tclRequire("BWidget")
+exit <- function()
+{
+  tkdestroy(mainFrame)
+  tkdestroy(tt)
+}
+mainMenu <- 
+  paste("\"&File\" all file 0 ",
+  "{{command \"E&xit\" {} \"Exit Case 2\" {}",
+  "-command \"",.Tcl.callback(exit),"\"}}")
+mainFrame <- tkwidget(tt,"MainFrame",menu=mainMenu)
+tkpack(mainFrame)         
+
+# Notes:  Now I can crash my R session by typing 
+# either of tkdestroy(tt) or tkdestroy(mainFrame)
+# or clicking "Exit" in the File menu.
+# The following DOESN'T crash my R session and 
+# appears to destroy the menu (and frame?):
+
+tkcmd("MainFrame::_destroy",mainFrame)
+
+# But then tkdestroy(tt) still crashes my R session.
+# Now if instead of tkdestroy(tt), I click on the 
+# close button at the top-right-hand corner of tt, 
+# (after doing MainFrame::_destroy), I get this:
+
+Application Error
+Error: can't read "_widget(.1.1,top)": no such element in array
+can't read "_widget(.1.1,top)": no such element in array
+can't read "_widget(.1.1,top)": no such element in array
+    while executing
+"$_widget($path,top) configure -menu {}"
+    (procedure "MainFrame::_destroy" line 6)
+    invoked from within
+"MainFrame::_destroy .1.1"
+    (command bound to event)
+
+# Note that the menu option of BWidget::MainFrame is described 
+# as "read-only".  Is that a clue?
+
+
+
+(3) A MainFrame widget with a menu and with parent .
+library(tcltk)
+tkwm.deiconify(".")
+tclRequire("BWidget")
+exit <- function()
+{
+  tkcmd("MainFrame::_destroy",mainFrame)
+  tkwm.withdraw(".")
+}
+mainMenu <- 
+  paste("\"&File\" all file 0 ",
+  "{{command \"E&xit\" {} \"Exit Case 3\" {}",
+  "-command \"",.Tcl.callback(exit),"\"}}")
+mainFrame <- tkwidget(.TkRoot,"MainFrame",menu=mainMenu)
+tkpack(mainFrame)         
+
+# Notes: Using the Tk root window "." is ugly
+# because if you destroy it then I think you have to 
+# restart R or at least reload the tcltk package.  The 
+# exit function used here simply hides the "."
+# window.  It doesn't really destroy anything.
+
+
+Well, maybe that will give others some clues in order to 
+go further...
+
+Regards,
+James
+
+From enrique.bengoechea at credit-suisse.com  Tue Apr 20 16:41:24 2004
+From: enrique.bengoechea at credit-suisse.com (Enrique Bengoechea)
+Date: Tue Apr 20 16:43:10 2004
+Subject: [R-gui] MainFrame Tk BWidget
+Message-ID: <OF9E5FDC71.D9E68FE3-ONC1256E7C.0050028A@csintra.net>
+
+Thanks for your answer, I'll try to transform the example below to character vector, although any additional clue will be acknowledged  :-)
+
+>From the documentation:
+
+-menu (read-only)
+
+This option describes the menu. This is a list whose each five elements describe one cascade menu. It has the following form: {menuname tags menuId tearoff menuentries...} where menuentries is a list where each element describe one menu entry, which can
+be:
+      * for a separator: {separator}
+      * for a command: {command menuname ?tags? ?description? ?accelerator? ?option value? ...}
+      * for a check button: {checkbutton menuname ?tags? ?description? ?accelerator? ?option value? ...}
+      * for a radio button: {radiobutton menuname ?tags? ?description? ?accelerator ?option value? ...}
+      * for a cascade menu: {cascade menuname tags menuId tearoff menuentries}
+
+Example:
+
+set descmenu {
+    "&File" {} {} 0 {
+        {command "&New"     {} "Create a new document"     {Ctrl n} -command Menu::new}
+        {command "&Open..." {} "Open an existing document" {Ctrl o} -command Menu::open}
+        {command "&Save"    open "Save the document" {Ctrl s} -command Menu::save}
+        {cascade  "&Export"  {} export 0 {
+            {command "Format &1" open "Export document to format 1" {} -command {Menu::export 1}}
+            {command "Format &2" open "Export document to format 2" {} -command {Menu::export 2}}
+        }}
+        {separator}
+        {cascade "&Recent files" {} recent 0 {}}
+        {separator}
+        {command "E&xit" {} "Exit the application" {} -command Menu::exit}
+    }
+    "&Options" {} {} 0 {
+        {checkbutton "Toolbar" {} "Show/hide toolbar" {}
+            -variable Menu::_drawtoolbar
+            -command  {$Menu::_mainframe showtoolbar toolbar $Menu::_drawtoolbar}
+        }
+    }
+}
+
+
+
+which looks likes a list of lists, as menuentries seem to be nested...
+
+
+___________________________________________________________________________
+
+Enrique Bengoechea
+Investment Consulting - CREDIT SUISSE Spain
+___________________________________________________________________________
+
+
+
+
+
+
+Peter Dalgaard <p.dalgaard@biostat.ku.dk> on 20/04/2004 13:25:49
+
+To:    Enrique Bengoechea/CSPF@PCOMINT
+cc:    r-sig-gui@stat.math.ethz.ch
+
+Subject:    Re: [R-gui] MainFrame Tk BWidget
+
+Enrique Bengoechea <enrique.bengoechea@credit-suisse.com> writes:
+
+> Hi,
+>
+> I'm started building a Tk GUI for a R-based app, and I've
+> successfully build an initial prototype.
+>
+> Nevertheless, I'm now trying to use the MainFrame BWidget
+> distributed with ActiveTcl 8.4.6, and I don't know how can I set its
+> menu option. This option expects a list whose each five elements
+> describe one cascade menu. Could someone point to me how can I pass
+> a list? I haven't found anything similar in the docs nor the useful
+> examples compiled by James Wettenhall.
+>
+> Any help welcomed. Sorry if this is easy, these are my first trials
+> with Tk and R.
+
+Do you have an example of how this works in Tcl? Usually, a list can
+be passed as a character vector from R.
+
+
+--
+   O__  ---- Peter Dalgaard             Blegdamsvej 3
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From p.dalgaard at biostat.ku.dk  Tue Apr 20 16:51:58 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Tue Apr 20 16:55:30 2004
+Subject: [R-gui] MainFrame Tk BWidget
+In-Reply-To: <OF9E5FDC71.D9E68FE3-ONC1256E7C.0050028A@csintra.net>
+References: <OF9E5FDC71.D9E68FE3-ONC1256E7C.0050028A@csintra.net>
+Message-ID: <x2pta24s8h.fsf@biostat.ku.dk>
+
+Enrique Bengoechea <enrique.bengoechea@credit-suisse.com> writes:
+
+> Thanks for your answer, I'll try to transform the example below to
+> character vector, although any additional clue will be acknowledged
+> :-)
+
+Here's one clue, but you should probably study James W's note closely.
+
+
+> tkcmd("list",tkcmd("list","A",1,c(2,3)), foo=1:3)
+<Tcl> {A 1 {2 3}} -foo {1 2 3}
+
+Or, of course:
+
+> tcllist <- function(...)tkcmd("list",...)
+> tcllist(tcllist("A",1,c(2,3)), foo=1:3)
+<Tcl> {A 1 {2 3}} -foo {1 2 3}
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From enrique.bengoechea at credit-suisse.com  Tue Apr 20 17:13:38 2004
+From: enrique.bengoechea at credit-suisse.com (Enrique Bengoechea)
+Date: Tue Apr 20 17:13:55 2004
+Subject: [R-gui] MainFrame Tk BWidget
+Message-ID: <OF4F6B65F1.247861ED-ONC1256E7C.00537B0C@csintra.net>
+
+Thanks a lot for your two detailed answers, I'm going to try with your clues and will tell whether it works, although the crashes obtained by James are not very encouraging!
+
+Regards,
+
+Enrique
+
+
+
+
+
+James Wettenhall <wettenhall@wehi.edu.au> on 20/04/2004 16:34:31
+
+To:    Peter Dalgaard <p.dalgaard@biostat.ku.dk>
+cc:    Enrique Bengoechea/CSPF@PCOMINT, <r-sig-gui@stat.math.ethz.ch>
+
+Subject:    Re: [R-gui] MainFrame Tk BWidget
+
+Enrique,
+
+Have a look at the BWidget demos that come with ActiveTcl.
+
+For your amusement, here are my efforts to totally confuse
+myself about the MainFrame widget.  Does it require "." as a
+parent?  What difference does having a menu make?
+Three cases below.
+(1) A MainFrame widget with no menu and with parent tt
+(2) A MainFrame widget with a menu and with parent tt
+(3) A MainFrame widget with a menu and with parent .
+
+(1) A MainFrame widget with no menu and with parent tt
+library(tcltk)
+tt <- tktoplevel()
+tclRequire("BWidget")
+mainFrame <- tkwidget(tt,"MainFrame")
+tkdestroy(mainFrame) # Optional
+tkdestroy(tt)
+# Notes:  No problems with Case (1).  :)
+
+
+(2) A MainFrame widget with a menu and with parent tt
+library(tcltk)
+tt <- tktoplevel()
+tclRequire("BWidget")
+exit <- function()
+{
+  tkdestroy(mainFrame)
+  tkdestroy(tt)
+}
+mainMenu <-
+  paste("\"&File\" all file 0 ",
+  "{{command \"E&xit\" {} \"Exit Case 2\" {}",
+  "-command \"",.Tcl.callback(exit),"\"}}")
+mainFrame <- tkwidget(tt,"MainFrame",menu=mainMenu)
+tkpack(mainFrame)
+
+# Notes:  Now I can crash my R session by typing
+# either of tkdestroy(tt) or tkdestroy(mainFrame)
+# or clicking "Exit" in the File menu.
+# The following DOESN'T crash my R session and
+# appears to destroy the menu (and frame?):
+
+tkcmd("MainFrame::_destroy",mainFrame)
+
+# But then tkdestroy(tt) still crashes my R session.
+# Now if instead of tkdestroy(tt), I click on the
+# close button at the top-right-hand corner of tt,
+# (after doing MainFrame::_destroy), I get this:
+
+Application Error
+Error: can't read "_widget(.1.1,top)": no such element in array
+can't read "_widget(.1.1,top)": no such element in array
+can't read "_widget(.1.1,top)": no such element in array
+    while executing
+"$_widget($path,top) configure -menu {}"
+    (procedure "MainFrame::_destroy" line 6)
+    invoked from within
+"MainFrame::_destroy .1.1"
+    (command bound to event)
+
+# Note that the menu option of BWidget::MainFrame is described
+# as "read-only".  Is that a clue?
+
+
+
+(3) A MainFrame widget with a menu and with parent .
+library(tcltk)
+tkwm.deiconify(".")
+tclRequire("BWidget")
+exit <- function()
+{
+  tkcmd("MainFrame::_destroy",mainFrame)
+  tkwm.withdraw(".")
+}
+mainMenu <-
+  paste("\"&File\" all file 0 ",
+  "{{command \"E&xit\" {} \"Exit Case 3\" {}",
+  "-command \"",.Tcl.callback(exit),"\"}}")
+mainFrame <- tkwidget(.TkRoot,"MainFrame",menu=mainMenu)
+tkpack(mainFrame)
+
+# Notes: Using the Tk root window "." is ugly
+# because if you destroy it then I think you have to
+# restart R or at least reload the tcltk package.  The
+# exit function used here simply hides the "."
+# window.  It doesn't really destroy anything.
+
+
+Well, maybe that will give others some clues in order to
+go further...
+
+Regards,
+James
+
+From wettenhall at wehi.edu.au  Wed Apr 21 13:02:17 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Apr 21 13:05:19 2004
+Subject: [R-gui] Tk/Windows focus problems
+In-Reply-To: <x2pta24s8h.fsf@biostat.ku.dk>
+References: <OF9E5FDC71.D9E68FE3-ONC1256E7C.0050028A@csintra.net>
+	<x2pta24s8h.fsf@biostat.ku.dk>
+Message-ID: <Pine.LNX.4.58.0404212019060.24980@unix28.alpha.wehi.edu.au>
+
+Peter and others,
+
+[Note: The hex string below is a GraphApp Window ID.]
+
+JW>> tt2 <- tktoplevel(use="0x000900F4")
+...
+JW>> tt2a <- tktoplevel(tt2)
+
+PD>I still don't think that's what you want to do...
+
+PD>I'd be much more interested in what happens if you do something like
+PD>tkbutton(tt2). Or maybe you don't want to try that with the console
+PD>window, so how about hijacking a graphics window instead? The
+PD>perspective could be to modify toplevel so that it generates blank
+PD>(MDI-controlled) windows from GraphApp, which we just keep using from
+PD>then on.
+
+OK, after some delays caused by a corrupt Perl installation, 
+I've had another go at this.  But I'm afraid I can't get anything 
+to happen by trying to create a widget e.g. tkbutton whose 
+parent is a GraphApp window.  I get no error from 
+button <- tkbutton(tt2,text="Press me")
+But it seems that no amount of packing or gridding will make a 
+Tk widget appear in a GraphApp window.  Maybe it appears for a 
+microsecond, then GraphApp or Windows OS orders a redraw of the 
+window according to GraphApp's specifications...
+
+It may actually be quite difficult.  See for example, 
+http://wiki.tcl.tk/2870
+"Tk within frame of other application (written in, for example, 
+Visual C++). So far, only works--barely--with IE. "
+
+So if it really is too difficult, my opinion is that for some 
+R/Tk applications "Always On Top" (as an option) is better 
+than nothing...  
+
+Regards,
+James
+
+From hodgess at gator.uhd.edu  Thu Apr 22 07:57:10 2004
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Thu Apr 22 07:50:08 2004
+Subject: [R-gui] [R GUI] validate for entries
+Message-ID: <200404220557.i3M5vAW16984@gator.dt.uh.edu>
+
+Dear R Gui People:
+
+I'm trying to put together a little project to enter values for binomial
+probabilities.
+
+Right now, I'd like to validate each entry as I go along.
+
+I'm stuck on the validate function.  I'm using Iwidgets of entryfield.
+
+Here is the code:
+require(tcltk)
+tclRequire("Iwidgets")
+tt <- tktoplevel()
+tkwm.title(tt,"Binomial Days")
+Trial <- tclVar(0)
+Success <- tclVar(0)
+Percent <- tclVar(0.00)
+fs1 <- function() tkfocus(succ)
+fs2 <- function() {
+	NumTrial <- as.numeric(unlist(trial))
+	if(NumTrial <=0 || NumTrial > 20) {
+	tkgrid(tklabel(tt),text="Invalid Number of Trials")
+	}
+}
+trial <- tkwidget(tt,"iwidgets::entryfield",labeltext="Number of Trials",
+	labelpos="nw",command=fs1,validate=fs2)
+succ <- tkwidget(tt,"iwidgets::entryfield",labeltext="Number of Successes",
+	labelpos="nw")
+tkpack(trial)
+tkpack(succ)
+bb <- tkwidget(tt, "iwidgets::buttonbox")
+cb <- tkwidget(tt, "iwidgets::radiobox", labeltext="Direction Options",
+	labelpos="nw")
+Can1 <- function() tkdestroy(tt)
+tkadd(cb,"gt",text="Greater Than")
+tkadd(cb,"gte",text="Greater Than or Equal to")
+tkadd(cb,"lt",text="Less Than")
+tkadd(cb,"lte",text="Less Than or Equal to")
+tkadd(cb,"eq",text="Equal To")
+tkselect(cb,"eq")
+tkadd(bb,"OK",text="OK",command=quote(cat("OK\n")))
+tkadd(bb,"Cancel",text="Cancel",command=Can1)
+tkpack(cb,expand="yes")
+tkpack(bb,expand="yes")
+
+
+
+
+Any ideas would be greatly appreciated.  I'm sure that it's something
+completely stupid.
+
+Thanks,
+Erin Hodgess
+Associate Professor
+Department of Computer and Mathematical Sciences
+University of Houston - Downtown
+mailto: hodgess@gator.uhd.edu
+
+From wettenhall at wehi.edu.au  Thu Apr 22 08:09:02 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Apr 22 08:04:16 2004
+Subject: [R-gui] [R GUI] validate for entries
+In-Reply-To: <200404220557.i3M5vAW16984@gator.dt.uh.edu>
+Message-ID: <Pine.LNX.4.44.0404221605300.28592-100000@unix24.alpha.wehi.edu.au>
+
+Erin,
+
+
+On Thu, 22 Apr 2004, Erin Hodgess wrote:
+<SNIP>
+> I'm stuck on the validate function.  I'm using Iwidgets of entryfield.
+<SNIP>
+> Trial <- tclVar(0)
+> fs2 <- function() {
+> 	NumTrial <- as.numeric(unlist(trial))
+<SNIP>
+> 	}
+<SNIP>
+> trial <- tkwidget(tt,"iwidgets::entryfield",labeltext="Number of Trials",
+> 	labelpos="nw",command=fs1,validate=fs2)
+
+It looks like you're trying to get the value from the entry box 
+using unlist(trial) which doesn't seem right.
+
+I think what you want to do is 
+tkconfigure(trial,textvariable=Trial)
+
+NumTrial <- as.numeric(tclvalue(Trial))
+
+Hope this helps,
+James
+
+From hodgess at gator.uhd.edu  Fri Apr 23 02:53:19 2004
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Fri Apr 23 02:46:04 2004
+Subject: [R-gui] [R Gui]Moving thru fields
+Message-ID: <200404230053.i3N0rJw27957@gator.dt.uh.edu>
+
+Hello again!
+
+I have several entry fields.
+I want to check each field as I go along
+Then I want to move to the next field.
+How to I move to the next field, please?
+
+Thanks so much!
+
+>From a sorely puzzled
+Erin
+mailto: hodgess@gator.uhd.edu
+
+From wettenhall at wehi.edu.au  Fri Apr 23 04:29:24 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Apr 23 04:29:34 2004
+Subject: [R-gui] [R Gui]Moving thru fields
+In-Reply-To: <200404230053.i3N0rJw27957@gator.dt.uh.edu>
+Message-ID: <Pine.LNX.4.44.0404231210530.6975-100000@unix24.alpha.wehi.edu.au>
+
+ On Thu, 22 Apr 2004, Erin Hodgess wrote:
+
+> Hello again!
+> 
+> I have several entry fields.
+> I want to check each field as I go along
+> Then I want to move to the next field.
+> How to I move to the next field, please?
+> 
+> Thanks so much!
+> 
+> >From a sorely puzzled
+> Erin
+> mailto: hodgess@gator.uhd.edu
+> 
+
+Erin,
+
+It depends what you mean by next.  If you mean next in the 
+tab-order (i.e. when the user presses the 'Tab' key), I don't 
+know how to do that.  But it might help you to define a 
+list of tclVars and a list of widgets...
+
+tclVarList <- list()
+for (i in (1:NumEntryFields))
+  tclVarList[[i]] <- tclVar("Initial value")
+
+EntryList <- list()
+for (i in (1:NumEntryFields))
+  EntryList[[i]] <- tkentry(tt,textvariable=tclVarList[[i]])
+
+Then moving to the next field as defined by the list shouldn't 
+be too hard...
+
+What about assigning callback functions to a list of widgets?  
+Is it considered reasonable R coding style to have a list of 
+functions?  I didn't think of this when I implemented a list of 
+widgets, so I did something like this:
+
+for (i in (1:NumWidgets))
+  eval(parse(text=paste("onBrowse",i,
+  " <- function() {onBrowse(",i,",)}",sep="")))
+
+tkentry(...,command=eval(parse(text=paste("onBrowse",i,sep=""))),...)
+
+The idea is that (unless I'm mistaken), a Tcl callback function 
+for something like a button-press in R-Tcl/Tk shouldn't have any 
+arguments, so here I used a function onBrowse1() with no 
+arguments to call a function onBrowse(1), and onBrowse2() to
+call onBrowse(2) etc.  Does that make sense?
+
+Regards,
+James
+
+
+--------------------------------------------------------------------------
+James Wettenhall                                  Tel: (+61 3) 9345 2629
+Division of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852
+The Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au
+ of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    
+1G Royal Parade,
+Parkville, Vic 3050, Australia
+http://www.wehi.edu.au
+
+From wettenhall at wehi.edu.au  Fri Apr 23 09:59:42 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Apr 23 09:59:52 2004
+Subject: [R-gui] [R Gui]Moving thru fields
+In-Reply-To: <Pine.LNX.4.44.0404231210530.6975-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <Pine.LNX.4.44.0404231754120.18231-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+One thing to add: I think I was making the 
+list-of-callback-functions stuff too complicated.
+This seems to work:
+
+library(tcltk)
+tt <- tktoplevel()
+f1 <- function()tkmessageBox(message="f1")
+f2 <- function()tkmessageBox(message="f2")
+functions <- list(f1,f2)
+buttons <- list()
+for (i in (1:2))
+{
+  buttons[[i]] <- tkbutton(tt,text=paste(i),
+                    command=functions[[i]])
+  tkpack(buttons[[i]])
+}
+
+I guess there's no need to become nervous about when the 'i' is 
+evaluated in command=functions[[i]].  It appears to be evaluated 
+when the buttons are defined (as desired), not when the command 
+is invoked.
+
+Regards,
+James
+
+From maechler at stat.math.ethz.ch  Fri Apr 23 10:28:11 2004
+From: maechler at stat.math.ethz.ch (Martin Maechler)
+Date: Fri Apr 23 10:28:13 2004
+Subject: [R-gui] [R Gui]Moving thru fields
+In-Reply-To: <Pine.LNX.4.44.0404231210530.6975-100000@unix24.alpha.wehi.edu.au>
+References: <200404230053.i3N0rJw27957@gator.dt.uh.edu>
+	<Pine.LNX.4.44.0404231210530.6975-100000@unix24.alpha.wehi.edu.au>
+Message-ID: <16520.54171.241583.952431@gargle.gargle.HOWL>
+
+>>>>> "James" == James Wettenhall <wettenhall@wehi.edu.au>
+>>>>>     on Fri, 23 Apr 2004 12:29:24 +1000 (EST) writes:
+
+  <...........>
+
+    James> ........  Is it considered reasonable R coding style
+    James> to have a list of functions?  
+
+yes, definitely; in some contexts I'd consider it `optimal and
+most elegant' coding style.
+
+And, BTW, thank you very much, James, for your helping support
+of tcltk gui-programming in R!
+
+Martin Maechler <maechler@stat.math.ethz.ch>	http://stat.ethz.ch/~maechler/
+Seminar fuer Statistik, ETH-Zentrum  LEO C16	Leonhardstr. 27
+ETH (Federal Inst. Technology)	8092 Zurich	SWITZERLAND
+phone: x-41-1-632-3408		fax: ...-1228			<><
+
+From wettenhall at wehi.edu.au  Thu Apr 29 01:12:47 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Apr 29 01:12:47 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972C@DJFPOST01.djf.agrsci.dk>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972C@DJFPOST01.djf.agrsci.dk>
+Message-ID: <Pine.LNX.4.58.0404072256490.14415@unix28.alpha.wehi.edu.au>
+
+Not sure if my previous post about Tk/Windows focus problems as 
+applied to Editors got through. Reiterated at the bottom of 
+this email.
+
+S?ren, 
+
+Great start with the Tcl/Tk editor for R.  A bit more
+work to do to compete with some of the sophisticated editors at
+http://www.sciviews.org/_rgui/projects/Editors.html
+
+but I think it's worth doing!
+
+You may want to try the command:
+tksearch(txt,"foo","0.0","end")
+to search for "foo" between line 0, column 0 of the text widget
+and the end.  A result like "4.5" means "foo" was found on line
+4, column 5.  This could be useful for parenthesis matching.
+
+tkindex(txt,"insert") should give you the current cursor 
+position.
+
+WINDOWS FOCUSING PROBLEMS
+
+While I think a Tcl/Tk IDE/script editor for R is a great idea,
+Windows users may be concerned about the problem of Tk windows
+repeatedly hiding behind the RGui window (or RGui/GraphApp 
+stealing the focus).  This is particularly a problem if I have 
+my Windows taskbar on autohide.  When I move my mouse from the 
+taskbar to the (maximized) RGui window, the taskbar disappears 
+but so do any Tk windows run from R.  
+
+I'm trying to look into the GraphApp code to see if I can find 
+any clues.  Maybe one ugly way would be :
+
+tktoplevel(use=GraphAppRConsoleWindowID)
+
+where that window ID would have to be made 
+available from the C code in R-devel/src/gnuwin32/  ???
+
+>From the Tk toplevel help...
+
+Command-Line Name: -use 
+Database Name: use 
+Database Class: Use 
+This option is used for embedding. If the value isn't an empty 
+string, it must be the the window identifier of a container 
+window, specified as a hexadecimal string like the ones returned 
+by the winfo id command. The toplevel widget will be created as 
+a child of the given container instead of the root window for 
+the screen. If the container window is in a Tk application, it 
+must be a frame or toplevel widget for which the -container 
+option was specified. This option may not be changed with the 
+configure widget command. 
+
+
+Regards,
+James
+
+From wettenhall at wehi.edu.au  Thu Apr 29 01:12:56 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Apr 29 01:12:56 2004
+Subject: [R-gui] Editor in R
+In-Reply-To: <x24qrxozue.fsf@biostat.ku.dk>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972B@DJFPOST01.djf.agrsci.dk>
+	<x24qrxozue.fsf@biostat.ku.dk>
+Message-ID: <Pine.LNX.4.58.0404071338460.9532@unix28.alpha.wehi.edu.au>
+
+Peter, S?ren and others,
+
+On Wed, 6 Apr 2004, Peter Dalgaard wrote:
+> However, the shortest route would seem to be using the tcltk
+> interface. There is already a rudimentary scripting widget, which you
+
+One thought regarding use of Tcl/Tk for an editor is that it 
+would be much more attractive to Windows users if someone could 
+solve the problem of Tk windows repeatedly hiding themselves 
+behind the RGui window (coded in GraphApp).  For Windows users 
+of my R/TclTk application, I recommend they minimize RGui or 
+make it very small in the corner of the screen.  For RCmdr, 
+minimizing RGui is not recommended, as there are important things 
+displayed in the RGui window.
+
+I'd be happy to investigate this a bit if anyone can give me any 
+clues.  But maybe it's too hard?  Maybe GraphApp will be replaced 
+some time soon anyway...
+
+Regards,
+James
+
+From p.dalgaard at biostat.ku.dk  Thu Apr 29 02:58:15 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Thu Apr 29 03:02:17 2004
+Subject: [R-gui] Editor in R
+In-Reply-To: <Pine.LNX.4.58.0404071338460.9532@unix28.alpha.wehi.edu.au>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972B@DJFPOST01.djf.agrsci.dk>
+	<x24qrxozue.fsf@biostat.ku.dk>
+	<Pine.LNX.4.58.0404071338460.9532@unix28.alpha.wehi.edu.au>
+Message-ID: <x265bjbnx4.fsf@biostat.ku.dk>
+
+James Wettenhall <wettenhall@wehi.edu.au> writes:
+
+> Peter, S?ren and others,
+> 
+> On Wed, 6 Apr 2004, Peter Dalgaard wrote:
+> > However, the shortest route would seem to be using the tcltk
+> > interface. There is already a rudimentary scripting widget, which you
+> 
+> One thought regarding use of Tcl/Tk for an editor is that it 
+> would be much more attractive to Windows users if someone could 
+> solve the problem of Tk windows repeatedly hiding themselves 
+> behind the RGui window (coded in GraphApp).  For Windows users 
+> of my R/TclTk application, I recommend they minimize RGui or 
+> make it very small in the corner of the screen.  For RCmdr, 
+> minimizing RGui is not recommended, as there are important things 
+> displayed in the RGui window.
+> 
+> I'd be happy to investigate this a bit if anyone can give me any 
+> clues.  But maybe it's too hard?  Maybe GraphApp will be replaced 
+> some time soon anyway...
+
+I still have some hope for the "toplevel .bar -use 0xfeedbabe"
+approach. How are your C++ skills? There's some intriguing stuff 
+at http://home.t-online.de/home/dshepherd/tkview.htm
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From wettenhall at wehi.edu.au  Thu Apr 29 03:26:07 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Apr 29 03:26:14 2004
+Subject: [R-gui] Strange reposting to R-SIG-GUI
+Message-ID: <Pine.LNX.4.44.0404291123500.14067-100000@unix24.alpha.wehi.edu.au>
+
+Hi all,
+
+Sorry, two emails I posted to R-SIG-GUI a while ago sudenly seem 
+to have reposted themselves. I think it has something to do with 
+upgrading our Linux system to Fedora, and then forgetting to set 
+my SMTP outgoing mail server in pine, then resending emails when 
+they appeared to fail.
+
+Sorry about that,
+James
+
+From dmurdoch at pair.com  Thu Apr 29 04:00:07 2004
+From: dmurdoch at pair.com (Duncan Murdoch)
+Date: Thu Apr 29 04:00:19 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <Pine.LNX.4.58.0404072256490.14415@unix28.alpha.wehi.edu.au>
+References: <C83C5E3DEEE97E498B74729A33F6EAEC01AD972C@DJFPOST01.djf.agrsci.dk>
+	<Pine.LNX.4.58.0404072256490.14415@unix28.alpha.wehi.edu.au>
+Message-ID: <i5o09099a8uf3k86otb3dhpgo4s1kpb9mv@4ax.com>
+
+On Wed, 7 Apr 2004 23:16:39 +1000 (EST), James Wettenhall
+<wettenhall@wehi.edu.au> wrote:
+
+
+>I'm trying to look into the GraphApp code to see if I can find 
+>any clues.  Maybe one ugly way would be :
+>
+>tktoplevel(use=GraphAppRConsoleWindowID)
+>
+>where that window ID would have to be made 
+>available from the C code in R-devel/src/gnuwin32/  ???
+
+That would be easy to do.  If you let me know the interface that you'd
+like it to have, I'll put it into r-devel for you to try out.
+
+Let me know what result you'd like in the case where Rgui is running
+in SDI mode:  do you want to get the console window handle, or
+something to indicate that there's no frame window?
+
+Duncan Murdoch
+
+From phgrosjean at sciviews.org  Thu Apr 29 11:44:58 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Apr 29 11:45:57 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <i5o09099a8uf3k86otb3dhpgo4s1kpb9mv@4ax.com>
+Message-ID: <MABBLJDICACNFOLGIHJOEECJEGAA.phgrosjean@sciviews.org>
+
+Duncan,
+
+I solved this problem of R windows hiding other ones like TclTk, or Java
+windows in SciViews. However, it is a complex, and probably not very elegant
+way to do it (basically, I use an API function that sends a message
+everytime a window is created, destroyed, or changed,...  that is ANY window
+from all running apps).
+
+Since you are in the process to add such things to R Console in SDI mode, I
+suggest to have access to the following variables in R Code:
+- The handle of the R Console Window,
+- The handle of the task and/or the process where this window is running,
+- Whether buffered output is ON or OFF,
+- Whether the R Console window is topmost (the new "Stay on Top" function),
+- and finally (that is perhaps a more personnal request...), whether
+overtype mode is ON or OFF in the command line editing of the console
+window.
+
+- I think it should be wonderful to be able to execute a given function
+whenever the R Console window is put on top of other ones... since this
+would interfere with the event loop, it should be sufficient to set a
+variable ".OnTop" to TRUE or FALSE... and the rest could be done in a
+function registered with addTaskCallback().
+- Oohh yes, speaking about addTaskCallback(). I use it to refresh the object
+browser in the new version of SciViews. It is wonderful... except the
+function is not triggered when it returns from another event loop than the
+main one, for instance, if some code triggered by a TclTk window is
+executed. Do you think it should be possible to register functions the same
+way for the TclTk event loop (well, I think this is not a Windows-specific
+feature, right)?
+
+Best,
+
+Philippe Grosjean
+
+.......................................................<?}))><....
+ ) ) ) ) )
+( ( ( ( (   Prof. Philippe Grosjean
+\  ___   )
+ \/ECO\ (   Numerical Ecology of Aquatic Systems
+ /\___/  )  Mons-Hainaut University, Pentagone
+/ ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium
+ /NUM\/  )
+ \___/\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+       \ )  email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (
+...................................................................
+
+-----Original Message-----
+From: r-sig-gui-bounces@stat.math.ethz.ch
+[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of Duncan Murdoch
+Sent: Thursday, 29 April, 2004 04:00
+To: James Wettenhall
+Cc: Soren Hojsgaard; r-sig-gui@stat.math.ethz.ch
+Subject: Re: [R-gui] Editor in R and Windows focus problems
+
+
+On Wed, 7 Apr 2004 23:16:39 +1000 (EST), James Wettenhall
+<wettenhall@wehi.edu.au> wrote:
+
+
+>I'm trying to look into the GraphApp code to see if I can find
+>any clues.  Maybe one ugly way would be :
+>
+>tktoplevel(use=GraphAppRConsoleWindowID)
+>
+>where that window ID would have to be made
+>available from the C code in R-devel/src/gnuwin32/  ???
+
+That would be easy to do.  If you let me know the interface that you'd
+like it to have, I'll put it into r-devel for you to try out.
+
+Let me know what result you'd like in the case where Rgui is running
+in SDI mode:  do you want to get the console window handle, or
+something to indicate that there's no frame window?
+
+Duncan Murdoch
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI@stat.math.ethz.ch
+https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From jfox at mcmaster.ca  Thu Apr 29 16:08:15 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu Apr 29 16:08:30 2004
+Subject: [R-gui] Editor in R
+In-Reply-To: <Pine.LNX.4.58.0404071338460.9532@unix28.alpha.wehi.edu.au>
+Message-ID: <20040429140815.GIPF6153.tomts13-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear James,
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> James Wettenhall
+> Sent: Tuesday, April 06, 2004 10:48 PM
+> To: Peter Dalgaard
+> Cc: S?ren H?jsgaard; r-sig-gui@stat.math.ethz.ch
+> Subject: Re: [R-gui] Editor in R
+> 
+> Peter, S?ren and others,
+> 
+> On Wed, 6 Apr 2004, Peter Dalgaard wrote:
+> > However, the shortest route would seem to be using the tcltk 
+> > interface. There is already a rudimentary scripting widget, 
+> which you
+> 
+> One thought regarding use of Tcl/Tk for an editor is that it 
+> would be much more attractive to Windows users if someone 
+> could solve the problem of Tk windows repeatedly hiding 
+> themselves behind the RGui window (coded in GraphApp).  For 
+> Windows users of my R/TclTk application, I recommend they 
+> minimize RGui or make it very small in the corner of the 
+> screen.  For RCmdr, minimizing RGui is not recommended, as 
+> there are important things displayed in the RGui window.
+> 
+
+The Rcmdr package works fine when Rgui runs in SDI mode. Of course, it would
+be nice to solve the problem of Tk windows in MDI mode as well.
+
+Regards,
+ John
+
+> I'd be happy to investigate this a bit if anyone can give me 
+> any clues.  But maybe it's too hard?  Maybe GraphApp will be 
+> replaced some time soon anyway...
+> 
+> Regards,
+> James
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From jfox at mcmaster.ca  Thu Apr 29 16:15:10 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu Apr 29 16:15:29 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <MABBLJDICACNFOLGIHJOEECJEGAA.phgrosjean@sciviews.org>
+Message-ID: <20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear Philippe, Duncan, et al.,
+
+I hesitate to volunteer other people's work, but I wonder whether it isn't
+time to think about replacing the GraphApp-based Rgui as the standard
+interface to R under Windows. In particular, it occurs to me that a
+scaled-down version of Philippe's SciViews -- including a basic set of
+menus, the Syn text editor, and perhaps an object browser -- would provide a
+superior interface. Of course, there may be obstacles that I don't
+understand.
+
+Regards,
+ John
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> Philippe Grosjean
+> Sent: Thursday, April 29, 2004 4:45 AM
+> To: r-sig-gui@stat.math.ethz.ch
+> Cc: Soren Hojsgaard; Duncan Murdoch
+> Subject: RE: [R-gui] Editor in R and Windows focus problems
+> 
+> Duncan,
+> 
+> I solved this problem of R windows hiding other ones like 
+> TclTk, or Java windows in SciViews. However, it is a complex, 
+> and probably not very elegant way to do it (basically, I use 
+> an API function that sends a message everytime a window is 
+> created, destroyed, or changed,...  that is ANY window from 
+> all running apps).
+> 
+> Since you are in the process to add such things to R Console 
+> in SDI mode, I suggest to have access to the following 
+> variables in R Code:
+> - The handle of the R Console Window,
+> - The handle of the task and/or the process where this window 
+> is running,
+> - Whether buffered output is ON or OFF,
+> - Whether the R Console window is topmost (the new "Stay on 
+> Top" function),
+> - and finally (that is perhaps a more personnal request...), 
+> whether overtype mode is ON or OFF in the command line 
+> editing of the console window.
+> 
+> - I think it should be wonderful to be able to execute a 
+> given function whenever the R Console window is put on top of 
+> other ones... since this would interfere with the event loop, 
+> it should be sufficient to set a variable ".OnTop" to TRUE or 
+> FALSE... and the rest could be done in a function registered 
+> with addTaskCallback().
+> - Oohh yes, speaking about addTaskCallback(). I use it to 
+> refresh the object browser in the new version of SciViews. It 
+> is wonderful... except the function is not triggered when it 
+> returns from another event loop than the main one, for 
+> instance, if some code triggered by a TclTk window is 
+> executed. Do you think it should be possible to register 
+> functions the same way for the TclTk event loop (well, I 
+> think this is not a Windows-specific feature, right)?
+> 
+> Best,
+> 
+> Philippe Grosjean
+> 
+> .......................................................<?}))><....
+>  ) ) ) ) )
+> ( ( ( ( (   Prof. Philippe Grosjean
+> \  ___   )
+>  \/ECO\ (   Numerical Ecology of Aquatic Systems
+>  /\___/  )  Mons-Hainaut University, Pentagone
+> / ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium
+>  /NUM\/  )
+>  \___/\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+>        \ )  email: Philippe.Grosjean@umh.ac.be
+>  ) ) ) ) )  SciViews project coordinator 
+> (http://www.sciviews.org) ( ( ( ( ( 
+> ...................................................................
+> 
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of 
+> Duncan Murdoch
+> Sent: Thursday, 29 April, 2004 04:00
+> To: James Wettenhall
+> Cc: Soren Hojsgaard; r-sig-gui@stat.math.ethz.ch
+> Subject: Re: [R-gui] Editor in R and Windows focus problems
+> 
+> 
+> On Wed, 7 Apr 2004 23:16:39 +1000 (EST), James Wettenhall 
+> <wettenhall@wehi.edu.au> wrote:
+> 
+> 
+> >I'm trying to look into the GraphApp code to see if I can find any 
+> >clues.  Maybe one ugly way would be :
+> >
+> >tktoplevel(use=GraphAppRConsoleWindowID)
+> >
+> >where that window ID would have to be made available from 
+> the C code in 
+> >R-devel/src/gnuwin32/  ???
+> 
+> That would be easy to do.  If you let me know the interface 
+> that you'd like it to have, I'll put it into r-devel for you 
+> to try out.
+> 
+> Let me know what result you'd like in the case where Rgui is 
+> running in SDI mode:  do you want to get the console window 
+> handle, or something to indicate that there's no frame window?
+> 
+> Duncan Murdoch
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From edd at debian.org  Thu Apr 29 16:20:13 2004
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Thu Apr 29 16:20:24 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+References: <MABBLJDICACNFOLGIHJOEECJEGAA.phgrosjean@sciviews.org>
+	<20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+Message-ID: <20040429142013.GA10924@sonny.eddelbuettel.com>
+
+
+John,
+
+On Thu, Apr 29, 2004 at 10:15:10AM -0400, John Fox wrote:
+> Dear Philippe, Duncan, et al.,
+> 
+> I hesitate to volunteer other people's work, but I wonder whether it isn't
+> time to think about replacing the GraphApp-based Rgui as the standard
+> interface to R under Windows. In particular, it occurs to me that a
+> scaled-down version of Philippe's SciViews -- including a basic set of
+> menus, the Syn text editor, and perhaps an object browser -- would provide a
+> superior interface. Of course, there may be obstacles that I don't
+> understand.
+
+That won't work as it is Windows-only. IIRC even Philippe now acknowledges
+that this is suboptimal.
+
+AFAICT the emerging consensus has been for quite some time to move to
+wxWindows (now called wxWidgets). But someone needs to do the work...
+
+Dirk
+
+-- 
+The relationship between the computed price and reality is as yet unknown.  
+                                             -- From the pac(8) manual page
+
+From duncan at wald.ucdavis.edu  Thu Apr 29 16:41:42 2004
+From: duncan at wald.ucdavis.edu (Duncan Temple Lang)
+Date: Thu Apr 29 16:41:55 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <20040429142013.GA10924@sonny.eddelbuettel.com>
+References: <MABBLJDICACNFOLGIHJOEECJEGAA.phgrosjean@sciviews.org>
+	<20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+	<20040429142013.GA10924@sonny.eddelbuettel.com>
+Message-ID: <20040429144142.GE14335@wald.ucdavis.edu>
+
+Dirk Eddelbuettel wrote:
+> 
+> John,
+> 
+> On Thu, Apr 29, 2004 at 10:15:10AM -0400, John Fox wrote:
+> > Dear Philippe, Duncan, et al.,
+> > 
+> > I hesitate to volunteer other people's work, but I wonder whether it isn't
+> > time to think about replacing the GraphApp-based Rgui as the standard
+> > interface to R under Windows. In particular, it occurs to me that a
+> > scaled-down version of Philippe's SciViews -- including a basic set of
+> > menus, the Syn text editor, and perhaps an object browser -- would provide a
+> > superior interface. Of course, there may be obstacles that I don't
+> > understand.
+> 
+> That won't work as it is Windows-only. IIRC even Philippe now acknowledges
+> that this is suboptimal.
+> 
+> AFAICT the emerging consensus has been for quite some time to move to
+> wxWindows (now called wxWidgets). But someone needs to do the work...
+> 
+
+
+2 things. If you want to be integrated into applications
+like GGobi, AbiWord, Gnumeric, etc., i.e. the Gtk-based
+applications  you want the same look and feel and so want
+to be Gtk-based. Similarly, if you want to be connected
+to KWord, KSpread, etc. Qt is where you want to be.
+These are not important for building stand-alone GUIs
+for R, but it is more important if we are interested
+in integration with other applications and/or  communities.
+Tk works fine if we aren't interested in native look and feel
+of other applications.
+
+The Mozilla framework is now emerging as something to consider.
+The idea that wxWindows is the place to go may have been made 
+quite some time ago.
+BTW, we may have a way to greatly reduce the work to interface
+to wxWindows via automating the bindings.
+
+
+> Dirk
+> 
+> -- 
+> The relationship between the computed price and reality is as yet unknown.  
+>                                              -- From the pac(8) manual page
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Duncan Temple Lang                        duncan@wald.ucdavis.edu
+ 371, Kerr Hall
+ University of California at Davis
+
+Phone: (530) 752-4782
+FAX:   (530) 752-7099
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 184 bytes
+Desc: not available
+Url : https://www.stat.math.ethz.ch/pipermail/r-sig-gui/attachments/20040429/e2efbf8f/attachment.bin
+From bellis at hsph.harvard.edu  Thu Apr 29 16:51:47 2004
+From: bellis at hsph.harvard.edu (Byron Ellis)
+Date: Thu Apr 29 16:51:40 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <20040429142013.GA10924@sonny.eddelbuettel.com>
+References: <MABBLJDICACNFOLGIHJOEECJEGAA.phgrosjean@sciviews.org>
+	<20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+	<20040429142013.GA10924@sonny.eddelbuettel.com>
+Message-ID: <BD1106D1-99EC-11D8-AC5B-000393956206@hsph.harvard.edu>
+
+I have to disagree with the assessment that identical interfaces across 
+platforms is the optimal situation. IMHO, the Windows version should 
+act like a Windows program, the Mac version like a Mac program and the 
+UNIX version like a UNIX program and so on. wxWindows makes the best of 
+the bad situation, but its still a local optimum at best. Better to get 
+R's core functionality out of the event loop business entirely and 
+switch to an embedding model---including moving graphics devices out of 
+the core and into packages (which seems to be happening slowly of its 
+own accord). Now that I'm thinking, a C-level interface to library() 
+might be a handy idea (s.t. a GUI could load GUI specific packages, 
+such as graphics devices) towards that end.
+
+I realize it sounds like I'm advocating interface anarchy. I am to some 
+extent, but this could be mitigated by the establishing of an R Human 
+Interface Guidelines (HIG) a la, Microsoft or Apple or Red Hat. This 
+could mandate certain things such as menu items while still allowing 
+platform specific discretion (a good example might be preferences---a 
+Windows preferences interface is much different that its OS X 
+counterpart) and features. Conveniently we seem to have a mailing list 
+for this sort of thing right here. ;-)
+
+On Apr 29, 2004, at 10:20 AM, Dirk Eddelbuettel wrote:
+
+>
+> John,
+>
+> On Thu, Apr 29, 2004 at 10:15:10AM -0400, John Fox wrote:
+>> Dear Philippe, Duncan, et al.,
+>>
+>> I hesitate to volunteer other people's work, but I wonder whether it 
+>> isn't
+>> time to think about replacing the GraphApp-based Rgui as the standard
+>> interface to R under Windows. In particular, it occurs to me that a
+>> scaled-down version of Philippe's SciViews -- including a basic set of
+>> menus, the Syn text editor, and perhaps an object browser -- would 
+>> provide a
+>> superior interface. Of course, there may be obstacles that I don't
+>> understand.
+>
+> That won't work as it is Windows-only. IIRC even Philippe now 
+> acknowledges
+> that this is suboptimal.
+>
+> AFAICT the emerging consensus has been for quite some time to move to
+> wxWindows (now called wxWidgets). But someone needs to do the work...
+>
+> Dirk
+>
+> -- 
+> The relationship between the computed price and reality is as yet 
+> unknown.
+>                                              -- From the pac(8) manual 
+> page
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+---
+Byron Ellis (bellis@hsph.harvard.edu)
+"Oook" -- The Librarian
+
+From dmurdoch at pair.com  Thu Apr 29 17:03:59 2004
+From: dmurdoch at pair.com (Duncan Murdoch)
+Date: Thu Apr 29 17:03:58 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+References: <MABBLJDICACNFOLGIHJOEECJEGAA.phgrosjean@sciviews.org>
+	<20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+Message-ID: <9i5290pppeecjs12rcuskmhkot8mqt3ar5@4ax.com>
+
+On Thu, 29 Apr 2004 10:15:10 -0400, "John Fox" <jfox@mcmaster.ca>
+wrote :
+
+>Dear Philippe, Duncan, et al.,
+>
+>I hesitate to volunteer other people's work, but I wonder whether it isn't
+>time to think about replacing the GraphApp-based Rgui as the standard
+>interface to R under Windows. In particular, it occurs to me that a
+>scaled-down version of Philippe's SciViews -- including a basic set of
+>menus, the Syn text editor, and perhaps an object browser -- would provide a
+>superior interface. Of course, there may be obstacles that I don't
+>understand.
+
+I agree this would be a good idea.  It's somewhat hard now, because
+the programming interface between the R computing engine (and event
+loop) and the front-end is not well documented.
+
+What I'm thinking of doing is creating an RGui package.  At first this
+will be just a standard package, collecting together the functions
+relating to RGui (and some new ones, following Philippe's requests).
+In the longer term it will actually contain RGui itself, which will
+have been separated out from R.
+
+By that later date, I'm hoping the program interface will be well
+enough established that Philippe or someone else could put together
+another front end that wouldn't be a maintenance nightmare.
+
+The part I'm doing isn't really a huge undertaking, but I'm busy like
+everyone else, so I tend to doubt all of it will be finished in time
+for the 2.0 release in the fall. But I think some progress will be
+made.
+
+Duncan Murdoch
+
+From wettenhall at wehi.edu.au  Thu Apr 29 17:26:03 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Apr 29 17:26:07 2004
+Subject: [R-gui] Embed Tk in GraphApp
+Message-ID: <Pine.LNX.4.44.0404300121420.16836-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+After the embarassment of accidentally reposting some old 
+emails :-), perhaps now I have something interesting to offer...
+
+Thanks to Peter Dalgaard for pointing me to David Shepherd's 
+CTkView:
+http://home.t-online.de/home/dshepherd/tkview.htm
+which demonstrates embedding a Tk window in an MFC 
+(Microsoft Foundation Class) application built with Visual C++.
+
+I've had a quick go at porting it from Visual C++/MFC to 
+MinGW's gcc / GraphApp and it seems to work pretty well:
+http://bioinf.wehi.edu.au/folders/james/tkEmbed/index.html
+http://bioinf.wehi.edu.au/folders/james/tkEmbed/doc.html
+It's only supposed to be a proof of concept, not a robust API 
+for embedding Tk windows in GraphApp.
+
+Regards,
+James
+
+From jfox at mcmaster.ca  Thu Apr 29 17:31:32 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu Apr 29 17:31:53 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <20040429142013.GA10924@sonny.eddelbuettel.com>
+Message-ID: <20040429153132.ZBBE7304.tomts22-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear Dirk,
+
+It's true that what I'm proposing is Windows-only but so is the status-quo
+(i.e., the current GraphApp-based Rgui). 
+
+Regards,
+ John 
+
+> -----Original Message-----
+> From: Dirk Eddelbuettel [mailto:edd@debian.org] 
+> Sent: Thursday, April 29, 2004 9:20 AM
+> To: John Fox
+> Cc: 'Philippe Grosjean'; 'Duncan Murdoch'; 'Soren Hojsgaard'; 
+> r-sig-gui@stat.math.ethz.ch
+> Subject: Re: [R-gui] Editor in R and Windows focus problems
+> 
+> 
+> John,
+> 
+> On Thu, Apr 29, 2004 at 10:15:10AM -0400, John Fox wrote:
+> > Dear Philippe, Duncan, et al.,
+> > 
+> > I hesitate to volunteer other people's work, but I wonder 
+> whether it 
+> > isn't time to think about replacing the GraphApp-based Rgui as the 
+> > standard interface to R under Windows. In particular, it 
+> occurs to me 
+> > that a scaled-down version of Philippe's SciViews -- 
+> including a basic 
+> > set of menus, the Syn text editor, and perhaps an object browser -- 
+> > would provide a superior interface. Of course, there may be 
+> obstacles 
+> > that I don't understand.
+> 
+> That won't work as it is Windows-only. IIRC even Philippe now 
+> acknowledges that this is suboptimal.
+> 
+> AFAICT the emerging consensus has been for quite some time to 
+> move to wxWindows (now called wxWidgets). But someone needs 
+> to do the work...
+> 
+> Dirk
+> 
+> --
+> The relationship between the computed price and reality is as 
+> yet unknown.  
+>                                              -- From the 
+> pac(8) manual page
+
+From p.dalgaard at biostat.ku.dk  Thu Apr 29 17:49:22 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Thu Apr 29 17:53:35 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <20040429142013.GA10924@sonny.eddelbuettel.com>
+References: <MABBLJDICACNFOLGIHJOEECJEGAA.phgrosjean@sciviews.org>
+	<20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+	<20040429142013.GA10924@sonny.eddelbuettel.com>
+Message-ID: <x2wu3yg4xp.fsf@biostat.ku.dk>
+
+Dirk Eddelbuettel <edd@debian.org> writes:
+
+> AFAICT the emerging consensus has been for quite some time to move to
+> wxWindows (now called wxWidgets). But someone needs to do the work...
+
+I think "emerging consensus" is a bit strong here. In particular given
+the fact that nobody actually wrote anything for R that uses wx...
+
+Gtk is another contender (but someone seems to have offended the guy
+who did the Mac port and nothing has happened with it in 2004). Or
+even Tcl if we could get the graphics device issues ironed out (or did
+we already do that? How portable is the tkrplot stuff?).
+
+For my part it is a major issue how the internal programmability (i.e.
+writing GUI elements in R) pans out. I still haven't seen anything
+that matches Tcl/Tk in that respect.
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From phgrosjean at sciviews.org  Thu Apr 29 18:27:04 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Thu Apr 29 18:27:41 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <20040429142013.GA10924@sonny.eddelbuettel.com>
+Message-ID: <MABBLJDICACNFOLGIHJOCEDFEGAA.phgrosjean@sciviews.org>
+
+>On Thu, Apr 29, 2004 at 10:15:10AM -0400, John Fox wrote:
+>> Dear Philippe, Duncan, et al.,
+>>
+>> I hesitate to volunteer other people's work, but I wonder whether it
+isn't
+>> time to think about replacing the GraphApp-based Rgui as the standard
+>> interface to R under Windows. In particular, it occurs to me that a
+>> scaled-down version of Philippe's SciViews -- including a basic set of
+>> menus, the Syn text editor, and perhaps an object browser -- would
+provide a
+>> superior interface. Of course, there may be obstacles that I don't
+>> understand.
+
+Dirk Eddelbuettel answered:
+>That won't work as it is Windows-only. IIRC even Philippe now acknowledges
+>that this is suboptimal.
+
+Don't let me say what I did not said! I just said that the way I solved the
+problems of windows overlap is suboptimal. However, I agree that there are
+other (minor) problems in the current version of SciViews Insider (0.3.3),
+and there are also some bugs that occur irregularly and that could be traced
+down to some incompatibilities between the way R is build (with event loop,
+and so), and the way the GUI should work (event-driven application). This
+results in some problems with COM massively used in Insider. I think Thomas
+Baier had similar problems in its R-(D)COM server, but I think this is now
+solved in its latest version (?).
+
+>AFAICT the emerging consensus has been for quite some time to move to
+>wxWindows (now called wxWidgets). But someone needs to do the work...
+
+Although, I am 1000% favorable to a platform-independent solution. However,
+it is still a delicate task to make it on top of R. At first sight, it is
+not such a huge task, but when you start to actually implement it, you
+realize that there are a lot of problems you did not expected. Given that,
+there could be no "emerging consensus" for one or the other virtual
+solution... especially if nobody actually implement it!
+
+I think such kind of discussion should be best conducted in the
+corresponding "island" at UseR! However, why not to initiate it now already?
+
+OK. Since we speak about SciViews, here is what you should know:
+- Since last version, I got a lot of feedback (mostly my students), and I
+try to take also into account all remarks made by others (including you,
+Dirk).
+
+- So, in summary, the conclusions about SciViews Insider is that it is not
+and would never be easily transposable to another platform than Windows.
+Also, it is probably too complex for most users, and certainly for volunteer
+programmers that would like to participate in its development... and Visual
+Basic is definitely not the right language for that, because few people here
+master it.
+
+- Given these results, I decided to rewrite a GUI for R which save the best
+from SciViews Insider, but which moves towards expectations of most of you.
+It is still VB (because I reuse some part of the code of SciViews Insider),
+but a large part is moved into R code (in a SciViews R package), dynamic
+HTML and javascript, that is, platform-independent languages. The rest will
+be easier to implement in TclTk, wxWidgets, Java (there is the JGR project),
+GTK, or whatever.
+
+- Under Windows, the result is a ligthweight GUI *on top of R Console in SDI
+mode* (called SciViews R Console). It means it works hand in hand with Rgui,
+instead of replacing it completelly. This is, I think the only way if we
+want a GUI for Windows ready in a few months... Of course, a replacement of
+Rgui could be planned in the future, if there is both needs and volunteers
+to do the job. Personnally, I support Duncan Murdoch's plan to move Rgui
+features in an Rgui package.
+
+- It is possible to switch between plain Rgui and SciViews R Console *in the
+same session*, that is, no need to restart R to switch between these two
+interfaces.
+
+- Since it works hand in hand with Rgui, it is 100% compatible with it.
+
+- The most important aspects in the GUI is not just to offer a GUI... it is
+to offer new features that ease the use of the software. That is why we have
+now an object explorer, views (with nicely formatted tables and graphs), a
+reporting complement application (HTML format currently, but LaTeX and RTF
+should be supported in the future). All this takes time to develop. It is
+implemented in collaboration with Eric Lecoutre (author of the R2HTML
+package).
+
+- All this will be available very soon. However, here are some screenshots
+for the most impatient ones ;-)
+http://www.sciviews.org/software/rconsole.htm
+
+- I would really be happy if we all start to collaborate on common parts of
+the GUI (code that can be implemented in R code, HTML, ...) and then
+everybody is free to wrap his own favorite widgets, menus and toolbars on
+top of this core GUI code, and for his favorite platform. I believe it is
+possible but we have to think in a truly collaborative way,... and stop
+these endless and useless discussions on "I want XYwidgets!"... "naaa, I
+want YXgraphBetterLookingToolkit!"...
+
+Best,
+
+Philippe Grosjean
+
+From arcane at arcanemethods.com  Thu Apr 29 20:45:28 2004
+From: arcane at arcanemethods.com (Bob Cain)
+Date: Thu Apr 29 20:45:33 2004
+Subject: [R-gui] Editor in R and Windows focus problems
+In-Reply-To: <20040429144142.GE14335@wald.ucdavis.edu>
+References: <MABBLJDICACNFOLGIHJOEECJEGAA.phgrosjean@sciviews.org>	<20040429141510.YJBN14198.tomts16-srv.bellnexxia.net@JohnDesktop8300>	<20040429142013.GA10924@sonny.eddelbuettel.com>
+	<20040429144142.GE14335@wald.ucdavis.edu>
+Message-ID: <40914D48.6030209@arcanemethods.com>
+
+
+
+Duncan Temple Lang wrote:
+
+
+> The Mozilla framework is now emerging as something to consider.
+> The idea that wxWindows is the place to go may have been made 
+> quite some time ago.
+> BTW, we may have a way to greatly reduce the work to interface
+> to wxWindows via automating the bindings.
+> 
+
+Is there a connection between the Mozilla framework and
+wxWindows or are the two sentences connected only by proximity?
+
+Personally I would urge on any effort to provide full set of
+wxWindows bindings since, IMHO, it has the highest
+probability of becoming the cross platform standard.  The
+thought had occured to me that automating the bindings might
+be a possibility and I sincerely hope that avenue proves
+fruitful for you.
+
+
+Bob
+-- 
+
+"Things should be described as simply as possible, but no
+simpler."
+
+                                              A. Einstein
+

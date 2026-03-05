@@ -1,0 +1,117 @@
+From proebuck at mdanderson.org  Wed Feb 23 20:22:21 2011
+From: proebuck at mdanderson.org (Roebuck,Paul L)
+Date: Wed, 23 Feb 2011 13:22:21 -0600
+Subject: [R-gui] Good Tcl/Tk widget reference?
+In-Reply-To: <586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>
+Message-ID: <C98ABA8D.14DEF%proebuck@mdanderson.org>
+
+On 9/16/10 4:22 PM, "Hodgess, Erin" <HodgessE at uhd.edu> wrote:
+
+> Next, what is a good reference for Tcl/tk that would include the options
+> for widgets, please?
+
+<http://www.amazon.com/Effective-Tcl-Tk-Programming-Programs/dp/0201634740>
+"Effective Tcl/Tk Programming" (Harrison/McLennan)
+    Best Tk book available (GUI programming).
+
+<http://www.beedub.com/book/>
+"Practical Programming in Tcl and Tk" (Welch/Jones)
+    Everything. Good reference in general.
+
+
+Both are must-haves for doing any significant amount of Tcl/Tk work.
+I found John Ousterhout's book to be more dense and of less
+value than either listed above.
+
+
+<Sorry so late to the party...>
+
+
+From proebuck at mdanderson.org  Wed Feb 23 20:49:47 2011
+From: proebuck at mdanderson.org (Roebuck,Paul L)
+Date: Wed, 23 Feb 2011 13:49:47 -0600
+Subject: [R-gui] Tcl/Tk Binding % Substitutions.for Callbacks
+Message-ID: <C98AC0FB.14DF4%proebuck@mdanderson.org>
+
+<previously misfiled in r-devel...>
+
+How are % substitutions handled for callbacks in R?
+Is there an 'event' parameter that can be requested
+which would contain the rest of the information specific
+to the event type itself?
+
+How should we translate something like the following:
+
+Tcl> bind Frame <Enter> {%W config -bg red}
+Tcl> bind Frame <Leave> {%W config -bg white}
+
+such that the widget id (and other % substitutions) can be accessed
+in R callback? I'm trying to write callback handlers for dynamic
+bindtags.
+
+one   <- tkframe(width=30, height=30)
+two   <- tkframe(width=30, height=30)
+three <- tkframe(width=30, height=30)
+tkbind("Frame",
+       "<Enter>",
+       function(TBD} {
+           ## How do I determine widget id (%W) here?
+       })
+
+
+From adrian at waddell.ch  Wed Feb 23 21:00:53 2011
+From: adrian at waddell.ch (Adrian Waddell)
+Date: Wed, 23 Feb 2011 15:00:53 -0500
+Subject: [R-gui] Tcl/Tk Binding % Substitutions.for Callbacks
+In-Reply-To: <C98AC0FB.14DF4%proebuck@mdanderson.org>
+References: <C98AC0FB.14DF4%proebuck@mdanderson.org>
+Message-ID: <4D656775.7020803@waddell.ch>
+
+Paul:
+
+On 02/23/2011 02:49 PM, Roebuck,Paul L wrote:
+> <previously misfiled in r-devel...>
+> 
+> How are % substitutions handled for callbacks in R?
+> Is there an 'event' parameter that can be requested
+> which would contain the rest of the information specific
+> to the event type itself?
+> 
+> How should we translate something like the following:
+> 
+> Tcl> bind Frame <Enter> {%W config -bg red}
+> Tcl> bind Frame <Leave> {%W config -bg white}
+> 
+> such that the widget id (and other % substitutions) can be accessed
+> in R callback? I'm trying to write callback handlers for dynamic
+> bindtags.
+> 
+> one   <- tkframe(width=30, height=30)
+> two   <- tkframe(width=30, height=30)
+> three <- tkframe(width=30, height=30)
+> tkbind("Frame",
+>        "<Enter>",
+>        function(TBD} {
+>            ## How do I determine widget id (%W) here?
+>        })
+
+I think you can just use the letter without % as a function argument, try
+
+library(tcltk)
+tt <- tktoplevel()
+tkbind(tt,'<Enter>',function(W){
+  cat(paste('Toplevel',W,'\n'))
+})
+
+Greetings,
+
+Adrian
+
+
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+

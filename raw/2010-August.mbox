@@ -1,0 +1,258 @@
+From thomastschager at dnet.it  Mon Aug 23 15:40:11 2010
+From: thomastschager at dnet.it (Thomas Tschager)
+Date: Mon, 23 Aug 2010 15:40:11 +0200
+Subject: [R-gui] ttkentry background doesnt work
+Message-ID: <1282570811.4c727a3b8dd90@webmail.dnet.it>
+
+Hello,
+
+I'm trying to change the background color of a ttkentry-object. With
+tkentry-objects it works fine:
+
+  library(tcltk)
+  tt <- tktoplevel()
+  test1 <- tkentry(tt)
+  test2 <- ttkentry(tt)
+  tkgrid(test1,test2)
+  tkconfigure(test1, background="yellow") #working
+  tkconfigure(test2, background="yellow") #not working
+
+I used different styles and tried suggestions from other mailing lists
+(http://coding.derkeiler.com/Archive/Tcl/comp.lang.tcl/2006-11/msg00528.html),
+but nothing worked for me... (I'm using WinXP)
+
+Thanks,
+Thomas Tschager
+
+
+
+----------------------------------------------------
+This mail has been sent using Alpikom webmail system
+http://www.alpikom.it
+
+
+From jverzani at gmail.com  Tue Aug 24 16:59:50 2010
+From: jverzani at gmail.com (jverzani)
+Date: Tue, 24 Aug 2010 14:59:50 +0000 (UTC)
+Subject: [R-gui] ttkentry background doesnt work
+References: <1282570811.4c727a3b8dd90@webmail.dnet.it>
+Message-ID: <loom.20100824T165754-331@post.gmane.org>
+
+Thomas Tschager <thomastschager <at> dnet.it> writes:
+
+> 
+> Hello,
+> 
+> I'm trying to change the background color of a ttkentry-object. With
+> tkentry-objects it works fine:
+> 
+>   library(tcltk)
+>   tt <- tktoplevel()
+>   test1 <- tkentry(tt)
+>   test2 <- ttkentry(tt)
+>   tkgrid(test1,test2)
+>   tkconfigure(test1, background="yellow") #working
+>   tkconfigure(test2, background="yellow") #not working
+> 
+
+
+You can use styles. Here is an example:
+
+w <- tktoplevel()
+.Tcl(paste("ttk::style layout styled.entry {",
+           "  Entry.field -sticky nswe -border 0 -children {",
+           "    Entry.padding -sticky nswe -children {",
+           "      Entry.textarea -sticky nswe",
+           "      }",
+           "   }",
+           "}",
+           sep="\n"))
+tcl("ttk::style", "configure","styled.entry", background="#b2b2b2")
+
+e <- ttkentry(w,  style="styled.entry")
+
+tkpack(e)
+
+
+
+
+> I used different styles and tried suggestions from other mailing lists
+> (http://coding.derkeiler.com/Archive/Tcl/comp.lang.tcl/2006-11/msg00528.html),
+> but nothing worked for me... (I'm using WinXP)
+> 
+> Thanks,
+> Thomas Tschager
+> 
+> ----------------------------------------------------
+> This mail has been sent using Alpikom webmail system
+> http://www.alpikom.it
+>
+
+
+From pdalgd at gmail.com  Tue Aug 24 19:30:22 2010
+From: pdalgd at gmail.com (Peter Dalgaard)
+Date: Tue, 24 Aug 2010 19:30:22 +0200
+Subject: [R-gui] ttkentry background doesnt work
+In-Reply-To: <loom.20100824T165754-331@post.gmane.org>
+References: <1282570811.4c727a3b8dd90@webmail.dnet.it>
+	<loom.20100824T165754-331@post.gmane.org>
+Message-ID: <4C7401AE.6030002@gmail.com>
+
+On 08/24/2010 04:59 PM, jverzani wrote:
+
+w <- tktoplevel()
+.Tcl(paste("ttk::style layout styled.entry {",
+           "  Entry.field -sticky nswe -border 0 -children {",
+           "    Entry.padding -sticky nswe -children {",
+           "      Entry.textarea -sticky nswe",
+           "      }",
+           "   }",
+           "}",
+           sep="\n"))
+tcl("ttk::style", "configure","styled.entry", background="#b2b2b2")
+
+e <- ttkentry(w,  style="styled.entry")
+
+tkpack(e)
+
+----
+
+
+Thanks John,
+
+The whole thing indicates some rather glaring gaps in the interface.
+Pasting large stretches of Tcl code together like that _should_ be
+unnecessary, but for now, that's probably what you have to do.
+
+What is probably needed is coercion between R list-like structures and
+Tcl lists. With that in place, I'd conjecture that we could write
+something like
+
+
+ttkstyle.layout("mystyle",
+  list("Entry.field", sticky="nswe", border=0,
+       children=list("Entry.padding", sticky="nswe",
+           children=list("Entry.textarea", sticky="nswe))))
+
+or maybe
+
+ttkstyle.layout("mystyle", expression(
+ Entry.field(sticky="nswe", children=
+ Entry.padding(sticky="nswe", children=
+ Entry.textarea(sticky="nswe"))))
+
+...if you catch my drift. The exact design probably requires a bit more
+thought.
+
+-- 
+Peter Dalgaard
+Center for Statistics, Copenhagen Business School
+Phone: (+45)38153501
+Email: pd.mes at cbs.dk  Priv: PDalgd at gmail.com
+
+
+From ggrothendieck at gmail.com  Wed Aug 25 02:31:34 2010
+From: ggrothendieck at gmail.com (Gabor Grothendieck)
+Date: Tue, 24 Aug 2010 20:31:34 -0400
+Subject: [R-gui] ttkentry background doesnt work
+In-Reply-To: <4C7401AE.6030002@gmail.com>
+References: <1282570811.4c727a3b8dd90@webmail.dnet.it>
+	<loom.20100824T165754-331@post.gmane.org>
+	<4C7401AE.6030002@gmail.com>
+Message-ID: <AANLkTinFWu1-63=8tMsf527eADPfq0gZXLOn4DRC_d5k@mail.gmail.com>
+
+On Tue, Aug 24, 2010 at 1:30 PM, Peter Dalgaard <pdalgd at gmail.com> wrote:
+> On 08/24/2010 04:59 PM, jverzani wrote:
+>
+> w <- tktoplevel()
+> .Tcl(paste("ttk::style layout styled.entry {",
+> ? ? ? ? ? " ?Entry.field -sticky nswe -border 0 -children {",
+> ? ? ? ? ? " ? ?Entry.padding -sticky nswe -children {",
+> ? ? ? ? ? " ? ? ?Entry.textarea -sticky nswe",
+> ? ? ? ? ? " ? ? ?}",
+> ? ? ? ? ? " ? }",
+> ? ? ? ? ? "}",
+> ? ? ? ? ? sep="\n"))
+> tcl("ttk::style", "configure","styled.entry", background="#b2b2b2")
+>
+> e <- ttkentry(w, ?style="styled.entry")
+>
+> tkpack(e)
+>
+> The whole thing indicates some rather glaring gaps in the interface.
+> Pasting large stretches of Tcl code together like that _should_ be
+> unnecessary, but for now, that's probably what you have to do.
+
+You can do this which does not use paste:
+
+w <- tktoplevel()
+.Tcl("ttk::style layout styled.entry {
+   Entry.field -sticky nswe -border 0 -children {
+      Entry.padding -sticky nswe -children {
+         Entry.textarea -sticky nswe
+      }
+    }
+  }",
+ sep="\n")
+tcl("ttk::style", "configure","styled.entry", background="#b2b2b2")
+
+e <- ttkentry(w,  style="styled.entry")
+
+tkpack(e)
+
+
+From thomastschager at dnet.it  Thu Aug 26 16:33:28 2010
+From: thomastschager at dnet.it (Thomas Tschager)
+Date: Thu, 26 Aug 2010 16:33:28 +0200
+Subject: [R-gui] ttkentry background doesnt work
+Message-ID: <1282833208.4c767b38b7bfb@webmail.dnet.it>
+
+Thanks for your advices!
+Thomas Tschager
+
+On Tue, Aug 24, 2010 at 1:30 PM, Peter Dalgaard <pdalgd at gmail.com> wrote:
+> On 08/24/2010 04:59 PM, jverzani wrote:
+>
+> w <- tktoplevel()
+> .Tcl(paste("ttk::style layout styled.entry {",
+>           "  Entry.field -sticky nswe -border 0 -children {",
+>           "    Entry.padding -sticky nswe -children {",
+>           "      Entry.textarea -sticky nswe",
+>           "      }",
+>           "   }",
+>           "}",
+>           sep="\n"))
+> tcl("ttk::style", "configure","styled.entry", background="#b2b2b2")
+>
+> e <- ttkentry(w,  style="styled.entry")
+>
+> tkpack(e)
+>
+> The whole thing indicates some rather glaring gaps in the interface.
+> Pasting large stretches of Tcl code together like that _should_ be
+> unnecessary, but for now, that's probably what you have to do.
+
+You can do this which does not use paste:
+
+w <- tktoplevel()
+.Tcl("ttk::style layout styled.entry {
+   Entry.field -sticky nswe -border 0 -children {
+      Entry.padding -sticky nswe -children {
+         Entry.textarea -sticky nswe
+      }
+    }
+  }",
+ sep="\n")
+tcl("ttk::style", "configure","styled.entry", background="#b2b2b2")
+
+e <- ttkentry(w,  style="styled.entry")
+
+tkpack(e)
+
+
+
+----------------------------------------------------
+This mail has been sent using Alpikom webmail system
+http://www.alpikom.it
+
+

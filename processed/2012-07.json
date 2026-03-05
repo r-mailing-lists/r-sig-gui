@@ -1,0 +1,102 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2012-07",
+  "messages": [
+    {
+      "id": "msg-877f1c680669",
+      "message_id": "<CAAuWHB9-T=Y1B_aTaFa4QeX9xvWViDN0qbete6VgZ8cSoWucSw@mail.gmail.com>",
+      "from_name": "Naveen Verma",
+      "from_email_hash": "6893bd78d570f6b592e2ed6d4b47d7b720979cc917a76ee4aa43b61e575d7fcf",
+      "date": "2012-07-04T20:25:24+05:30",
+      "subject": "[R-gui] package to open as GUI in R",
+      "subject_clean": "[R-gui] package to open as GUI in R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120704/f2014c9c/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120704/f2014c9c/attachment.pl>",
+      "thread_id": "thread-877f1c680669",
+      "thread_depth": 0,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-d08301777531",
+      "message_id": "<9223664F-F75A-4AC4-ABA0-1623436848EF@mrc-bsu.cam.ac.uk>",
+      "from_name": "Yang Xia",
+      "from_email_hash": "102b1e663ff0ff202df908f7601baddcbaabda91fdce3648a6b57826b6da67b0",
+      "date": "2012-07-27T13:41:50+01:00",
+      "subject": "[R-gui] block selection (Mac)",
+      "subject_clean": "[R-gui] block selection (Mac)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear list members,\n\nA really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output from R by press & hold the option key. This feature stopped working after version 2.14.1. Would be very grateful if you could bring it back in the coming updates. \n\nMany thanks,\nYang",
+      "body_snippet": "Dear list members,\n\nA really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output from R by press & hold the option key. This feature s",
+      "thread_id": "thread-d08301777531",
+      "thread_depth": 0,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-0cc489c12302",
+      "message_id": "<0869AD98-6DAA-42A0-AF89-7D533D43BD06@gmail.com>",
+      "from_name": "peter dalgaard",
+      "from_email_hash": "d2573f0c0a474184a9d96c815fc6bf37ff7c6392082069d810139c562d5a6f71",
+      "date": "2012-07-31T09:25:55+02:00",
+      "subject": "[R-gui] block selection (Mac)",
+      "subject_clean": "[R-gui] block selection (Mac)",
+      "in_reply_to": "<9223664F-F75A-4AC4-ABA0-1623436848EF@mrc-bsu.cam.ac.uk>",
+      "references": [
+        "<9223664F-F75A-4AC4-ABA0-1623436848EF@mrc-bsu.cam.ac.uk>"
+      ],
+      "body_plain": "On Jul 27, 2012, at 14:41 , Yang Xia wrote:\n\n> Dear list members,\n> \n> A really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output from R by press & hold the option key. This feature stopped working after version 2.14.1. Would be very grateful if you could bring it back in the coming updates. \n> \n\nI think you probably want R-sig-mac for this. In which way is \"block selection\" different from the shift-alt-arrow selection mechanism (which does work for me in 2.15.1)?\n\n-pd\n\n> Many thanks,\n> Yang\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n-- \nPeter Dalgaard, Professor,\nCenter for Statistics, Copenhagen Business School\nSolbjerg Plads 3, 2000 Frederiksberg, Denmark\nPhone: (+45)38153501\nEmail: pd.mes at cbs.dk  Priv: PDalgd at gmail.com",
+      "body_snippet": "On Jul 27, 2012, at 14:41 , Yang Xia wrote:\n\n> Dear list members,\n> \n> A really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output fr",
+      "thread_id": "thread-d08301777531",
+      "thread_depth": 1,
+      "month": "2012-07"
+    },
+    {
+      "id": "msg-7817a4fbd5d8",
+      "message_id": "<C61E7DB4-62A8-4B67-B2FA-07F6DC1AB49B@eva.mpg.de>",
+      "from_name": "Hans-Jörg Bibiko",
+      "from_email_hash": "e932588876d2887a42e1fb7cda638e45e201890508bc93b99a0d475d23d146e0",
+      "date": "2012-07-31T14:39:28+02:00",
+      "subject": "[R-gui] block selection (Mac)",
+      "subject_clean": "[R-gui] block selection (Mac)",
+      "in_reply_to": "<0869AD98-6DAA-42A0-AF89-7D533D43BD06@gmail.com>",
+      "references": [
+        "<9223664F-F75A-4AC4-ABA0-1623436848EF@mrc-bsu.cam.ac.uk>",
+        "<0869AD98-6DAA-42A0-AF89-7D533D43BD06@gmail.com>"
+      ],
+      "body_plain": "On Jul 27, 2012, at 14:41 , Yang Xia wrote:\n\n> A really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output from R by press & hold the option key. This feature stopped working after version 2.14.1. Would be very grateful if you could bring it back in the coming updates. \n\nThis bug was fixed and will be part of the next release.\n\nCheers,\n--Hans",
+      "body_snippet": "On Jul 27, 2012, at 14:41 , Yang Xia wrote:\n\n> A really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output from R by press & hold the",
+      "thread_id": "thread-d08301777531",
+      "thread_depth": 2,
+      "month": "2012-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-877f1c680669",
+      "subject": "[R-gui] package to open as GUI in R",
+      "message_count": 1,
+      "participants": [
+        "Naveen Verma"
+      ],
+      "started": "2012-07-04T20:25:24+05:30",
+      "last_reply": "2012-07-04T20:25:24+05:30",
+      "root_message_id": "msg-877f1c680669"
+    },
+    {
+      "id": "thread-d08301777531",
+      "subject": "[R-gui] block selection (Mac)",
+      "message_count": 3,
+      "participants": [
+        "Hans-Jörg Bibiko",
+        "Yang Xia",
+        "peter dalgaard"
+      ],
+      "started": "2012-07-27T13:41:50+01:00",
+      "last_reply": "2012-07-31T14:39:28+02:00",
+      "root_message_id": "msg-d08301777531"
+    }
+  ]
+}

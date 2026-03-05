@@ -1,0 +1,108 @@
+From ncrookston.fs at gmail.com  Fri Feb 15 01:14:26 2013
+From: ncrookston.fs at gmail.com (Nicholas Crookston)
+Date: Thu, 14 Feb 2013 16:14:26 -0800
+Subject: [R-gui] Building a R-application using gWidgets
+Message-ID: <CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/a366b519/attachment.pl>
+
+From lawrence.michael at gene.com  Fri Feb 15 01:22:01 2013
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Thu, 14 Feb 2013 16:22:01 -0800
+Subject: [R-gui] Building a R-application using gWidgets
+In-Reply-To: <CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>
+References: <CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>
+Message-ID: <CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/35672bcc/attachment.pl>
+
+From ncrookston.fs at gmail.com  Fri Feb 15 01:38:03 2013
+From: ncrookston.fs at gmail.com (Nicholas Crookston)
+Date: Thu, 14 Feb 2013 16:38:03 -0800
+Subject: [R-gui] Building a R-application using gWidgets
+In-Reply-To: <CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>
+References: <CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>
+	<CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>
+Message-ID: <CAAk+MXxd=_WX3XvZqhUwMiVqAmSm4vzn+JCr3LCgFEUMgk5V9g@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/ce8c981d/attachment.pl>
+
+From lawrence.michael at gene.com  Fri Feb 15 01:44:55 2013
+From: lawrence.michael at gene.com (Michael Lawrence)
+Date: Thu, 14 Feb 2013 16:44:55 -0800
+Subject: [R-gui] Building a R-application using gWidgets
+In-Reply-To: <CAAk+MXxd=_WX3XvZqhUwMiVqAmSm4vzn+JCr3LCgFEUMgk5V9g@mail.gmail.com>
+References: <CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>
+	<CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>
+	<CAAk+MXxd=_WX3XvZqhUwMiVqAmSm4vzn+JCr3LCgFEUMgk5V9g@mail.gmail.com>
+Message-ID: <CAOQ5Nyf=q1zfRSKrdYju2+RS8JsX+XSvo+ePmFT5Axu+DMSsYw@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/36750f32/attachment.pl>
+
+From ncrookston.fs at gmail.com  Fri Feb 22 01:37:19 2013
+From: ncrookston.fs at gmail.com (Nicholas Crookston)
+Date: Thu, 21 Feb 2013 16:37:19 -0800
+Subject: [R-gui] Changing default fonts in gwidgets
+Message-ID: <CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130221/057138a0/attachment.pl>
+
+From ncrookston.fs at gmail.com  Fri Feb 22 20:37:56 2013
+From: ncrookston.fs at gmail.com (Nicholas Crookston)
+Date: Fri, 22 Feb 2013 11:37:56 -0800
+Subject: [R-gui] Changing default fonts in gwidgets
+In-Reply-To: <CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>
+References: <CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>
+Message-ID: <CAAk+MXwSxtk8docSobaV4u3E4oZCB_LFsyWUuSH7XY=A=Y7+Ow@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130222/ff7a7a82/attachment.pl>
+
+From jverzani at gmail.com  Mon Feb 25 02:58:05 2013
+From: jverzani at gmail.com (jverzani)
+Date: Mon, 25 Feb 2013 01:58:05 +0000
+Subject: [R-gui] Changing default fonts in gwidgets
+References: <CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>
+	<CAAk+MXwSxtk8docSobaV4u3E4oZCB_LFsyWUuSH7XY=A=Y7+Ow@mail.gmail.com>
+Message-ID: <loom.20130225T025608-899@post.gmane.org>
+
+Nicholas Crookston <ncrookston.fs <at> gmail.com> writes:
+
+> 
+> A bit more information:
+> 
+> Lets add a text or label (here is a label:
+> 
+> lb <- glabel(container=gw,text="Label")
+> 
+> This works fine on a label or text object (and I knew before I posted my
+> question):
+> 
+> font(lb) <- c(family="times",size=24,weight="bold",style="italic")
+> 
+
+
+Try using a list instead of "c", otherwise everything is coerced to character:
+
+font(btn) <- list(family="times",size=24,weight="bold",style="italic")
+
+
+
+> When the font() function is called on the "button" object, it has no
+> effect. In addition, setting additional options as in:
+> bt <- gbutton (container=gw,text="Button", fg="red")
+
+Nope, ... is passed to the parent container, not a font call,
+
+

@@ -1,0 +1,80 @@
+From naveensimla at gmail.com  Wed Jul  4 16:55:24 2012
+From: naveensimla at gmail.com (Naveen Verma)
+Date: Wed, 4 Jul 2012 20:25:24 +0530
+Subject: [R-gui] package to open as GUI in R
+Message-ID: <CAAuWHB9-T=Y1B_aTaFa4QeX9xvWViDN0qbete6VgZ8cSoWucSw@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120704/f2014c9c/attachment.pl>
+
+From yang.xia at mrc-bsu.cam.ac.uk  Fri Jul 27 14:41:50 2012
+From: yang.xia at mrc-bsu.cam.ac.uk (Yang Xia)
+Date: Fri, 27 Jul 2012 13:41:50 +0100
+Subject: [R-gui] block selection (Mac)
+Message-ID: <9223664F-F75A-4AC4-ABA0-1623436848EF@mrc-bsu.cam.ac.uk>
+
+Dear list members,
+
+A really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output from R by press & hold the option key. This feature stopped working after version 2.14.1. Would be very grateful if you could bring it back in the coming updates. 
+
+Many thanks,
+Yang
+
+
+From pdalgd at gmail.com  Tue Jul 31 09:25:55 2012
+From: pdalgd at gmail.com (peter dalgaard)
+Date: Tue, 31 Jul 2012 09:25:55 +0200
+Subject: [R-gui] block selection (Mac)
+In-Reply-To: <9223664F-F75A-4AC4-ABA0-1623436848EF@mrc-bsu.cam.ac.uk>
+References: <9223664F-F75A-4AC4-ABA0-1623436848EF@mrc-bsu.cam.ac.uk>
+Message-ID: <0869AD98-6DAA-42A0-AF89-7D533D43BD06@gmail.com>
+
+
+On Jul 27, 2012, at 14:41 , Yang Xia wrote:
+
+> Dear list members,
+> 
+> A really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output from R by press & hold the option key. This feature stopped working after version 2.14.1. Would be very grateful if you could bring it back in the coming updates. 
+> 
+
+I think you probably want R-sig-mac for this. In which way is "block selection" different from the shift-alt-arrow selection mechanism (which does work for me in 2.15.1)?
+
+-pd
+
+> Many thanks,
+> Yang
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at r-project.org
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Peter Dalgaard, Professor,
+Center for Statistics, Copenhagen Business School
+Solbjerg Plads 3, 2000 Frederiksberg, Denmark
+Phone: (+45)38153501
+Email: pd.mes at cbs.dk  Priv: PDalgd at gmail.com
+
+
+From bibiko at eva.mpg.de  Tue Jul 31 14:39:28 2012
+From: bibiko at eva.mpg.de (=?iso-8859-1?Q?Hans-J=F6rg_Bibiko?=)
+Date: Tue, 31 Jul 2012 14:39:28 +0200
+Subject: [R-gui] block selection (Mac)
+In-Reply-To: <0869AD98-6DAA-42A0-AF89-7D533D43BD06@gmail.com>
+References: <9223664F-F75A-4AC4-ABA0-1623436848EF@mrc-bsu.cam.ac.uk>
+	<0869AD98-6DAA-42A0-AF89-7D533D43BD06@gmail.com>
+Message-ID: <C61E7DB4-62A8-4B67-B2FA-07F6DC1AB49B@eva.mpg.de>
+
+
+On Jul 27, 2012, at 14:41 , Yang Xia wrote:
+
+> A really nice feature of R GUI (Mac) that I'm missing a lot is block selection which allows you to select any blocks of output from R by press & hold the option key. This feature stopped working after version 2.14.1. Would be very grateful if you could bring it back in the coming updates. 
+
+This bug was fixed and will be part of the next release.
+
+Cheers,
+--Hans
+
+

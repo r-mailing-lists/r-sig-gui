@@ -1,0 +1,1799 @@
+From Yang.Feng at ec.gc.ca  Tue Jul  6 15:13:44 2004
+From: Yang.Feng at ec.gc.ca (Feng,Yang [Ontario])
+Date: Tue Jul  6 15:14:01 2004
+Subject: [R-gui] A GUI question
+Message-ID: <9B09D75DF5B3494BA06E6FE478CE9CC17A3836@mgtserver3.ontario.int.ec.gc.ca>
+
+Hi, guys,
+ 
+I am wondering if I can design a window which contains drop down menu,
+error message and output window(text or plot) together.
+ 
+I read the user menu for TCL/TK, seems it can only provide separate
+window for different purposes.
+ 
+Any suggestion will be very helpful.
+ 
+Thanks, all
+ 
+Newbie
+ 
+
+	[[alternative HTML version deleted]]
+
+From wettenhall at wehi.edu.au  Tue Jul  6 16:29:46 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Tue Jul  6 16:29:59 2004
+Subject: [R-gui] A GUI question
+In-Reply-To: <9B09D75DF5B3494BA06E6FE478CE9CC17A3836@mgtserver3.ontario.int.ec.gc.ca>
+References: <9B09D75DF5B3494BA06E6FE478CE9CC17A3836@mgtserver3.ontario.int.ec.gc.ca>
+Message-ID: <Pine.LNX.4.58.0407062339280.19989@unix28.alpha.wehi.edu.au>
+
+Hi,
+
+On Tue, 6 Jul 2004, Feng,Yang [Ontario] wrote:
+> I am wondering if I can design a window which contains drop down menu,
+> error message and output window(text or plot) together.
+
+Yes!  
+
+Firstly, some menu discussion.  I'm not entirely clear 
+what you mean by a "drop down menu".  I assume you mean 
+something like a regular pull-down menu ("File", "Edit", "Help" 
+etc.), rather than a drop-down combo-box (e.g. for selecting a 
+previously visited URL in a web browser).
+
+There are some basic menu examples 
+at: 
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/menus.html
+
+Also, the demos which come with ActiveTcl provide nice examples 
+of various types of menus and menu-buttons:   
+http://www.ActiveState.com/Products/ActiveTcl/
+See: 
+demos/Tk/menu.tcl
+demos/Tk/menubu.tcl
+
+Whether you should actually install ActiveTcl (rather than just 
+unzipping the tarball/zip-file and looking at the demos) 
+depends on your operating system.  For Windows, ActiveTcl is 
+the easiest Tcl/Tk distribution to install, but most Linux 
+systems come with Tcl/Tk 8.3.x, so installing ActiveTcl 8.4.x 
+can lead to conflicts.  But there's no harm in downloading 
+it, unzipping it and looking at the demos.  (I won't get 
+into MacOS X issues unless you reveal that to be your OS.)
+
+> I am wondering if I can design a window which contains drop down menu,
+> error message and output window(text or plot) together.
+
+A good example of combining input and output on the same window 
+is the example which comes with tkrplot (from CRAN):
+library(tkrplot)
+?tkrplot
+# Paste the example into your R session.
+
+There is a slider (input) and a graph (output) on the same 
+window.
+
+> I am wondering if I can design a window which contains drop down menu,
+> error message and output window(text or plot) together.
+
+Having an error message on the same window is a bit unusual.  
+Normally an error message would appear in a message box.  
+If you want, you can have a text label on your window, which 
+can be modified dynamically to indicate whether an error has 
+occurred.  See:
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/textlabels.html
+
+Here are some screenshots of my R-Tcl/Tk applications:
+http://bioinf.wehi.edu.au/limmaGUI/about.html
+http://bioinf.wehi.edu.au/affylmGUI/about.html
+
+(These use the Tcl/Tk extensions BWidget and Tktable.)
+
+> I read the user menu for TCL/TK, seems it can only provide separate
+> window for different purposes.
+
+"user menu" ? I'm not sure what you are referring to here.  I 
+think your assumption about separate windows being required for 
+separate purposes is incorrect.  But of course, it takes a bit 
+of work to code up a functioning Tcl/Tk window with lots of 
+"different purposes".
+
+Hope this helps,
+James
+
+From Yang.Feng at ec.gc.ca  Tue Jul  6 19:53:13 2004
+From: Yang.Feng at ec.gc.ca (Feng,Yang [Ontario])
+Date: Tue Jul  6 19:53:21 2004
+Subject: [R-gui] A GUI question
+Message-ID: <9B09D75DF5B3494BA06E6FE478CE9CC17A3837@mgtserver3.ontario.int.ec.gc.ca>
+
+Thanks so much, James,
+
+But one thing I'd better make it clearer.
+
+I want to design an user interface, of course, base on GUI tools.
+Ideally, it's a frame which contains top menu bar in the top-left area;
+output window in the top-right area; and text message (task running
+message, error message, or whatever other message) at the whole bottom
+area.
+
+>From Tcl/Tk help/samples, it's possible to make it separately, I am
+going to read those ActiveTcl doc, is there anyway to integrate those
+different Tcl/Tk functions within one frame? I bet it may need some
+other tools, such as ActiveTcl.
+
+Thank you again, James!
+
+Yang
+
+From jfox at mcmaster.ca  Tue Jul  6 22:18:11 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue Jul  6 23:30:36 2004
+Subject: [R-gui] A GUI question
+In-Reply-To: <9B09D75DF5B3494BA06E6FE478CE9CC17A3837@mgtserver3.ontario.int.ec.gc.ca>
+Message-ID: <web-52295092@cgpsrv2.cis.mcmaster.ca>
+
+Dear Yang,
+
+You might take a look at the Rcmdr package with implements an interfact
+similar to what you describe (if I understand you right) using the
+tcltk package.
+
+I hope this helps,
+ John
+
+On Tue, 6 Jul 2004 13:53:13 -0400
+ "Feng,Yang [Ontario]" <Yang.Feng@ec.gc.ca> wrote:
+> Thanks so much, James,
+> 
+> But one thing I'd better make it clearer.
+> 
+> I want to design an user interface, of course, base on GUI tools.
+> Ideally, it's a frame which contains top menu bar in the top-left
+> area;
+> output window in the top-right area; and text message (task running
+> message, error message, or whatever other message) at the whole
+> bottom
+> area.
+> 
+> >From Tcl/Tk help/samples, it's possible to make it separately, I am
+> going to read those ActiveTcl doc, is there anyway to integrate those
+> different Tcl/Tk functions within one frame? I bet it may need some
+> other tools, such as ActiveTcl.
+> 
+> Thank you again, James!
+> 
+> Yang
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+--------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada
+http://socserv.mcmaster.ca/jfox/
+
+From wettenhall at wehi.edu.au  Wed Jul  7 02:33:37 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jul  7 02:33:49 2004
+Subject: [R-gui] A GUI question
+In-Reply-To: <9B09D75DF5B3494BA06E6FE478CE9CC17A3837@mgtserver3.ontario.int.ec.gc.ca>
+Message-ID: <Pine.LNX.4.44.0407071026310.24400-100000@unix24.alpha.wehi.edu.au>
+
+Hi,
+
+On Tue, 6 Jul 2004, Feng,Yang [Ontario] wrote:
+
+> I want to design an user interface, of course, base on GUI tools.
+> Ideally, it's a frame which contains top menu bar in the top-left area;
+> output window in the top-right area; and text message (task running
+> message, error message, or whatever other message) at the whole bottom
+> area.
+
+This all sounds possible in Tcl/Tk.  ActiveTcl is not required 
+for anything.  It is just a convenient way to install Tcl/Tk and 
+the demos, particularly on Windows (but read the license 
+agreement carefully if you want to redistribute it!).  I 
+certainly don't think you will run into any fundamental Tcl/Tk 
+problems in trying to integrate different widgets within one 
+frame.  But you might want to read Luke Tierney's 
+"Threading and GUI Issues":
+http://www.stat.uiowa.edu/~luke/R/thrgui/thrgui.pdf
+especially if you are hoping to have different parts of 
+your frame updating simultaneously.
+
+Hope this helps,
+James
+
+From wettenhall at wehi.edu.au  Thu Jul  8 15:10:05 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Jul  8 15:10:12 2004
+Subject: [R-gui] New Mac X11 Tcl/Tk (for R) installation method
+In-Reply-To: <Pine.GSO.4.58.0406281856290.5611@unix33.alpha.wehi.edu.au>
+References: <Pine.LNX.4.44.0406240246120.17050-100000@unix24.alpha.wehi.edu.au>
+	<Pine.GSO.4.58.0406281856290.5611@unix33.alpha.wehi.edu.au>
+Message-ID: <Pine.GSO.4.58.0407082247390.28517@unix33.alpha.wehi.edu.au>
+
+Hi,
+
+After a bit of discussion on the R-SIG-MAC mailing list, Stefano
+Iacus has kindly provided a new method of installing X11 Tcl/Tk
+for Mac OS X from a binary installer (so you don't need the
+Apple Developer Tools - C compilers etc.)  Not requiring the
+developer tools is obviously nice for distributing R-Tcl/Tk
+GUIs to Mac "users", (rather than "developers").
+
+See:
+http://www.economia.unimi.it/R/
+
+I think it installs X11 Tcl/Tk in /usr/local/, just as though
+you had installed it from source (using the developer tools)
+with the default configure prefix.  But I can't actually try
+this out, because it requires administrator privileges.
+
+For those of you who don't know the significance of this, the
+native Tcl/Tk for Mac OS X is "Aqua Tcl/Tk", but R is moving
+towards Aqua Tcl/Tk (from the "Unix" X11 Tcl/Tk) only gradually.
+As I understand it, the standard R 1.9.1 for Mac OS X from CRAN
+still expects X11 Tcl/Tk to be installed for library(tcltk) and
+you certainly need X11 Tcl/Tk for tkrplot.  As far as I can
+tell, before Stefano recently added this method of installing
+X11 Tcl/Tk from binaries, R-Tcl/Tk "users" were expected to
+install Tcl/Tk from source into /usr/local/, i.e. X11 R-Tcl/Tk
+on Mac OS X has been aimed more at developers than users, while
+it is still in the transition from X11 to Aqua.
+
+I asked the R-Mac experts about the possiblity of including
+Tcl/Tk binaries in $R_HOME/Tcl/ like on Windows, but that
+solution isn't very nice because Mac OS X already has Tcl/Tk
+(Aqua) installed automatically (in /Library/Frameworks/),
+whereas there's no guarantee that a Windows user has Tcl/Tk
+installed before they install R.
+
+I don't know of any work being done to try to write an Aqua
+version of tkrplot, so I'm quite happy to stick with X11
+Tcl/Tk on Mac OS X for the moment, as long as my users are able
+to install it.  Obviously another nice thing about X11 is that
+there is plenty of Unix X11 experience in the R community.  But
+I'll be quite happy to move toward the more native Aqua Tcl/Tk
+in the future.
+
+Regards,
+James
+
+From pliu3 at unity.ncsu.edu  Tue Jul 13 20:02:33 2004
+From: pliu3 at unity.ncsu.edu (Peng Liu)
+Date: Tue Jul 13 20:02:37 2004
+Subject: [R-gui] tcltk MDI
+Message-ID: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+
+Dear R tcltk Designers,
+
+I am wondering whether there is a MDI (Multiple Document Interface)
+example of using r-tcltk on Windows platform. I just begin to use
+r-tcl/tk. I feel that MDI would be more familiar to Windows users.
+It would be great to begin with a MDI example and work out a R-GUI similar
+to S+ or JMP.
+
+Regards,
+Peng
+
+From jfox at mcmaster.ca  Tue Jul 13 20:09:20 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue Jul 13 20:09:26 2004
+Subject: [R-gui] tcltk MDI
+In-Reply-To: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+Message-ID: <20040713180922.XONM9492.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear Peng,
+
+There is a problem with Tk windows staying on top of the MDI. For a GUI
+based on the tcltk package, you might want to take a look at the Rcmdr
+package.
+
+Regards,
+ John 
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of Peng Liu
+> Sent: Tuesday, July 13, 2004 1:03 PM
+> To: r-sig-gui@stat.math.ethz.ch
+> Subject: [R-gui] tcltk MDI
+> 
+> Dear R tcltk Designers,
+> 
+> I am wondering whether there is a MDI (Multiple Document 
+> Interface) example of using r-tcltk on Windows platform. I 
+> just begin to use r-tcl/tk. I feel that MDI would be more 
+> familiar to Windows users.
+> It would be great to begin with a MDI example and work out a 
+> R-GUI similar to S+ or JMP.
+>
+
+From pliu3 at unity.ncsu.edu  Tue Jul 13 22:31:06 2004
+From: pliu3 at unity.ncsu.edu (Peng Liu)
+Date: Tue Jul 13 22:31:15 2004
+Subject: [R-gui] tcltk MDI
+In-Reply-To: <20040713180922.XONM9492.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+References: <20040713180922.XONM9492.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+Message-ID: <Pine.GSO.4.58.0407131529400.12662@uni03du.unity.ncsu.edu>
+
+Dear John,
+
+Your Rcmdr gives me a good framework of R GUI. Those over 10 libraries
+on which Rcmdr depends represent a good packing of existing R functions.
+
+I am sorry that I did not clarify what MDI I mean. I did not expect to
+open an Tcltk sub-window within current R MDI GUI. Probably, that needs to
+recompile GraphApp. What I hope to have is, for example, Rcmdr itself can
+be a MDI environment.
+
+Since I am absolutely a newbie to Tcl, I am not available to figure it out
+now. So I tried to find some existing example to start with. The ActiveTcl
+does not have such an example. But I found one named mkWidgets, written by
+Michael Kraus. You may find the sourceforge page at:
+http://mkextensions.sourceforge.net/
+Unfortunately, I have no idea about how to use that one through r-tcltk.
+
+I just began to have interest on R GUI several days ago. After these days,
+I choose to begin with R-Tcl/Tk. Because it might the most rapid way to
+turn R into something like S+ or JMP. Moreover,
+1) Programming based on GraphApp seems to not portable.
+2) Using wxWindows through Python does not seem efficient to me. Anyway, I
+   did not run any benchmarking. And wrapping wxWidget via Connect method
+   needs solid C++ experience to write a S language parser.
+3) I was not available to compile RGTk on Windows.
+Therefore, currently, in order to rapidly make R have an S+ or JMP like
+GUI, R-Tcl/Tk is the best choice. However, current R-Tcl/Tk examples given
+by Peter and James are all in dialog-window-style. Therefore, I am looking
+for some widgets like mkWidgets, and wish to know how to use it through
+r-tcl/tk.
+
+Cheers,
+Peng
+
+On Tue, 13 Jul 2004, John Fox wrote:
+
+> Dear Peng,
+>
+> There is a problem with Tk windows staying on top of the MDI. For a GUI
+> based on the tcltk package, you might want to take a look at the Rcmdr
+> package.
+>
+> Regards,
+>  John
+>
+> > -----Original Message-----
+> > From: r-sig-gui-bounces@stat.math.ethz.ch
+> > [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of Peng Liu
+> > Sent: Tuesday, July 13, 2004 1:03 PM
+> > To: r-sig-gui@stat.math.ethz.ch
+> > Subject: [R-gui] tcltk MDI
+> >
+> > Dear R tcltk Designers,
+> >
+> > I am wondering whether there is a MDI (Multiple Document
+> > Interface) example of using r-tcltk on Windows platform. I
+> > just begin to use r-tcl/tk. I feel that MDI would be more
+> > familiar to Windows users.
+> > It would be great to begin with a MDI example and work out a
+> > R-GUI similar to S+ or JMP.
+> >
+>
+>
+
+From jfox at mcmaster.ca  Wed Jul 14 00:08:00 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Wed Jul 14 00:08:08 2004
+Subject: [R-gui] tcltk MDI
+In-Reply-To: <Pine.GSO.4.58.0407131529400.12662@uni03du.unity.ncsu.edu>
+Message-ID: <20040713220802.KEL9492.tomts16-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear Peng Liu,
+
+It's true that the standard widget set for Tcl/Tk is limited. I
+intentionally restricted myself to these widgets since they are all that's
+available with the standard installation of R under Windows. To get a
+broader set of widgets, you can install ActiveTcl for Windows.
+
+With respect to making an MDI application using Tcl/Tk, if that's possible,
+I don't know how to do it.
+
+Regards,
+ John
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of Peng Liu
+> Sent: Tuesday, July 13, 2004 3:31 PM
+> To: r-sig-gui@stat.math.ethz.ch
+> Subject: RE: [R-gui] tcltk MDI
+> 
+> Dear John,
+> 
+> Your Rcmdr gives me a good framework of R GUI. Those over 10 
+> libraries on which Rcmdr depends represent a good packing of 
+> existing R functions.
+> 
+> I am sorry that I did not clarify what MDI I mean. I did not 
+> expect to open an Tcltk sub-window within current R MDI GUI. 
+> Probably, that needs to recompile GraphApp. What I hope to 
+> have is, for example, Rcmdr itself can be a MDI environment.
+> 
+> Since I am absolutely a newbie to Tcl, I am not available to 
+> figure it out now. So I tried to find some existing example 
+> to start with. The ActiveTcl does not have such an example. 
+> But I found one named mkWidgets, written by Michael Kraus. 
+> You may find the sourceforge page at:
+> http://mkextensions.sourceforge.net/
+> Unfortunately, I have no idea about how to use that one 
+> through r-tcltk.
+> 
+> I just began to have interest on R GUI several days ago. 
+> After these days, I choose to begin with R-Tcl/Tk. Because it 
+> might the most rapid way to turn R into something like S+ or 
+> JMP. Moreover,
+> 1) Programming based on GraphApp seems to not portable.
+> 2) Using wxWindows through Python does not seem efficient to 
+> me. Anyway, I
+>    did not run any benchmarking. And wrapping wxWidget via 
+> Connect method
+>    needs solid C++ experience to write a S language parser.
+> 3) I was not available to compile RGTk on Windows.
+> Therefore, currently, in order to rapidly make R have an S+ 
+> or JMP like GUI, R-Tcl/Tk is the best choice. However, 
+> current R-Tcl/Tk examples given by Peter and James are all in 
+> dialog-window-style. Therefore, I am looking for some widgets 
+> like mkWidgets, and wish to know how to use it through r-tcl/tk.
+> 
+> Cheers,
+> Peng
+> 
+> On Tue, 13 Jul 2004, John Fox wrote:
+> 
+> > Dear Peng,
+> >
+> > There is a problem with Tk windows staying on top of the MDI. For a 
+> > GUI based on the tcltk package, you might want to take a 
+> look at the 
+> > Rcmdr package.
+> >
+> > Regards,
+> >  John
+> >
+> > > -----Original Message-----
+> > > From: r-sig-gui-bounces@stat.math.ethz.ch
+> > > [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of Peng Liu
+> > > Sent: Tuesday, July 13, 2004 1:03 PM
+> > > To: r-sig-gui@stat.math.ethz.ch
+> > > Subject: [R-gui] tcltk MDI
+> > >
+> > > Dear R tcltk Designers,
+> > >
+> > > I am wondering whether there is a MDI (Multiple Document
+> > > Interface) example of using r-tcltk on Windows platform. I just 
+> > > begin to use r-tcl/tk. I feel that MDI would be more familiar to 
+> > > Windows users.
+> > > It would be great to begin with a MDI example and work 
+> out a R-GUI 
+> > > similar to S+ or JMP.
+> > >
+> >
+> >
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From wettenhall at wehi.edu.au  Wed Jul 14 02:37:53 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jul 14 02:38:01 2004
+Subject: [R-gui] tcltk MDI
+In-Reply-To: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+Message-ID: <Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+
+Hi Peng,
+
+My understanding is that MDI is very difficult (or perhaps
+impossible) in Tcl/Tk.
+
+Here are some MDI Tcl/Tk ideas in a Wiki entry:
+http://wiki.tcl.tk/2163
+
+(I just found them by Googling Tcl/Tk MDI)
+
+Another thing Tcl/Tk is lacking is true modal dialogs.  It can
+simulate them with grab, but unfortunately, it is still
+possible for them to occasionally become hidden behind other
+windows.
+
+Is platform independence important to you?  If you only need
+your software to run on Windows, perhaps one option is to use
+GraphApp (the GUI toolkit used to build the main Rgui windows).
+See the windlgs example in:
+rw1091\src\library\windlgs\
+Or you could even use Microsoft Visual C++ / Visual Basic
+and R DCOM.
+
+These limitations in Tcl/Tk are two of the main reasons why I
+have started looking at wxPython as an alternative to Tcl/Tk.
+Right now, I can't seem to access the wxPython and wxWidgets
+websites, but you should be able to find some screenshots
+there, including MDI:
+http://www.wxPython.org/screenshots.php
+
+A good way of getting an overview of what Tcl/Tk has to offer,
+is to run the ActiveTcl demos.  I don't think there's any MDI
+there.  But Tcl/Tk does at least have tabbed notebooks.
+
+I have started building an R interface to wxPython:
+http://bioinf.wehi.edu.au/folders/james/wxPython/
+(which works reasonably well on Windows)
+
+but I still haven't really had time to try MDI, as I'm still
+spending a lot of time maintaining and supporting my existing
+R-Tcl/Tk GUI applications, and I have found that porting
+R-wxPython from Windows to Linux is non-trivial for several
+reasons.  One reason is that unlike Windows, Red Hat Linux's
+Python RPM doesn't include a shared library (libpython2.2.so) !
+
+Best regards,
+James
+
+From pliu3 at unity.ncsu.edu  Wed Jul 14 07:03:19 2004
+From: pliu3 at unity.ncsu.edu (Peng Liu)
+Date: Wed Jul 14 07:03:25 2004
+Subject: [R-gui] tcltk MDI
+In-Reply-To: <Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+Message-ID: <Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+
+On Wed, 14 Jul 2004, James Wettenhall wrote:
+
+> Hi Peng,
+>
+> My understanding is that MDI is very difficult (or perhaps
+> impossible) in Tcl/Tk.
+
+Hi James,
+
+I guess so. That is why I cannot find exciting Tk MDI examples, although
+Tcl/Tk has been there for quite a while. Or UNIX users are not interested
+in MDI.
+
+>
+> Here are some MDI Tcl/Tk ideas in a Wiki entry:
+> http://wiki.tcl.tk/2163
+>
+> (I just found them by Googling Tcl/Tk MDI)
+
+Yes, that might be only official place about Tk MDI. Actually, I tried the
+example : "Internal Movable Windows". That reminds me of my Visual Baisc
+experience long time ago. Since we do not have existing sub-windows
+widgets, we may be able to draw them! I did that under Win3.1.
+However, the major difficulty for me is how to attach a "move" event to a
+widget, also a "resize" event, etc.
+Forgive me for that, I am a newbie to Tk. I combine your examples of
+Pull-Down Menus, Frames, plus a Label widget on toplevel(). Next I am
+trying to figure out how to move frames within the Label. (Cannot do it
+yet.)
+Another solution I was thinking about is to use canvas to directly draw.
+Not a good idea I think.
+
+>
+> Another thing Tcl/Tk is lacking is true modal dialogs.  It can
+
+Can we also mimic dialogs, using canvas or similar tricks?
+
+> simulate them with grab, but unfortunately, it is still
+> possible for them to occasionally become hidden behind other
+> windows.
+>
+> Is platform independence important to you?  If you only need
+
+Actually, I focus on R GUI these days is to demonstrate its GUI capability
+to other point-click users. They claim that R does NOT HAVE a GUI.
+And, they do not think Tcl/Tk's dialog-style is a GUI. That is why I am
+thinking about MDI.
+
+> your software to run on Windows, perhaps one option is to use
+> GraphApp (the GUI toolkit used to build the main Rgui windows).
+> See the windlgs example in:
+> rw1091\src\library\windlgs\
+> Or you could even use Microsoft Visual C++ / Visual Basic
+> and R DCOM.
+
+GraphApp would be a good solution for me, since it is a C interface. But I
+am still thinking about portability. Anyway, it cannot generate GUI via
+script language, such as Tcl/Tk, wxPython, wxPerl. So I think, it will be
+a lot of work to make a fully working GUI for even one library, for
+example MASS.
+
+>
+> These limitations in Tcl/Tk are two of the main reasons why I
+> have started looking at wxPython as an alternative to Tcl/Tk.
+> Right now, I can't seem to access the wxPython and wxWidgets
+> websites, but you should be able to find some screenshots
+> there, including MDI:
+> http://www.wxPython.org/screenshots.php
+
+I will try your R-wxPython soon. The major concern is which is faster, R
+-> rtcltk -> Tcl/Tk , or R -> RwxWindows -> RSPython -> wxPython, or it
+does not matter?
+
+>
+> A good way of getting an overview of what Tcl/Tk has to offer,
+> is to run the ActiveTcl demos.  I don't think there's any MDI
+> there.  But Tcl/Tk does at least have tabbed notebooks.
+
+I did not find any, either.
+
+>
+> I have started building an R interface to wxPython:
+> http://bioinf.wehi.edu.au/folders/james/wxPython/
+> (which works reasonably well on Windows)
+>
+> but I still haven't really had time to try MDI, as I'm still
+> spending a lot of time maintaining and supporting my existing
+> R-Tcl/Tk GUI applications, and I have found that porting
+> R-wxPython from Windows to Linux is non-trivial for several
+> reasons.  One reason is that unlike Windows, Red Hat Linux's
+> Python RPM doesn't include a shared library (libpython2.2.so) !
+
+So, your RwxPython do use Python directly for some functions, doesn't it?
+Not pass everything through RSPython.
+Anyway, do you want to try Mandrake's rpm? I think Mandrake rpm will work
+on Red Hat. the file is libpython2.2-2.2-9.1mdk.i586.rpm
+You can download it from rpmfind.net at:
+http://rpmfind.net//linux/RPM/mandrake/updates/mnf8.2/RPMS/libpython2.2-2.2-9.1mdk.i586.html
+
+Cheers,
+Peng
+
+>
+> Best regards,
+> James
+>
+>
+
+From wettenhall at wehi.edu.au  Wed Jul 14 08:07:09 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jul 14 08:07:14 2004
+Subject: [R-gui] tcltk MDI, R-GUI speed
+In-Reply-To: <Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+	<Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+Message-ID: <Pine.GSO.4.58.0407141601250.1079@unix33.alpha.wehi.edu.au>
+
+On Wed, 14 Jul 2004, Peng Liu wrote:
+> I will try your R-wxPython soon. The major concern is which is faster, R
+> -> rtcltk -> Tcl/Tk , or R -> RwxWindows -> RSPython -> wxPython, or it
+> does not matter?
+
+Hi Peng,
+
+"faster" ? If you are concerned about speed, then you should
+understand that both R-Tcl/Tk (already well developed) and
+R-wxPython (still in prototyping stage) both go via a scripting
+language (Tcl or Python) to get to the GUI toolkit, whereas it
+might be more efficient to somehow access the GUI toolkit
+directly (as is done in perl/Tk, i.e. perl does not use Tcl to
+communicate with Tk).  If you want to do this, it would take
+some hard work at the C programming level (low-level).
+
+I'm sure a few people have tried this before and found it to
+be too difficult.
+
+But if you could pull it off, it could mean that a large
+data frame in R could easily be displayed in a Tktable
+(spreadsheet) widget much faster than using the current
+mechanism (via Tcl).
+
+Regards,
+James
+
+From mpiktas at delfi.lt  Wed Jul 14 08:11:11 2004
+From: mpiktas at delfi.lt (Vaidotas Zemlys)
+Date: Wed Jul 14 08:11:10 2004
+Subject: [R-gui] tcltk MDI
+In-Reply-To: <Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu> (from
+	pliu3@unity.ncsu.edu on Tr, Lie 14, 2004 at 08:03:19 +0300)
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+	<Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+Message-ID: <20040714061111.GA2031@debian.vu.lt>
+
+Hi,
+
+> > but I still haven't really had time to try MDI, as I'm still
+> > spending a lot of time maintaining and supporting my existing
+> > R-Tcl/Tk GUI applications, and I have found that porting
+> > R-wxPython from Windows to Linux is non-trivial for several
+> > reasons.  One reason is that unlike Windows, Red Hat Linux's
+> > Python RPM doesn't include a shared library (libpython2.2.so) !
+> 
+> So, your RwxPython do use Python directly for some functions, doesn't it?
+> Not pass everything through RSPython.
+> Anyway, do you want to try Mandrake's rpm? I think Mandrake rpm will work
+> on Red Hat. the file is libpython2.2-2.2-9.1mdk.i586.rpm
+> You can download it from rpmfind.net at:
+> http://rpmfind.net//linux/RPM/mandrake/updates/mnf8.2/RPMS/libpython2.2-2.2-9.1mdk.i586.html
+>
+
+Mixing different distribution packages could be bad idea. When there are some  
+things missing from your desired package is a good idea to look in -dev  
+packages. For example libpython2.2.so in Debian can be found in python2.2-dev  
+package. Maybe there is something like that in Red Hat? Another way is to  
+download source package (SRPM in Red Hat if I'm not mistaken) and build it  
+with desirable options. This way you get the package with wanted options and  
+you don't mess up your system.
+
+Vaidotas Zemlys
+
+From wettenhall at wehi.edu.au  Wed Jul 14 09:03:31 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Wed Jul 14 09:03:46 2004
+Subject: [R-gui] tcltk MDI, Python shared library for wxPython
+In-Reply-To: <20040714061111.GA2031@debian.vu.lt>
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+	<Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+	<20040714061111.GA2031@debian.vu.lt>
+Message-ID: <Pine.GSO.4.58.0407141701330.2891@unix33.alpha.wehi.edu.au>
+
+Hi Vaidotas,
+
+On Wed, 14 Jul 2004, Vaidotas Zemlys wrote:
+> packages. For example libpython2.2.so in Debian can be found in python2.2-dev
+> package. Maybe there is something like that in Red Hat?
+
+There is a python-devel RPM in Red Hat, but as you can see:
+unix28 504 % rpm -q python-devel
+python-devel-2.2.3-7
+unix28 505 % rpm -ql python-devel | grep libpython
+/usr/lib/python2.2/config/libpython2.2.a
+
+there is no libpython2.2.so, only the static library:
+libpython2.2.a
+
+rpm -ql python | grep libpython
+shows that it's not in the main python RPM either.
+
+Regards,
+James
+
+From Yang.Feng at ec.gc.ca  Wed Jul 14 17:44:16 2004
+From: Yang.Feng at ec.gc.ca (Feng,Yang [Ontario])
+Date: Wed Jul 14 17:44:35 2004
+Subject: [R-gui] A bug in Rcmdr
+Message-ID: <9B09D75DF5B3494BA06E6FE478CE9CC17A383A@mgtserver3.ontario.int.ec.gc.ca>
+
+Hi, Prof. John,
+
+After uninstall R1.8.1 and install R1.9.1 with required packages, Rcmdr
+now working on my Windows, but when I click on "view data set" button,
+an error message here:
+
+ERR: Couldn't find function "showData"
+
+Seems there's no function showData() in the library package "Rcmdr".
+
+Another question, before I uninstall R1.8.1, XEmacs works well with R
+codes, after uninstall R1.8.1 and install R1.9.1, and modified init.el:
+
+(setq-default inferior-R-program-name "d:/R/rw1091/bin/rterm.exe")
+
+XEmacs now cannot treat R codes as S language, is there any other
+modification need to be done for change R version?
+
+Thanks!
+
+Yang
+
+From jfox at mcmaster.ca  Wed Jul 14 18:22:42 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Wed Jul 14 18:22:48 2004
+Subject: [R-gui] A bug in Rcmdr
+In-Reply-To: <9B09D75DF5B3494BA06E6FE478CE9CC17A383A@mgtserver3.ontario.int.ec.gc.ca>
+Message-ID: <20040714162243.EPKJ28143.tomts25-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear Yang, 
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> Feng,Yang [Ontario]
+> Sent: Wednesday, July 14, 2004 10:44 AM
+> To: r-sig-gui@stat.math.ethz.ch
+> Subject: [R-gui] A bug in Rcmdr
+> 
+> Hi, Prof. John,
+> 
+> After uninstall R1.8.1 and install R1.9.1 with required 
+> packages, Rcmdr now working on my Windows, but when I click 
+> on "view data set" button, an error message here:
+> 
+> ERR: Couldn't find function "showData"
+> 
+> Seems there's no function showData() in the library package "Rcmdr".
+> 
+
+showData is in the relimp package, one of several packages (abind, car,
+effects, lmtest, multcomp, mvtnorm, relimp, and rgl), along with the
+recommended packages, required by the Rcmdr package. Please install all of
+these packages.
+
+> Another question, before I uninstall R1.8.1, XEmacs works 
+> well with R codes, after uninstall R1.8.1 and install R1.9.1, 
+> and modified init.el:
+> 
+> (setq-default inferior-R-program-name "d:/R/rw1091/bin/rterm.exe")
+> 
+> XEmacs now cannot treat R codes as S language, is there any 
+> other modification need to be done for change R version?
+> 
+
+Xemacs should work with R 1.9.1 just as it did with R. 1.8.1. Perhaps
+someone else can think of a possible source for this problem.
+
+Regards,
+ John
+
+> Thanks!
+> 
+> Yang
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From duncan at wald.ucdavis.edu  Wed Jul 14 18:44:38 2004
+From: duncan at wald.ucdavis.edu (Duncan Temple Lang)
+Date: Wed Jul 14 18:44:45 2004
+Subject: [R-gui] tcltk MDI, R-GUI speed
+In-Reply-To: <Pine.GSO.4.58.0407141601250.1079@unix33.alpha.wehi.edu.au>
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+	<Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141601250.1079@unix33.alpha.wehi.edu.au>
+Message-ID: <20040714164438.GA20226@wald.ucdavis.edu>
+
+James Wettenhall wrote:
+> On Wed, 14 Jul 2004, Peng Liu wrote:
+> > I will try your R-wxPython soon. The major concern is which is faster, R
+> > -> rtcltk -> Tcl/Tk , or R -> RwxWindows -> RSPython -> wxPython, or it
+> > does not matter?
+> 
+> Hi Peng,
+> 
+> "faster" ? If you are concerned about speed, then you should
+> understand that both R-Tcl/Tk (already well developed) and
+> R-wxPython (still in prototyping stage) both go via a scripting
+> language (Tcl or Python) to get to the GUI toolkit, whereas it
+> might be more efficient to somehow access the GUI toolkit
+> directly (as is done in perl/Tk, i.e. perl does not use Tcl to
+> communicate with Tk).  If you want to do this, it would take
+> some hard work at the C programming level (low-level).
+> 
+> I'm sure a few people have tried this before and found it to
+> be too difficult.
+
+That is how the RGtk code works. There is no intermediate
+scripting language.
+It also isn't that hard as the routines in Gtk+
+and any other Gtk+-based library (e.g. gnome,
+gnomeprint, gtk+extra, gtkhtml, GGobi, etc.) are machine generated
+based on a simple description of the library's facilities.
+This allows the widget sets to be expanded by installing
+individual widget collections. 
+
+The same sort  of automated code generation could be done in wxWindows.
+(There is a discussion about SWIG and other mechanisms to generate these
+interfaces, and the RGtk mechanism is different again.)
+The real question is what are people trying to do with these things.
+For me, the motivation with RGtk is that Gtk is an important
+toolkit used in many applications that I think we want to be able 
+integrate R with.  Simuilarly, the RDCOM connections
+(RDCOMClient and RDCOMServer and Thomas Baier's R DCOM) 
+provides a mechanism for Windows.
+And if you just want stand-alone applications in R,
+then any toolkit is fine and Tk, eventhough it is old and not used
+for many big applications, will work.
+
+
+
+> 
+> But if you could pull it off, it could mean that a large
+> data frame in R could easily be displayed in a Tktable
+> (spreadsheet) widget much faster than using the current
+> mechanism (via Tcl).
+> 
+> Regards,
+> James
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Duncan Temple Lang                        duncan@wald.ucdavis.edu
+ 371, Kerr Hall
+ University of California at Davis
+
+Phone: (530) 752-4782
+FAX:   (530) 752-7099
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 184 bytes
+Desc: not available
+Url : https://www.stat.math.ethz.ch/pipermail/r-sig-gui/attachments/20040714/65f2fde9/attachment.bin
+From pliu3 at unity.ncsu.edu  Wed Jul 14 19:34:17 2004
+From: pliu3 at unity.ncsu.edu (Peng Liu)
+Date: Wed Jul 14 19:34:24 2004
+Subject: [R-gui] tcltk MDI
+In-Reply-To: <20040714061111.GA2031@debian.vu.lt>
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+	<Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+	<20040714061111.GA2031@debian.vu.lt>
+Message-ID: <Pine.GSO.4.58.0407141315570.10516@uni03du.unity.ncsu.edu>
+
+On Wed, 14 Jul 2004, Vaidotas Zemlys wrote:
+
+> Mixing different distribution packages could be bad idea. When there are some
+> things missing from your desired package is a good idea to look in -dev
+> packages. For example libpython2.2.so in Debian can be found in python2.2-dev
+> package. Maybe there is something like that in Red Hat? Another way is to
+> download source package (SRPM in Red Hat if I'm not mistaken) and build it
+> with desirable options. This way you get the package with wanted options and
+> you don't mess up your system.
+>
+> Vaidotas Zemlys
+
+Hi Vaidotas,
+
+You are right. It will dangerous for system maintenance. Any I once use my
+own LinuxPC, so it does not to try something messy. I was using Mandrake,
+and a lot of RedHat RPMs are compatible. Mandrake even once claimed that
+their RPM 4.0 was compatible with all RedHat RPMs. But I am not sure the
+other way around.
+
+Cheers,
+Peng
+
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+From pliu3 at unity.ncsu.edu  Wed Jul 14 19:52:11 2004
+From: pliu3 at unity.ncsu.edu (Peng Liu)
+Date: Wed Jul 14 19:52:13 2004
+Subject: [R-gui] tcltk MDI
+In-Reply-To: <Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+	<Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+Message-ID: <Pine.GSO.4.58.0407141335320.10516@uni03du.unity.ncsu.edu>
+
+> Yes, that might be only official place about Tk MDI. Actually, I tried the
+> example : "Internal Movable Windows". That reminds me of my Visual Baisc
+> experience long time ago. Since we do not have existing sub-windows
+> widgets, we may be able to draw them! I did that under Win3.1.
+> However, the major difficulty for me is how to attach a "move" event to a
+> widget, also a "resize" event, etc.
+> Forgive me for that, I am a newbie to Tk. I combine your examples of
+> Pull-Down Menus, Frames, plus a Label widget on toplevel(). Next I am
+> trying to figure out how to move frames within the Label. (Cannot do it
+> yet.)
+
+I can move Label around now, but not very smoothly. Finally, I realize
+that I won't be able to put a childwindows generated by plot() into a
+widget. If it is possible, does it mean embedding GraphApp in Tk?
+
+BTW, after modifying windlgs a little bit, I make it a childwindow. Hope
+that I can make more progress on that. And I will appreciate it, if anyone
+can tell me some related and more detailed references about those
+extensions to GraphApp in R source.
+
+Cheers,
+Peng
+
+From wettenhall at wehi.edu.au  Thu Jul 15 01:35:12 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Jul 15 01:35:19 2004
+Subject: [R-gui] GUI toolkit comparison
+In-Reply-To: <20040714164438.GA20226@wald.ucdavis.edu>
+References: <Pine.GSO.4.58.0407131345040.10317@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141014040.17576@unix33.alpha.wehi.edu.au>
+	<Pine.GSO.4.58.0407132301100.21526@uni03du.unity.ncsu.edu>
+	<Pine.GSO.4.58.0407141601250.1079@unix33.alpha.wehi.edu.au>
+	<20040714164438.GA20226@wald.ucdavis.edu>
+Message-ID: <Pine.GSO.4.58.0407150917210.22552@unix33.alpha.wehi.edu.au>
+
+Hi Duncan,
+
+On Wed, 14 Jul 2004, Duncan Temple Lang wrote:
+> For me, the motivation with RGtk is that Gtk is an important
+> toolkit used in many applications that I think we want to be able
+> integrate R with.
+
+I think Gtk is a great GUI toolkit for Linux/Unix, but most
+of my end-users who really need a GUI (rather than a CLI)
+are Windows or Mac users, and as you probably know, trying
+to compile Gtk on those systems is not easy, (although I do
+enjoy running GIMP on Windows which uses Gtk!).
+
+RDCOM seems like a nice idea, but I have chosen Tcl/Tk for
+my R-GUI projects so far because it seems to rely on less
+Microsoft proprietary technology (potentially complicating
+GPL/BSD licenses), and because Tcl/Tk seems to be more
+platform independent between Windows and Mac.  (Correct me
+if I am wrong here.)
+
+Often we may be asked to give a microarray workshop at short
+notice (using R packages from Bioconductor).  If there are
+likely to be people in the workshop who are unfamiliar with
+command-line interfaces, we will use GUI versions of some of
+our Bioconductor packages.  Often we don't get much warning
+of whether participants will be using Windows or Mac or
+Linux (rare) or a mixture.  It would be a lot more work for us
+to simultaneously test a Gtk-version of our GUI and an R-DCOM
+version leading up to a workshop like this.
+
+If I've sounded vague about whether R-DCOM works on Mac, that's
+because I really don't know.  Obviously Microsoft software is
+generally more easily available on Mac than on Linux, but does
+that include DCOM?
+
+Regards,
+James
+
+From wettenhall at wehi.edu.au  Thu Jul 15 01:43:51 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Jul 15 01:44:16 2004
+Subject: [R-gui] Not a bug in Rcmdr, GUI for require(package)?
+In-Reply-To: <20040714162243.EPKJ28143.tomts25-srv.bellnexxia.net@JohnDesktop8300>
+References: <20040714162243.EPKJ28143.tomts25-srv.bellnexxia.net@JohnDesktop8300>
+Message-ID: <Pine.GSO.4.58.0407150935220.22552@unix33.alpha.wehi.edu.au>
+
+Hi,
+
+On Wed, 14 Jul 2004, John Fox wrote:
+> > ERR: Couldn't find function "showData"
+>
+> showData is in the relimp package, one of several packages
+<snip>
+> required by the Rcmdr package. Please install all of these
+> packages.
+
+I came across a similar issue in a microarray workshop on
+Sunday.  When using a GUI, my users seem to expect a
+user-friendly GUI interface for the case of missing R
+packages, but there is nothing built into R at the moment.
+
+I was thinking of writing something in GraphApp for R for
+Windows, so if require(package) fails, the user gets a dialog
+box with a few radio buttons, so they can select
+- install package from local zip file
+- install package from CRAN
+- install package from Bioconductor
+- continue without installing package
+
+I could try to write a Tcl/Tk version as well.   But after
+seeing 25 participants at our workshop on Sunday bring along
+25 laptops ALL running Windows, I'm tempted to think that
+Windows-specific solutions may be worthwhile in some cases.
+
+I have so many other R-GUI things I want to work on, that I'd
+be very happy for anyone to steal this idea and implement it
+before I do.  I could provide assistance.  See the windlgs
+example package that comes with R, and download the R source to
+have a look at the GraphApp source code in src/gnuwin32/ and in
+src/gnuwin32/graphapp/
+
+Regards,
+James
+
+From jfox at mcmaster.ca  Thu Jul 15 02:03:41 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu Jul 15 02:03:50 2004
+Subject: [R-gui] Not a bug in Rcmdr, GUI for require(package)?
+In-Reply-To: <Pine.GSO.4.58.0407150935220.22552@unix33.alpha.wehi.edu.au>
+Message-ID: <20040715000343.KHKG6357.tomts10-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear James,
+
+At present, the Rcmdr package checks that required packages are present and
+prints a message if they are not -- e.g., "The following packages required
+by Rcmdr are missing: relimp."
+
+What you suggest seems an improvement, and I think it would be best to
+implement it in a cross-platform manner. I don't know how to do that via
+tcltk or I'd offer to do it. On the other hand, if a user doesn't have an
+active Internet connection, how likely is it that he or she will be able to
+install missing packages? And for Windows users who do have an Internet
+connection, it isn't too much of a leap to use the Packages menu (especially
+if prompted by a message to do so!).
+
+Regards,
+ John
+
+> -----Original Message-----
+> From: James Wettenhall [mailto:wettenhall@wehi.edu.au] 
+> Sent: Wednesday, July 14, 2004 6:44 PM
+> To: John Fox
+> Cc: 'Feng,Yang [Ontario]'; r-sig-gui@stat.math.ethz.ch
+> Subject: RE: [R-gui] Not a bug in Rcmdr, GUI for require(package)?
+> 
+> Hi,
+> 
+> On Wed, 14 Jul 2004, John Fox wrote:
+> > > ERR: Couldn't find function "showData"
+> >
+> > showData is in the relimp package, one of several packages
+> <snip>
+> > required by the Rcmdr package. Please install all of these packages.
+> 
+> I came across a similar issue in a microarray workshop on 
+> Sunday.  When using a GUI, my users seem to expect a 
+> user-friendly GUI interface for the case of missing R 
+> packages, but there is nothing built into R at the moment.
+> 
+> I was thinking of writing something in GraphApp for R for 
+> Windows, so if require(package) fails, the user gets a dialog 
+> box with a few radio buttons, so they can select
+> - install package from local zip file
+> - install package from CRAN
+> - install package from Bioconductor
+> - continue without installing package
+> 
+> I could try to write a Tcl/Tk version as well.   But after
+> seeing 25 participants at our workshop on Sunday bring along
+> 25 laptops ALL running Windows, I'm tempted to think that 
+> Windows-specific solutions may be worthwhile in some cases.
+> 
+> I have so many other R-GUI things I want to work on, that I'd 
+> be very happy for anyone to steal this idea and implement it 
+> before I do.  I could provide assistance.  See the windlgs 
+> example package that comes with R, and download the R source 
+> to have a look at the GraphApp source code in src/gnuwin32/ 
+> and in src/gnuwin32/graphapp/
+> 
+> Regards,
+> James
+
+From wettenhall at wehi.edu.au  Thu Jul 15 02:09:07 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Thu Jul 15 02:09:29 2004
+Subject: [R-gui] Not a bug in Rcmdr, GUI for require(package)?
+In-Reply-To: <20040715000343.KHKG6357.tomts10-srv.bellnexxia.net@JohnDesktop8300>
+References: <20040715000343.KHKG6357.tomts10-srv.bellnexxia.net@JohnDesktop8300>
+Message-ID: <Pine.GSO.4.58.0407151005040.22552@unix33.alpha.wehi.edu.au>
+
+Hi John,
+
+On Wed, 14 Jul 2004, John Fox wrote:
+> implement it in a cross-platform manner. I don't know how to do that via
+> tcltk or I'd offer to do it.
+
+I think I know how to do it via Tcl/Tk, but if using Windows
+with the GraphApp Rgui running (even in SDI), there are
+likely to be some annoying focus-stealing problems
+between GraphApp and Tcl/Tk because of some of the GraphApp
+widgets that pop-up (e.g. progress bar) when you install a
+package.
+
+> On the other hand, if a user doesn't have an
+> active Internet connection, how likely is it that he or she
+> will be able to install missing packages?
+
+Very likely for our workshops.  Many I.T. departments are
+becoming more strict about not letting outsiders connect up
+their laptops to the local network because of fears of viruses
+and trojans.  So if we present a microarray workshop at a
+conference where people bring their own laptops, we provide a CD
+containing all of the necessary R packages for participants who
+have failed to install the correct software beforehand.
+
+Regards,
+James
+
+From jfox at mcmaster.ca  Thu Jul 15 03:17:00 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu Jul 15 03:17:07 2004
+Subject: [R-gui] Not a bug in Rcmdr, GUI for require(package)?
+In-Reply-To: <Pine.GSO.4.58.0407151005040.22552@unix33.alpha.wehi.edu.au>
+Message-ID: <20040715011701.ZJKN13900.tomts36-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear James,
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> James Wettenhall
+> Sent: Wednesday, July 14, 2004 7:09 PM
+> To: John Fox
+> Cc: 'Feng, Yang [Ontario]'; r-sig-gui@stat.math.ethz.ch
+> Subject: RE: [R-gui] Not a bug in Rcmdr, GUI for require(package)?
+> 
+> Hi John,
+> 
+> On Wed, 14 Jul 2004, John Fox wrote:
+> > implement it in a cross-platform manner. I don't know how 
+> to do that 
+> > via tcltk or I'd offer to do it.
+> 
+> I think I know how to do it via Tcl/Tk, but if using Windows 
+> with the GraphApp Rgui running (even in SDI), there are 
+> likely to be some annoying focus-stealing problems between 
+> GraphApp and Tcl/Tk because of some of the GraphApp widgets 
+> that pop-up (e.g. progress bar) when you install a package.
+> 
+
+Actually, after thinking about this a bit more, I do see how to do it via
+tcltk. Here's a rough version, which seems to interact OK with the progress
+bars:
+
+installPackages <- function(){
+    top <- tktoplevel()
+    tkwm.title(top, "Install Packages")
+    names <- CRAN.packages()[,1]
+    onOK <- function() {
+        packages <- names[as.numeric(tkcurselection(listbox)) + 1]
+        install.packages(packages, lib=.libPaths()[1], destdir="c:/temp") 
+        tkgrab.release(top)
+        tkdestroy(top)
+        }
+    onCancel <- function(){
+        tkgrab.release(top)
+        tkdestroy(top)
+        }
+    frame <- tkframe(top)
+    listbox <- tklistbox(frame, height=min(10, length(names)),
+        selectmode="extended", background="white", exportselection="FALSE")
+    scrollbar <- tkscrollbar(frame, repeatinterval=5, command=function(...)
+tkyview(listbox, ...))
+    tkconfigure(listbox, yscrollcommand=function(...) tkset(scrollbar, ...))
+    for (name in names) tkinsert(listbox, "end", name)
+    tkgrid(tklabel(frame, text="Select one or more packages", fg="blue"),
+columnspan=2, sticky="w")
+    tkgrid(listbox, scrollbar, sticky="nw")
+    tkgrid.configure(scrollbar, sticky="wns")
+    tkgrid.configure(listbox, sticky="ew") 
+    tkgrid(frame, sticky="w", columnspan=2)      
+    OKbutton <- tkbutton(top, text="OK", fg="darkgreen", width="12",
+command=onOK, default="active",
+            borderwidth=3)
+    cancelButton <- tkbutton(top, text="Cancel", fg="darkgreen", width="12",
+command=onCancel,
+            borderwidth=3)
+    tkgrid(OKbutton, cancelButton, sticky="w")
+    tkgrid.rowconfigure(top, 0, weight=0)
+    tkgrid.columnconfigure(top, 0, weight=0)
+    tkgrid.columnconfigure(top, 1, weight=0)
+    .Tcl("update idletasks")
+    tkwm.resizable(top, 0, 0)
+    tkbind(top, "<Return>", onOK)
+    tkwm.deiconify(top)
+    tkgrab.set(top)
+    tkfocus(top)
+    tkwait.window(top)
+    }
+    
+The arguments I use to install.packages aren't that well thought out; e.g.,
+I set the destdir directly to suppress the prompt in the Console to delete
+the downloaded files. Of course, in the application we're discussing, it
+would be natural to supply the packages to install (and their location?).
+
+> > On the other hand, if a user doesn't have an active Internet 
+> > connection, how likely is it that he or she will be able to install 
+> > missing packages?
+> 
+> Very likely for our workshops.  Many I.T. departments are 
+> becoming more strict about not letting outsiders connect up 
+> their laptops to the local network because of fears of 
+> viruses and trojans.  So if we present a microarray workshop 
+> at a conference where people bring their own laptops, we 
+> provide a CD containing all of the necessary R packages for 
+> participants who have failed to install the correct software 
+> beforehand.
+> 
+
+I provide students with a similar CD. I usually include a live version of R
+with everything installed and a (Windows) batch file to run the R installer
+and copy over packages and configuration files. 
+
+Regards,
+ John
+
+> Regards,
+> James
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From jfox at mcmaster.ca  Fri Jul 16 01:10:35 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Fri Jul 16 01:10:44 2004
+Subject: [R-gui] Not a bug in Rcmdr, GUI for require(package)?
+In-Reply-To: <Pine.GSO.4.58.0407151005040.22552@unix33.alpha.wehi.edu.au>
+Message-ID: <20040715231037.KEUK13900.tomts36-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear James,
+
+I've written the following .onLoad() function for the Rcmdr package, which
+will install missing packages from CRAN, Bioconductor, or a local package
+directory. One deficiency is that the package directory must (like CRAN)
+have a PACKAGES file, but this should cover the case of a CD, where such a
+file could be included.
+
+Regards,
+ John
+
+.onLoad <- function(...){
+    save.options <- options(warn=-1)
+    on.exit(options(save.options))
+    lattice <- require(lattice)
+    foreign <- require(foreign)
+    tcltk <- require(tcltk)
+    abind <- require(abind)
+    lmtest <- require(lmtest)
+    multcomp <- require(multcomp)
+    mvtnorm <- require(mvtnorm)
+    relimp <- require(relimp)
+    effects <- require(effects)
+    rgl <- require(rgl)
+    mgcv <- require(mgcv)
+    car <- require(car)
+    if (!tcltk) stop("The tcltk package is absent. The Rcmdr cannot
+function.")
+    absent <- !c(lattice, foreign, abind, lmtest, multcomp, mvtnorm, relimp,
+        effects, rgl, mgcv, car)
+    missing.packages <- c("lattice", "foreign", "abind", "lmtest",
+"multcomp", 
+                    "mvtnorm", "relimp", "effects", "rgl", "mgcv",
+"car")[absent]
+    if (any(absent)) {
+        response <- tkmessageBox(message=paste("The following packages
+required by Rcmdr are missing:\n",
+                            paste(missing.packages, collapse=", "),
+"\nInstall these packages?"), 
+                        icon="error", type="yesno")
+        if (as.character(response) == "yes") {
+            top <- tktoplevel(borderwidth=10)
+            tkwm.title(top, "Install Missing Packages")
+            locationFrame <- tkframe(top)
+            locationVariable <- tclVar("CRAN")
+            CRANbutton <- tkradiobutton(locationFrame,
+variable=locationVariable, value="CRAN")
+            BioconductorButton <- tkradiobutton(locationFrame,
+variable=locationVariable, value="Bioconductor")
+            localButton <- tkradiobutton(locationFrame,
+variable=locationVariable, value="local")
+            directoryVariable <- tclVar("")
+            directoryFrame <- tkframe(locationFrame)
+            onBrowse <- function(){
+                tclvalue(directoryVariable) <- tclvalue(tkchooseDirectory())
+                }
+            browseButton <- tkbutton(directoryFrame, text="Browse",
+width="12", command=onBrowse, borderwidth=3)
+            locationField <- tkentry(directoryFrame, width="20",
+textvariable=directoryVariable)
+            locationScroll <- tkscrollbar(directoryFrame,
+orient="horizontal",
+                repeatinterval=5, command=function(...)
+tkxview(locationField, ...))
+            tkconfigure(locationField, xscrollcommand=function(...)
+tkset(locationScroll, ...))
+            tkgrid(tklabel(top, text="Install Packages From:", fg="blue"),
+sticky="nw")
+            tkgrid(tklabel(directoryFrame, text="Specify package
+\ndirectory:", justify="left"), 
+                locationField, sticky="w")
+            tkgrid(browseButton, locationScroll, sticky="w")
+            tkgrid(locationScroll, sticky="ew")
+            tkgrid(tklabel(locationFrame, text="CRAN"), CRANbutton,
+sticky="w")
+            tkgrid(tklabel(locationFrame, text="Bioconductor"),
+BioconductorButton, sticky="w")
+            tkgrid(tklabel(locationFrame, text="Local package
+directory\n(must include PACKAGES index file)", 
+                justify="left"), localButton, directoryFrame, sticky="nw")
+            tkgrid(locationFrame, sticky="w")
+            tkgrid(tklabel(top, text=""))
+            onOK <- function(){
+                errorMessage <- function() tkmessageBox(message=paste(
+                    "The following packages were not found at the specified
+location:\n",
+                    paste(missing.packages[!present], collapse=", ")),
+icon="error", type="ok")
+                tkgrab.release(top)
+                tkdestroy(top)
+                location <- tclvalue(locationVariable)
+                if (location == "CRAN") {
+                    packages <- CRAN.packages()[,1]
+                    present <- missing.packages %in% packages
+                    if (!all(present)){
+                        errorMessage()
+                        stop("Missing packages.", call.=FALSE)
+                        }
+                    install.packages(missing.packages, lib=.libPaths()[1])
+                    }
+                else if (location == "Bioconductor") {
+                    packages <- CRAN.packages(CRAN=getOption("BIOC"))[,1]
+                    present <- missing.packages %in% packages
+                    if (!all(present)){
+                        errorMessage()
+                        stop("Missing packages.", call.=FALSE)
+                        }
+                    install.packages(missing.packages., lib=.libPaths()[1],
+                        CRAN=getOption("BIOC"))
+                    }
+                else {
+                    directory <- paste("file:", tclvalue(directoryVariable),
+sep="")
+                    packages <- CRAN.packages(contriburl=directory)[,1]
+                    present <- missing.packages %in% packages
+                    if (!all(present)){
+                        errorMessage()
+                        stop("Missing packages.", call.=FALSE)
+                        }
+                    install.packages(missing.packages, contriburl=directory,
+lib=.libPaths()[1])
+                    }
+                for (package in missing.packages) require(package,
+character.only=TRUE)
+                }
+            onCancel <- function(){
+                tkgrab.release(top)
+                tkdestroy(top)
+                stop("Missing packages.", call.=FALSE)
+                }
+            onHelp <- function() help("install.packages")
+            buttonsFrame <- tkframe(top)
+            OKbutton <- tkbutton(buttonsFrame, text="OK", fg="darkgreen",
+width="12", command=onOK, default="active",
+                    borderwidth=3)
+            cancelButton <- tkbutton(buttonsFrame, text="Cancel", fg="red",
+width="12", command=onCancel,
+                    borderwidth=3)
+            helpButton <- tkbutton(buttonsFrame, text="Help", width="12",
+command=onHelp, borderwidth=3)
+            tkgrid(OKbutton, tklabel(buttonsFrame, text="  "), cancelButton,
+tklabel(buttonsFrame, text="            "), 
+                helpButton, sticky="w")
+            tkgrid(buttonsFrame, sticky="w")
+            for (row in 0:2) tkgrid.rowconfigure(top, row, weight=0)
+            tkgrid.columnconfigure(top, 0, weight=0)
+            .Tcl("update idletasks")
+            tkwm.resizable(top, 0, 0)
+            tkbind(top, "<Return>", onOK)
+            tkwm.deiconify(top)
+            tkgrab.set(top)
+            tkfocus(top)
+            tkwait.window(top)
+            }
+        else stop("Missing packages: ", paste(missing.packages, collapse=",
+"), call.=FALSE)
+        }           
+    }
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> James Wettenhall
+> Sent: Wednesday, July 14, 2004 7:09 PM
+> To: John Fox
+> Cc: 'Feng, Yang [Ontario]'; r-sig-gui@stat.math.ethz.ch
+> Subject: RE: [R-gui] Not a bug in Rcmdr, GUI for require(package)?
+> 
+> Hi John,
+> 
+> On Wed, 14 Jul 2004, John Fox wrote:
+> > implement it in a cross-platform manner. I don't know how 
+> to do that 
+> > via tcltk or I'd offer to do it.
+> 
+> I think I know how to do it via Tcl/Tk, but if using Windows 
+> with the GraphApp Rgui running (even in SDI), there are 
+> likely to be some annoying focus-stealing problems between 
+> GraphApp and Tcl/Tk because of some of the GraphApp widgets 
+> that pop-up (e.g. progress bar) when you install a package.
+> 
+> > On the other hand, if a user doesn't have an active Internet 
+> > connection, how likely is it that he or she will be able to install 
+> > missing packages?
+> 
+> Very likely for our workshops.  Many I.T. departments are 
+> becoming more strict about not letting outsiders connect up 
+> their laptops to the local network because of fears of 
+> viruses and trojans.  So if we present a microarray workshop 
+> at a conference where people bring their own laptops, we 
+> provide a CD containing all of the necessary R packages for 
+> participants who have failed to install the correct software 
+> beforehand.
+> 
+> Regards,
+> James
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+From wettenhall at wehi.edu.au  Fri Jul 16 02:23:50 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Jul 16 02:24:05 2004
+Subject: [R-gui] GUI for require(package)!
+In-Reply-To: <20040715231037.KEUK13900.tomts36-srv.bellnexxia.net@JohnDesktop8300>
+References: <20040715231037.KEUK13900.tomts36-srv.bellnexxia.net@JohnDesktop8300>
+Message-ID: <Pine.GSO.4.58.0407160953290.10699@unix33.alpha.wehi.edu.au>
+
+Hi John,
+
+Great work!
+
+Yes I agree that it's not too difficult to provide a PACKAGES
+file on a CD.  On the other hand, I do still like the idea
+of having a GUI option to install a missing R package from an
+aribtrary place on your hard disk, e.g. your desktop (without
+necessarily having a PACKAGES file).  I'll look at your code
+and think about this.  (Maybe this is coming from a Windows
+point of view - unlike Mac, it's easy to have multiple R
+installations, e.g. C:\rw1090\ and C:\rw1091\ , so you could
+download an R package and install it within your R 1.9.0
+installation but not your R 1.9.1 installation, and then later
+decide that you want it in R 1.9.1)
+
+In my R packages, I'm not sure if .onLoad() is the right place
+to install _all_ missing R packages, because some of the
+R packages are really only 'recommended' rather than
+'required', i.e. a complete microarray analysis can be
+performed using my GUI(s), without the 'recommended'
+packages, as long as you don't choose the 'advanced' or
+'extra-memory-hungry' normalization options.
+
+So I would still like users to be able to run my GUIs without
+some of the 'recommended' packages, but there are certainly
+some packages which are critically required, so maybe they
+could be installed in .onLoad() or .First.lib() if missing.
+For the 'recommended' packages, .onLoad() should not fail if
+they are unavailable, but it could give a warning.
+
+Another thing which could be incorporated into this is
+the new reposTools / install.packages2() / getBioC() methods of
+installation for the case of Bioconductor packages.  This may
+not be of general interest to people on this list, but obviously
+I am interested in Bioconductor.  The advantage of the
+Bioconductor package-installation methods, is that they try
+to take care of dependencies automatically.  I would assume that
+the "Install package(s) from Bioconductor" menu item in Rgui for
+Windows, doesn't yet use this, i.e. it probably uses the
+original install.packages() and a PACKAGES file.
+
+For an example of dependencies, if my limmaGUI package depends
+on limma, but I forget that limma depends on statmod, then if
+limma is missing, install.packages2() in Bioconductor's
+reposTools packages should automatically see that statmod is
+required for limma, and find it on CRAN.
+
+But the reposTools / install.packages2() method can be slow
+sometimes, because it searches multiple repositories for an R
+package.  This may be fixed now, but in the past, I found that
+(using the default options), it often searched the wrong
+repository first, e.g. CRAN instead of Bioconductor.
+
+Jeff Gentry is the expert on reposTools, install.packages2(),
+and getBioC().  He also has a widgetInvoke package on
+Bioconductor which could be of interest to Gtk fans on this
+mailing list.
+
+Regards,
+James
+
+From jgentry at jimmy.harvard.edu  Fri Jul 16 03:56:55 2004
+From: jgentry at jimmy.harvard.edu (Jeff Gentry)
+Date: Fri Jul 16 03:57:14 2004
+Subject: [R-gui] GUI for require(package)!
+In-Reply-To: <Pine.GSO.4.58.0407160953290.10699@unix33.alpha.wehi.edu.au>
+Message-ID: <Pine.SOL.4.20.0407152155040.25605-100000@santiam.dfci.harvard.edu>
+
+> But the reposTools / install.packages2() method can be slow
+> sometimes, because it searches multiple repositories for an R
+> package.  This may be fixed now, but in the past, I found that
+> (using the default options), it often searched the wrong
+> repository first, e.g. CRAN instead of Bioconductor.
+
+It still does that.  It needs to get all the info from all of the
+repositories (because you don't necessarily just want to get the first one
+found if a package exists in multiple repositories - a later one in the
+search path might be more appropriate), but right now it does that for
+*every* package it is looking for.  I keep saying that I'm going to change
+it to cache the repository metadata for the entire query but haven't ever
+had a chance to do it.
+
+> and getBioC().  He also has a widgetInvoke package on
+> Bioconductor which could be of interest to Gtk fans on this
+> mailing list.
+
+It is still quite rough, but "getting there".  It's another thing that
+seems to get a burst of work done at infrequent intervals, unfortunately.
+
+-J
+
+From wettenhall at wehi.edu.au  Fri Jul 16 04:12:23 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Jul 16 04:12:27 2004
+Subject: [R-gui] GUI for require(package)
+In-Reply-To: <Pine.SOL.4.20.0407152155040.25605-100000@santiam.dfci.harvard.edu>
+References: <Pine.SOL.4.20.0407152155040.25605-100000@santiam.dfci.harvard.edu>
+Message-ID: <Pine.GSO.4.58.0407161209450.10699@unix33.alpha.wehi.edu.au>
+
+Hi Jeff,
+
+[ Off the list(s) ]
+
+On Thu, 15 Jul 2004, Jeff Gentry wrote:
+> It is still quite rough, but "getting there".  It's another thing that
+> seems to get a burst of work done at infrequent intervals, unfortunately.
+
+I hope you didn't mind me mentioning your widgetInvoke package
+on R-SIG-GUI before you did.  I think the list has a pretty
+small regular reader list compared with R-help, BioC etc.
+
+Regards,
+James
+
+From wettenhall at wehi.edu.au  Fri Jul 16 04:16:22 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Jul 16 04:16:28 2004
+Subject: [R-gui] GUI for require(package)
+In-Reply-To: <Pine.GSO.4.58.0407161209450.10699@unix33.alpha.wehi.edu.au>
+References: <Pine.SOL.4.20.0407152155040.25605-100000@santiam.dfci.harvard.edu>
+	<Pine.GSO.4.58.0407161209450.10699@unix33.alpha.wehi.edu.au>
+Message-ID: <Pine.GSO.4.58.0407161215530.10699@unix33.alpha.wehi.edu.au>
+
+Hi list,
+
+> [ Off the list(s) ]
+
+Oops!!!  I sent it to the list, but meant to send it to Jeff.
+Sorry, pleaes ignore.
+
+Regards,
+James
+
+From jfox at mcmaster.ca  Fri Jul 16 04:24:07 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Fri Jul 16 04:24:15 2004
+Subject: [R-gui] GUI for require(package)!
+In-Reply-To: <Pine.GSO.4.58.0407160953290.10699@unix33.alpha.wehi.edu.au>
+Message-ID: <20040716022408.DAEO1984.tomts5-srv.bellnexxia.net@JohnDesktop8300>
+
+Dear James,
+
+I'll be interested to see what you come up with. I think that my solution is
+probably sufficient for the Rcmdr package (actually, I can eliminate the
+Bioconductor radio button since at present I only use CRAN packages) and
+should be pretty easily adapted. As usual, I'll let things percolate for a
+few days to see if I can think of improvements.
+
+Thanks for raising the issue.
+ John 
+
+> -----Original Message-----
+> From: r-sig-gui-bounces@stat.math.ethz.ch 
+> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of 
+> James Wettenhall
+> Sent: Thursday, July 15, 2004 7:24 PM
+> To: John Fox
+> Cc: r-sig-gui@stat.math.ethz.ch
+> Subject: RE: [R-gui] GUI for require(package)!
+> 
+> Hi John,
+> 
+> Great work!
+> 
+> Yes I agree that it's not too difficult to provide a PACKAGES 
+> file on a CD.  On the other hand, I do still like the idea of 
+> having a GUI option to install a missing R package from an 
+> aribtrary place on your hard disk, e.g. your desktop (without 
+> necessarily having a PACKAGES file).  I'll look at your code 
+> and think about this.  (Maybe this is coming from a Windows 
+> point of view - unlike Mac, it's easy to have multiple R 
+> installations, e.g. C:\rw1090\ and C:\rw1091\ , so you could 
+> download an R package and install it within your R 1.9.0 
+> installation but not your R 1.9.1 installation, and then 
+> later decide that you want it in R 1.9.1)
+> 
+> In my R packages, I'm not sure if .onLoad() is the right 
+> place to install _all_ missing R packages, because some of 
+> the R packages are really only 'recommended' rather than 
+> 'required', i.e. a complete microarray analysis can be 
+> performed using my GUI(s), without the 'recommended'
+> packages, as long as you don't choose the 'advanced' or 
+> 'extra-memory-hungry' normalization options.
+> 
+> So I would still like users to be able to run my GUIs without 
+> some of the 'recommended' packages, but there are certainly 
+> some packages which are critically required, so maybe they 
+> could be installed in .onLoad() or .First.lib() if missing.
+> For the 'recommended' packages, .onLoad() should not fail if 
+> they are unavailable, but it could give a warning.
+> 
+> Another thing which could be incorporated into this is the 
+> new reposTools / install.packages2() / getBioC() methods of 
+> installation for the case of Bioconductor packages.  This may 
+> not be of general interest to people on this list, but 
+> obviously I am interested in Bioconductor.  The advantage of 
+> the Bioconductor package-installation methods, is that they 
+> try to take care of dependencies automatically.  I would 
+> assume that the "Install package(s) from Bioconductor" menu 
+> item in Rgui for Windows, doesn't yet use this, i.e. it 
+> probably uses the original install.packages() and a PACKAGES file.
+> 
+> For an example of dependencies, if my limmaGUI package 
+> depends on limma, but I forget that limma depends on statmod, 
+> then if limma is missing, install.packages2() in 
+> Bioconductor's reposTools packages should automatically see 
+> that statmod is required for limma, and find it on CRAN.
+> 
+> But the reposTools / install.packages2() method can be slow 
+> sometimes, because it searches multiple repositories for an R 
+> package.  This may be fixed now, but in the past, I found 
+> that (using the default options), it often searched the wrong 
+> repository first, e.g. CRAN instead of Bioconductor.
+> 
+> Jeff Gentry is the expert on reposTools, install.packages2(), 
+> and getBioC().  He also has a widgetInvoke package on 
+> Bioconductor which could be of interest to Gtk fans on this 
+> mailing list.
+> 
+> Regards,
+> James
+
+From wettenhall at wehi.edu.au  Fri Jul 16 04:45:33 2004
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Jul 16 04:45:44 2004
+Subject: [R-gui] GUI for require(package)!
+In-Reply-To: <20040716022408.DAEO1984.tomts5-srv.bellnexxia.net@JohnDesktop8300>
+References: <20040716022408.DAEO1984.tomts5-srv.bellnexxia.net@JohnDesktop8300>
+Message-ID: <Pine.GSO.4.58.0407161243140.7556@unix33.alpha.wehi.edu.au>
+
+John,
+
+On Thu, 15 Jul 2004, John Fox wrote:
+> I'll be interested to see what you come up with. I think that my solution is
+> probably sufficient for the Rcmdr package (actually, I can eliminate the
+
+Yes, I'm sure your solution will be fine for Rcmdr.  Thanks for
+sharing your code straight away.  I'll definitely think about a
+nice way to use it (or a modified version) in my R-GUIs where I
+have some more specific Bioconductor-related requirements.
+
+Regards,
+James
+

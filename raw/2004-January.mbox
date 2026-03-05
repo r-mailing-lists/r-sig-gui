@@ -1,0 +1,1671 @@
+From thomas.baier at kirchnersoft.com  Mon Jan 12 08:22:37 2004
+From: thomas.baier at kirchnersoft.com (TB)
+Date: Mon Jan 12 08:19:40 2004
+Subject: [R-gui] Getting started on R GUIs
+Message-ID: <E0AC11CC93B7D21185FD0060080B65526BE9E0@WWW>
+
+Anthony,
+
+Anthony Berno <mailto:Anthony_Berno@perlegen.com> wrote:
+[...]
+> I haven't done much performance testing yet, so it might turn out that
+> using the COM server is every bit as fast as using the DLL directly.
+> Which would be great! But my primary concern is in getting big
+> datasets to R really fast, and getting ones back really fast, since
+> the app I'm using is extremely interactive and every bit of speed
+> matters. If I could get a vector of 100,000 numbers shipped across in
+> less than half a second, that would be great, but that may be an
+> unrealistic expectation. 
+> 
+> Maybe you can comment on this - between having a variant in VB and
+> having a vector in R, there are a bunch of marshalling and copying
+> steps that appear to take place. Compared to the time required for
+> some simple calculations on that vector, do you think that there is
+> room for making it faster by using the DLL directly? If you think the
+> overhead is very low, I will probably not bother with getting up to
+> speed on the DLL and testing it myself, but will just use your server.
+
+In my opinion, the marshalling overhead is not that a big one. Of course,
+there is some kind of conversion taking place from VB to R, but this can be
+minimized by just "helping" the COM server a bit.
+
+1. Use the correct data types in VB, not just Variants. This will minimize
+the number of conversions
+   required. For arrays, this rule has to be followed (correct typeing is
+required here)
+2. The more calls into the COM server are made, the higher the overhead of
+COM and marshalling will be.
+   Transferring 1 array of 1000 booleans is nearly 1000 times faster than
+transferring 1000 booleans
+   in distinct function/method calls.
+3. Try to do as many computations as possible on the same side of the COM
+interface. E.g. even if it is
+   more efficient to to some computations in the VB part of your program
+instead of in R (because in R
+   always some kind of interpreter is invoked), any additional data transfer
+required between R and VB
+   will cost more.
+4. If you don't expect a result from a call to R, use .EvaluateNoReturn
+instead of .Evaluate. This will
+   prevent data conversion and marshalling back a result which is not used.
+
+Nevertheless, the implementation of data transfer has been done (at least I
+hope so) as efficiently as
+possible taking into account the general nature of the COM and C interfaces.
+
+Hope this helps
+
+Best,
+Thomas
+
+From uth at zhwin.ch  Fri Jan 16 11:18:47 2004
+From: uth at zhwin.ch (=?iso-8859-1?Q?=22Untern=E4hrer_Thomas=2C_uth=22?=)
+Date: Fri Jan 16 11:18:04 2004
+Subject: [R-gui] tkbind-question
+Message-ID: <53A181E56FB0694ABFD212F8AEDA7F6F258A6E@langouste.zhwin.ch>
+
+
+Hi all,
+
+I try to understand how to mix R- and Tcl-commands.
+I have three versions of key-binding. The first two versions are clear to me. 
+The third version is a bit confusing.
+
+##==============================================================================
+library(tcltk)
+
+print.textwidget <- function(){
+  print(tclvalue(tkget(.t, "0.0", "end")))
+}
+
+## version 1
+. <- tktoplevel()
+.t <- tktext(.)
+tkpack(.t)
+tkbind(.t, "<Control-Key-r>", print.textwidget)
+
+## version 2
+. <- tktoplevel()
+.t <- .Tk.subwin(.)
+.Tcl(paste("pack [text", .Tk.ID(.t), "]"))
+tkbind(.t, "<Control-Key-r>", print.textwidget)
+
+## version 3
+Path <- "PATH TO ctext.tcl"
+.Tcl(paste("source", paste(Path, "/ctext.tcl", sep = "")))
+. <- tktoplevel()
+tkpack(.t <- tkwidget(., "ctext"))
+tkbind(., "<Control-Key-r>", print.textwidget)
+##==============================================================================
+
+In the first two versions I bind the command on the .t (the text-widget).
+In the third version I must bind it on the . (my base window)?!
+Why? I assume that it is because ctext is a widget. Somehow different to a 
+text-widget (tktext gives me a widget too, a text-widget, isn't it?).
+
+Can anybody give me an explanation to my question?
+
+Thanks a lot... Have a nice day
+
+Thomas
+
+
+(ctext.tcl is attached as .txt. So you probably have to rename it. 
+I'm not sure if it's possible to attach .tcl-files)
+
+
+
+-------------- next part --------------
+#By George Peter Staplin
+#See also the README for a list of contributors
+
+package require Tk
+package provide ctext 3.1
+
+namespace eval ctext {}
+
+#win is used as a unique token to create arrays for each ctext instance
+proc ctext::getAr {win suffix name} {
+	set arName __ctext[set win][set suffix]
+	uplevel [list upvar #0 $arName $name]
+	return $arName
+}
+
+proc ctext {win args} { 
+	if {[llength $args] & 1} {
+		return -code error "invalid number of arguments given to ctext (uneven number after window) : $args"
+	}
+	
+	frame $win -class Ctext
+
+	set tmp [text .__ctextTemp]
+	
+	ctext::getAr $win config ar
+
+	set ar(-fg) [$tmp cget -foreground]
+	set ar(-bg) [$tmp cget -background]
+	set ar(-font) [$tmp cget -font]
+	set ar(-relief) [$tmp cget -relief]
+	destroy $tmp
+	set ar(-yscrollcommand) ""
+	set ar(-linemap) 1
+	set ar(-linemapfg) $ar(-fg)
+	set ar(-linemapbg) $ar(-bg)
+	set ar(-linemap_mark_command) {}
+	set ar(-linemap_markable) 1
+	set ar(-linemap_select_fg) black
+	set ar(-linemap_select_bg) yellow
+	set ar(-highlight) 1
+	set ar(win) $win
+	set ar(modified) 0
+	
+	set ar(ctextFlags) [list -yscrollcommand -linemap -linemapfg -linemapbg \
+-font -linemap_mark_command -highlight -linemap_markable -linemap_select_fg \
+-linemap_select_bg]
+	
+	array set ar $args
+	
+	foreach flag {foreground background} short {fg bg} {
+		if {[info exists ar(-$flag)] == 1} {
+			set ar(-$short) $ar(-$flag)
+			unset ar(-$flag)
+		}
+	}
+	
+	#Now remove flags that will confuse text and those that need modification:
+	foreach arg $ar(ctextFlags) {
+		set loc [lsearch $args $arg]
+		if {$loc >= 0} {
+			set args [lreplace $args $loc [expr {$loc + 1}]]
+		}
+	}
+	
+	text $win.l -font $ar(-font) -width 1 -height 1 \
+		-relief $ar(-relief) -fg $ar(-linemapfg) -bg $ar(-linemapbg) -takefocus 0
+
+	set topWin [winfo toplevel $win]
+	bindtags $win.l [list $win.l $topWin all]
+
+	if {$ar(-linemap) == 1} {
+		pack $win.l -side left -fill y
+	}
+	
+	set args [concat $args [list -yscrollcommand [list ctext::event:yscroll $win $ar(-yscrollcommand)]]]
+
+	#escape $win, because it could have a space
+	pack [eval text \$win.t $args -font \$ar(-font)] -side right -fill both -expand 1
+
+	bind $win.t <Configure> [list ctext::linemapUpdate $win]
+	bind $win.l <ButtonPress-1> [list ctext::linemapToggleMark $win %y]
+	bind $win.t <KeyRelease-Return> [list ctext::linemapUpdate $win]
+	rename $win __ctextJunk$win
+	rename $win.t $win._t
+
+	bind $win <Destroy> [list ctext::event:Destroy $win]
+	
+	if 0 {
+		The focus is transfered from the parent to the child, because the frame
+		has no reason to have focus.  This makes it so that focus .t works like
+		it would with a normal text widget.
+	}
+	bind $win <FocusIn> [list focus $win.t]
+
+	interp alias {} $win {} ctext::instanceCmd $win
+	interp alias {} $win.t {} $win
+	
+	#If the user wants C comments they should call ctext::enableComments
+	ctext::disableComments $win
+	ctext::modified $win 0
+	ctext::buildArgParseTable $win
+
+	return $win
+}
+
+proc ctext::event:yscroll {win clientData args} {
+	ctext::linemapUpdate $win
+
+	if {$clientData == ""} {
+		return
+	}
+	uplevel #0 $clientData $args
+}
+
+proc ctext::event:Destroy {win} {
+	catch {rename $win {}}
+	interp alias {} $win.t {}
+	ctext::clearHighlightClasses $win
+	array unset [ctext::getAr $win config ar]
+}
+
+#This stores the arg table within the config array for each instance.
+#It's used by the configure instance command.
+proc ctext::buildArgParseTable win {
+	set argTable [list]
+
+	lappend argTable any -linemap_mark_command {
+		set configAr(-linemap_mark_command) $value
+		break
+	}
+
+	lappend argTable {1 true yes} -linemap {
+		pack $self.l -side left -fill y
+		set configAr(-linemap) 1
+		break
+	}
+
+	lappend argTable {0 false no} -linemap {
+		pack forget $self.l
+		set configAr(-linemap) 0
+		break
+	}
+
+	lappend argTable any -yscrollcommand {
+		set cmd [list $self._t config -yscrollcommand [list ctext::event:yscroll $self $value]]
+
+		if {[catch $cmd res]} {
+			return $res
+		}
+		set configAr(-yscrollcommand) $value
+		break
+	}
+
+	lappend argTable any -linemapfg {
+		if {[catch {winfo rgb $self $value} res]} {
+			return -code error $res
+		}
+		$self.l config -fg $value
+		set configAr(-linemapfg) $value
+		break
+	}
+
+	lappend argTable any -linemapbg {
+		if {[catch {winfo rgb $self $value} res]} {
+			return -code error $res
+		}
+		$self.l config -bg $value
+		set configAr(-linemapbg) $value
+		break
+	}
+
+	lappend argTable any -font {
+		if {[catch {$self.l config -font $value} res]} {
+			return -code error $res
+		}
+		$self._t config -font $value
+		set configAr(-font) $value
+		break
+	}
+
+	lappend argTable {0 false no} -highlight {
+		set configAr(-highlight) 0
+		break
+	}
+
+	lappend argTable {1 true yes} -highlight {
+		set configAr(-highlight) 1
+		break
+	}
+
+	lappend argTable {0 false no} -linemap_markable {
+		set configAr(-linemap_markable) 0
+		break
+	}
+
+	lappend argTable {1 true yes} -linemap_markable {
+		set configAr(-linemap_markable) 1
+		break
+	}
+
+	lappend argTable any -linemap_select_fg {
+		if {[catch {winfo rgb $self $value} res]} {
+			return -code error $res
+		}
+		set configAr(-linemap_select_fg) $value
+		$self.l tag configure lmark -foreground $value
+		break
+	}
+
+	lappend argTable any -linemap_select_bg {
+		if {[catch {winfo rgb $self $value} res]} {
+			return -code error $res
+		}
+		set configAr(-linemap_select_bg) $value
+		$self.l tag configure lmark -background $value
+		break
+	}
+
+	ctext::getAr $win config ar
+	set ar(argTable) $argTable
+}
+
+proc ctext::instanceCmd {self cmd args} {
+	#slightly different than the RE used in ctext::comments
+	set commentRE {\"|\\|'|/|\*}
+
+	switch -glob -- $cmd {
+		append {
+			if {[catch {$self._t get sel.first sel.last} data] == 0} {
+				clipboard append -displayof $self $data
+			}
+		}
+
+		cget {
+			set arg [lindex $args 0]
+			ctext::getAr $self config configAr
+
+			foreach flag $configAr(ctextFlags) {
+				if {[string match ${arg}* $flag]} {
+					return [set configAr($flag)]
+				}
+			}
+			return [$self._t cget $arg]
+		}
+
+		conf* {
+			ctext::getAr $self config configAr
+
+			if {0 == [llength $args]} {
+				set res [$self._t configure]
+				set del [lsearch -glob $res -yscrollcommand*]		
+				set res [lreplace $res $del $del]
+			
+				foreach flag $configAr(ctextFlags) {
+					lappend res [list $flag [set configAr($flag)]]
+				}				
+				return $res
+			}
+			
+			array set flags {}
+			foreach flag $configAr(ctextFlags) {
+				set loc [lsearch $args $flag]
+				if {$loc < 0} {
+					continue
+				}
+				
+				if {[llength $args] <= ($loc + 1)} {
+					#.t config -flag
+					return [set configAr($flag)]
+				}
+
+				set flagArg [lindex $args [expr {$loc + 1}]]
+				set args [lreplace $args $loc [expr {$loc + 1}]]
+				set flags($flag) $flagArg
+			}
+
+			foreach {valueList flag cmd} $configAr(argTable) {
+				if {[info exists flags($flag)]} {
+					foreach valueToCheckFor $valueList {
+						set value [set flags($flag)]
+						if {[string equal "any" $valueToCheckFor]} $cmd \
+						elseif {[string equal $valueToCheckFor [set flags($flag)]]} $cmd 
+					}
+				}
+			}
+			
+			if {[llength $args]} {
+				#we take care of configure without args at the top of this branch
+				uplevel 1 [linsert $args 0 $self._t configure]
+			}
+		}
+
+		copy {
+			tk_textCopy $self
+		} 
+
+		cut {
+			if {[catch {$self.t get sel.first sel.last} data] == 0} {
+				clipboard clear -displayof $self.t
+				clipboard append -displayof $self.t $data
+				$self delete [$self.t index sel.first] [$self.t index sel.last]
+				ctext::modified $self 1
+			}
+		}
+
+		delete {
+			#delete n.n ?n.n
+			
+			#first deal with delete n.n
+			set argsLength [llength $args]
+			
+			if {$argsLength == 1} {
+				set deletePos [lindex $args 0]
+				set prevChar [$self._t get $deletePos]
+				
+				$self._t delete $deletePos
+				set char [$self._t get $deletePos]
+				
+				set prevSpace [ctext::findPreviousSpace $self._t $deletePos]
+				set nextSpace [ctext::findNextSpace $self._t $deletePos]
+				
+				set lineStart [$self._t index "$deletePos linestart"]
+				set lineEnd [$self._t index "$deletePos + 1 chars lineend"]
+				
+				if {[string equal $prevChar "#"] || [string equal $char "#"]} {
+					set removeStart $lineStart
+					set removeEnd $lineEnd
+				} else {
+					set removeStart $prevSpace
+					set removeEnd $nextSpace
+				}
+				
+				foreach tag [$self._t tag names] {
+					if {[string equal $tag "_cComment"] != 1} {
+						$self._t tag remove $tag $removeStart $removeEnd
+					}
+				}
+				
+				set checkStr "$prevChar[set char]"
+				
+				if {[regexp $commentRE $checkStr]} {
+					after idle [list ctext::comments $self]
+				}
+				ctext::highlight $self $lineStart $lineEnd
+				ctext::linemapUpdate $self
+			} elseif {$argsLength == 2} {
+				#now deal with delete n.n ?n.n?
+				set deleteStartPos [lindex $args 0]
+				set deleteEndPos [lindex $args 1]
+				
+				set data [$self._t get $deleteStartPos $deleteEndPos]
+				
+				set lineStart [$self._t index "$deleteStartPos linestart"]
+				set lineEnd [$self._t index "$deleteEndPos + 1 chars lineend"]
+				eval \$self._t delete $args
+				
+				foreach tag [$self._t tag names] {
+					if {[string equal $tag "_cComment"] != 1} {
+						$self._t tag remove $tag $lineStart $lineEnd
+					}
+				}
+				
+				if {[regexp $commentRE $data]} {
+					after idle [list ctext::comments $self]
+				}
+				
+				ctext::highlight $self $lineStart $lineEnd
+				if {[string first "\n" $data] >= 0} {
+					ctext::linemapUpdate $self
+				}
+			} else {
+				return -code error "invalid argument(s) sent to $self delete: $args"
+			}
+			ctext::modified $self 1
+		}
+
+		fastdelete {
+			eval \$self._t delete $args
+			ctext::modified $self 1
+			ctext::linemapUpdate $self
+		}
+		
+		fastinsert {
+			eval \$self._t insert $args
+			ctext::modified $self 1
+			ctext::linemapUpdate $self
+		}
+		
+		highlight {
+			ctext::highlight $self [lindex $args 0] [lindex $args 1]
+			ctext::comments $self
+		}
+
+		insert {
+			if {[llength $args] < 2} {
+				return -code error "please use at least 2 arguments to $self insert"
+			}
+			set insertPos [lindex $args 0]  
+			set prevChar [$self._t get "$insertPos - 1 chars"]
+			set nextChar [$self._t get $insertPos]
+			set lineStart [$self._t index "$insertPos linestart"]
+			set prevSpace [ctext::findPreviousSpace $self._t ${insertPos}-1c]
+			set data [lindex $args 1]   
+			eval \$self._t insert $args 
+
+			set nextSpace [ctext::findNextSpace $self._t insert]
+			set lineEnd [$self._t index "insert lineend"] 
+			 
+			if {[$self._t compare $prevSpace < $lineStart]} {
+				set prevSpace $lineStart
+			}
+
+			if {[$self._t compare $nextSpace > $lineEnd]} {
+				set nextSpace $lineEnd
+			}
+			
+			foreach tag [$self._t tag names] { 
+				if {[string equal $tag "_cComment"] != 1} {
+					$self._t tag remove $tag $prevSpace $nextSpace 
+				}
+			} 
+
+			set REData $prevChar
+			append REData $data
+			append REData $nextChar
+			if {[regexp $commentRE $REData]} {
+				after idle [list ctext::comments $self]
+			}
+			
+			after idle [list ctext::highlight $self $lineStart $lineEnd]
+			switch -- $data {
+				"\}" {
+					ctext::matchPair $self "\\\{" "\\\}" "\\"
+				}
+				"\]" {
+					ctext::matchPair $self "\\\[" "\\\]" "\\"
+				}
+				"\)" {
+					ctext::matchPair $self "\\(" "\\)" ""
+				}
+				"\"" {
+					ctext::matchQuote $self
+				}
+			}
+			ctext::modified $self 1
+			ctext::linemapUpdate $self
+		}
+
+		paste {
+			tk_textPaste $self 
+			ctext::modified $self 1
+		}
+
+		edit {
+			set subCmd [lindex $args 0]
+			set argsLength [llength $args]
+			
+			ctext::getAr $self config ar
+
+			if {"modified" == $subCmd} {
+				if {$argsLength == 1} {
+					return $ar(modified)
+				} elseif {$argsLength == 2} {
+					set value [lindex $args 1]
+					set ar(modified) $value
+				} else {
+					return -code error "invalid arg(s) to $self edit modified: $args"
+				}
+			} else {
+				#8.4 has other edit subcommands that I don't want to emulate.
+				return [uplevel 1 [linsert $args 0 $self._t $cmd]]
+			}
+		}
+		
+		default { 
+			return [uplevel 1 [linsert $args 0 $self._t $cmd]]
+		}
+	}
+}
+
+proc ctext::tag:blink {win count} {
+	if {$count & 1} {
+		$win tag configure __ctext_blink -foreground [$win cget -bg] -background [$win cget -fg]
+	} else {
+		$win tag configure __ctext_blink -foreground [$win cget -fg] -background [$win cget -bg]
+	}
+
+	if {$count == 4} {
+		$win tag delete __ctext_blink 1.0 end
+		return
+	}
+	incr count
+	after 50 [list ctext::tag:blink $win $count]
+}
+
+proc ctext::matchPair {win str1 str2 escape} {
+	set prevChar [$win get "insert - 2 chars"]
+	
+	if {[string equal $prevChar $escape]} {
+		#The char that we thought might be the end is actually escaped.
+		return
+	}
+
+	set searchRE "[set str1]|[set str2]"
+	set count 1
+	
+	set pos [$win index "insert - 1 chars"]
+	set endPair $pos
+	set lastFound ""
+	while 1 {
+		set found [$win search -backwards -regexp $searchRE $pos]
+		
+		if {$found == "" || [$win compare $found > $pos]} {
+			return
+		}
+
+		if {$lastFound != "" && [$win compare $found == $lastFound]} {
+			#The search wrapped and found the previous search
+			return
+		}
+		
+		set lastFound $found
+		set char [$win get $found]
+		set prevChar [$win get "$found - 1 chars"]
+		set pos $found
+
+		if {[string equal $prevChar $escape]} {
+			continue
+		} elseif {[string equal $char [subst $str2]]} {
+			incr count
+		} elseif {[string equal $char [subst $str1]]} {
+			incr count -1
+			if {$count == 0} {
+				set startPair $found
+				break
+			} 
+		} else {
+			#This shouldn't happen.  I may in the future make it return -code error
+			puts stderr "ctext seems to have encountered a bug in ctext::matchPair"
+			return
+		}
+	}
+	
+	$win tag add __ctext_blink $startPair
+	$win tag add __ctext_blink $endPair
+	ctext::tag:blink $win 0
+}
+
+proc ctext::matchQuote {win} {
+	set endQuote [$win index insert]
+	set start [$win index "insert - 1 chars"]
+	
+	if {[$win get "$start - 1 chars"] == "\\"} {
+		#the quote really isn't the end
+		return
+	}
+	set lastFound ""
+	while 1 {
+		set startQuote [$win search -backwards \" $start]
+		if {$startQuote == "" || [$win compare $startQuote > $start]} {
+			#The search found nothing or it wrapped.
+			return
+		}
+
+		if {$lastFound != "" && [$win compare $lastFound == $startQuote]} {
+			#We found the character we found before, so it wrapped.
+			return
+		}
+		set lastFound $startQuote
+		set start [$win index "$startQuote - 1 chars"]
+		set prevChar [$win get $start]
+
+		if {$prevChar == "\\"} {
+			continue
+		}
+		break
+	}
+	
+	if {[$win compare $endQuote == $startQuote]} {
+		#probably just \"
+		return
+	}
+	
+	$win tag add __ctext_blink $startQuote $endQuote
+	ctext::tag:blink $win 0
+}
+
+proc ctext::enableComments {win} {
+	$win tag configure _cComment -foreground khaki
+}
+proc ctext::disableComments {win} {
+	catch {$win tag delete _cComment}
+}
+
+proc ctext::comments {win} {
+	if {[catch {$win tag cget _cComment -foreground}]} {
+		#C comments are disabled
+		return
+	}
+
+	set startIndex 1.0
+	set commentRE {\\\\|\"|\\\"|\\'|'|/\*|\*/}
+	set commentStart 0
+	set isQuote 0
+	set isSingleQuote 0
+	set isComment 0
+	$win tag remove _cComment 1.0 end
+	while 1 {
+		set index [$win search -count length -regexp $commentRE $startIndex end]
+		
+		if {$index == ""} {
+			break
+		}
+		
+		set endIndex [$win index "$index + $length chars"]
+		set str [$win get $index $endIndex]
+		set startIndex $endIndex
+
+		if {$str == "\\\\"} {
+			continue
+		} elseif {$str == "\\\""} {
+			continue
+		} elseif {$str == "\\'"} {
+			continue
+		} elseif {$str == "\"" && $isComment == 0 && $isSingleQuote == 0} {
+			if {$isQuote} {
+				set isQuote 0
+			} else {
+				set isQuote 1
+			}
+		} elseif {$str == "'" && $isComment == 0 && $isQuote == 0} {
+			if {$isSingleQuote} {
+				set isSingleQuote 0
+			} else {
+				set isSingleQuote 1
+			}
+		} elseif {$str == "/*" && $isQuote == 0 && $isSingleQuote == 0} {
+			if {$isComment} {
+				#comment in comment
+				break
+			} else {
+				set isComment 1
+				set commentStart $index
+			}
+		} elseif {$str == "*/" && $isQuote == 0 && $isSingleQuote == 0} {
+			if {$isComment} {
+				set isComment 0
+				$win tag add _cComment $commentStart $endIndex
+				$win tag raise _cComment
+			} else {
+				#comment end without beginning
+				break
+			}
+		}
+	}
+}
+
+proc ctext::addHighlightClass {win class color keywords} { 
+	set ref [ctext::getAr $win highlight ar]
+	foreach word $keywords {
+		set ar($word) [list $class $color]
+	}
+	$win tag configure $class 
+
+	ctext::getAr $win classes classesAr
+	set classesAr($class) [list $ref $keywords]
+}
+
+#For [ ] { } # etc.
+proc ctext::addHighlightClassForSpecialChars {win class color chars} {  
+	set charList [split $chars ""]
+
+	set ref [ctext::getAr $win highlightSpecialChars ar]
+	foreach char $charList {
+		set ar($char) [list $class $color]
+	}
+	$win tag configure $class 
+
+	ctext::getAr $win classes classesAr
+	set classesAr($class) [list $ref $charList]
+}
+
+proc ctext::addHighlightClassForRegexp {win class color re} {  
+	set ref [ctext::getAr $win highlightRegexp ar]
+
+	set ar($class) [list $re $color]
+	$win tag configure $class 
+
+	ctext::getAr $win classes classesAr
+	set classesAr($class) [list $ref $class]
+}
+
+#For things like $blah 
+proc ctext::addHighlightClassWithOnlyCharStart {win class color char} { 
+	set ref [ctext::getAr $win highlightCharStart ar]
+
+	set ar($char) [list $class $color]
+	$win tag configure $class 
+
+	ctext::getAr $win classes classesAr
+	set classesAr($class) [list $ref $char]
+}
+
+proc ctext::deleteHighlightClass {win classToDelete} {
+	ctext::getAr $win classes classesAr
+
+	if {![info exists classesAr($classToDelete)]} {
+		return -code error "$classToDelete doesn't exist"
+	}
+	
+	foreach {ref keyList} [set classesAr($classToDelete)] {
+		upvar #0 $ref refAr
+		foreach key $keyList {
+			if {![info exists refAr($key)]} {
+				continue
+			}
+			unset refAr($key)
+		}
+	}
+	unset classesAr($classToDelete)
+}
+
+proc ctext::getHighlightClasses win {
+	ctext::getAr $win classes classesAr
+
+	set res [list]
+
+	foreach {class info} [array get classesAr] {
+		lappend res $class
+	}
+	return $res
+}
+
+proc ctext::findNextChar {win index char} {
+	set i [$win index "$index + 1 chars"]
+	set lineend [$win index "$i lineend"]
+	while 1 {
+		set ch [$win get $i]
+		if {[$win compare $i >= $lineend]} {
+			return ""
+		}
+		if {$ch == $char} {
+			return $i
+		}
+		set i [$win index "$i + 1 chars"]
+	}
+}
+
+proc ctext::findNextSpace {win index} {
+	set i [$win index $index]
+	set lineStart [$win index "$i linestart"]
+	set lineEnd [$win index "$i lineend"]
+	#Sometimes the lineend fails (I don't know why), so add 1 and try again.
+	if {[$win compare $lineEnd == $lineStart]} {
+		set lineEnd [$win index "$i + 1 chars lineend"]
+	}
+
+	while {1} {
+		set ch [$win get $i]
+
+		if {[$win compare $i >= $lineEnd]} {
+			set i $lineEnd
+			break
+		}
+
+		if {[string is space $ch]} { 
+			break
+		}
+		set i [$win index "$i + 1 chars"]
+	}
+	return $i
+}
+
+proc ctext::findPreviousSpace {win index} {
+	set i [$win index $index]
+	set lineStart [$win index "$i linestart"]
+	while {1} {
+		set ch [$win get $i]
+
+		if {[$win compare $i <= $lineStart]} {
+			set i $lineStart
+			break
+		}
+
+		if {[string is space $ch]} {
+			break
+		}
+		
+		set i [$win index "$i - 1 chars"]
+	}
+	return $i
+}
+
+proc ctext::clearHighlightClasses {win} {
+	#no need to catch, because array unset doesn't complain
+	#puts [array exists ::ctext::highlight$win]
+
+	ctext::getAr $win highlight ar
+	array unset ar
+	
+	ctext::getAr $win highlightSpecialChars ar
+	array unset ar
+	
+	ctext::getAr $win highlightRegexp ar
+	array unset ar
+	
+	ctext::getAr $win highlightCharStart ar
+	array unset ar
+	
+	ctext::getAr $win classes ar
+	array unset ar
+}
+
+#This is a proc designed to be overwritten by the user.
+#It can be used to update a cursor or animation while
+#the text is being highlighted.
+proc ctext::update {} {
+
+}
+
+proc ctext::highlight {win start end} {
+	ctext::getAr $win config configAr
+
+	if {!$configAr(-highlight)} {
+		return
+	}
+
+	set si $start
+	set twin "$win._t"
+	
+	#The number of times the loop has run.
+	set numTimesLooped 0
+	set numUntilUpdate 600
+
+	ctext::getAr $win highlight highlightAr
+	ctext::getAr $win highlightSpecialChars highlightSpecialCharsAr
+	ctext::getAr $win highlightRegexp highlightRegexpAr
+	ctext::getAr $win highlightCharStart highlightCharStartAr
+
+	while 1 {
+		set res [$twin search -count length -regexp -- {([^\s\(\{\[\}\]\)\.\t\n\r;\"'\|,]+)} $si $end]
+		if {$res == ""} { 
+			break 
+		} 
+		
+		set wordEnd [$twin index "$res + $length chars"]
+		set word [$twin get $res $wordEnd] 
+		set firstOfWord [string index $word 0]
+
+		if {[info exists highlightAr($word)] == 1} {
+			set wordAttributes [set highlightAr($word)]
+			foreach {tagClass color} $wordAttributes break
+			
+			$twin tag add $tagClass $res $wordEnd
+			$twin tag configure $tagClass -foreground $color
+
+		} elseif {[info exists highlightCharStartAr($firstOfWord)] == 1} {
+			set wordAttributes [set highlightCharStartAr($firstOfWord)]
+			foreach {tagClass color} $wordAttributes break
+			
+			$twin tag add $tagClass $res $wordEnd 
+			$twin tag configure $tagClass -foreground $color
+		}
+		set si $wordEnd
+
+		incr numTimesLooped
+		if {$numTimesLooped >= $numUntilUpdate} {
+			ctext::update
+			set numTimesLooped 0
+		}
+	}
+	
+	foreach {ichar tagInfo} [array get highlightSpecialCharsAr] {
+		set si $start
+		foreach {tagClass color} $tagInfo break
+
+		while 1 {
+			set res [$twin search -- $ichar $si $end] 
+			if {"" == $res} { 
+				break 
+			} 
+			set wordEnd [$twin index "$res + 1 chars"]
+	
+			$twin tag add $tagClass $res $wordEnd
+			$twin tag configure $tagClass -foreground $color
+			set si $wordEnd
+
+			incr numTimesLooped
+			if {$numTimesLooped >= $numUntilUpdate} {
+				ctext::update
+				set numTimesLooped 0
+			}
+		}
+	}
+	
+	foreach {tagClass tagInfo} [array get highlightRegexpAr] {
+		set si $start
+		foreach {re color} $tagInfo break
+		while 1 {
+			set res [$twin search -count length -regexp -- $re $si $end] 
+			if {"" == $res} { 
+				break 
+			} 
+		
+			set wordEnd [$twin index "$res + $length chars"]
+			$twin tag add $tagClass $res $wordEnd
+			$twin tag configure $tagClass -foreground $color
+			set si $wordEnd
+			
+			incr numTimesLooped
+			if {$numTimesLooped >= $numUntilUpdate} {
+				ctext::update
+				set numTimesLooped 0
+			}
+		}
+	}
+}
+
+proc ctext::linemapToggleMark {win y} {
+	ctext::getAr $win config configAr
+	
+	if {!$configAr(-linemap_markable)} {
+		return
+	}
+	
+	set markChar [$win.l index @0,$y] 
+	set lineSelected [lindex [split $markChar .] 0]
+	set line [$win.l get $lineSelected.0 $lineSelected.end]
+
+	if {$line == ""} {
+		return
+	}
+
+	ctext::getAr $win linemap linemapAr
+	
+	if {[info exists linemapAr($line)] == 1} { 
+		#It's already marked, so unmark it.
+		array unset linemapAr $line
+		ctext::linemapUpdate $win
+		set type unmarked
+	} else {
+		#This means that the line isn't toggled, so toggle it.
+		array set linemapAr [list $line {}]
+		$win.l tag add lmark $markChar [$win.l index "$markChar lineend"] 
+		$win.l tag configure lmark -foreground $configAr(-linemap_select_fg) \
+-background $configAr(-linemap_select_bg)
+		set type marked
+	}
+
+	if {[string length $configAr(-linemap_mark_command)]} {
+		uplevel #0 [linsert $configAr(-linemap_mark_command) end $win $type $line]
+	}
+}
+
+#args is here because -yscrollcommand may call it
+proc ctext::linemapUpdate {win args} {
+	if {[winfo exists $win.l] != 1} { 
+		return
+	}
+
+	set pixel 0
+	set lastLine {}
+	set lineList [list]
+	set fontMetrics [font metrics [$win._t cget -font]]
+	set incrBy [expr {1 + ([lindex $fontMetrics 5] / 2)}]
+
+	while {$pixel < [winfo height $win.l]} {
+		set idx [$win._t index @0,$pixel]
+
+		if {$idx != $lastLine} {
+			set line [lindex [split $idx .] 0]
+			set lastLine $idx
+			$win.l config -width [string length $line]
+			lappend lineList $line
+		}
+		incr pixel $incrBy 
+	} 
+
+	ctext::getAr $win linemap linemapAr
+	
+	$win.l delete 1.0 end
+	set lastLine {}
+	foreach line $lineList {
+		if {$line == $lastLine} {
+			$win.l insert end "\n" 
+		} else {
+			if {[info exists linemapAr($line)]} { 
+				$win.l insert end "$line\n" lmark
+			} else {
+				$win.l insert end "$line\n"
+			}
+		}
+		set lastLine $line
+	}
+}
+
+proc ctext::modified {win value} {
+	ctext::getAr $win config ar
+	set ar(modified) $value
+	event generate $win <<Modified>>
+	return $value
+}
+From p.dalgaard at biostat.ku.dk  Fri Jan 16 12:28:50 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Fri Jan 16 12:28:31 2004
+Subject: [R-gui] tkbind-question
+In-Reply-To: <53A181E56FB0694ABFD212F8AEDA7F6F258A6E@langouste.zhwin.ch>
+References: <53A181E56FB0694ABFD212F8AEDA7F6F258A6E@langouste.zhwin.ch>
+Message-ID: <x2n08om8st.fsf@biostat.ku.dk>
+
+"Untern?hrer Thomas, uth" <uth@zhwin.ch> writes:
+
+> Hi all,
+> 
+> I try to understand how to mix R- and Tcl-commands.
+> I have three versions of key-binding. The first two versions are clear to me. 
+> The third version is a bit confusing.
+> 
+> ##==============================================================================
+> library(tcltk)
+> 
+> print.textwidget <- function(){
+>   print(tclvalue(tkget(.t, "0.0", "end")))
+> }
+> 
+> ## version 1
+> . <- tktoplevel()
+> .t <- tktext(.)
+> tkpack(.t)
+> tkbind(.t, "<Control-Key-r>", print.textwidget)
+> 
+> ## version 2
+> . <- tktoplevel()
+> .t <- .Tk.subwin(.)
+> .Tcl(paste("pack [text", .Tk.ID(.t), "]"))
+> tkbind(.t, "<Control-Key-r>", print.textwidget)
+> 
+> ## version 3
+> Path <- "PATH TO ctext.tcl"
+> .Tcl(paste("source", paste(Path, "/ctext.tcl", sep = "")))
+> . <- tktoplevel()
+> tkpack(.t <- tkwidget(., "ctext"))
+> tkbind(., "<Control-Key-r>", print.textwidget)
+> ##==============================================================================
+> 
+> In the first two versions I bind the command on the .t (the text-widget).
+> In the third version I must bind it on the . (my base window)?!
+> Why? I assume that it is because ctext is a widget. Somehow different to a 
+> text-widget (tktext gives me a widget too, a text-widget, isn't it?).
+> 
+> Can anybody give me an explanation to my question?
+
+[.Tcl(paste(....)) is almost always better written with tkcmd(...) and
+you can get bitten by embedded spaces if you don't]
+
+The brief answer is that it is because "ctext" is a non-standard
+widget and you can't bind events to it (in Tcl either). Looking at the
+code, it looks like the widget creation command creates a frame
+containing two text widgets, $win.l and $win.t. Presumably, you cannot
+bind keyboard events to $win itself (please check Tcl documentation
+for confirmation - I haven't). So you should probably use something like
+
+tkbind(paste(.Tk.ID,"t",sep=".") ,"<Control-Key-r>", print.textwidget))
+
+(This type of megawidget issue is not unique; similar things happen
+with tabbed notebook widgets and the like. One of the remaining issues
+with the R/tcltk interface is that there is no really clean way of
+making subwidgets created in Tcl accessible from R. Probably not too
+hard to do, though.)
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From uth at zhwin.ch  Fri Jan 16 14:20:29 2004
+From: uth at zhwin.ch (=?iso-8859-1?Q?=22Untern=E4hrer_Thomas=2C_uth=22?=)
+Date: Fri Jan 16 14:19:43 2004
+Subject: AW: [R-gui] tkbind-question
+Message-ID: <53A181E56FB0694ABFD212F8AEDA7F6F1AB913@langouste.zhwin.ch>
+
+
+Thanks a lot for your answer...
+
+I know the command tkcmd, but it's not really clear to me what exactly is the benefit in using tkcmd instead of 
+.Tcl(paste(...)). If I use the .Tcl-version I can use exactly the tcl-syntax, what sometimes is easier.
+
+Are there some real benefits in using tkcmd()?
+
+
+
+-----Urspr?ngliche Nachricht-----
+Von: Peter Dalgaard [mailto:p.dalgaard@biostat.ku.dk] 
+Gesendet: Freitag, 16. Januar 2004 12:29
+An: Untern?hrer Thomas, uth
+Cc: r-sig-gui@stat.math.ethz.ch
+Betreff: Re: [R-gui] tkbind-question
+
+
+"Untern?hrer Thomas, uth" <uth@zhwin.ch> writes:
+
+> Hi all,
+> 
+> I try to understand how to mix R- and Tcl-commands.
+> I have three versions of key-binding. The first two versions are clear 
+> to me.
+> The third version is a bit confusing.
+> 
+> ##====================================================================
+> ==========
+> library(tcltk)
+> 
+> print.textwidget <- function(){
+>   print(tclvalue(tkget(.t, "0.0", "end")))
+> }
+> 
+> ## version 1
+> . <- tktoplevel()
+> .t <- tktext(.)
+> tkpack(.t)
+> tkbind(.t, "<Control-Key-r>", print.textwidget)
+> 
+> ## version 2
+> . <- tktoplevel()
+> .t <- .Tk.subwin(.)
+> .Tcl(paste("pack [text", .Tk.ID(.t), "]"))
+> tkbind(.t, "<Control-Key-r>", print.textwidget)
+> 
+> ## version 3
+> Path <- "PATH TO ctext.tcl"
+> .Tcl(paste("source", paste(Path, "/ctext.tcl", sep = "")))
+> . <- tktoplevel()
+> tkpack(.t <- tkwidget(., "ctext"))
+> tkbind(., "<Control-Key-r>", print.textwidget) 
+> ##====================================================================
+> ==========
+> 
+> In the first two versions I bind the command on the .t (the 
+> text-widget). In the third version I must bind it on the . (my base 
+> window)?! Why? I assume that it is because ctext is a widget. Somehow 
+> different to a text-widget (tktext gives me a widget too, a 
+> text-widget, isn't it?).
+> 
+> Can anybody give me an explanation to my question?
+
+[.Tcl(paste(....)) is almost always better written with tkcmd(...) and you can get bitten by embedded spaces if you don't]
+
+The brief answer is that it is because "ctext" is a non-standard widget and you can't bind events to it (in Tcl either). Looking at the code, it looks like the widget creation command creates a frame containing two text widgets, $win.l and $win.t. Presumably, you cannot bind keyboard events to $win itself (please check Tcl documentation for confirmation - I haven't). So you should probably use something like
+
+tkbind(paste(.Tk.ID,"t",sep=".") ,"<Control-Key-r>", print.textwidget))
+
+(This type of megawidget issue is not unique; similar things happen with tabbed notebook widgets and the like. One of the remaining issues with the R/tcltk interface is that there is no really clean way of making subwidgets created in Tcl accessible from R. Probably not too hard to do, though.)
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From p.dalgaard at biostat.ku.dk  Fri Jan 16 14:36:35 2004
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: Fri Jan 16 14:36:28 2004
+Subject: AW: [R-gui] tkbind-question
+In-Reply-To: <53A181E56FB0694ABFD212F8AEDA7F6F1AB913@langouste.zhwin.ch>
+References: <53A181E56FB0694ABFD212F8AEDA7F6F1AB913@langouste.zhwin.ch>
+Message-ID: <x2wu7skobg.fsf@biostat.ku.dk>
+
+"Untern?hrer Thomas, uth" <uth@zhwin.ch> writes:
+
+> Thanks a lot for your answer...
+> 
+> I know the command tkcmd, but it's not really clear to me what exactly is the benefit in using tkcmd instead of 
+> .Tcl(paste(...)). If I use the .Tcl-version I can use exactly the tcl-syntax, what sometimes is easier.
+> 
+> Are there some real benefits in using tkcmd()?
+
+Mostly readability, but tkcmd will convert each argument to a Tcl
+object and use Tcl_EvalObjv on the resulting list, which is faster
+and, more importantly, avoids "quoting hell". The difference is mostly
+immaterial but can be spectacular if large text strings is involved. 
+
+
+-- 
+   O__  ---- Peter Dalgaard             Blegdamsvej 3  
+  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   
+ (*) \(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907
+
+From hodgess at gator.uhd.edu  Sat Jan 17 19:55:04 2004
+From: hodgess at gator.uhd.edu (Erin Hodgess)
+Date: Sat Jan 17 19:34:10 2004
+Subject: [R-gui] [RGUI] Where do you start?
+Message-ID: <200401171855.i0HIt4529518@gator.dt.uh.edu>
+
+Dear R-SIG-GUI:
+
+How would I start to build a GUI, please?
+Should I learn Visual Basic, please?
+
+Thanks so much in advance!
+
+Sincerely,
+Erin 
+mailto: hodgess@gator.uhd.edu
+
+From jfox at mcmaster.ca  Mon Jan 19 13:49:15 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Mon Jan 19 13:45:12 2004
+Subject: [R-gui] [RGUI] Where do you start?
+In-Reply-To: <200401171855.i0HIt4529518@gator.dt.uh.edu>
+Message-ID: <5.1.0.14.2.20040119074355.01ffeae0@127.0.0.1>
+
+Dear Erin,
+
+At 12:55 PM 1/17/2004 -0600, Erin Hodgess wrote:
+>Dear R-SIG-GUI:
+>
+>How would I start to build a GUI, please?
+>Should I learn Visual Basic, please?
+>
+>Thanks so much in advance!
+
+When I programmed the Rcmdr GUI, I took a look at several options including 
+Visual Basic, and concluded that, at present, Tcl/Tk via the tcltk package 
+was the way to go. The tcltk package is one of the recommended packages, 
+the resulting GUI works under all platforms, and the Windows distribution 
+of R installs with a basic Tcl/Tk system. The GUI itself can be distributed 
+as a standard R package.
+
+Beyond that, it's hard to give advice since you don't specify what the GUI 
+will do, who will use it, on what platform(s) it will run, etc.
+
+I hope that this helps,
+  John
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From phgrosjean at sciviews.org  Mon Jan 19 18:03:22 2004
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Mon Jan 19 18:01:52 2004
+Subject: [R-gui] [RGUI] Where do you start?
+In-Reply-To: <200401171855.i0HIt4529518@gator.dt.uh.edu>
+Message-ID: <MABBLJDICACNFOLGIHJOAEAGEBAA.phgrosjean@sciviews.org>
+
+Erin Hodgess wrote:
+
+>How would I start to build a GUI, please?
+>Should I learn Visual Basic, please?
+
+John Fox answered:
+
+>When I programmed the Rcmdr GUI, I took a look at several options including
+>Visual Basic, and concluded that, at present, Tcl/Tk via the tcltk package
+>was the way to go. The tcltk package is one of the recommended packages,
+>the resulting GUI works under all platforms, and the Windows distribution
+>of R installs with a basic Tcl/Tk system. The GUI itself can be distributed
+>as a standard R package.
+
+>Beyond that, it's hard to give advice since you don't specify what the GUI
+>will do, who will use it, on what platform(s) it will run, etc.
+
+John is right, Tcl/Tk is largely advised for building GUIs for R. It has the
+double advantage to run on all platforms and to be fully integrated into R:
+it is now installed by default by the setup of R for Windows (I presume you
+are interested by a GUI for Windows, since you speak about Visual Basic that
+runs only under Windows).
+
+At the time I started the SciViews project, it was not the case yet (four
+years ago), and I choose Visual Basic for various reasons. The R(D)Com
+server, a similar package from Duncan Temple Lang and R plugs (from
+SciViews) do connect VB to R, if you really want to use VB, or VBA (i.e.,
+the "macro" language of Excel) it is possible.
+
+You do not give much details on which kind of GUI you want to build.
+However, whatever your project, you should start form existing code for two
+reasons:
+1) You will learn faster from an existing example,
+2) If possible, you could try to make your code compatible with the existing
+project, in order to contribute to it instead of starting yet another
+different R GUI project.
+
+The last year, there where a couple of different, incompatible GUI projects
+for R. Most of them are not evolving quickly, or are even idle (Rkwark,
+ObveRsive, Brodgar,...)? The one that leads to a fully-working
+implementation is R commander form John Fox, and it is 100% Tcl/Tk. A wise
+choice in this context is thus to learn Tcl/Tk, and to build GUI extentions
+that are "R commander-compatible", i.e., that use the same menuing system
+and the same main window with a logging feature. Just start from the Rcmdr
+package, learn its code (it is well written) and adapt it to your particular
+needs.
+
+***If everyone agrees to use R commander as a reference for buiding R GUI
+for their particular application, then we will all move together in the same
+direction***
+
+... and we will be able to put all the various pieces of the puzzle together
+one day... This will contrast with the situation until today, with all those
+different projects moving in different and incompatible directions: what a
+waste of time and effort!
+
+I recently adapted SciViews to make it compatible with R Commander. The
+lastest version (0.3.3, see http://www.sciviews.org/software/SciViews.htm)
+provides some additional nice features you do not find in the current R + R
+commander binome: syntax highlighting, code tips, electronic reference
+cards, assistants, automatic installation of Rcmdr library, etc... and very
+soon an object explorer and views (a graphical way to explore R objects).
+So, Tcl/Tk dialog boxes "a la R commander" also run under SciViews (Windows
+platform only), if you prefer it to the simpler default Rgui user interface.
+
+Best,
+
+Philippe Grosjean
+
+.......................................................<?}))><....
+ ) ) ) ) )
+( ( ( ( (   Prof. Philippe Grosjean
+\  ___   )
+ \/ECO\ (   Numerical Ecology of Aquatic Systems
+ /\___/  )  Mons-Hainaut University, Pentagone
+/ ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium
+ /NUM\/  )
+ \___/\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+       \ )  email: Philippe.Grosjean@umh.ac.be
+ ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)
+( ( ( ( (
+...................................................................
+
+From duncan at wald.ucdavis.edu  Mon Jan 19 21:32:01 2004
+From: duncan at wald.ucdavis.edu (Duncan Lang)
+Date: Mon Jan 19 21:30:46 2004
+Subject: [R-gui] [RGUI] Where do you start?
+In-Reply-To: <MABBLJDICACNFOLGIHJOAEAGEBAA.phgrosjean@sciviews.org>
+References: <200401171855.i0HIt4529518@gator.dt.uh.edu>
+	<MABBLJDICACNFOLGIHJOAEAGEBAA.phgrosjean@sciviews.org>
+Message-ID: <20040119203201.GC6916@wald.ucdavis.edu>
+
+Philippe Grosjean wrote:
+> Erin Hodgess wrote:
+> 
+> >How would I start to build a GUI, please?
+> >Should I learn Visual Basic, please?
+> 
+> John Fox answered:
+> 
+> >When I programmed the Rcmdr GUI, I took a look at several options including
+> >Visual Basic, and concluded that, at present, Tcl/Tk via the tcltk package
+> >was the way to go. The tcltk package is one of the recommended packages,
+> >the resulting GUI works under all platforms, and the Windows distribution
+> >of R installs with a basic Tcl/Tk system. The GUI itself can be distributed
+> >as a standard R package.
+> 
+> >Beyond that, it's hard to give advice since you don't specify what the GUI
+> >will do, who will use it, on what platform(s) it will run, etc.
+> 
+> John is right, Tcl/Tk is largely advised for building GUIs for R. It has the
+> double advantage to run on all platforms and to be fully integrated into R:
+> it is now installed by default by the setup of R for Windows (I presume you
+> are interested by a GUI for Windows, since you speak about Visual Basic that
+> runs only under Windows).
+
+Well, "advised" might be a little strong.  The tcltk package was put
+into the R distribution as a matter of convenience rather than a
+formal decision to advocate or support the use of Tcl/Tk as the main
+toolkit.  This bundling has given it a status that was never
+discussed.  Iit does run on all of the primary platforms which is very
+helpful.  However, it is an old toolkit that is not used for any large
+application.  This is in contrast with Gtk, Qt, Swing, which have
+richer widgets, more activity in development and are the bases for
+numerous applications. Why the latter is important is that we have
+been succesful in embedding R into other applications and using and
+extending their GUIs.  This is possible with tcltk, but there are not
+real applications that are in widespread use that we would want to do
+this.  So tcltk is fine if it is a stand-alone GIO application that we
+want to run within R. Otherwise, it may well not be the best toolkit to
+work with.
+
+
+> 
+> At the time I started the SciViews project, it was not the case yet (four
+> years ago), and I choose Visual Basic for various reasons. The R(D)Com
+> server, a similar package from Duncan Temple Lang
+
+Just for the record, the are similarities between R(D)Com and the
+RDCOM* packages. However, the RDCOM* packages are a lot more general,
+being able to create R objects as real RDCOM servers. So while they
+both provide DCOM access to and from R, the model and possibilities
+are very different.  In general, sending R commands to R
+from other applications is bad programming. And not being able
+to deal with general data types makes the R(D)Com package
+most useful for simple tasks, but not a good bet for 
+building maintainable, general software.
+
+> and R plugs (from
+> SciViews) do connect VB to R, if you really want to use VB, or VBA (i.e.,
+> the "macro" language of Excel) it is possible.
+> 
+> You do not give much details on which kind of GUI you want to build.
+> However, whatever your project, you should start form existing code for two
+> reasons:
+> 1) You will learn faster from an existing example,
+> 2) If possible, you could try to make your code compatible with the existing
+> project, in order to contribute to it instead of starting yet another
+> different R GUI project.
+> 
+> The last year, there where a couple of different, incompatible GUI projects
+> for R. Most of them are not evolving quickly, or are even idle (Rkwark,
+> ObveRsive, Brodgar,...)? The one that leads to a fully-working
+> implementation is R commander form John Fox, and it is 100% Tcl/Tk. A wise
+> choice in this context is thus to learn Tcl/Tk, and to build GUI extentions
+> that are "R commander-compatible", i.e., that use the same menuing system
+> and the same main window with a logging feature. Just start from the Rcmdr
+> package, learn its code (it is well written) and adapt it to your particular
+> needs.
+> 
+> ***If everyone agrees to use R commander as a reference for buiding R GUI
+> for their particular application, then we will all move together in the same
+> direction***
+
+And that is very possibly not the "right" direction.  What John (Fox)
+has done is terrfic.  It had a particular focus and goal.  You still
+seem to thing there is a single direction that is good.  I believe
+that all of us that have given this a moments thought understand that
+the complexities lie in the fact that there are many different classes
+of users, and usage, and so we need very different interfaces, even
+with the GUI-world, let alone the command line world.  A single user
+will need to switch between different styles of interfaces for
+different tasks.  That is why we don't need "a" or "the" GUI, but
+instead GUI components that people pull up for certain tasks and that
+are well written so that they can be extended in the object-oriented
+sense and embedded within other applications.  We have ways of doing
+this that work.
+
+And the collection of widgets in Tcl/Tk is not necessarily rich enough
+to do what some of us want to do.  And the programming model for Tcl
+(not Tk) is, to say the least, "strained".
+
+
+
+
+> 
+> ... and we will be able to put all the various pieces of the puzzle together
+> one day... This will contrast with the situation until today, with all those
+> different projects moving in different and incompatible directions: what a
+> waste of time and effort!
+
+Or understanding of the real problem!
+
+> 
+> I recently adapted SciViews to make it compatible with R Commander. The
+> lastest version (0.3.3, see http://www.sciviews.org/software/SciViews.htm)
+> provides some additional nice features you do not find in the current R + R
+> commander binome: syntax highlighting, code tips, electronic reference
+> cards, assistants, automatic installation of Rcmdr library, etc... and very
+> soon an object explorer and views (a graphical way to explore R objects).
+> So, Tcl/Tk dialog boxes "a la R commander" also run under SciViews (Windows
+> platform only), if you prefer it to the simpler default Rgui user interface.
+> 
+> Best,
+> 
+> Philippe Grosjean
+> 
+> .......................................................<?}))><....
+>  ) ) ) ) )
+> ( ( ( ( (   Prof. Philippe Grosjean
+> \  ___   )
+>  \/ECO\ (   Numerical Ecology of Aquatic Systems
+>  /\___/  )  Mons-Hainaut University, Pentagone
+> / ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium
+>  /NUM\/  )
+>  \___/\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12
+>        \ )  email: Philippe.Grosjean@umh.ac.be
+>  ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)
+> ( ( ( ( (
+> ...................................................................
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI@stat.math.ethz.ch
+> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-- 
+Duncan Temple Lang                        duncan@wald.ucdavis.edu
+371 Kerr Hall
+University of California at Davis
+
+From gr3k at virginia.edu  Mon Jan 19 23:30:40 2004
+From: gr3k at virginia.edu (Greg Riddick)
+Date: Mon Jan 19 23:29:43 2004
+Subject: [R-gui] [RGUI] Where do you start?
+References: <MABBLJDICACNFOLGIHJOAEAGEBAA.phgrosjean@sciviews.org>
+Message-ID: <000f01c3dedb$de26e180$0400a8c0@ghandi>
+
+Any chance of setting up R-commander as a sourceforge project?
+That might make it easier for people to create their own branches/versions.
+
+
+----- Original Message ----- 
+From: "Philippe Grosjean" <phgrosjean@sciviews.org>
+To: "Erin Hodgess" <hodgess@gator.uhd.edu>
+Cc: <jfox@mcmaster.ca>; <r-sig-gui@stat.math.ethz.ch>
+Sent: Monday, January 19, 2004 12:03 PM
+Subject: RE: [R-gui] [RGUI] Where do you start?
+
+From jfox at mcmaster.ca  Tue Jan 20 02:39:12 2004
+From: jfox at mcmaster.ca (John Fox)
+Date: Tue Jan 20 02:35:04 2004
+Subject: [R-gui] [RGUI] Where do you start?
+In-Reply-To: <000f01c3dedb$de26e180$0400a8c0@ghandi>
+References: <MABBLJDICACNFOLGIHJOAEAGEBAA.phgrosjean@sciviews.org>
+Message-ID: <5.1.0.14.2.20040119203735.01fe5f40@127.0.0.1>
+
+Dear Greg,
+
+I have only limited experience with sourceforge. My immediate reaction is 
+that the Rcdmr package is probably too small for this kind of treatment, 
+but I'd be willing to hear more.
+
+Regards,
+  John
+
+At 05:30 PM 1/19/2004 -0500, Greg Riddick wrote:
+>Any chance of setting up R-commander as a sourceforge project?
+>That might make it easier for people to create their own branches/versions.
+>
+>
+>----- Original Message -----
+>From: "Philippe Grosjean" <phgrosjean@sciviews.org>
+>To: "Erin Hodgess" <hodgess@gator.uhd.edu>
+>Cc: <jfox@mcmaster.ca>; <r-sig-gui@stat.math.ethz.ch>
+>Sent: Monday, January 19, 2004 12:03 PM
+>Subject: RE: [R-gui] [RGUI] Where do you start?
+>
+>_______________________________________________
+>R-SIG-GUI mailing list
+>R-SIG-GUI@stat.math.ethz.ch
+>https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+

@@ -1,0 +1,53 @@
+From rajulpm2 at gmail.com  Wed Feb 28 07:11:19 2018
+From: rajulpm2 at gmail.com (Raju Lpm)
+Date: Wed, 28 Feb 2018 11:41:19 +0530
+Subject: [R-gui] Fwd: how to implement scroll down when scatter plot have
+ huge amount of data?
+In-Reply-To: <CAMaajRdcNhYGs8O9pF_qZiCr0C87xFMzwQ1OOs3q=c1F70Tv+Q@mail.gmail.com>
+References: <CAMaajRdcNhYGs8O9pF_qZiCr0C87xFMzwQ1OOs3q=c1F70Tv+Q@mail.gmail.com>
+Message-ID: <CAMaajRfEAZa2K8ChmTUH7bWhLH=d14uk+2ATJB_UQp50CgozmA@mail.gmail.com>
+
+Hello,
+
+Please do the needful for below requirement.... how to implement scroll
+down when scatter plot have huge amount of data?
+
+
+Requirement: Need output like this right side of the scroll down when huge
+amount of data on the scatter plot (GGPLOT2)
+1st chart: implemented in Tableau, but I need scroll down and up for
+scatter plot in R console or R shiny...
+
+
+
+I got the below output, but here there is no scroll down and up, entire
+reports displayed in one page*, but how do I implement scroll down and up
+for scatter plot(ggplot2), like 1st chart*
+
+
+
+
+
+Thanks,
+Raju
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20180228/7dcd2980/attachment-0001.html>
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image.png
+Type: image/png
+Size: 1010693 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20180228/7dcd2980/attachment-0002.png>
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: image.png
+Type: image/png
+Size: 571665 bytes
+Desc: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20180228/7dcd2980/attachment-0003.png>
+

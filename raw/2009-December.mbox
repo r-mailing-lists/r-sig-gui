@@ -1,0 +1,817 @@
+From ian.fellows at stat.ucla.edu  Thu Dec  3 01:19:36 2009
+From: ian.fellows at stat.ucla.edu (ian.fellows at stat.ucla.edu)
+Date: Wed, 2 Dec 2009 16:19:36 -0800 (PST)
+Subject: [R-gui] Deducer: An R data analysis GUI
+Message-ID: <bd27195cb539a9f82317852a91e1b7d5.squirrel@mail.stat.ucla.edu>
+
+Announcing a new version of Deducer:
+
+Deducer 0.2-1 is an intuitive, cross-platform graphical data analysis
+system. It uses menus and dialogs to guide the user efficiently through
+the data manipulation and analysis process, and has an excel like
+spreadsheet for easy data frame visualization and editing. Deducer works
+best when used with the Java based R GUI JGR, but the dialogs can be
+called from the command line. Dialogs have also been integrated into the
+Windows Rgui.
+
+The statistical methods and concepts covered by the dialogs is increasing,
+and currently includes:
+
+Data Manipulation: factor editing, Variable recoding, subseting, sorting,
+merging, transposing, opening data (text and foreign), and saving data
+
+Analysis: Frequencies, Descriptives, Contingency tables (and related
+statistics), one-sample, two-sample, k-sample tests, as well as
+correlations
+
+Models: Linear Models (with optional HCCM), Logistic regression,
+Generalized Linear Models
+
+Since it?s initial release in August, there have been significant changes
+to the back-end as well as the programmatic interface. This has resulted
+in increased stability, and made for easier incorporation of Deducer?s R
+functions into non-GUI programs. Additionally, a plug-in interface has
+been added, which allows arbitrary packages to add onto Deducer?s menu
+system.
+
+
+From mark.heckmann at gmx.de  Sun Dec  6 14:24:45 2009
+From: mark.heckmann at gmx.de (Mark Heckmann)
+Date: Sun, 6 Dec 2009 14:24:45 +0100
+Subject: [R-gui] tk2mclistbox problem
+Message-ID: <9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091206/6db419ce/attachment.pl>
+
+From phgrosjean at sciviews.org  Sun Dec  6 21:12:55 2009
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Sun, 06 Dec 2009 21:12:55 +0100
+Subject: [R-gui] tk2mclistbox problem
+In-Reply-To: <9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>
+References: <9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>
+Message-ID: <4B1C1047.1080209@sciviews.org>
+
+Mark Heckmann wrote:
+> Hey Philippe,
+> 
+> I have a question concerning an tk2mclistbox problem.
+> I have the same problem as in this post you commented.
+> 
+> https://stat.ethz.ch/pipermail/r-sig-gui/2009-February/000911.html
+> 
+> It was dated Feb.09. The sample code still throws an error.
+> Are there any advances? Right now it seems the tk2mclistbox cannot be  
+> used?!
+
+I tried to fix the problem, but it appears to be a bug in a Tk widget 
+that is not maintained any more (mclistbox). At the time I integrated it 
+in tcltk2, it was fully functional. At this point, there are three 
+possibilities:
+
+1) To use a Tktable widget instead (also supported by tcltk2),
+
+2) To use the newer tablelist Tk widget, but that requires some work to 
+incorporate it in tcltk2 (http://wiki.tcl.tk/5527; the best choice I think),
+
+3) To fix the old mclistbox widget (we need a good Tcl programmer here).
+
+If someone wants to submit a patch for #3, or work on a solution for #2, 
+I will gladly include it in tcltk2.
+Best,
+
+Philippe Grosjean
+
+> Am I wrong? What can I do?
+> 
+> Thanks in advance!!
+> 
+> Mark
+> 
+> ???????????????????????????????????????
+> Mark Heckmann
+> Dipl. Wirt.-Ing. cand. Psych.
+> Vorstra?e 93 B01
+> 28359 Bremen
+> Blog: www.markheckmann.de
+> R-Blog: http://ryouready.wordpress.com
+> 
+> 
+> 
+> 
+> 
+> 	[[alternative HTML version deleted]]
+> 
+> 
+> 
+> ------------------------------------------------------------------------
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From Christiane.Raemsch at imbe.med.uni-erlangen.de  Fri Dec 11 10:12:08 2009
+From: Christiane.Raemsch at imbe.med.uni-erlangen.de (Christiane Raemsch)
+Date: Fri, 11 Dec 2009 10:12:08 +0100
+Subject: [R-gui] tk2mclistbox problem
+In-Reply-To: <4B1C1047.1080209@sciviews.org>
+References: <9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>
+	<4B1C1047.1080209@sciviews.org>
+Message-ID: <4B220CE8.1010404@imbe.med.uni-erlangen.de>
+
+Philippe Grosjean schrieb:
+> Mark Heckmann wrote:
+>> Hey Philippe,
+>>
+>> I have a question concerning an tk2mclistbox problem.
+>> I have the same problem as in this post you commented.
+>>
+>> https://stat.ethz.ch/pipermail/r-sig-gui/2009-February/000911.html
+>>
+>> It was dated Feb.09. The sample code still throws an error.
+>> Are there any advances? Right now it seems the tk2mclistbox cannot 
+>> be  used?!
+>
+> I tried to fix the problem, but it appears to be a bug in a Tk widget 
+> that is not maintained any more (mclistbox). At the time I integrated 
+> it in tcltk2, it was fully functional. At this point, there are three 
+> possibilities:
+>
+> 1) To use a Tktable widget instead (also supported by tcltk2),
+>
+> 2) To use the newer tablelist Tk widget, but that requires some work 
+> to incorporate it in tcltk2 (http://wiki.tcl.tk/5527; the best choice 
+> I think),
+>
+> 3) To fix the old mclistbox widget (we need a good Tcl programmer here).
+>
+> If someone wants to submit a patch for #3, or work on a solution for 
+> #2, I will gladly include it in tcltk2.
+> Best,
+>
+> Philippe Grosjean
+>
+>> Am I wrong? What can I do?
+>>
+>> Thanks in advance!!
+>>
+>> Mark
+>>
+>> ???????????????????????????????????????
+>> Mark Heckmann
+>> Dipl. Wirt.-Ing. cand. Psych.
+>> Vorstra?e 93 B01
+>> 28359 Bremen
+>> Blog: www.markheckmann.de
+>> R-Blog: http://ryouready.wordpress.com
+>>
+>>
+>>
+>>
+>>
+>>     [[alternative HTML version deleted]]
+>>
+>>
+>>
+>> ------------------------------------------------------------------------
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+I also had this problem.
+I found out that the error occurs in the tcl procedure 
+'::tk::ListboxBeginSelect', so i rewrite it (removing the part where the 
+error occurs, which was only an additional condition here *).
+
+Run the following in R before creating the listbox:
+
+string = 'proc ::tk::ListboxBeginSelect {w el {focus 1}} {
+                                    variable ::tk::Priv
+                                    if {[$w cget -selectmode] eq 
+"multiple"} {
+                                    if {[$w selection includes $el]} {
+                                        $w selection clear $el
+                                    } else {
+                                        $w selection set $el
+                                    }
+                                    } else {
+                                    $w selection clear 0 end
+                                    $w selection set $el
+                                    $w selection anchor $el
+                                    set Priv(listboxSelection) {}
+                                    set Priv(listboxPrev) $el
+                                    }
+                                    event generate $w <<ListboxSelect>>
+                                    if {$focus && [winfo exists $w] *} 
+{                     
+                                    focus $w
+                                    }
+                                }'
+                               
+.Tcl(string)
+
+I am not a skilled tcl programmer,  it was only an experiment and for me 
+it worked good.
+Maybe it also helps you.
+
+Best Regards,
+C.R?msch
+
+
+From landronimirc at gmail.com  Sat Dec 12 11:15:06 2009
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Sat, 12 Dec 2009 10:15:06 +0000
+Subject: [R-gui] debugging GUI-creation code (Rcmdr)
+Message-ID: <68b1e2610912120215h33db1bd5rf509b5c23891e61e@mail.gmail.com>
+
+Dear all
+How could I properly debug Rcmdr GUI-creation code? I am working on my
+plug-in and I get a strange error in an unexpected place. When I try
+to debug it via browser()---just before the offending line---and then
+'n' to enter the step-through debugger, I always get stopped at the
+first doItAndPrint().
+Browse[1]> search
+[1] "asdf"
+Browse[1]> searchCommand
+[1] "findFn('asdf')"
+Browse[1]> n
+debug at /home/liviu/Devel/Rcmdr-dev/Rcmdr.sos/RcmdrPlugin.sos-0.1-0/R/sosInit.R#51:
+doItAndPrint(paste("## Launching RSiteSearch, please be patient.."))
+Browse[2]> n
+Error in function ()  : invalid connection
+Error: invalid connection
+
+However I know that the error doesn't occur there, since when I use
+the same "asdf" string in the non-debug section, the function outputs
+as expected. (It is for more complex strings such as "asdf ; HTMLgrid"
+that the function unexpectedly terminates with the above error, in
+non-debug sessions).
+
+How should I correctly debug Rcmdr GUI-creation code? Thank you
+Liviu
+
+
+-- 
+Do you know how to read?
+http://www.alienetworks.com/srtest.cfm
+Do you know how to write?
+http://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail
+
+
+From phgrosjean at sciviews.org  Sat Dec 12 12:03:50 2009
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Sat, 12 Dec 2009 12:03:50 +0100
+Subject: [R-gui] tk2mclistbox problem
+In-Reply-To: <4B220CE8.1010404@imbe.med.uni-erlangen.de>
+References: <9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>	<4B1C1047.1080209@sciviews.org>
+	<4B220CE8.1010404@imbe.med.uni-erlangen.de>
+Message-ID: <4B237896.7040604@sciviews.org>
+
+Many thanks! Added to tcltk2 1.1-1 (in a slightly different form). It 
+should shortly appear on CRAN.
+Best,
+
+PhG
+
+
+Christiane Raemsch wrote:
+> Philippe Grosjean schrieb:
+>> Mark Heckmann wrote:
+>>> Hey Philippe,
+>>>
+>>> I have a question concerning an tk2mclistbox problem.
+>>> I have the same problem as in this post you commented.
+>>>
+>>> https://stat.ethz.ch/pipermail/r-sig-gui/2009-February/000911.html
+>>>
+>>> It was dated Feb.09. The sample code still throws an error.
+>>> Are there any advances? Right now it seems the tk2mclistbox cannot 
+>>> be  used?!
+>>
+>> I tried to fix the problem, but it appears to be a bug in a Tk widget 
+>> that is not maintained any more (mclistbox). At the time I integrated 
+>> it in tcltk2, it was fully functional. At this point, there are three 
+>> possibilities:
+>>
+>> 1) To use a Tktable widget instead (also supported by tcltk2),
+>>
+>> 2) To use the newer tablelist Tk widget, but that requires some work 
+>> to incorporate it in tcltk2 (http://wiki.tcl.tk/5527; the best choice 
+>> I think),
+>>
+>> 3) To fix the old mclistbox widget (we need a good Tcl programmer here).
+>>
+>> If someone wants to submit a patch for #3, or work on a solution for 
+>> #2, I will gladly include it in tcltk2.
+>> Best,
+>>
+>> Philippe Grosjean
+>>
+>>> Am I wrong? What can I do?
+>>>
+>>> Thanks in advance!!
+>>>
+>>> Mark
+>>>
+>>> ???????????????????????????????????????
+>>> Mark Heckmann
+>>> Dipl. Wirt.-Ing. cand. Psych.
+>>> Vorstra?e 93 B01
+>>> 28359 Bremen
+>>> Blog: www.markheckmann.de
+>>> R-Blog: http://ryouready.wordpress.com
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>     [[alternative HTML version deleted]]
+>>>
+>>>
+>>>
+>>> ------------------------------------------------------------------------
+>>>
+>>> _______________________________________________
+>>> R-SIG-GUI mailing list
+>>> R-SIG-GUI at stat.math.ethz.ch
+>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+>> _______________________________________________
+>> R-SIG-GUI mailing list
+>> R-SIG-GUI at stat.math.ethz.ch
+>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+> I also had this problem.
+> I found out that the error occurs in the tcl procedure 
+> '::tk::ListboxBeginSelect', so i rewrite it (removing the part where the 
+> error occurs, which was only an additional condition here *).
+> 
+> Run the following in R before creating the listbox:
+> 
+> string = 'proc ::tk::ListboxBeginSelect {w el {focus 1}} {
+>                                    variable ::tk::Priv
+>                                    if {[$w cget -selectmode] eq 
+> "multiple"} {
+>                                    if {[$w selection includes $el]} {
+>                                        $w selection clear $el
+>                                    } else {
+>                                        $w selection set $el
+>                                    }
+>                                    } else {
+>                                    $w selection clear 0 end
+>                                    $w selection set $el
+>                                    $w selection anchor $el
+>                                    set Priv(listboxSelection) {}
+>                                    set Priv(listboxPrev) $el
+>                                    }
+>                                    event generate $w <<ListboxSelect>>
+>                                    if {$focus && [winfo exists $w] *} 
+> {                                                        focus $w
+>                                    }
+>                                }'
+>                               .Tcl(string)
+> 
+> I am not a skilled tcl programmer,  it was only an experiment and for me 
+> it worked good.
+> Maybe it also helps you.
+> 
+> Best Regards,
+> C.R?msch
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+
+From mark.heckmann at gmx.de  Sat Dec 12 13:57:18 2009
+From: mark.heckmann at gmx.de (Mark Heckmann)
+Date: Sat, 12 Dec 2009 13:57:18 +0100
+Subject: [R-gui] gwidgets drag and drop basic question
+Message-ID: <CB9702E9-A523-44DA-A2B7-55171BF667F6@gmx.de>
+
+I got stuck while trying to implement Drag and Drop in gwidgets.
+I hoped the following code would call the handler function and thus  
+print something to the console.
+But it does not. ISo  suppose I do not understand some basic  
+properties of the handler mechanism.
+Can someone explain?
+
+w <- gwindow()
+lab  = glabel("drag me",container=w)
+ed = gedit("drop here",container = w)
+adddropsource(lab)
+adddroptarget(ed, handler=function(h,...) print("arrived"))
+
+Thanks,
+Mark
+
+???????????????????????????????????????
+Mark Heckmann
+Dipl. Wirt.-Ing. cand. Psych.
+Vorstra?e 93 B01
+28359 Bremen
+Blog: www.markheckmann.de
+R-Blog: http://ryouready.wordpress.com
+
+
+From jverzani at gmail.com  Sun Dec 13 04:00:20 2009
+From: jverzani at gmail.com (j verzani)
+Date: Sun, 13 Dec 2009 03:00:20 +0000 (UTC)
+Subject: [R-gui] gwidgets drag and drop basic question
+References: <CB9702E9-A523-44DA-A2B7-55171BF667F6@gmx.de>
+Message-ID: <loom.20091213T035927-765@post.gmane.org>
+
+Mark Heckmann <mark.heckmann <at> gmx.de> writes:
+
+> 
+> I got stuck while trying to implement Drag and Drop in gwidgets.
+> I hoped the following code would call the handler function and thus  
+> print something to the console.
+> But it does not. ISo  suppose I do not understand some basic  
+> properties of the handler mechanism.
+> Can someone explain?
+> 
+
+
+
+Mark, it should, but doesn't. I couldn't figure out how to get dnd with the
+gedit widget to work properly (it would drop the value twice). What yo have
+works with other widgets. However, it shouldn't be so hard. Below I show how to
+do this through RGtk2, a fix I'll put on my todo list for the package:
+
+
+
+library(gWidgets)
+options(guiToolkit="RGtk2")
+w <- gwindow()
+g <- ggroup(cont=w)
+lab  = glabel("drag me",container=g)
+ed = gedit("drop here",container = g)
+adddropsource(lab)
+
+## do this:
+
+library(RGtk2)
+gSignalConnect(getToolkitWidget(ed), "drag-data-received", f=function(w,...) {
+  print("arrived")
+  val <- w$getText()
+  svalue(ed) <- val
+  })
+
+
+
+--John
+
+
+> w <- gwindow()
+> lab  = glabel("drag me",container=w)
+> ed = gedit("drop here",container = w)
+> adddropsource(lab)
+> adddroptarget(ed, handler=function(h,...) print("arrived"))
+> 
+> Thanks,
+> Mark
+> 
+> ???????????????????????????????????????
+> Mark Heckmann
+> Dipl. Wirt.-Ing. cand. Psych.
+> Vorstra?e 93 B01
+> 28359 Bremen
+> Blog: www.markheckmann.de
+> R-Blog: http://ryouready.wordpress.com
+>
+
+
+From y.alperovych at ulg.ac.be  Tue Dec 15 18:26:41 2009
+From: y.alperovych at ulg.ac.be (Yan ALPEROVYCH)
+Date: Tue, 15 Dec 2009 18:26:41 +0100
+Subject: [R-gui] R GUI editor window - help field does not return the help
+	topic.
+Message-ID: <7A14A9AE-5FF2-45C4-81D0-7369F3C31A44@ulg.ac.be>
+
+Hello everyone, 
+
+I am not sure if I am at the right place to put this question, so don't hesitate to redirect me to the correct mailing list. My question is about the editor window under the R GUI on Mac OS 10.6.2. Before the upgrade to R 2.10.1 with GUI 1.31, I was able to call for the help topics from the spotlight-like help field in the upper right corner of the editor. Now it only returns me a blank box, which still slides as before, but the help topic is missing. Is this a frequent problem or is it related to my specific computer? And if it's a general issue, is there some solution please?
+
+Thank you for the replies or possible indications on where can I find more hints.
+
+Yan ALPEROVYCH
+Financial Management, FRFC-FNRS Fellow
+HEC-ULg Management School
+Tel.: 	+32(4)/232.74.30
+GSM:  	+32(4)/85.75.04.16 
+E-mail: 	y.alperovych at ulg.ac.be
+
+
+From phgrosjean at sciviews.org  Tue Dec 15 19:29:01 2009
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue, 15 Dec 2009 19:29:01 +0100
+Subject: [R-gui] R GUI editor window - help field does not return the
+ help	topic.
+In-Reply-To: <7A14A9AE-5FF2-45C4-81D0-7369F3C31A44@ulg.ac.be>
+References: <7A14A9AE-5FF2-45C4-81D0-7369F3C31A44@ulg.ac.be>
+Message-ID: <4B27D56D.3060207@sciviews.org>
+
+You should fill a bug report for R.
+
+PhG
+..............................................<?}))><........
+  ) ) ) ) )
+( ( ( ( (    Prof. Philippe Grosjean
+  ) ) ) ) )
+( ( ( ( (    Numerical Ecology of Aquatic Systems
+  ) ) ) ) )   Mons University, Belgium
+( ( ( ( (
+..............................................................
+
+Yan ALPEROVYCH wrote:
+> Hello everyone, 
+> 
+> I am not sure if I am at the right place to put this question, so don't hesitate to redirect me to the correct mailing list. My question is about the editor window under the R GUI on Mac OS 10.6.2. Before the upgrade to R 2.10.1 with GUI 1.31, I was able to call for the help topics from the spotlight-like help field in the upper right corner of the editor. Now it only returns me a blank box, which still slides as before, but the help topic is missing. Is this a frequent problem or is it related to my specific computer? And if it's a general issue, is there some solution please?
+> 
+> Thank you for the replies or possible indications on where can I find more hints.
+> 
+> Yan ALPEROVYCH
+> Financial Management, FRFC-FNRS Fellow
+> HEC-ULg Management School
+> Tel.: 	+32(4)/232.74.30
+> GSM:  	+32(4)/85.75.04.16 
+> E-mail: 	y.alperovych at ulg.ac.be
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+
+From mark.heckmann at gmx.de  Fri Dec 18 12:17:39 2009
+From: mark.heckmann at gmx.de (Mark Heckmann)
+Date: Fri, 18 Dec 2009 12:17:39 +0100
+Subject: [R-gui] gwidgets  - what arguments are possible?
+Message-ID: <DCF3076A-4754-4891-A1F6-1CC49BC82611@gmx.de>
+
+Hi all,
+
+1) is there a way to change the color or font size/type in gbuttons  
+and other widgets etc.?
+Here:
+http://www.mail-archive.com/r-sig-gui at stat.math.ethz.ch/msg00422.html
+it is pointed out that font size can be changed globally by editing  
+the ~/.gtkrc-2.0 file.
+
+Is there a way to do it dynamically, like
+
+button <- gbutton("Hello world", container=group_2, font.attr=list 
+(color="red",style="bold"))
+
+which does not work?
+
+What I would like is my buttons to change color according to some value.
+
+2) If not in gwidgets, is it possible via the RGtk2 package (have not  
+used it yet directly)?
+
+Thanks in advance!
+Mark
+
+???????????????????????????????????????
+Mark Heckmann
+Dipl. Wirt.-Ing. cand. Psych.
+Vorstra?e 93 B01
+28359 Bremen
+Blog: www.markheckmann.de
+R-Blog: http://ryouready.wordpress.com
+
+
+From jverzani at gmail.com  Fri Dec 18 20:20:04 2009
+From: jverzani at gmail.com (john verzani)
+Date: Fri, 18 Dec 2009 19:20:04 +0000 (UTC)
+Subject: [R-gui] gwidgets  - what arguments are possible?
+References: <DCF3076A-4754-4891-A1F6-1CC49BC82611@gmx.de>
+Message-ID: <loom.20091218T200258-583@post.gmane.org>
+
+Mark Heckmann <mark.heckmann <at> gmx.de> writes:
+
+> 
+> Hi all,
+> 
+> 1) is there a way to change the color or font size/type in gbuttons  
+> and other widgets etc.?
+> Here:
+> http://www.mail-archive.com/r-sig-gui <at> stat.math.ethz.ch/msg00422.html
+> it is pointed out that font size can be changed globally by editing  
+> the ~/.gtkrc-2.0 file.
+> 
+> Is there a way to do it dynamically, like
+> 
+> button <- gbutton("Hello world", container=group_2, font.attr=list 
+> (color="red",style="bold"))
+> 
+> which does not work?
+> 
+
+
+
+Dear Mark,
+
+I fixed the font<- method to work with buttons:
+
+font(button) <- c(color="red", style="bold")
+
+should work after the button is constructed. The new version was just uploaded
+to CRAN.
+
+I don't really support themes within gWidgets, but this may not be the most
+standard way of indicating to the user some value has changed.
+
+Hope that helps,
+
+John
+
+
+> What I would like is my buttons to change color according to some value.
+> 
+> 2) If not in gwidgets, is it possible via the RGtk2 package (have not  
+> used it yet directly)?
+> 
+> Thanks in advance!
+> Mark
+> 
+> ???????????????????????????????????????
+> Mark Heckmann
+> Dipl. Wirt.-Ing. cand. Psych.
+> Vorstra?e 93 B01
+> 28359 Bremen
+> Blog: www.markheckmann.de
+> R-Blog: http://ryouready.wordpress.com
+>
+
+
+From hlopez1 at alumnes.udl.cat  Mon Dec 21 12:02:38 2009
+From: hlopez1 at alumnes.udl.cat (Hector Lopez)
+Date: Mon, 21 Dec 2009 12:02:38 +0100
+Subject: [R-gui] EclipseR - a GUI for R in the shadow
+Message-ID: <1261393358.3984.76.camel@druidaiii.nuevegen.net>
+
+Hi everybody,
+
+We are just in Christmas time and I want to give you a gift announcing a
+new (or old one, because it was released 4 years ago) GUI for R:
+EclipseR. 
+
+EclipseR was our BSc in Software/System engineering final project on
+Sept/2006. I was a member of the developer team, and I think it could be
+a good application for statistical uni-depts. or for team researchers.
+
+EclipseR is a java application based in Eclipse RCP platform, and it use
+JRI (now rJava, by Rosuda) library to link it with R. In my opinion, I
+think it is a good platform to extend it with plug-ins, but I need more
+feedbacks to be sure it can be useful for someone.
+
+All source-code and tracking were in my university forge
+(http://forge.udl.es) but it is down from a year ago, and I've created a
+new tracking environment in: https://labs.nuevegen.net/trac/eclipser ,
+where you can read some information about EclipseR, and download it to
+try it.
+
+I hope it could be useful for you ;)
+
+Bests,
+
+H?ctor
+
+
+From mark.heckmann at gmx.de  Wed Dec 23 04:07:25 2009
+From: mark.heckmann at gmx.de (Mark Heckmann)
+Date: Wed, 23 Dec 2009 04:07:25 +0100
+Subject: [R-gui] ggraphics and retrieving mouse coordinate as npc coordinates
+Message-ID: <1B278F48-454A-4C0D-B8CD-39F1736EFAA6@gmx.de>
+
+Hi all,
+
+i tried to retrieve the mouse coordinates from a ggraphics widget  
+using a handler. With base graphics system it works fine, but using  
+grid, the returned values do not make sense to me. How can I transform  
+the returned values to e.g. npc coordinates?
+
+	library(RGtk2)
+	library(gWidgets)
+
+	w = gwindow("ggraphics example")
+	g = ggraphics(cont=w, expand=T)
+	size(g) <- c(900,900)
+	Sys.sleep(1)
+	print(grid.rect())
+
+	addHandlerClicked(g, handler = function(h,...) {
+   		x <- h$x; y <- h$y
+		print(c("pressed at:", c(x,y)))
+	})	
+
+Thanks and merry X-mas
+Mark
+
+???????????????????????????????????????
+Mark Heckmann
+Dipl. Wirt.-Ing. cand. Psych.
+Vorstra?e 93 B01
+28359 Bremen
+Blog: www.markheckmann.de
+R-Blog: http://ryouready.wordpress.com
+
+
+From jverzani at gmail.com  Mon Dec 28 03:44:37 2009
+From: jverzani at gmail.com (john verzani)
+Date: Mon, 28 Dec 2009 02:44:37 +0000 (UTC)
+Subject: [R-gui] ggraphics and retrieving mouse coordinate as npc
+	coordinates
+References: <1B278F48-454A-4C0D-B8CD-39F1736EFAA6@gmx.de>
+Message-ID: <loom.20091228T034118-855@post.gmane.org>
+
+Mark Heckmann <mark.heckmann <at> gmx.de> writes:
+
+> 
+> Hi all,
+> 
+> i tried to retrieve the mouse coordinates from a ggraphics widget  
+> using a handler. With base graphics system it works fine, but using  
+> grid, the returned values do not make sense to me. How can I transform  
+> the returned values to e.g. npc coordinates?
+> 
+> 	library(RGtk2)
+> 	library(gWidgets)
+> 
+> 	w = gwindow("ggraphics example")
+> 	g = ggraphics(cont=w, expand=T)
+> 	size(g) <- c(900,900)
+> 	Sys.sleep(1)
+> 	print(grid.rect())
+> 
+> 	addHandlerClicked(g, handler = function(h,...) {
+>    		x <- h$x; y <- h$y
+> 		print(c("pressed at:", c(x,y)))
+> 	})	
+> 
+
+There are two ways. The first is to mimic the handler call in gWidgetsRGtk2
+skipping the call to pltToUsr:
+
+
+f <- function(h,...) {
+  theArgs <- list(...)
+  w <- theArgs[[1]]
+  e <- theArgs[[2]]
+  allocation <- w$GetAllocation()
+  xclick <- e$GetX()
+  yclick <- e$GetY()
+  x <- xclick/allocation$width
+  y <- 1 - (allocation$height - yclick)/allocation$height
+  print(c(x,y))
+}
+
+addHandler(g, signal="button-press-event", handler =f)
+
+(Changing print(c(x,y)) as needed.)
+
+The other is to invert this function which is what converts the (x,1-y) value
+above into the output of the handler:
+
+pltToUsr <- function(x,y) {
+      plt <- par("plt"); usr = par("usr")
+      c( (usr[2]-usr[1])/(plt[2]-plt[1])*(x - plt[1]) + usr[1],
+         (usr[4] - usr[3])/(plt[4] - plt[3])*(y - plt[3]) + usr[3]
+       )
+}
+
+
+
+Hope that helps!
+
+> Thanks and merry X-mas
+> Mark
+> 
+> ???????????????????????????????????????
+> Mark Heckmann
+> Dipl. Wirt.-Ing. cand. Psych.
+> Vorstra?e 93 B01
+> 28359 Bremen
+> Blog: www.markheckmann.de
+> R-Blog: http://ryouready.wordpress.com
+>
+
+

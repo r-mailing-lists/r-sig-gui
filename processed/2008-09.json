@@ -1,0 +1,117 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2008-09",
+  "messages": [
+    {
+      "id": "msg-52fbed0f15d3",
+      "message_id": "<B106731B77B1274FB6B9954CC142C8DFDF5759@HERMES4.ds.leeds.ac.uk>",
+      "from_name": "David Carslaw",
+      "from_email_hash": "4481889ca82d32e4485edb88d77243f4775661f4d547ab1ee37ab8cdf81d20aa",
+      "date": "2008-09-15T10:40:21+01:00",
+      "subject": "[R-gui] Tinn-R/Latex output",
+      "subject_clean": "[R-gui] Tinn-R/Latex output",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080915/30987a79/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080915/30987a79/attachment.pl>",
+      "thread_id": "thread-52fbed0f15d3",
+      "thread_depth": 0,
+      "month": "2008-09"
+    },
+    {
+      "id": "msg-2d0a43320e9d",
+      "message_id": "<dd08d4lk47fj4pd9m8tnfg2rffvm9hlvid@4ax.com>",
+      "from_name": "Mike Prager",
+      "from_email_hash": "7617f62e932d92ae8fb18467cd95630ee1a910d05df9ff7b5c7a508078124e40",
+      "date": "2008-09-19T15:50:42-04:00",
+      "subject": "[R-gui] Tinn-R/Latex output",
+      "subject_clean": "[R-gui] Tinn-R/Latex output",
+      "in_reply_to": null,
+      "references": [
+        "<B106731B77B1274FB6B9954CC142C8DFDF5759@HERMES4.ds.leeds.ac.uk>"
+      ],
+      "body_plain": "\"David Carslaw\" <D.C.Carslaw at its.leeds.ac.uk> wrote:\n\n> I find Tinn-R to be an excellent editor for R, but I have one question I\n> have not been able to answer.\n>  \n> I wish to include some R code in Latex.  Using the Edit/Copy formatted\n> (to export)/TeX does provide Latex-type output.  However, there are lots\n> of commands such as \\RAIdentifier and \\RAOperator etc. that would appear\n> to need either a Latex package to interpret or a list of new commands\n> that describe font attributes etc.\n> \n> My question is whether such a package exists, or is the user expected to\n> define their own commands to interpret them?\n\n\nDavid,\n\nI also find Tinn-R an excellent editor for R.\n\nWhen I include R code in Latex, I use the Latex \"listings\"\npackage. It has a wide variety of settings for pretty-printing R\ncode and can be customized by the user.  I think that would be\nmore satisfactory in the long run than inserting Latex codes (or\nhaving an editor insert Latex codes) to mark R language\nelements.\n\nHTH\n\nMike P.\n\n-- \nMike Prager, NOAA, Beaufort, NC\n* Opinions expressed are personal and not represented otherwise.\n* Any use of tradenames does not constitute a NOAA endorsement.",
+      "body_snippet": "\"David Carslaw\" <D.C.Carslaw at its.leeds.ac.uk> wrote:\n\n> I find Tinn-R to be an excellent editor for R, but I have one question I\n> have not been able to answer.\n>  \n> I wish to include some R code ",
+      "thread_id": "thread-52fbed0f15d3",
+      "thread_depth": 1,
+      "month": "2008-09"
+    },
+    {
+      "id": "msg-2d6d65a590ba",
+      "message_id": "<48D41416.3040006@vanderbilt.edu>",
+      "from_name": "Frank E Harrell Jr",
+      "from_email_hash": "aac2104e568f1b4bc608deccefed75168aaf244b4de06a96ffe1c917f66b7853",
+      "date": "2008-09-19T16:05:26-05:00",
+      "subject": "[R-gui] Tinn-R/Latex output",
+      "subject_clean": "[R-gui] Tinn-R/Latex output",
+      "in_reply_to": "<dd08d4lk47fj4pd9m8tnfg2rffvm9hlvid@4ax.com>",
+      "references": [
+        "<B106731B77B1274FB6B9954CC142C8DFDF5759@HERMES4.ds.leeds.ac.uk>",
+        "<dd08d4lk47fj4pd9m8tnfg2rffvm9hlvid@4ax.com>"
+      ],
+      "body_plain": "Mike Prager wrote:\n> \"David Carslaw\" <D.C.Carslaw at its.leeds.ac.uk> wrote:\n> \n>> I find Tinn-R to be an excellent editor for R, but I have one question I\n>> have not been able to answer.\n>>  \n>> I wish to include some R code in Latex.  Using the Edit/Copy formatted\n>> (to export)/TeX does provide Latex-type output.  However, there are lots\n>> of commands such as \\RAIdentifier and \\RAOperator etc. that would appear\n>> to need either a Latex package to interpret or a list of new commands\n>> that describe font attributes etc.\n>>\n>> My question is whether such a package exists, or is the user expected to\n>> define their own commands to interpret them?\n> \n> \n> David,\n> \n> I also find Tinn-R an excellent editor for R.\n> \n> When I include R code in Latex, I use the Latex \"listings\"\n> package. It has a wide variety of settings for pretty-printing R\n> code and can be customized by the user.  I think that would be\n> more satisfactory in the long run than inserting Latex codes (or\n> having an editor insert Latex codes) to mark R language\n> elements.\n> \n> HTH\n> \n> Mike P.\n> \n\nThe following is how I set up the listings package usage for R.  If you \nhave improvements to this please pass them along. -Frank\n\n\\usepackage{listings,relsize}\n%Setup for listings package\n\\lstloadlanguages{R}\n\\lstset{language=R,basicstyle=\\smaller[2],commentstyle=\\rmfamily\\smaller,\n  showstringspaces=false,%\n  xleftmargin=4ex,literate={<-}{{$\\leftarrow$}}1 {~}{{$\\sim$}}1}\n\\lstset{escapeinside={(*}{*)}}   % for (*\\ref{ }*) inside lstlistings (S \ncode)\n\n-- \nFrank E Harrell Jr   Professor and Chair           School of Medicine\n                      Department of Biostatistics   Vanderbilt University",
+      "body_snippet": "Mike Prager wrote:\n> \"David Carslaw\" <D.C.Carslaw at its.leeds.ac.uk> wrote:\n> \n>> I find Tinn-R to be an excellent editor for R, but I have one question I\n>> have not been able to answer.\n>>  \n>> I w",
+      "thread_id": "thread-52fbed0f15d3",
+      "thread_depth": 2,
+      "month": "2008-09"
+    },
+    {
+      "id": "msg-1f9b91dfb3a3",
+      "message_id": "<f8e6ff050809191413m59c6bdd1h15b717e26089bfd7@mail.gmail.com>",
+      "from_name": "hadley wickham",
+      "from_email_hash": "78ed178a2a834406115d2917490a5d6eb6217493116357bc9bb8ae3e96968152",
+      "date": "2008-09-19T16:13:12-05:00",
+      "subject": "[R-gui] [R]  Tinn-R/Latex output",
+      "subject_clean": "[R-gui] [R]  Tinn-R/Latex output",
+      "in_reply_to": "<48D41416.3040006@vanderbilt.edu>",
+      "references": [
+        "<B106731B77B1274FB6B9954CC142C8DFDF5759@HERMES4.ds.leeds.ac.uk>",
+        "<dd08d4lk47fj4pd9m8tnfg2rffvm9hlvid@4ax.com>",
+        "<48D41416.3040006@vanderbilt.edu>"
+      ],
+      "body_plain": "On Fri, Sep 19, 2008 at 4:05 PM, Frank E Harrell Jr\n<f.harrell at vanderbilt.edu> wrote:\n> Mike Prager wrote:\n>>\n>> \"David Carslaw\" <D.C.Carslaw at its.leeds.ac.uk> wrote:\n>>\n>>> I find Tinn-R to be an excellent editor for R, but I have one question I\n>>> have not been able to answer.\n>>>  I wish to include some R code in Latex.  Using the Edit/Copy formatted\n>>> (to export)/TeX does provide Latex-type output.  However, there are lots\n>>> of commands such as \\RAIdentifier and \\RAOperator etc. that would appear\n>>> to need either a Latex package to interpret or a list of new commands\n>>> that describe font attributes etc.\n>>>\n>>> My question is whether such a package exists, or is the user expected to\n>>> define their own commands to interpret them?\n>>\n>>\n>> David,\n>>\n>> I also find Tinn-R an excellent editor for R.\n>>\n>> When I include R code in Latex, I use the Latex \"listings\"\n>> package. It has a wide variety of settings for pretty-printing R\n>> code and can be customized by the user.  I think that would be\n>> more satisfactory in the long run than inserting Latex codes (or\n>> having an editor insert Latex codes) to mark R language\n>> elements.\n>>\n>> HTH\n>>\n>> Mike P.\n>>\n>\n> The following is how I set up the listings package usage for R.  If you have\n> improvements to this please pass them along. -Frank\n>\n> \\usepackage{listings,relsize}\n> %Setup for listings package\n> \\lstloadlanguages{R}\n> \\lstset{language=R,basicstyle=\\smaller[2],commentstyle=\\rmfamily\\smaller,\n>  showstringspaces=false,%\n>  xleftmargin=4ex,literate={<-}{{$\\leftarrow$}}1 {~}{{$\\sim$}}1}\n> \\lstset{escapeinside={(*}{*)}}   % for (*\\ref{ }*) inside lstlistings (S\n> code)\n\nI have played around with:\n\n\\definecolor{comment}{rgb}{0.60, 0.60, 0.53}\n\\definecolor{background}{rgb}{0.97, 0.97, 1.00}\n\\definecolor{string}{rgb}{0.863, 0.066, 0.266}\n\\definecolor{number}{rgb}{0.0, 0.6, 0.6}\n\\definecolor{variable}{rgb}{0.00, 0.52, 0.70}\n\\lstset{\n  basicstyle=\\ttfamily,\n  keywordstyle=\\bfseries,\n  identifierstyle=,\n  commentstyle=\\color{comment} \\itshape,\n  stringstyle=, %\\color{string}\n  showstringspaces=false,\n  columns = fullflexible,\n  backgroundcolor=\\color{background},\n  mathescape = true,\n  escapeinside=&&,\n  fancyvrb\n}\n\nHadley\n\n\n-- \nhttp://had.co.nz/",
+      "body_snippet": "On Fri, Sep 19, 2008 at 4:05 PM, Frank E Harrell Jr\n<f.harrell at vanderbilt.edu> wrote:\n> Mike Prager wrote:\n>>\n>> \"David Carslaw\" <D.C.Carslaw at its.leeds.ac.uk> wrote:\n>>\n>>> I find Tinn-R to be a",
+      "thread_id": "thread-52fbed0f15d3",
+      "thread_depth": 3,
+      "month": "2008-09"
+    },
+    {
+      "id": "msg-81ebd3deb12a",
+      "message_id": "<48D4284C.9030604@vanderbilt.edu>",
+      "from_name": "Frank E Harrell Jr",
+      "from_email_hash": "aac2104e568f1b4bc608deccefed75168aaf244b4de06a96ffe1c917f66b7853",
+      "date": "2008-09-19T17:31:40-05:00",
+      "subject": "[R-gui] [R]  Tinn-R/Latex output",
+      "subject_clean": "[R-gui] [R]  Tinn-R/Latex output",
+      "in_reply_to": "<f8e6ff050809191413m59c6bdd1h15b717e26089bfd7@mail.gmail.com>",
+      "references": [
+        "<B106731B77B1274FB6B9954CC142C8DFDF5759@HERMES4.ds.leeds.ac.uk>",
+        "<dd08d4lk47fj4pd9m8tnfg2rffvm9hlvid@4ax.com>",
+        "<48D41416.3040006@vanderbilt.edu>",
+        "<f8e6ff050809191413m59c6bdd1h15b717e26089bfd7@mail.gmail.com>"
+      ],
+      "body_plain": "hadley wickham wrote:\n> On Fri, Sep 19, 2008 at 4:05 PM, Frank E Harrell Jr\n> <f.harrell at vanderbilt.edu> wrote:\n>> Mike Prager wrote:\n>>> \"David Carslaw\" <D.C.Carslaw at its.leeds.ac.uk> wrote:\n>>>\n>>>> I find Tinn-R to be an excellent editor for R, but I have one question I\n>>>> have not been able to answer.\n>>>>  I wish to include some R code in Latex.  Using the Edit/Copy formatted\n>>>> (to export)/TeX does provide Latex-type output.  However, there are lots\n>>>> of commands such as \\RAIdentifier and \\RAOperator etc. that would appear\n>>>> to need either a Latex package to interpret or a list of new commands\n>>>> that describe font attributes etc.\n>>>>\n>>>> My question is whether such a package exists, or is the user expected to\n>>>> define their own commands to interpret them?\n>>>\n>>> David,\n>>>\n>>> I also find Tinn-R an excellent editor for R.\n>>>\n>>> When I include R code in Latex, I use the Latex \"listings\"\n>>> package. It has a wide variety of settings for pretty-printing R\n>>> code and can be customized by the user.  I think that would be\n>>> more satisfactory in the long run than inserting Latex codes (or\n>>> having an editor insert Latex codes) to mark R language\n>>> elements.\n>>>\n>>> HTH\n>>>\n>>> Mike P.\n>>>\n>> The following is how I set up the listings package usage for R.  If you have\n>> improvements to this please pass them along. -Frank\n>>\n>> \\usepackage{listings,relsize}\n>> %Setup for listings package\n>> \\lstloadlanguages{R}\n>> \\lstset{language=R,basicstyle=\\smaller[2],commentstyle=\\rmfamily\\smaller,\n>>  showstringspaces=false,%\n>>  xleftmargin=4ex,literate={<-}{{$\\leftarrow$}}1 {~}{{$\\sim$}}1}\n>> \\lstset{escapeinside={(*}{*)}}   % for (*\\ref{ }*) inside lstlistings (S\n>> code)\n> \n> I have played around with:\n> \n> \\definecolor{comment}{rgb}{0.60, 0.60, 0.53}\n> \\definecolor{background}{rgb}{0.97, 0.97, 1.00}\n> \\definecolor{string}{rgb}{0.863, 0.066, 0.266}\n> \\definecolor{number}{rgb}{0.0, 0.6, 0.6}\n> \\definecolor{variable}{rgb}{0.00, 0.52, 0.70}\n> \\lstset{\n>   basicstyle=\\ttfamily,\n>   keywordstyle=\\bfseries,\n>   identifierstyle=,\n>   commentstyle=\\color{comment} \\itshape,\n>   stringstyle=, %\\color{string}\n>   showstringspaces=false,\n>   columns = fullflexible,\n>   backgroundcolor=\\color{background},\n>   mathescape = true,\n>   escapeinside=&&,\n>   fancyvrb\n> }\n> \n> Hadley\n> \n> \n\nThanks Hadley.  Your specificatins generated a couple of syntax errors \nfor me and typeset the code too large but I'd like to play with it and \nI'm glad to have it.\n\nFrank\n\n-- \nFrank E Harrell Jr   Professor and Chair           School of Medicine\n                      Department of Biostatistics   Vanderbilt University",
+      "body_snippet": "hadley wickham wrote:\n> On Fri, Sep 19, 2008 at 4:05 PM, Frank E Harrell Jr\n> <f.harrell at vanderbilt.edu> wrote:\n>> Mike Prager wrote:\n>>> \"David Carslaw\" <D.C.Carslaw at its.leeds.ac.uk> wrote:\n>>>",
+      "thread_id": "thread-52fbed0f15d3",
+      "thread_depth": 4,
+      "month": "2008-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-52fbed0f15d3",
+      "subject": "[R-gui] Tinn-R/Latex output",
+      "message_count": 5,
+      "participants": [
+        "David Carslaw",
+        "Frank E Harrell Jr",
+        "Mike Prager",
+        "hadley wickham"
+      ],
+      "started": "2008-09-15T10:40:21+01:00",
+      "last_reply": "2008-09-19T17:31:40-05:00",
+      "root_message_id": "msg-52fbed0f15d3"
+    }
+  ]
+}

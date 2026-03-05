@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2008-01",
+  "messages": [
+    {
+      "id": "msg-aa9ae565a28b",
+      "message_id": "<001a01c85c63$29da4ff0$7d8eefd0$@ac.za>",
+      "from_name": "La Grange, AM",
+      "from_email_hash": "a5fdc870628b4589c10fb21f8cccaf6157dd2cf1f86e42f869061b97898a7282",
+      "date": "2008-01-21T21:23:54+02:00",
+      "subject": "[R-gui] MainFrame widget",
+      "subject_clean": "[R-gui] MainFrame widget",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080121/ba630ab9/attachment.pl",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080121/ba630ab9/attachment.pl",
+      "thread_id": "thread-aa9ae565a28b",
+      "thread_depth": 0,
+      "month": "2008-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-aa9ae565a28b",
+      "subject": "[R-gui] MainFrame widget",
+      "message_count": 1,
+      "participants": [
+        "La Grange, AM"
+      ],
+      "started": "2008-01-21T21:23:54+02:00",
+      "last_reply": "2008-01-21T21:23:54+02:00",
+      "root_message_id": "msg-aa9ae565a28b"
+    }
+  ]
+}

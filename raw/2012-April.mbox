@@ -1,0 +1,85 @@
+From naveensimla at gmail.com  Mon Apr  9 20:13:22 2012
+From: naveensimla at gmail.com (Naveen Verma)
+Date: Mon, 9 Apr 2012 23:43:22 +0530
+Subject: [R-gui] GUI
+Message-ID: <CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/afa10b0c/attachment.pl>
+
+From landronimirc at gmail.com  Mon Apr  9 21:40:06 2012
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Mon, 9 Apr 2012 21:40:06 +0200
+Subject: [R-gui] GUI
+In-Reply-To: <CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>
+References: <CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>
+Message-ID: <CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>
+
+On Mon, Apr 9, 2012 at 8:13 PM, Naveen Verma <naveensimla at gmail.com> wrote:
+> requested sir,
+> ? ? plz let me know, which package is more suitable to make GUI using R
+> with more features....
+>
+If you want to use a GUI, look into Rcmdr and Deducer (and their
+plugins) and perhaps RStudio. If you want to build a GUI on top of R,
+see the plugins just mentioned and packages such as gWidgets, traitr,
+tcltk2, etc.
+
+Liviu
+
+
+From yintengfei at gmail.com  Mon Apr  9 21:47:34 2012
+From: yintengfei at gmail.com (Tengfei Yin)
+Date: Mon, 9 Apr 2012 14:47:34 -0500
+Subject: [R-gui] GUI
+In-Reply-To: <CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>
+References: <CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>
+	<CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>
+Message-ID: <CAPJsq9=4O1GNRde5pcwdkWPoXFftyBTfddWqCCB27=AZXb9UvQ@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/b80b5596/attachment.pl>
+
+From thomas at statconn.com  Mon Apr  9 22:00:17 2012
+From: thomas at statconn.com (Thomas Baier)
+Date: Mon, 09 Apr 2012 22:00:17 +0200
+Subject: [R-gui] GUI
+In-Reply-To: <CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>
+References: <CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>
+Message-ID: <4F833FD1.4040500@statconn.com>
+
+Naveen,
+
+if you are happy with the Windows platform, have a look at statconnDCOM
+and RExcel (http://rcom.univie.ac.at)
+
+Best,
+Thomas
+
+On 09.04.2012 20:13, Naveen Verma wrote:
+> requested sir,
+>      plz let me know, which package is more suitable to make GUI using R
+> with more features.... waiting for the response
+>                 thanks
+> 
+
+
+-- 
+Thomas Baier <mailto:thomas at statconn.com>
+http://www.statconn.com/
+
+
+From naverma69 at gmail.com  Tue Apr 10 12:35:11 2012
+From: naverma69 at gmail.com (Naveen Verma)
+Date: Tue, 10 Apr 2012 16:05:11 +0530
+Subject: [R-gui] R-SIG-GUI Digest, Vol 96, Issue 1
+In-Reply-To: <mailman.13.1334052004.19777.r-sig-gui@r-project.org>
+References: <mailman.13.1334052004.19777.r-sig-gui@r-project.org>
+Message-ID: <CAMwHe11_1kP8GAp44XgCSk2eRwFCY9NaeRzhSyTQPH=vxkhL+g@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120410/35252f09/attachment.pl>
+

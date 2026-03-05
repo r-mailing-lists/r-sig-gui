@@ -1,0 +1,352 @@
+From landronimirc at gmail.com  Thu Mar 19 09:28:40 2009
+From: landronimirc at gmail.com (Liviu Andronic)
+Date: Thu, 19 Mar 2009 09:28:40 +0100
+Subject: [R-gui] system() fails in JGR
+Message-ID: <68b1e2610903190128oa5f46bak128c086c98a5f99d@mail.gmail.com>
+
+Dear all,
+I initially sent this e-mail to r-help, with no luck, so I'm forwarding here.
+
+JGR seems unable to report the results of system() commands.
+In a command-line R session:
+> system("pwd")
+/home/liviu
+> system("acpitool")
+ AC adapter     : on-line
+ Thermal zone 1 : ok, 67 C
+> system("asdf")
+sh: asdf: command not found
+
+In JGR:
+> system("pwd")
+> system("ls -F")
+> system("acpitool")
+> system("asdf")
+
+
+Would this JGR, or my system configuration at fault?
+Liviu
+
+
+System info:
+> sessionInfo()
+R version 2.8.1 (2008-12-22)
+i686-pc-linux-gnu
+
+locale:
+LC_CTYPE=en_GB.UTF-8;LC_NUMERIC=C;LC_TIME=en_GB.UTF-8;LC_COLLATE=en_GB.UTF-8;LC_MONETARY=C;LC_MESSAGES=en_GB.UTF-8;LC_PAPER=en_GB.UTF-8;LC_NAME=C;LC_ADDRESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=en_GB.UTF-8;LC_IDENTIFICATION=C
+
+attached base packages:
+[1] datasets  utils     stats     graphics  grDevices methods   base
+
+other attached packages:
+ [1] JGR_1.6-3     iplots_1.1-3  JavaGD_0.5-2  rJava_0.6-2   PolynomF_0.93
+ [6] financial_0.1 WhatIf_1.5-4  lpSolve_5.6.4 Zelig_3.4-3   boot_1.2-35
+[11] MASS_7.2-45
+
+liviu at localhost ~ $ uname -a
+Linux localhost 2.6.22-gentoo-r5-0.5 #3 Sat Mar 14 12:22:37 CET 2009
+i686 Intel(R) Pentium(R) M processor 1.60GHz GenuineIntel GNU/Linux
+
+
+--
+Do you know how to read?
+http://www.alienetworks.com/srtest.cfm
+Do you know how to write?
+http://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail
+
+
+From ifellows at ucsd.edu  Thu Mar 19 17:50:05 2009
+From: ifellows at ucsd.edu (Ian Fellows)
+Date: Thu, 19 Mar 2009 09:50:05 -0700
+Subject: [R-gui] system() fails in JGR
+In-Reply-To: <68b1e2610903190128oa5f46bak128c086c98a5f99d@mail.gmail.com>
+Message-ID: <8BA495B9B6774D739755C435E5ECE47B@gpbdmx>
+
+Hi Liviu,
+
+I can confirm the problem on windows and mac, though I don't have a
+solution. At least in windows it might have something to do with the     
+
+if (CharacterMode == RGui)
+
+statement in sys-win32.c do_system function. But I'm not familiar enough
+with the internals to solve this.
+
+I'm forwarding this a mailing list that deals with java <-> R.
+
+
+Cheers,
+Ian
+
+
+
+-----Original Message-----
+From: r-sig-gui-bounces at stat.math.ethz.ch
+[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Liviu Andronic
+Sent: Thursday, March 19, 2009 1:29 AM
+To: R-SIG-GUI Mailing List
+Subject: [R-gui] system() fails in JGR
+
+Dear all,
+I initially sent this e-mail to r-help, with no luck, so I'm forwarding
+here.
+
+JGR seems unable to report the results of system() commands.
+In a command-line R session:
+> system("pwd")
+/home/liviu
+> system("acpitool")
+ AC adapter     : on-line
+ Thermal zone 1 : ok, 67 C
+> system("asdf")
+sh: asdf: command not found
+
+In JGR:
+> system("pwd")
+> system("ls -F")
+> system("acpitool")
+> system("asdf")
+
+
+Would this JGR, or my system configuration at fault?
+Liviu
+
+
+System info:
+> sessionInfo()
+R version 2.8.1 (2008-12-22)
+i686-pc-linux-gnu
+
+locale:
+LC_CTYPE=en_GB.UTF-8;LC_NUMERIC=C;LC_TIME=en_GB.UTF-8;LC_COLLATE=en_GB.UTF-8
+;LC_MONETARY=C;LC_MESSAGES=en_GB.UTF-8;LC_PAPER=en_GB.UTF-8;LC_NAME=C;LC_ADD
+RESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=en_GB.UTF-8;LC_IDENTIFICATION=C
+
+attached base packages:
+[1] datasets  utils     stats     graphics  grDevices methods   base
+
+other attached packages:
+ [1] JGR_1.6-3     iplots_1.1-3  JavaGD_0.5-2  rJava_0.6-2   PolynomF_0.93
+ [6] financial_0.1 WhatIf_1.5-4  lpSolve_5.6.4 Zelig_3.4-3   boot_1.2-35
+[11] MASS_7.2-45
+
+liviu at localhost ~ $ uname -a
+Linux localhost 2.6.22-gentoo-r5-0.5 #3 Sat Mar 14 12:22:37 CET 2009
+i686 Intel(R) Pentium(R) M processor 1.60GHz GenuineIntel GNU/Linux
+
+
+--
+Do you know how to read?
+http://www.alienetworks.com/srtest.cfm
+Do you know how to write?
+http://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail
+
+_______________________________________________
+R-SIG-GUI mailing list
+R-SIG-GUI at stat.math.ethz.ch
+https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+
+
+From simon.urbanek at r-project.org  Thu Mar 19 23:24:18 2009
+From: simon.urbanek at r-project.org (Simon Urbanek)
+Date: Thu, 19 Mar 2009 18:24:18 -0400
+Subject: [R-gui] [stats-rosuda-devel]  system() fails in JGR
+In-Reply-To: <8BA495B9B6774D739755C435E5ECE47B@gpbdmx>
+References: <8BA495B9B6774D739755C435E5ECE47B@gpbdmx>
+Message-ID: <D5FEF59F-6CA6-45E3-B47C-CB072A6F46BD@r-project.org>
+
+
+On Mar 19, 2009, at 12:50 , Ian Fellows wrote:
+
+> Hi Liviu,
+>
+> I can confirm the problem on windows and mac, though I don't have a
+> solution. At least in windows it might have something to do with the
+>
+> if (CharacterMode == RGui)
+>
+> statement in sys-win32.c do_system function. But I'm not familiar  
+> enough
+> with the internals to solve this.
+>
+
+This has nothing to do with it - use system(.., intern=TRUE) if you  
+want R to capture the results. Otherwise the process output goes to  
+stdout/stderr instead.
+
+Cheers,
+Simon
+
+
+
+> I'm forwarding this a mailing list that deals with java <-> R.
+>
+>
+> Cheers,
+> Ian
+>
+>
+>
+> -----Original Message-----
+> From: r-sig-gui-bounces at stat.math.ethz.ch
+> [mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Liviu  
+> Andronic
+> Sent: Thursday, March 19, 2009 1:29 AM
+> To: R-SIG-GUI Mailing List
+> Subject: [R-gui] system() fails in JGR
+>
+> Dear all,
+> I initially sent this e-mail to r-help, with no luck, so I'm  
+> forwarding
+> here.
+>
+> JGR seems unable to report the results of system() commands.
+> In a command-line R session:
+>> system("pwd")
+> /home/liviu
+>> system("acpitool")
+> AC adapter     : on-line
+> Thermal zone 1 : ok, 67 C
+>> system("asdf")
+> sh: asdf: command not found
+>
+> In JGR:
+>> system("pwd")
+>> system("ls -F")
+>> system("acpitool")
+>> system("asdf")
+>
+>
+> Would this JGR, or my system configuration at fault?
+> Liviu
+>
+>
+> System info:
+>> sessionInfo()
+> R version 2.8.1 (2008-12-22)
+> i686-pc-linux-gnu
+>
+> locale:
+> LC_CTYPE 
+> =en_GB.UTF-8;LC_NUMERIC=C;LC_TIME=en_GB.UTF-8;LC_COLLATE=en_GB.UTF-8
+> ;LC_MONETARY 
+> =C;LC_MESSAGES=en_GB.UTF-8;LC_PAPER=en_GB.UTF-8;LC_NAME=C;LC_ADD
+> RESS=C;LC_TELEPHONE=C;LC_MEASUREMENT=en_GB.UTF-8;LC_IDENTIFICATION=C
+>
+> attached base packages:
+> [1] datasets  utils     stats     graphics  grDevices methods   base
+>
+> other attached packages:
+> [1] JGR_1.6-3     iplots_1.1-3  JavaGD_0.5-2  rJava_0.6-2    
+> PolynomF_0.93
+> [6] financial_0.1 WhatIf_1.5-4  lpSolve_5.6.4 Zelig_3.4-3    
+> boot_1.2-35
+> [11] MASS_7.2-45
+>
+> liviu at localhost ~ $ uname -a
+> Linux localhost 2.6.22-gentoo-r5-0.5 #3 Sat Mar 14 12:22:37 CET 2009
+> i686 Intel(R) Pentium(R) M processor 1.60GHz GenuineIntel GNU/Linux
+>
+>
+> --
+> Do you know how to read?
+> http://www.alienetworks.com/srtest.cfm
+> Do you know how to write?
+> http://garbl.home.comcast.net/~garbl/stylemanual/e.htm#e-mail
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+>
+> _______________________________________________
+> stats-rosuda-devel mailing list
+> stats-rosuda-devel at listserv.uni-augsburg.de
+> http://mailman.rz.uni-augsburg.de/mailman/listinfo/stats-rosuda-devel
+>
+>
+
+
+From adrian at waddell.ch  Wed Mar 25 13:51:40 2009
+From: adrian at waddell.ch (Adrian Waddell)
+Date: Wed, 25 Mar 2009 08:51:40 -0400
+Subject: [R-gui] tkcanvas: resize window
+Message-ID: <49CA28DC.80006@waddell.ch>
+
+Hello all,
+
+I'm using tkcanvas in a similar way as shown in demo(tkcanvas).
+
+I would like to add a window resizing functionality where the canvas 
+objects scale to the window (canvas) size. In order to make the resizing 
+smooth, I would like to only display the window size (e.g. "423x356") 
+while resizing and then once the mouse button is released, the original 
+canvas content should rescale to the window size.
+
+The '<Configure>' event can be used to display the current window size.
+
+What is the name of the event that should trigger the redrawing (i.e. 
+release mouse button from resizing the window) ?
+
+And how do I get the current canvas size (maybe you can comment on the 
+attached code) ?
+
+tt <- tktoplevel()
+canvas <- tkcanvas(tt, relief="raised", width = 200, height = 200)
+tkpack(canvas, fill = 'both', expand = TRUE)
+
+## Get whole Window Size, (but I need canvas size)
+as.numeric(unlist(strsplit(as.character(tkwm.geometry(tt)),c('[+x]'))))
+
+## stays 200,200, regardless if the window gets resized
+tkcget(canvas,width = NULL)
+tkcget(canvas,height = NULL)
+
+
+Sincerely,
+
+Adrian Waddell
+
+
+From news at jonasstein.de  Fri Mar 27 21:31:23 2009
+From: news at jonasstein.de (Jonas Stein)
+Date: Fri, 27 Mar 2009 21:31:23 +0100
+Subject: [R-gui] Emacs ESS automatic start with split windows
+Message-ID: <87ocvmg12c.fsf@jonasstein.de>
+
+Hi,
+
+if i run 
+emacs test.py 
+emacs starts with a split window. The upper buffer is an editor the one
+below is the interpreter. 
+
+I want the same for R, when i run emacs test.R
+
+My ESS settings are now:
+
+=====================================
+/.emacs.d$ cat ess.el
+
+;; ESS --------------------
+;; http://www.emacswiki.org/cgi-bin/wiki/EmacsSpeaksStatistics
+  (setq ess-ask-for-ess-directory nil)
+  (setq ess-local-process-name "R")
+  (setq ansi-color-for-comint-mode 'filter)
+  (setq comint-prompt-read-only 0)
+  (setq comint-scroll-to-bottom-on-input t)
+  (setq comint-scroll-to-bottom-on-output t)
+  (setq comint-move-point-for-output t)
+=====================================
+
+
+Can i adjust ESS to start always with this screenlayout?
+
+Thank you,
+
+-- 
+Jonas Stein <news at jonasstein.de>
+
+

@@ -1,0 +1,384 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2008-07",
+  "messages": [
+    {
+      "id": "msg-87c64b3a8c67",
+      "message_id": "<94730b8a0807030251s5ac9b8a5h79c95ff79bf82df0@mail.gmail.com>",
+      "from_name": "Felix Andrews",
+      "from_email_hash": "ab8be5753adb1cfce5e50bf8235dddc08e38086328727de3f965639ec7b93f1d",
+      "date": "2008-07-03T19:51:40+10:00",
+      "subject": "[R-gui] Lattice graphics",
+      "subject_clean": "[R-gui] Lattice graphics",
+      "in_reply_to": "<200806271757.m5RHvSh2024332@zebra.us.udel.edu>",
+      "references": [
+        "<200806271757.m5RHvSh2024332@zebra.us.udel.edu>"
+      ],
+      "body_plain": "You are using the wrong locations for \"at\".\nThere is nothing in f_xy that defines the -3:3 scale.\n\nx <- matrix(round(seq(-3.4,3.4,0.2), 2), ncol=1);\nf_xy <- dnorm(x)%*%t(dnorm(x))\n\nlabat <- which(x %% 1 == 0)\n\nwireframe(f_xy, col=\"blue\", pretty=TRUE, drape=TRUE,\n      scales=list(arrows=FALSE,\n         x=list(at=labat,labels=x[labat]),\n         y=list(at=labat,labels=x[labat]) ),\n      xlab=\"x\",\n      ylab=\"y\",\n      zlab=list(expression(f[xy])),\n      main=\"Bivariate Normal Density\")\n\n\nOn Sat, Jun 28, 2008 at 3:55 AM, H. Lawrence Hotchkiss\n<larryh at zebra.us.udel.edu> wrote:\n> Hi,\n>\n> I have not been able to control the tick-mark locations and labels in a\n> wireframe plot.  I've been using the scales= option, like this:\n>\n>       scales=list(arrows=FALSE,\n>          x=list(at=seq(-3,3),labels=paste(\"-3\":\"3\")),\n>          y=list(at=seq(-3,3),labels=paste(\"-3\":\"3\")) ),\n>\n> If there are no dimnames on the input matrix, I get 3 tick marks and three\n> labels bunched at the low end of the x and y axes. But if there are dimnames on\n> the input matrix, I get a bunch of uninterpretable overprints.\n>\n> If I designate tick.number=7 instead of at=, I get 7 tickmarks, but not at the\n> correct locations. And the labels are started in the second position (\"-2\")\n> leaving the last one printed \"NULL\". (I can fix this by prepending a \"dummy\"\n> value to the labels labels=paste(\"-4\":\"3\") ).\n>\n> The help for wireframe (and cloud) says the following:\n>\n> Other components that work in the scales argument of xyplot etc. should also\n> work here (as long as they make sense), including explicit specification of tick\n> mark locations and labels. (Not everything is implemented yet, but if you find\n> something that should work but does not, feel free to bug the maintainer.)\n>\n> I wonder if at= and labels= lists are among the features that don't work yet.\n>\n> I'm running R 2.7.0 for Windows and just downloaded the lattice package to be\n> sure I have the latest version.\n>\n> Here are selected examples:\n>\n> ------------------------------------------------------------------------------\n> # Generate input data\n> x <- matrix(round(seq(-3.4,3.4,0.2), 2), ncol=1);\n> f_xy <- dnorm(x)%*%t(dnorm(x))\n>\n> # No specification of tick location or labels\n> wireframe(f_xy, col=\"blue\", pretty=TRUE, drape=TRUE,\n>       scales=list(arrows=FALSE),\n>       xlab=list(expression(x)),\n>       ylab=list(expression(y)),\n>       zlab=list(expression(f[xy])),\n>       main=\"Bivariate Normal Density\")\n>\n> # Specification of tick location and labels, using x & y sub lists of\n> # scales.  Bunches 3 tick marks and 3 values at the low end of\n> # the x and y axes.\n> wireframe(f_xy, col=\"blue\", pretty=TRUE, drape=TRUE,\n>       scales=list(arrows=FALSE,\n>          x=list(at=seq(-3,3),labels=paste(\"-3\":\"3\")),\n>          y=list(at=seq(-3,3),labels=paste(\"-3\":\"3\")) ),\n>       xlab=list(expression(x)),\n>       ylab=list(expression(y)),\n>       zlab=list(expression(f[xy])),\n>       main=\"Bivariate Normal Density\")\n>\n> # Add dimnames to f_xy. Set to \"\", dimnames that I do not want in the\n> # graph labels. This works, except that there still is no control\n> # over the location of the tick marks.\n> vnames <- rep(\"\",35); ii <- 0\n> for(i in 1:7) {\n>  ii <- ii+3\n>  vnames[ii] <- paste(x[ii])\n>  ii <- ii+2\n> }\n> dimnames(f_xy) <- list(vnames,vnames)\n> wireframe(f_xy, col=\"blue\", pretty=TRUE, drape=TRUE,\n>       scales=list(arrows=FALSE,x=list(tick.number=7)),\n>       xlab=list(expression(x)),\n>       ylab=list(expression(y)),\n>       zlab=list(expression(f[xy])),\n>       main=\"Bivariate Normal Density\")\n> ------------------------------------------------------------------------------\n>\n> Thanks,\n>\n> Larry Hotchkiss\n>\n>\n>\n> Larry Hotchkiss\n> University of Delaware\n> IT User Services -- Smith Hall\n> Newark, DE 19716\n> 302-831-1989  larryh at zebra.us.udel.edu\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\n\n-- \nFelix Andrews / ???\nPhD candidate\nIntegrated Catchment Assessment and Management Centre\nThe Fenner School of Environment and Society\nThe Australian National University (Building 48A), ACT 0200\nBeijing Bag, Locked Bag 40, Kingston ACT 2604\nhttp://www.neurofractal.org/felix/\n3358 543D AAC6 22C2 D336 80D9 360B 72DD 3E4C F5D8",
+      "body_snippet": "You are using the wrong locations for \"at\".\nThere is nothing in f_xy that defines the -3:3 scale.\n\nx <- matrix(round(seq(-3.4,3.4,0.2), 2), ncol=1);\nf_xy <- dnorm(x)%*%t(dnorm(x))\n\nlabat <- which(x %%",
+      "thread_id": "thread-87c64b3a8c67",
+      "thread_depth": 0,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-87fe5e577153",
+      "message_id": "<87tzf76jtg.fsf@patagonia.sebmags.homelinux.org>",
+      "from_name": "Sebastian P. Luque",
+      "from_email_hash": "2cd4815ed8883e0c35c16bacf1be9d88d662c4a9f03492384d48d7b9ac92a1d5",
+      "date": "2008-07-03T10:58:35-05:00",
+      "subject": "[R-gui] embedding R graphics in Tk widgets",
+      "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
+      "in_reply_to": null,
+      "references": [
+        "<8763sef2mk.fsf@patagonia.sebmags.homelinux.org>",
+        "<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>",
+        "<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>",
+        "<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>",
+        "<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>",
+        "<509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>",
+        "<87abhllf51.fsf@patagonia.sebmags.homelinux.org>",
+        "<loom.20080619T020819-746@post.gmane.org>"
+      ],
+      "body_plain": "On Thu, 19 Jun 2008 02:14:18 +0000 (UTC),\njverzani <jverzani at gmail.com> wrote:\n\n[...]\n\n> The handlers in the various toolkits have several different arguments,\n> none of course being standard. The ... is to accommodate\n> these. Whereas, the first argument for a handler, called \"h\" from the\n> iWidgets background of gWidgets, is a list containing components \"obj\"\n> to refer to the object that the handler is called on, such as the\n> slider in your example, and \"action\" which just passes along the\n> action= argument. (Some widgets have additional components, such as\n> \"dropdata\" or \"x\" and \"y\".) The h$obj construction allows you to avoid\n> global variables. So the following are equivalent:\n\n> sl = gslider(cont=gwindow(), handler = function(h,...)\n> print(svalue(sl)))\n\n> and\n\n> sl = gslider(cont=gwindow(), handler = function(h,...)\n> print(svalue(h$obj)))\n\n\nThanks for the explanation!\n\nOn another note, I got a bit confused the other day trying to learn more\nabout layout from the density example given in the vignette.  I was\ntrying to get the following layout:\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: density_layout.png\nType: image/png\nSize: 6458 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/74926396/attachment.png>\n-------------- next part --------------\n\nBasically, move the bandwidth slider below the graph and spanning the\nwhole width of the window.  Modifying the layout section of the code as:\n\n---<---------------cut here---------------start-------------->---\nwindow <- gwindow(\"gWidgetsDensity\")\nbigGroup <- ggroup(container=window)\n\nvGroup <- ggroup(horizontal=FALSE, container=bigGroup)\nhGroup <- ggroup(horizontal=FALSE, container=bigGroup)\n\ntmp <- gframe(\"Distribution\", container=vGroup)\nadd(tmp, distribution)\n\ntmp  <- gframe(\"Sample size\", container=vGroup)\nadd(tmp,sampleSize)\n\ntmp <- gframe(\"Kernel\", container=vGroup)\nadd(tmp,kernel)\n\nadd(bigGroup, ggraphics())\n\ntmp <- gframe(\"Bandwidth adjust\", container=hGroup)\nadd(tmp,bandwidthAdjust, expand=TRUE)\n---<---------------cut here---------------end---------------->---\n\nWhy is the slider still packed side by side, when I'm specifying\n'horizontal=FALSE' in hGroup?\n\nI also notice that one needs to do something in a widget to produce the\ninitial plot, i.e. a default initial the plot is not produced.\n\n\nThanks for any further pointers,\n-- \nSeb",
+      "body_snippet": "On Thu, 19 Jun 2008 02:14:18 +0000 (UTC),\njverzani <jverzani at gmail.com> wrote:\n\n[...]\n\n> The handlers in the various toolkits have several different arguments,\n> none of course being standard. The ",
+      "thread_id": "thread-87fe5e577153",
+      "thread_depth": 0,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-114516ebf2bd",
+      "message_id": "<509e0620807030920h6d023b08r6dd6d397011ad95e@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
+      "date": "2008-07-03T09:20:58-07:00",
+      "subject": "[R-gui] embedding R graphics in Tk widgets",
+      "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
+      "in_reply_to": "<87tzf76jtg.fsf@patagonia.sebmags.homelinux.org>",
+      "references": [
+        "<8763sef2mk.fsf@patagonia.sebmags.homelinux.org>",
+        "<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>",
+        "<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>",
+        "<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>",
+        "<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>",
+        "<509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>",
+        "<87abhllf51.fsf@patagonia.sebmags.homelinux.org>",
+        "<loom.20080619T020819-746@post.gmane.org>",
+        "<87tzf76jtg.fsf@patagonia.sebmags.homelinux.org>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/e94629c7/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/e94629c7/attachment.pl>",
+      "thread_id": "thread-87fe5e577153",
+      "thread_depth": 1,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-6851f5637cbd",
+      "message_id": "<87prpu7w21.fsf@patagonia.sebmags.homelinux.org>",
+      "from_name": "Sebastian P. Luque",
+      "from_email_hash": "2cd4815ed8883e0c35c16bacf1be9d88d662c4a9f03492384d48d7b9ac92a1d5",
+      "date": "2008-07-03T11:48:54-05:00",
+      "subject": "[R-gui] embedding R graphics in Tk widgets",
+      "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
+      "in_reply_to": null,
+      "references": [
+        "<8763sef2mk.fsf@patagonia.sebmags.homelinux.org>",
+        "<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>",
+        "<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>",
+        "<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>",
+        "<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>",
+        "<509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>",
+        "<87abhllf51.fsf@patagonia.sebmags.homelinux.org>",
+        "<loom.20080619T020819-746@post.gmane.org>",
+        "<87tzf76jtg.fsf@patagonia.sebmags.homelinux.org>",
+        "<509e0620807030920h6d023b08r6dd6d397011ad95e@mail.gmail.com>"
+      ],
+      "body_plain": "On Thu, 3 Jul 2008 09:20:58 -0700,\n\"Michael Lawrence\" <mflawren at fhcrc.org> wrote:\n\n[...]\n\n> It sounds like you want a top-level vertical group that contains two\n> horizontal groups. The first contains the vertical controls and graph\n> and the second contains your horizontal controls.\n\nIf I try something along those lines:\n\n---<---------------cut here---------------start-------------->---\nwindow <- gwindow(\"gWidgetsDensity\")\nbigGroup <- ggroup(container=window)\n\nvGroup <- ggroup(horizontal=FALSE, container=bigGroup)\nhGroup <- ggroup(horizontal=FALSE, container=bigGroup)\n\ntmp <- gframe(\"Distribution\", container=vGroup)\nadd(tmp, distribution)\n\ntmp  <- gframe(\"Sample size\", container=vGroup)\nadd(tmp,sampleSize)\n\ntmp <- gframe(\"Kernel\", container=vGroup)\nadd(tmp,kernel)\n\nadd(hGroup, ggraphics())\n\ntmp <- gframe(\"Bandwidth adjust\", container=hGroup)\nadd(tmp,bandwidthAdjust, expand=TRUE)\n---<---------------cut here---------------end---------------->---\n\ndoes get me closer, but then the graph does not get resized along with\nwindow size.\n\nHow about the initial plot not being produced?\n\n\nThanks,\n\n-- \nSeb",
+      "body_snippet": "On Thu, 3 Jul 2008 09:20:58 -0700,\n\"Michael Lawrence\" <mflawren at fhcrc.org> wrote:\n\n[...]\n\n> It sounds like you want a top-level vertical group that contains two\n> horizontal groups. The first conta",
+      "thread_id": "thread-87fe5e577153",
+      "thread_depth": 2,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-c5c534cc6dc6",
+      "message_id": "<8F897BD2B0EB714CB79B96D84911B3023803D1@EXCHV1.lj.ad.scripps.edu>",
+      "from_name": "Lana Schaffer",
+      "from_email_hash": "6d24a008ccd1e4d99a6930143aef8613b93ac69eeb8c0283e668538eab47b3b3",
+      "date": "2008-07-03T09:49:41-07:00",
+      "subject": "[R-gui] recommend a GUI fornew  bioconductor package",
+      "subject_clean": "[R-gui] recommend a GUI fornew  bioconductor package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\nI have written a new package for Bioconductor\nand need a GUI for users with no experience using\nR.  Am I able to adapt an already existing GUI for\nthis purpose?  What would you recommend?\n\nLana Schaffer\nBiostatistics/Informatics\nThe Scripps Research Institute\nDNA Array Core Facility\nLa Jolla, CA 92037\n(858) 784-2263\n(858) 784-2994\nschaffer at scripps.edu",
+      "body_snippet": "Hi,\nI have written a new package for Bioconductor\nand need a GUI for users with no experience using\nR.  Am I able to adapt an already existing GUI for\nthis purpose?  What would you recommend?\n\nLana Sc",
+      "thread_id": "thread-c5c534cc6dc6",
+      "thread_depth": 0,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-2652ee128bbd",
+      "message_id": "<509e0620807031018h2aa7fdebj29637434b06f7a69@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
+      "date": "2008-07-03T10:18:02-07:00",
+      "subject": "[R-gui] recommend a GUI fornew bioconductor package",
+      "subject_clean": "[R-gui] recommend a GUI fornew bioconductor package",
+      "in_reply_to": "<8F897BD2B0EB714CB79B96D84911B3023803D1@EXCHV1.lj.ad.scripps.edu>",
+      "references": [
+        "<8F897BD2B0EB714CB79B96D84911B3023803D1@EXCHV1.lj.ad.scripps.edu>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4839077f/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4839077f/attachment.pl>",
+      "thread_id": "thread-c5c534cc6dc6",
+      "thread_depth": 1,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-93e9996ed7ce",
+      "message_id": "<509e0620807031019g6c86b6e1ib875b38cb552e7d7@mail.gmail.com>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
+      "date": "2008-07-03T10:19:40-07:00",
+      "subject": "[R-gui] embedding R graphics in Tk widgets",
+      "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
+      "in_reply_to": "<87prpu7w21.fsf@patagonia.sebmags.homelinux.org>",
+      "references": [
+        "<8763sef2mk.fsf@patagonia.sebmags.homelinux.org>",
+        "<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>",
+        "<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>",
+        "<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>",
+        "<509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>",
+        "<87abhllf51.fsf@patagonia.sebmags.homelinux.org>",
+        "<loom.20080619T020819-746@post.gmane.org>",
+        "<87tzf76jtg.fsf@patagonia.sebmags.homelinux.org>",
+        "<509e0620807030920h6d023b08r6dd6d397011ad95e@mail.gmail.com>",
+        "<87prpu7w21.fsf@patagonia.sebmags.homelinux.org>"
+      ],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4e9723e2/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4e9723e2/attachment.pl>",
+      "thread_id": "thread-87fe5e577153",
+      "thread_depth": 3,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-d0abdb06d942",
+      "message_id": "<87fxqq7u1o.fsf@patagonia.sebmags.homelinux.org>",
+      "from_name": "Sebastian P. Luque",
+      "from_email_hash": "2cd4815ed8883e0c35c16bacf1be9d88d662c4a9f03492384d48d7b9ac92a1d5",
+      "date": "2008-07-03T12:32:19-05:00",
+      "subject": "[R-gui] embedding R graphics in Tk widgets",
+      "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
+      "in_reply_to": null,
+      "references": [
+        "<8763sef2mk.fsf@patagonia.sebmags.homelinux.org>",
+        "<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>",
+        "<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>",
+        "<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>",
+        "<509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>",
+        "<87abhllf51.fsf@patagonia.sebmags.homelinux.org>",
+        "<loom.20080619T020819-746@post.gmane.org>",
+        "<87tzf76jtg.fsf@patagonia.sebmags.homelinux.org>",
+        "<509e0620807030920h6d023b08r6dd6d397011ad95e@mail.gmail.com>",
+        "<87prpu7w21.fsf@patagonia.sebmags.homelinux.org>",
+        "<509e0620807031019g6c86b6e1ib875b38cb552e7d7@mail.gmail.com>"
+      ],
+      "body_plain": "On Thu, 3 Jul 2008 10:19:40 -0700,\n\"Michael Lawrence\" <mflawren at fhcrc.org> wrote:\n\n[...]\n\n> Just pack the ggraphics widget to expand (= TRUE).\n\nI tried that, but the graph still doesn't seem to be resized along with\nthe changing size of the window (see below).\n\n\n>> How about the initial plot not being produced?\n\n> I don't see enough of your code to tell why - where you are you\n> plotting the data?\n\n\nIt's the vignette's density example.  Here it is:\n\n---<---------------cut here---------------start-------------->---\navailDists <- c(Normal=\"rnorm\", Exponential=\"rexp\")\navailKernels <- c(\"gaussian\", \"epanechnikov\", \"rectangular\",\n                  \"triangular\", \"biweight\", \"cosine\", \"optcosine\")\nupdatePlot <- function(h, ...) {\n    x <- do.call(availDists[svalue(distribution)], list(svalue(sampleSize)))\n    plot(density(x, adjust=svalue(bandwidthAdjust),\n                 kernel=svalue(kernel)), main=\"Density plot\")\n    rug(x)\n}\ndistribution <- gradio(names(availDists), horizontal=FALSE, handler=updatePlot)\nkernel <- gdroplist(availKernels, handler=updatePlot)\nbandwidthAdjust <- gslider(from=0,to=2,by=.01, value=1, handler=updatePlot)\nsampleSize <- gradio(c(50,100,200, 300), handler=updatePlot)\n\nwindow <- gwindow(\"gWidgetsDensity\")\nbigGroup <- ggroup(container=window)\n\nvGroup <- ggroup(horizontal=FALSE, container=bigGroup)\nhGroup <- ggroup(horizontal=FALSE, container=bigGroup)\n\n## Now to add a graphics device.  [Again, if using \\RFunc{gWidgetsrJava}\n## this wouldn't place the device inside the \\RCode{BigGroup} container.]\nadd(hGroup, ggraphics(), expand=TRUE)\n\ntmp <- gframe(\"Distribution\", container=vGroup)\nadd(tmp, distribution)\n\ntmp  <- gframe(\"Sample size\", container=vGroup)\nadd(tmp, sampleSize)\n\ntmp <- gframe(\"Kernel\", container=vGroup)\nadd(tmp, kernel)\n\ntmp <- gframe(\"Bandwidth adjust\", container=hGroup)\nadd(tmp, bandwidthAdjust, expand=TRUE)\n---<---------------cut here---------------end---------------->---\n\n\n-- \nSeb",
+      "body_snippet": "On Thu, 3 Jul 2008 10:19:40 -0700,\n\"Michael Lawrence\" <mflawren at fhcrc.org> wrote:\n\n[...]\n\n> Just pack the ggraphics widget to expand (= TRUE).\n\nI tried that, but the graph still doesn't seem to be ",
+      "thread_id": "thread-87fe5e577153",
+      "thread_depth": 4,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-0914e9a782f5",
+      "message_id": "<OF8F8A7754.337F57CA-ON8525747B.0060A296-8525747B.0060C873@malbecpartners.com>",
+      "from_name": "ryan.sheftel at malbecpartners.com",
+      "from_email_hash": "02d6a60f6ca4d1c26c6a1cd2cba44e2326f74b50c6f9126e6a147ebd576a4e9e",
+      "date": "2008-07-03T13:37:02-04:00",
+      "subject": "[R-gui] recommend a GUI fornew  bioconductor package",
+      "subject_clean": "[R-gui] recommend a GUI fornew  bioconductor package",
+      "in_reply_to": "<8F897BD2B0EB714CB79B96D84911B3023803D1@EXCHV1.lj.ad.scripps.edu>",
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/5dbc4f8a/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/5dbc4f8a/attachment.pl>",
+      "thread_id": "thread-c5c534cc6dc6",
+      "thread_depth": 1,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-5504b38c5a2a",
+      "message_id": "<6E6CC703-E735-4C24-B53D-C4CAA66313A0@mcmaster.ca>",
+      "from_name": "John Fox",
+      "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
+      "date": "2008-07-03T14:12:17-04:00",
+      "subject": "[R-gui] recommend a GUI fornew  bioconductor package",
+      "subject_clean": "[R-gui] recommend a GUI fornew  bioconductor package",
+      "in_reply_to": "<8F897BD2B0EB714CB79B96D84911B3023803D1@EXCHV1.lj.ad.scripps.edu>",
+      "references": [
+        "<8F897BD2B0EB714CB79B96D84911B3023803D1@EXCHV1.lj.ad.scripps.edu>"
+      ],
+      "body_plain": "Dear Lana,\n\nOne approach would be to write a plug-in package for the Rcmdr GUI. An  \narticle in last December's R News <http://www.r-project.org/doc/Rnews/Rnews_2007-3.pdf \n > explains how to do this.\n\nI hope this helps,\n  John\n\n--------------------------------------------\nJohn Fox, Professor\nDepartment of Sociology\nMcMaster University\nHamilton ON Canada L8S 4M4\nweb: socserv.mcmaster.ca/jfox\n\nOn 3-Jul-08, at 12:49 PM, Lana Schaffer wrote:\n\n> Hi,\n> I have written a new package for Bioconductor\n> and need a GUI for users with no experience using\n> R.  Am I able to adapt an already existing GUI for\n> this purpose?  What would you recommend?\n>\n> Lana Schaffer\n> Biostatistics/Informatics\n> The Scripps Research Institute\n> DNA Array Core Facility\n> La Jolla, CA 92037\n> (858) 784-2263\n> (858) 784-2994\n> schaffer at scripps.edu\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Dear Lana,\n\nOne approach would be to write a plug-in package for the Rcmdr GUI. An  \narticle in last December's R News <http://www.r-project.org/doc/Rnews/Rnews_2007-3.pdf \n > explains how to do this.",
+      "thread_id": "thread-c5c534cc6dc6",
+      "thread_depth": 1,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-ef8a99c4ce1b",
+      "message_id": "<87bq0vxd6p.fsf@patagonia.sebmags.homelinux.org>",
+      "from_name": "Sebastian P. Luque",
+      "from_email_hash": "2cd4815ed8883e0c35c16bacf1be9d88d662c4a9f03492384d48d7b9ac92a1d5",
+      "date": "2008-07-18T13:25:02-05:00",
+      "subject": "[R-gui] equivalent of \"modal\" widgets in gWidgetsRGtk2",
+      "subject_clean": "[R-gui] equivalent of \"modal\" widgets in gWidgetsRGtk2",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nHopefully this example shows what I'm trying to do:\n\ndoPlot <- function() {\n    updatePlot <- function(h, ...) plot(rnorm(10))\n    ## collect locator() coordinates\n    coords <- list()\n    loc.fun <- function() {\n        coords[[length(coords) + 1]] <<- locator(1)\n    }\n    tblist <- list(quit=list(handler=function(h, ...) dispose(window)),\n                   plot=list(handler=updatePlot),\n                   loc.but=list(handler=loc.fun))\n    window <- gwindow(\"gWidgetsDensity\")\n    ## Little menu bar\n    add(window, gtoolbar(tblist))\n    bigGroup <- ggroup(container=window)\n    add(bigGroup, ggraphics(), expand=TRUE)\n    invisible(coords)\n}\n\nThis has a tool bar with 3 buttons: quit, plot and a loc.but.  The\nlatter calls locator to collect some coordinates from the plot.  The\nloc.but button tries to call locator() and collects results in a list;\none element per click.  So the function should not exit until the window\nis destroyed.  The function tries to return the collected coordinates\ninvisibly, but the problem is that it exits before anything is done\nthrough the GUI.  In tcltk this was done with tkwait.window(<<base\nframe>>).  How can this be done in gWidgetsRGtk2?  Thanks.\n\n\nCheers,\n\n-- \nSeb",
+      "body_snippet": "Hi,\n\nHopefully this example shows what I'm trying to do:\n\ndoPlot <- function() {\n    updatePlot <- function(h, ...) plot(rnorm(10))\n    ## collect locator() coordinates\n    coords <- list()\n    loc.fu",
+      "thread_id": "thread-ef8a99c4ce1b",
+      "thread_depth": 0,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-3cf3482f21ad",
+      "message_id": "<4880E736.3080602@stats.uwo.ca>",
+      "from_name": "Duncan Murdoch",
+      "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
+      "date": "2008-07-18T14:55:50-04:00",
+      "subject": "[R-gui] equivalent of \"modal\" widgets in gWidgetsRGtk2",
+      "subject_clean": "[R-gui] equivalent of \"modal\" widgets in gWidgetsRGtk2",
+      "in_reply_to": "<87bq0vxd6p.fsf@patagonia.sebmags.homelinux.org>",
+      "references": [
+        "<87bq0vxd6p.fsf@patagonia.sebmags.homelinux.org>"
+      ],
+      "body_plain": "On 7/18/2008 2:25 PM, Sebastian P. Luque wrote:\n> Hi,\n> \n> Hopefully this example shows what I'm trying to do:\n> \n> doPlot <- function() {\n>     updatePlot <- function(h, ...) plot(rnorm(10))\n>     ## collect locator() coordinates\n>     coords <- list()\n>     loc.fun <- function() {\n>         coords[[length(coords) + 1]] <<- locator(1)\n>     }\n>     tblist <- list(quit=list(handler=function(h, ...) dispose(window)),\n>                    plot=list(handler=updatePlot),\n>                    loc.but=list(handler=loc.fun))\n>     window <- gwindow(\"gWidgetsDensity\")\n>     ## Little menu bar\n>     add(window, gtoolbar(tblist))\n>     bigGroup <- ggroup(container=window)\n>     add(bigGroup, ggraphics(), expand=TRUE)\n>     invisible(coords)\n> }\n> \n> This has a tool bar with 3 buttons: quit, plot and a loc.but.  The\n> latter calls locator to collect some coordinates from the plot.  The\n> loc.but button tries to call locator() and collects results in a list;\n> one element per click.  So the function should not exit until the window\n> is destroyed.  The function tries to return the collected coordinates\n> invisibly, but the problem is that it exits before anything is done\n> through the GUI.  In tcltk this was done with tkwait.window(<<base\n> frame>>).  How can this be done in gWidgetsRGtk2?  Thanks.\n\nYou can probably put a loop at the end, something like this:\n\n   stop <- FALSE\n   while (!stop) Sys.sleep(0.5)\n\nand have the button which stops the process set stop to TRUE.\n\nDuncan Murdoch",
+      "body_snippet": "On 7/18/2008 2:25 PM, Sebastian P. Luque wrote:\n> Hi,\n> \n> Hopefully this example shows what I'm trying to do:\n> \n> doPlot <- function() {\n>     updatePlot <- function(h, ...) plot(rnorm(10))\n>     ##",
+      "thread_id": "thread-ef8a99c4ce1b",
+      "thread_depth": 1,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-cd7544f2fdb9",
+      "message_id": "<loom.20080718T195717-599@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2008-07-18T20:02:57Z",
+      "subject": "[R-gui] equivalent of \"modal\" widgets in gWidgetsRGtk2",
+      "subject_clean": "[R-gui] equivalent of \"modal\" widgets in gWidgetsRGtk2",
+      "in_reply_to": null,
+      "references": [
+        "<87bq0vxd6p.fsf@patagonia.sebmags.homelinux.org>"
+      ],
+      "body_plain": "Sebastian P. Luque <spluque <at> gmail.com> writes:\n\n> \n> Hi,\n> \n> Hopefully this example shows what I'm trying to do:\n> \n> doPlot <- function() {\n>     updatePlot <- function(h, ...) plot(rnorm(10))\n>     ## collect locator() coordinates\n>     coords <- list()\n>     loc.fun <- function() {\n>         coords[[length(coords) + 1]] <<- locator(1)\n>     }\n>     tblist <- list(quit=list(handler=function(h, ...) dispose(window)),\n>                    plot=list(handler=updatePlot),\n>                    loc.but=list(handler=loc.fun))\n>     window <- gwindow(\"gWidgetsDensity\")\n>     ## Little menu bar\n>     add(window, gtoolbar(tblist))\n>     bigGroup <- ggroup(container=window)\n>     add(bigGroup, ggraphics(), expand=TRUE)\n>     invisible(coords)\n> }\n\nYou might be able to get what you want using the fact that the coordinates are\npassed in to the \"h\" object of the handler as x and y. (This works for simple\ngraphs, likely not with lattice graphics etc.)\n\nrequire(gWidgets)\noptions(guiToolkit=\"RGtk2\")\nw <- gwindow(\"test\")\ngd <- ggraphics(cont=w)\naddHandlerClicked(gd, handler = function(h,...) {\n  points(h$x, h$y, pch=16)\n})\n## You may need to mouse over the window before this works\nplot(1:10, sin(1:10))\n\n\nHope that helps. I don't know how to make a regular gtkWindow instance modal,\nonly a dialog.\n\n--John\n> \n> This has a tool bar with 3 buttons: quit, plot and a loc.but.  The\n> latter calls locator to collect some coordinates from the plot.  The\n> loc.but button tries to call locator() and collects results in a list;\n> one element per click.  So the function should not exit until the window\n> is destroyed.  The function tries to return the collected coordinates\n> invisibly, but the problem is that it exits before anything is done\n> through the GUI.  In tcltk this was done with tkwait.window(<<base\n> frame>>).  How can this be done in gWidgetsRGtk2?  Thanks.\n> \n> Cheers,\n>",
+      "body_snippet": "Sebastian P. Luque <spluque <at> gmail.com> writes:\n\n> \n> Hi,\n> \n> Hopefully this example shows what I'm trying to do:\n> \n> doPlot <- function() {\n>     updatePlot <- function(h, ...) plot(rnorm(10))\n",
+      "thread_id": "thread-ef8a99c4ce1b",
+      "thread_depth": 1,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-615fccc3d214",
+      "message_id": "<loom.20080718T200752-367@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2008-07-18T20:30:07Z",
+      "subject": "[R-gui] New package gWidgetsWWW",
+      "subject_clean": "[R-gui] New package gWidgetsWWW",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I've uploaded to CRAN a new package: gWidgetsWWW.\n\nThis package allows one to use the gWidgets API to create dynamic webpages. A\nbasic template for a page consists of some HTML header code to call in the\nnecessary jvascript libraries, then gWidgets code which--may be sourced in--to\nproduce the page, and then a simple HTML footer. No HTML coding knowledge is\nneeded. Examples are given in the package. A bit more information is found at\nhttp://www.math.csi.cuny.edu/pmg/gWidgets/gWidgetsWWW. Hopefully the next\nrelease will have some more documentation, but I wanted to see if this is of any\ninterest first.\n\nQuite a bit of the gWidgets API is implemented, although there are some\ndifferences detailed in its help page. One key difference is that the package\ngWidgets is not used, so one calls in the package with require(gWidgetsWWW,\nquietly=TRUE). Instead of dispatch using gWidgets and S4 methods, the proto\npackage is used. This is used in a new gWidgetsWWW specific constructor to\nmanipulate Google maps.\n\nThe hard work is done by the Rpad package (www.rpad.org) which allows a web page\nto call back into an R process. Rpad has a local and server version. This has\nbeen tested with the local version. If a server version is of interest, be sure\nto read the security section of http://www.rpad.org/Rpad/BasicDocumentation.html\n\ngWidgetsWWW just creates javascript calls that create and modify the current\nwebpage. The javascript created uses the EXT JS javascript libraries\n(www.extjs.com). These can be downloaded and installed locally.\n\nPlease feel free to email with bug reports and questions.",
+      "body_snippet": "I've uploaded to CRAN a new package: gWidgetsWWW.\n\nThis package allows one to use the gWidgets API to create dynamic webpages. A\nbasic template for a page consists of some HTML header code to call in ",
+      "thread_id": "thread-615fccc3d214",
+      "thread_depth": 0,
+      "month": "2008-07"
+    },
+    {
+      "id": "msg-c260b13ec2d7",
+      "message_id": "<178162.93772.qm@web34701.mail.mud.yahoo.com>",
+      "from_name": "Judith Flores",
+      "from_email_hash": "90ee10651cc7d5a66027a875836694a3d241239b4ef0fe08ed229967c24fce75",
+      "date": "2008-07-18T14:05:20-07:00",
+      "subject": "[R-gui] tkdialog",
+      "subject_clean": "[R-gui] tkdialog",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\n    I have been looking for examples in the use of tkdialog, I learned that modal-dialog is preferred, but I am having a hard time retrieving the entry values when using modal-dialog. I read the examples have been compiled by James Wettenhall. But I am still having difficulties understanding the definition of the arguments for all tk commands. Could you please orient me with a book or website reference that explains how the arguments of the tcltk commands should be defined y R? I have found many websites that are about tcltk, but not in the context of R.\n\nThank you,\n\nJudith",
+      "body_snippet": "Hello,\n\n    I have been looking for examples in the use of tkdialog, I learned that modal-dialog is preferred, but I am having a hard time retrieving the entry values when using modal-dialog. I read t",
+      "thread_id": "thread-c260b13ec2d7",
+      "thread_depth": 0,
+      "month": "2008-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-c5c534cc6dc6",
+      "subject": "[R-gui] recommend a GUI fornew  bioconductor package",
+      "message_count": 4,
+      "participants": [
+        "John Fox",
+        "Lana Schaffer",
+        "Michael Lawrence",
+        "ryan.sheftel at malbecpartners.com"
+      ],
+      "started": "2008-07-03T09:49:41-07:00",
+      "last_reply": "2008-07-03T14:12:17-04:00",
+      "root_message_id": "msg-c5c534cc6dc6"
+    },
+    {
+      "id": "thread-87fe5e577153",
+      "subject": "[R-gui] embedding R graphics in Tk widgets",
+      "message_count": 5,
+      "participants": [
+        "Michael Lawrence",
+        "Sebastian P. Luque"
+      ],
+      "started": "2008-07-03T10:58:35-05:00",
+      "last_reply": "2008-07-03T12:32:19-05:00",
+      "root_message_id": "msg-87fe5e577153"
+    },
+    {
+      "id": "thread-87c64b3a8c67",
+      "subject": "[R-gui] Lattice graphics",
+      "message_count": 1,
+      "participants": [
+        "Felix Andrews"
+      ],
+      "started": "2008-07-03T19:51:40+10:00",
+      "last_reply": "2008-07-03T19:51:40+10:00",
+      "root_message_id": "msg-87c64b3a8c67"
+    },
+    {
+      "id": "thread-ef8a99c4ce1b",
+      "subject": "[R-gui] equivalent of \"modal\" widgets in gWidgetsRGtk2",
+      "message_count": 3,
+      "participants": [
+        "Duncan Murdoch",
+        "Sebastian P. Luque",
+        "john verzani"
+      ],
+      "started": "2008-07-18T13:25:02-05:00",
+      "last_reply": "2008-07-18T20:02:57+00:00",
+      "root_message_id": "msg-ef8a99c4ce1b"
+    },
+    {
+      "id": "thread-c260b13ec2d7",
+      "subject": "[R-gui] tkdialog",
+      "message_count": 1,
+      "participants": [
+        "Judith Flores"
+      ],
+      "started": "2008-07-18T14:05:20-07:00",
+      "last_reply": "2008-07-18T14:05:20-07:00",
+      "root_message_id": "msg-c260b13ec2d7"
+    },
+    {
+      "id": "thread-615fccc3d214",
+      "subject": "[R-gui] New package gWidgetsWWW",
+      "message_count": 1,
+      "participants": [
+        "john verzani"
+      ],
+      "started": "2008-07-18T20:30:07+00:00",
+      "last_reply": "2008-07-18T20:30:07+00:00",
+      "root_message_id": "msg-615fccc3d214"
+    }
+  ]
+}

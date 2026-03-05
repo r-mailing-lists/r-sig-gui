@@ -1,0 +1,715 @@
+From lawremi at iastate.edu  Wed Feb  1 21:23:46 2006
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Wed, 01 Feb 2006 14:23:46 -0600
+Subject: [R-gui] RGtk2 release details
+Message-ID: <43E118D2.2090807@iastate.edu>
+
+Earlier today I sent an email to r-packages announcing the release of 
+RGtk2. I don't think that has propagated to the lists yet, but I would 
+like to specially announce it here with more details.
+
+RGtk2 is a binding from R to GTK and many of its underlying libraries, 
+plus a few extras. RGtk2 works on all three major platforms (Linux, Mac, 
+and Windows). It is based on the original RGtk by Duncan Temple Lang, 
+but RGtk2 is largely a rewrite of that package. I approached the RGtk2 
+with the goal of providing a virtually complete binding without 
+sacrificing the familiar R style of programming.
+
+As its name suggests, RGtk2 binds to the new (well 5 years old now) GTK2 
+libraries. GTK2 offers many improvements over its successor including 
+more sophisticated widgets, overhauled object-oriented functionality, 
+internationalized and anti-aliased font rendering, etc.
+
+Actually, the bindings to GTK are only part of the story. RGtk2 also 
+offers complete bindings to Pango (font rendering), GDK (basic drawing, 
+low-level device access), Cairo (vector graphics), GdkPixbuf (image 
+manipulation), libglade (GUI's from XML descriptions), GtkMozEmbed 
+(embeddable mozilla browser on linux), and ATK (accessibility devices).
+
+One of the coolest parts is that these bindings are fully documented by 
+the R adaptation of the API docs for the bound libraries. You should 
+learn all you need to know directly from within R.
+
+I also provided a GTK implementation of Simon Urbanek's iWidgets API.
+
+Here is the current website (may be moved to Omegahat eventually):
+http://www.ggobi.org/rgtk2
+
+Please find more details there. The page also includes a link to my 
+Cairo R graphics device that allow you to embed R graphics in RGtk2 GUI's.
+
+Thank you for your interest,
+Michael Lawrence
+
+
+From wettenhall at wehi.EDU.AU  Thu Feb  2 13:53:20 2006
+From: wettenhall at wehi.EDU.AU (James Wettenhall)
+Date: Thu, 2 Feb 2006 23:53:20 +1100 (EST)
+Subject: [R-gui] Request for users of my R-Tcl/Tk examples,
+	limmaGUI or affylmGUI
+Message-ID: <22723.61.9.148.22.1138884800.squirrel@homebase.wehi.edu.au>
+
+[PLEASE REPLY _OFF_ THE LIST, i.e. DON'T CC to r-help at ...]
+
+Hi,
+
+I don't see this sort of thing very often on the mailing lists, so list
+moderators and others should feel free to tell me if it breaches list
+etiquette and/or delete my post if necessary.  But I can't see what harm
+it could do...
+
+I am just wondering approximately how many people use / have used some of
+the R stuff I've developed (and in how many countries).  In particular I'm
+talking about the R-Tcl/Tk examples I've put at
+http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/ and/or my two BioC
+packages limmaGUI and affylmGUI (now maintained by Keith Satterley),
+and/or the IBC2004 and JSM2005 microarray analysis course websites.
+
+If it's not too much trouble, could you please tell me [OFF THE LIST] if
+you use / have used any of these things (otherwise don't reply) and what
+country you are from, and if there are many other people where you work
+who use them but would not reply on the R mailing list themself? e.g.
+
+"I use / have used your R-Tcl/Tk Examples.  I am from Canada.  Two other
+people I work with have also used them, but they don't read the R mailing
+lists so won't reply themselves."
+
+If I get an absolutely massive response, I may have to set up some harsh
+email filters and delete some of the incoming replies, but I think I can
+handle the sort of response I am expecting.
+
+Apologies if anyone feels that I am misusing the mailing list(s).
+
+Best wishes to all,
+James
+
+
+From 10133msb at comb.es  Thu Feb  2 22:02:04 2006
+From: 10133msb at comb.es (Manel Salamero)
+Date: Thu,  2 Feb 2006 22:02:04 +0100
+Subject: [R-gui] tcl/tc examples
+Message-ID: <200602022202.AA30212368@comb.es>
+
+Dear James,
+
+Some month ago I began to work on a tcl/tk script for correcting psychological tests. At first I tryed to find my way in the documentation of the library and inspecting Rcmdr scripts without succes. At last I find your page which was very helpfull. I'm from Barcelona (Catalonia, Spain). If you are interested in other information or in my script don't hesitate to write me.
+
+Thanks for your examples, 
+
+Manel Salamero
+
+
+From rlevy at inf.ed.ac.uk  Tue Feb  7 17:11:03 2006
+From: rlevy at inf.ed.ac.uk (Roger Levy)
+Date: Tue, 07 Feb 2006 16:11:03 +0000
+Subject: [R-gui] displaying Cyrillic in RGui under Windows
+Message-ID: <43E8C697.20004@inf.ed.ac.uk>
+
+I have a data frame with Cyrillic text that I would like to be able to 
+view under RGui.  Unfortunately I can't figure out from the manuals how 
+to make this happen -- can someone point me in the right direction?
+
+Thanks,
+
+Roger Levy
+
+
+From ripley at stats.ox.ac.uk  Tue Feb  7 17:46:30 2006
+From: ripley at stats.ox.ac.uk (Prof Brian Ripley)
+Date: Tue, 7 Feb 2006 16:46:30 +0000 (GMT)
+Subject: [R-gui] [R] displaying Cyrillic in RGui under Windows
+In-Reply-To: <43E8C697.20004@inf.ed.ac.uk>
+References: <43E8C697.20004@inf.ed.ac.uk>
+Message-ID: <Pine.LNX.4.61.0602071643190.14207@gannet.stats>
+
+On Tue, 7 Feb 2006, Roger Levy wrote:
+
+> I have a data frame with Cyrillic text that I would like to be able to
+> view under RGui.  Unfortunately I can't figure out from the manuals how
+> to make this happen -- can someone point me in the right direction?
+
+You can only do this if you run RGui in a Cyrillic locale.  Unfortunately 
+there are several incompatible Cyrillic encodings, so let's hope this is 
+the Windows one.  If so, set Windows to Russian as per the rw-FAQ, select 
+LANGUAGE=en and it should work.
+
+-- 
+Brian D. Ripley,                  ripley at stats.ox.ac.uk
+Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/
+University of Oxford,             Tel:  +44 1865 272861 (self)
+1 South Parks Road,                     +44 1865 272866 (PA)
+Oxford OX1 3TG, UK                Fax:  +44 1865 272595
+
+
+From rlevy at inf.ed.ac.uk  Tue Feb  7 19:03:43 2006
+From: rlevy at inf.ed.ac.uk (Roger Levy)
+Date: Tue, 07 Feb 2006 18:03:43 +0000
+Subject: [R-gui] [R] displaying Cyrillic in RGui under Windows
+In-Reply-To: <Pine.LNX.4.61.0602071643190.14207@gannet.stats>
+References: <43E8C697.20004@inf.ed.ac.uk>
+	<Pine.LNX.4.61.0602071643190.14207@gannet.stats>
+Message-ID: <43E8E0FF.8040607@inf.ed.ac.uk>
+
+Prof Brian Ripley wrote:
+> On Tue, 7 Feb 2006, Roger Levy wrote:
+> 
+>> I have a data frame with Cyrillic text that I would like to be able to
+>> view under RGui.  Unfortunately I can't figure out from the manuals how
+>> to make this happen -- can someone point me in the right direction?
+> 
+> You can only do this if you run RGui in a Cyrillic locale.  
+> Unfortunately there are several incompatible Cyrillic encodings, so 
+> let's hope this is the Windows one.  If so, set Windows to Russian as 
+> per the rw-FAQ, select LANGUAGE=en and it should work.
+
+Thanks, I understand better now.  Apparently the only usable encoding is 
+Windows-1251, which R switches to upon the command 
+Sys.setlocale(,"russian").  After converting my data files to that 
+encoding and switching the Windows locale, everything works great.
+
+Many thanks.
+
+Roger
+
+
+From joseclaudio.faria at terra.com.br  Sun Feb 12 16:49:38 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sun, 12 Feb 2006 12:49:38 -0300
+Subject: [R-gui] Tinn-R 1.18.1.8 released
+Message-ID: <43EF5912.7050402@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.1.8) was released and is available (setup only) on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help/From this version/English/Changes.txt'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From manini.luca at tiscali.it  Fri Feb 17 15:30:03 2006
+From: manini.luca at tiscali.it (Luca Manini)
+Date: Fri, 17 Feb 2006 15:30:03 +0100
+Subject: [R-gui] R GUI question from new member
+Message-ID: <17397.56811.596915.685215@paperino.local>
+
+Hi, 
+
+I'm new to this list (and to the whole R world); I've started to read
+some threads in the archives to get acquinted with the community but I
+have some questions ready to be asked "now".  So please keep with me
+even if the mail is not that short.
+
+
+I'm a software developer and I've been asked to "write a GUI for R".
+The customer(s) are (could be in the near future) some departments of
+the local university where R is used both for teaching and research
+(in various areas).  So the problem is always the same: users find CLI
+difficult to learn/use and/or the time to learn them is greater than
+the total available time (for introductory courses in statistics, for
+example).
+
+As I said, I don't know much of R but it clear that is a big
+language/environment and that just thinking (let alone writing) a
+"full GUI" for it is a major undertaking well beyond the time (and
+money) budget I have at hand.
+
+So, what I have in mind is, instead of using/customizing big GUIs, to
+just write some small apps with a dedicated and minimal GUI for any
+single and simple task (think for example of some students'
+"exercises" on regression, or a series of computations or analysis or
+drawing steps needed to complete a research paper).  
+
+Of course I will not directly write them myself (sorry to say that)
+but instead I have to check whether that approach is feasible and, if
+it is, to "set up" the environment (docs, tools, examples, ...) so
+that "junior programmers" (or smart users) can write the single apps
+in a reasonable time.
+
+I'm thinking about Python + GTK + Glade for the interface stuff with
+some "glue" to get Python speak to R (and trap the answers).  Python
+is my preferred language, it is easy to learn (and I'm happy to teach
+it) and Glade is easy to use.
+
+My biggest concern at the moment is to check that I'm not offering to
+write something to solve an already solved problem and **for that**
+I'm asking this list's help.
+
+        TIA for any help/suggestion, Luca
+
+PS: the second biggest is to check that my idea is feasible/reasonable
+    (and for that I've already started experimenting).
+
+-- 
+    bye, Luca
+
+
+From roger.bos at gmail.com  Fri Feb 17 15:52:28 2006
+From: roger.bos at gmail.com (roger bos)
+Date: Fri, 17 Feb 2006 09:52:28 -0500
+Subject: [R-gui] R GUI question from new member
+In-Reply-To: <17397.56811.596915.685215@paperino.local>
+References: <17397.56811.596915.685215@paperino.local>
+Message-ID: <1db726800602170652h658f5c11o65c3a4cf6058584b@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060217/988d4f60/attachment.pl
+
+From joseclaudio.faria at terra.com.br  Sun Feb 19 00:49:11 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sat, 18 Feb 2006 20:49:11 -0300
+Subject: [R-gui] Tinn-R 1.18.1.9 was released
+Message-ID: <43F7B277.1090704@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.1.9) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help/From this version/English/Changes.txt'.
+
+Tinn-R now have syntax to Sweave, some aspects of the interface were improved 
+and minor bugs were fixed.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From phgrosjean at sciviews.org  Sun Feb 19 19:54:19 2006
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Sun, 19 Feb 2006 19:54:19 +0100
+Subject: [R-gui] R GUI question from new member
+In-Reply-To: <17397.56811.596915.685215@paperino.local>
+References: <17397.56811.596915.685215@paperino.local>
+Message-ID: <43F8BEDB.2040908@sciviews.org>
+
+Hi Luca,
+
+I would suggest to work/enhance existing code rather that reinventing 
+the wheel. There are a couple of RGui projects, and you may found what 
+you are looking for in there. Look, at http://www.sciviews.org/_rgui/ 
+for a listing of various projects. You have GUIs written in Java, 
+Tcl/Tk, GTK, etc... there. Tcl/Tk is often used for convenience, because 
+the tcltk R package is available with (almost) all R distributions. So, 
+you don't need to install additional stuff. That is what makes Rcmdr so 
+easy to run on all platforms. If you want more advanced features, I 
+agree that there are better solutions (GTK, wxWidgets, etc).
+
+May I suggest you to look here: 
+http://bioinf.wehi.edu.au/folders/james/wxPython/. This is a solution 
+using R and Python... in development and desperately seeking for a new 
+maintainer. This is not GTK, but wxWidgets, which is also a very good 
+solution. Regarding a substitute for Glade, you could consider Boa 
+Constructor. Look here: http://bioinf.wehi.edu.au/folders/james/RBoa/. 
+The explanation on this page is a little outdated. The latest version of 
+Boa Constructor is now compatible with wxPython 2.5.X. So, you don't 
+need to install Python/wxPython twice as explained in the page. Anyway, 
+using RSPython, you should be able to do what you want (mixing R, Python 
+and GTK).
+
+Best,
+
+Philippe Grosjean
+
+Luca Manini wrote:
+> Hi, 
+> 
+> I'm new to this list (and to the whole R world); I've started to read
+> some threads in the archives to get acquinted with the community but I
+> have some questions ready to be asked "now".  So please keep with me
+> even if the mail is not that short.
+> 
+> 
+> I'm a software developer and I've been asked to "write a GUI for R".
+> The customer(s) are (could be in the near future) some departments of
+> the local university where R is used both for teaching and research
+> (in various areas).  So the problem is always the same: users find CLI
+> difficult to learn/use and/or the time to learn them is greater than
+> the total available time (for introductory courses in statistics, for
+> example).
+> 
+> As I said, I don't know much of R but it clear that is a big
+> language/environment and that just thinking (let alone writing) a
+> "full GUI" for it is a major undertaking well beyond the time (and
+> money) budget I have at hand.
+> 
+> So, what I have in mind is, instead of using/customizing big GUIs, to
+> just write some small apps with a dedicated and minimal GUI for any
+> single and simple task (think for example of some students'
+> "exercises" on regression, or a series of computations or analysis or
+> drawing steps needed to complete a research paper).  
+> 
+> Of course I will not directly write them myself (sorry to say that)
+> but instead I have to check whether that approach is feasible and, if
+> it is, to "set up" the environment (docs, tools, examples, ...) so
+> that "junior programmers" (or smart users) can write the single apps
+> in a reasonable time.
+> 
+> I'm thinking about Python + GTK + Glade for the interface stuff with
+> some "glue" to get Python speak to R (and trap the answers).  Python
+> is my preferred language, it is easy to learn (and I'm happy to teach
+> it) and Glade is easy to use.
+> 
+> My biggest concern at the moment is to check that I'm not offering to
+> write something to solve an already solved problem and **for that**
+> I'm asking this list's help.
+> 
+>         TIA for any help/suggestion, Luca
+> 
+> PS: the second biggest is to check that my idea is feasible/reasonable
+>     (and for that I've already started experimenting).
+>
+
+
+From h.wickham at gmail.com  Sun Feb 19 20:09:16 2006
+From: h.wickham at gmail.com (hadley wickham)
+Date: Sun, 19 Feb 2006 13:09:16 -0600
+Subject: [R-gui] R GUI question from new member
+In-Reply-To: <43F8BEDB.2040908@sciviews.org>
+References: <17397.56811.596915.685215@paperino.local>
+	<43F8BEDB.2040908@sciviews.org>
+Message-ID: <f8e6ff050602191109w4f2d883k9f236a36780a2b14@mail.gmail.com>
+
+Hi Philippe,
+
+I disagree - with the new RGtk2 package (http://ggobi.org/rgtk2/) it
+is very easy to work cross platform with an attractive GUI.  RGtk2
+works on Windows, Mac and Linux and (in my opinion) is much more
+aesthetically pleasing the Tcl/Tk.
+
+Rgtk2 supports libglade so if you are familiar with glade, it is a
+very easy transition, and it is very easy to port work done in other
+programming languages if you are comfortable converting your (eg.)
+python code to R.
+
+Hadley
+
+
+On 2/19/06, Philippe Grosjean <phgrosjean at sciviews.org> wrote:
+> Hi Luca,
+>
+> I would suggest to work/enhance existing code rather that reinventing
+> the wheel. There are a couple of RGui projects, and you may found what
+> you are looking for in there. Look, at http://www.sciviews.org/_rgui/
+> for a listing of various projects. You have GUIs written in Java,
+> Tcl/Tk, GTK, etc... there. Tcl/Tk is often used for convenience, because
+> the tcltk R package is available with (almost) all R distributions. So,
+> you don't need to install additional stuff. That is what makes Rcmdr so
+> easy to run on all platforms. If you want more advanced features, I
+> agree that there are better solutions (GTK, wxWidgets, etc).
+>
+> May I suggest you to look here:
+> http://bioinf.wehi.edu.au/folders/james/wxPython/. This is a solution
+> using R and Python... in development and desperately seeking for a new
+> maintainer. This is not GTK, but wxWidgets, which is also a very good
+> solution. Regarding a substitute for Glade, you could consider Boa
+> Constructor. Look here: http://bioinf.wehi.edu.au/folders/james/RBoa/.
+> The explanation on this page is a little outdated. The latest version of
+> Boa Constructor is now compatible with wxPython 2.5.X. So, you don't
+> need to install Python/wxPython twice as explained in the page. Anyway,
+> using RSPython, you should be able to do what you want (mixing R, Python
+> and GTK).
+>
+> Best,
+>
+> Philippe Grosjean
+>
+> Luca Manini wrote:
+> > Hi,
+> >
+> > I'm new to this list (and to the whole R world); I've started to read
+> > some threads in the archives to get acquinted with the community but I
+> > have some questions ready to be asked "now".  So please keep with me
+> > even if the mail is not that short.
+> >
+> >
+> > I'm a software developer and I've been asked to "write a GUI for R".
+> > The customer(s) are (could be in the near future) some departments of
+> > the local university where R is used both for teaching and research
+> > (in various areas).  So the problem is always the same: users find CLI
+> > difficult to learn/use and/or the time to learn them is greater than
+> > the total available time (for introductory courses in statistics, for
+> > example).
+> >
+> > As I said, I don't know much of R but it clear that is a big
+> > language/environment and that just thinking (let alone writing) a
+> > "full GUI" for it is a major undertaking well beyond the time (and
+> > money) budget I have at hand.
+> >
+> > So, what I have in mind is, instead of using/customizing big GUIs, to
+> > just write some small apps with a dedicated and minimal GUI for any
+> > single and simple task (think for example of some students'
+> > "exercises" on regression, or a series of computations or analysis or
+> > drawing steps needed to complete a research paper).
+> >
+> > Of course I will not directly write them myself (sorry to say that)
+> > but instead I have to check whether that approach is feasible and, if
+> > it is, to "set up" the environment (docs, tools, examples, ...) so
+> > that "junior programmers" (or smart users) can write the single apps
+> > in a reasonable time.
+> >
+> > I'm thinking about Python + GTK + Glade for the interface stuff with
+> > some "glue" to get Python speak to R (and trap the answers).  Python
+> > is my preferred language, it is easy to learn (and I'm happy to teach
+> > it) and Glade is easy to use.
+> >
+> > My biggest concern at the moment is to check that I'm not offering to
+> > write something to solve an already solved problem and **for that**
+> > I'm asking this list's help.
+> >
+> >         TIA for any help/suggestion, Luca
+> >
+> > PS: the second biggest is to check that my idea is feasible/reasonable
+> >     (and for that I've already started experimenting).
+> >
+>
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>
+
+
+From phgrosjean at sciviews.org  Sun Feb 19 20:28:00 2006
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Sun, 19 Feb 2006 20:28:00 +0100
+Subject: [R-gui] R GUI question from new member
+In-Reply-To: <f8e6ff050602191109w4f2d883k9f236a36780a2b14@mail.gmail.com>
+References: <17397.56811.596915.685215@paperino.local>	
+	<43F8BEDB.2040908@sciviews.org>
+	<f8e6ff050602191109w4f2d883k9f236a36780a2b14@mail.gmail.com>
+Message-ID: <43F8C6C0.7050300@sciviews.org>
+
+hadley wickham wrote:
+> Hi Philippe,
+> 
+> I disagree -
+
+With WHAT do you disagree? Did I said something that is contradictory to 
+what you tell hereunder?
+
+with the new RGtk2 package (http://ggobi.org/rgtk2/) it
+> is very easy to work cross platform with an attractive GUI.  RGtk2
+> works on Windows, Mac and Linux and (in my opinion) is much more
+> aesthetically pleasing the Tcl/Tk.
+
+That is what I say:  "If you want more advanced features, I agree that 
+there are better solutions (GTK, wxWidgets, etc)."
+
+> Rgtk2 supports libglade so if you are familiar with glade, it is a
+> very easy transition, and it is very easy to port work done in other
+> programming languages if you are comfortable converting your (eg.)
+> python code to R.
+> 
+> Hadley
+
+Thank you for your link and suggestion, just try to disagree a little 
+bit less ;-)
+Best,
+
+Philippe Grosjean
+
+> On 2/19/06, Philippe Grosjean <phgrosjean at sciviews.org> wrote:
+> 
+>>Hi Luca,
+>>
+>>I would suggest to work/enhance existing code rather that reinventing
+>>the wheel. There are a couple of RGui projects, and you may found what
+>>you are looking for in there. Look, at http://www.sciviews.org/_rgui/
+>>for a listing of various projects. You have GUIs written in Java,
+>>Tcl/Tk, GTK, etc... there. Tcl/Tk is often used for convenience, because
+>>the tcltk R package is available with (almost) all R distributions. So,
+>>you don't need to install additional stuff. That is what makes Rcmdr so
+>>easy to run on all platforms. If you want more advanced features, I
+>>agree that there are better solutions (GTK, wxWidgets, etc).
+>>
+>>May I suggest you to look here:
+>>http://bioinf.wehi.edu.au/folders/james/wxPython/. This is a solution
+>>using R and Python... in development and desperately seeking for a new
+>>maintainer. This is not GTK, but wxWidgets, which is also a very good
+>>solution. Regarding a substitute for Glade, you could consider Boa
+>>Constructor. Look here: http://bioinf.wehi.edu.au/folders/james/RBoa/.
+>>The explanation on this page is a little outdated. The latest version of
+>>Boa Constructor is now compatible with wxPython 2.5.X. So, you don't
+>>need to install Python/wxPython twice as explained in the page. Anyway,
+>>using RSPython, you should be able to do what you want (mixing R, Python
+>>and GTK).
+>>
+>>Best,
+>>
+>>Philippe Grosjean
+>>
+>>Luca Manini wrote:
+>>
+>>>Hi,
+>>>
+>>>I'm new to this list (and to the whole R world); I've started to read
+>>>some threads in the archives to get acquinted with the community but I
+>>>have some questions ready to be asked "now".  So please keep with me
+>>>even if the mail is not that short.
+>>>
+>>>
+>>>I'm a software developer and I've been asked to "write a GUI for R".
+>>>The customer(s) are (could be in the near future) some departments of
+>>>the local university where R is used both for teaching and research
+>>>(in various areas).  So the problem is always the same: users find CLI
+>>>difficult to learn/use and/or the time to learn them is greater than
+>>>the total available time (for introductory courses in statistics, for
+>>>example).
+>>>
+>>>As I said, I don't know much of R but it clear that is a big
+>>>language/environment and that just thinking (let alone writing) a
+>>>"full GUI" for it is a major undertaking well beyond the time (and
+>>>money) budget I have at hand.
+>>>
+>>>So, what I have in mind is, instead of using/customizing big GUIs, to
+>>>just write some small apps with a dedicated and minimal GUI for any
+>>>single and simple task (think for example of some students'
+>>>"exercises" on regression, or a series of computations or analysis or
+>>>drawing steps needed to complete a research paper).
+>>>
+>>>Of course I will not directly write them myself (sorry to say that)
+>>>but instead I have to check whether that approach is feasible and, if
+>>>it is, to "set up" the environment (docs, tools, examples, ...) so
+>>>that "junior programmers" (or smart users) can write the single apps
+>>>in a reasonable time.
+>>>
+>>>I'm thinking about Python + GTK + Glade for the interface stuff with
+>>>some "glue" to get Python speak to R (and trap the answers).  Python
+>>>is my preferred language, it is easy to learn (and I'm happy to teach
+>>>it) and Glade is easy to use.
+>>>
+>>>My biggest concern at the moment is to check that I'm not offering to
+>>>write something to solve an already solved problem and **for that**
+>>>I'm asking this list's help.
+>>>
+>>>        TIA for any help/suggestion, Luca
+>>>
+>>>PS: the second biggest is to check that my idea is feasible/reasonable
+>>>    (and for that I've already started experimenting).
+>>>
+>>
+>>_______________________________________________
+>>R-SIG-GUI mailing list
+>>R-SIG-GUI at stat.math.ethz.ch
+>>https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+>>
+> 
+> 
+>
+
+
+From joseclaudio.faria at terra.com.br  Mon Feb 20 01:03:03 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sun, 19 Feb 2006 21:03:03 -0300
+Subject: [R-gui] Tinn-R 1.18.1.10 was released
+Message-ID: <43F90737.1080608@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.1.10) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help/From this version/English/Changes.txt'.
+
+Tinn-R now have syntax to Sweave, some aspects of the interface were improved
+and minor bugs were fixed.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From lawremi at iastate.edu  Tue Feb 28 14:35:06 2006
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Tue, 28 Feb 2006 07:35:06 -0600
+Subject: [R-gui] RGtk2 2.8.1 released
+Message-ID: <4404518A.6020501@iastate.edu>
+
+There is a new version of RGtk2 (version 2.8.1). This is an incremental, 
+mostly bug fix release.
+
+Changes:
+
+    * RGtkDataFrame (GtkTreeModel backed by an R data frame) is now more
+      stable and supports sorting.
+    * Fixed bug with grouping of radio widgets.
+    * GtkMozEmbed has been removed since it was Linux-specific and was
+      not very stable nor very useful for R related tasks.
+    * Imported the demo images into the package, so that all platforms
+      can enjoy the demos with images.
+
+It is available at the RGtk2 website: http://www.ggobi.org/rgtk2
+
+I also plan on releasing a Windows build of the Cairo graphics device soon.
+
+Thank you,
+Michael Lawrence
+
+
+From phgrosjean at sciviews.org  Tue Feb 28 14:59:43 2006
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue, 28 Feb 2006 14:59:43 +0100
+Subject: [R-gui] RGtk2 2.8.1 released
+In-Reply-To: <4404518A.6020501@iastate.edu>
+References: <4404518A.6020501@iastate.edu>
+Message-ID: <4404574F.7050503@sciviews.org>
+
+Michael Lawrence wrote:
+> There is a new version of RGtk2 (version 2.8.1). This is an incremental, 
+> mostly bug fix release.
+> 
+> Changes:
+> 
+>     * RGtkDataFrame (GtkTreeModel backed by an R data frame) is now more
+>       stable and supports sorting.
+>     * Fixed bug with grouping of radio widgets.
+>     * GtkMozEmbed has been removed since it was Linux-specific and was
+
+Too bad! There is R2HTML and the export()/view() methods that generate 
+HTML outputs from R objects. I am looking for a long time to a good 
+Mozilla widget for those. None in tcltk, There is a good one in 
+wxWidget... and I was hoping to get it ready in RGtk2.
+Best,
+
+Philippe Grosjean
+
+>       not very stable nor very useful for R related tasks.
+>     * Imported the demo images into the package, so that all platforms
+>       can enjoy the demos with images.
+> 
+> It is available at the RGtk2 website: http://www.ggobi.org/rgtk2
+> 
+> I also plan on releasing a Windows build of the Cairo graphics device soon.
+> 
+> Thank you,
+> Michael Lawrence
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+>
+
+

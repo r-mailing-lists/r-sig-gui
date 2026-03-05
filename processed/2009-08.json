@@ -1,0 +1,357 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2009-08",
+  "messages": [
+    {
+      "id": "msg-e5190f492810",
+      "message_id": "<4A76AD6C.4070107@dbmail.com>",
+      "from_name": "Romain Francois",
+      "from_email_hash": "59e39d3ea92dfd200ae594261b1588764b0f983f395cce1fc006e71efaf2c073",
+      "date": "2009-08-03T11:27:08+02:00",
+      "subject": "[R-gui] R GUI page on R wiki",
+      "subject_clean": "[R-gui] R GUI page on R wiki",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\n(sorry for those of you that also are on R-help and will see this twice, \nI thought it was relevant to post it here as well)\n\nI've started the process of moving the content of the gui page to the R \nwiki.\nhttp://wiki.r-project.org/rwiki/doku.php?id=guis:guis\nhttp://wiki.r-project.org/rwiki/doku.php?id=guis:projects\n\nThe idea is that it becomes easier to update it, add comparison of \nfeatures, screenshots, use cases, ...\n\nPlease add your own. For example \nhttp://wiki.r-project.org/rwiki/doku.php?id=guis:jgr for JGR\n\nRomain\n\n-- \nRomain Francois\nProfessional R Enthusiast\n+33(0) 6 28 91 30 30\nhttp://romainfrancois.blog.free.fr\n|- http://tr.im/vfxe : R GUI page on the R wiki\n|- http://tr.im/tlNb : RGG#155, 156 and 157\n`- http://tr.im/rw0p : useR! slides",
+      "body_snippet": "Hello,\n\n(sorry for those of you that also are on R-help and will see this twice, \nI thought it was relevant to post it here as well)\n\nI've started the process of moving the content of the gui page to ",
+      "thread_id": "thread-e5190f492810",
+      "thread_depth": 0,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-f41e34a04d64",
+      "message_id": "<3D68FC5B6BD945DB8A93F70E439A5BC9@gpbdmx>",
+      "from_name": "Ian Fellows",
+      "from_email_hash": "d12bb521d01a14c5c9364007086c61200d7898178507ef5d276c14223c822c6b",
+      "date": "2009-08-03T10:22:38-07:00",
+      "subject": "[R-gui] Deducer 0.1 Released",
+      "subject_clean": "[R-gui] Deducer 0.1 Released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi All,\n\n   I am seeking comments, suggestions, bugs, and users for a data analysis\nGUI that has just been released to CRAN. \n\n   Thank you everyone on the R-SIG-GUI list for you suggestions about how to\nimprove Deducer last time around. I think the most common comment I got was\nthat it should not be completely tied to JGR. I've done some work on this,\nand Deducer can now be run from outside the JGR console, with the dialogs\naccessible via the deducer() function. If you are using the Windows Rgui,\nmenu items have been added for convenience. Also, I've added Linear,\nlogistic, and generalized linear models, as well as an online wiki manual.\n\nhttp://www.deducer.org/pmwiki/pmwiki.php?n=Main.DeducerManual\n\n   I'd appreciate any feedback or bugs. I'm particularly interested in\nexperiences using it from within non-JGR GUI's, and under Linux. If any of\nyou teach introductory/intermediate statistics, I'd like to know how you\nwould feel about using it in the classroom. \n\nTIA,\nIan\n\n\np.s. Installation instructions: \n\nhttp://www.deducer.org/pmwiki/pmwiki.php?n=Main.DownloadingAndInstallingDedu\ncer\n\n\n\n\n---------------------------------------------------------------------------\n\n\nDeducer 0.1 has been released to CRAN\n\nDeducer is designed to be a free, easy to use, alternative to proprietary\nsoftware such as SPSS, JMP, and Minitab. It has a menu system to do common\ndata manipulation and data analysis tasks, and an excel-like spreadsheet in\nwhich to view and edit data frames. The goal of the project is to two fold. \n\n\t1. Provide an intuitive interface so that non-technical users \n\t   can learn and perform analyses without programming getting \n\t   in their way. \n\t2. Increase the efficiency of expert R users when performing \n         common tasks by replacing hundreds of keystrokes with a few \n         mouse clicks. Also, as much as possible the GUI should not \n         get in their way if they just want to do some programming. \n\nDeducer is integrated into the Windows RGui, and the cross-platform Java\nconsole JGR, and is also usable and accessible from the command line.\nScreen shots and examples can be viewed in the online wiki manual:\n\nhttp://www.deducer.org/pmwiki/pmwiki.php?n=Main.DeducerManual\n\nComments and questions are more than welcome. A discussion group has been\ncreated for any questions or recommendations.\n\nhttp://groups.google.com/group/deducer\n\nDeducer Features:\n\nData manipulation:\n\t1. Factor editor\n\t2. Variable recoding\n\t3. data sorting\n\t4. data frame merging\n\t5. transposing a data frame\n\t6. subseting\n\nAnalysis:\n\t1. Frequencies\n\t2. Descriptives\n\t3. Contingency tables\n\t\ta. Nicely formatted tables with optional\n\t\t\ti. Percentages\n\t\t\tii. Expected counts\n\t\t\tiii. Residuals\n\t\tb. Statistical tests\n\t\t\ti. chi-squared \n\t\t\tii. likelihood ratio\n\t\t\tiii. fisher's exact\n\t\t\tiv. mantel haenszel\n\t\t\tv. kendall's tau\n\t\t\tvi. spearman's rho\n\t\t\tvii. kruskal-wallis\n\t\t\tviii. mid-p values for all exact/monte carlo tests\n\t4. One sample tests\n\t\ta. T-test\n\t\tb. Shapiro-wilk\n\t\tc. Histogram/box-plot summaries\n\t5. Two sample tests\n\t\ta. T-test (student and welch)\n\t\tb. Permutation test\n\t\tc. Wilcoxon\n\t\td. Brunner-munzel\n\t\te. Kolmogorov-smirnov\n\t\tf. Jitter/box-plot group comparison\n\t6. K-sample tests\n\t\ta. Anova (usual and welch)\n\t\tb. Kruskal-wallis\n\t\tc. Jitter/boxplot comparison\n\t7. Correlation\n\t\ta. Nicely formatted correlation matrices\n\t\tb. Pearson's\n\t\tc. Kendall's\n\t\td. Spearman's\n\t\te. Scatterplot paneled array\n\t\tf. Circle plot\n\t\tg. Full correlation matrix plot\n        8.Generalized Linear Models\n\t\ta. Model preview\n\t\tb. Intuitive model builder\n\t\tc. diagnostic plots \n\t\td. Component residual and added variable plots\n\t\te. Anova (type II and III implementing LR, Wald and F tests)\n\t\tf. Parameter summary tables and parameter correlations\n\t\tg. Influence and colinearity diagnostics\n\t\th. Post-hoc tests and confidence intervals \n\t\t   with (or without) adjustments for multiple testing.\n\t\ti. Custom linear hypothesis tests\n\t\tj. Effect mean summaries (with confidence intervals), and\nplots\n\t\tk. Exports: Residuals, Standardized residuals, Studentized\n \t\t   residuals, Predicted Values (linear and link), Cooks \n\t\t   distance, DFBETA, DFFITS, hat values, and Cov Ratio\n\t\tl. Observation weights and subseting\n\t9. Logistic Regression\n\t\ta. All GLM features\n\t\tb. ROC Plot\n\t10. Linear Model\n\t\ta. All GLM features\n       \tb. Heteroskedastic robust tests",
+      "body_snippet": "Hi All,\n\n   I am seeking comments, suggestions, bugs, and users for a data analysis\nGUI that has just been released to CRAN. \n\n   Thank you everyone on the R-SIG-GUI list for you suggestions about how",
+      "thread_id": "thread-f41e34a04d64",
+      "thread_depth": 0,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-7be7b02f0946",
+      "message_id": "<554cd6450908060626n6ab5601dg86ca908e5bf0f913@mail.gmail.com>",
+      "from_name": "Etienne Laliberté",
+      "from_email_hash": "00e279a650bf2cb3cba9358398c4d14a2ff31fa3dafc8b5bb893f9bee376c52c",
+      "date": "2009-08-06T09:26:33-04:00",
+      "subject": "[R-gui] 100% CPU when running (cran2deb) JGR on Debian",
+      "subject_clean": "[R-gui] 100% CPU when running (cran2deb) JGR on Debian",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I get exactly the same problems as Liviu described in earlier posts.\nWhen opening JGR one of my CPU's goes to 100%, but clicking Help/About\nbrings it back to normal. I'm under Ubuntu Jaunty.\n\n--\nEtienne Lalibert?\n================================\nRural Ecology Research Group\nSchool of Forestry\nUniversity of Canterbury\nPrivate Bag 4800\nChristchurch 8140, New Zealand\nPhone: +64 3 366 7001 ext. 8365\nFax: +64 3 364 2124\nwww.elaliberte.info",
+      "body_snippet": "I get exactly the same problems as Liviu described in earlier posts.\nWhen opening JGR one of my CPU's goes to 100%, but clicking Help/About\nbrings it back to normal. I'm under Ubuntu Jaunty.\n\n--\nEtien",
+      "thread_id": "thread-7be7b02f0946",
+      "thread_depth": 0,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-c6876bab498f",
+      "message_id": "<loom.20090807T202248-804@post.gmane.org>",
+      "from_name": "jverzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2009-08-07T20:29:00Z",
+      "subject": "[R-gui] New version of gWidgetsWWW",
+      "subject_clean": "[R-gui] New version of gWidgetsWWW",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nFor those interested, I've uploaded a new version of gWidgetsWWW (0.0-8) to \nCRAN. This package allows one to make interactive web pages built in R \nusing the gWidgets API. This version has some big changes:\n\n* The web to R interface is now down through RApache. Hopefully this \nmakes the whole setup much more secure and stable. (RApache runs \nnatively under Linux and Mac OS X, and can be run virtualized to\nrun under windows.)\n\n* The issue with pages not being rendered in Internet Explorer has \n  been addressed\n\n* Some new widgets, gcanvas and gsvg, for using some alternative \n  devices on web pages\n\n* A new means to add a web page simply by placing the R script file \n  into a directory\n\nSome examples are found at \n\nhttp://www.math.csi.cuny.edu/gWidgetsWWW/run/ex-index\n\nThe whole package is still basically untested in any real-world setting \nand should be considered alpha quality. Any feedback is welcome.\n\n--John",
+      "body_snippet": "Hello,\n\nFor those interested, I've uploaded a new version of gWidgetsWWW (0.0-8) to \nCRAN. This package allows one to make interactive web pages built in R \nusing the gWidgets API. This version has so",
+      "thread_id": "thread-c6876bab498f",
+      "thread_depth": 0,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-31686a18b6ce",
+      "message_id": "<68b1e2610908090236h1a64f5b3w499ccc36d96a79a@mail.gmail.com>",
+      "from_name": "Liviu Andronic",
+      "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
+      "date": "2009-08-09T12:36:20+03:00",
+      "subject": "[R-gui] Deducer 0.1 Released",
+      "subject_clean": "[R-gui] Deducer 0.1 Released",
+      "in_reply_to": "<3D68FC5B6BD945DB8A93F70E439A5BC9@gpbdmx>",
+      "references": [
+        "<AcoUXv+v/zyGlH+LRdy5BFwn1OKxIA==>",
+        "<3D68FC5B6BD945DB8A93F70E439A5BC9@gpbdmx>"
+      ],
+      "body_plain": "Dear Ian,\n\nOn 8/3/09, Ian Fellows <ifellows at ucsd.edu> wrote:\n>    I'd appreciate any feedback or bugs. I'm particularly interested in\n> experiences using it from within non-JGR GUI's, and under Linux. If any of\n>\nI can confirm that cran2deb binaries of Deducer and deps install and\nrun fine on Debian Squeeze (testing). Several comments below:\n- As reported recently on JGR, Deducer does not understand variables\nof class Date and treats them as Double. Logical is treated as\nexpected.\n- I encountered GUI slow-downs when viewing moderately large data\nframes (dim = c(30000, 30)); there are none such when using JGR's Data\neditor.\n- Although it seems a good idea to make them smaller, the NAs are\nbarely perceptible here. Might make sense to slightly increase the\nfont, but this is mostly a matter of taste.\n\nThank you for the release,\nLiviu",
+      "body_snippet": "Dear Ian,\n\nOn 8/3/09, Ian Fellows <ifellows at ucsd.edu> wrote:\n>    I'd appreciate any feedback or bugs. I'm particularly interested in\n> experiences using it from within non-JGR GUI's, and under Lin",
+      "thread_id": "thread-f41e34a04d64",
+      "thread_depth": 1,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-69337a824b1a",
+      "message_id": "<8e894a540908091139w5bbef81ai5f00ecf4a4654836@mail.gmail.com>",
+      "from_name": "Ian Fellows",
+      "from_email_hash": "0329cd2a58ea892522828f533df4a4330de8cc5a920438bfa95c334f191e0d2f",
+      "date": "2009-08-09T11:39:42-07:00",
+      "subject": "[R-gui] Deducer 0.1 Released",
+      "subject_clean": "[R-gui] Deducer 0.1 Released",
+      "in_reply_to": "<68b1e2610908090236h1a64f5b3w499ccc36d96a79a@mail.gmail.com>",
+      "references": [
+        "<3D68FC5B6BD945DB8A93F70E439A5BC9@gpbdmx>",
+        "<68b1e2610908090236h1a64f5b3w499ccc36d96a79a@mail.gmail.com>"
+      ],
+      "body_plain": "Liviu,\n\n> - As reported recently on JGR, Deducer does not understand variables\n> of class Date and treats them as Double. Logical is treated as\n> expected.\n\nI was aware of this. It is on my radar to provide sane date and time\nsupport, including date subtractions, additions, extractions,\ncreation, etc.\n\n> - I encountered GUI slow-downs when viewing moderately large data\n> frames (dim = c(30000, 30)); there are none such when using JGR's Data\n> editor.\n\nWhen the data frames get larger, there is a bit of a slow down. There\nare two steps in my development process:\n1. Make it work well.\n2. Make it work fast.\n\nI'm currently on step one :)\n\n> - Although it seems a good idea to make them smaller, the NAs are\n> barely perceptible here. Might make sense to slightly increase the\n> font, but this is mostly a matter of taste.\n\nI'll consider making them bigger, but I think that missing data is\nbest represented as white space, with a little mark to let you know\nthat something could be there.\n\nIan",
+      "body_snippet": "Liviu,\n\n> - As reported recently on JGR, Deducer does not understand variables\n> of class Date and treats them as Double. Logical is treated as\n> expected.\n\nI was aware of this. It is on my radar to p",
+      "thread_id": "thread-f41e34a04d64",
+      "thread_depth": 2,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-c2a0550f72b6",
+      "message_id": "<4A7F47C2.7060209@cs.washington.edu>",
+      "from_name": "Hana Sevcikova",
+      "from_email_hash": "bb1f67ba3bb063409b69cbc8556f14f42710c1dd58d8d71308075eb6f4e3db89",
+      "date": "2009-08-09T15:03:46-07:00",
+      "subject": "[R-gui] Process control in gWidgets",
+      "subject_clean": "[R-gui] Process control in gWidgets",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nI implemented a GUI (using gWidgets) from which I'd like to start a long \nprocess by clicking a button. This process prints out status messages \nwhich the user should be able to see in the R console during the \ncomputation. But at the moment clicking the button freezes the GUI until \nthe process is finished and all output is printed at the end. Is there a \nway how to do this? The process can take several hours and during that \ntime I need to make the GUI available for other tasks.\n\nI found a similar post on R-help from last year where John Verzani \nposted the following test code:\n\nreallySlowFunction = function(n=20) {\nfor(i in 1:n) {\ncat(\"z\")\nSys.sleep(1) }\ncat(\"\\n\")\n}\nw <- gwindow(\"test\")\ng <- ggroup(cont=w, horizontal=FALSE)\nb <- gbutton(\"click me\", cont=g,handler = function(h,...)\nreallySlowFunction())\nr <- gradio(1:3, cont=g, handler = function(h,...) print(svalue(h\n  $obj)))\n\nI cannot figure out why my GUI freezes and this one not but\nhere again, the output of reallySlowFunction is printed at the very end \nafter the process finishes. Would anybody know how to solve it?\n\nThanks,\n\nHana",
+      "body_snippet": "Hello,\n\nI implemented a GUI (using gWidgets) from which I'd like to start a long \nprocess by clicking a button. This process prints out status messages \nwhich the user should be able to see in the R c",
+      "thread_id": "thread-c2a0550f72b6",
+      "thread_depth": 0,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-9a0cdebcd0b8",
+      "message_id": "<loom.20090810T161147-104@post.gmane.org>",
+      "from_name": "jverzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2009-08-10T16:15:40Z",
+      "subject": "[R-gui] Process control in gWidgets",
+      "subject_clean": "[R-gui] Process control in gWidgets",
+      "in_reply_to": null,
+      "references": [
+        "<4A7F47C2.7060209@cs.washington.edu>"
+      ],
+      "body_plain": "Hana Sevcikova <hana <at> cs.washington.edu> writes:\n\n> \n> Hello,\n> \n> I implemented a GUI (using gWidgets) from which I'd like to start a long \n> process by clicking a button. This process prints out status messages \n> which the user should be able to see in the R console during the \n> computation. But at the moment clicking the button freezes the GUI until \n> the process is finished and all output is printed at the end. Is there a \n> way how to do this? The process can take several hours and during that \n> time I need to make the GUI available for other tasks.\n> \n\nDear Hana,\n\nThis post was followed up with\nhttps://stat.ethz.ch/pipermail/r-help/2008-February/154249.html where a\ncombination of gtkEventsPending() and  gtkMainIteration() is used to update the\nGUI during a computation. This could work for you if a) you are using\ngWidgetsRGtk2 through gWidgets and b) you can add this within your long\ncomputation. If that doesn't work out, let me know. \n\n--John\n\n\n> I found a similar post on R-help from last year where John Verzani \n> posted the following test code:\n> \n> reallySlowFunction = function(n=20) {\n> for(i in 1:n) {\n> cat(\"z\")\n> Sys.sleep(1) }\n> cat(\"\\n\")\n> }\n> w <- gwindow(\"test\")\n> g <- ggroup(cont=w, horizontal=FALSE)\n> b <- gbutton(\"click me\", cont=g,handler = function(h,...)\n> reallySlowFunction())\n> r <- gradio(1:3, cont=g, handler = function(h,...) print(svalue(h\n>   $obj)))\n> \n> I cannot figure out why my GUI freezes and this one not but\n> here again, the output of reallySlowFunction is printed at the very end \n> after the process finishes. Would anybody know how to solve it?\n> \n> Thanks,\n> \n> Hana\n>",
+      "body_snippet": "Hana Sevcikova <hana <at> cs.washington.edu> writes:\n\n> \n> Hello,\n> \n> I implemented a GUI (using gWidgets) from which I'd like to start a long \n> process by clicking a button. This process prints out",
+      "thread_id": "thread-c2a0550f72b6",
+      "thread_depth": 1,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-a2364ff957aa",
+      "message_id": "<4A810FCC.8090107@cs.washington.edu>",
+      "from_name": "Hana Sevcikova",
+      "from_email_hash": "bb1f67ba3bb063409b69cbc8556f14f42710c1dd58d8d71308075eb6f4e3db89",
+      "date": "2009-08-10T23:29:32-07:00",
+      "subject": "[R-gui] Process control in gWidgets",
+      "subject_clean": "[R-gui] Process control in gWidgets",
+      "in_reply_to": "<loom.20090810T161147-104@post.gmane.org>",
+      "references": [
+        "<4A7F47C2.7060209@cs.washington.edu>",
+        "<loom.20090810T161147-104@post.gmane.org>"
+      ],
+      "body_plain": "Thank you very much, John. I am indeed using gWidgetsRGtk2 but I was \nhoping to make my GUI independent of the specific toolkit. But there is \nprobably no easy solution. Even with the gtkEventsPending() and \ngtkMainIteration() I don't get the output into the R-console as the \ncomputation runs, rather at the very end.\n\nPlease let me know if you get other ideas how to solve it.\n\nThanks,\n\nHana\n\n\njverzani wrote:\n> Hana Sevcikova <hana <at> cs.washington.edu> writes:\n> \n>> Hello,\n>>\n>> I implemented a GUI (using gWidgets) from which I'd like to start a long \n>> process by clicking a button. This process prints out status messages \n>> which the user should be able to see in the R console during the \n>> computation. But at the moment clicking the button freezes the GUI until \n>> the process is finished and all output is printed at the end. Is there a \n>> way how to do this? The process can take several hours and during that \n>> time I need to make the GUI available for other tasks.\n>>\n> \n> Dear Hana,\n> \n> This post was followed up with\n> https://stat.ethz.ch/pipermail/r-help/2008-February/154249.html where a\n> combination of gtkEventsPending() and  gtkMainIteration() is used to update the\n> GUI during a computation. This could work for you if a) you are using\n> gWidgetsRGtk2 through gWidgets and b) you can add this within your long\n> computation. If that doesn't work out, let me know. \n> \n> --John\n> \n> \n>> I found a similar post on R-help from last year where John Verzani \n>> posted the following test code:\n>>\n>> reallySlowFunction = function(n=20) {\n>> for(i in 1:n) {\n>> cat(\"z\")\n>> Sys.sleep(1) }\n>> cat(\"\\n\")\n>> }\n>> w <- gwindow(\"test\")\n>> g <- ggroup(cont=w, horizontal=FALSE)\n>> b <- gbutton(\"click me\", cont=g,handler = function(h,...)\n>> reallySlowFunction())\n>> r <- gradio(1:3, cont=g, handler = function(h,...) print(svalue(h\n>>   $obj)))\n>>\n>> I cannot figure out why my GUI freezes and this one not but\n>> here again, the output of reallySlowFunction is printed at the very end \n>> after the process finishes. Would anybody know how to solve it?\n>>\n>> Thanks,\n>>\n>> Hana\n>>\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Thank you very much, John. I am indeed using gWidgetsRGtk2 but I was \nhoping to make my GUI independent of the specific toolkit. But there is \nprobably no easy solution. Even with the gtkEventsPending",
+      "thread_id": "thread-c2a0550f72b6",
+      "thread_depth": 2,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-50303df30a47",
+      "message_id": "<8E3590214E4380489D2F8BF129B939F38B39CB@amsdc1-s-03371.europe.shell.com>",
+      "from_name": "Wayne.W.Jones at shell.com",
+      "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
+      "date": "2009-08-11T12:02:00+02:00",
+      "subject": "[R-gui] Process control in gWidgets",
+      "subject_clean": "[R-gui] Process control in gWidgets",
+      "in_reply_to": "<4A810FCC.8090107@cs.washington.edu>",
+      "references": [],
+      "body_plain": "Hi Hana, \n\nI use the rpanel package to generate GUIs for R. \nHere is an example of what you are trying to do with the rpanel package: \n(p.s. make sure buffered output is switched off in the Rgui). \n\n  \nreallySlowFunction = function(panel,n=20) {\nfor(i in 1:n) {\ncat(\"z\")\nSys.sleep(0.5) \ncat(\"\\n\")\n}\n\nreturn(panel)\n}\n\n\nlibrary(rpanel)\n# Create an rpanel and add the button \"Simulate\" to it.\npanel <- rp.control()\nrp.button(panel, action = reallySlowFunction, title = \"Simulate\")\n\nRegards, \n\nWayne\n\n\n\n\n\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at stat.math.ethz.ch\n[mailto:r-sig-gui-bounces at stat.math.ethz.ch]On Behalf Of Hana Sevcikova\nSent: 11 August 2009 07:30\nTo: jverzani\nCc: r-sig-gui at stat.math.ethz.ch\nSubject: Re: [R-gui] Process control in gWidgets\n\n\nThank you very much, John. I am indeed using gWidgetsRGtk2 but I was \nhoping to make my GUI independent of the specific toolkit. But there is \nprobably no easy solution. Even with the gtkEventsPending() and \ngtkMainIteration() I don't get the output into the R-console as the \ncomputation runs, rather at the very end.\n\nPlease let me know if you get other ideas how to solve it.\n\nThanks,\n\nHana\n\n\njverzani wrote:\n> Hana Sevcikova <hana <at> cs.washington.edu> writes:\n> \n>> Hello,\n>>\n>> I implemented a GUI (using gWidgets) from which I'd like to start a long \n>> process by clicking a button. This process prints out status messages \n>> which the user should be able to see in the R console during the \n>> computation. But at the moment clicking the button freezes the GUI until \n>> the process is finished and all output is printed at the end. Is there a \n>> way how to do this? The process can take several hours and during that \n>> time I need to make the GUI available for other tasks.\n>>\n> \n> Dear Hana,\n> \n> This post was followed up with\n> https://stat.ethz.ch/pipermail/r-help/2008-February/154249.html where a\n> combination of gtkEventsPending() and  gtkMainIteration() is used to update the\n> GUI during a computation. This could work for you if a) you are using\n> gWidgetsRGtk2 through gWidgets and b) you can add this within your long\n> computation. If that doesn't work out, let me know. \n> \n> --John\n> \n> \n>> I found a similar post on R-help from last year where John Verzani \n>> posted the following test code:\n>>\n>> reallySlowFunction = function(n=20) {\n>> for(i in 1:n) {\n>> cat(\"z\")\n>> Sys.sleep(1) }\n>> cat(\"\\n\")\n>> }\n>> w <- gwindow(\"test\")\n>> g <- ggroup(cont=w, horizontal=FALSE)\n>> b <- gbutton(\"click me\", cont=g,handler = function(h,...)\n>> reallySlowFunction())\n>> r <- gradio(1:3, cont=g, handler = function(h,...) print(svalue(h\n>>   $obj)))\n>>\n>> I cannot figure out why my GUI freezes and this one not but\n>> here again, the output of reallySlowFunction is printed at the very end \n>> after the process finishes. Would anybody know how to solve it?\n>>\n>> Thanks,\n>>\n>> Hana\n>>\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at stat.math.ethz.ch\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi Hana, \n\nI use the rpanel package to generate GUIs for R. \nHere is an example of what you are trying to do with the rpanel package: \n(p.s. make sure buffered output is switched off in the Rgui). \n\n ",
+      "thread_id": "thread-c2a0550f72b6",
+      "thread_depth": 3,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-537b74093c8e",
+      "message_id": "<AC6F23A2BA13C347A59BDCBCFF41E27B5E039E5A44@UFEXCH-MBXCL03.ad.ufl.edu>",
+      "from_name": "Myers,David Brent",
+      "from_email_hash": "a48bc3d196b6ca6b9f723c86cccf022e19878532c71b2099bc41511c8423ca14",
+      "date": "2009-08-20T17:56:51-04:00",
+      "subject": "[R-gui] Trouble Configuring SciViews and Komodo",
+      "subject_clean": "[R-gui] Trouble Configuring SciViews and Komodo",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090820/80da240f/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090820/80da240f/attachment.pl>",
+      "thread_id": "thread-537b74093c8e",
+      "thread_depth": 0,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-1c5c539ac5ac",
+      "message_id": "<4A8E5265.1090509@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2009-08-21T09:53:09+02:00",
+      "subject": "[R-gui] Trouble Configuring SciViews and Komodo",
+      "subject_clean": "[R-gui] Trouble Configuring SciViews and Komodo",
+      "in_reply_to": "<AC6F23A2BA13C347A59BDCBCFF41E27B5E039E5A44@UFEXCH-MBXCL03.ad.ufl.edu>",
+      "references": [
+        "<AC6F23A2BA13C347A59BDCBCFF41E27B5E039E5A44@UFEXCH-MBXCL03.ad.ufl.edu>"
+      ],
+      "body_plain": "Hello,\n\nThis is probably because SciViews-K cannot find R. You have to indicate \nwhich R version you want to use with Komodo by entering this information \nin the Windows registry. This is simply done by running RSetReg.exe from \nthe /bin subdirectory of the R version you want to use (by default \ninstall dirs, this will be something like 'c:/Program \nFiles/R/R-x.y.z/bin/RSetReg.exe'). I think you don't have to restart \nKomodo or Windows, but just in case it still does not work, restart \neverything and try again.\n\nNote that you can use this trick to switch from R 2.8.1 to 2.9.1 and \nvice versa.\n\nNote also that a new version of SciViews-K with lot more features and \ncompatible with the latest Komodo Edit 5.2 will be released very soon \n(that is, when I will have done the Komodo's code intelligence for R, \nwhich appears rather tricky)!\n\nBest,\n\nPhilippe Grosjean\n\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Belgium\n( ( ( ( (\n..............................................................\n\nMyers,David Brent wrote:\n> Good Day,\n> \n> I am unable to get Komodo and R working together following the steps listed on the SciViews website: (http://www.sciviews.org/SciViews-K/index.html)\n> \n> I get an error in the status bar: 'Rgui -sdi' returned 255. When using Menus>R>Start R>R GUI (Windows)\n> A similar error with R terminal.\n> \n> Any ideas what may be going wrong?\n> What other information is needed to help answer my question?\n> How does the SciViews-K Komodo extension get configured to the correct R installation (I have 2.8.1 and 2.9.1 installed)? I find no settings for this in Komodo.\n> \n> System details:\n> Vista 64 bit SP1. Komodo 4.4.1, R 2.9.1, svXXX packages all freshly installed and in place...\n> \n> Regards,\n> Brent\n> \n> \n> \n> \n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n>",
+      "body_snippet": "Hello,\n\nThis is probably because SciViews-K cannot find R. You have to indicate \nwhich R version you want to use with Komodo by entering this information \nin the Windows registry. This is simply done ",
+      "thread_id": "thread-537b74093c8e",
+      "thread_depth": 1,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-6447fe80aa84",
+      "message_id": "<4A92C272.DFDF.006E.0@resbank.co.za>",
+      "from_name": "Stefan JansevanRensburg",
+      "from_email_hash": "7cdc3bafdf7fe7f7c02eb4d7c6b61e1e54ce23396d4743b093c890aa24dbd464",
+      "date": "2009-08-24T16:40:06+02:00",
+      "subject": "[R-gui] gWidgets update certain arguments",
+      "subject_clean": "[R-gui] gWidgets update certain arguments",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090824/b2d663cf/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090824/b2d663cf/attachment.pl>",
+      "thread_id": "thread-6447fe80aa84",
+      "thread_depth": 0,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-742fef4c4453",
+      "message_id": "<loom.20090826T030924-514@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2009-08-26T01:20:38Z",
+      "subject": "[R-gui] gWidgets update certain arguments",
+      "subject_clean": "[R-gui] gWidgets update certain arguments",
+      "in_reply_to": null,
+      "references": [
+        "<4A92C272.DFDF.006E.0@resbank.co.za>"
+      ],
+      "body_plain": "Stefan JansevanRensburg <Stefan.JansevanRensburg <at> resbank.co.za> writes:\n\n\n> Dear list,\n> \n> Using gWidgets, I'm trying to construct a simple GUI where a user can select a\nvariable (in a data.frame)\n> from a drop-down list and then set a limit using a spin-button. Additionally,\nI want the default to, from\n> and value arguments of the spin-button to equal the min, max and mean of the\nselected variable, respectively.\n> \n> How do I get the spin-button to update when the user selects a different\nvariable from the drop-down list?\n\nThere are no methods in gWidgets to update the spinbutton values. (Should be\nthough. What is the right API, perhaps [<- checking that the sequence is\nregular?) In the meantime, I can think of a few possibilities:\n\n1) pack the spinbox in a ggroup container, then to update it delete the old one,\nadd a new one. Any handlers would need to be added again, so you would need to\ndo some bookkeeping. With a default handler, it would look like this:\n\nlibrary(gWidgets)\nw <- gwindow()\ng <- ggroup(cont = w)\nsb <- gspinbutton(cont = g, handler = defaultHandler)\ndelete(g, sb)\n[1] TRUE\nsb1 <- gspinbutton(from=1, to = 10, by = .5, cont = g, \n   handler=defaultHandler) # replace with another\n\n\n2) if you are using just one toolkit, say RGtk2, then you can access the toolkit\nobject with getToolkitWidget and update that. For RGtk2, this might look like\nthe following:\n\nlibrary(gWidgets)\noptions(guiToolkit=\"RGtk2\")\nw <- gwindow()\nsb <- gspinbutton(from=0,to=100, by = 10, value=20, cont = w)\n\n## Gtk code to modify\nlibrary(RGtk2)\nsbwidget <- getToolkitWidget(sb)\nsbwidget$setRange(0,50)\nsbwidget$setIncrements(1,5)\nsbwidget$setValue(10)\n\n\n\n> \n> Here is my amateurish attempt at doing this, but the results are not\nsatisfactory, since it simple keeps\n> adding new spin buttons and it doesn't start up with a spin button.\n> \n> .simple <- function(x){\n>    addSpin <- function(h, ...){\n>       data <- eval(parse(text = paste(\"x$\", svalue(varis), sep = \"\")))\n>       spin <- gspinbutton(from = min(data), to = max(data), value = mean(data))\n>       add(mainG, spin)\n>       }\n>    win <- gwindow(\"Example\")\n>    mainG <- ggroup(horizontal = FALSE, container = win)\n>    varis <- gdroplist(names(x), container = mainG)\n>    addhandlerchanged(varis, handler = addSpin)\n>    }\n> \n> Any help whatsoever would be most appreciated.\n> \n> Kind regards,\n> \n> Stefan Janse van Rensburg\n> Macroprudential Division\n> Financial Stability Department\n> SARB\n> Tel : 012-313 4687\n> Fax : 012 313 4772\n> \n> \t[[alternative HTML version deleted]]\n>",
+      "body_snippet": "Stefan JansevanRensburg <Stefan.JansevanRensburg <at> resbank.co.za> writes:\n\n\n> Dear list,\n> \n> Using gWidgets, I'm trying to construct a simple GUI where a user can select a\nvariable (in a data.fram",
+      "thread_id": "thread-6447fe80aa84",
+      "thread_depth": 1,
+      "month": "2009-08"
+    },
+    {
+      "id": "msg-49e103962f31",
+      "message_id": "<4A95300F.DFDF.006E.0@resbank.co.za>",
+      "from_name": "Stefan JansevanRensburg",
+      "from_email_hash": "7cdc3bafdf7fe7f7c02eb4d7c6b61e1e54ce23396d4743b093c890aa24dbd464",
+      "date": "2009-08-26T12:52:12+02:00",
+      "subject": "[R-gui] RGG help",
+      "subject_clean": "[R-gui] RGG help",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090826/0f9b5b96/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090826/0f9b5b96/attachment.pl>",
+      "thread_id": "thread-49e103962f31",
+      "thread_depth": 0,
+      "month": "2009-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-f41e34a04d64",
+      "subject": "[R-gui] Deducer 0.1 Released",
+      "message_count": 3,
+      "participants": [
+        "Ian Fellows",
+        "Liviu Andronic"
+      ],
+      "started": "2009-08-03T10:22:38-07:00",
+      "last_reply": "2009-08-09T11:39:42-07:00",
+      "root_message_id": "msg-f41e34a04d64"
+    },
+    {
+      "id": "thread-e5190f492810",
+      "subject": "[R-gui] R GUI page on R wiki",
+      "message_count": 1,
+      "participants": [
+        "Romain Francois"
+      ],
+      "started": "2009-08-03T11:27:08+02:00",
+      "last_reply": "2009-08-03T11:27:08+02:00",
+      "root_message_id": "msg-e5190f492810"
+    },
+    {
+      "id": "thread-7be7b02f0946",
+      "subject": "[R-gui] 100% CPU when running (cran2deb) JGR on Debian",
+      "message_count": 1,
+      "participants": [
+        "Etienne Laliberté"
+      ],
+      "started": "2009-08-06T09:26:33-04:00",
+      "last_reply": "2009-08-06T09:26:33-04:00",
+      "root_message_id": "msg-7be7b02f0946"
+    },
+    {
+      "id": "thread-c6876bab498f",
+      "subject": "[R-gui] New version of gWidgetsWWW",
+      "message_count": 1,
+      "participants": [
+        "jverzani"
+      ],
+      "started": "2009-08-07T20:29:00+00:00",
+      "last_reply": "2009-08-07T20:29:00+00:00",
+      "root_message_id": "msg-c6876bab498f"
+    },
+    {
+      "id": "thread-c2a0550f72b6",
+      "subject": "[R-gui] Process control in gWidgets",
+      "message_count": 4,
+      "participants": [
+        "Hana Sevcikova",
+        "Wayne.W.Jones at shell.com",
+        "jverzani"
+      ],
+      "started": "2009-08-09T15:03:46-07:00",
+      "last_reply": "2009-08-11T12:02:00+02:00",
+      "root_message_id": "msg-c2a0550f72b6"
+    },
+    {
+      "id": "thread-537b74093c8e",
+      "subject": "[R-gui] Trouble Configuring SciViews and Komodo",
+      "message_count": 2,
+      "participants": [
+        "Myers,David Brent",
+        "Philippe Grosjean"
+      ],
+      "started": "2009-08-20T17:56:51-04:00",
+      "last_reply": "2009-08-21T09:53:09+02:00",
+      "root_message_id": "msg-537b74093c8e"
+    },
+    {
+      "id": "thread-6447fe80aa84",
+      "subject": "[R-gui] gWidgets update certain arguments",
+      "message_count": 2,
+      "participants": [
+        "Stefan JansevanRensburg",
+        "john verzani"
+      ],
+      "started": "2009-08-24T16:40:06+02:00",
+      "last_reply": "2009-08-26T01:20:38+00:00",
+      "root_message_id": "msg-6447fe80aa84"
+    },
+    {
+      "id": "thread-49e103962f31",
+      "subject": "[R-gui] RGG help",
+      "message_count": 1,
+      "participants": [
+        "Stefan JansevanRensburg"
+      ],
+      "started": "2009-08-26T12:52:12+02:00",
+      "last_reply": "2009-08-26T12:52:12+02:00",
+      "root_message_id": "msg-49e103962f31"
+    }
+  ]
+}

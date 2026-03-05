@@ -1,0 +1,284 @@
+From sue at xlsolutions-corp.com  Wed Mar  3 02:42:28 2010
+From: sue at xlsolutions-corp.com (sue at xlsolutions-corp.com)
+Date: Tue, 02 Mar 2010 18:42:28 -0700
+Subject: [R-gui] R / R+ Webminar *** R-PLUS Rocks: Interactive,
+ Comprehensible and Highly Visual. March 12th @ 12PM ET (USA Time)
+Message-ID: <20100302184228.aa8924c5d28ca71e2a043bb294e795eb.893346b4ea.wbe@email.secureserver.net>
+
+Welcome to R/ R-PLUS Webminar Series. R-PLUS 3.3 Rocks: Interactive,
+Comprehensible and Highly Visual. 
+http://www.xlsolutions-corp.com/webminar.asp. 
+
+March 12th @ 12PM ET (USA Time)
+
+Increase your productivity with R-PLUS 3.3 by attending the webminar and
+learning how to:
+
+1. Interactively clicking your way through your favorite statisticals
+models without the need of programming.
+2. Use state-of-the-art R-PLUS tools to produce Publication Quality
+Graphics and Reports at a click
+3. Edit your Graphics
+4. Take advantage of the new R-PLUS 64-bit on windows for larger data
+sets
+5. For SAS users, our new app R+SAS2R lets you see at a click exactly
+which R function (syntax included) is equivalent to a given SAS Proc!
+
+Come learn about R-PLUS 3.3 new cool features and suggest improvements.
+
+Space is limited. Reserve your webminar seat now at:
+http://www.xlsolutions-corp.com/webminar.asp. 
+You can also email Ms Jennifer McDonald ( jen at  xlsolutions-corp.com)
+to register or request the free webminar video.
+
+Our March-April R training courses are available at:  
+www.xlsolutions-corp.com/rcourses
+
+ Regards -
+
+ Sue Turner
+ Senior Account Manager
+ XLSolutions Corporation
+ North American Division
+ 1700 7th Ave
+ Suite 2100
+ Seattle, WA 98101
+ Phone: 206-686-1578
+ Email: sue at xlsolutions-corp.com
+ web: www.xlsolutions-corp.com/rcourses
+
+
+From ian.fellows at stat.ucla.edu  Mon Mar 15 07:55:20 2010
+From: ian.fellows at stat.ucla.edu (ian fellows)
+Date: Sun, 14 Mar 2010 23:55:20 -0700
+Subject: [R-gui] Deducer 0.2-3 and DeducerPlugInExample released
+Message-ID: <24019E41-3EE3-4951-994A-FDE29489EDED@stat.ucla.edu>
+
+I would like to announce the release of Deducer 0.2-3 and the new  
+package DeducerPlugInExample.
+
+-----------------------------------
+
+Deducer is designed to be a free easy to use alternative to  
+proprietary data analysis software such as SPSS, JMP, and Minitab. It  
+has a menu system to do common data manipulation and analysis tasks,  
+and an excel-like spreadsheet in which to view and edit data frames.
+
+This new version of Deducer includes an easy to use API for creating  
+new GUI dialogs for statistical analysis. These dialogs can be  
+created using either Java, or purely in R. Documentation, which is  
+currently under construction, is available at: http://www.deducer.org/ 
+pmwiki/pmwiki.php?n=Main.Development
+
+-----------------------------------
+
+DeducerPlugInExample is a simple plug-in package illustrating dialog  
+creation both from within R and from Java. It aims to be a good  
+starting place for future plug-in projects.
+
+-----------------------------------
+
+I am very interested in community feedback regarding the API and  
+Deducer in general. If you have a suggestion or question please feel  
+free to join the discussion group at http://groups.google.com/group/ 
+deducer
+
+All the best,
+Ian Fellows
+
+
+From xie at yihui.name  Sun Mar 21 05:32:17 2010
+From: xie at yihui.name (Yihui Xie)
+Date: Sat, 20 Mar 2010 23:32:17 -0500
+Subject: [R-gui] Font specification of gtext() in gWidgets
+Message-ID: <89b6b8c91003202132y73169196td26ed5cf020aaea7@mail.gmail.com>
+
+Hi all,
+
+It seems that we can only specify fonts for the selected texts in
+gtext() (by font()<-). Is there any way to specify fonts for all texts
+in the text widget without selecting texts? Thanks!
+
+Regards,
+Yihui
+--
+Yihui Xie <xieyihui at gmail.com>
+Phone: 515-294-6609 Web: http://yihui.name
+Department of Statistics, Iowa State University
+3211 Snedecor Hall, Ames, IA
+
+
+From jverzani at gmail.com  Mon Mar 22 04:01:49 2010
+From: jverzani at gmail.com (j verzani)
+Date: Mon, 22 Mar 2010 03:01:49 +0000 (UTC)
+Subject: [R-gui] Font specification of gtext() in gWidgets
+References: <89b6b8c91003202132y73169196td26ed5cf020aaea7@mail.gmail.com>
+Message-ID: <loom.20100322T033400-415@post.gmane.org>
+
+Yihui Xie <xie <at> yihui.name> writes:
+
+> 
+> Hi all,
+> 
+> It seems that we can only specify fonts for the selected texts in
+> gtext() (by font()<-). Is there any way to specify fonts for all texts
+> in the text widget without selecting texts? Thanks!
+> 
+
+
+When you add text, you should also be able to add font attributes as in:
+
+ add(g,"mono blue large", font.attr=c(
+   style="monospace", 
+   color="blue", 
+   size="x-large"))
+
+I should have a means to set the text properties for the whole buffer though.
+
+--John
+
+
+> Regards,
+> Yihui
+> --
+> Yihui Xie <xieyihui <at> gmail.com>
+> Phone: 515-294-6609 Web: http://yihui.name
+> Department of Statistics, Iowa State University
+> 3211 Snedecor Hall, Ames, IA
+>
+
+
+From md.habana at venocoinc.com  Wed Mar 17 18:51:37 2010
+From: md.habana at venocoinc.com (Mark D. Habana)
+Date: Wed, 17 Mar 2010 11:51:37 -0600
+Subject: [R-gui] "Print" Widget
+Message-ID: <B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/8c289130/attachment.pl>
+
+From md.habana at venocoinc.com  Wed Mar 17 18:56:03 2010
+From: md.habana at venocoinc.com (Mark D. Habana)
+Date: Wed, 17 Mar 2010 11:56:03 -0600
+Subject: [R-gui] "Print" Widget
+In-Reply-To: <B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>
+References: <B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>
+Message-ID: <B0E6AF197EEBA9488CA99E67DB73B5EA1668631D@denexmb01.venocoinc.local>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+URL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/d0c0f88a/attachment.pl>
+
+From xie at yihui.name  Sun Mar 28 23:08:26 2010
+From: xie at yihui.name (Yihui Xie)
+Date: Sun, 28 Mar 2010 16:08:26 -0500
+Subject: [R-gui] ghelp() and ghelpbrowser() under R 2.10.1
+Message-ID: <89b6b8c91003281408w7ac44379ia17a782a833c6665@mail.gmail.com>
+
+Hi all,
+
+I'm wondering if ghelp() really works under R 2.10.1. I tried it under
+Windows but it does not work...
+
+> library(gWidgets)
+> ghelpbrowser()
+Select a GUI toolkit
+
+1: gWidgetsRGtk2
+2: gWidgetsrJava
+3: gWidgetstcltk
+4: gWidgetsWWW
+
+Selection: 1
+Loading required package: gWidgetsRGtk2
+guiWidget of type: gHelpbrowserRGtk for toolkit: guiWidgetsToolkitRGtk2
+Error in gzfile(file, "r") : cannot open the connection
+In addition: Warning message:
+In gzfile(file, "r") :
+  cannot open compressed file '', probable reason 'No such file or directory'
+> traceback()
+5: gzfile(file, "r")
+4: read.dcf(system.file("CONTENTS", package = package))
+3: getContentsOfPackage(package)
+2: handler(...)
+1: function (...)
+   {
+       val <- handler(...)
+       if (!is.logical(val))
+           return(TRUE)
+       else return(val)
+   }(list(obj = <S4 object of class "gGridRGtk">), <pointer: 0x026dd248>,
+       <pointer: 0x02781fd8>, <pointer: 0x01ae3940>)
+
+> obj <- ghelp(container=TRUE)
+>        add(obj,"base:::mean")
+Error in file(con, "r") : cannot open the connection
+In addition: Warning message:
+In file(con, "r") :
+  cannot open file 'C:/PROGRA~1/R/library/base/help/mean': No such
+file or directory
+
+> sessionInfo()
+R version 2.10.1 (2009-12-14)
+i386-pc-mingw32
+
+locale:
+[1] LC_COLLATE=Chinese_People's Republic of China.936
+LC_CTYPE=Chinese_People's Republic of China.936
+[3] LC_MONETARY=Chinese_People's Republic of China.936 LC_NUMERIC=C
+[5] LC_TIME=Chinese_People's Republic of China.936
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+other attached packages:
+[1] gWidgetsRGtk2_0.0-64 gWidgets_0.0-40      animation_1.1-2
+MASS_7.3-5
+
+loaded via a namespace (and not attached):
+[1] RGtk2_2.12.18 tools_2.10.1
+
+Regards,
+Yihui
+--
+Yihui Xie <xieyihui at gmail.com>
+Phone: 515-294-6609 Web: http://yihui.name
+Department of Statistics, Iowa State University
+3211 Snedecor Hall, Ames, IA
+
+
+From jverzani at gmail.com  Mon Mar 29 02:28:50 2010
+From: jverzani at gmail.com (j verzani)
+Date: Mon, 29 Mar 2010 00:28:50 +0000 (UTC)
+Subject: [R-gui] ghelp() and ghelpbrowser() under R 2.10.1
+References: <89b6b8c91003281408w7ac44379ia17a782a833c6665@mail.gmail.com>
+Message-ID: <loom.20100329T022447-843@post.gmane.org>
+
+Yihui Xie <xie <at> yihui.name> writes:
+
+> 
+> Hi all,
+> 
+> I'm wondering if ghelp() really works under R 2.10.1. I tried it under
+> Windows but it does not work...
+> 
+> > library(gWidgets)
+> > ghelpbrowser()
+> Select a GUI toolkit
+> 
+> 1: gWidgetsRGtk2
+> 2: gWidgetsrJava
+> 3: gWidgetstcltk
+> 4: gWidgetsWWW
+> 
+
+I think I need to update ghelp to reflect the changes to the help system
+introduced by the dynamic help pages. (It may never have worked well with
+windows.) I noticed that index.search is now soon to be deprecated -- and ghelp
+relied on that. In the short term -- and maybe best for the long term -- I'd
+direct help pages to those displayed in the browser.
+
+--John
+
+

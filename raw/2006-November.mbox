@@ -1,0 +1,107 @@
+From joseclaudio.faria at terra.com.br  Fri Nov 10 14:32:45 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Fri, 10 Nov 2006 10:32:45 -0300
+Subject: [R-gui] Tinn-R 1.19.0.2 released
+Message-ID: <45547F7D.3030400@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.19.0.2) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r
+
+Tinn-R is a R script editor under OS Windows.
+
+Changes:
+1.19.0.2 (Nov/09/2006)
+
+- The option 'Automatically configure R (Rprofile.site)' was
+   enhanced. The user now can decide if the changes will be
+   temporaries (to current session only) or permanents
+   (editing automatically the Rprofile.site file). For both,
+   if necessary, the user can edit (customize) the file
+   'Rconfigure.r' in the folder 'doc/English' where Tinn-R
+   was installed. So we think it new resource is now more
+   flexible.
+
+- The 'Application options' was reworked. It is now possible
+   to set the position of Tinn-R (top, bottom, left and
+   right), the two last are recommendable only to very large
+   screen, on 'Organize' resource by using 'Application
+   options/R/Organize'.
+
+- Sorry, the text of this version was not corrected by Enio
+   (but it will): he is traveling.
+
+Regards,
+Tinn-R team
+
+
+From jewelryrfid.com at langstonhughespoetry.com  Sun Nov 12 16:15:31 2006
+From: jewelryrfid.com at langstonhughespoetry.com (Darius Harris)
+Date: Sun, 12 Nov 2006 15:15:31 +0000
+Subject: [R-gui] Health
+Message-ID: <000001c7066d$35f81080$0100007f@localhost>
+
+
+The incident adage at
+the Molly Mansor bullheaded 
+and flowed of sparks
+the border in ideograms
+left corn to curving
+deepest in the ferson
+floor and ceil to remem
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061112/5da6a4ca/attachment.html 
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/jpeg
+Size: 7744 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061112/5da6a4ca/attachment.jpe 
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: image/gif
+Size: 4882 bytes
+Desc: not available
+Url : https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061112/5da6a4ca/attachment.gif 
+
+From somel at eva.mpg.de  Tue Nov 14 17:13:30 2006
+From: somel at eva.mpg.de (Mehmet Somel)
+Date: Wed, 15 Nov 2006 00:13:30 +0800
+Subject: [R-gui] replace all
+Message-ID: <A6C04FE4-69DB-4DBC-A078-AA19C733C3C8@eva.mpg.de>
+
+Hello,
+the built-in editor of the R GUI does not seem to be able to replace  
+a pattern only within selected text ("Replace all" under the "Find"  
+option changes all the matched patterns within the document). Is  
+there a solution to this?
+Thanks in advance,
+Mehmet Somel
+
+
+From murdoch at stats.uwo.ca  Tue Nov 14 18:31:58 2006
+From: murdoch at stats.uwo.ca (Duncan Murdoch)
+Date: Tue, 14 Nov 2006 12:31:58 -0500
+Subject: [R-gui] replace all
+In-Reply-To: <A6C04FE4-69DB-4DBC-A078-AA19C733C3C8@eva.mpg.de>
+References: <A6C04FE4-69DB-4DBC-A078-AA19C733C3C8@eva.mpg.de>
+Message-ID: <4559FD8E.6000203@stats.uwo.ca>
+
+On 11/14/2006 11:13 AM, Mehmet Somel wrote:
+> Hello,
+> the built-in editor of the R GUI does not seem to be able to replace  
+> a pattern only within selected text ("Replace all" under the "Find"  
+> option changes all the matched patterns within the document). Is  
+> there a solution to this?
+
+Submit a patch, or use a different editor, or avoid Replace All.
+
+Duncan Murdoch
+
+

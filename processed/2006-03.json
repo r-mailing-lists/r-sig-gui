@@ -1,0 +1,171 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2006-03",
+  "messages": [
+    {
+      "id": "msg-1cfbe2f62f2a",
+      "message_id": "<440A6AA1.8030903@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-03-05T01:35:45-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.2.0 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.2.0 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.2.0) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help/This version/English/Changes.txt'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.2.0) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-1cfbe2f62f2a",
+      "thread_depth": 0,
+      "month": "2006-03"
+    },
+    {
+      "id": "msg-1354512eb73f",
+      "message_id": "<440F8C5C.8030708@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-03-08T23:01:00-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.2.0 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.2.0 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.2.1) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help/This version/English/Changes.txt'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.2.1) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-1354512eb73f",
+      "thread_depth": 0,
+      "month": "2006-03"
+    },
+    {
+      "id": "msg-96106ae40b9e",
+      "message_id": "<4419C87C.1070600@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-03-16T17:20:12-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.3.0 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.3.0 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.3.0) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under OS Windows.\n\nTo see the changes, please, read: 'Help/This version/English/Changes.txt'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.3.0) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-96106ae40b9e",
+      "thread_depth": 0,
+      "month": "2006-03"
+    },
+    {
+      "id": "msg-d3e781ca7e31",
+      "message_id": "<17441.42692.388670.47533@markov.math.csi.cuny.edu>",
+      "from_name": "verzani at math.csi.cuny.edu",
+      "from_email_hash": "b807e48d46a4dd62c3f942d742ee2674ab86ebefa69a6e8a05f6abb119c12cdb",
+      "date": "2006-03-22T14:34:28-05:00",
+      "subject": "[R-gui] New version of pmg using RGtk2 package",
+      "subject_clean": "[R-gui] New version of pmg using RGtk2 package",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear All,\n\nI've ported over my pmg GUI to RGtk2, the R bindings for GTK2 provided\nby Michael Lawrence. PMG is a simple menu-driven GUI, ala RCommander,\nwritten using the GTK toolkit. PMG is not as feature rich as\nRCommander, but has some differences such as drag and drop. The main\nadvantages of moving to RGtk2 are cross-patform portability, and a\nsignificantly enhanced toolkit. RGtk2 is at http://www.ggobi.org/RGtk2\n\nThis new port rewrote the backend of pmg to use the iwidget API of\nSimon Urbanek. This API makes creating new dialogs relatively\neasy. The new iWidgetsRGtk package provides this API and many\nextensions to it. These extensions incorporate most of the SVDIalogs\nsuggested for R GUIs in the SciViews documentation. It is my hope that\npeople will find this package useful, even if they have not interest\nin the pmg package.\n\nThe packages are found at http://www.math.csi.cuny.edu/pmg.\n\nThe iWidgetsRGtk package has a lengthy vignette detailing how the\npackage may be used.\n\nI'd appreciate any feedback. These packages haven't been tested too\nmuch and I'd be thankful for bug reports.\n\nJohn\n-- \no---------------------------------------------------------------------o\n|  John Verzani                            verzani at math.csi.cuny.edu  |\n|  CUNY/CSI\t\t\t       www.math.csi.cuny.edu/verzani  |\n|  Dept. of Mathematics, 1S-215\t                        718 982 3623  |\n|  Staten Island, NY 10314\t       \t          (fax) 718 982 3631  |\no---------------------------------------------------------------------o",
+      "body_snippet": "Dear All,\n\nI've ported over my pmg GUI to RGtk2, the R bindings for GTK2 provided\nby Michael Lawrence. PMG is a simple menu-driven GUI, ala RCommander,\nwritten using the GTK toolkit. PMG is not as fea",
+      "thread_id": "thread-d3e781ca7e31",
+      "thread_depth": 0,
+      "month": "2006-03"
+    },
+    {
+      "id": "msg-46b28e9bac5f",
+      "message_id": "<442442DA.604@iastate.edu>",
+      "from_name": "Michael Lawrence",
+      "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
+      "date": "2006-03-24T13:04:58-06:00",
+      "subject": "[R-gui] Cairo graphics device for Windows and RGtk2 2.8.2 released",
+      "subject_clean": "[R-gui] Cairo graphics device for Windows and RGtk2 2.8.2 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear all,\n\nI have managed to build the Cairo R graphics device for Windows. This \nlets you embed R graphics in RGtk2 interfaces on Windows.\n\nI have also uploaded a minor bugfix release of RGtk2.\nChanges:\n- New demo showing integration with Cairo graphics device\n- Some demo fixes, bugs reported by Bill Morphet.\n- Fixed an RGtkDataFrame bug reported by John Verzani.\n\nPlease download new versions at http://www.ggobi.org/rgtk2\n\nThanks,\nMichael Lawrence",
+      "body_snippet": "Dear all,\n\nI have managed to build the Cairo R graphics device for Windows. This \nlets you embed R graphics in RGtk2 interfaces on Windows.\n\nI have also uploaded a minor bugfix release of RGtk2.\nChang",
+      "thread_id": "thread-46b28e9bac5f",
+      "thread_depth": 0,
+      "month": "2006-03"
+    },
+    {
+      "id": "msg-896a0f5d3272",
+      "message_id": "<4429C26D.3040605@terra.com.br>",
+      "from_name": "Jose Claudio Faria",
+      "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
+      "date": "2006-03-28T20:10:37-03:00",
+      "subject": "[R-gui] Tinn-R 1.18.4.3 released",
+      "subject_clean": "[R-gui] Tinn-R 1.18.4.3 released",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.4.3) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-R is a R script editor under *OS Windows*.\n\nTwo useful tools for file conversion were added:\n- deplate (http://deplate.sourceforge.net/index.php) and\n- txt2tags (http://txt2tags.sourceforge.net).\n\nFor *deplate* was proposed the extension '.dlpt' and for\n*txt2tags* Tinn-R recognizes '.t2t'. The basic highilighters, based in XML,\nwere proposed for both, we hope the users help us in the development.\n\nAlso, the interface for syntax colors preferences for both are different\nof the already known Tinn-R interface. So, consider that it is working\nnice but will be temporary.\n\nTinn-R now enables you to compile LaTeX files (MikTeX, http://www.miktex.org)\nand view the DVI and PDF results (Yap and Acrobat) and also to see 'HTML'\nfiles in your preferred browser starting from Tinn-R.\n\nTo see all changes, please, read: 'Help/English/Changes (html)'.\n\nBriefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R\n\nRegards,\n-- \nTinn-R Team",
+      "body_snippet": "Dear Tinn-R user,\n\nWe would like to announce that a new version of the Tinn-R for Windows\n(1.18.4.3) was released and is available on SourceForge server:\nhttp://sourceforge.net/projects/tinn-r.\n\nTinn-",
+      "thread_id": "thread-896a0f5d3272",
+      "thread_depth": 0,
+      "month": "2006-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-1cfbe2f62f2a",
+      "subject": "[R-gui] Tinn-R 1.18.2.0 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-03-05T01:35:45-03:00",
+      "last_reply": "2006-03-05T01:35:45-03:00",
+      "root_message_id": "msg-1cfbe2f62f2a"
+    },
+    {
+      "id": "thread-1354512eb73f",
+      "subject": "[R-gui] Tinn-R 1.18.2.0 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-03-08T23:01:00-03:00",
+      "last_reply": "2006-03-08T23:01:00-03:00",
+      "root_message_id": "msg-1354512eb73f"
+    },
+    {
+      "id": "thread-96106ae40b9e",
+      "subject": "[R-gui] Tinn-R 1.18.3.0 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-03-16T17:20:12-03:00",
+      "last_reply": "2006-03-16T17:20:12-03:00",
+      "root_message_id": "msg-96106ae40b9e"
+    },
+    {
+      "id": "thread-d3e781ca7e31",
+      "subject": "[R-gui] New version of pmg using RGtk2 package",
+      "message_count": 1,
+      "participants": [
+        "verzani at math.csi.cuny.edu"
+      ],
+      "started": "2006-03-22T14:34:28-05:00",
+      "last_reply": "2006-03-22T14:34:28-05:00",
+      "root_message_id": "msg-d3e781ca7e31"
+    },
+    {
+      "id": "thread-46b28e9bac5f",
+      "subject": "[R-gui] Cairo graphics device for Windows and RGtk2 2.8.2 released",
+      "message_count": 1,
+      "participants": [
+        "Michael Lawrence"
+      ],
+      "started": "2006-03-24T13:04:58-06:00",
+      "last_reply": "2006-03-24T13:04:58-06:00",
+      "root_message_id": "msg-46b28e9bac5f"
+    },
+    {
+      "id": "thread-896a0f5d3272",
+      "subject": "[R-gui] Tinn-R 1.18.4.3 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-03-28T20:10:37-03:00",
+      "last_reply": "2006-03-28T20:10:37-03:00",
+      "root_message_id": "msg-896a0f5d3272"
+    }
+  ]
+}

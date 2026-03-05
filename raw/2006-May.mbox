@@ -1,0 +1,443 @@
+From eNews at 3rdmill.com  Fri May 19 22:56:22 2006
+From: eNews at 3rdmill.com (eNews at 3rdmill.com)
+Date: 19 May 2006 16:56:22 -0400
+Subject: [R-gui] =?windows-1252?q?Innovative_Enterprise_Microarray_Softwar?=
+	=?windows-1252?q?e?=
+Message-ID: <SANTANARhyzJeQeqGFK000066fe@santana.lemond.3rdmill.com>
+
+
+3rd Millennium is announcing the release of its award winning Array Repository and Data Analysis System (ARDAS) version 2. ARDAS is a web-enabled enterprise software system that provides a complete and fully integrated solution to microarray data acquisition, management, and analysis.
+
+ARDAS includes three main modules:
+1- A Laboratory Information Management System (LIMS)
+2- A repository and data warehouse
+3- An Analysis Information Management System (AIMS) based on bioconductor and R
+
+ARDAS is a robust and scalable enterprise system based on an Oracle relational database and is offered at desktop prices ($1900-$2900). To learn more or request a trial, please visit our web site at http://www.3rdmill.com/em1
+
+Thank you.
+
+3rd Millennium, Inc.
+391 Totten Pond Rd. Suite 104
+Waltham, MA 02451
+eSales at 3rdmill.com
+781-890-4440
+www.3rdmill.com
+
+---------------------------------------------------------------------
+If you'd rather not receive emails from 3rd Millennium, please reply
+to this email with the word REMOVE in the body of your message.
+
+
+
+From joseclaudio.faria at terra.com.br  Sun May 21 04:30:18 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sat, 20 May 2006 23:30:18 -0300
+Subject: [R-gui] Tinn-R 1.18.5.1 released
+Message-ID: <446FD0BA.6070008@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.5.1) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help/English/Changes/HTML'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From ingo.fetzer at ufz.de  Mon May 22 13:55:47 2006
+From: ingo.fetzer at ufz.de (Ingo Fetzer)
+Date: Mon, 22 May 2006 13:55:47 +0200
+Subject: [R-gui] How to assign value from tlctk window to variable ?
+Message-ID: <4471A6C3.3020601@ufz.de>
+
+most probably this is a question with a simple answer but I have not found an answer to it anywhere yet:
+
+I took one of James Wettenhalls sample scripts (http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/) for radio buttons as basis to be integrated into a larger script.
+
+Now I wonder how can one assign the input of a tcltk window (eg in the radiobutton
+example "oranges") to a variable which can be used later in a r-script ?
+
+ In the case of the radio buttons I tried it with (see also script below):
+
+ chosen.fruit<-tclvalue(rbValue)
+ print(chosen.fruit)             #to check the ouput in the console
+
+ But then I always get the default values ("Oranges").
+ When I after running the skript print in the R-console "tclvalue(rbValue)" I get the correct values (e.g. "Apples").
+
+ I additionally made rbVal (which should represent the actual input of
+ the tcltk window) with "<<-" a global variable but still I get the same
+ results as before.
+
+ It would be grateful if one could help me
+
+Ingo
+
+
+
+ require(tcltk)
+ tt <- tktoplevel()
+ rb1 <- tkradiobutton(tt)
+ rb2 <- tkradiobutton(tt)
+ rbValue <- tclVar("oranges")
+ tkconfigure(rb1,variable=rbValue,value="apples")
+ tkconfigure(rb2,variable=rbValue,value="oranges")
+ tkgrid(tklabel(tt,text="Which do you prefer?"))
+ tkgrid(tklabel(tt,text="Apples "),rb1)
+ tkgrid(tklabel(tt,text="Oranges "),rb2)
+
+ OnOK <- function()
+ {
+     rbVal <- as.character(tclvalue(rbValue))
+     tkdestroy(tt)
+     if (rbVal=="apples")
+     	tkmessageBox(message="Good choice!  An apple a day keeps the doctor
+ away!")
+     if (rbVal=="oranges")
+     	tkmessageBox(message="Good choice!  Oranges are full of Vitamin C!")
+ }
+ OK.but <- tkbutton(tt,text="OK",command=OnOK)
+ tkgrid(OK.but)
+ tkfocus(tt)
+
+ chosen.fruit<-tclvalue(rbValue)
+ print(chosen.fruit)
+
+
+From p.dalgaard at biostat.ku.dk  Mon May 22 14:22:01 2006
+From: p.dalgaard at biostat.ku.dk (Peter Dalgaard)
+Date: 22 May 2006 14:22:01 +0200
+Subject: [R-gui] How to assign value from tlctk window to variable ?
+In-Reply-To: <4471A6C3.3020601@ufz.de>
+References: <4471A6C3.3020601@ufz.de>
+Message-ID: <x2r72mxn9y.fsf@viggo.kubism.ku.dk>
+
+Ingo Fetzer <ingo.fetzer at ufz.de> writes:
+
+> most probably this is a question with a simple answer but I have not found an answer to it anywhere yet:
+> 
+> I took one of James Wettenhalls sample scripts (http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/) for radio buttons as basis to be integrated into a larger script.
+> 
+> Now I wonder how can one assign the input of a tcltk window (eg in the radiobutton
+> example "oranges") to a variable which can be used later in a r-script ?
+> 
+>  In the case of the radio buttons I tried it with (see also script below):
+> 
+>  chosen.fruit<-tclvalue(rbValue)
+>  print(chosen.fruit)             #to check the ouput in the console
+> 
+>  But then I always get the default values ("Oranges").
+>  When I after running the skript print in the R-console "tclvalue(rbValue)" I get the correct values (e.g. "Apples").
+
+Er, what did you expect? chosen.fruit will represent the value for the
+selected item  *at the time of the assignment* .
+ 
+>  I additionally made rbVal (which should represent the actual input of
+>  the tcltk window) with "<<-" a global variable but still I get the same
+>  results as before.
+> 
+>  It would be grateful if one could help me
+> 
+> Ingo
+> 
+> 
+> 
+>  require(tcltk)
+>  tt <- tktoplevel()
+>  rb1 <- tkradiobutton(tt)
+>  rb2 <- tkradiobutton(tt)
+>  rbValue <- tclVar("oranges")
+>  tkconfigure(rb1,variable=rbValue,value="apples")
+>  tkconfigure(rb2,variable=rbValue,value="oranges")
+>  tkgrid(tklabel(tt,text="Which do you prefer?"))
+>  tkgrid(tklabel(tt,text="Apples "),rb1)
+>  tkgrid(tklabel(tt,text="Oranges "),rb2)
+> 
+>  OnOK <- function()
+>  {
+>      rbVal <- as.character(tclvalue(rbValue))
+>      tkdestroy(tt)
+>      if (rbVal=="apples")
+>      	tkmessageBox(message="Good choice!  An apple a day keeps the doctor
+>  away!")
+>      if (rbVal=="oranges")
+>      	tkmessageBox(message="Good choice!  Oranges are full of Vitamin C!")
+>  }
+>  OK.but <- tkbutton(tt,text="OK",command=OnOK)
+>  tkgrid(OK.but)
+>  tkfocus(tt)
+> 
+>  chosen.fruit<-tclvalue(rbValue)
+>  print(chosen.fruit)
+> 
+> _______________________________________________
+> R-SIG-GUI mailing list
+> R-SIG-GUI at stat.math.ethz.ch
+> https://stat.ethz.ch/mailman/listinfo/r-sig-gui
+> 
+
+-- 
+   O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B
+  c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K
+ (*) \(*) -- University of Copenhagen   Denmark          Ph:  (+45) 35327918
+~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)                  FAX: (+45) 35327907
+
+
+From joseclaudio.faria at terra.com.br  Mon May 22 16:29:14 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Mon, 22 May 2006 11:29:14 -0300
+Subject: [R-gui] Tinn-R 1.18.5.2 released
+Message-ID: <4471CABA.2060800@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.5.2) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help//English/Readme/HTML'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From lawremi at iastate.edu  Wed May 24 02:51:59 2006
+From: lawremi at iastate.edu (Michael Lawrence)
+Date: Tue, 23 May 2006 19:51:59 -0500
+Subject: [R-gui] RGtk2 2.8.4 and cairoDevice 1.0.0 released
+Message-ID: <4473AE2F.4010902@iastate.edu>
+
+I am pleased to announce a new version of RGtk2 (2.8.4) and its sibling 
+cairoDevice (1.0.0).
+These versions actually represent significant revisions in that both of 
+them now pass "R CMD check" so that they could theoretically be placed 
+on CRAN.
+
+Many bugs in RGtk2 were fixed and some enhancements were made to the 
+RGtkDataFrame.
+The naming of constants (like GDK key codes, Pango scale factors, and 
+GTK stock ids) was changed to exactly match that of the C 
+implementation, in order to differentiate them from function names. This 
+probably doesn't affect anyone.
+
+The cairo graphics device (cairoDevice) now supports rendering to 
+GdkDrawables, which means you can leverage the GDK and GDKPixbuf API's 
+(from RGtk2) to modify cairo-drawn R graphics and save them to files in 
+formats like JPEG, GIF, and PNG.
+
+Please grab these from the RGtk2 website: http://www.ggobi.org/rgtk2
+
+Thanks,
+Michael
+
+
+From pmgrgui at gmail.com  Thu May 25 21:11:04 2006
+From: pmgrgui at gmail.com (j verzani)
+Date: Thu, 25 May 2006 15:11:04 -0400
+Subject: [R-gui] New version of iWIdgetsRGtk and pmg
+Message-ID: <576452c40605251211m78e43028j118da6dd7d874d88@mail.gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060525/738cffeb/attachment.pl 
+
+From adi at roda.ro  Sun May 28 15:45:05 2006
+From: adi at roda.ro (Adrian DUSA)
+Date: Sun, 28 May 2006 16:45:05 +0300
+Subject: [R-gui] pseudo radiobutton from check boxes
+Message-ID: <200605281645.05678.adi@roda.ro>
+
+Dear list members,
+
+I have a question related to tcltk programming. I'd like to create 4 check 
+boxes with different options; that's easy, but I want the 4th option to 
+deactivate the first three and viceversa: if any of the first three check 
+boxes has been activated, this should deactivate the fourth check box.
+
+I've written a draft code below, but I feel I misunderstand the usage of 
+"command". In my mind, this is only activated when the user presses the 
+button with the mouse. Instead, it seems like the command is activated each 
+time when the button chages its state. Is there another option I could use 
+for this purpose?
+
+Thank you in advance,
+Adrian
+
+require(tcltk)
+top <- tktoplevel()
+
+cbOptions <- c("option1", "option2", "option3", "option4")
+cbLabels <- c("Option A:", "Option B:", "Option C:", "Option D:")
+initialValues <- c(0, 0, 0, 0)
+cbVariable <- tclVar("0")
+
+option13Command <- function() {
+    tkconfigure(option4CB, variable=cbVariable)
+    }
+
+option4Command <- function() {
+    tkconfigure(option1CB, variable=cbVariable)
+    tkconfigure(option2CB, variable=cbVariable)
+    tkconfigure(option3CB, variable=cbVariable)
+    }
+
+option1CB <- tkcheckbutton(top)
+option1Variable <- tclVar(initialValues[1])
+tkconfigure(option1CB, variable=option1Variable, command=option13Command)
+tkgrid(tklabel(top, text=cbLabels[1]), option1CB, sticky="e")
+
+option2CB <- tkcheckbutton(top)
+option2Variable <- tclVar(initialValues[2])
+tkconfigure(option2CB, variable=option2Variable, command=option13Command)
+tkgrid(tklabel(top, text=cbLabels[2]), option2CB, sticky="e")
+
+option3CB <- tkcheckbutton(top)
+option3Variable <- tclVar(initialValues[3])
+tkconfigure(option3CB, variable=option3Variable, command=option13Command)
+tkgrid(tklabel(top, text=cbLabels[3]), option3CB, sticky="e")
+
+option4CB <- tkcheckbutton(top)
+option4Variable <- tclVar(initialValues[4])
+tkconfigure(option4CB, variable=option4Variable, command=option4Command)
+tkgrid(tklabel(top, text=cbLabels[4]), option4CB, sticky="e")
+
+
+
+-- 
+Adrian DUSA
+Romanian Social Data Archive
+1, Schitu Magureanu Bd
+050025 Bucharest sector 5
+Romania
+Tel./Fax: +40 21 3126618 \
+          +40 21 3120210 / int.101
+
+
+From adi at roda.ro  Sun May 28 16:04:48 2006
+From: adi at roda.ro (Adrian DUSA)
+Date: Sun, 28 May 2006 17:04:48 +0300
+Subject: [R-gui] pseudo radiobutton from check boxes
+In-Reply-To: <200605281645.05678.adi@roda.ro>
+References: <200605281645.05678.adi@roda.ro>
+Message-ID: <200605281704.49035.adi@roda.ro>
+
+As usual, the solution is found immediatly after posting...
+The option I was looking for is "deselect", as in:
+tkdeselect(option4CB)
+
+Sorry to have waisted your time,
+Adrian
+
+On Sunday 28 May 2006 16:45, Adrian DUSA wrote:
+> Dear list members,
+>
+> I have a question related to tcltk programming. I'd like to create 4 check
+> boxes with different options; that's easy, but I want the 4th option to
+> deactivate the first three and viceversa: if any of the first three check
+> boxes has been activated, this should deactivate the fourth check box.
+>
+> I've written a draft code below, but I feel I misunderstand the usage of
+> "command". In my mind, this is only activated when the user presses the
+> button with the mouse. Instead, it seems like the command is activated each
+> time when the button chages its state. Is there another option I could use
+> for this purpose?
+>
+> Thank you in advance,
+> Adrian
+>
+> require(tcltk)
+> top <- tktoplevel()
+>
+> cbOptions <- c("option1", "option2", "option3", "option4")
+> cbLabels <- c("Option A:", "Option B:", "Option C:", "Option D:")
+> initialValues <- c(0, 0, 0, 0)
+> cbVariable <- tclVar("0")
+>
+> option13Command <- function() {
+>     tkconfigure(option4CB, variable=cbVariable)
+>     }
+>
+> option4Command <- function() {
+>     tkconfigure(option1CB, variable=cbVariable)
+>     tkconfigure(option2CB, variable=cbVariable)
+>     tkconfigure(option3CB, variable=cbVariable)
+>     }
+>
+> option1CB <- tkcheckbutton(top)
+> option1Variable <- tclVar(initialValues[1])
+> tkconfigure(option1CB, variable=option1Variable, command=option13Command)
+> tkgrid(tklabel(top, text=cbLabels[1]), option1CB, sticky="e")
+>
+> option2CB <- tkcheckbutton(top)
+> option2Variable <- tclVar(initialValues[2])
+> tkconfigure(option2CB, variable=option2Variable, command=option13Command)
+> tkgrid(tklabel(top, text=cbLabels[2]), option2CB, sticky="e")
+>
+> option3CB <- tkcheckbutton(top)
+> option3Variable <- tclVar(initialValues[3])
+> tkconfigure(option3CB, variable=option3Variable, command=option13Command)
+> tkgrid(tklabel(top, text=cbLabels[3]), option3CB, sticky="e")
+>
+> option4CB <- tkcheckbutton(top)
+> option4Variable <- tclVar(initialValues[4])
+> tkconfigure(option4CB, variable=option4Variable, command=option4Command)
+> tkgrid(tklabel(top, text=cbLabels[4]), option4CB, sticky="e")
+
+-- 
+Adrian DUSA
+Romanian Social Data Archive
+1, Schitu Magureanu Bd
+050025 Bucharest sector 5
+Romania
+Tel./Fax: +40 21 3126618 \
+          +40 21 3120210 / int.101
+
+
+From joseclaudio.faria at terra.com.br  Sun May 28 17:10:47 2006
+From: joseclaudio.faria at terra.com.br (Jose Claudio Faria)
+Date: Sun, 28 May 2006 12:10:47 -0300
+Subject: [R-gui] Tinn-R 1.18.5.3 released
+Message-ID: <4479BD77.20305@terra.com.br>
+
+Dear Tinn-R user,
+
+We would like to announce that a new version of the Tinn-R for Windows
+(1.18.5.3) was released and is available on SourceForge server:
+http://sourceforge.net/projects/tinn-r.
+
+Tinn-R is a R script editor under OS Windows.
+
+To see the changes, please, read: 'Help//English/Readme/HTML'.
+
+Briefly it will be available also on SciViews server: http://www.sciviews.org/Tinn-R
+
+Regards,
+-- 
+Tinn-R Team
+
+
+From Market_Commodities_linkage at gmail.com  Tue May 30 16:06:50 2006
+From: Market_Commodities_linkage at gmail.com (Karina Lovett)
+Date: Tue, 30 May 2006 08:06:50 -0600
+Subject: [R-gui] CTBG Deploys World's Only Fully Rotating Well Fishing
+	Tools - Ref. msq3115
+Message-ID: <136415410459.XAA13898Forward_Contract_tacked@gmail.com>
+
+An embedded and charset-unspecified text was scrubbed...
+Name: not available
+Url: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060530/37316a7b/attachment.pl 
+

@@ -1,0 +1,679 @@
+From wettenhall at wehi.edu.au  Tue Sep  2 01:15:34 2003
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Mon Sep  1 16:15:09 2003
+Subject: [R-gui] Re: [MACTCL] Re: X11 Tktable SUCCESS!!! (fwd)
+Message-ID: <Pine.LNX.4.44.0309012346260.11159-100000@unix28.alpha.wehi.edu.au>
+
+Hi,
+
+After a few failed attempts, I finally got the Tktable 
+extension working in R on MacOS X, and I even did it without 
+a root password ;-)  I can write these instructions out more 
+clearly later on, but if you're interested now, read on...
+
+After advice from Jan de Leeuw on
+http://lists.sourceforge.net/lists/listinfo/tcl-mac
+I learnt that if you want to use R/TclTk on MacOS X you have 
+to choose between Aqua and X11.  RAqua is still quite new, and 
+may not work reliably with TkAqua until R 1.8.0 in October.  You 
+can download an X11/Darwin compatible R 1.7.0 or 1.7.1 from 
+Jan's webpage:
+http://gifi.stat.ucla.edu/pub/index.php
+
+The R 1.7.0 is nice, because it comes bundled with lots of 
+extra R packages as well as base, so I chose this version.
+
+You can get X11 from
+http://www.apple.com/macosx/x11/download/
+
+R 1.7.0 uses fink (a package manager which puts packages in 
+/sw/
+("software") ) but R 1.7.1 does not.
+
+I think you need the Apple Developer Tools to run fink.  
+You certainly need them to build Tktable from source.  A
+MacOS X machine should come with a Developer Tools CD.  
+This gives you gcc (C compiler) etc.  See:
+http://developer.apple.com/tools/
+
+The important thing to realize is that Aqua Tcl/Tk and X11
+Tcl/Tk are NOT compatible with each other.  If you 
+accidentally combine them, you can get strange errors like:
+  Unknown color name "systemWindowBody"
+
+If you want X11 versions of tcl/tk, you can install them 
+using fink (a package manager) :
+http://fink.sourceforge.net
+and this will (by default) put tcl and tk in
+/sw/lib/
+
+Then from R, if you type
+> library(tcltk)
+> tclvalue("auto_path")
+[1] "/sw/lib/tcl8.4 /sw/lib ./lib /sw/lib/tk8.4 
+/usr/local/lib/R/library/tcltk/exec"
+
+you should see only X11-compatible tcl/tk directories, where 
+the "sw" ("software") directories have been installed by fink.
+
+If you make the mistake I made:
+> addTclPath("/Library/Tcl")          (WRONG!!!)
+
+then you will probably be adding Aqua Tcl/Tk to the search 
+path, which can lead to strange errors.
+
+So to build an X11-compatible Tktable binary (not available 
+in fink yet), I downloaded the Tktable source from :
+http://tktable.sourceforge.net/
+and downloaded the tcl and tk source from :
+http://www.tcl.tk/
+and downloaded X11 source from :
+http://developer.apple.com/darwin/projects/X11/index.html
+Maybe the Apple X11 SDK would have been easier. See:
+http://www.apple.com/macosx/x11/download/
+(bottom right-hand corner of webpage)
+but it required a root password to install, so
+I built the X11 source instead.
+
+I unzipped and untarred the source packages into:
+/Users/guest/tcltk/tcl8.4.4/
+/Users/guest/tcltk/tk8.4.4/
+/Users/guest/tcltk/Tktable2.8/
+/Users/guest/X11ForMacOSXSource-wwdc/
+
+X11 was easy to build with
+make
+which I ran from the directory 
+/Users/guest/X11ForMacOSXSource-wwdc/xc/
+but it took a very long time!!!
+
+tcl and tk were also easy to build with
+make 
+run from within the directories:
+/Users/guest/tcltk/tcl8.4.4/macosx/
+and
+/Users/guest/tcltk/tk8.4.4/macosx/
+respectively.
+tcl and tk also took a long time to build,  but they were 
+quicker than X11.   
+
+Results of the tcl and tk builds appeared in :
+/Users/guest/tcltk/build/
+
+
+Here is the configure command I used inside the directory
+/Users/guest/tcltk/Tktable2.8/    
+
+./configure --prefix=/sw --with-tcl=/sw/lib \
+--with-tk=/sw/lib \
+--with-tclinclude=/Users/guest/tcltk/tcl8.4.4 \
+--with-tkinclude=/Users/guest/tcltk/tk8.4.4
+
+[ If fink had installed source as well as binaries in 
+/sw/ I might not have needed the --with-tclinclude and 
+--with-tkinclude options. ]
+
+Rather than edit the X11 paths in the configure script, I 
+just ran make and let it fail (because it couldn't find 
+-lX11), then I rewrote the linking command, adding the 
+correct library paths:
+
+% cc -dynamiclib -o libTktable2.8.dylib tkTable.o \
+tkTableWin.o tkTableTag.o tkTableEdit.o tkTableCell.o \
+tkTableCellSort.o tkTableCmds.o tkTableUtil.o \
+-L/Users/guest/X11ForMacOSXSource-wwdc/xc/lib/X11 \ 
+-lX11 -L/Users/guest/tcltk/build/Tcl.framework \
+-ltclstub8.4 -L/Users/guest/tcltk/build/Tk.framework \
+-ltkstub8.4
+
+Now libTktable2.8.dylib has been created successfully!
+
+% mkdir /Users/guest/Tktable2.8
+% cd /Users/guest/Tktable2.8
+% cp /Users/guest/tcltk/Tktable2.8/libTktable2.8.dylib .
+% cp /Library/Tcl/Tktable2.8/pkgIndex.tcl .
+% cat pkgIndex.tcl
+if {[catch {package require Tcl 8.2}]} return
+package ifneeded Tktable 2.8 [list load [file join $dir 
+libTktable2.8.dylib] Tktable]
+
+When I get an administrator to log in with root access, the 
+Tktable2.8 directory I created can be copied inside /sw/lib
+but for now I can just use addTclPath("/Users/guest").
+
+% R
+> library(tcltk)
+> addTclPath("/Users/guest")
+> tclRequire("Tktable")
+> tt <- tktoplevel()
+> table1 <- tkwidget(tt,"table",bg="white")
+> tkpack(table1)
+
+Looks beautiful!
+
+Regards,
+James
+
+From ernesto at ipimar.pt  Mon Sep  8 13:58:47 2003
+From: ernesto at ipimar.pt (Ernesto Jardim)
+Date: Mon Sep  8 13:58:09 2003
+Subject: [R-gui] New highligthing for NEdit
+Message-ID: <1063022327.12470.19.camel@gandalf.local>
+
+Hi,
+
+I've just put together a new R syntax highlighting file for Nedit 5.3.
+
+I've borrow the "base" functions of Jedit (thanks to Tobias Elze and Zed
+A. Shaw) so now NEdit highlights a little more than before :)
+
+You can download the file here: 
+
+http://ernesto.freezope.org/cmf/starthere/r/R-5.3.pats 
+
+Just import it into NEdit with 
+
+> nedit -import R-5.3.pats
+
+and save your preferences when leaving the editor.
+
+If you want to use NEdit as your default editor inside R do
+
+> options(editor="nedit -lm R")
+
+I usually change NEdit fonts to lucida-mono 12 so if you use other fonts
+it may look uglier (or pretier) ...
+
+Hope you enjoy it and, as usual, all comments are welcome.
+
+Best regards
+
+EJ
+
+ps: please can somenone change the file in R-GUI page ?
+-- 
+Ernesto Jardim <ernesto@ipimar.pt>
+Bi?logo Marinho/Marine Biologist
+IPIMAR - Instituto Nacional de Investiga??o Agr?ria e das Pescas
+IPIMAR - National Research Institute for Agriculture and Fisheries
+Av. Brasilia, 1400-006
+Lisboa, Portugal
+Tel: +351 213 027 000
+Fax: +351 213 015 948
+http://ernesto.freezope.org
+
+From mark at myatt.demon.co.uk  Tue Sep  9 13:08:20 2003
+From: mark at myatt.demon.co.uk (Mark Myatt)
+Date: Tue Sep  9 13:13:20 2003
+Subject: [R-gui] Re: Highligthing for NEdit
+In-Reply-To: <200309091002.h89A253T010242@stat.math.ethz.ch>
+References: <200309091002.h89A253T010242@stat.math.ethz.ch>
+Message-ID: <3F5DB4A3.3040705@myatt.demon.co.uk>
+
+Ernesto wrote:
+
+> I've just put together a new R syntax highlighting file for Nedit 5.3.
+> 
+> I've borrow the "base" functions of Jedit (thanks to Tobias Elze and Zed
+> A. Shaw) so now NEdit highlights a little more than before :)
+> 
+> You can download the file here: 
+> 
+> http://ernesto.freezope.org/cmf/starthere/r/R-5.3.pats 
+> 
+> Just import it into NEdit with 
+> 
+>>nedit -import R-5.3.pats
+> 
+> and save your preferences when leaving the editor.
+> 
+> If you want to use NEdit as your default editor inside R do
+> 
+>>options(editor="nedit -lm R")
+> 
+> I usually change NEdit fonts to lucida-mono 12 so if you use other fonts
+> it may look uglier (or pretier) ...
+> 
+> Hope you enjoy it and, as usual, all comments are welcome.
+
+A really nice job. Thanks. Just one comment ... I prefer not to have 
+line-wrapping on when writing code. That requires a simple change to the 
+file on the nedit.languagesModes line to:
+
+	nedit.languagesModes:	R:.r .R .q::Auto:None:::\n\
+
+Just my preference.
+
+Mark
+
+-- 
+Mark Myatt
+
+From ernesto at ipimar.pt  Tue Sep  9 13:49:09 2003
+From: ernesto at ipimar.pt (Ernesto Jardim)
+Date: Tue Sep  9 13:49:19 2003
+Subject: [R-gui] Re: Highligthing for NEdit
+In-Reply-To: <3F5DB4A3.3040705@myatt.demon.co.uk>
+References: <200309091002.h89A253T010242@stat.math.ethz.ch>
+	<3F5DB4A3.3040705@myatt.demon.co.uk>
+Message-ID: <1063106968.2735.70.camel@gandalf.local>
+
+On Tue, 2003-09-09 at 12:08, Mark Myatt wrote:
+> Ernesto wrote:
+> 
+> > I've just put together a new R syntax highlighting file for Nedit 5.3.
+> > 
+> > I've borrow the "base" functions of Jedit (thanks to Tobias Elze and Zed
+> > A. Shaw) so now NEdit highlights a little more than before :)
+> > 
+> > You can download the file here: 
+> > 
+> > http://ernesto.freezope.org/cmf/starthere/r/R-5.3.pats
+> > 
+> > Just import it into NEdit with 
+> > 
+> >>nedit -import R-5.3.pats
+> > 
+> > and save your preferences when leaving the editor.
+> > 
+> > If you want to use NEdit as your default editor inside R do
+> > 
+> >>options(editor="nedit -lm R")
+> > 
+> > I usually change NEdit fonts to lucida-mono 12 so if you use other fonts
+> > it may look uglier (or pretier) ...
+> > 
+> > Hope you enjoy it and, as usual, all comments are welcome.
+> 
+> A really nice job. Thanks. Just one comment ... I prefer not to have 
+> line-wrapping on when writing code. That requires a simple change to the 
+> file on the nedit.languagesModes line to:
+> 
+> 	nedit.languagesModes:	R:.r .R .q::Auto:None:::\n\
+> 
+> Just my preference.
+> 
+> Mark
+
+Hi Mark,
+
+I've changed some NEdit settings with R highlighting and may be that's
+not the best way to do it. The NEdit settings might be left for each
+user to deal with.
+
+Regards and thanks for your opinion.
+
+EJ
+
+From ernesto at ipimar.pt  Tue Sep  9 13:49:09 2003
+From: ernesto at ipimar.pt (Ernesto Jardim)
+Date: Tue Sep  9 13:49:26 2003
+Subject: [R-gui] Re: Highligthing for NEdit
+In-Reply-To: <3F5DB4A3.3040705@myatt.demon.co.uk>
+References: <200309091002.h89A253T010242@stat.math.ethz.ch>
+	<3F5DB4A3.3040705@myatt.demon.co.uk>
+Message-ID: <1063108148.3153.1.camel@gandalf.local>
+
+On Tue, 2003-09-09 at 12:08, Mark Myatt wrote:
+> Ernesto wrote:
+> 
+> > I've just put together a new R syntax highlighting file for Nedit 5.3.
+> > 
+> > I've borrow the "base" functions of Jedit (thanks to Tobias Elze and Zed
+> > A. Shaw) so now NEdit highlights a little more than before :)
+> > 
+> > You can download the file here: 
+> > 
+> > http://ernesto.freezope.org/cmf/starthere/r/R-5.3.pats
+> > 
+> > Just import it into NEdit with 
+> > 
+> >>nedit -import R-5.3.pats
+> > 
+> > and save your preferences when leaving the editor.
+> > 
+> > If you want to use NEdit as your default editor inside R do
+> > 
+> >>options(editor="nedit -lm R")
+> > 
+> > I usually change NEdit fonts to lucida-mono 12 so if you use other fonts
+> > it may look uglier (or pretier) ...
+> > 
+> > Hope you enjoy it and, as usual, all comments are welcome.
+> 
+> A really nice job. Thanks. Just one comment ... I prefer not to have 
+> line-wrapping on when writing code. That requires a simple change to the 
+> file on the nedit.languagesModes line to:
+> 
+> 	nedit.languagesModes:	R:.r .R .q::Auto:None:::\n\
+> 
+> Just my preference.
+> 
+> Mark
+
+Hi Mark,
+
+Users can allways adjust the language to their needs. Anyway I've changed some NEdit settings and maybe that's not the way to do it. I shall correct that on the next version.
+
+Regards and thanks for your opinion.
+
+EJ
+
+From carter_cheng at yahoo.com  Wed Sep 10 03:31:37 2003
+From: carter_cheng at yahoo.com (Carter Cheng)
+Date: Wed Sep 10 11:30:55 2003
+Subject: [R-gui] Status of the R-GUI
+Message-ID: <20030910093137.74940.qmail@web41509.mail.yahoo.com>
+
+I just recently joined this mailing list and I
+apologize if this has been addressed recently. I am
+curious about the current maturity of alternate R
+GUI's and the underlying frameworks that allow one to
+define alternate GUI's which are slightly more feature
+rich. 
+
+I already use R for much of my current work, but it
+would be nice if there were some sort of a user
+friendly GUI for more common tasks ala SPSS's GUI for
+less technically sophisticated/computer oriented
+users- i.e. medical professionals and the ilk.
+
+Are there any such current efforts out there?
+
+From edd at debian.org  Wed Sep 10 08:30:02 2003
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Wed Sep 10 14:29:22 2003
+Subject: [R-gui] Status of the R-GUI
+In-Reply-To: <20030910093137.74940.qmail@web41509.mail.yahoo.com>
+References: <20030910093137.74940.qmail@web41509.mail.yahoo.com>
+Message-ID: <20030910123002.GA17742@sonny.eddelbuettel.com>
+
+On Wed, Sep 10, 2003 at 02:31:37AM -0700, Carter Cheng wrote:
+> I just recently joined this mailing list and I
+> apologize if this has been addressed recently. I am
+> curious about the current maturity of alternate R
+> GUI's and the underlying frameworks that allow one to
+> define alternate GUI's which are slightly more feature
+> rich. 
+> 
+> I already use R for much of my current work, but it
+> would be nice if there were some sort of a user
+> friendly GUI for more common tasks ala SPSS's GUI for
+> less technically sophisticated/computer oriented
+> users- i.e. medical professionals and the ilk.
+> 
+> Are there any such current efforts out there?
+
+Have you looked at Rcmdr? It's is a ready-to-roll CRAN package using tcltk.
+
+Dirk
+
+-- 
+Those are my principles, and if you don't like them... well, I have others.
+                                                -- Groucho Marx
+
+From mark at myatt.demon.co.uk  Thu Sep 11 13:23:36 2003
+From: mark at myatt.demon.co.uk (Mark Myatt)
+Date: Thu Sep 11 13:27:38 2003
+Subject: [R-gui] Re: Status of the R-GUI
+In-Reply-To: <200309111003.h8BA2q9i029900@stat.math.ethz.ch>
+References: <200309111003.h8BA2q9i029900@stat.math.ethz.ch>
+Message-ID: <3F605B38.6060400@myatt.demon.co.uk>
+
+Dirk Eddelbuettel wrote:
+
+ > Have you looked at Rcmdr? It's is a ready-to-roll CRAN package
+ > using tcltk.
+
+In reponse to this message from Carter Cheng:
+
+>>I just recently joined this mailing list and I
+>>apologize if this has been addressed recently. I am
+>>curious about the current maturity of alternate R
+>>GUI's and the underlying frameworks that allow one to
+>>define alternate GUI's which are slightly more feature
+>>rich. 
+>>
+>>I already use R for much of my current work, but it
+>>would be nice if there were some sort of a user
+>>friendly GUI for more common tasks ala SPSS's GUI for
+>>less technically sophisticated/computer oriented
+>>users- i.e. medical professionals and the ilk.
+>>
+>>Are there any such current efforts out there?
+
+Just to add my tuppence ... I see the main strength of R as being a 
+language environment rather than a "buttons and boxes" environment. It 
+may be useful to have a GPL "buttons and boxes" stats environment. My 
+preference would be for a powerful "IDE" type environment.
+
+Mark
+
+-- 
+Mark Myatt
+
+From carter_cheng at yahoo.com  Thu Sep 11 09:28:06 2003
+From: carter_cheng at yahoo.com (Carter Cheng)
+Date: Thu Sep 11 17:27:24 2003
+Subject: [R-gui] Status of the R-GUI
+Message-ID: <20030911152806.9540.qmail@web41510.mail.yahoo.com>
+
+Thanks everyone for the prompt replies. I did actually
+check out R-Commander before but I was somewhat
+concerned that it might have stability issues. Has
+anyone had experience deploying this in a work
+environment? I guess I am curious if it's mature
+enough to serve as a replacement for the SPSS system.
+Is it as full featured as the SPSS GUI?
+
+Again thanks everyone for the help,
+
+Carter.
+
+From jfox at mcmaster.ca  Thu Sep 11 17:59:34 2003
+From: jfox at mcmaster.ca (John Fox)
+Date: Thu Sep 11 22:56:47 2003
+Subject: [R-gui] Status of the R-GUI
+In-Reply-To: <20030911152806.9540.qmail@web41510.mail.yahoo.com>
+Message-ID: <5.1.0.14.2.20030911165230.01ff0b80@127.0.0.1>
+
+Dear Carter,
+
+At 08:28 AM 9/11/2003 -0700, Carter Cheng wrote:
+>Thanks everyone for the prompt replies. I did actually
+>check out R-Commander before but I was somewhat
+>concerned that it might have stability issues. Has
+>anyone had experience deploying this in a work
+>environment?
+
+Since Rcmdr is relatively new, I assume that no one has experience yet 
+using it in teaching a class. That will change shortly, at least in my 
+case. I have done a fair amount of testing, mostly under Windows, and from 
+the feedback that I've received, I know that quite a few people have tried 
+it out under a variety of OSs.
+
+>I guess I am curious if it's mature
+>enough to serve as a replacement for the SPSS system.
+>Is it as full featured as the SPSS GUI?
+
+This depends on what you intend to use the GUI for. Rcmdr is meant 
+primarily for basic statistics courses. It is definitely not as 
+full-featured as the GUI for SPSS. If you haven't yet done so, take a look 
+at the menu tree on the Rcmdr page at 
+<http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/index>. The Rcmdr GUI 
+is, however, extensible, so you could, in principle, add menus and dialogs.
+
+I hope that this answers your questions.
+  John
+
+
+-----------------------------------------------------
+John Fox
+Department of Sociology
+McMaster University
+Hamilton, Ontario, Canada L8S 4M4
+email: jfox@mcmaster.ca
+phone: 905-525-9140x23604
+web: www.socsci.mcmaster.ca/jfox
+
+From wettenhall at wehi.edu.au  Fri Sep 12 11:43:19 2003
+From: wettenhall at wehi.edu.au (James Wettenhall)
+Date: Fri Sep 12 02:43:30 2003
+Subject: [R-gui] Status of the R-GUI
+In-Reply-To: <5.1.0.14.2.20030911165230.01ff0b80@127.0.0.1>
+Message-ID: <Pine.LNX.4.44.0309120945490.5815-100000@unix28.alpha.wehi.edu.au>
+
+Hi,
+
+Maybe I'm starting to veer from the original question, but it's 
+been a while since this list has seen a lot of general 
+philosophical discussion of GUI development.
+
+I think there are at least three types of users we should think 
+about: 
+(1) Users who have no desire to learn how to use a 
+  Command Line Interface (CLI), but are still very intelligent.
+(2) Users who want to use a GUI as a preliminary step before 
+  learning how to use a CLI.
+(3) Users (like myself) who are comfortable using a CLI, but 
+  find that they can "protect" themselves against common errors
+  and be more productive by using a GUI sometimes.
+
+I know of several R-GUI projects with slightly different aims.  
+Of course there's Peter Dalgaard's fantastic tcltk package, 
+including the tkStarGUI prototype.  I'm using tcltk to develop a 
+microarray analysis interface which will eventually be submitted 
+to Bioconductor (http://bioinf.wehi.edu.au/limmaGUI/)
+There are other Tcl/Tk projects including John Fox's Rcmdr 
+package, which I think is partly designed for users of type (2), 
+but should also appeal to advanced R developers as it is 
+extensible.  
+
+John Zhang has contributed the widgetTools and tkWidgets 
+packages to Bioconductor, which allow a more object-oriented 
+approach to Tcl/Tk GUI development, perhaps analagous to Java 
+Swing.  Speaking of which, is anyone using Java Swing with R?  
+
+There is also Phillipe Grosjean's SciViews project, which may 
+not be entirely platform-independent, but a great proportion 
+of users of type (1) hardly know that Linux exists, and may 
+always use software developed in a similar way to Phillipe's, 
+i.e. Microsoft Visual Basic or Microsoft Visual C++ 
+or whatever.
+
+There are other R-GUI projects.  Sorry for the omissions.
+
+Peter Dalgaard described a "scripting widget" in :
+http://cran.r-project.org/doc/Rnews/Rnews_2002-3.pdf
+which makes it possible to build a GUI which appeals to all 
+three types of users!!! An R/TclTk interface can have simple 
+buttons and menus for users of type (1), but users of type (3) 
+(and perhaps (2)) can learn how to enter R code directly to 
+interact with the data objects used by the GUI.  
+(See the bottom of the worked limmaGUI example at
+http://bioinf.wehi.edu.au/limmaGUI/Doc/Weaver/index.html
+where I have an "Evaluate R code" menu which can be used to grab 
+some data objects use by the R/TclTk application and type an R 
+command to plot them in a tkrplot window, or check their values 
+in a text window.
+
+I would certainly like to encourage R-GUI development, but my 
+limmaGUI project (http://bioinf.wehi.edu.au/limmaGUI/) may be 
+too specialized to interest general R-GUI developers.
+
+So, I have been thinking, how could I contribute something which 
+would encourage R-GUI development?
+
+Here's an idea I came up with:
+
+Develop a simple "spreadsheet" R package using the Tktable 
+widget, which allows things like getSelection() to store 
+selected cells in a data frame and allows developers to 
+easily add menus to do things like barplots of the data in 
+the selected cells (with a few pre-built examples).  Then, 
+formulae within cells: =Rfunction() would be nice, and things 
+like "fill-down" etc.  Of course for large spreadsheet files, 
+it would be incredibly slow compared with Excel, so would it 
+be any use?
+
+The reason I suggest this, is that developers could instantly 
+see how the interface could be made easy to learn for users of 
+type (1) but hopefully they (developers) could also see how to
+extend its functionality easily.
+
+Just one last issue to mention: ease of installation.  
+Currently, a typical user of my R/TclTk GUI will start with nothing - 
+they will not have R, Tcl/Tk or any interesting R packages 
+installed. (I should note that I used the tkTable and bwidget 
+extensions which are not bundled with R.)  Is anyone out 
+there working on installation wizards for their favorite operating 
+system(s)?  I personally do not have installation privileges so 
+it's difficult for me to test installation wizards, but I'd 
+certainly like to make my software easy to install.
+
+InnoSetup:
+http://www.jrsoftware.org/isinfo.php
+is free software to create Installation Wizards for Windows.
+
+Perhaps another option is to build a Wizard using something like 
+freewrap (creates binaries from Tcl/Tk scripts):
+http://freewrap.sourceforge.net/
+and you could possibly use TclCurl:
+http://personal1.iddeo.es/andresgarci/tclcurl/english/
+if the wizard had to download anything from the Web.
+
+OK, enough rambling!
+
+Feel free to disagree with my current R-GUI philosophies.
+
+Regards,
+James
+
+--------------------------------------------------------------------------
+James Wettenhall                                  Tel: (+61 3) 9345 2629
+Division of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852
+The Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au
+ of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    
+1G Royal Parade,
+Parkville, Vic 3050, Australia
+http://www.wehi.edu.au
+
+From edd at debian.org  Sun Sep 14 01:38:57 2003
+From: edd at debian.org (Dirk Eddelbuettel)
+Date: Sun Sep 14 07:38:29 2003
+Subject: [R-gui] Status of the R-GUI
+In-Reply-To: <Pine.LNX.4.44.0309120945490.5815-100000@unix28.alpha.wehi.edu.au>
+References: <5.1.0.14.2.20030911165230.01ff0b80@127.0.0.1>
+	<Pine.LNX.4.44.0309120945490.5815-100000@unix28.alpha.wehi.edu.au>
+Message-ID: <20030914053857.GA22858@sonny.eddelbuettel.com>
+
+
+James,
+
+On Fri, Sep 12, 2003 at 10:43:19AM +1000, James Wettenhall wrote:
+> Just one last issue to mention: ease of installation.  
+> Currently, a typical user of my R/TclTk GUI will start with nothing - 
+> they will not have R, Tcl/Tk or any interesting R packages 
+> installed. (I should note that I used the tkTable and bwidget 
+> extensions which are not bundled with R.)  Is anyone out 
+> there working on installation wizards for their favorite operating 
+> system(s)?  I personally do not have installation privileges so 
+
+I am currently preparing a new release of Quantian, the Knoppix /
+clusterKnoppix based bootable cdrom. Among all it scientific / numerical
+software is of course R with tcltk and an increased number of CRAN packages
+such as tkrplot or Rcmdr -- but also iwidgets, bwidget, and tktable.  So in
+your case all you'd need is to download your application code and date, say
+from a webpage or NFS share, and you'd be done. At least in theory :) .
+
+In preparation for 0.4, a version 0.3.9.1 is currently going to the server
+at the U of Washington.  This will take another few hours to crawl up
+through my residential broadband line, but should be fine once you're back
+at work. 
+
+Dirk
+
+-- 
+Those are my principles, and if you don't like them... well, I have others.
+                                                -- Groucho Marx
+

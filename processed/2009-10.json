@@ -1,0 +1,206 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2009-10",
+  "messages": [
+    {
+      "id": "msg-3db999e41a9f",
+      "message_id": "<839dbb3f0910140723t6114bb6biecaaaf76fba2171e@mail.gmail.com>",
+      "from_name": "Adrián Catón Oteiza",
+      "from_email_hash": "89a66440136c3c9d8a0143cf79ec2ee8be98cc96fd70552c94a5e23da1336190",
+      "date": "2009-10-14T16:23:07+02:00",
+      "subject": "[R-gui] Web based GUI",
+      "subject_clean": "[R-gui] Web based GUI",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091014/21e2a145/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091014/21e2a145/attachment.pl>",
+      "thread_id": "thread-3db999e41a9f",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-2f5f6d91e1d2",
+      "message_id": "<94730b8a0910150517s175aaee0ued6ea8a65982d8ea@mail.gmail.com>",
+      "from_name": "Felix Andrews",
+      "from_email_hash": "ab8be5753adb1cfce5e50bf8235dddc08e38086328727de3f965639ec7b93f1d",
+      "date": "2009-10-15T23:17:17+11:00",
+      "subject": "[R-gui] Web based GUI",
+      "subject_clean": "[R-gui] Web based GUI",
+      "in_reply_to": "<839dbb3f0910140723t6114bb6biecaaaf76fba2171e@mail.gmail.com>",
+      "references": [
+        "<839dbb3f0910140723t6114bb6biecaaaf76fba2171e@mail.gmail.com>"
+      ],
+      "body_plain": "Hi Adri?n\n\nLooks impressive. Something like this might be useful for potential\nnew users, so they could try some things without committing themselves\nto installing anything. If that is your audience I would add a few\nhints to the page about examples to try.\n\nAre you planning to allow data files to be uploaded? Currently, users'\ndata can be read in from URLs.\n\nI think it would be good to use the HTML help system, if possible,\nrather than plain text.\n\nObviously a system like this could quickly be overwhelmed if it it\nbecame at all popular... I assume you are running R processes inside\n'nice' or somesuch.\n\nAll the best, and good luck,\n-Felix\n\n2009/10/15 Adri?n Cat?n Oteiza <adrian.caton at gmail.com>:\n> Hello to all.\n> First of all I want to thank all this community which is makeing me fell\n> very confortable. As you can see this is my first messag, so please forgive\n> any possible mistakes or misunderstandings.\n> The thing I want to talk to you is a new project of fully functional GUI\n> that I'm working on. This GUI is, first of all, CROSSPLATFORM as we all\n> want. This is because it is a WEB-BASED GUI. I have decided to implement it\n> as a webbased GUI because nowaday everybody wants movility, lightness and so\n> on. Also we have gadgets such as ebooks, iphones, netbooks... with small\n> processors and strange OS, therefore I decided to implement a webbased GUI\n> for R wihch will be accesible trough every single device with internet\n> connection and also it is implemented using XHTML+Javascript that is easily\n> comprensible by everyone and can be enhanced with even better graphic\n> interface than the original R.\n> So... I would like that you visit the webpage and write here all your\n> suggestions, thoughts and everything. The URL is:\n> http://www.r-live.org\n>\n> Thank you.\n> Adri?n Cat?n\n>\n> ? ? ? ?[[alternative HTML version deleted]]\n>\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>\n\n\n\n-- \nFelix Andrews / ???\nPostdoctoral Fellow\nIntegrated Catchment Assessment and Management (iCAM) Centre\nFenner School of Environment and Society [Bldg 48a]\nThe Australian National University\nCanberra ACT 0200 Australia\nM: +61 410 400 963\nT: + 61 2 6125 4670\nE: felix.andrews at anu.edu.au\nCRICOS Provider No. 00120C\n-- \nhttp://www.neurofractal.org/felix/",
+      "body_snippet": "Hi Adri?n\n\nLooks impressive. Something like this might be useful for potential\nnew users, so they could try some things without committing themselves\nto installing anything. If that is your audience I",
+      "thread_id": "thread-3db999e41a9f",
+      "thread_depth": 1,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-8573da5d21e6",
+      "message_id": "<8E3590214E4380489D2F8BF129B939F3B53352@amsdc1-s-03371.europe.shell.com>",
+      "from_name": "Wayne.W.Jones at shell.com",
+      "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
+      "date": "2009-10-15T14:23:33+02:00",
+      "subject": "[R-gui] Web based GUI",
+      "subject_clean": "[R-gui] Web based GUI",
+      "in_reply_to": "<94730b8a0910150517s175aaee0ued6ea8a65982d8ea@mail.gmail.com>",
+      "references": [
+        "<839dbb3f0910140723t6114bb6biecaaaf76fba2171e@mail.gmail.com>",
+        "<94730b8a0910150517s175aaee0ued6ea8a65982d8ea@mail.gmail.com>"
+      ],
+      "body_plain": "Hi Adrian, \n\n\nAre you aware of RWeb: http://bayes.math.montana.edu/Rweb/Rweb.general.html\n\nVery similar to your project. Although it doesn?t seem to be working at the moment. \n\nWayne\n\n\n\n\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Felix Andrews\nSent: 15 October 2009 13:17\nTo: Adri?n Cat?n Oteiza\nCc: r-sig-gui at stat.math.ethz.ch\nSubject: Re: [R-gui] Web based GUI\n\nHi Adri?n\n\nLooks impressive. Something like this might be useful for potential\nnew users, so they could try some things without committing themselves\nto installing anything. If that is your audience I would add a few\nhints to the page about examples to try.\n\nAre you planning to allow data files to be uploaded? Currently, users'\ndata can be read in from URLs.\n\nI think it would be good to use the HTML help system, if possible,\nrather than plain text.\n\nObviously a system like this could quickly be overwhelmed if it it\nbecame at all popular... I assume you are running R processes inside\n'nice' or somesuch.\n\nAll the best, and good luck,\n-Felix\n\n2009/10/15 Adri?n Cat?n Oteiza <adrian.caton at gmail.com>:\n> Hello to all.\n> First of all I want to thank all this community which is makeing me fell\n> very confortable. As you can see this is my first messag, so please forgive\n> any possible mistakes or misunderstandings.\n> The thing I want to talk to you is a new project of fully functional GUI\n> that I'm working on. This GUI is, first of all, CROSSPLATFORM as we all\n> want. This is because it is a WEB-BASED GUI. I have decided to implement it\n> as a webbased GUI because nowaday everybody wants movility, lightness and so\n> on. Also we have gadgets such as ebooks, iphones, netbooks... with small\n> processors and strange OS, therefore I decided to implement a webbased GUI\n> for R wihch will be accesible trough every single device with internet\n> connection and also it is implemented using XHTML+Javascript that is easily\n> comprensible by everyone and can be enhanced with even better graphic\n> interface than the original R.\n> So... I would like that you visit the webpage and write here all your\n> suggestions, thoughts and everything. The URL is:\n> http://www.r-live.org\n>\n> Thank you.\n> Adri?n Cat?n\n>\n> ? ? ? ?[[alternative HTML version deleted]]\n>\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>\n\n\n\n-- \nFelix Andrews / ???\nPostdoctoral Fellow\nIntegrated Catchment Assessment and Management (iCAM) Centre\nFenner School of Environment and Society [Bldg 48a]\nThe Australian National University\nCanberra ACT 0200 Australia\nM: +61 410 400 963\nT: + 61 2 6125 4670\nE: felix.andrews at anu.edu.au\nCRICOS Provider No. 00120C\n-- \nhttp://www.neurofractal.org/felix/\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at stat.math.ethz.ch\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi Adrian, \n\n\nAre you aware of RWeb: http://bayes.math.montana.edu/Rweb/Rweb.general.html\n\nVery similar to your project. Although it doesn?t seem to be working at the moment. \n\nWayne\n\n\n\n\n\n-----Origina",
+      "thread_id": "thread-3db999e41a9f",
+      "thread_depth": 2,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-350db9f293a8",
+      "message_id": "<A3FB06B4-CA69-4E6E-A1E1-80FEE2AF6861@biomserv.univ-lyon1.fr>",
+      "from_name": "Jean Thioulouse",
+      "from_email_hash": "a2e55291bd63fe9c6d5100fe97a96b6321b2e575d22dd23bdf7cc71c3f883fba",
+      "date": "2009-10-15T17:03:55+02:00",
+      "subject": "[R-gui] Web based GUI",
+      "subject_clean": "[R-gui] Web based GUI",
+      "in_reply_to": "<8E3590214E4380489D2F8BF129B939F3B53352@amsdc1-s-03371.europe.shell.com>",
+      "references": [
+        "<839dbb3f0910140723t6114bb6biecaaaf76fba2171e@mail.gmail.com>",
+        "<94730b8a0910150517s175aaee0ued6ea8a65982d8ea@mail.gmail.com>",
+        "<8E3590214E4380489D2F8BF129B939F3B53352@amsdc1-s-03371.europe.shell.com>"
+      ],
+      "body_plain": "Hi all,\n\nJust to let you know that we have a working Rweb server here:\nhttp://pbil.univ-lyon1.fr/Rweb/Rweb.general.html\n\nJean\n\n\nLe 15 oct. 2009 ? 14:23, <Wayne.W.Jones at shell.com> a ?crit :\n\n> Hi Adrian,\n>\n>\n> Are you aware of RWeb: http://bayes.math.montana.edu/Rweb/Rweb.general.html\n>\n> Very similar to your project. Although it doesn?t seem to be  \n> working at the moment.\n>\n> Wayne\n>\n>\n>\n>\n>\n> -----Original Message-----\n> From: r-sig-gui-bounces at stat.math.ethz.ch [mailto:r-sig-gui- \n> bounces at stat.math.ethz.ch] On Behalf Of Felix Andrews\n> Sent: 15 October 2009 13:17\n> To: Adri?n Cat?n Oteiza\n> Cc: r-sig-gui at stat.math.ethz.ch\n> Subject: Re: [R-gui] Web based GUI\n>\n> Hi Adri?n\n>\n> Looks impressive. Something like this might be useful for potential\n> new users, so they could try some things without committing themselves\n> to installing anything. If that is your audience I would add a few\n> hints to the page about examples to try.\n>\n> Are you planning to allow data files to be uploaded? Currently, users'\n> data can be read in from URLs.\n>\n> I think it would be good to use the HTML help system, if possible,\n> rather than plain text.\n>\n> Obviously a system like this could quickly be overwhelmed if it it\n> became at all popular... I assume you are running R processes inside\n> 'nice' or somesuch.\n>\n> All the best, and good luck,\n> -Felix\n>\n> 2009/10/15 Adri?n Cat?n Oteiza <adrian.caton at gmail.com>:\n>> Hello to all.\n>> First of all I want to thank all this community which is makeing me  \n>> fell\n>> very confortable. As you can see this is my first messag, so please  \n>> forgive\n>> any possible mistakes or misunderstandings.\n>> The thing I want to talk to you is a new project of fully  \n>> functional GUI\n>> that I'm working on. This GUI is, first of all, CROSSPLATFORM as we  \n>> all\n>> want. This is because it is a WEB-BASED GUI. I have decided to  \n>> implement it\n>> as a webbased GUI because nowaday everybody wants movility,  \n>> lightness and so\n>> on. Also we have gadgets such as ebooks, iphones, netbooks... with  \n>> small\n>> processors and strange OS, therefore I decided to implement a  \n>> webbased GUI\n>> for R wihch will be accesible trough every single device with  \n>> internet\n>> connection and also it is implemented using XHTML+Javascript that  \n>> is easily\n>> comprensible by everyone and can be enhanced with even better graphic\n>> interface than the original R.\n>> So... I would like that you visit the webpage and write here all your\n>> suggestions, thoughts and everything. The URL is:\n>> http://www.r-live.org\n>>\n>> Thank you.\n>> Adri?n Cat?n\n>>\n>>        [[alternative HTML version deleted]]\n>>\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at stat.math.ethz.ch\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>>\n>\n>\n>\n> -- \n> Felix Andrews / ???\n> Postdoctoral Fellow\n> Integrated Catchment Assessment and Management (iCAM) Centre\n> Fenner School of Environment and Society [Bldg 48a]\n> The Australian National University\n> Canberra ACT 0200 Australia\n> M: +61 410 400 963\n> T: + 61 2 6125 4670\n> E: felix.andrews at anu.edu.au\n> CRICOS Provider No. 00120C\n> -- \n> http://www.neurofractal.org/felix/\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> _______________________________________________R-SIG-GUI mailing  \n> listR-SIG-GUI at stat.math.ethz.chhttps://stat.ethz.ch/mailman/listinfo/ \n> r-sig-gui\n>\n\n--\nJean Thioulouse - Labo Biometrie et Biologie Evolutive,  UMR CNRS 5558\nUniversite Lyon 1, Batiment Mendel,   43 Boulevard du 11 Novembre 1918\n                   69622 Villeurbanne Cedex - France\nTel : (33)(0)472432756  Fax : (33)(0)472431388  Cel : (33)(0)675122302\nhttp://pbil.univ-lyon1.fr/JTHome/    http://www.sauvonslarecherche.fr/",
+      "body_snippet": "Hi all,\n\nJust to let you know that we have a working Rweb server here:\nhttp://pbil.univ-lyon1.fr/Rweb/Rweb.general.html\n\nJean\n\n\nLe 15 oct. 2009 ? 14:23, <Wayne.W.Jones at shell.com> a ?crit :\n\n> Hi Ad",
+      "thread_id": "thread-3db999e41a9f",
+      "thread_depth": 3,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-9fe379ec49ed",
+      "message_id": "<4ADD6ED3.6060009@it.uu.se>",
+      "from_name": "Virgil Stokes",
+      "from_email_hash": "b6befdd31db58d8ca98bc491c3d0a7c4348d2320d7fa1da14df4802620c8f9f4",
+      "date": "2009-10-20T10:03:31+02:00",
+      "subject": "[R-gui] Workspace files",
+      "subject_clean": "[R-gui] Workspace files",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I am not sure that this posting is appropriate for this list. If not, I \nwould appreciate information on what R language group that it should be \nposted to.\n\nI received a workspace file (Benford.RData which is attached) that was \ncreated within RGui (R 2.9.2). There are several functions defined in \nthis file; however, the creator of this workspace file has provided \ninformation that the first line of the original R text file contains:\n\nbenford.probs <- logb(2:10, 10) - logb(1:9, 10)\n\nMy questions are:\n1) How can I actually display (see) this line within RGui (or an \nexternal editor)? (I might wish to edit it.)\n2) What is the actual structure used for these workspace files (*.RData)?\n\n--Thank you,\nV. Stokes (a new comer to R)\n\n\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: Benford.RData\nType: application/octet-stream\nSize: 14065 bytes\nDesc: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091020/68213569/attachment.obj>",
+      "body_snippet": "I am not sure that this posting is appropriate for this list. If not, I \nwould appreciate information on what R language group that it should be \nposted to.\n\nI received a workspace file (Benford.RData",
+      "thread_id": "thread-9fe379ec49ed",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-f3364e8fe7be",
+      "message_id": "<4ADD77A9.8020409@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard",
+      "from_email_hash": "6970d38b63c93ff8b781d9787948d92fe2e7b4240149faca590409068c44b75c",
+      "date": "2009-10-20T10:41:13+02:00",
+      "subject": "[R-gui] Workspace files",
+      "subject_clean": "[R-gui] Workspace files",
+      "in_reply_to": "<4ADD6ED3.6060009@it.uu.se>",
+      "references": [
+        "<4ADD6ED3.6060009@it.uu.se>"
+      ],
+      "body_plain": "Virgil Stokes wrote:\n> I am not sure that this posting is appropriate for this list. If not, I\n> would appreciate information on what R language group that it should be\n> posted to.\n> \n> I received a workspace file (Benford.RData which is attached) that was\n> created within RGui (R 2.9.2). There are several functions defined in\n> this file; however, the creator of this workspace file has provided\n> information that the first line of the original R text file contains:\n> \n> benford.probs <- logb(2:10, 10) - logb(1:9, 10)\n> \n> My questions are:\n> 1) How can I actually display (see) this line within RGui (or an\n> external editor)? (I might wish to edit it.)\n> 2) What is the actual structure used for these workspace files (*.RData)?\n> \n> --Thank you,\n> V. Stokes (a new comer to R)\n\n(a) Yes, it's the wrong group. R-help is for general R questions like\nthis. R-gui for discussing graphical user interfaces.\n\n(b) Workspaces are just that. They contain a set of objects created by\ncomputations, not how they were generated. To see what has been done,\nthere may be a supplemental .Rhistory file, or the original .R script\nfile (+ raw data files).\n\n(c) You don't really want to know the structure of .RData files. They\ncontain a serialized encoding of internal R structures. The gory details\nare in the source code (src/main/serialize.c), if you insist.\n\n(d) Now why didn't he just do diff(log10(1:10)) ?\n\n-- \n   O__  ---- Peter Dalgaard             ?ster Farimagsgade 5, Entr.B\n  c/ /'_ --- Dept. of Biostatistics     PO Box 2099, 1014 Cph. K\n (*) \\(*) -- University of Copenhagen   Denmark      Ph:  (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard at biostat.ku.dk)              FAX: (+45) 35327907",
+      "body_snippet": "Virgil Stokes wrote:\n> I am not sure that this posting is appropriate for this list. If not, I\n> would appreciate information on what R language group that it should be\n> posted to.\n> \n> I received a ",
+      "thread_id": "thread-9fe379ec49ed",
+      "thread_depth": 1,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-78d9eee26c26",
+      "message_id": "<90306.63377.qm@web95415.mail.in2.yahoo.com>",
+      "from_name": "sanket janewoo",
+      "from_email_hash": "f3c3062841ea0e9d035be6f256cc2b6225a7400189a89334470be2d548072c55",
+      "date": "2009-10-22T21:08:28+05:30",
+      "subject": "[R-gui] creating package for GUI",
+      "subject_clean": "[R-gui] creating package for GUI",
+      "in_reply_to": "<mailman.401.1256225544.4166.r-sig-gui@stat.math.ethz.ch>",
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091022/c0a6bc9e/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091022/c0a6bc9e/attachment.pl>",
+      "thread_id": "thread-78d9eee26c26",
+      "thread_depth": 0,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-fa0979c70b68",
+      "message_id": "<4AE4D832.4040401@wehi.edu.au>",
+      "from_name": "Keith Satterley",
+      "from_email_hash": "76db1ee900961338dabfa6110de856031861d416050f04f1577a77475dee6838",
+      "date": "2009-10-26T09:58:58+11:00",
+      "subject": "[R-gui] creating package for GUI",
+      "subject_clean": "[R-gui] creating package for GUI",
+      "in_reply_to": "<90306.63377.qm@web95415.mail.in2.yahoo.com>",
+      "references": [
+        "<90306.63377.qm@web95415.mail.in2.yahoo.com>"
+      ],
+      "body_plain": "Hi Sanket,\n\nI'm not sure what you mean, but you may find James Wettenhall's R TclTk \nexamples useful at:\n\nhttp://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/\n\nYou may also wish to look at the source code for affylmGUI or limmaGUI \nwhich use TclTk for their GUI,\n\ncheers,\n\nKeith\n\n========================\nKeith Satterley\nBioinformatics Division\nThe Walter and Eliza Hall Institute of Medical Research\nParkville, Melbourne,\nVictoria, Australia\nemail:keith at wehi.edu.au\n=======================\n\n\n\nsanket janewoo wrote:\n> Dear brothers and sisters,\n>                                      i anyone tell me how to create a package after craeting a GUI using tcltk\n>  \n>\n>\n>\n>       From cricket scores to your friends. Try the Yahoo! India Homepage! http://in.yahoo.com/trynew\n> \t[[alternative HTML version deleted]]\n>\n>   \n> ------------------------------------------------------------------------\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Hi Sanket,\n\nI'm not sure what you mean, but you may find James Wettenhall's R TclTk \nexamples useful at:\n\nhttp://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/\n\nYou may also wish to look at the source",
+      "thread_id": "thread-78d9eee26c26",
+      "thread_depth": 1,
+      "month": "2009-10"
+    },
+    {
+      "id": "msg-c360298815f3",
+      "message_id": "<4AE4D976.3080703@wehi.edu.au>",
+      "from_name": "Keith Satterley",
+      "from_email_hash": "76db1ee900961338dabfa6110de856031861d416050f04f1577a77475dee6838",
+      "date": "2009-10-26T10:04:22+11:00",
+      "subject": "[R-gui] creating package for GUI",
+      "subject_clean": "[R-gui] creating package for GUI",
+      "in_reply_to": "<90306.63377.qm@web95415.mail.in2.yahoo.com>",
+      "references": [
+        "<90306.63377.qm@web95415.mail.in2.yahoo.com>"
+      ],
+      "body_plain": "Further to my recent post pointing to James Wettenhall's R TclTk \nexamples at the wehi.edu.au location. These examples have been copied \nand progressively updated by Phillip Grosjean at:\n\nhttp://www.sciviews.org/_rgui/tcltk/\n\ncheers,\n\nKeith\n\n========================\nKeith Satterley\nBioinformatics Division\nThe Walter and Eliza Hall Institute of Medical Research\nParkville, Melbourne,\nVictoria, Australia\n=======================\n\n\n\nsanket janewoo wrote:\n> Dear brothers and sisters,\n>                                      i anyone tell me how to create a package after craeting a GUI using tcltk\n>  \n>\n>\n>\n>       From cricket scores to your friends. Try the Yahoo! India Homepage! http://in.yahoo.com/trynew\n> \t[[alternative HTML version deleted]]\n>\n>   \n> ------------------------------------------------------------------------\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>",
+      "body_snippet": "Further to my recent post pointing to James Wettenhall's R TclTk \nexamples at the wehi.edu.au location. These examples have been copied \nand progressively updated by Phillip Grosjean at:\n\nhttp://www.s",
+      "thread_id": "thread-78d9eee26c26",
+      "thread_depth": 1,
+      "month": "2009-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-3db999e41a9f",
+      "subject": "[R-gui] Web based GUI",
+      "message_count": 4,
+      "participants": [
+        "Adrián Catón Oteiza",
+        "Felix Andrews",
+        "Jean Thioulouse",
+        "Wayne.W.Jones at shell.com"
+      ],
+      "started": "2009-10-14T16:23:07+02:00",
+      "last_reply": "2009-10-15T17:03:55+02:00",
+      "root_message_id": "msg-3db999e41a9f"
+    },
+    {
+      "id": "thread-9fe379ec49ed",
+      "subject": "[R-gui] Workspace files",
+      "message_count": 2,
+      "participants": [
+        "Peter Dalgaard",
+        "Virgil Stokes"
+      ],
+      "started": "2009-10-20T10:03:31+02:00",
+      "last_reply": "2009-10-20T10:41:13+02:00",
+      "root_message_id": "msg-9fe379ec49ed"
+    },
+    {
+      "id": "thread-78d9eee26c26",
+      "subject": "[R-gui] creating package for GUI",
+      "message_count": 3,
+      "participants": [
+        "Keith Satterley",
+        "sanket janewoo"
+      ],
+      "started": "2009-10-22T21:08:28+05:30",
+      "last_reply": "2009-10-26T10:04:22+11:00",
+      "root_message_id": "msg-78d9eee26c26"
+    }
+  ]
+}

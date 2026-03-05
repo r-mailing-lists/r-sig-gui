@@ -1,0 +1,56 @@
+From ostrouchovg at ornl.gov  Thu Apr 10 07:23:48 2008
+From: ostrouchovg at ornl.gov (George Ostrouchov)
+Date: Thu, 10 Apr 2008 01:23:48 -0400
+Subject: [R-gui] client-server R over sockets
+In-Reply-To: <mailman.13.1205578803.20716.r-sig-gui@stat.math.ethz.ch>
+References: <mailman.13.1205578803.20716.r-sig-gui@stat.math.ethz.ch>
+Message-ID: <47FDA464.8030104@ornl.gov>
+
+Is there an R gui that can provide a client-server interface to R over 
+sockets including X11 forwarding from the server?
+
+Normally under unix this can be effectively done with ssh -X to the 
+server and running R inside an xterm. But I am running R on a massively 
+parallel computer where only a reduced Linux is present so ssh is not 
+possible. It is however possible to communicate over sockets.
+
+Thanks,
+George
+
+-- 
+George Ostrouchov
+Statistics and Data Sciences Group
+Computer Science and Mathematics Division
+Oak Ridge National Laboratory
+865-574-3137  http://www.csm.ornl.gov/~ost
+
+
+From phgrosjean at sciviews.org  Tue Apr 15 11:21:17 2008
+From: phgrosjean at sciviews.org (Philippe Grosjean)
+Date: Tue, 15 Apr 2008 11:21:17 +0200
+Subject: [R-gui] client-server R over sockets
+In-Reply-To: <47FDA464.8030104@ornl.gov>
+References: <mailman.13.1205578803.20716.r-sig-gui@stat.math.ethz.ch>
+	<47FDA464.8030104@ornl.gov>
+Message-ID: <4804738D.8040000@sciviews.org>
+
+Take a look at Rserve or svSocket (in SciViews bundle). You may be happy 
+with one of those.
+Best,
+
+Philippe Grosjean
+
+George Ostrouchov wrote:
+> Is there an R gui that can provide a client-server interface to R over 
+> sockets including X11 forwarding from the server?
+> 
+> Normally under unix this can be effectively done with ssh -X to the 
+> server and running R inside an xterm. But I am running R on a massively 
+> parallel computer where only a reduced Linux is present so ssh is not 
+> possible. It is however possible to communicate over sockets.
+> 
+> Thanks,
+> George
+>
+
+

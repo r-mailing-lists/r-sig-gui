@@ -1,0 +1,128 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2010-01",
+  "messages": [
+    {
+      "id": "msg-a81936cba654",
+      "message_id": "<c40522e31001060518g1aa2cf92mb78414940d6e58ce@mail.gmail.com>",
+      "from_name": "zeljko krizek",
+      "from_email_hash": "21cb7f780c987c126eb8d4558918593a1df6f7b9e22d908035426e03df94db46",
+      "date": "2010-01-06T14:18:16+01:00",
+      "subject": "[R-gui] rJava- Question about a building R-GUI and Buttons Event",
+      "subject_clean": "[R-gui] rJava- Question about a building R-GUI and Buttons Event",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100106/ed0364cf/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100106/ed0364cf/attachment.pl>",
+      "thread_id": "thread-a81936cba654",
+      "thread_depth": 0,
+      "month": "2010-01"
+    },
+    {
+      "id": "msg-d0350ebc055f",
+      "message_id": "<loom.20100106T145539-63@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-01-06T14:02:09Z",
+      "subject": "[R-gui] rJava- Question about a building R-GUI and Buttons Event",
+      "subject_clean": "[R-gui] rJava- Question about a building R-GUI and Buttons Event",
+      "in_reply_to": null,
+      "references": [
+        "<c40522e31001060518g1aa2cf92mb78414940d6e58ce@mail.gmail.com>"
+      ],
+      "body_plain": "zeljko krizek <z.krizek <at> gmail.com> writes:\n\n> \n> Hi there,\n> \n> can someone say tome is there a sample of Buling simple GUI Window in R\n> using rJava package. In this window should be also one button with handling\n> (in R) of click event.\n> \n> If some one press this button in window, that I can catch this event wiht  R\n> or Java function\n> to start some user code to start simple calculation.\n> \n\nDear Zak,\n\nIn the gWidgetsrJava package is some code to deal with this that is mostly taken\nfrom Simon Urbanek's iWidgets package. It is a bit of a chore to track down as\nthere is some R code and a Java class. If you aren't committed to rJava (you\nmentioned rpanel) the RGtk2 package is much easier to use from within R.\n\n--John\n\n> Similar functionality as in package RPanel but without bugs in with\n> list-object.\n> \n..snip..\n> \n> Thanks\n> in advance\n> \n> Zak\n> \n> \t[[alternative HTML version deleted]]\n>",
+      "body_snippet": "zeljko krizek <z.krizek <at> gmail.com> writes:\n\n> \n> Hi there,\n> \n> can someone say tome is there a sample of Buling simple GUI Window in R\n> using rJava package. In this window should be also one bu",
+      "thread_id": "thread-a81936cba654",
+      "thread_depth": 1,
+      "month": "2010-01"
+    },
+    {
+      "id": "msg-d055d842dc02",
+      "message_id": "<c40522e31001111428p6a5fc06cib534bc767c3f84b5@mail.gmail.com>",
+      "from_name": "zeljko krizek",
+      "from_email_hash": "21cb7f780c987c126eb8d4558918593a1df6f7b9e22d908035426e03df94db46",
+      "date": "2010-01-11T23:28:38+01:00",
+      "subject": "[R-gui] Question about a gTable in r package \"gWidgets\"",
+      "subject_clean": "[R-gui] Question about a gTable in r package \"gWidgets\"",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100111/59047497/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100111/59047497/attachment.pl>",
+      "thread_id": "thread-d055d842dc02",
+      "thread_depth": 0,
+      "month": "2010-01"
+    },
+    {
+      "id": "msg-7729ea1b7c82",
+      "message_id": "<loom.20100112T164931-899@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-01-12T15:52:57Z",
+      "subject": "[R-gui] Question about a gTable in r package &quot; gWidgets&quot; ",
+      "subject_clean": "[R-gui] Question about a gTable in r package &quot; gWidgets&quot;",
+      "in_reply_to": null,
+      "references": [
+        "<c40522e31001111428p6a5fc06cib534bc767c3f84b5@mail.gmail.com>"
+      ],
+      "body_plain": "zeljko krizek <z.krizek <at> gmail.com> writes:\n\n> \n> Hi there !\n> \n> Can someone say to me (send a sample) how can I select one value in a\n> populated gTable element without to click in a list.\n> \n> The scope is following.\n> \n> I want to populate such a gTable with a list of entries and to make a kind\n> of sugestion to the user, i want to select first element in the list before\n> user can make any action.\n> \n> I found the method svalue().\n> With this method I can only get already selected value but I cannot select\n> anything programmatically in a gTable.\n\nDear Zak, that method can select programaticaly by row index or value:\n\ng <- gtable(mtcars, cont = gwindow(\"test\"))\nsvalue(g, index=TRUE) <- 1 ## by index\nsvalue(g) <- 22.8          ## or by value\n\nFor the latter, the constructor has an argument chosencol, which by default is\nthe first column. In this example, the values aren't unique, so the choice is\nmaybe not as expected.\n\n--John\n\n\n> \n> Thanks in advance\n> \n> Zak\n> \n> \t[[alternative HTML version deleted]]\n>",
+      "body_snippet": "zeljko krizek <z.krizek <at> gmail.com> writes:\n\n> \n> Hi there !\n> \n> Can someone say to me (send a sample) how can I select one value in a\n> populated gTable element without to click in a list.\n> \n> ",
+      "thread_id": "thread-d055d842dc02",
+      "thread_depth": 1,
+      "month": "2010-01"
+    },
+    {
+      "id": "msg-b8fe4177e585",
+      "message_id": "<loom.20100115T215545-706@post.gmane.org>",
+      "from_name": "john verzani",
+      "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
+      "date": "2010-01-15T21:03:37Z",
+      "subject": "[R-gui] [ANN] New package traitr for producing GUIs",
+      "subject_clean": "[R-gui] [ANN] New package traitr for producing GUIs",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear list,\n\nI found myself reading the manual for the Traits UI python module and thought it\nsounded like a neat way to write basic dialogs. As such, I made a package,\ntraitr, that somewhat follows the spirit of that python module. The basic idea\nis that one specifies a model for a GUI using a set of predefined item types.\n(The GUI is provided by gWidgetsRGtk2.) The view for the model can be automatic,\nor customized with a fairly simple syntax. The controller aspect is implemented\nby defining suitably named methods. The vignette gives several examples. It\nsimplifies the writing of basic GUIs, which is a far as I've gone with it as of\nnow. \n\nhttp://cran.r-project.org/web/packages/traitr/index.html\n\nComments and suggestions are most welcome. --John",
+      "body_snippet": "Dear list,\n\nI found myself reading the manual for the Traits UI python module and thought it\nsounded like a neat way to write basic dialogs. As such, I made a package,\ntraitr, that somewhat follows th",
+      "thread_id": "thread-b8fe4177e585",
+      "thread_depth": 0,
+      "month": "2010-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-a81936cba654",
+      "subject": "[R-gui] rJava- Question about a building R-GUI and Buttons Event",
+      "message_count": 2,
+      "participants": [
+        "john verzani",
+        "zeljko krizek"
+      ],
+      "started": "2010-01-06T14:18:16+01:00",
+      "last_reply": "2010-01-06T14:02:09+00:00",
+      "root_message_id": "msg-a81936cba654"
+    },
+    {
+      "id": "thread-d055d842dc02",
+      "subject": "[R-gui] Question about a gTable in r package \"gWidgets\"",
+      "message_count": 2,
+      "participants": [
+        "john verzani",
+        "zeljko krizek"
+      ],
+      "started": "2010-01-11T23:28:38+01:00",
+      "last_reply": "2010-01-12T15:52:57+00:00",
+      "root_message_id": "msg-d055d842dc02"
+    },
+    {
+      "id": "thread-b8fe4177e585",
+      "subject": "[R-gui] [ANN] New package traitr for producing GUIs",
+      "message_count": 1,
+      "participants": [
+        "john verzani"
+      ],
+      "started": "2010-01-15T21:03:37+00:00",
+      "last_reply": "2010-01-15T21:03:37+00:00",
+      "root_message_id": "msg-b8fe4177e585"
+    }
+  ]
+}

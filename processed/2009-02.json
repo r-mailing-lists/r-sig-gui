@@ -1,0 +1,174 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2009-02",
+  "messages": [
+    {
+      "id": "msg-b7bcef5cd73d",
+      "message_id": "<1234448162351-2315072.post@n2.nabble.com>",
+      "from_name": "joe85",
+      "from_email_hash": "a6b51108c55a6598ef59678e48b4c867b4c8e047e1c8c76c70a5248b6c377c94",
+      "date": "2009-02-12T06:16:02-08:00",
+      "subject": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
+      "subject_clean": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello\n\nI want to make some variables with the ifelse-function, but i don't know how\nto do it.\n\nI want to make these five variables;\n\nb2$PRRSvac <- ifelse(b2$status=='A' | b2$status=='Aa',1,0) \nb2$PRRSdk <- ifelse(b2$status=='B' | b2$status=='Bb',1,0) \nb2$sanVac <- ifelse(b2$status=='C' | b2$status=='sanAa',1,0) \nb2$sanDk <- ifelse(b2$status=='D'  | b2$status=='sanBb',1,0) \nb2$totalvac <- ifelse(b2$status=='San',1,0)\n\nAnd \n\nb2$UGT <- ifelse(b2$status=='UGT',1,0)\nb2$KOM <- ifelse(b2$status=='KOM',1,0)\n\nBut, as one from this forum told me, it doesn't work because the words is in\na wrong format or something like that. \n\nI have attached the text-file i've used, and the R-kode. \n\nHope anyone can help me?\n\n text-file;\n \nhttp://n2.nabble.com/file/n2315072/allesd%2528uden%2Bf%25C3%25B8r%2529060209.txt\nallesd%28uden+f%C3%B8r%29060209.txt \n\nR-kode (just run from line 1-22)\nhttp://n2.nabble.com/file/n2315072/PRRS%2B%2528med%2Ballle%2BSD%2529.r\nPRRS+%28med+allle+SD%29.r \n-- \nView this message in context: http://n2.nabble.com/extracting-parts-of-words-or-extraxting-letter-to-use-in-ifelse-func.-tp2315072p2315072.html\nSent from the R Sig Gui mailing list archive at Nabble.com.",
+      "body_snippet": "Hello\n\nI want to make some variables with the ifelse-function, but i don't know how\nto do it.\n\nI want to make these five variables;\n\nb2$PRRSvac <- ifelse(b2$status=='A' | b2$status=='Aa',1,0) \nb2$PRRS",
+      "thread_id": "thread-b7bcef5cd73d",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-fc88b28dd576",
+      "message_id": "<18837.12972.516713.856473@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2009-02-13T09:43:24+01:00",
+      "subject": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
+      "subject_clean": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
+      "in_reply_to": "<1234448162351-2315072.post@n2.nabble.com>",
+      "references": [
+        "<1234448162351-2315072.post@n2.nabble.com>"
+      ],
+      "body_plain": ">>>>> \"j\" == joe85  <johannes at dsr.life.ku.dk>\n>>>>>     on Thu, 12 Feb 2009 06:16:02 -0800 (PST) writes:\n\n    j> Hello\n\n    j> I want to make some variables with the ifelse-function, but i don't know how\n    j> to do it.\n\n    j> I want to make these five variables;\n\n    j> b2$PRRSvac <- ifelse(b2$status=='A' | b2$status=='Aa',1,0) \n    j> b2$PRRSdk <- ifelse(b2$status=='B' | b2$status=='Bb',1,0) \n    j> b2$sanVac <- ifelse(b2$status=='C' | b2$status=='sanAa',1,0) \n    j> b2$sanDk <- ifelse(b2$status=='D'  | b2$status=='sanBb',1,0) \n    j> b2$totalvac <- ifelse(b2$status=='San',1,0)\n\n    j> And \n\n    j> b2$UGT <- ifelse(b2$status=='UGT',1,0)\n    j> b2$KOM <- ifelse(b2$status=='KOM',1,0)\n\nWhat has this to do with  R-gui ??????\n\nPlease use  R-help  for such questions !!!\n\nMartin Maechler, ETH Zurich\n\n\n        [................]",
+      "body_snippet": ">>>>> \"j\" == joe85  <johannes at dsr.life.ku.dk>\n>>>>>     on Thu, 12 Feb 2009 06:16:02 -0800 (PST) writes:\n\n    j> Hello\n\n    j> I want to make some variables with the ifelse-function, but i don't kn",
+      "thread_id": "thread-b7bcef5cd73d",
+      "thread_depth": 1,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-e277d15eae86",
+      "message_id": "<499DBE51.4080409@gmx.de>",
+      "from_name": "M. Tempelhagen",
+      "from_email_hash": "caa3cd6044da4aa88bf40f4b36c99086d0f8193fdff360e8116789e4795185af",
+      "date": "2009-02-19T21:17:21+01:00",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "subject_clean": "[R-gui] tk2mclistbox problem",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello\n\nI?m working with the tcltk2 package and everything works fine. But since \nR 2.7 my tk2mclistboxe produce an \"tk application error\".\nI try the standard tk2mclistbox example from the tcltk2 documentation\n############################################################\ntt2 <- tktoplevel()\nmlb <- tk2mclistbox(tt2, width = 55, resizablecolumns = TRUE)\n# Define the columns\ntk2column(mlb, \"add\", \"name\", label = \"First name\", width = 20)\ntk2column(mlb, \"add\", \"lastname\", label = \"Last name\", width = 20)\ntk2column(mlb, \"add\", \"org\", label = \"Organisation\", width = 15)\ntkgrid(mlb)\n# Fill the multicolumn list (we can use a vector, or a matrix of \ncharacter strings)\nitem1 <- c(\"Bryan\", \"Oackley\", \"ChannelPoint\")\nitems <- matrix(c(\"John\", \"Ousterhout\", \"Scriptics\",\n    \"Steve\", \"Miller\", \"TclTk inc.\"), ncol = 3, byrow = TRUE)\ntk2insert.multi(mlb, \"end\", item1)\ntk2insert.multi(mlb, \"end\", items)\n#### TO DO: bind events\n# Ex: .listbox label bind date <ButtonPress-1> \"sortByDate\n# See the example.tcl in .\\libs\\mclistbox1.02 for a more complex example\n# Create a button to close the dialog box\nbut <- tk2button(tt2, text = \"OK\", width = 10,\n    command = function() tkdestroy(tt2))\ntkgrid(but)\n############################################################\n\nwhenever I click in one of the columns the following message occurs on \nthe screen\n\n################################################################################\nunknown option \"-state\"; must be one of -background, -bd, -bg, \n-borderwidth, -columnbd, -columnborderwidth, -columnrelief, -cursor, \n-exportselection, -fg, -fillcolumn, -font, -foreground, -height, \n-highlightbackground, -highlightcolor, -highlightthickness, \n-labelanchor, -labelbackground, -labelbd, -labelbg, -labelborderwidth, \n-labelfg, -labelfont, -labelforeground, -labelheight, -labelimage, \n-labelrelief, -labels, -relief, -resizablecolumns, -selectbackground, \n-selectborderwidth, -selectcommand, -selectforeground, -selectmode, \n-setgrid, -takefocus, -width, -xscrollcommand or -yscrollcommand\n   while executing\n\"error \"unknown $object \\\"$opt\\\"; must be one of $choices\"\"\n   (procedure \"::mclistbox::Canonize\" line 93)\n   invoked from within\n\"::mclistbox::Canonize $w option [lindex $args 0]\"\n   (procedure \"::mclistbox::WidgetProc\" line 211)\n   invoked from within\n\"::mclistbox::WidgetProc .1.1 cget -state\"\n   (\"eval\" body line 1)\n   invoked from within\n\"eval ::mclistbox::WidgetProc {.1.1} $command $args\"\n   (procedure \".1.1\" line 1)\n   invoked from within\n\"$w cget -state\"\n   (procedure \"tk::ListboxBeginSelect\" line 18)\n   invoked from within\n\"tk::ListboxBeginSelect [::mclistbox::convert .1.1.framelastname.listbox \n-W] [[::mclistbox::convert .1.1.framelastname.listbox -W] index \n@[::mclistbox:...\"\n   invoked from within\n\"if {[winfo exists [::mclistbox::convert .1.1.framelastname.listbox -W]]} {\n   tk::ListboxBeginSelect [::mclistbox::convert \n.1.1.framelastname.listbox -W...\"\n   (command bound to event)  \n#################################################################################### \n \n\nand I have to skip the message to continue. This problem occurs with R \n2.7 & 2.8 on Windows XP and Windows Vista.\nSo here are my questions\n1. Is there any option to switch off the message permanently ?\n2. Does anybody know how to solve the problem, because I don?t want to \nedit all my applications\n\nbest regards\nMarcel",
+      "body_snippet": "Hello\n\nI?m working with the tcltk2 package and everything works fine. But since \nR 2.7 my tk2mclistboxe produce an \"tk application error\".\nI try the standard tk2mclistbox example from the tcltk2 docum",
+      "thread_id": "thread-e277d15eae86",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-8031ac1f5c9f",
+      "message_id": "<499DBF26.5060002@googlemail.com>",
+      "from_name": "M. Tempelhagen",
+      "from_email_hash": "23a3a04f26db2df476f5ea21946596dc971c544df546918db3c67d631e4f60bd",
+      "date": "2009-02-19T21:20:54+01:00",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "subject_clean": "[R-gui] tk2mclistbox problem",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello\n\nI?m working with the tcltk2 package and everything works fine. But since \nR 2.7 my tk2mclistboxe produce an \"tk application error\".\nI try the standard tk2mclistbox example from the tcltk2 documentation\n############################################################\ntt2 <- tktoplevel()\nmlb <- tk2mclistbox(tt2, width = 55, resizablecolumns = TRUE)\n# Define the columns\ntk2column(mlb, \"add\", \"name\", label = \"First name\", width = 20)\ntk2column(mlb, \"add\", \"lastname\", label = \"Last name\", width = 20)\ntk2column(mlb, \"add\", \"org\", label = \"Organisation\", width = 15)\ntkgrid(mlb)\n# Fill the multicolumn list (we can use a vector, or a matrix of \ncharacter strings)\nitem1 <- c(\"Bryan\", \"Oackley\", \"ChannelPoint\")\nitems <- matrix(c(\"John\", \"Ousterhout\", \"Scriptics\",\n\"Steve\", \"Miller\", \"TclTk inc.\"), ncol = 3, byrow = TRUE)\ntk2insert.multi(mlb, \"end\", item1)\ntk2insert.multi(mlb, \"end\", items)\n#### TO DO: bind events\n# Ex: .listbox label bind date <ButtonPress-1> \"sortByDate\n# See the example.tcl in .\\libs\\mclistbox1.02 for a more complex example\n# Create a button to close the dialog box\nbut <- tk2button(tt2, text = \"OK\", width = 10,\ncommand = function() tkdestroy(tt2))\ntkgrid(but)\n############################################################\n\nwhenever I click in one of the columns the following message occurs on \nthe screen\n\n################################################################################ \n\nunknown option \"-state\"; must be one of -background, -bd, -bg, \n-borderwidth, -columnbd, -columnborderwidth, -columnrelief, -cursor, \n-exportselection, -fg, -fillcolumn, -font, -foreground, -height, \n-highlightbackground, -highlightcolor, -highlightthickness, \n-labelanchor, -labelbackground, -labelbd, -labelbg, -labelborderwidth, \n-labelfg, -labelfont, -labelforeground, -labelheight, -labelimage, \n-labelrelief, -labels, -relief, -resizablecolumns, -selectbackground, \n-selectborderwidth, -selectcommand, -selectforeground, -selectmode, \n-setgrid, -takefocus, -width, -xscrollcommand or -yscrollcommand\nwhile executing\n\"error \"unknown $object \\\"$opt\\\"; must be one of $choices\"\"\n(procedure \"::mclistbox::Canonize\" line 93)\ninvoked from within\n\"::mclistbox::Canonize $w option [lindex $args 0]\"\n(procedure \"::mclistbox::WidgetProc\" line 211)\ninvoked from within\n\"::mclistbox::WidgetProc .1.1 cget -state\"\n(\"eval\" body line 1)\ninvoked from within\n\"eval ::mclistbox::WidgetProc {.1.1} $command $args\"\n(procedure \".1.1\" line 1)\ninvoked from within\n\"$w cget -state\"\n(procedure \"tk::ListboxBeginSelect\" line 18)\ninvoked from within\n\"tk::ListboxBeginSelect [::mclistbox::convert .1.1.framelastname.listbox \n-W] [[::mclistbox::convert .1.1.framelastname.listbox -W] index \n@[::mclistbox:...\"\ninvoked from within\n\"if {[winfo exists [::mclistbox::convert .1.1.framelastname.listbox -W]]} {\ntk::ListboxBeginSelect [::mclistbox::convert .1.1.framelastname.listbox \n-W...\"\n(command bound to event) \n#################################################################################### \n\n\nand I have to skip the message to continue. This problem occurs with R \n2.7 & 2.8 on Windows XP and Windows Vista.\nSo here are my questions\n1. Is there any option to switch off the message permanently ?\n2. Does anybody know how to solve the problem, because I don?t want to \nedit all my applications\n\nbest regards\nMarcel",
+      "body_snippet": "Hello\n\nI?m working with the tcltk2 package and everything works fine. But since \nR 2.7 my tk2mclistboxe produce an \"tk application error\".\nI try the standard tk2mclistbox example from the tcltk2 docum",
+      "thread_id": "thread-8031ac1f5c9f",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-beed85bd7d1a",
+      "message_id": "<499E642E.8020506@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2009-02-20T09:05:02+01:00",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "subject_clean": "[R-gui] tk2mclistbox problem",
+      "in_reply_to": "<499DBE51.4080409@gmx.de>",
+      "references": [
+        "<499DBE51.4080409@gmx.de>"
+      ],
+      "body_plain": "Hello,\n\nI am looking at this problem today.\nBest,\n\nPhilippe Grosjean\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( (    Numerical Ecology of Aquatic Systems\n  ) ) ) ) )   Mons-Hainaut University, Belgium\n( ( ( ( (\n..............................................................\n\nM. Tempelhagen wrote:\n> Hello\n> \n> I?m working with the tcltk2 package and everything works fine. But since \n> R 2.7 my tk2mclistboxe produce an \"tk application error\".\n> I try the standard tk2mclistbox example from the tcltk2 documentation\n> ############################################################\n> tt2 <- tktoplevel()\n> mlb <- tk2mclistbox(tt2, width = 55, resizablecolumns = TRUE)\n> # Define the columns\n> tk2column(mlb, \"add\", \"name\", label = \"First name\", width = 20)\n> tk2column(mlb, \"add\", \"lastname\", label = \"Last name\", width = 20)\n> tk2column(mlb, \"add\", \"org\", label = \"Organisation\", width = 15)\n> tkgrid(mlb)\n> # Fill the multicolumn list (we can use a vector, or a matrix of \n> character strings)\n> item1 <- c(\"Bryan\", \"Oackley\", \"ChannelPoint\")\n> items <- matrix(c(\"John\", \"Ousterhout\", \"Scriptics\",\n>    \"Steve\", \"Miller\", \"TclTk inc.\"), ncol = 3, byrow = TRUE)\n> tk2insert.multi(mlb, \"end\", item1)\n> tk2insert.multi(mlb, \"end\", items)\n> #### TO DO: bind events\n> # Ex: .listbox label bind date <ButtonPress-1> \"sortByDate\n> # See the example.tcl in .\\libs\\mclistbox1.02 for a more complex example\n> # Create a button to close the dialog box\n> but <- tk2button(tt2, text = \"OK\", width = 10,\n>    command = function() tkdestroy(tt2))\n> tkgrid(but)\n> ############################################################\n> \n> whenever I click in one of the columns the following message occurs on \n> the screen\n> \n> ################################################################################ \n> \n> unknown option \"-state\"; must be one of -background, -bd, -bg, \n> -borderwidth, -columnbd, -columnborderwidth, -columnrelief, -cursor, \n> -exportselection, -fg, -fillcolumn, -font, -foreground, -height, \n> -highlightbackground, -highlightcolor, -highlightthickness, \n> -labelanchor, -labelbackground, -labelbd, -labelbg, -labelborderwidth, \n> -labelfg, -labelfont, -labelforeground, -labelheight, -labelimage, \n> -labelrelief, -labels, -relief, -resizablecolumns, -selectbackground, \n> -selectborderwidth, -selectcommand, -selectforeground, -selectmode, \n> -setgrid, -takefocus, -width, -xscrollcommand or -yscrollcommand\n>   while executing\n> \"error \"unknown $object \\\"$opt\\\"; must be one of $choices\"\"\n>   (procedure \"::mclistbox::Canonize\" line 93)\n>   invoked from within\n> \"::mclistbox::Canonize $w option [lindex $args 0]\"\n>   (procedure \"::mclistbox::WidgetProc\" line 211)\n>   invoked from within\n> \"::mclistbox::WidgetProc .1.1 cget -state\"\n>   (\"eval\" body line 1)\n>   invoked from within\n> \"eval ::mclistbox::WidgetProc {.1.1} $command $args\"\n>   (procedure \".1.1\" line 1)\n>   invoked from within\n> \"$w cget -state\"\n>   (procedure \"tk::ListboxBeginSelect\" line 18)\n>   invoked from within\n> \"tk::ListboxBeginSelect [::mclistbox::convert .1.1.framelastname.listbox \n> -W] [[::mclistbox::convert .1.1.framelastname.listbox -W] index \n> @[::mclistbox:...\"\n>   invoked from within\n> \"if {[winfo exists [::mclistbox::convert .1.1.framelastname.listbox -W]]} {\n>   tk::ListboxBeginSelect [::mclistbox::convert \n> .1.1.framelastname.listbox -W...\"\n>   (command bound to event)  \n> #################################################################################### \n> \n> \n> and I have to skip the message to continue. This problem occurs with R \n> 2.7 & 2.8 on Windows XP and Windows Vista.\n> So here are my questions\n> 1. Is there any option to switch off the message permanently ?\n> 2. Does anybody know how to solve the problem, because I don?t want to \n> edit all my applications\n> \n> best regards\n> Marcel\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hello,\n\nI am looking at this problem today.\nBest,\n\nPhilippe Grosjean\n..............................................<?}))><........\n  ) ) ) ) )\n( ( ( ( (    Prof. Philippe Grosjean\n  ) ) ) ) )\n( ( ( ( ",
+      "thread_id": "thread-e277d15eae86",
+      "thread_depth": 1,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-eba7735c1ba4",
+      "message_id": "<84DE52FA33C843C58A2183633282B0C9@heinser001>",
+      "from_name": "Felix Heinser",
+      "from_email_hash": "36e28aa21374caf2d9d73d8a324053df4cbd69c276857b0dfeb2ebdbad253fcd",
+      "date": "2009-02-20T16:35:19+01:00",
+      "subject": "[R-gui] Tinn-R Error message",
+      "subject_clean": "[R-gui] Tinn-R Error message",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090220/4e457e83/attachment.pl>",
+      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090220/4e457e83/attachment.pl>",
+      "thread_id": "thread-eba7735c1ba4",
+      "thread_depth": 0,
+      "month": "2009-02"
+    },
+    {
+      "id": "msg-002363916017",
+      "message_id": "<18850.28714.116952.186460@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2009-02-23T10:45:14+01:00",
+      "subject": "[R-gui] Tinn-R Error message",
+      "subject_clean": "[R-gui] Tinn-R Error message",
+      "in_reply_to": "<84DE52FA33C843C58A2183633282B0C9@heinser001>",
+      "references": [
+        "<84DE52FA33C843C58A2183633282B0C9@heinser001>"
+      ],
+      "body_plain": ">>>>> \"FH\" == Felix Heinser <felix.heinser at gmx.net>\n>>>>>     on Fri, 20 Feb 2009 16:35:19 +0100 writes:\n\n    FH> Dear Claudio Faria I have installed R and Tinn R on a\n    FH> new computer with windows XP\n\n \n\n    FH> I start R and Tinn R version 2.2.02\n\n    FH> When I try to send commands to R I get an error message:\n\n \n\n    FH> \"Fehler in source(.trPath[5], echo=TRUE,\n    FH> max.deparse.length = 150):\n\n    FH> Objekt \"tr.Path\" nicht gefunden\"\n\nI'm pretty sure you rather got\n \n        Objekt \".trPath\" nicht gefunden  \n\n(spelling!) which in English is something like\n\n        object \".trPath\" not found\n\nWe've started teaching last week, a class in which the students\nmust use R, and we've recommended Tinn-R for the Windoze users.\n\nSeveral students have experienced the same problem when they\ntried to send  >>> the selection / selected region <<< to the R\nprocess. \nI'm sorry to say that I was a bit disappointed by that problem.\nI vaguely recall our TA found that it was somehow linked to a\nwrite permission problem of the student in question.\n\nRegards,\nMartin Maechler, ETH Zurich\n\n\n    Fh> What can I do to avoid this error.\n\n \n    FH> Many thanks and best regards\n\n\n    FH> Felix Heinser\n\n    FH> _______________________________________________\n    FH> R-SIG-GUI mailing list R-SIG-GUI at stat.math.ethz.ch\n    FH> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": ">>>>> \"FH\" == Felix Heinser <felix.heinser at gmx.net>\n>>>>>     on Fri, 20 Feb 2009 16:35:19 +0100 writes:\n\n    FH> Dear Claudio Faria I have installed R and Tinn R on a\n    FH> new computer with win",
+      "thread_id": "thread-eba7735c1ba4",
+      "thread_depth": 1,
+      "month": "2009-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-b7bcef5cd73d",
+      "subject": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
+      "message_count": 2,
+      "participants": [
+        "Martin Maechler",
+        "joe85"
+      ],
+      "started": "2009-02-12T06:16:02-08:00",
+      "last_reply": "2009-02-13T09:43:24+01:00",
+      "root_message_id": "msg-b7bcef5cd73d"
+    },
+    {
+      "id": "thread-e277d15eae86",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "message_count": 2,
+      "participants": [
+        "M. Tempelhagen",
+        "Philippe Grosjean"
+      ],
+      "started": "2009-02-19T21:17:21+01:00",
+      "last_reply": "2009-02-20T09:05:02+01:00",
+      "root_message_id": "msg-e277d15eae86"
+    },
+    {
+      "id": "thread-8031ac1f5c9f",
+      "subject": "[R-gui] tk2mclistbox problem",
+      "message_count": 1,
+      "participants": [
+        "M. Tempelhagen"
+      ],
+      "started": "2009-02-19T21:20:54+01:00",
+      "last_reply": "2009-02-19T21:20:54+01:00",
+      "root_message_id": "msg-8031ac1f5c9f"
+    },
+    {
+      "id": "thread-eba7735c1ba4",
+      "subject": "[R-gui] Tinn-R Error message",
+      "message_count": 2,
+      "participants": [
+        "Felix Heinser",
+        "Martin Maechler"
+      ],
+      "started": "2009-02-20T16:35:19+01:00",
+      "last_reply": "2009-02-23T10:45:14+01:00",
+      "root_message_id": "msg-eba7735c1ba4"
+    }
+  ]
+}
