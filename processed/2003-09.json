@@ -1,0 +1,287 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-09",
+  "messages": [
+    {
+      "id": "msg-9f89ce09efe6",
+      "message_id": "<Pine.LNX.4.44.0309012346260.11159-100000@unix28.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2003-09-01T16:15:09Z",
+      "subject": "[R-gui] Re: [MACTCL] Re: X11 Tktable SUCCESS!!! (fwd)",
+      "subject_clean": "[R-gui] Re: [MACTCL] Re: X11 Tktable SUCCESS!!! (fwd)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nAfter a few failed attempts, I finally got the Tktable \nextension working in R on MacOS X, and I even did it without \na root password ;-)  I can write these instructions out more \nclearly later on, but if you're interested now, read on...\n\nAfter advice from Jan de Leeuw on\nhttp://lists.sourceforge.net/lists/listinfo/tcl-mac\nI learnt that if you want to use R/TclTk on MacOS X you have \nto choose between Aqua and X11.  RAqua is still quite new, and \nmay not work reliably with TkAqua until R 1.8.0 in October.  You \ncan download an X11/Darwin compatible R 1.7.0 or 1.7.1 from \nJan's webpage:\nhttp://gifi.stat.ucla.edu/pub/index.php\n\nThe R 1.7.0 is nice, because it comes bundled with lots of \nextra R packages as well as base, so I chose this version.\n\nYou can get X11 from\nhttp://www.apple.com/macosx/x11/download/\n\nR 1.7.0 uses fink (a package manager which puts packages in \n/sw/\n(\"software\") ) but R 1.7.1 does not.\n\nI think you need the Apple Developer Tools to run fink.  \nYou certainly need them to build Tktable from source.  A\nMacOS X machine should come with a Developer Tools CD.  \nThis gives you gcc (C compiler) etc.  See:\nhttp://developer.apple.com/tools/\n\nThe important thing to realize is that Aqua Tcl/Tk and X11\nTcl/Tk are NOT compatible with each other.  If you \naccidentally combine them, you can get strange errors like:\n  Unknown color name \"systemWindowBody\"\n\nIf you want X11 versions of tcl/tk, you can install them \nusing fink (a package manager) :\nhttp://fink.sourceforge.net\nand this will (by default) put tcl and tk in\n/sw/lib/\n\nThen from R, if you type\n> library(tcltk)\n> tclvalue(\"auto_path\")\n[1] \"/sw/lib/tcl8.4 /sw/lib ./lib /sw/lib/tk8.4 \n/usr/local/lib/R/library/tcltk/exec\"\n\nyou should see only X11-compatible tcl/tk directories, where \nthe \"sw\" (\"software\") directories have been installed by fink.\n\nIf you make the mistake I made:\n> addTclPath(\"/Library/Tcl\")          (WRONG!!!)\n\nthen you will probably be adding Aqua Tcl/Tk to the search \npath, which can lead to strange errors.\n\nSo to build an X11-compatible Tktable binary (not available \nin fink yet), I downloaded the Tktable source from :\nhttp://tktable.sourceforge.net/\nand downloaded the tcl and tk source from :\nhttp://www.tcl.tk/\nand downloaded X11 source from :\nhttp://developer.apple.com/darwin/projects/X11/index.html\nMaybe the Apple X11 SDK would have been easier. See:\nhttp://www.apple.com/macosx/x11/download/\n(bottom right-hand corner of webpage)\nbut it required a root password to install, so\nI built the X11 source instead.\n\nI unzipped and untarred the source packages into:\n/Users/guest/tcltk/tcl8.4.4/\n/Users/guest/tcltk/tk8.4.4/\n/Users/guest/tcltk/Tktable2.8/\n/Users/guest/X11ForMacOSXSource-wwdc/\n\nX11 was easy to build with\nmake\nwhich I ran from the directory \n/Users/guest/X11ForMacOSXSource-wwdc/xc/\nbut it took a very long time!!!\n\ntcl and tk were also easy to build with\nmake \nrun from within the directories:\n/Users/guest/tcltk/tcl8.4.4/macosx/\nand\n/Users/guest/tcltk/tk8.4.4/macosx/\nrespectively.\ntcl and tk also took a long time to build,  but they were \nquicker than X11.   \n\nResults of the tcl and tk builds appeared in :\n/Users/guest/tcltk/build/\n\n\nHere is the configure command I used inside the directory\n/Users/guest/tcltk/Tktable2.8/    \n\n./configure --prefix=/sw --with-tcl=/sw/lib \\\n--with-tk=/sw/lib \\\n--with-tclinclude=/Users/guest/tcltk/tcl8.4.4 \\\n--with-tkinclude=/Users/guest/tcltk/tk8.4.4\n\n[ If fink had installed source as well as binaries in \n/sw/ I might not have needed the --with-tclinclude and \n--with-tkinclude options. ]\n\nRather than edit the X11 paths in the configure script, I \njust ran make and let it fail (because it couldn't find \n-lX11), then I rewrote the linking command, adding the \ncorrect library paths:\n\n% cc -dynamiclib -o libTktable2.8.dylib tkTable.o \\\ntkTableWin.o tkTableTag.o tkTableEdit.o tkTableCell.o \\\ntkTableCellSort.o tkTableCmds.o tkTableUtil.o \\\n-L/Users/guest/X11ForMacOSXSource-wwdc/xc/lib/X11 \\ \n-lX11 -L/Users/guest/tcltk/build/Tcl.framework \\\n-ltclstub8.4 -L/Users/guest/tcltk/build/Tk.framework \\\n-ltkstub8.4\n\nNow libTktable2.8.dylib has been created successfully!\n\n% mkdir /Users/guest/Tktable2.8\n% cd /Users/guest/Tktable2.8\n% cp /Users/guest/tcltk/Tktable2.8/libTktable2.8.dylib .\n% cp /Library/Tcl/Tktable2.8/pkgIndex.tcl .\n% cat pkgIndex.tcl\nif {[catch {package require Tcl 8.2}]} return\npackage ifneeded Tktable 2.8 [list load [file join $dir \nlibTktable2.8.dylib] Tktable]\n\nWhen I get an administrator to log in with root access, the \nTktable2.8 directory I created can be copied inside /sw/lib\nbut for now I can just use addTclPath(\"/Users/guest\").\n\n% R\n> library(tcltk)\n> addTclPath(\"/Users/guest\")\n> tclRequire(\"Tktable\")\n> tt <- tktoplevel()\n> table1 <- tkwidget(tt,\"table\",bg=\"white\")\n> tkpack(table1)\n\nLooks beautiful!\n\nRegards,\nJames",
+      "body_snippet": "Hi,\n\nAfter a few failed attempts, I finally got the Tktable \nextension working in R on MacOS X, and I even did it without \na root password ;-)  I can write these instructions out more \nclearly later o",
+      "thread_id": "thread-9f89ce09efe6",
+      "thread_depth": 0,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-0aab9c52d06b",
+      "message_id": "<1063022327.12470.19.camel@gandalf.local>",
+      "from_name": "Ernesto Jardim",
+      "from_email_hash": "78dbd6123bf5d01c3b94604fe1906c80b548e2c8744c1a2713176af9b3a996a9",
+      "date": "2003-09-08T13:58:09Z",
+      "subject": "[R-gui] New highligthing for NEdit",
+      "subject_clean": "[R-gui] New highligthing for NEdit",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI've just put together a new R syntax highlighting file for Nedit 5.3.\n\nI've borrow the \"base\" functions of Jedit (thanks to Tobias Elze and Zed\nA. Shaw) so now NEdit highlights a little more than before :)\n\nYou can download the file here: \n\nhttp://ernesto.freezope.org/cmf/starthere/r/R-5.3.pats \n\nJust import it into NEdit with \n\n> nedit -import R-5.3.pats\n\nand save your preferences when leaving the editor.\n\nIf you want to use NEdit as your default editor inside R do\n\n> options(editor=\"nedit -lm R\")\n\nI usually change NEdit fonts to lucida-mono 12 so if you use other fonts\nit may look uglier (or pretier) ...\n\nHope you enjoy it and, as usual, all comments are welcome.\n\nBest regards\n\nEJ\n\nps: please can somenone change the file in R-GUI page ?\n-- \nErnesto Jardim <ernesto@ipimar.pt>\nBi?logo Marinho/Marine Biologist\nIPIMAR - Instituto Nacional de Investiga??o Agr?ria e das Pescas\nIPIMAR - National Research Institute for Agriculture and Fisheries\nAv. Brasilia, 1400-006\nLisboa, Portugal\nTel: +351 213 027 000\nFax: +351 213 015 948\nhttp://ernesto.freezope.org",
+      "body_snippet": "Hi,\n\nI've just put together a new R syntax highlighting file for Nedit 5.3.\n\nI've borrow the \"base\" functions of Jedit (thanks to Tobias Elze and Zed\nA. Shaw) so now NEdit highlights a little more tha",
+      "thread_id": "thread-0aab9c52d06b",
+      "thread_depth": 0,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-00b67d822db8",
+      "message_id": "<3F5DB4A3.3040705@myatt.demon.co.uk>",
+      "from_name": "Mark Myatt",
+      "from_email_hash": "9f20bc345634b812906fd81f25ddf8a55682e14cc40138d0b7e5db5c829be937",
+      "date": "2003-09-09T13:13:20Z",
+      "subject": "[R-gui] Re: Highligthing for NEdit",
+      "subject_clean": "[R-gui] Re: Highligthing for NEdit",
+      "in_reply_to": "<200309091002.h89A253T010242@stat.math.ethz.ch>",
+      "references": [
+        "<200309091002.h89A253T010242@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Ernesto wrote:\n\n> I've just put together a new R syntax highlighting file for Nedit 5.3.\n> \n> I've borrow the \"base\" functions of Jedit (thanks to Tobias Elze and Zed\n> A. Shaw) so now NEdit highlights a little more than before :)\n> \n> You can download the file here: \n> \n> http://ernesto.freezope.org/cmf/starthere/r/R-5.3.pats \n> \n> Just import it into NEdit with \n> \n>>nedit -import R-5.3.pats\n> \n> and save your preferences when leaving the editor.\n> \n> If you want to use NEdit as your default editor inside R do\n> \n>>options(editor=\"nedit -lm R\")\n> \n> I usually change NEdit fonts to lucida-mono 12 so if you use other fonts\n> it may look uglier (or pretier) ...\n> \n> Hope you enjoy it and, as usual, all comments are welcome.\n\nA really nice job. Thanks. Just one comment ... I prefer not to have \nline-wrapping on when writing code. That requires a simple change to the \nfile on the nedit.languagesModes line to:\n\n\tnedit.languagesModes:\tR:.r .R .q::Auto:None:::\\n\\\n\nJust my preference.\n\nMark\n\n-- \nMark Myatt",
+      "body_snippet": "Ernesto wrote:\n\n> I've just put together a new R syntax highlighting file for Nedit 5.3.\n> \n> I've borrow the \"base\" functions of Jedit (thanks to Tobias Elze and Zed\n> A. Shaw) so now NEdit highlight",
+      "thread_id": "thread-00b67d822db8",
+      "thread_depth": 0,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-d66bab625e1c",
+      "message_id": "<1063106968.2735.70.camel@gandalf.local>",
+      "from_name": "Ernesto Jardim",
+      "from_email_hash": "78dbd6123bf5d01c3b94604fe1906c80b548e2c8744c1a2713176af9b3a996a9",
+      "date": "2003-09-09T13:49:19Z",
+      "subject": "[R-gui] Re: Highligthing for NEdit",
+      "subject_clean": "[R-gui] Re: Highligthing for NEdit",
+      "in_reply_to": "<3F5DB4A3.3040705@myatt.demon.co.uk>",
+      "references": [
+        "<200309091002.h89A253T010242@stat.math.ethz.ch>",
+        "<3F5DB4A3.3040705@myatt.demon.co.uk>"
+      ],
+      "body_plain": "On Tue, 2003-09-09 at 12:08, Mark Myatt wrote:\n> Ernesto wrote:\n> \n> > I've just put together a new R syntax highlighting file for Nedit 5.3.\n> > \n> > I've borrow the \"base\" functions of Jedit (thanks to Tobias Elze and Zed\n> > A. Shaw) so now NEdit highlights a little more than before :)\n> > \n> > You can download the file here: \n> > \n> > http://ernesto.freezope.org/cmf/starthere/r/R-5.3.pats\n> > \n> > Just import it into NEdit with \n> > \n> >>nedit -import R-5.3.pats\n> > \n> > and save your preferences when leaving the editor.\n> > \n> > If you want to use NEdit as your default editor inside R do\n> > \n> >>options(editor=\"nedit -lm R\")\n> > \n> > I usually change NEdit fonts to lucida-mono 12 so if you use other fonts\n> > it may look uglier (or pretier) ...\n> > \n> > Hope you enjoy it and, as usual, all comments are welcome.\n> \n> A really nice job. Thanks. Just one comment ... I prefer not to have \n> line-wrapping on when writing code. That requires a simple change to the \n> file on the nedit.languagesModes line to:\n> \n> \tnedit.languagesModes:\tR:.r .R .q::Auto:None:::\\n\\\n> \n> Just my preference.\n> \n> Mark\n\nHi Mark,\n\nI've changed some NEdit settings with R highlighting and may be that's\nnot the best way to do it. The NEdit settings might be left for each\nuser to deal with.\n\nRegards and thanks for your opinion.\n\nEJ",
+      "body_snippet": "On Tue, 2003-09-09 at 12:08, Mark Myatt wrote:\n> Ernesto wrote:\n> \n> > I've just put together a new R syntax highlighting file for Nedit 5.3.\n> > \n> > I've borrow the \"base\" functions of Jedit (thanks",
+      "thread_id": "thread-00b67d822db8",
+      "thread_depth": 1,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-933ec84b11b6",
+      "message_id": "<1063108148.3153.1.camel@gandalf.local>",
+      "from_name": "Ernesto Jardim",
+      "from_email_hash": "78dbd6123bf5d01c3b94604fe1906c80b548e2c8744c1a2713176af9b3a996a9",
+      "date": "2003-09-09T13:49:26Z",
+      "subject": "[R-gui] Re: Highligthing for NEdit",
+      "subject_clean": "[R-gui] Re: Highligthing for NEdit",
+      "in_reply_to": "<3F5DB4A3.3040705@myatt.demon.co.uk>",
+      "references": [
+        "<200309091002.h89A253T010242@stat.math.ethz.ch>",
+        "<3F5DB4A3.3040705@myatt.demon.co.uk>"
+      ],
+      "body_plain": "On Tue, 2003-09-09 at 12:08, Mark Myatt wrote:\n> Ernesto wrote:\n> \n> > I've just put together a new R syntax highlighting file for Nedit 5.3.\n> > \n> > I've borrow the \"base\" functions of Jedit (thanks to Tobias Elze and Zed\n> > A. Shaw) so now NEdit highlights a little more than before :)\n> > \n> > You can download the file here: \n> > \n> > http://ernesto.freezope.org/cmf/starthere/r/R-5.3.pats\n> > \n> > Just import it into NEdit with \n> > \n> >>nedit -import R-5.3.pats\n> > \n> > and save your preferences when leaving the editor.\n> > \n> > If you want to use NEdit as your default editor inside R do\n> > \n> >>options(editor=\"nedit -lm R\")\n> > \n> > I usually change NEdit fonts to lucida-mono 12 so if you use other fonts\n> > it may look uglier (or pretier) ...\n> > \n> > Hope you enjoy it and, as usual, all comments are welcome.\n> \n> A really nice job. Thanks. Just one comment ... I prefer not to have \n> line-wrapping on when writing code. That requires a simple change to the \n> file on the nedit.languagesModes line to:\n> \n> \tnedit.languagesModes:\tR:.r .R .q::Auto:None:::\\n\\\n> \n> Just my preference.\n> \n> Mark\n\nHi Mark,\n\nUsers can allways adjust the language to their needs. Anyway I've changed some NEdit settings and maybe that's not the way to do it. I shall correct that on the next version.\n\nRegards and thanks for your opinion.\n\nEJ",
+      "body_snippet": "On Tue, 2003-09-09 at 12:08, Mark Myatt wrote:\n> Ernesto wrote:\n> \n> > I've just put together a new R syntax highlighting file for Nedit 5.3.\n> > \n> > I've borrow the \"base\" functions of Jedit (thanks",
+      "thread_id": "thread-00b67d822db8",
+      "thread_depth": 1,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-44a57f2d4df4",
+      "message_id": "<20030910093137.74940.qmail@web41509.mail.yahoo.com>",
+      "from_name": "Carter Cheng",
+      "from_email_hash": "e33c36b365f65602bb6c51cba7715a53ebc4a01b115104f5938b5bf1616035cb",
+      "date": "2003-09-10T11:30:55Z",
+      "subject": "[R-gui] Status of the R-GUI",
+      "subject_clean": "[R-gui] Status of the R-GUI",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I just recently joined this mailing list and I\napologize if this has been addressed recently. I am\ncurious about the current maturity of alternate R\nGUI's and the underlying frameworks that allow one to\ndefine alternate GUI's which are slightly more feature\nrich. \n\nI already use R for much of my current work, but it\nwould be nice if there were some sort of a user\nfriendly GUI for more common tasks ala SPSS's GUI for\nless technically sophisticated/computer oriented\nusers- i.e. medical professionals and the ilk.\n\nAre there any such current efforts out there?",
+      "body_snippet": "I just recently joined this mailing list and I\napologize if this has been addressed recently. I am\ncurious about the current maturity of alternate R\nGUI's and the underlying frameworks that allow one ",
+      "thread_id": "thread-44a57f2d4df4",
+      "thread_depth": 0,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-92b106701d1d",
+      "message_id": "<20030910123002.GA17742@sonny.eddelbuettel.com>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2003-09-10T14:29:22Z",
+      "subject": "[R-gui] Status of the R-GUI",
+      "subject_clean": "[R-gui] Status of the R-GUI",
+      "in_reply_to": "<20030910093137.74940.qmail@web41509.mail.yahoo.com>",
+      "references": [
+        "<20030910093137.74940.qmail@web41509.mail.yahoo.com>"
+      ],
+      "body_plain": "On Wed, Sep 10, 2003 at 02:31:37AM -0700, Carter Cheng wrote:\n> I just recently joined this mailing list and I\n> apologize if this has been addressed recently. I am\n> curious about the current maturity of alternate R\n> GUI's and the underlying frameworks that allow one to\n> define alternate GUI's which are slightly more feature\n> rich. \n> \n> I already use R for much of my current work, but it\n> would be nice if there were some sort of a user\n> friendly GUI for more common tasks ala SPSS's GUI for\n> less technically sophisticated/computer oriented\n> users- i.e. medical professionals and the ilk.\n> \n> Are there any such current efforts out there?\n\nHave you looked at Rcmdr? It's is a ready-to-roll CRAN package using tcltk.\n\nDirk\n\n-- \nThose are my principles, and if you don't like them... well, I have others.\n                                                -- Groucho Marx",
+      "body_snippet": "On Wed, Sep 10, 2003 at 02:31:37AM -0700, Carter Cheng wrote:\n> I just recently joined this mailing list and I\n> apologize if this has been addressed recently. I am\n> curious about the current maturit",
+      "thread_id": "thread-44a57f2d4df4",
+      "thread_depth": 1,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-204e104eea08",
+      "message_id": "<3F605B38.6060400@myatt.demon.co.uk>",
+      "from_name": "Mark Myatt",
+      "from_email_hash": "9f20bc345634b812906fd81f25ddf8a55682e14cc40138d0b7e5db5c829be937",
+      "date": "2003-09-11T13:27:38Z",
+      "subject": "[R-gui] Re: Status of the R-GUI",
+      "subject_clean": "[R-gui] Re: Status of the R-GUI",
+      "in_reply_to": "<200309111003.h8BA2q9i029900@stat.math.ethz.ch>",
+      "references": [
+        "<200309111003.h8BA2q9i029900@stat.math.ethz.ch>"
+      ],
+      "body_plain": "Dirk Eddelbuettel wrote:\n\n > Have you looked at Rcmdr? It's is a ready-to-roll CRAN package\n > using tcltk.\n\nIn reponse to this message from Carter Cheng:\n\n>>I just recently joined this mailing list and I\n>>apologize if this has been addressed recently. I am\n>>curious about the current maturity of alternate R\n>>GUI's and the underlying frameworks that allow one to\n>>define alternate GUI's which are slightly more feature\n>>rich. \n>>\n>>I already use R for much of my current work, but it\n>>would be nice if there were some sort of a user\n>>friendly GUI for more common tasks ala SPSS's GUI for\n>>less technically sophisticated/computer oriented\n>>users- i.e. medical professionals and the ilk.\n>>\n>>Are there any such current efforts out there?\n\nJust to add my tuppence ... I see the main strength of R as being a \nlanguage environment rather than a \"buttons and boxes\" environment. It \nmay be useful to have a GPL \"buttons and boxes\" stats environment. My \npreference would be for a powerful \"IDE\" type environment.\n\nMark\n\n-- \nMark Myatt",
+      "body_snippet": "Dirk Eddelbuettel wrote:\n\n > Have you looked at Rcmdr? It's is a ready-to-roll CRAN package\n > using tcltk.\n\nIn reponse to this message from Carter Cheng:\n\n>>I just recently joined this mailing list a",
+      "thread_id": "thread-204e104eea08",
+      "thread_depth": 0,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-87f96e3d0da9",
+      "message_id": "<20030911152806.9540.qmail@web41510.mail.yahoo.com>",
+      "from_name": "Carter Cheng",
+      "from_email_hash": "e33c36b365f65602bb6c51cba7715a53ebc4a01b115104f5938b5bf1616035cb",
+      "date": "2003-09-11T17:27:24Z",
+      "subject": "[R-gui] Status of the R-GUI",
+      "subject_clean": "[R-gui] Status of the R-GUI",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Thanks everyone for the prompt replies. I did actually\ncheck out R-Commander before but I was somewhat\nconcerned that it might have stability issues. Has\nanyone had experience deploying this in a work\nenvironment? I guess I am curious if it's mature\nenough to serve as a replacement for the SPSS system.\nIs it as full featured as the SPSS GUI?\n\nAgain thanks everyone for the help,\n\nCarter.",
+      "body_snippet": "Thanks everyone for the prompt replies. I did actually\ncheck out R-Commander before but I was somewhat\nconcerned that it might have stability issues. Has\nanyone had experience deploying this in a work",
+      "thread_id": "thread-87f96e3d0da9",
+      "thread_depth": 0,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-2420fe0d6bda",
+      "message_id": "<5.1.0.14.2.20030911165230.01ff0b80@127.0.0.1>",
+      "from_name": "John Fox",
+      "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
+      "date": "2003-09-11T22:56:47Z",
+      "subject": "[R-gui] Status of the R-GUI",
+      "subject_clean": "[R-gui] Status of the R-GUI",
+      "in_reply_to": "<20030911152806.9540.qmail@web41510.mail.yahoo.com>",
+      "references": [],
+      "body_plain": "Dear Carter,\n\nAt 08:28 AM 9/11/2003 -0700, Carter Cheng wrote:\n>Thanks everyone for the prompt replies. I did actually\n>check out R-Commander before but I was somewhat\n>concerned that it might have stability issues. Has\n>anyone had experience deploying this in a work\n>environment?\n\nSince Rcmdr is relatively new, I assume that no one has experience yet \nusing it in teaching a class. That will change shortly, at least in my \ncase. I have done a fair amount of testing, mostly under Windows, and from \nthe feedback that I've received, I know that quite a few people have tried \nit out under a variety of OSs.\n\n>I guess I am curious if it's mature\n>enough to serve as a replacement for the SPSS system.\n>Is it as full featured as the SPSS GUI?\n\nThis depends on what you intend to use the GUI for. Rcmdr is meant \nprimarily for basic statistics courses. It is definitely not as \nfull-featured as the GUI for SPSS. If you haven't yet done so, take a look \nat the menu tree on the Rcmdr page at \n<http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/index>. The Rcmdr GUI \nis, however, extensible, so you could, in principle, add menus and dialogs.\n\nI hope that this answers your questions.\n  John\n\n\n-----------------------------------------------------\nJohn Fox\nDepartment of Sociology\nMcMaster University\nHamilton, Ontario, Canada L8S 4M4\nemail: jfox@mcmaster.ca\nphone: 905-525-9140x23604\nweb: www.socsci.mcmaster.ca/jfox",
+      "body_snippet": "Dear Carter,\n\nAt 08:28 AM 9/11/2003 -0700, Carter Cheng wrote:\n>Thanks everyone for the prompt replies. I did actually\n>check out R-Commander before but I was somewhat\n>concerned that it might have st",
+      "thread_id": "thread-87f96e3d0da9",
+      "thread_depth": 1,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-eb7af6acf77e",
+      "message_id": "<Pine.LNX.4.44.0309120945490.5815-100000@unix28.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2003-09-12T02:43:30Z",
+      "subject": "[R-gui] Status of the R-GUI",
+      "subject_clean": "[R-gui] Status of the R-GUI",
+      "in_reply_to": "<5.1.0.14.2.20030911165230.01ff0b80@127.0.0.1>",
+      "references": [],
+      "body_plain": "Hi,\n\nMaybe I'm starting to veer from the original question, but it's \nbeen a while since this list has seen a lot of general \nphilosophical discussion of GUI development.\n\nI think there are at least three types of users we should think \nabout: \n(1) Users who have no desire to learn how to use a \n  Command Line Interface (CLI), but are still very intelligent.\n(2) Users who want to use a GUI as a preliminary step before \n  learning how to use a CLI.\n(3) Users (like myself) who are comfortable using a CLI, but \n  find that they can \"protect\" themselves against common errors\n  and be more productive by using a GUI sometimes.\n\nI know of several R-GUI projects with slightly different aims.  \nOf course there's Peter Dalgaard's fantastic tcltk package, \nincluding the tkStarGUI prototype.  I'm using tcltk to develop a \nmicroarray analysis interface which will eventually be submitted \nto Bioconductor (http://bioinf.wehi.edu.au/limmaGUI/)\nThere are other Tcl/Tk projects including John Fox's Rcmdr \npackage, which I think is partly designed for users of type (2), \nbut should also appeal to advanced R developers as it is \nextensible.  \n\nJohn Zhang has contributed the widgetTools and tkWidgets \npackages to Bioconductor, which allow a more object-oriented \napproach to Tcl/Tk GUI development, perhaps analagous to Java \nSwing.  Speaking of which, is anyone using Java Swing with R?  \n\nThere is also Phillipe Grosjean's SciViews project, which may \nnot be entirely platform-independent, but a great proportion \nof users of type (1) hardly know that Linux exists, and may \nalways use software developed in a similar way to Phillipe's, \ni.e. Microsoft Visual Basic or Microsoft Visual C++ \nor whatever.\n\nThere are other R-GUI projects.  Sorry for the omissions.\n\nPeter Dalgaard described a \"scripting widget\" in :\nhttp://cran.r-project.org/doc/Rnews/Rnews_2002-3.pdf\nwhich makes it possible to build a GUI which appeals to all \nthree types of users!!! An R/TclTk interface can have simple \nbuttons and menus for users of type (1), but users of type (3) \n(and perhaps (2)) can learn how to enter R code directly to \ninteract with the data objects used by the GUI.  \n(See the bottom of the worked limmaGUI example at\nhttp://bioinf.wehi.edu.au/limmaGUI/Doc/Weaver/index.html\nwhere I have an \"Evaluate R code\" menu which can be used to grab \nsome data objects use by the R/TclTk application and type an R \ncommand to plot them in a tkrplot window, or check their values \nin a text window.\n\nI would certainly like to encourage R-GUI development, but my \nlimmaGUI project (http://bioinf.wehi.edu.au/limmaGUI/) may be \ntoo specialized to interest general R-GUI developers.\n\nSo, I have been thinking, how could I contribute something which \nwould encourage R-GUI development?\n\nHere's an idea I came up with:\n\nDevelop a simple \"spreadsheet\" R package using the Tktable \nwidget, which allows things like getSelection() to store \nselected cells in a data frame and allows developers to \neasily add menus to do things like barplots of the data in \nthe selected cells (with a few pre-built examples).  Then, \nformulae within cells: =Rfunction() would be nice, and things \nlike \"fill-down\" etc.  Of course for large spreadsheet files, \nit would be incredibly slow compared with Excel, so would it \nbe any use?\n\nThe reason I suggest this, is that developers could instantly \nsee how the interface could be made easy to learn for users of \ntype (1) but hopefully they (developers) could also see how to\nextend its functionality easily.\n\nJust one last issue to mention: ease of installation.  \nCurrently, a typical user of my R/TclTk GUI will start with nothing - \nthey will not have R, Tcl/Tk or any interesting R packages \ninstalled. (I should note that I used the tkTable and bwidget \nextensions which are not bundled with R.)  Is anyone out \nthere working on installation wizards for their favorite operating \nsystem(s)?  I personally do not have installation privileges so \nit's difficult for me to test installation wizards, but I'd \ncertainly like to make my software easy to install.\n\nInnoSetup:\nhttp://www.jrsoftware.org/isinfo.php\nis free software to create Installation Wizards for Windows.\n\nPerhaps another option is to build a Wizard using something like \nfreewrap (creates binaries from Tcl/Tk scripts):\nhttp://freewrap.sourceforge.net/\nand you could possibly use TclCurl:\nhttp://personal1.iddeo.es/andresgarci/tclcurl/english/\nif the wizard had to download anything from the Web.\n\nOK, enough rambling!\n\nFeel free to disagree with my current R-GUI philosophies.\n\nRegards,\nJames\n\n--------------------------------------------------------------------------\nJames Wettenhall                                  Tel: (+61 3) 9345 2629\nDivision of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852\nThe Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au\n of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    \n1G Royal Parade,\nParkville, Vic 3050, Australia\nhttp://www.wehi.edu.au",
+      "body_snippet": "Hi,\n\nMaybe I'm starting to veer from the original question, but it's \nbeen a while since this list has seen a lot of general \nphilosophical discussion of GUI development.\n\nI think there are at least t",
+      "thread_id": "thread-87f96e3d0da9",
+      "thread_depth": 2,
+      "month": "2003-09"
+    },
+    {
+      "id": "msg-aec2ba6b1dbd",
+      "message_id": "<20030914053857.GA22858@sonny.eddelbuettel.com>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2003-09-14T07:38:29Z",
+      "subject": "[R-gui] Status of the R-GUI",
+      "subject_clean": "[R-gui] Status of the R-GUI",
+      "in_reply_to": "<Pine.LNX.4.44.0309120945490.5815-100000@unix28.alpha.wehi.edu.au>",
+      "references": [
+        "<5.1.0.14.2.20030911165230.01ff0b80@127.0.0.1>",
+        "<Pine.LNX.4.44.0309120945490.5815-100000@unix28.alpha.wehi.edu.au>"
+      ],
+      "body_plain": "James,\n\nOn Fri, Sep 12, 2003 at 10:43:19AM +1000, James Wettenhall wrote:\n> Just one last issue to mention: ease of installation.  \n> Currently, a typical user of my R/TclTk GUI will start with nothing - \n> they will not have R, Tcl/Tk or any interesting R packages \n> installed. (I should note that I used the tkTable and bwidget \n> extensions which are not bundled with R.)  Is anyone out \n> there working on installation wizards for their favorite operating \n> system(s)?  I personally do not have installation privileges so \n\nI am currently preparing a new release of Quantian, the Knoppix /\nclusterKnoppix based bootable cdrom. Among all it scientific / numerical\nsoftware is of course R with tcltk and an increased number of CRAN packages\nsuch as tkrplot or Rcmdr -- but also iwidgets, bwidget, and tktable.  So in\nyour case all you'd need is to download your application code and date, say\nfrom a webpage or NFS share, and you'd be done. At least in theory :) .\n\nIn preparation for 0.4, a version 0.3.9.1 is currently going to the server\nat the U of Washington.  This will take another few hours to crawl up\nthrough my residential broadband line, but should be fine once you're back\nat work. \n\nDirk\n\n-- \nThose are my principles, and if you don't like them... well, I have others.\n                                                -- Groucho Marx",
+      "body_snippet": "James,\n\nOn Fri, Sep 12, 2003 at 10:43:19AM +1000, James Wettenhall wrote:\n> Just one last issue to mention: ease of installation.  \n> Currently, a typical user of my R/TclTk GUI will start with nothin",
+      "thread_id": "thread-87f96e3d0da9",
+      "thread_depth": 3,
+      "month": "2003-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-9f89ce09efe6",
+      "subject": "[R-gui] Re: [MACTCL] Re: X11 Tktable SUCCESS!!! (fwd)",
+      "message_count": 1,
+      "participants": [
+        "James Wettenhall"
+      ],
+      "started": "2003-09-01T16:15:09+00:00",
+      "last_reply": "2003-09-01T16:15:09+00:00",
+      "root_message_id": "msg-9f89ce09efe6"
+    },
+    {
+      "id": "thread-0aab9c52d06b",
+      "subject": "[R-gui] New highligthing for NEdit",
+      "message_count": 1,
+      "participants": [
+        "Ernesto Jardim"
+      ],
+      "started": "2003-09-08T13:58:09+00:00",
+      "last_reply": "2003-09-08T13:58:09+00:00",
+      "root_message_id": "msg-0aab9c52d06b"
+    },
+    {
+      "id": "thread-00b67d822db8",
+      "subject": "[R-gui] Re: Highligthing for NEdit",
+      "message_count": 3,
+      "participants": [
+        "Ernesto Jardim",
+        "Mark Myatt"
+      ],
+      "started": "2003-09-09T13:13:20+00:00",
+      "last_reply": "2003-09-09T13:49:26+00:00",
+      "root_message_id": "msg-00b67d822db8"
+    },
+    {
+      "id": "thread-44a57f2d4df4",
+      "subject": "[R-gui] Status of the R-GUI",
+      "message_count": 2,
+      "participants": [
+        "Carter Cheng",
+        "Dirk Eddelbuettel"
+      ],
+      "started": "2003-09-10T11:30:55+00:00",
+      "last_reply": "2003-09-10T14:29:22+00:00",
+      "root_message_id": "msg-44a57f2d4df4"
+    },
+    {
+      "id": "thread-204e104eea08",
+      "subject": "[R-gui] Re: Status of the R-GUI",
+      "message_count": 1,
+      "participants": [
+        "Mark Myatt"
+      ],
+      "started": "2003-09-11T13:27:38+00:00",
+      "last_reply": "2003-09-11T13:27:38+00:00",
+      "root_message_id": "msg-204e104eea08"
+    },
+    {
+      "id": "thread-87f96e3d0da9",
+      "subject": "[R-gui] Status of the R-GUI",
+      "message_count": 4,
+      "participants": [
+        "Carter Cheng",
+        "Dirk Eddelbuettel",
+        "James Wettenhall",
+        "John Fox"
+      ],
+      "started": "2003-09-11T17:27:24+00:00",
+      "last_reply": "2003-09-14T07:38:29+00:00",
+      "root_message_id": "msg-87f96e3d0da9"
+    }
+  ]
+}

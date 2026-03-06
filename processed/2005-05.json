@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2005-05",
+  "messages": [
+    {
+      "id": "msg-87dac50d99d2",
+      "message_id": "<4292F78F.3060206@envt.fr>",
+      "from_name": "Faouzi LYAZRHI",
+      "from_email_hash": "f2ebf2a7e5259605cdd093d1ab8c3ab8025f1441b278437f371312cbb983cb80",
+      "date": "2005-05-24T11:44:50Z",
+      "subject": "[R-gui] (pas de sujet)",
+      "subject_clean": "[R-gui] (pas de sujet)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "",
+      "body_snippet": "",
+      "thread_id": "thread-87dac50d99d2",
+      "thread_depth": 0,
+      "month": "2005-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-87dac50d99d2",
+      "subject": "[R-gui] (pas de sujet)",
+      "message_count": 1,
+      "participants": [
+        "Faouzi LYAZRHI"
+      ],
+      "started": "2005-05-24T11:44:50+00:00",
+      "last_reply": "2005-05-24T11:44:50+00:00",
+      "root_message_id": "msg-87dac50d99d2"
+    }
+  ]
+}

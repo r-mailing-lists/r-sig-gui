@@ -1,0 +1,109 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-08",
+  "messages": [
+    {
+      "id": "msg-315befe06073",
+      "message_id": "<Pine.LNX.4.44.0308081646590.6333-100000@unix28.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2003-08-08T09:08:54Z",
+      "subject": "[R-gui] Tktable on Mac OSX with X11, systemWindowBody color",
+      "subject_clean": "[R-gui] Tktable on Mac OSX with X11, systemWindowBody color",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI'm doing some testing of my R/TclTk application on Mac OSX with \nApple X11 (based on Xfree86), (with Tcl/Tk installed via the \nApple Developer Tools) and I've come across a problem \nwhen trying to use the table widget in Tktable:\n\nThis works fine in wish (the Tcl/Tk interpreter) :\n% package require Tktable\n% toplevel .tt\n% table .tt.table1\n% pack .tt.table1\n\nBut when I try it in R (even when using the low-level .Tcl(...) \ninterface which should be similar to wish:\n\n> library(tcltk)\n> addTclPath(\"/Library/Tcl\")\n> .Tcl(\"package require Tktable\")\n> .Tcl(\"toplevel .tt\")\n> .Tcl(\"table .tt.table1\")\n  Error ...\n    [tcl] unknown color name \"systemWindowBody\".\n\n\"grep systemWindowBody *\" in the Tktable package directory \nrevealed just one reference to it, in the binary file, \nlibTktable2.8.dylib\nI don't have the Tcl/Tk source handy and I couldn't find \nsystemWindowBody in the R source or in the tcltk \nR package source.\n\nHas anyone come across this problem before?\n\nSearching the web, I found some of the Mac Tk source:\nhttp://www.openmash.org/lxr/source/mac/tkMacDefault.h\nwhich has:\n#define NORMAL_BG       \"systemWindowBody\"\nand the \"NORMAL_BG\" page says \n\"Defined as a preprocessor macro\".\nwhich didn't help me much.  \n\nI even tried things like:\n  .Tcl(\"set systemWindowBody gray\")\n   Sys.putenv(\"systemWindowBody\",\"gray\")\nwith no success.\n\nRegards,\nJames",
+      "body_snippet": "Hi,\n\nI'm doing some testing of my R/TclTk application on Mac OSX with \nApple X11 (based on Xfree86), (with Tcl/Tk installed via the \nApple Developer Tools) and I've come across a problem \nwhen trying ",
+      "thread_id": "thread-315befe06073",
+      "thread_depth": 0,
+      "month": "2003-08"
+    },
+    {
+      "id": "msg-650cc8bd02af",
+      "message_id": "<x21xvwblbm.fsf@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard BSA",
+      "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
+      "date": "2003-08-08T10:26:39Z",
+      "subject": "[R-gui] Tktable on Mac OSX with X11, systemWindowBody color",
+      "subject_clean": "[R-gui] Tktable on Mac OSX with X11, systemWindowBody color",
+      "in_reply_to": "<Pine.LNX.4.44.0308081646590.6333-100000@unix28.alpha.wehi.edu.au>",
+      "references": [
+        "<Pine.LNX.4.44.0308081646590.6333-100000@unix28.alpha.wehi.edu.au>"
+      ],
+      "body_plain": "James Wettenhall <wettenhall@wehi.edu.au> writes:\n\n> Hi,\n> \n> I'm doing some testing of my R/TclTk application on Mac OSX with \n> Apple X11 (based on Xfree86), (with Tcl/Tk installed via the \n> Apple Developer Tools) and I've come across a problem \n> when trying to use the table widget in Tktable:\n> \n> This works fine in wish (the Tcl/Tk interpreter) :\n> % package require Tktable\n> % toplevel .tt\n> % table .tt.table1\n> % pack .tt.table1\n> \n> But when I try it in R (even when using the low-level .Tcl(...) \n> interface which should be similar to wish:\n> \n> > library(tcltk)\n> > addTclPath(\"/Library/Tcl\")\n> > .Tcl(\"package require Tktable\")\n> > .Tcl(\"toplevel .tt\")\n> > .Tcl(\"table .tt.table1\")\n>   Error ...\n>     [tcl] unknown color name \"systemWindowBody\".\n> \n> \"grep systemWindowBody *\" in the Tktable package directory \n> revealed just one reference to it, in the binary file, \n> libTktable2.8.dylib\n> I don't have the Tcl/Tk source handy and I couldn't find \n> systemWindowBody in the R source or in the tcltk \n> R package source.\n\nBeats me, but you might try a query on comp.lang.tcl. Presumably, wish\nis somehow loading the system colors on startup, and this doesn't\nhappen with the R/Tcl interpreter. \n\nBTW, have you tried the tkAqua stuff?\n\n-- \n   O__  ---- Peter Dalgaard             Blegdamsvej 3  \n  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   \n (*) \\(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907",
+      "body_snippet": "James Wettenhall <wettenhall@wehi.edu.au> writes:\n\n> Hi,\n> \n> I'm doing some testing of my R/TclTk application on Mac OSX with \n> Apple X11 (based on Xfree86), (with Tcl/Tk installed via the \n> Apple ",
+      "thread_id": "thread-315befe06073",
+      "thread_depth": 1,
+      "month": "2003-08"
+    },
+    {
+      "id": "msg-f1653c22226d",
+      "message_id": "<Pine.LNX.4.44.0308111755290.28187-100000@unix28.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2003-08-11T10:01:51Z",
+      "subject": "[R-gui] Re: [MACTCL] Re: systemWindowBody color (fwd)",
+      "subject_clean": "[R-gui] Re: [MACTCL] Re: systemWindowBody color (fwd)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Here's a very helpful reply from Jan de Leeuw to my \nquestion about trying to use Tktable with R in X11 on Mac OSX.  \nI'll have to double-check with my I.T. administrators to \nfind out which version of R is installed on the Macs, and make \nsure that R is not accessing both an Aqua version of Tcl/Tk AND \nan X11 version!\n\nRegards.\nJames\n\n---------- Forwarded message ----------\nDate: Sun, 10 Aug 2003 20:53:35 -0700\nFrom: Jan de Leeuw <deleeuw@stat.ucla.edu>\nTo: tcl-mac@lists.sourceforge.net\nCc: James Wettenhall <wettenhall@wehi.edu.au>\nSubject: Re: [MACTCL] Re: systemWindowBody color\n\nThere are three R's for OS X: the Carbon/CFM R (rapidly fading)\nwhich allows no Tcl/Tk interaction, the Darwin/X11 CLI version\nwhich you use with X11 Tcl/Tk from CVS or Fink, and the\nAqua R (still in beta) which you use with the Aqua Tcl/Tk\n(currently does not work, but has worked in the past).\n\nYou cannot use Aqua versions of Tcl/Tk with the Darwin/X11\nversion, because you will get into problems with the Aqua\nwindowmanager (SetFrontProcess).\n\nWhat I have done in the past is use IDLE (the Python GUI\nwith tkinter), load Rpy (the Python interface to R), and then\nuse Aqua Tcl/Tk from R running in IDLE. This works, but\nit is needlessly complicated. The Aqua R, when fixed for\nR-1.8.0, will be the better solution.\n\nSee http://gifi.stat.ucla.edu/pub as well as\nhttp://www.economia.unimi.it/R/\n===\nJan de Leeuw; Professor and Chair, UCLA Department of Statistics;\nEditor: Journal of Multivariate Analysis, Journal of Statistical  \nSoftware\nUS mail: 9432 Boelter Hall, Box 951554, Los Angeles, CA 90095-1554\nphone (310)-825-9550;  fax (310)-206-5658;  email: deleeuw@stat.ucla.edu\nhomepage: http://gifi.stat.ucla.edu\n   \n------------------------------------------------------------------------ \n-------------------------\n           No matter where you go, there you are. --- Buckaroo Banzai\n                    http://gifi.stat.ucla.edu/sounds/nomatter.au",
+      "body_snippet": "Here's a very helpful reply from Jan de Leeuw to my \nquestion about trying to use Tktable with R in X11 on Mac OSX.  \nI'll have to double-check with my I.T. administrators to \nfind out which version o",
+      "thread_id": "thread-f1653c22226d",
+      "thread_depth": 0,
+      "month": "2003-08"
+    },
+    {
+      "id": "msg-437217f98b09",
+      "message_id": "<x265kmpwcm.fsf@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard BSA",
+      "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
+      "date": "2003-08-24T23:35:15Z",
+      "subject": "[R-gui] Tcltk changes in R 1.8.0 ",
+      "subject_clean": "[R-gui] Tcltk changes in R 1.8.0",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I have committed a set of changes to the tcltk package for R-1.8.0.\nThe most important changes are\n\n1) Support for Tcl arrays, which should come in handy for people\n   playing with things like the tkTable extension. Basically these\n   work like tclVar objects but can be subscripted (notice that these\n   beasts are associative - like a Perl hash - rather than objects of\n   set dimensions). Basic usage goes like this:\n\n> x <- tclArray() # create array object\n> x[[2]]<-123\n> x[[2]]\n<Tcl> 123\n> x[[\"2\"]] # the index is really a string\n<Tcl> 123\n\n> x[[1,2]]<-\"abc\"\n> x[[\"1,2\"]] # multiple indices are pasted together\n<Tcl> abc\n> x[[1,2]]\n<Tcl> abc\n\n> x[[\"a\"]] <- pi\n> x$a # usual list notation works too\n<Tcl> 3.14159265359\n\n2) A new set of routines, .Tcl.objv and .Tcl.args.objv work together\n   to allow calls to Tcl to be done without first constructing a Tcl\n   command in its string representation form. This creates a\n   substantial efficiency gain, by elimiting a large amount of\n   \"quoting hell\", and also by pushing some operations to C code. The\n   basic tkcmd() function (which underlies almost everything else) has\n   been changed to used those two functions. This should be mostly\n   transparent to existing code, but it may break code that uses some\n   (little advertised) features of the old interface. Apart from overt\n   bugs, the only source of breakage that I am aware of is that a\n   vector of length > 1 used to be converted to multiple arguments;\n   now it becomes a single Tcl list object. The feature allowed you to\n   do things like tkinsert(mylistbox, \"end\", vector.of.entries), but\n   it got in the way in other contexts and overall I think it was a\n   misfeature.\n\nPlease try this out on your favourite tcltk codes and tell me ASAP if\nanything breaks. Also, please tell me if there are still things that\nyou cannot do cleanly (i.e. without paste()-ing things together to\nform .Tcl calls).\n\n-- \n   O__  ---- Peter Dalgaard             Blegdamsvej 3  \n  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   \n (*) \\(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907",
+      "body_snippet": "I have committed a set of changes to the tcltk package for R-1.8.0.\nThe most important changes are\n\n1) Support for Tcl arrays, which should come in handy for people\n   playing with things like the tkT",
+      "thread_id": "thread-437217f98b09",
+      "thread_depth": 0,
+      "month": "2003-08"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-315befe06073",
+      "subject": "[R-gui] Tktable on Mac OSX with X11, systemWindowBody color",
+      "message_count": 2,
+      "participants": [
+        "James Wettenhall",
+        "Peter Dalgaard BSA"
+      ],
+      "started": "2003-08-08T09:08:54+00:00",
+      "last_reply": "2003-08-08T10:26:39+00:00",
+      "root_message_id": "msg-315befe06073"
+    },
+    {
+      "id": "thread-f1653c22226d",
+      "subject": "[R-gui] Re: [MACTCL] Re: systemWindowBody color (fwd)",
+      "message_count": 1,
+      "participants": [
+        "James Wettenhall"
+      ],
+      "started": "2003-08-11T10:01:51+00:00",
+      "last_reply": "2003-08-11T10:01:51+00:00",
+      "root_message_id": "msg-f1653c22226d"
+    },
+    {
+      "id": "thread-437217f98b09",
+      "subject": "[R-gui] Tcltk changes in R 1.8.0",
+      "message_count": 1,
+      "participants": [
+        "Peter Dalgaard BSA"
+      ],
+      "started": "2003-08-24T23:35:15+00:00",
+      "last_reply": "2003-08-24T23:35:15+00:00",
+      "root_message_id": "msg-437217f98b09"
+    }
+  ]
+}

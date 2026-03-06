@@ -1,0 +1,227 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2004-05",
+  "messages": [
+    {
+      "id": "msg-d0800e8a9bab",
+      "message_id": "<OFE5CDEFE1.56DEFA37-ON85256E87.00025B8C-85256E87.000E7D16@ci.orlando.fl.us>",
+      "from_name": "James.Callahan@CityofOrlando.net",
+      "from_email_hash": "a6cac21f5db8b2ddecdd98b457951f02e2e35e64e7e1e58d6732e4696ec81b89",
+      "date": "2004-05-01T04:38:43Z",
+      "subject": "[R-gui] Got Mono? ",
+      "subject_clean": "[R-gui] Got Mono?",
+      "in_reply_to": "<200404301000.i3UA0665008774@hypatia.math.ethz.ch>",
+      "references": [],
+      "body_plain": "GOT MONO?\nAs to the current topic of which widget set to use today for R user \ninterfaces -- I have no idea.\n\nIn the long run (see Keynes quote in signature), IMHO the R/Omegahat \ncommunity will be writing to Java/VM (as in Omegahat) or Mono/CLR (no stat \nproject yet).\n\nWhat I've learned from the websites -- warning -- I haven't actually used \nany of this stuff!!!!!\n\nShort version: Mono 1.0 June 30th, multi-platform (Suse, Red Hat, Fedora, \nMac OS 10.3 & Fedora Core 1 & 2) and will support GTK# and Glade.\nIt will be possible to run some Java programs in Mono on June 30th because \nof IKVM version 0.8 and the GNU Classpath libraries.\n\n\"The Mono Project is a project that aims to bring the Common Language \nInfrastructure [CLI] platform to free systems. \"\nhttp://www.gotmono.com/\n\n\"The Mono project is an open source effort sponsored by Novell to create a \nfree implementation of the .NET Development Framework. \"\nhttp://www.go-mono.com/\n\nMiguel de Icaza's (of Gnome fame) web log links to justifications of the \nMono project\nhttp://primates.ximian.com/~miguel/activity-log.php\n\npoints to a new short term Mono 1.0 road map, the longer-term road map is \nstill available.\nhttp://www.go-mono.com/road-to-1.0.html\n\n*** Mono 1.0 launch date is the end of June (June 30th).***\n\nThere will be at least two betas (May 4th and June 1st).\n\nMono will support gtk-sharp (gtk#) \nGtk# is a .Net language binding for the gtk+ toolkit and assorted GNOME \nlibraries.  Gtk# is free software, licensed under the GNU LGPL. \nhttp://gtk-sharp.sourceforge.net/\nGTK has a form designer called Glade.\n\nWHAT DOES  MONO/GTK#/IKVM  MEAN FOR R / OMEGAHAT? \n\nIn the short run, nothing.\nIn the long run, I don't know. \nBut, here is my guess anyway (don't you hate that).\n\n1. Mono 1.0 will launch with C#, but without a GCC compatible complier. \nMiguel's blog (18 April 2004) points to potential source code for \n    a starting point for creating a managed C++ compiler with a GCC \ncompatible front end. But, AFAIK there isn't even a project yet.\n\n2. Without a GCC compatible complier, porting R itself would be very \ndifficult if not impossible. In addition to GCC -- what else would be \nneeded?\n\n3. Until a GCC compatible compiler is available, IKVM could be used to see \nwhether the Mono/IKVM environment supports Omegahat's Java code.\nSee link on Miguel's blog for \"Java, Gtk and Mono\" -- Miguel compiles an \nobligatory \"Hello World\" in IKVM.\nhttp://primates.ximian.com/~miguel//texts/gtkjava.html\n\n4. The fancy phrase for editors these days is \"Integrated Development \nEnvironment (IDE).\" There are at least two choices. MonoDevelop and \nEclipse.\n    Monodevelop is an opensource IDE developed for .NET that will run in \nMono and Eclipse is a Java based IDE that runs in Java and can run in IKVM \n(see screenshots on IKVM and Mono  websites). Monodevelop and Eclipse both \nsupport syntax highlighting -- how hard will it be to implement R syntax \nhighlighting?\n\nMondevelop /  Sharp Develop (as I write the Monodevelop.com link times \nout)\nhttp://www.monodevelop.com/\nhttp://lists.ximian.com/mailman/listinfo/monodevelop-list\nhttp://www.icsharpcode.net/OpenSource/SD/\n \nEclipse:\nhttp://www.eclipse.org/\n\n5. Once a GCC compatible compiler is available in Mono --- subject to the \navailability of libraries -- compiling R becomes an option. If R can be \ncompiled then there are a lot of tests and benchmarks to be run to test \nfor: numeric accuracy, speed, usability.\n\n6. Eventually, some or all of R may be re-written in C#  (but don't hold \nyour breath).  One of the reasons for Omegahat was to avoid the tedious, \nunproductive chore or rewriting the same old software. -- again and again\n\nDoes any of  this make sense?\nWill any of this really happen?\nWhen?\n\nDISCLAIMER\\ This is my guesswork -- without seeing -- let al...{{dropped}}",
+      "body_snippet": "GOT MONO?\nAs to the current topic of which widget set to use today for R user \ninterfaces -- I have no idea.\n\nIn the long run (see Keynes quote in signature), IMHO the R/Omegahat \ncommunity will be wr",
+      "thread_id": "thread-d0800e8a9bab",
+      "thread_depth": 0,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-fbcbcfbda3c6",
+      "message_id": "<Pine.LNX.4.44.0405050429330.13895-100000@unix24.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2004-05-04T21:28:30Z",
+      "subject": "[R-gui] FXPy R Gui toolkit?",
+      "subject_clean": "[R-gui] FXPy R Gui toolkit?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\n[Preamble, then example/prototype: ]\n\nI was looking at the recent discussion of which toolkit to use \nfor GUIs in R in the future, (ignoring for the moment the \nSciViews/Visual Basic stuff which looks great!)  Dirk suggested \nthat wxWindows/wxWidgets is the emerging consensus.  \n\nI guess we need some working prototypes to evaluate things \nfurther.  I would still consider FOX as possibly being easier to \nwork with than wxWindows, e.g. see Zed Shaw's post:\n\nhttps://stat.ethz.ch/pipermail/r-sig-gui/2002-October/000016.html\n\nwhich says:\n\"The disadvantage is that wxWindows is a P-I-G!  It's huge,\nrequires tons of libraries, always needs a very complicated \nlinking process which takes me forever to get right on any \nplatform.\"\n<SNIP>\n\"FOX is very very well designed, extremely easy to work with, \nwell documented, super small,\"\n\nMy experience under Windows NT/2000 has tended to agree with Zed \nin that wxWindows is not easy to build, especially if you are \ntrying to do it with MinGW's g++ (or even cygwin), rather than \nVisual C++.  Most wxWindows/wxWidgets experts would advise you \nto use Visual C++, but wouldn't it be nice to be able to build \nR packages with MinGW or similar?  Would going through wxPython \nor similar simplify compilation issues of wxWindows source code, \nbut still present linking issues?\n\nI've had a go at working towards a rough prototype of \nusing the FOX GUI toolkit with R, initially through Python \n(accessing Tk through Tcl isn't too bad is it?).  This of \ncourse is not a valid argument for why FOX is better than \nwxWindows, because you can presumably do the same with \nwxPython.  Anybody?\n\nI have a Hello-Worldish example of using FOX from R via \nRSPython, but there are a few glitches to work through:\n\nhttp://bioinf.wehi.edu.au/folders/james/fxpy/\n\n\nUnfortunately, Python (not FOX) has MS Visual C++ build \nissues too, i.e. it is very difficult to build in MinGW:\n\nhttp://uucode.com/texts/python-mingw/python-mingw.html\n\nand it is quite strict in that it won't let you build and \ninstall Python extensions using MinGW if python itself is built \nwith MS Visual C++ (which it always is).  But maybe it's OK to \njust use MSVC-built binaries of Python and the GUI toolkit and \nthen just use the python bindings for the GUI classes.\n\nWishing I could be at userR,\nJames",
+      "body_snippet": "Hi,\n\n[Preamble, then example/prototype: ]\n\nI was looking at the recent discussion of which toolkit to use \nfor GUIs in R in the future, (ignoring for the moment the \nSciViews/Visual Basic stuff which ",
+      "thread_id": "thread-fbcbcfbda3c6",
+      "thread_depth": 0,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-9309b33cf431",
+      "message_id": "<001401c43212$49ebd950$0400a8c0@ghandi>",
+      "from_name": "Greg Riddick",
+      "from_email_hash": "dcdaec5f3a4279db9f3a17283f5f2919fd424277a254c4992375bbeca4967d3b",
+      "date": "2004-05-04T22:00:51Z",
+      "subject": "[R-gui] FXPy R Gui toolkit?",
+      "subject_clean": "[R-gui] FXPy R Gui toolkit?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": ">My experience under Windows NT/2000 has tended to agree with Zed \n>in that wxWindows is not easy to build, especially if you are \n>trying to do it with MinGW's g++ (or even cygwin), rather than \n>Visual C++.  Most wxWindows/wxWidgets experts would advise you \n>to use Visual C++, but wouldn't it be nice to be able to build \n>R packages with MinGW or similar? \n\nI've used wxWidgets on Windows and I don't think it's that hard to compile.\nIt works very well with DevC++ which comes bundled with the MingW compiler.\nSee: http://www.wxwindows.org/devcpp.htm\n\nAlso, I don't think an extra meg or two of libraries it that big of a deal.\nEspecially since the R base distribution is approaching 20 megs on some platforms.\n\n\n> Would going through wxPython \n>or similar simplify compilation issues of wxWindows source code, \n>but still present linking issues?\n\nNo linking issues with wxPython b/c wxWidgets is just a pre-compiled library in this case.\nWidgets are created dynamically by Python at run time. Python is easy to work with, but might as well make the whole gui compiled code IMHO.\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": ">My experience under Windows NT/2000 has tended to agree with Zed \n>in that wxWindows is not easy to build, especially if you are \n>trying to do it with MinGW's g++ (or even cygwin), rather than \n>Vis",
+      "thread_id": "thread-9309b33cf431",
+      "thread_depth": 0,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-fa8027cfadf6",
+      "message_id": "<Pine.LNX.4.44.0405052051540.17523-100000@unix24.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2004-05-05T13:38:17Z",
+      "subject": "[R-gui] wxPython R GUI toolkit",
+      "subject_clean": "[R-gui] wxPython R GUI toolkit",
+      "in_reply_to": "<001401c43212$49ebd950$0400a8c0@ghandi>",
+      "references": [],
+      "body_plain": "Greg and others,\n\nSorry if this seems like rehashing the past, but I'm trying to \nat least cite actual examples, compilers etc. not just discuss \ngeneral GUI philosophies for the future...\n\nThanks very much for the tips on building wxWindows without \nMS Visual C++.  I was just put off initially by my failed \nattempts to build wxWindows source code with MinGW from the \ncommand-line.\n\nIn terms of using pre-built binaries and going through \nPython, I think I'd now contradict my last email and look more \nfavorably upon wxPython (Python interface to wxWindows/wxWidgets),\nas Dirk and Greg and others suggested.  It has features FOX \ndoesn't yet have like Unicode and doesn't seem to crash as often \nin my (very preliminary and extremely ignorant) tests.  So I've \nchanged the email subject-line to wxPython.\n\nOf course bringing in another scripting language (Python) is not \noptimal, but it just seems like such a daunting task for anyone \nto develop a direct R-wxWindows or R-FOX or R-... interface. \nSo going through Python (or similar) doesn't seem too bad \nas a first step (as we can learn from R-Tcl/Tk).\n\nSo despite my initial pains of trying to build wxWindows from \nsource, I did find it quite easy to call a wxPython script \nfrom RSPython:\n\nlibrary(RSPython)\nimportPythonModule(\"wxPython.wx\")\n.Python(\"wxHello\",.module=\"wxHello\")\n\n[ \"Hello World\" WX window appears succesfully! ]\n\nwhere the wxHello.py module is a GUI Hello-World wxPython \nscript within my python search path. \n\nThe python search path can be found with:\nimportPythonModule(\"sys\")\n.Python(\"path\",.module=\"sys\")\n\n=================================================\nwxHello.py\n=================================================\nfrom wxPython.wx import wxPySimpleApp, wxFrame\n\ndef wxHello():\n    app = wxPySimpleApp()\n    frame = wxFrame(None, -1, \"Hello World\")\n    frame.Show(1)\n    app.MainLoop()\n=================================================\n\nHOWEVER, I haven't had any luck so far with doing this step by \nstep from R.  An example of what I tried is included below.\nIf anyone else feels like playing with RSPython / wxPython \nand has any ideas, I would be most appreciative. \n\nRegards,\nJames\n\nSys.putenv(PYTHONPATH=\"C:\\\\Python22\")\nlibrary(RSPython)\n\n# The first command I run in RSPython 0.4-0 (latest \n# Win32 binary) always fails no matter what it is.\nimportPythonModule(\"wxPython.wx\")\n# Error in .PythonInit(warn = T) : Error in python call: A \n# Python Exception Occurred.\nimportPythonModule(\"wxPython.wx\")\napp <- .Python(\"wxPySimpleApp\",.module=\"wxPython.wx\",.convert=F)\nframe <- .PythonEval(\"wxFrame(None,-1,\\\"Hello World\\\")\",\n  .module=\"wxPython.wx\",.convert=F)\nframe <- .Python(\"wxFrame\",.module=\"wxPython.wx\",.convert=F)\n.PythonMethod(app,\"SetTopWindow\",(frame[\"id\"]),.module=\"wxPython.wx\",.convert=F)\n.PythonMethod(frame,\"Show\",1,.module=\"wxPython.wx\",.convert=F)\n.PythonMethod(app,\"MainLoop\",.module=\"wxPython.wx\",.convert=F)\n\n# NOTHING HAPPENS :\n# app.MainLoop() exits instantly with no apparent error, and\n# without showing the \"Hello World\" window.",
+      "body_snippet": "Greg and others,\n\nSorry if this seems like rehashing the past, but I'm trying to \nat least cite actual examples, compilers etc. not just discuss \ngeneral GUI philosophies for the future...\n\nThanks ver",
+      "thread_id": "thread-9309b33cf431",
+      "thread_depth": 1,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-a79d2d032305",
+      "message_id": "<MABBLJDICACNFOLGIHJOCEIOEGAA.phgrosjean@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2004-05-06T13:38:26Z",
+      "subject": "[R-gui] wxPython R GUI toolkit",
+      "subject_clean": "[R-gui] wxPython R GUI toolkit",
+      "in_reply_to": "<Pine.LNX.4.44.0405052051540.17523-100000@unix24.alpha.wehi.edu.au>",
+      "references": [],
+      "body_plain": "James,\n\n>Sorry if this seems like rehashing the past, but I'm trying to\n>at least cite actual examples, compilers etc. not just discuss\n>general GUI philosophies for the future...\n>[...]\n\nIf you succeed in using wxWindows (or wxPython) from R, it is nice. However,\nspeaking about \"actual examples\", I think R Commander with Tcl/Tk is one\n(OK, we have already discussed, some people do not like much TclTk)... Don't\nyou think it should be possible to make a core R code, and make the \"widget\npart\" interchangeable. That is, and application like R Commander that uses\nTclTk currently could be adapted to use alternatively wxWindows, Gtk, or\nwhatever... providing the corresponding dialog boxes are coded with the\ngiven widgets? At the end, the user could choose its preferred GUI.\n\nWell, I see many problems here, because the different libraries have\ndifferent widgets and manage then also quite differently... but at least, we\ncould try. This would require:\n\n1) To rewrite R Commander so that it can work with other graphical widgets\nthan TclTk. That is only a decision that John Fox can take. I did a SciViews\ncompatible version of R Commander with a very different interface that the\nstandard one quite easily, because John's code is written in a way that\npermits it quite easily.\n\n2) Once it is done, we would have a basis to try on an actual application\n(that is, R Commander), these various libraries. I think it should be very\nuseful and much more constructive to work on actual applications.\n\nBest,\n\nPhilippe Grosjean\n\n.......................................................<?}))><....\n ) ) ) ) )\n( ( ( ( (   Prof. Philippe Grosjean\n\\  ___   )\n \\/ECO\\ (   Numerical Ecology of Aquatic Systems\n /\\___/  )  Mons-Hainaut University, Pentagone\n/ ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium\n /NUM\\/  )\n \\___/\\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12\n       \\ )  email: Philippe.Grosjean@umh.ac.be\n ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)\n( ( ( ( (\n...................................................................",
+      "body_snippet": "James,\n\n>Sorry if this seems like rehashing the past, but I'm trying to\n>at least cite actual examples, compilers etc. not just discuss\n>general GUI philosophies for the future...\n>[...]\n\nIf you succe",
+      "thread_id": "thread-9309b33cf431",
+      "thread_depth": 2,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-7f1ddca14726",
+      "message_id": "<20040506124842.MUVU18955.tomts16-srv.bellnexxia.net@JohnDesktop8300>",
+      "from_name": "John Fox",
+      "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
+      "date": "2004-05-06T14:48:46Z",
+      "subject": "[R-gui] wxPython R GUI toolkit",
+      "subject_clean": "[R-gui] wxPython R GUI toolkit",
+      "in_reply_to": "<MABBLJDICACNFOLGIHJOCEIOEGAA.phgrosjean@sciviews.org>",
+      "references": [],
+      "body_plain": "Dear Philippe et al.,\n\nIt's not clear to me how the Rcmdr package fits into this, more general,\ndiscussion about GUIs for R. I initially wrote the package because I wanted\nto use R in introductory social-statistics classes for which the\ncommand-line interface isn't really appropriate -- and after waiting for\nquite a while for something else to appear. Although I expect that\neventually someone will come up with a better basic-statistics GUI, or even\nsomething more ambitious, I note that this hasn't happened yet -- at least\nnot that I'm aware.\n\nWith respect to the further development of the Rcmdr package, I'm open to\nsuggestions. If nothing else, the code can use some cleaning up, and if it\ncan be made independent of Tcl/Tk without an unreasonable amount of work,\nI'm open to that as well. The useR conference should provide a forum for\ndiscussing these and related questions.\n\nRegards,\n John\n\n> -----Original Message-----\n> From: Philippe Grosjean [mailto:phgrosjean@sciviews.org] \n> Sent: Thursday, May 06, 2004 6:37 AM\n> To: r-sig-gui@stat.math.ethz.ch\n> Cc: James Wettenhall; Greg Riddick; jfox@mcmaster.ca\n> Subject: RE: [R-gui] wxPython R GUI toolkit\n> \n> James,\n> \n> >Sorry if this seems like rehashing the past, but I'm trying \n> to at least \n> >cite actual examples, compilers etc. not just discuss general GUI \n> >philosophies for the future...\n> >[...]\n> \n> If you succeed in using wxWindows (or wxPython) from R, it is \n> nice. However, speaking about \"actual examples\", I think R \n> Commander with Tcl/Tk is one (OK, we have already discussed, \n> some people do not like much TclTk)... Don't you think it \n> should be possible to make a core R code, and make the \n> \"widget part\" interchangeable. That is, and application like \n> R Commander that uses TclTk currently could be adapted to use \n> alternatively wxWindows, Gtk, or whatever... providing the \n> corresponding dialog boxes are coded with the given widgets? \n> At the end, the user could choose its preferred GUI.\n> \n> Well, I see many problems here, because the different \n> libraries have different widgets and manage then also quite \n> differently... but at least, we could try. This would require:\n> \n> 1) To rewrite R Commander so that it can work with other \n> graphical widgets than TclTk. That is only a decision that \n> John Fox can take. I did a SciViews compatible version of R \n> Commander with a very different interface that the standard \n> one quite easily, because John's code is written in a way \n> that permits it quite easily.\n> \n> 2) Once it is done, we would have a basis to try on an actual \n> application (that is, R Commander), these various libraries. \n> I think it should be very useful and much more constructive \n> to work on actual applications.\n> \n> Best,\n> \n> Philippe Grosjean\n> \n> .......................................................<?}))><....\n>  ) ) ) ) )\n> ( ( ( ( (   Prof. Philippe Grosjean\n> \\  ___   )\n>  \\/ECO\\ (   Numerical Ecology of Aquatic Systems\n>  /\\___/  )  Mons-Hainaut University, Pentagone\n> / ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium\n>  /NUM\\/  )\n>  \\___/\\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12\n>        \\ )  email: Philippe.Grosjean@umh.ac.be\n>  ) ) ) ) )  SciViews project coordinator \n> (http://www.sciviews.org) ( ( ( ( ( \n> ...................................................................\n> \n>",
+      "body_snippet": "Dear Philippe et al.,\n\nIt's not clear to me how the Rcmdr package fits into this, more general,\ndiscussion about GUIs for R. I initially wrote the package because I wanted\nto use R in introductory soc",
+      "thread_id": "thread-9309b33cf431",
+      "thread_depth": 3,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-ddeac2b0bf98",
+      "message_id": "<Pine.LNX.4.44.0405071010340.23419-100000@unix24.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2004-05-07T02:16:13Z",
+      "subject": "[R-gui] wxPython R GUI toolkit",
+      "subject_clean": "[R-gui] wxPython R GUI toolkit",
+      "in_reply_to": "<MABBLJDICACNFOLGIHJOCEIOEGAA.phgrosjean@sciviews.org>",
+      "references": [],
+      "body_plain": "On Thu, 6 May 2004, Philippe Grosjean wrote:\n> you think it should be possible to make a core R code, and make the \"widget\n> part\" interchangeable. That is, and application like R Commander that uses\n\nPhillipe,\n\nYes, that would be great!\n\nSince my last post, I have played around with wxPython a bit \nmore, and have now written a wxMessageBox function which \nworks in almost exactly the same way as the tkMessageBox \nfunction,\ne.g.\nwxMessagesBox(title=\"Title\",message=\"Message\",\n  type=\"yesnocancel\",icon=\"question\")\n\neven though in wxPython's wxMessageDialog you would actually use \nflags like:\n wxOK | wxICON_INFORMATION\netc. \n\ni.e. I've written a wrapper to make it look more like \ntkMessageBox().\n\nSo yes, I am thinking that it would be nice to have all GUI \ntoolkits look similar from R, but there is a bit of work to \ndo... especially because wxWindows is object-oriented, whereas \nTcl/Tk is not.\n\nRegards,\nJames",
+      "body_snippet": "On Thu, 6 May 2004, Philippe Grosjean wrote:\n> you think it should be possible to make a core R code, and make the \"widget\n> part\" interchangeable. That is, and application like R Commander that uses\n",
+      "thread_id": "thread-9309b33cf431",
+      "thread_depth": 3,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-cd1c8f0fbe83",
+      "message_id": "<Pine.LNX.4.44.0405171945570.22049-100000@unix24.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2004-05-17T11:53:06Z",
+      "subject": "[R-gui] R-wxPython prototype!",
+      "subject_clean": "[R-gui] R-wxPython prototype!",
+      "in_reply_to": "<Pine.LNX.4.44.0405050429330.13895-100000@unix24.alpha.wehi.edu.au>",
+      "references": [],
+      "body_plain": "Hi,\n\nA few weeks ago, I posted in regards to experimenting with \naccessing the wxWidgets GUI toolkit from R by going through \nRSPython.  I have now made some quite significant progress with \nthis and would like to offer a prototype of an R-wxPython \npackage for people to play around with if they feel so inclined.\n\nThe package and documentation can be downloaded from:\nhttp://bioinf.wehi.edu.au/folders/james/wxPython/\n\nIt requires RSPython 0.5-3 or later.  The Windows build of \nRSPython on OmegaHat (0.4-0) is too old, so either build it \nyourself or download from :\nhttp://bioinf.wehi.edu.au/folders/james/RSPython/\n\nAlso required:\nPython 2.2.x   (http://www.python.org)\nwxPython 2.5.x for Python 2.2 (http://www.wxPython.org)\n\nThe wxWidgets C++ source code is not required.\n\nRegards,\nJames\n\n--------------------------------------------------------------------------\nJames Wettenhall                                  Tel: (+61 3) 9345 2629\nDivision of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852\nThe Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au\n of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    \n1G Royal Parade,\nParkville, Vic 3050, Australia\nhttp://www.wehi.edu.au",
+      "body_snippet": "Hi,\n\nA few weeks ago, I posted in regards to experimenting with \naccessing the wxWidgets GUI toolkit from R by going through \nRSPython.  I have now made some quite significant progress with \nthis and ",
+      "thread_id": "thread-fbcbcfbda3c6",
+      "thread_depth": 1,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-e354257b8f6b",
+      "message_id": "<MABBLJDICACNFOLGIHJOEECLEHAA.phgrosjean@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2004-05-19T10:10:36Z",
+      "subject": "[R-gui] SciViews package for a GUI layer in R?",
+      "subject_clean": "[R-gui] SciViews package for a GUI layer in R?",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello,\n\nR-help got the first annonce of SciViews-R [An alpha version (unstable,\nstill in development) of SciViews-R can be downloaded from\nhttp://www.sciviews.org/SciViews-R. See also screenshots at\nhttp://www.sciviews.org/software/rconsole.htm, etc.]\n\nWe think it should be nice if the various GUI projects for R adopted some\ncommon (or similar) features that would be intercompatible between these\nprojects. One way to do that is through a R package that implements those\ncommon features in pure R code. The SciViews package is a preliminary\nattempt in this direction. We also propose some extensions that are useful\nfor GUIs: look at copy, export, view and report functions, for instance. A\nmanual explain it in more details\n(ftp://ftp.umh.ac.be/pub/ftp_econum/Manual.pdf).\n\nAny comments?\n\nBest,\n\nPhilippe Grosjean\n\n.......................................................<?}))><....\n ) ) ) ) )\n( ( ( ( (   Prof. Philippe Grosjean\n\\  ___   )\n \\/ECO\\ (   Numerical Ecology of Aquatic Systems\n /\\___/  )  Mons-Hainaut University, Pentagone\n/ ___  /(   8, Av. du Champ de Mars, 7000 Mons, Belgium\n /NUM\\/  )\n \\___/\\ (   phone: + 32.65.37.34.97, fax: + 32.65.37.33.12\n       \\ )  email: Philippe.Grosjean@umh.ac.be\n ) ) ) ) )  SciViews project coordinator (http://www.sciviews.org)\n( ( ( ( (\n...................................................................",
+      "body_snippet": "Hello,\n\nR-help got the first annonce of SciViews-R [An alpha version (unstable,\nstill in development) of SciViews-R can be downloaded from\nhttp://www.sciviews.org/SciViews-R. See also screenshots at\nh",
+      "thread_id": "thread-e354257b8f6b",
+      "thread_depth": 0,
+      "month": "2004-05"
+    },
+    {
+      "id": "msg-eb89d64efd96",
+      "message_id": "<OF5577E013.E38F1A27-ON85256EA0.0081FE98-85256EA1.000643D7@ci.orlando.fl.us>",
+      "from_name": "James.Callahan@CityofOrlando.net",
+      "from_email_hash": "a6cac21f5db8b2ddecdd98b457951f02e2e35e64e7e1e58d6732e4696ec81b89",
+      "date": "2004-05-27T03:09:25Z",
+      "subject": "[R-gui] Pretty Wild Stuff: Mono, MyXaml & MyXaml Visual Designer",
+      "subject_clean": "[R-gui] Pretty Wild Stuff: Mono, MyXaml & MyXaml Visual Designer",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Egads! \nMy tiny department just lost another employee today to an internal \ntransfer.\nMy (previously light) workload will probably double or quadruple.\n\nBut, my after hours research as turned up some pretty wild stuff,\nmainly the combination of Mono and MyXaml. They seem to be\ndeveloping at warp speed this month.\n\nJust type \"Mono MyXaml\" in Google.\n\nAgain, I don't know the short term solutions, but this looks like one path \ncode development\nmay take in the next several years -- an incredibly feverish pace of \ndevelopment this month.\n\nMono is an open source \"embrace and extend\" cross platform implementation \nof C# and the CLR (core of MS .Net).\nWhich is a bit like saying Linux is a Posix compatible operating system \nkernel.  GNU's Complier Collection (GCC), \nEmacs and X11 are what made Linux really useful.\n\nMyXaml is an open source (GPL) \"preview\" of MS XAML (application mark-up \nlanguage).\n         http://myxaml.com/\n\n        http://myxaml.com/whitePapers/whatIsXAML.htm\n\nMarc Clifton has released a  visual designer for MyXaml. The MyXaml Visual \nDesigner \nlooks like an effective GUI builder thatmay make Mono truly useful.\nMyXaml Visual Designer has a free (as in \"free beer\") version, but \nunfortunately is not GPLed.\nhttp://myxaml.com/marcclifton/archive/2004/04/14/210.aspx\n\nSome sample interfaces\nhttp://myxaml.com/marcclifton/archive/2004/05/16/283.aspx\nhttp://myxaml.com/marcclifton/archive/2004/05/09/264.aspx\n\nLicensing issues with MyXaml and MyXaml Visual Designer\n         http://www.myxaml.com/licensing.htm\nhttp://myxaml.com/marcclifton/archive/2004/03/20/147.aspx\n\n\nIs The Designer Open Source?\nhttp://myxaml.com/marcclifton/archive/2004/04/14/210.aspx\nNo.  The designer utilizes third party libraries which require developer \nseat licensing, \nand therefore we cannot distribute the designer as an open source \napplication.\n\n* * *\nWill There Be A Commercial Version?\nYes.  The commercial version is planned to be a complete development \nenvironment for MyXaml-based applications.\n\nWill There Always Be A Free Version?\nYes.  It will have fewer features however as compared to the commercial \nversion.\n\nI'm Having Problems With The Designer.  Where Do I Ask Questions?\nI've created a forum for asking questions, discussing problems, feature \nrequests, etc.\n\n\nMyXaml works with Mono and can run on Linux.\n        http://myxaml.com/marcclifton/archive/2004/05/10/268.aspx\n\nWow, I'm impressed.  It took about 30 minutes to install Mono, create a \nlittle batch file to compile the core parser engine, and write a little \nHello MyXaml application.  And it worked!  No code changes necessary at \nall!!!\n\nMyXaml Ported to Linux\nhttp://myxaml.com/marcclifton/archive/2004/04/30/237.aspx\n\nBy the way, a good link on installing Mono (on Windows XP).\nHelloMono - Mono on Windows XP\nBy Will Senn \nhttp://www.codeproject.com/csharp/hellomono.asp\n\nFascinating stuff. Hope it helps.\nGotta get some dinner -- it is 9:00 PM local time.\n\nPersonal opinions from after hours research tangentially related to \nwork...\n\nJim Callahan\nManagement, Budget & Accounting\nCity of Orlando\n(407) 246-3039 office\n(407) 234-3744 cell phone\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Egads! \nMy tiny department just lost another employee today to an internal \ntransfer.\nMy (previously light) workload will probably double or quadruple.\n\nBut, my after hours research as turned up some ",
+      "thread_id": "thread-eb89d64efd96",
+      "thread_depth": 0,
+      "month": "2004-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-d0800e8a9bab",
+      "subject": "[R-gui] Got Mono?",
+      "message_count": 1,
+      "participants": [
+        "James.Callahan@CityofOrlando.net"
+      ],
+      "started": "2004-05-01T04:38:43+00:00",
+      "last_reply": "2004-05-01T04:38:43+00:00",
+      "root_message_id": "msg-d0800e8a9bab"
+    },
+    {
+      "id": "thread-fbcbcfbda3c6",
+      "subject": "[R-gui] FXPy R Gui toolkit?",
+      "message_count": 2,
+      "participants": [
+        "James Wettenhall"
+      ],
+      "started": "2004-05-04T21:28:30+00:00",
+      "last_reply": "2004-05-17T11:53:06+00:00",
+      "root_message_id": "msg-fbcbcfbda3c6"
+    },
+    {
+      "id": "thread-9309b33cf431",
+      "subject": "[R-gui] FXPy R Gui toolkit?",
+      "message_count": 5,
+      "participants": [
+        "Greg Riddick",
+        "James Wettenhall",
+        "John Fox",
+        "Philippe Grosjean"
+      ],
+      "started": "2004-05-04T22:00:51+00:00",
+      "last_reply": "2004-05-07T02:16:13+00:00",
+      "root_message_id": "msg-9309b33cf431"
+    },
+    {
+      "id": "thread-e354257b8f6b",
+      "subject": "[R-gui] SciViews package for a GUI layer in R?",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2004-05-19T10:10:36+00:00",
+      "last_reply": "2004-05-19T10:10:36+00:00",
+      "root_message_id": "msg-e354257b8f6b"
+    },
+    {
+      "id": "thread-eb89d64efd96",
+      "subject": "[R-gui] Pretty Wild Stuff: Mono, MyXaml & MyXaml Visual Designer",
+      "message_count": 1,
+      "participants": [
+        "James.Callahan@CityofOrlando.net"
+      ],
+      "started": "2004-05-27T03:09:25+00:00",
+      "last_reply": "2004-05-27T03:09:25+00:00",
+      "root_message_id": "msg-eb89d64efd96"
+    }
+  ]
+}

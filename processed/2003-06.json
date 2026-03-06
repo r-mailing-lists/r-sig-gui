@@ -1,0 +1,63 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-06",
+  "messages": [
+    {
+      "id": "msg-4ce2942d2561",
+      "message_id": "<Pine.LNX.4.21.0306111519510.15609-100000@paradise.stat.tku.edu.tw>",
+      "from_name": "Steve Chen",
+      "from_email_hash": "98dac2753dca5e488f6acf9cf4ad20bd9b42d227bca9e4cdc1e59f524b747e05",
+      "date": "2003-06-11T23:38:57Z",
+      "subject": "[R-gui] Announcing R_PHP_Online version 0.1",
+      "subject_clean": "[R-gui] Announcing R_PHP_Online version 0.1",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\nI am releasing version 0.1 of my R_PHP_Online package.\nThis is an online CGI package for running R programs via Web interface\nlike RWeb, but it's written in PHP and it can show graphic outputs.\n\nThe R_PHP_Online can be found at\n\nhttp://steve-chen.net/R_PHP/\n\nor at\n\nhttp://steve.stat.tku.edu.tw/R_PHP/\n\nand you can use the demo or download version 0.1 there.\n\nRegards,\n\nSteve Chen,\nAssociate Professor, Department of Statistics,\nTamKang University, Taiwan",
+      "body_snippet": "Hi all,\n\nI am releasing version 0.1 of my R_PHP_Online package.\nThis is an online CGI package for running R programs via Web interface\nlike RWeb, but it's written in PHP and it can show graphic output",
+      "thread_id": "thread-4ce2942d2561",
+      "thread_depth": 0,
+      "month": "2003-06"
+    },
+    {
+      "id": "msg-19e845b69205",
+      "message_id": "<BAY2-F151bDt3HvoFOA000000a5@hotmail.com>",
+      "from_name": "Vytautas M.",
+      "from_email_hash": "0f8f59a686705b56d45475c7c50c488de67739de89c451076f94342c970086be",
+      "date": "2003-06-30T15:30:56Z",
+      "subject": "[R-gui] IDE/Script Editor",
+      "subject_clean": "[R-gui] IDE/Script Editor",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "take a look at\n\nsyn.sf.net\n\nfor open source, customisable syn Text Editor with R syntax highliting.\n\nVytautas Maniusis",
+      "body_snippet": "take a look at\n\nsyn.sf.net\n\nfor open source, customisable syn Text Editor with R syntax highliting.\n\nVytautas Maniusis",
+      "thread_id": "thread-19e845b69205",
+      "thread_depth": 0,
+      "month": "2003-06"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-4ce2942d2561",
+      "subject": "[R-gui] Announcing R_PHP_Online version 0.1",
+      "message_count": 1,
+      "participants": [
+        "Steve Chen"
+      ],
+      "started": "2003-06-11T23:38:57+00:00",
+      "last_reply": "2003-06-11T23:38:57+00:00",
+      "root_message_id": "msg-4ce2942d2561"
+    },
+    {
+      "id": "thread-19e845b69205",
+      "subject": "[R-gui] IDE/Script Editor",
+      "message_count": 1,
+      "participants": [
+        "Vytautas M."
+      ],
+      "started": "2003-06-30T15:30:56+00:00",
+      "last_reply": "2003-06-30T15:30:56+00:00",
+      "root_message_id": "msg-19e845b69205"
+    }
+  ]
+}

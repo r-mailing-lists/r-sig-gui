@@ -1,0 +1,53 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2004-12",
+  "messages": [
+    {
+      "id": "msg-9be4c45b5fea",
+      "message_id": "<9CBBD5F72866034E9F64187D288A7ED552FFEC@romulus.retroscreen.com>",
+      "from_name": "Rob Lambkin",
+      "from_email_hash": "be826e801dd1c7e61709481f7da606b9c2a9866dd47bef0b02a31c6b972b5566",
+      "date": "2004-12-22T14:52:10Z",
+      "subject": "[R-gui] SIMPLE GUI",
+      "subject_clean": "[R-gui] SIMPLE GUI",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi\n \nI am pretty new to R and much of the discussion in this group is way\nover my head. I am a researcher not a statistician or programmer.\n \nI wonder if you guys could help though, I currently use SPSS, but would\nlike to consider R.\n \nIs there a simple GUI that has most of the basic functions available?\n \nHow convertible is SPSS syntax to R?\n \nWhat is the best way to make a custom GUI for R, which would run certain\nsyntaxes (e.g., calc the mean of variable X) from a drop down menu\ninterface.\n \nThanks for your help in advance\n \nRob\n \n \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi\n \nI am pretty new to R and much of the discussion in this group is way\nover my head. I am a researcher not a statistician or programmer.\n \nI wonder if you guys could help though, I currently use SP",
+      "thread_id": "thread-9be4c45b5fea",
+      "thread_depth": 0,
+      "month": "2004-12"
+    },
+    {
+      "id": "msg-5caa7d6e5ccb",
+      "message_id": "<20041222165326.FTAL2034.tomts20-srv.bellnexxia.net@JohnDesktop8300>",
+      "from_name": "John Fox",
+      "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
+      "date": "2004-12-22T17:53:32Z",
+      "subject": "[R-gui] SIMPLE GUI",
+      "subject_clean": "[R-gui] SIMPLE GUI",
+      "in_reply_to": "<9CBBD5F72866034E9F64187D288A7ED552FFEC@romulus.retroscreen.com>",
+      "references": [],
+      "body_plain": "Dear Rob,\n\n\n> -----Original Message-----\n> From: r-sig-gui-bounces@stat.math.ethz.ch \n> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of Rob Lambkin\n> Sent: Wednesday, December 22, 2004 8:55 AM\n> To: r-sig-gui@stat.math.ethz.ch\n> Subject: [R-gui] SIMPLE GUI\n> \n> Hi\n>  \n> I am pretty new to R and much of the discussion in this group \n> is way over my head. I am a researcher not a statistician or \n> programmer.\n>  \n> I wonder if you guys could help though, I currently use SPSS, \n> but would like to consider R.\n>  \n> Is there a simple GUI that has most of the basic functions available?\n>  \n\nYou might take a look at the Rcmdr package, which provides a\nbasic-statistics GUI for R, but it provides access to only a small fraction\nof what's available in R.\n\n> How convertible is SPSS syntax to R?\n>  \n\nNot at all. R implements the S language.\n\n> What is the best way to make a custom GUI for R, which would \n> run certain syntaxes (e.g., calc the mean of variable X) from \n> a drop down menu interface.\n>  \n\nAt present, the easiest route is probably via the tcltk package. That, for\nexample, is what the Rcmdr package uses.\n\nI hope this helps,\n John\n\n> Thanks for your help in advance\n>  \n> Rob\n>  \n>  \n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI@stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Dear Rob,\n\n\n> -----Original Message-----\n> From: r-sig-gui-bounces@stat.math.ethz.ch \n> [mailto:r-sig-gui-bounces@stat.math.ethz.ch] On Behalf Of Rob Lambkin\n> Sent: Wednesday, December 22, 2004 8:55 ",
+      "thread_id": "thread-9be4c45b5fea",
+      "thread_depth": 1,
+      "month": "2004-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-9be4c45b5fea",
+      "subject": "[R-gui] SIMPLE GUI",
+      "message_count": 2,
+      "participants": [
+        "John Fox",
+        "Rob Lambkin"
+      ],
+      "started": "2004-12-22T14:52:10+00:00",
+      "last_reply": "2004-12-22T17:53:32+00:00",
+      "root_message_id": "msg-9be4c45b5fea"
+    }
+  ]
+}

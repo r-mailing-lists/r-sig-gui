@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2004-03",
+  "messages": [
+    {
+      "id": "msg-e420301310e0",
+      "message_id": "<20040301181450703.AAA1656@j2hqpop01.mail.j2.com>",
+      "from_name": "eFax Send (auto reply)",
+      "from_email_hash": "540c8735555b67ef91bd7c36fc67b1fe1c14e7cb56caae0b5a2b3dd85ee5d5b2",
+      "date": "2004-03-01T19:16:46Z",
+      "subject": "[R-gui] Re: illegal...",
+      "subject_clean": "[R-gui] Re: illegal...",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Thank you for contacting j2 Global Communications.  Unfortunately, messages sent to this address are not read by our Customer Service team.  To find an answer to your question or to contact Customer Service, please visit our recently-improved Help sections:\n\nhttp://www.efax.com/help (for eFax customers)\nhttp://www.j2.com/help (for jConnect customers)\n\nCustomer Service reps are available through our Help sections 24 hours a day, 7 days a week. Most inquiries are answered in 8 hours or less.",
+      "body_snippet": "Thank you for contacting j2 Global Communications.  Unfortunately, messages sent to this address are not read by our Customer Service team.  To find an answer to your question or to contact Customer S",
+      "thread_id": "thread-e420301310e0",
+      "thread_depth": 0,
+      "month": "2004-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-e420301310e0",
+      "subject": "[R-gui] Re: illegal...",
+      "message_count": 1,
+      "participants": [
+        "eFax Send (auto reply)"
+      ],
+      "started": "2004-03-01T19:16:46+00:00",
+      "last_reply": "2004-03-01T19:16:46+00:00",
+      "root_message_id": "msg-e420301310e0"
+    }
+  ]
+}

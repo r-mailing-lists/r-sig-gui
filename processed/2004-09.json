@@ -1,0 +1,36 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2004-09",
+  "messages": [
+    {
+      "id": "msg-2b1338ae9288",
+      "message_id": "<41470FAF.4000806@epri-peac.com>",
+      "from_name": "Short, Tom",
+      "from_email_hash": "0bab54eed724573acd8ef682cf726d6f1e94addc99416a2646cd8199308fe7bb",
+      "date": "2004-09-14T17:30:15Z",
+      "subject": "[R-gui] Announcing Rpad, a web-based workbook-style interface for R",
+      "subject_clean": "[R-gui] Announcing Rpad, a web-based workbook-style interface for R",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Rpad is an interactive, web-based analysis program. Rpad pages are\ninteractive workbook-type sheets based on R. Rpad is an analysis package, a\nweb-page designer, and a gui designer all wrapped in one.\n\nFor more information and demonstrations, please see:\n\nhttp://www.Rpad.org/Rpad/\n\nKey features include:\n\n(*) WYSIWYG editing -- The page is editable, so you can add comments or\nchange the code or input data.\n\n(*) GUI's -- Create GUI elements with R or with the Rpad interface.\n\n(*) Fast -- No browser refreshes.\n\n(*) HTML output -- Create fancy HTML output using Eric Lecoutre's R2HTML.\n\n(*) Simple plotting -- Has convenience functions to simplify creation and\npresentation of web-friendly graphics.\n\n(*) Flexible -- You can add features in a number of ways with javascript\nand/or R.\n\n(*) Cross platform -- Rpad pages work in Internet Explorer v5.5 or greater\nand Mozilla (Firefox or Suite). The server-side code works in Apache in\nLinux or Windows (although not as well in Windows).\n\n(*) Open source -- Rpad brings together several powerful open-source\ntechnologies, specifically: R, Mozile, HTMLArea, Statistics-R-0.02,\nJSCookMenu, Apache, and R2HTML.\n\nFeel free to use the r-sig-gui mailing list for any feedback on Rpad, the\ndemonstration pages, and especially for feedback and questions on\ninstalling your own Rpad server.\n\n- Tom\n\n-- \nTom Short\nEPRI PEAC, www.epri-peac.com\n\nT. A. Short, Electric Power Distribution Handbook, CRC Press, 2004.\nhttp://www.crcpress.com/shopping_cart/products/product_detail.asp?sku=1791",
+      "body_snippet": "Rpad is an interactive, web-based analysis program. Rpad pages are\ninteractive workbook-type sheets based on R. Rpad is an analysis package, a\nweb-page designer, and a gui designer all wrapped in one.",
+      "thread_id": "thread-2b1338ae9288",
+      "thread_depth": 0,
+      "month": "2004-09"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-2b1338ae9288",
+      "subject": "[R-gui] Announcing Rpad, a web-based workbook-style interface for R",
+      "message_count": 1,
+      "participants": [
+        "Short, Tom"
+      ],
+      "started": "2004-09-14T17:30:15+00:00",
+      "last_reply": "2004-09-14T17:30:15+00:00",
+      "root_message_id": "msg-2b1338ae9288"
+    }
+  ]
+}

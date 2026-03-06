@@ -1,0 +1,107 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-11",
+  "messages": [
+    {
+      "id": "msg-6b3bc3acdb46",
+      "message_id": "<1068664760.3fb287b83d64a@webmail.tci.ufal.br>",
+      "from_name": "mcaj@tci.ufal.br",
+      "from_email_hash": "0f5ed8401bd3fb2d0d54fea0750c909cf70df363e65ff064da08899b011356f3",
+      "date": "2003-11-12T20:16:31Z",
+      "subject": "[R-gui] Using tcltk language with R system",
+      "subject_clean": "[R-gui] Using tcltk language with R system",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello, Does anybody know how can i call a R function in a tcltk file? I made \na tcltk file, but I need call functions in R. i.e: in R I can put .Tcl(\"tcltk \nstatement\"). There are a same command to call R in a tcltk file?\n\n  I want to make a R Gui using tcltk language, do you recommend use a tcltk or \na R pack tcltk and don't use tcltk language?\n\n  Thanks for your attention.\n\n\n  Marcos Cerqueira J?nior\n Alagoas University - Brazil\n\n-------------------------------------------------\nThis mail sent through IMP: http://horde.org/imp/",
+      "body_snippet": "Hello, Does anybody know how can i call a R function in a tcltk file? I made \na tcltk file, but I need call functions in R. i.e: in R I can put .Tcl(\"tcltk \nstatement\"). There are a same command to ca",
+      "thread_id": "thread-6b3bc3acdb46",
+      "thread_depth": 0,
+      "month": "2003-11"
+    },
+    {
+      "id": "msg-ecad978d6dc0",
+      "message_id": "<Pine.LNX.4.44.0311131015550.19842-100000@unix28.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2003-11-13T00:29:29Z",
+      "subject": "[R-gui] Using tcltk language with R system",
+      "subject_clean": "[R-gui] Using tcltk language with R system",
+      "in_reply_to": "<1068664760.3fb287b83d64a@webmail.tci.ufal.br>",
+      "references": [],
+      "body_plain": "Marcos,\n\nDo you really want to call R from Tcl?  Which features of \nthe Tcl scripting language appeal to you?  Or is it just easier \nto find examples of Tk widgets written in Tcl?\n\nI have put together some examples of creating widgets with the \ntcltk package in R:\n\nhttp://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/\n\nIf you want to call R functions from another language, have a \nlook in the R-admin document that comes with R, in particular, \nsee:\nbuild R as a shared library\n\nAnd the R-exts document may be useful as well, if you want to \nsee how to interface R functions with C code.\n\nTo allow Tcl/Tk to be called from R, Peter Dalgaard has done \nsome clever stuff in interfacing the two event loops.  Would you \nhave to reinvent some of this if you call R from Tcl?  I don't \nknow.\n\nRegards,\nJames\n\nOn Wed, 12 Nov 2003 mcaj@tci.ufal.br wrote:\n\n> \n> \n>   Hello, Does anybody know how can i call a R function in a tcltk file? I made \n> a tcltk file, but I need call functions in R. i.e: in R I can put .Tcl(\"tcltk \n> statement\"). There are a same command to call R in a tcltk file?\n> \n>   I want to make a R Gui using tcltk language, do you recommend use a tcltk or \n> a R pack tcltk and don't use tcltk language?\n> \n>   Thanks for your attention.\n> \n> \n>   Marcos Cerqueira J?nior\n>  Alagoas University - Brazil\n> \n> -------------------------------------------------\n> This mail sent through IMP: http://horde.org/imp/\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI@stat.math.ethz.ch\n> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui\n> \n\n-- \n--------------------------------------------------------------------------\nJames Wettenhall                                  Tel: (+61 3) 9345 2629\nDivision of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852\nThe Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au\n of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    \n1G Royal Parade,\nParkville, Vic 3050, Australia\nhttp://www.wehi.edu.au",
+      "body_snippet": "Marcos,\n\nDo you really want to call R from Tcl?  Which features of \nthe Tcl scripting language appeal to you?  Or is it just easier \nto find examples of Tk widgets written in Tcl?\n\nI have put together",
+      "thread_id": "thread-6b3bc3acdb46",
+      "thread_depth": 1,
+      "month": "2003-11"
+    },
+    {
+      "id": "msg-51af144045a4",
+      "message_id": "<MABBLJDICACNFOLGIHJOKELHDOAA.phgrosjean@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2003-11-13T11:29:21Z",
+      "subject": "[R-gui] Using tcltk language with R system",
+      "subject_clean": "[R-gui] Using tcltk language with R system",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "A good starting point for making a tcltk GUI for R is by looking at existing\nones. Rcmdr (R Commander, a R package you will find in CRAN) comes to mind\nfirst. It is a very neat interface, with menus, a script/log window and\nseveral other good ideas (default data frame/formula, loading of menus from\nfile, ...). If we could all use R Cmdr as a reference for tcltk GUI in R, we\nwill certainly tend towards homogeneous implementations.\nBest,\n\nPhilippe Grosjean\n\n-----Original Message-----\nFrom: r-sig-gui-bounces@stat.math.ethz.ch\n[mailto:r-sig-gui-bounces@stat.math.ethz.ch]On Behalf Of\nmcaj@tci.ufal.br\nSent: Wednesday, 12 November, 2003 20:19\nTo: r-sig-gui@stat.math.ethz.ch\nSubject: [R-gui] Using tcltk language with R system\n\n\n\n\n  Hello, Does anybody know how can i call a R function in a tcltk file? I\nmade\na tcltk file, but I need call functions in R. i.e: in R I can put\n.Tcl(\"tcltk\nstatement\"). There are a same command to call R in a tcltk file?\n\n  I want to make a R Gui using tcltk language, do you recommend use a tcltk\nor\na R pack tcltk and don't use tcltk language?\n\n  Thanks for your attention.\n\n\n  Marcos Cerqueira J?nior\n Alagoas University - Brazil\n\n-------------------------------------------------\nThis mail sent through IMP: http://horde.org/imp/\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI@stat.math.ethz.ch\nhttps://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "A good starting point for making a tcltk GUI for R is by looking at existing\nones. Rcmdr (R Commander, a R package you will find in CRAN) comes to mind\nfirst. It is a very neat interface, with menus, ",
+      "thread_id": "thread-51af144045a4",
+      "thread_depth": 0,
+      "month": "2003-11"
+    },
+    {
+      "id": "msg-8fd2ab49c45a",
+      "message_id": "<Law15-F4Oh1pMuBeZVo000050f1@hotmail.com>",
+      "from_name": "bladimir Saavedra",
+      "from_email_hash": "e6b148d2f4514501e58886884fd933794931ae35d3739a5053b0df03963798a7",
+      "date": "2003-11-22T00:04:36Z",
+      "subject": "[R-gui] confirm my susbscription",
+      "subject_clean": "[R-gui] confirm my susbscription",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello I want to confirm my subscription to your list. Bladimir Saavedra\n\n_________________________________________________________________\n\nhttp://messenger.latam.msn.com/",
+      "body_snippet": "Hello I want to confirm my subscription to your list. Bladimir Saavedra\n\n_________________________________________________________________\n\nhttp://messenger.latam.msn.com/",
+      "thread_id": "thread-8fd2ab49c45a",
+      "thread_depth": 0,
+      "month": "2003-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-6b3bc3acdb46",
+      "subject": "[R-gui] Using tcltk language with R system",
+      "message_count": 2,
+      "participants": [
+        "James Wettenhall",
+        "mcaj@tci.ufal.br"
+      ],
+      "started": "2003-11-12T20:16:31+00:00",
+      "last_reply": "2003-11-13T00:29:29+00:00",
+      "root_message_id": "msg-6b3bc3acdb46"
+    },
+    {
+      "id": "thread-51af144045a4",
+      "subject": "[R-gui] Using tcltk language with R system",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2003-11-13T11:29:21+00:00",
+      "last_reply": "2003-11-13T11:29:21+00:00",
+      "root_message_id": "msg-51af144045a4"
+    },
+    {
+      "id": "thread-8fd2ab49c45a",
+      "subject": "[R-gui] confirm my susbscription",
+      "message_count": 1,
+      "participants": [
+        "bladimir Saavedra"
+      ],
+      "started": "2003-11-22T00:04:36+00:00",
+      "last_reply": "2003-11-22T00:04:36+00:00",
+      "root_message_id": "msg-8fd2ab49c45a"
+    }
+  ]
+}

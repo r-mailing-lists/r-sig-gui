@@ -1,0 +1,216 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-12",
+  "messages": [
+    {
+      "id": "msg-5d09629e1128",
+      "message_id": "<53A181E56FB0694ABFD212F8AEDA7F6F1AB8E8@langouste.zhwin.ch>",
+      "from_name": "\"Unternährer Thomas, uth\"",
+      "from_email_hash": "85c73171ef3a0e882e0fecd63aa8f28a653e0987aead51fb397a1f2faf112f5a",
+      "date": "2003-12-09T19:34:23Z",
+      "subject": "[R-gui] key-binding",
+      "subject_clean": "[R-gui] key-binding",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n \nI studied the examples written by James Wettenhall and find the example \"Pull-Down Menus and Popup Menus\".\nIn this example James uses the following:\n \n> copyText <- function() .Tcl(paste(\"event\",\"generate\",.Tcl.args(.Tk.ID(txt),\"<<Copy>>\")))\n\nThis calls a tcl-function an gives it the arguments .Tcl.args.\n \nWhat I want is not to call a tcl-function, I want to call a R-function.\n \nFor those, who know emacs:\nI want to set the key <F10> to call a eval-region function.\n \nThe Rcmdr-Packege by John Fox has exactly the feature I'm looking for. After pressing the button \"submit\", only the region the user selected would be evaluated. \n \nCan anybody give me a hint?\n \nthanks a lot \n \nThomas",
+      "body_snippet": "Hi,\n \nI studied the examples written by James Wettenhall and find the example \"Pull-Down Menus and Popup Menus\".\nIn this example James uses the following:\n \n> copyText <- function() .Tcl(paste(\"event\"",
+      "thread_id": "thread-5d09629e1128",
+      "thread_depth": 0,
+      "month": "2003-12"
+    },
+    {
+      "id": "msg-e4c730d06555",
+      "message_id": "<5.0.2.1.0.20031209143307.00b10438@127.0.0.1>",
+      "from_name": "John Fox",
+      "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
+      "date": "2003-12-09T20:38:13Z",
+      "subject": "[R-gui] key-binding",
+      "subject_clean": "[R-gui] key-binding",
+      "in_reply_to": "<53A181E56FB0694ABFD212F8AEDA7F6F1AB8E8@langouste.zhwin.ch>",
+      "references": [],
+      "body_plain": "Dear Thomas,\n\nAt 07:35 PM 12/9/2003 +0100, \n=?utf-8?Q?=22Untern=C3=A4hrer_Thomas=2C_uth=22?= wrote:\n>Hi,\n>\n>I studied the examples written by James Wettenhall and find the example \n>\"Pull-Down Menus and Popup Menus\".\n>In this example James uses the following:\n>\n> > copyText <- function() \n> .Tcl(paste(\"event\",\"generate\",.Tcl.args(.Tk.ID(txt),\"<<Copy>>\")))\n>\n>This calls a tcl-function an gives it the arguments .Tcl.args.\n>\n>What I want is not to call a tcl-function, I want to call a R-function.\n>\n>For those, who know emacs:\n>I want to set the key <F10> to call a eval-region function.\n>\n>The Rcmdr-Packege by John Fox has exactly the feature I'm looking for. \n>After pressing the button \"submit\", only the region the user selected \n>would be evaluated.\n>\n>Can anybody give me a hint?\n\nTake a look at how this is implemented in the Rcmdr package -- it's in the \ncode for the local function onSubmit in the Commander function (which is \nright at the top of the R file for the package). You'll see that the \nfunction does some parsing of the text.\n\nI hope that this helps,\n  John\n____________________________\nJohn Fox\nDepartment of Sociology\nMcMaster University\nemail: jfox@mcmaster.ca\nweb: http://www.socsci.mcmaster.ca/jfox",
+      "body_snippet": "Dear Thomas,\n\nAt 07:35 PM 12/9/2003 +0100, \n=?utf-8?Q?=22Untern=C3=A4hrer_Thomas=2C_uth=22?= wrote:\n>Hi,\n>\n>I studied the examples written by James Wettenhall and find the example \n>\"Pull-Down Menus a",
+      "thread_id": "thread-5d09629e1128",
+      "thread_depth": 1,
+      "month": "2003-12"
+    },
+    {
+      "id": "msg-f4c0a6d78500",
+      "message_id": "<Pine.LNX.4.44.0312101043550.20481-100000@unix28.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2003-12-10T00:49:07Z",
+      "subject": "[R-gui] key-binding",
+      "subject_clean": "[R-gui] key-binding",
+      "in_reply_to": "<53A181E56FB0694ABFD212F8AEDA7F6F1AB8E8@langouste.zhwin.ch>",
+      "references": [],
+      "body_plain": "Thomas,\n\nJohn has probably answered your question sufficiently already, \nbut maybe some code like this does what you want:\n\nlibrary(tcltk)\ntt <- tktoplevel()\ntxt <- tktext(tt)\ntkpack(txt)\nevalSelection <- function() cat(eval(parse(text=tclvalue(tkcmd(\"selection\",\"get\",displayof=txt,type=\"STRING\")))))\ntkbind(txt,\"<F10>\",evalSelection)\n\nThe tkbind command says that when F10 is pressed while the text \nwidget is focused, the R function evalSelection will be run.  \n\nI just tried typing\n1+1\n2+2\n3+3\ninto my text widget, selecting 2+2 and pressing F10, and I got \n\"4\" in my R console.  Hopefully it'll work the same for you.\n\nRegards,\nJames\n\nP.S. The example you quoted from my webpage uses .Tcl and paste \nunnecessarily.  I really should update some of these examples to \njust use tkcmd, tkwidget etc. because these handle \"quoting hell\"\nmuch better and look nicer. \n\n\n--------------------------------------------------------------------------\nJames Wettenhall                                  Tel: (+61 3) 9345 2629\nDivision of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852\nThe Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au\n of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921    \n1G Royal Parade,\nParkville, Vic 3050, Australia\nhttp://www.wehi.edu.au",
+      "body_snippet": "Thomas,\n\nJohn has probably answered your question sufficiently already, \nbut maybe some code like this does what you want:\n\nlibrary(tcltk)\ntt <- tktoplevel()\ntxt <- tktext(tt)\ntkpack(txt)\nevalSelectio",
+      "thread_id": "thread-5d09629e1128",
+      "thread_depth": 1,
+      "month": "2003-12"
+    },
+    {
+      "id": "msg-9973091e7a6f",
+      "message_id": "<53A181E56FB0694ABFD212F8AEDA7F6F1AB8EA@langouste.zhwin.ch>",
+      "from_name": "\"Unternährer Thomas, uth\"",
+      "from_email_hash": "85c73171ef3a0e882e0fecd63aa8f28a653e0987aead51fb397a1f2faf112f5a",
+      "date": "2003-12-10T10:04:24Z",
+      "subject": "AW: [R-gui] key-binding",
+      "subject_clean": "AW: [R-gui] key-binding",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Thanks a lot to james wettenhall an john fox for their hints and comments.\nIt works fine now.\n \nThomas\n \n \n \n \n \n\n\t-----Urspr?ngliche Nachricht----- \n\tVon: James Wettenhall [mailto:wettenhall@wehi.edu.au] \n\tGesendet: Mi 10.12.2003 00:50 \n\tAn: Untern?hrer Thomas, uth \n\tCc: r-sig-gui@stat.math.ethz.ch \n\tBetreff: Re: [R-gui] key-binding\n\t\n\t\n\n\tThomas,\n\t\n\tJohn has probably answered your question sufficiently already,\n\tbut maybe some code like this does what you want:\n\t\n\tlibrary(tcltk)\n\ttt <- tktoplevel()\n\ttxt <- tktext(tt)\n\ttkpack(txt)\n\tevalSelection <- function() cat(eval(parse(text=tclvalue(tkcmd(\"selection\",\"get\",displayof=txt,type=\"STRING\")))))\n\ttkbind(txt,\"<F10>\",evalSelection)\n\t\n\tThe tkbind command says that when F10 is pressed while the text\n\twidget is focused, the R function evalSelection will be run. \n\t\n\tI just tried typing\n\t1+1\n\t2+2\n\t3+3\n\tinto my text widget, selecting 2+2 and pressing F10, and I got\n\t\"4\" in my R console.  Hopefully it'll work the same for you.\n\t\n\tRegards,\n\tJames\n\t\n\tP.S. The example you quoted from my webpage uses .Tcl and paste\n\tunnecessarily.  I really should update some of these examples to\n\tjust use tkcmd, tkwidget etc. because these handle \"quoting hell\"\n\tmuch better and look nicer.\n\t\n\t\n\t--------------------------------------------------------------------------\n\tJames Wettenhall                                  Tel: (+61 3) 9345 2629\n\tDivision of Genetics and Bioinformatics           Fax: (+61 3) 9347 0852\n\tThe Walter & Eliza Hall Institute         E-mail: wettenhall@wehi.edu.au\n\t of Medical Research,                     Mobile: (+61 / 0 ) 438 527 921   \n\t1G Royal Parade,\n\tParkville, Vic 3050, Australia\n\thttp://www.wehi.edu.au\n\t--------------------------------------------------------------------------",
+      "body_snippet": "Thanks a lot to james wettenhall an john fox for their hints and comments.\nIt works fine now.\n \nThomas\n \n \n \n \n \n\n\t-----Urspr?ngliche Nachricht----- \n\tVon: James Wettenhall [mailto:wettenhall@wehi.edu",
+      "thread_id": "thread-9973091e7a6f",
+      "thread_depth": 0,
+      "month": "2003-12"
+    },
+    {
+      "id": "msg-16e11f8409c7",
+      "message_id": "<945A2BF651FA6D4B92F4F5D46AEE863A011FF018@newman.perlegen.com>",
+      "from_name": "Anthony Berno",
+      "from_email_hash": "f952e42d8bf46d0e34544e47d2de26105b138d0ece1c322597e6b475c8586e15",
+      "date": "2003-12-17T23:06:13Z",
+      "subject": "[R-gui] Getting started on R GUIs",
+      "subject_clean": "[R-gui] Getting started on R GUIs",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello all,\n \nI'm working on a Microsoft .NET application in which is, in part, an R\nfront end. But I'm having a bit of difficulty getting started. I spent a\nbit of time writing a package that communicates with the R executable\nusing text, but that was a disaster. Information about other methods has\nbeen a little hard to come by.\n \nI've used the R DCOM interface, and looked at the source code, but it's\na little obscure, and I\"m having a hard time figuring out how it works\nat all. I've successfully written a VB test app that uses this server,\nbut I'd rather not do all the .NET -> DCOM interoperability stuff if\nthere is a more direct, and possibly higher-performance route to\naccessing R functionality.\n \nSo a few extremely basic questions:\n \n- Is the file R.dll the DLL that is most suitable for letting my app\ntalk to R?\n \n- Assuming this is the case, I can't figure out what the correct header\nfile is, or find any description of the entry points to this DLL. Some\nintroductory material would be very helpful!\n \nAnd a few more general ones:\n \n- Does the R engine necessarily run in a different process, or can it be\nrun in the same process as my app?\n \n- What is the fastest possible way to get a large dataset (10 - 100K\nrows) from an application front end into the R engine, and back out\nagain?\n \nThanks for any comments you might have.\n \n-Anthony Berno\n \n \n \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello all,\n \nI'm working on a Microsoft .NET application in which is, in part, an R\nfront end. But I'm having a bit of difficulty getting started. I spent a\nbit of time writing a package that communic",
+      "thread_id": "thread-16e11f8409c7",
+      "thread_depth": 0,
+      "month": "2003-12"
+    },
+    {
+      "id": "msg-304836202664",
+      "message_id": "<E830653C-311D-11D8-ACDE-000393956206@hsph.harvard.edu>",
+      "from_name": "Byron Ellis",
+      "from_email_hash": "602dbd48c4d6bcb6c3cc1d08756be4a63e40bcdb36aa327c88ce92a7e3c7074e",
+      "date": "2003-12-18T06:47:51Z",
+      "subject": "[R-gui] Getting started on R GUIs",
+      "subject_clean": "[R-gui] Getting started on R GUIs",
+      "in_reply_to": "<945A2BF651FA6D4B92F4F5D46AEE863A011FF018@newman.perlegen.com>",
+      "references": [
+        "<945A2BF651FA6D4B92F4F5D46AEE863A011FF018@newman.perlegen.com>"
+      ],
+      "body_plain": "On Dec 17, 2003, at 5:05 PM, Anthony Berno wrote:\n\n> Hello all,\n>\n> I'm working on a Microsoft .NET application in which is, in part, an R\n> front end. But I'm having a bit of difficulty getting started. I spent \n> a\n> bit of time writing a package that communicates with the R executable\n> using text, but that was a disaster. Information about other methods \n> has\n> been a little hard to come by.\n\nThats because 'other methods' are still fairly experimental. S (and R \nby extension) were always intended as an interactive environment (as \nopposed to the SAS mainframe model) and R generally makes assumptions \nabout who has control of the event loop that aren't necessarily true. \nIt was also never intended to be embedded. However, demand in the last \nfew years has caused some rethinking, especially in event loops and \nexception handling but R is also fairly massive so changes take some \ntime to happen. That said, all is not lost.\n\n>\n> I've used the R DCOM interface, and looked at the source code, but it's\n> a little obscure, and I\"m having a hard time figuring out how it works\n> at all. I've successfully written a VB test app that uses this server,\n> but I'd rather not do all the .NET -> DCOM interoperability stuff if\n> there is a more direct, and possibly higher-performance route to\n> accessing R functionality.\n>\n> So a few extremely basic questions:\n>\n> - Is the file R.dll the DLL that is most suitable for letting my app\n> talk to R?\n\nYes and no. It is technically possible to directly embed R--I did it a \nfew years ago for IIRC 1.3.1 to create an Inproc server for R as part \nof an experiment involving Internet Explorer (basically, I turned R \ninto a plugin). That code was actually in production for a while but \nproved difficult to maintain (VC++ and the R headers don't get along) \nso I dropped development. About the same time Duncan Temple Lang \ndeveloped REmbedded which works well enough on UNIX systems, though \nyou'd have to ask him about Win32 support.\n\nAt the moment AFAIK the eventloop situation is in a state of flux while \nthings are normalized across platforms (to facilitate, for instance, \nthe development of the Mac GUI) to allow programmers to more easily \nembed the R libraries. Right now there is no official way of doing \nthis, which is why its not documented.\n\n>\n> - Assuming this is the case, I can't figure out what the correct header\n> file is, or find any description of the entry points to this DLL. Some\n> introductory material would be very helpful!\n\nRinternals.h is the header you're looking for. There is also some stuff \nat developer.r-project.org and www.omegahat.org (particularly the \nREventloop and SJava packages for your purposes), just remember that \nany eventloop thing is subject to massive revision in the next 6 months \nor so. :-)\n\nSpeaking as someone who considered a .Net interface for a nanosecond, \nI'm guessing you're going to have to do some serious wrapper work. The \nactual function calls back and forth aren't really all that difficult. \nRather, they're no more difficult than the usual process of calling \nback and forth across the managed/unmanaged code boundary in \n.Net---tedious but nothing that requires deep thinking. Your big \nproblem will likely be in memory management and moving _objects_ across \nthe managed/unmanaged boundary. Since R has its own memory management, \ntype systems and dispatching mechanisms that are generally incompatible \nwith the .Net way of doing things you'll have to spend a fair amount of \ntime and energy managing these relationships (hence, SJava which has \nessentially the same difficulty), the simplest solution probably just \nproviding an interface to the R type system rather than trying to \nautomagically do the appropriate conversion. DTL has the most \nexperience with this sort of problem, as author of the SJava, RPython, \nRXlispStat and other bridging interfaces.\n\n\n> And a few more general ones:\n>\n> - Does the R engine necessarily run in a different process, or can it \n> be\n> run in the same process as my app?\n\nNo, its just been less painful generally speaking. :-)\n\n>\n> - What is the fastest possible way to get a large dataset (10 - 100K\n> rows) from an application front end into the R engine, and back out\n> again?\n\nLemme guess, pharma? Microarrays perhaps? The depends on where the data \nis coming from I guess. If you can a custom library for reading/writing \nfrom your preferred format is probably fastest since you can exercise \nmore control over memory and whatnot. Writing that in .Net could prove \npainful, but maybe not if you've written a nice wrapper.\n\n>\n> Thanks for any comments you might have.\n>\n> -Anthony Berno\n>\n>\n>\n>\n> \t[[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI@stat.math.ethz.ch\n> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui\n>\n---\nByron Ellis (bellis@hsph.harvard.edu)\n\"Oook\" -- The Librarian",
+      "body_snippet": "On Dec 17, 2003, at 5:05 PM, Anthony Berno wrote:\n\n> Hello all,\n>\n> I'm working on a Microsoft .NET application in which is, in part, an R\n> front end. But I'm having a bit of difficulty getting start",
+      "thread_id": "thread-16e11f8409c7",
+      "thread_depth": 1,
+      "month": "2003-12"
+    },
+    {
+      "id": "msg-38cb24466ae7",
+      "message_id": "<20031218020703.A10776@jessie.research.bell-labs.com>",
+      "from_name": "Duncan Temple Lang",
+      "from_email_hash": "0c2720b3934c318987112a1a64fba617f93059c0984453724e82a22cc9151725",
+      "date": "2003-12-18T08:05:48Z",
+      "subject": "[R-gui] Getting started on R GUIs",
+      "subject_clean": "[R-gui] Getting started on R GUIs",
+      "in_reply_to": "<945A2BF651FA6D4B92F4F5D46AEE863A011FF018@newman.perlegen.com>; from Anthony_Berno@perlegen.com on Wed, Dec 17, 2003 at 02:05:47PM -0800",
+      "references": [
+        "<945A2BF651FA6D4B92F4F5D46AEE863A011FF018@newman.perlegen.com>"
+      ],
+      "body_plain": "I imagine that you the R DCOM interface you are referring to is Thomas\nBaier's version on CRAN.  If so, an alternative view \nis the RDCOMServer on the Omegahat site:\n  www.omegahat.org/RDCOMServer\n\nIt allows one to create R server objects for DCOM rather than using\nthe S language as the medium to chose. That should be higher\nperformance and certainly more flexible in development. And it is\nbi-directional in the sense that R can call DCOM methods using the\nRDCOMClient ( www.omegahat.org/RDCOMClient).  These servers can be run\nin process or not; depends on registration and invocation options.\nAnd this handles a rich set of data types.\n\nWe can do a .Net interface in much the same way we have done SJava and\nother inter-system interfaces. The model is pretty well established.\n\nOver the past 4 years, we have been pushing on embedding R in other\napplications.  In the no too distant future, we might push further on\nthis for creating stand-alone R applications which are as lean as\npossible by examining the call graph of the script.  The RDCOMServer\npackage might be a good place to start, either using it directly or\nusing it as sample code for how to embed R in another application.\n\nAs Byron mentioned in his response, generalizations of the event loop\nare underway. But typically, when embedding R in other applications,\nthe R event loop is not an issue; R is used just as a library of\nfunctions or interpreter.  The events are handled by the host\napplication.\n\nFast ways to get data into R will probably be context dependent.  One\nsituation that I think is worth exploring is avoiding explicit\ntransfer but rather let R pull it as needed.  Different data models\n(e.g. ADO) might be worth looking at, and as I mentioned, the\nbi-directional RDCOM client and server make this feasible (entirely\nwithin R code).\n\nJust some quick thoughts. I can be more specific if needed when I have\nsome more time.\n\n D.\n\nAnthony Berno wrote:\n> Hello all,\n>  \n> I'm working on a Microsoft .NET application in which is, in part, an R\n> front end. But I'm having a bit of difficulty getting started. I spent a\n> bit of time writing a package that communicates with the R executable\n> using text, but that was a disaster. Information about other methods has\n> been a little hard to come by.\n>  \n> I've used the R DCOM interface, and looked at the source code, but it's\n> a little obscure, and I\"m having a hard time figuring out how it works\n> at all. I've successfully written a VB test app that uses this server,\n> but I'd rather not do all the .NET -> DCOM interoperability stuff if\n> there is a more direct, and possibly higher-performance route to\n> accessing R functionality.\n>  \n> So a few extremely basic questions:\n>  \n> - Is the file R.dll the DLL that is most suitable for letting my app\n> talk to R?\n>  \n> - Assuming this is the case, I can't figure out what the correct header\n> file is, or find any description of the entry points to this DLL. Some\n> introductory material would be very helpful!\n>  \n> And a few more general ones:\n>  \n> - Does the R engine necessarily run in a different process, or can it be\n> run in the same process as my app?\n>  \n> - What is the fastest possible way to get a large dataset (10 - 100K\n> rows) from an application front end into the R engine, and back out\n> again?\n>  \n> Thanks for any comments you might have.\n>  \n> -Anthony Berno\n>  \n>  \n>  \n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI@stat.math.ethz.ch\n> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui\n\n-- \n_______________________________________________________________\n\nDuncan Temple Lang                duncan@research.bell-labs.com\nBell Labs, Lucent Technologies    office: (908)582-3217\n700 Mountain Avenue, Room 2C-259  fax:    (908)582-3340\nMurray Hill, NJ  07974-2070       \n         http://cm.bell-labs.com/stat/duncan",
+      "body_snippet": "I imagine that you the R DCOM interface you are referring to is Thomas\nBaier's version on CRAN.  If so, an alternative view \nis the RDCOMServer on the Omegahat site:\n  www.omegahat.org/RDCOMServer\n\nIt",
+      "thread_id": "thread-16e11f8409c7",
+      "thread_depth": 1,
+      "month": "2003-12"
+    },
+    {
+      "id": "msg-d514eb7d3ef9",
+      "message_id": "<E0AC11CC93B7D21185FD0060080B65526BE9D6@WWW>",
+      "from_name": "TB",
+      "from_email_hash": "8fea7458ea417bd99238d59cdae7dc173a7e07e1197ee531dc2f1a0c04d2f120",
+      "date": "2003-12-18T08:50:43Z",
+      "subject": "AW: [R-gui] Getting started on R GUIs",
+      "subject_clean": "AW: [R-gui] Getting started on R GUIs",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Anthony,\n\nAnthony Berno <mailto:Anthony_Berno@perlegen.com> wrote:\n> Hello all,\n> \n> I'm working on a Microsoft .NET application in which is, in part, an R\n> front end. But I'm having a bit of difficulty getting started. I\n> spent a bit of time writing a package that communicates with the R\n> executable using text, but that was a disaster. Information about\n> other methods has been a little hard to come by.\n> \n> I've used the R DCOM interface, and looked at the source code, but\n> it's a little obscure, and I\"m having a hard time figuring out how it\n> works at all. I've successfully written a VB test app that uses this\n> server, but I'd rather not do all the .NET -> DCOM interoperability\n> stuff if there is a more direct, and possibly higher-performance\n> route to accessing R functionality.\n\nI'm not quite sure what's so obscure about the source code of the DCOM\nserver, but maybe it's the fact, that there it uses some abstraction layer\nfrom R to provide a more generic interface.\n\nOne component of the DCOM server is a proxy DLL which is installed with R\nand provides interfaces required for the COM server to access R. If you feel\nyou don't want to use the COM server because of performance issues you can\ndirectly use the proxy DLL instead. This DLL should be enough to use.\n\nI'm not sure what the performance issues you are addressing are. Could you\nplease clarify.\n\nBest,\nThomas",
+      "body_snippet": "Anthony,\n\nAnthony Berno <mailto:Anthony_Berno@perlegen.com> wrote:\n> Hello all,\n> \n> I'm working on a Microsoft .NET application in which is, in part, an R\n> front end. But I'm having a bit of difficu",
+      "thread_id": "thread-d514eb7d3ef9",
+      "thread_depth": 0,
+      "month": "2003-12"
+    },
+    {
+      "id": "msg-5f8d99c1cfb9",
+      "message_id": "<945A2BF651FA6D4B92F4F5D46AEE863A011FF111@newman.perlegen.com>",
+      "from_name": "Anthony Berno",
+      "from_email_hash": "f952e42d8bf46d0e34544e47d2de26105b138d0ece1c322597e6b475c8586e15",
+      "date": "2003-12-18T18:27:34Z",
+      "subject": "[R-gui] Getting started on R GUIs",
+      "subject_clean": "[R-gui] Getting started on R GUIs",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": ">I'm not quite sure what's so obscure about the source code of the DCOM\nserver, but maybe it's \n>the fact, that there it uses some abstraction layer from R to provide a\nmore generic interface.\n\nThanks very much for your note. I'm probably going to use your COM\nserver directly now that I have a better overview of what's going on.\nThe code is only obscure when you are beginning without any kind of\nroadmap; with no high-level description of what's going on, it's a\nlittle hard to get the big picture from the code alone. But it makes a\nwhole lot more sense now that I've read people's comments here.\n\n>I'm not sure what the performance issues you are addressing are. Could\nyou please clarify.\n\nI haven't done much performance testing yet, so it might turn out that\nusing the COM server is every bit as fast as using the DLL directly.\nWhich would be great! But my primary concern is in getting big datasets\nto R really fast, and getting ones back really fast, since the app I'm\nusing is extremely interactive and every bit of speed matters. If I\ncould get a vector of 100,000 numbers shipped across in less than half a\nsecond, that would be great, but that may be an unrealistic expectation.\n\nMaybe you can comment on this - between having a variant in VB and\nhaving a vector in R, there are a bunch of marshalling and copying steps\nthat appear to take place. Compared to the time required for some simple\ncalculations on that vector, do you think that there is room for making\nit faster by using the DLL directly? If you think the overhead is very\nlow, I will probably not bother with getting up to speed on the DLL and\ntesting it myself, but will just use your server.\n\nBy the way, I can't thank you enough for producing that server. Even if\nI don't use it for this, I'll be using it for other things. It's really\na great thing to have, and provides a big head start on what I'm trying\nto do!\n\n-Anthony",
+      "body_snippet": ">I'm not quite sure what's so obscure about the source code of the DCOM\nserver, but maybe it's \n>the fact, that there it uses some abstraction layer from R to provide a\nmore generic interface.\n\nThanks",
+      "thread_id": "thread-5f8d99c1cfb9",
+      "thread_depth": 0,
+      "month": "2003-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-5d09629e1128",
+      "subject": "[R-gui] key-binding",
+      "message_count": 3,
+      "participants": [
+        "\"Unternährer Thomas, uth\"",
+        "James Wettenhall",
+        "John Fox"
+      ],
+      "started": "2003-12-09T19:34:23+00:00",
+      "last_reply": "2003-12-10T00:49:07+00:00",
+      "root_message_id": "msg-5d09629e1128"
+    },
+    {
+      "id": "thread-9973091e7a6f",
+      "subject": "AW: [R-gui] key-binding",
+      "message_count": 1,
+      "participants": [
+        "\"Unternährer Thomas, uth\""
+      ],
+      "started": "2003-12-10T10:04:24+00:00",
+      "last_reply": "2003-12-10T10:04:24+00:00",
+      "root_message_id": "msg-9973091e7a6f"
+    },
+    {
+      "id": "thread-16e11f8409c7",
+      "subject": "[R-gui] Getting started on R GUIs",
+      "message_count": 3,
+      "participants": [
+        "Anthony Berno",
+        "Byron Ellis",
+        "Duncan Temple Lang"
+      ],
+      "started": "2003-12-17T23:06:13+00:00",
+      "last_reply": "2003-12-18T08:05:48+00:00",
+      "root_message_id": "msg-16e11f8409c7"
+    },
+    {
+      "id": "thread-d514eb7d3ef9",
+      "subject": "AW: [R-gui] Getting started on R GUIs",
+      "message_count": 1,
+      "participants": [
+        "TB"
+      ],
+      "started": "2003-12-18T08:50:43+00:00",
+      "last_reply": "2003-12-18T08:50:43+00:00",
+      "root_message_id": "msg-d514eb7d3ef9"
+    },
+    {
+      "id": "thread-5f8d99c1cfb9",
+      "subject": "[R-gui] Getting started on R GUIs",
+      "message_count": 1,
+      "participants": [
+        "Anthony Berno"
+      ],
+      "started": "2003-12-18T18:27:34+00:00",
+      "last_reply": "2003-12-18T18:27:34+00:00",
+      "root_message_id": "msg-5f8d99c1cfb9"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-07",
+  "messages": [
+    {
+      "id": "msg-51315c3538d9",
+      "message_id": "<Pine.SOL.4.33.0307011044170.7492-100000@mcmail.cis.mcmaster.ca>",
+      "from_name": "John Fox",
+      "from_email_hash": "dd43856fc39dd2ced99bd6ff6fc9626bac51a8bc7c594c1cfc5dadcdb34ccd9e",
+      "date": "2003-07-01T16:47:24Z",
+      "subject": "[R-gui] IDE/Script Editor",
+      "subject_clean": "[R-gui] IDE/Script Editor",
+      "in_reply_to": "<BAY2-F151bDt3HvoFOA000000a5@hotmail.com>",
+      "references": [],
+      "body_plain": "Dear Vytautas,\n\nI've taken a look at this editor, and it seems very nice. I've also looked\nquickly at the documentation, but wasn't able to figure out whether it's\npossible to run the syn editor with an interactive R session, sending\nselected text to be executed (in the manner of WinEdt or ESS). Is that\npossible? If so, can you explain briefly how it's done?\n\nThanks,\n John\n\nOn Mon, 30 Jun 2003, Vytautas M. wrote:\n\n> take a look at\n>\n> syn.sf.net\n>\n> for open source, customisable syn Text Editor with R syntax highliting.\n>\n> Vytautas Maniusis\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI@stat.math.ethz.ch\n> https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>",
+      "body_snippet": "Dear Vytautas,\n\nI've taken a look at this editor, and it seems very nice. I've also looked\nquickly at the documentation, but wasn't able to figure out whether it's\npossible to run the syn editor with ",
+      "thread_id": "thread-51315c3538d9",
+      "thread_depth": 0,
+      "month": "2003-07"
+    },
+    {
+      "id": "msg-8427d9e547e8",
+      "message_id": "<BAY2-F166xLhCIRt8Zg0000c54b@hotmail.com>",
+      "from_name": "Vytautas M.",
+      "from_email_hash": "0f8f59a686705b56d45475c7c50c488de67739de89c451076f94342c970086be",
+      "date": "2003-07-02T15:25:58Z",
+      "subject": "[R-gui] IDE/Script Editor",
+      "subject_clean": "[R-gui] IDE/Script Editor",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear John,\n\nI'm trying to find out this. I'm not the developer of syn and there is lack \nof documentation.\nWhat I've found is:\nOne can attach programs, batch commands and active scripts(VB, JavaScript, \nPerl, Python etc)\nto a toolbar buttons by\nTools>Configure>...\nor\nRun>Run File>Configure...\n\nAt least I've done this with latex and Acrobat Reader\n\nVytautas Maniusis,\nVilnius University, Lithuania\n--------------------------------------------------------------------------------------------------------------------------------------\n>Dear Vytautas,\n\n>I've taken a look at this editor, and it seems very nice. I've also looked\n>quickly at the documentation, but wasn't able to figure out whether it's\n>possible to run the syn editor with an interactive R session, sending\n>selected text to be executed (in the manner of WinEdt or ESS). Is that\n>possible? If so, can you explain briefly how it's done?\n\n>Thanks,\n>  John\n\n>On Mon, 30 Jun 2003, Vytautas M. wrote:\n\n>>take a look at\n>>syn.sf.net\n>>for open source, customisable syn Text Editor with R syntax highliting.\n\n>>Vytautas Maniusis",
+      "body_snippet": "Dear John,\n\nI'm trying to find out this. I'm not the developer of syn and there is lack \nof documentation.\nWhat I've found is:\nOne can attach programs, batch commands and active scripts(VB, JavaScript",
+      "thread_id": "thread-8427d9e547e8",
+      "thread_depth": 0,
+      "month": "2003-07"
+    },
+    {
+      "id": "msg-1bfa9ef4b0a6",
+      "message_id": "<Pine.SOL.4.33.0307021017570.19027-100000@mcmail.cis.mcmaster.ca>",
+      "from_name": "John Fox",
+      "from_email_hash": "dd43856fc39dd2ced99bd6ff6fc9626bac51a8bc7c594c1cfc5dadcdb34ccd9e",
+      "date": "2003-07-02T16:19:48Z",
+      "subject": "[R-gui] IDE/Script Editor",
+      "subject_clean": "[R-gui] IDE/Script Editor",
+      "in_reply_to": "<BAY2-F166xLhCIRt8Zg0000c54b@hotmail.com>",
+      "references": [],
+      "body_plain": "Dear Vytautus,\n\nThanks for the additional information. I figured out how to run a program,\nand it's clear that the editor is set up to interact with a compiler or\ninterpreter, processing a source file (or files) and then terminating, but\nit was unclear to me whether it is possible to communicate with an active\nR process.\n\nRegards,\n John\n\nOn Wed, 2 Jul 2003, Vytautas M. wrote:\n\n> Dear John,\n>\n> I'm trying to find out this. I'm not the developer of syn and there is lack\n> of documentation.\n> What I've found is:\n> One can attach programs, batch commands and active scripts(VB, JavaScript,\n> Perl, Python etc)\n> to a toolbar buttons by\n> Tools>Configure>...\n> or\n> Run>Run File>Configure...\n>\n> At least I've done this with latex and Acrobat Reader\n>\n> Vytautas Maniusis,\n> Vilnius University, Lithuania\n> --------------------------------------------------------------------------------------------------------------------------------------\n> >Dear Vytautas,\n>\n> >I've taken a look at this editor, and it seems very nice. I've also looked\n> >quickly at the documentation, but wasn't able to figure out whether it's\n> >possible to run the syn editor with an interactive R session, sending\n> >selected text to be executed (in the manner of WinEdt or ESS). Is that\n> >possible? If so, can you explain briefly how it's done?\n>\n> >Thanks,\n> >  John\n>\n> >On Mon, 30 Jun 2003, Vytautas M. wrote:\n>\n> >>take a look at\n> >>syn.sf.net\n> >>for open source, customisable syn Text Editor with R syntax highliting.\n>\n> >>Vytautas Maniusis\n>\n> _________________________________________________________________\n\n> http://join.msn.com/?page=features/junkmail\n>\n>",
+      "body_snippet": "Dear Vytautus,\n\nThanks for the additional information. I figured out how to run a program,\nand it's clear that the editor is set up to interact with a compiler or\ninterpreter, processing a source file",
+      "thread_id": "thread-8427d9e547e8",
+      "thread_depth": 1,
+      "month": "2003-07"
+    },
+    {
+      "id": "msg-0d8078312ec1",
+      "message_id": "<BAY2-F109ql2RkeS8Yk000035d8@hotmail.com>",
+      "from_name": "Vytautas M.",
+      "from_email_hash": "0f8f59a686705b56d45475c7c50c488de67739de89c451076f94342c970086be",
+      "date": "2003-07-02T18:33:40Z",
+      "subject": "[R-gui] IDE/Script Editor",
+      "subject_clean": "[R-gui] IDE/Script Editor",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear John,\n\nSolution I've found applies not only for syn:\ncreate file named, for example, \"Rscript.vbs\" (file extension must be vbs - \nfor visual basic scripting),\ncontaining:\n\nDim WshShell, oExec\nSet WshShell = CreateObject(\"WScript.Shell\")\nSet oExec = WshShell.Exec(\"C:\\Program Files\\R\\rw1070\\bin\\rgui.exe\")\nWshShell.AppActivate \"Calculator\"\nWScript.Sleep 100\nWshShell.SendKeys \"x<-1:10{ENTER}\"\n\nsave it and doubleclick in windows explorer\n\nsee more for Windows Scripting Host at http://msdn.microsoft.com/scripting/\n\nVytautas",
+      "body_snippet": "Dear John,\n\nSolution I've found applies not only for syn:\ncreate file named, for example, \"Rscript.vbs\" (file extension must be vbs - \nfor visual basic scripting),\ncontaining:\n\nDim WshShell, oExec\nSet",
+      "thread_id": "thread-0d8078312ec1",
+      "thread_depth": 0,
+      "month": "2003-07"
+    },
+    {
+      "id": "msg-4491e2701cb6",
+      "message_id": "<20030709161118.GA17964@sonny.eddelbuettel.com>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2003-07-09T18:11:19Z",
+      "subject": "[R-gui] tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "subject_clean": "[R-gui] tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\n\nHow can I display images from external files in tcltk?\n\nIn Perl/Tk, I can use the Tk::Photo widget to load a .png graphic file,\nwhich then goes into a label or button widget. In R, I only managed to do\nthat with a bitmap which I converted from a .png file. \n\nIs there a simple way without having to re-code pieces of, say, tkrplot?\n\nThanks, Dirk\n\n\n-- \nDon't drink and derive. Alcohol and analysis don't mix.",
+      "body_snippet": "Hi all,\n\nHow can I display images from external files in tcltk?\n\nIn Perl/Tk, I can use the Tk::Photo widget to load a .png graphic file,\nwhich then goes into a label or button widget. In R, I only man",
+      "thread_id": "thread-4491e2701cb6",
+      "thread_depth": 0,
+      "month": "2003-07"
+    },
+    {
+      "id": "msg-9b8481c6e154",
+      "message_id": "<x2k7arcpl8.fsf@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard BSA",
+      "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
+      "date": "2003-07-10T00:14:49Z",
+      "subject": "[R-gui] tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "subject_clean": "[R-gui] tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "in_reply_to": "<20030709161118.GA17964@sonny.eddelbuettel.com>",
+      "references": [
+        "<20030709161118.GA17964@sonny.eddelbuettel.com>"
+      ],
+      "body_plain": "Dirk Eddelbuettel <edd@debian.org> writes:\n\n> Hi all,\n> \n> How can I display images from external files in tcltk?\n> \n> In Perl/Tk, I can use the Tk::Photo widget to load a .png graphic file,\n> which then goes into a label or button widget. In R, I only managed to do\n> that with a bitmap which I converted from a .png file. \n> \n> Is there a simple way without having to re-code pieces of, say, tkrplot?\n\nDoes \"man n photo\" get you anywhere?\n\n-- \n   O__  ---- Peter Dalgaard             Blegdamsvej 3  \n  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   \n (*) \\(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907",
+      "body_snippet": "Dirk Eddelbuettel <edd@debian.org> writes:\n\n> Hi all,\n> \n> How can I display images from external files in tcltk?\n> \n> In Perl/Tk, I can use the Tk::Photo widget to load a .png graphic file,\n> which t",
+      "thread_id": "thread-4491e2701cb6",
+      "thread_depth": 1,
+      "month": "2003-07"
+    },
+    {
+      "id": "msg-c8b5bcba7f5e",
+      "message_id": "<20030710011905.GA22003@sonny.eddelbuettel.com>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2003-07-10T03:19:31Z",
+      "subject": "[R-gui] tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "subject_clean": "[R-gui] tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "in_reply_to": "<x2k7arcpl8.fsf@biostat.ku.dk>",
+      "references": [
+        "<20030709161118.GA17964@sonny.eddelbuettel.com>",
+        "<x2k7arcpl8.fsf@biostat.ku.dk>"
+      ],
+      "body_plain": "On Thu, Jul 10, 2003 at 12:17:23AM +0200, Peter Dalgaard BSA wrote:\n> Dirk Eddelbuettel <edd@debian.org> writes:\n> \n> > Hi all,\n> > \n> > How can I display images from external files in tcltk?\n> > \n> > In Perl/Tk, I can use the Tk::Photo widget to load a .png graphic file,\n> > which then goes into a label or button widget. In R, I only managed to do\n> > that with a bitmap which I converted from a .png file. \n> > \n> > Is there a simple way without having to re-code pieces of, say, tkrplot?\n> \n> Does \"man n photo\" get you anywhere?\n\nHm, \"man 3tk photo\" doesn't mean that much to me as I never programmed in\ntcl itself, but only ever through the Perl and R bindings. \n\nSo no, sorry, that wasn't self-sufficient. \n\nRegards,  Dirk\n\n-- \nDon't drink and derive. Alcohol and analysis don't mix.",
+      "body_snippet": "On Thu, Jul 10, 2003 at 12:17:23AM +0200, Peter Dalgaard BSA wrote:\n> Dirk Eddelbuettel <edd@debian.org> writes:\n> \n> > Hi all,\n> > \n> > How can I display images from external files in tcltk?\n> > \n> >",
+      "thread_id": "thread-4491e2701cb6",
+      "thread_depth": 2,
+      "month": "2003-07"
+    },
+    {
+      "id": "msg-ce66f02a263e",
+      "message_id": "<Pine.LNX.4.44.0307171508570.1424-100000@unix28.alpha.wehi.edu.au>",
+      "from_name": "James Wettenhall",
+      "from_email_hash": "312448014c5c135eebf3544f048d47c0728f9fd6f53f1c2b455b204ae677c96d",
+      "date": "2003-07-17T07:18:58Z",
+      "subject": "[R-gui] Re: tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "subject_clean": "[R-gui] Re: tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "in_reply_to": "<200307101002.h6AA26eF002363@stat.math.ethz.ch>",
+      "references": [],
+      "body_plain": "Dirk,\n\nDid you figure out how to display images in Tk widgets?\n\nI finally got it working as follows:\n\nlibrary(tcltk)\ntt <- tktoplevel()\ntclRequire(\"Img\")\ntkcmd(\"image\",\"create\",\"photo\",\"foo\",file=\"foo.png\")\nimgAsLabel <- tklabel(tt,image=\"foo\",bg=\"white\")\ntkpack(imgAsLabel)\n\n(For a while I was completely missing the point that the image \nwas supposed to go in a Tk label widget!)\n\nRegards,\nJames\n\n> How can I display images from external files in tcltk?\n> Is there a simple way without having to re-code pieces of, say, tkrplot?\n> Thanks, Dirk",
+      "body_snippet": "Dirk,\n\nDid you figure out how to display images in Tk widgets?\n\nI finally got it working as follows:\n\nlibrary(tcltk)\ntt <- tktoplevel()\ntclRequire(\"Img\")\ntkcmd(\"image\",\"create\",\"photo\",\"foo\",file=\"foo",
+      "thread_id": "thread-ce66f02a263e",
+      "thread_depth": 0,
+      "month": "2003-07"
+    },
+    {
+      "id": "msg-1882a0084365",
+      "message_id": "<x21xwp8pel.fsf@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard BSA",
+      "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
+      "date": "2003-07-17T11:34:03Z",
+      "subject": "[R-gui] Re: tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "subject_clean": "[R-gui] Re: tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "in_reply_to": "<Pine.LNX.4.44.0307171508570.1424-100000@unix28.alpha.wehi.edu.au>",
+      "references": [
+        "<Pine.LNX.4.44.0307171508570.1424-100000@unix28.alpha.wehi.edu.au>"
+      ],
+      "body_plain": "James Wettenhall <wettenhall@wehi.edu.au> writes:\n\n> Dirk,\n> \n> Did you figure out how to display images in Tk widgets?\n> \n> I finally got it working as follows:\n> \n> library(tcltk)\n> tt <- tktoplevel()\n> tclRequire(\"Img\")\n  ^^^^^^^^^^^^^^^^^\n\nAh, that was what you needed to get PNG. However, note that the Img\nextension isn't installed by default, and is not included with e.g.\nRedHat. Without it, you only get GIF and PNM support (but of course\nnearly everything can be converted to PNM).\n\n> tkcmd(\"image\",\"create\",\"photo\",\"foo\",file=\"foo.png\")\n> imgAsLabel <- tklabel(tt,image=\"foo\",bg=\"white\")\n> tkpack(imgAsLabel)\n\n1.8.0 should have a tkimage.create function that actually works, i.e.\n\n  tkimage.create(\"photo\", img, file=\"foo.pnm\")\n\nshould work. \n\nAlready in the current version, you can use a tclVar object instead of\nan explicit image name. This avoids trouble if two functions use the\nsame name, or accidentally overwriting an existing Tcl command (e.g.\ncalling the image \"image\" is a bad idea.) The finalizer code is\nprobably underdeveloped, though: An image should be deleted with\n\"image delete foo\", not \"unset foo\", so it is not getting cleared\nautomatically when an image variable goes out of scope. \n\n-- \n   O__  ---- Peter Dalgaard             Blegdamsvej 3  \n  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   \n (*) \\(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907",
+      "body_snippet": "James Wettenhall <wettenhall@wehi.edu.au> writes:\n\n> Dirk,\n> \n> Did you figure out how to display images in Tk widgets?\n> \n> I finally got it working as follows:\n> \n> library(tcltk)\n> tt <- tktoplevel",
+      "thread_id": "thread-ce66f02a263e",
+      "thread_depth": 1,
+      "month": "2003-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-51315c3538d9",
+      "subject": "[R-gui] IDE/Script Editor",
+      "message_count": 1,
+      "participants": [
+        "John Fox"
+      ],
+      "started": "2003-07-01T16:47:24+00:00",
+      "last_reply": "2003-07-01T16:47:24+00:00",
+      "root_message_id": "msg-51315c3538d9"
+    },
+    {
+      "id": "thread-8427d9e547e8",
+      "subject": "[R-gui] IDE/Script Editor",
+      "message_count": 2,
+      "participants": [
+        "John Fox",
+        "Vytautas M."
+      ],
+      "started": "2003-07-02T15:25:58+00:00",
+      "last_reply": "2003-07-02T16:19:48+00:00",
+      "root_message_id": "msg-8427d9e547e8"
+    },
+    {
+      "id": "thread-0d8078312ec1",
+      "subject": "[R-gui] IDE/Script Editor",
+      "message_count": 1,
+      "participants": [
+        "Vytautas M."
+      ],
+      "started": "2003-07-02T18:33:40+00:00",
+      "last_reply": "2003-07-02T18:33:40+00:00",
+      "root_message_id": "msg-0d8078312ec1"
+    },
+    {
+      "id": "thread-4491e2701cb6",
+      "subject": "[R-gui] tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "message_count": 3,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Peter Dalgaard BSA"
+      ],
+      "started": "2003-07-09T18:11:19+00:00",
+      "last_reply": "2003-07-10T03:19:31+00:00",
+      "root_message_id": "msg-4491e2701cb6"
+    },
+    {
+      "id": "thread-ce66f02a263e",
+      "subject": "[R-gui] Re: tcltk: \"Image\" rather than bitmap loaded on tklabel",
+      "message_count": 2,
+      "participants": [
+        "James Wettenhall",
+        "Peter Dalgaard BSA"
+      ],
+      "started": "2003-07-17T07:18:58+00:00",
+      "last_reply": "2003-07-17T11:34:03+00:00",
+      "root_message_id": "msg-ce66f02a263e"
+    }
+  ]
+}

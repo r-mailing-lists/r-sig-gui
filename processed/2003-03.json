@@ -1,0 +1,90 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2003-03",
+  "messages": [
+    {
+      "id": "msg-7ff2ba4131e9",
+      "message_id": "<MABBLJDICACNFOLGIHJOCEOJDEAA.phgrosjean@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2003-03-18T16:00:17Z",
+      "subject": "[R-gui] SciViews R GUI preview version available",
+      "subject_clean": "[R-gui] SciViews R GUI preview version available",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\nAfter being a long time off the R and R-SIG-GUI lists, because I was working\nhard on SciViews, I am happy to deliver the first public version of this\nprogram. It is still v. 0.1, that is, an incomplete alpha version. It\ncurrently installs only on Windows 2000 or XP (NOT on Windows\n9X/ME/Millenium, nor any other platform!). You can download it at\nhttp://www.sciviews.org. Please, note that the program still does not\nsupport path names with spaces, like the default one, \"C:\\Program\nFiles\\SciViews\\\". You _have to change_ the default value of installation\nfolder in the setup program to something like \"c:\\Pgm\\SciViews\\\"! Of course,\nyou need also R installed on the same computer (at least version 1.5.0).\n\nThis package proposes:\n- Insighter, a GUI specifically designed for data analysis. It offers:\n  + a MDI (multiple document interface),\n  + a complete IDE (code editing with syntax highlighting, bookmarks, run,\nstep-by-step execution,...),\n  + a command bar which handle several simultaneous calculation kernels, an\nadvanced history of commands, syntax highlighting, and quick tips for\nfunctions. It operates hand in hand with the integrated, advanced console\ndocument,\n  + an integrated reporting system (rich text format with graphs, figures\nand embedded objects),\n  + an integrated help system in HTML format (although not active yet for\nR),\n  + an explorer (no object explorer yet, but this is planned for the next\nversion),\n  + a 'library docking window' (for quick reference electronic cards, code\ntemplates, and more...),\n  + a fully customizable menus/toolbars/docking panels system, very similar\nto the Microsoft Office 2000 one,\n  + even more customization in the SciViews sessions (icon, program title,\nsplash screen, default working directory,...).\n- SciViews main module, to manage and open SciViews sessions,\n- Xchanger, a centralized system to connect different calculation kernels\nthrough SciViews plugs,\n- currently, only one plug is provided: for R. Plugs for Octave, Matlab,\nS-PLUS, Scilab, Ox, Mathematica,... are in development.\n\nAt http://www.sciviews.org/software/Insighter.gif, you will find a\nscreenshot example of SciViews Insighter with a R console, a R graph device\nand a reporting document openend in the same session. License is GPL 2 or\nabove. Code source is provided but you need Visual Basic 6.0 pro to edit it.\n\nOur next work will be dedicated to custom dialog boxes and to the object\nexplorer... and of course, bugs elimination and better compatibility with\nWindows 9X/ME/Millenium.\n\nYour comments are welcome.\nBest regards,\n\nPhilippe Grosjean\n\n...........]<(({?<...............<?}))><...............................\n ) ) ) ) )\n( ( ( ( (       Dr. Philippe Grosjean\n ) ) ) ) )\n( ( ( ( (       LOV, UMR 7093\n ) ) ) ) )      Station Zoologique\n( ( ( ( (       Observatoire Oc?anologique\n ) ) ) ) )      BP 28\n( ( ( ( (       06234 Villefranche sur mer cedex\n ) ) ) ) )      France\n( ( ( ( (\n ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34\n( ( ( ( (\n ) ) ) ) )      e-mail: phgrosjean@sciviews.org\n( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)\n ) ) ) ) )\n.......................................................................",
+      "body_snippet": "Hi all,\nAfter being a long time off the R and R-SIG-GUI lists, because I was working\nhard on SciViews, I am happy to deliver the first public version of this\nprogram. It is still v. 0.1, that is, an i",
+      "thread_id": "thread-7ff2ba4131e9",
+      "thread_depth": 0,
+      "month": "2003-03"
+    },
+    {
+      "id": "msg-630ea1b5ae78",
+      "message_id": "<MABBLJDICACNFOLGIHJOMECMDFAA.phgrosjean@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2003-03-27T11:15:43Z",
+      "subject": "[R-gui] New version 0.1.1 of SciViews available",
+      "subject_clean": "[R-gui] New version 0.1.1 of SciViews available",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I have just posted a new version 0.1.1 of SciViews on\nhttp://www.sciviews.org/development/rgui.htm. Here are changes since version\n0.1:\n\n- 'Insighter' was renamed 'Insider' to avoid possible conflicting name with\nInsightful.\n- SciViews should now run under 9X/ME/Millenium (incompatibilities solved)\n- SciViews should run normally when installed in a path with spaces (bug\nsolved)\n- *.svp, *.svpt and *.svl files are now registered as SciViews extensions\nduring first\n  execution of SciViews.exe\n\nBest regards,\n\nPhilippe Grosjean\n\nP.S.: current development focus on helping tools like the object explorer,\nthe contextual tip and the completion list.\n\n- Object explorer: the aim is to develop a function in pure R language to\nreturn the list of variables in the user workspace + its class + its\ncomponents (for instance, the components of a list or a dataframe) + perhaps\nsome other information, after each top level evaluation. This has been\nalready somewhat discussed in R Help list. Of course, the whole list should\nnot be returned, but changes from previous list only. This function will be\nregistered using addTaskCallback(), and its output will be processed by the\nGUI in order to display a tree of variables available under the user\nworkspace.\n\n- SciViews already proposes \"contextual tips\", that is, the syntax of a\nfunction automatically displayed when the user enters \"(\" after the name of\nthe function. Basically, it is a slightly modified version of args(). Two\nproblems: (1) not much explicit with generic functions, and (2) error\nreturned with, e.g., \"function(\". It is however not much difficult to make\nan improved args() function to get more interesting contextual tips.\n\n- Completion lists: basically, a kind of apropos() function that returns all\npossible words starting with ..., but should return also components in a\nlist or dataframe after keying \"mydataframe$\", or \"mydataframe[[\", or even\nslots after \"object@\".\n\nAll this would constitute the starting point of a library of R functions\ntailored for better interactions with the SciViews GUI. If someone would\nlike to contribute to it, please, contact me.\n\n...........]<(({?<...............<?}))><...............................\n ) ) ) ) )\n( ( ( ( (       Dr. Philippe Grosjean\n ) ) ) ) )\n( ( ( ( (       LOV, UMR 7093\n ) ) ) ) )      Station Zoologique\n( ( ( ( (       Observatoire Oc?anologique\n ) ) ) ) )      BP 28\n( ( ( ( (       06234 Villefranche sur mer cedex\n ) ) ) ) )      France\n( ( ( ( (\n ) ) ) ) )      tel: +33.4.93.76.38.18, fax: +33.4.93.76.38.34\n( ( ( ( (\n ) ) ) ) )      e-mail: phgrosjean@sciviews.org\n( ( ( ( (       SciViews project coordinator (http://www.sciviews.org)\n ) ) ) ) )\n.......................................................................",
+      "body_snippet": "I have just posted a new version 0.1.1 of SciViews on\nhttp://www.sciviews.org/development/rgui.htm. Here are changes since version\n0.1:\n\n- 'Insighter' was renamed 'Insider' to avoid possible conflicti",
+      "thread_id": "thread-630ea1b5ae78",
+      "thread_depth": 0,
+      "month": "2003-03"
+    },
+    {
+      "id": "msg-9a5340a2c319",
+      "message_id": "<992169E0-609F-11D7-8475-000393BDE1EC@hsph.harvard.edu>",
+      "from_name": "Byron Ellis",
+      "from_email_hash": "602dbd48c4d6bcb6c3cc1d08756be4a63e40bcdb36aa327c88ce92a7e3c7074e",
+      "date": "2003-03-27T23:01:02Z",
+      "subject": "[R-gui] Notebook style interface (Mac OS X)",
+      "subject_clean": "[R-gui] Notebook style interface (Mac OS X)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "I posted a late night rambling to R-SIG-Mac last night and forgot to \ncrosspost it here. However, now that its day and I'm coherent I won't \nsubject this list to the same rambling. :-)\n\nOver the last few days I've been coding up the beginnings of a \nCocoa-based front end for R that employs a notebook style interface a \nla Mathematica or Maple since I rather like that mode of operation. I \nput a quick build up on my website \nhttp://www.people.fas.harvard.edu/~bcellis/StatPaper.app.tar.gz\n\nYou can't load or save or use graphics but the basic styling \nfunctionality is there (Text, Titles or various sorts, Code, Output) as \nis basic execution (I unknowingly duplicated RKWard in this respect. \n:-))\n\nIt assumes many things, like R being installed in the \"usual\" place so \nI won't be surprised if it crashes but it worked on my iBook running \n10.2.4 :-)\n\nByron Ellis (bellis@hsph.harvard.edu)\n\"Oook\" - The Librarian",
+      "body_snippet": "I posted a late night rambling to R-SIG-Mac last night and forgot to \ncrosspost it here. However, now that its day and I'm coherent I won't \nsubject this list to the same rambling. :-)\n\nOver the last ",
+      "thread_id": "thread-9a5340a2c319",
+      "thread_depth": 0,
+      "month": "2003-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-7ff2ba4131e9",
+      "subject": "[R-gui] SciViews R GUI preview version available",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2003-03-18T16:00:17+00:00",
+      "last_reply": "2003-03-18T16:00:17+00:00",
+      "root_message_id": "msg-7ff2ba4131e9"
+    },
+    {
+      "id": "thread-630ea1b5ae78",
+      "subject": "[R-gui] New version 0.1.1 of SciViews available",
+      "message_count": 1,
+      "participants": [
+        "Philippe Grosjean"
+      ],
+      "started": "2003-03-27T11:15:43+00:00",
+      "last_reply": "2003-03-27T11:15:43+00:00",
+      "root_message_id": "msg-630ea1b5ae78"
+    },
+    {
+      "id": "thread-9a5340a2c319",
+      "subject": "[R-gui] Notebook style interface (Mac OS X)",
+      "message_count": 1,
+      "participants": [
+        "Byron Ellis"
+      ],
+      "started": "2003-03-27T23:01:02+00:00",
+      "last_reply": "2003-03-27T23:01:02+00:00",
+      "root_message_id": "msg-9a5340a2c319"
+    }
+  ]
+}

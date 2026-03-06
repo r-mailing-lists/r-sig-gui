@@ -1,0 +1,138 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2005-03",
+  "messages": [
+    {
+      "id": "msg-0b8c3064b936",
+      "message_id": "<200503010150.j211o7O23799@gator.dt.uh.edu>",
+      "from_name": "Erin Hodgess",
+      "from_email_hash": "88132ea90c234cb30678ccdba675b70a56ffd32e3bdb12f5cfbf8b6dbcb4ac51",
+      "date": "2005-03-01T02:50:17Z",
+      "subject": "[R-gui] [R] Iwidgets",
+      "subject_clean": "[R-gui] [R] Iwidgets",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Are Iwidgets available for use withinTcl/Tk, please?\n\nIf so, how does it work, please?\n\nThanks,\nErin Hodgess\nmailto: hodgess@gator.uhd.edu",
+      "body_snippet": "Are Iwidgets available for use withinTcl/Tk, please?\n\nIf so, how does it work, please?\n\nThanks,\nErin Hodgess\nmailto: hodgess@gator.uhd.edu",
+      "thread_id": "thread-0b8c3064b936",
+      "thread_depth": 0,
+      "month": "2005-03"
+    },
+    {
+      "id": "msg-4d7531db1432",
+      "message_id": "<16931.58259.258026.953096@basebud.nulle.part>",
+      "from_name": "Dirk Eddelbuettel",
+      "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
+      "date": "2005-03-01T04:38:16Z",
+      "subject": "[R-gui] [R] Iwidgets",
+      "subject_clean": "[R-gui] [R] Iwidgets",
+      "in_reply_to": "<200503010150.j211o7O23799@gator.dt.uh.edu>",
+      "references": [
+        "<200503010150.j211o7O23799@gator.dt.uh.edu>"
+      ],
+      "body_plain": "On 28 February 2005 at 19:50, Erin Hodgess wrote:\n| Are Iwidgets available for use withinTcl/Tk, please?\n\nYes. You may need to add Iwidgets to your OS, though. I have used them on\nWindows (via an extra package from ActiveTcl), and Debian (via a binary .deb).\n \n| If so, how does it work, please?\n\nA Google search for 'r-help Iwidgets' brings up 42 references, including\nworking examples.\n\nAs for many things tcl/tk, the best reference is still James' site. One\nexample is\n\nhttp://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/TabbedNotebook.html\n\nHth, Dirk\n\n-- \nBetter to have an approximate answer to the right question than a precise \nanswer to the wrong question.  --  John Tukey as quoted by John Chambers",
+      "body_snippet": "On 28 February 2005 at 19:50, Erin Hodgess wrote:\n| Are Iwidgets available for use withinTcl/Tk, please?\n\nYes. You may need to add Iwidgets to your OS, though. I have used them on\nWindows (via an extr",
+      "thread_id": "thread-0b8c3064b936",
+      "thread_depth": 1,
+      "month": "2005-03"
+    },
+    {
+      "id": "msg-fba524dfc032",
+      "message_id": "<200503010640.j216eUL10516@gator.dt.uh.edu>",
+      "from_name": "Erin Hodgess",
+      "from_email_hash": "88132ea90c234cb30678ccdba675b70a56ffd32e3bdb12f5cfbf8b6dbcb4ac51",
+      "date": "2005-03-01T07:40:42Z",
+      "subject": "[R-gui] [R] More on Iwidgets",
+      "subject_clean": "[R-gui] [R] More on Iwidgets",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Thank you VERY MUCH for the help on Iwidgets.  \n\nBut I have 2 other questions, please:  What are the R \"translations\" of\nreset and step, please?\n\nThanks again,\nErin Hodgess\nR 2.0.1 Windows\nmailto: hodgess@gator.uhd.edu",
+      "body_snippet": "Thank you VERY MUCH for the help on Iwidgets.  \n\nBut I have 2 other questions, please:  What are the R \"translations\" of\nreset and step, please?\n\nThanks again,\nErin Hodgess\nR 2.0.1 Windows\nmailto: hod",
+      "thread_id": "thread-fba524dfc032",
+      "thread_depth": 0,
+      "month": "2005-03"
+    },
+    {
+      "id": "msg-4ca80132c08a",
+      "message_id": "<1110150542.2393.57.camel@localhost>",
+      "from_name": "Ian Laurenson",
+      "from_email_hash": "549ea994a11382e010d5505cd4653a0d530161a40e4330d22692440bd79620d4",
+      "date": "2005-03-06T23:52:56Z",
+      "subject": "[R-gui] OpenOffice.org and R",
+      "subject_clean": "[R-gui] OpenOffice.org and R",
+      "in_reply_to": "<FC4627EC695CD71180280003477108C501BBB8DE@exchange.epripeac.com>",
+      "references": [
+        "<FC4627EC695CD71180280003477108C501BBB8DE@exchange.epripeac.com>"
+      ],
+      "body_plain": "On Fri, 2005-02-25 at 03:35, Short, Tom wrote:\n> This topic has come up before, and others have expressed interest in making\n> the connection. Here's one I found:\n> \n> https://stat.ethz.ch/pipermail/r-devel/2003-July/027039.html\n> \nI have contacted Harry Mangalam and have offered to help their work. I\nhave received a reply from Harry expressing interest but at this stage\nhave nothing else to report.\n\nMy message created a series of discussions about GUI widgets. For the\nOpenOffice.org and R integration I suspect that the best approach is to\nuse widgets provided by OpenOffice.org.\n\nI really appreciated the discussion about the form the integration\nbetween OpenOffice.org and R could take. I hope that when I hear some\nmore from Harry (so that I don't reinvent the wheel) that I can help\nimplement them.\n\nThanks, Ian Laurenson",
+      "body_snippet": "On Fri, 2005-02-25 at 03:35, Short, Tom wrote:\n> This topic has come up before, and others have expressed interest in making\n> the connection. Here's one I found:\n> \n> https://stat.ethz.ch/pipermail/r",
+      "thread_id": "thread-4ca80132c08a",
+      "thread_depth": 0,
+      "month": "2005-03"
+    },
+    {
+      "id": "msg-8bd37421b947",
+      "message_id": "<16954.4362.651342.351802@markov.math.csi.cuny.edu>",
+      "from_name": "verzani@math.csi.cuny.edu",
+      "from_email_hash": "b807e48d46a4dd62c3f942d742ee2674ab86ebefa69a6e8a05f6abb119c12cdb",
+      "date": "2005-03-18T00:21:57Z",
+      "subject": "[R-gui] pmg -- another try",
+      "subject_clean": "[R-gui] pmg -- another try",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "For some reason, I found myself with some free nights and decided to\nspend them rewriting my seemingly aborted pmg package. \n\nThis package is an alternative to the RCmdr project using the RGtk\npackage instead of the tcltk package for its widgets. It's basic goal\nis to give students a \"simpler\" way to learn and interact with R,\nalthough it may be helpful to more knowledgeable users.\n\nThe main features of the newer version:\n\n* only uses RGtk and asGtkDevice. So its much easier to install, and\n  might possibly work under windows. (It was tested under gentoo linux\n  and Mac OS X under 2.0.1 of R.) This version runs much faster as the\n  dependency on OOP was dropped.\n* the interface takes advantage of GTK's drag and drop abilities\n* adds a plot notebook interface to X11 that allows one to store\n  multiple graphs.\n* the menu bar is easily extendable by the user. New menus can be\n  \"automagically\" generated with a single command. (YMMV)\n\nThe current set of dialogs is not as complete as those for RCmdr, but\nadding  your desired one is not really that difficult if you are\nsatisfied with the way they are easily created.\n\n\nInstructions for installation are at\nhttp://www.math.csi.cuny.edu/pmg. \n\n[i.e.,\n> install.packages(\"pmg\",contriburl=\"http://www.math.csi.cuny.edu/pmg\")\n]\n\nScreenshots are in the manual\nhttp://www.math.csi.cuny.edu/pmg/pmg.manual.pdf \n\n\nAlthough there aren't any really compelling reasons to use pmg over\nRCmdr, some may appreciate the variety. I'd be interested to hear any\nfeedback about the package, especially notice of bugs. The package\nhasn't had much testing, but seems to be behaving properly.",
+      "body_snippet": "For some reason, I found myself with some free nights and decided to\nspend them rewriting my seemingly aborted pmg package. \n\nThis package is an alternative to the RCmdr project using the RGtk\npackage",
+      "thread_id": "thread-8bd37421b947",
+      "thread_depth": 0,
+      "month": "2005-03"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-0b8c3064b936",
+      "subject": "[R-gui] [R] Iwidgets",
+      "message_count": 2,
+      "participants": [
+        "Dirk Eddelbuettel",
+        "Erin Hodgess"
+      ],
+      "started": "2005-03-01T02:50:17+00:00",
+      "last_reply": "2005-03-01T04:38:16+00:00",
+      "root_message_id": "msg-0b8c3064b936"
+    },
+    {
+      "id": "thread-fba524dfc032",
+      "subject": "[R-gui] [R] More on Iwidgets",
+      "message_count": 1,
+      "participants": [
+        "Erin Hodgess"
+      ],
+      "started": "2005-03-01T07:40:42+00:00",
+      "last_reply": "2005-03-01T07:40:42+00:00",
+      "root_message_id": "msg-fba524dfc032"
+    },
+    {
+      "id": "thread-4ca80132c08a",
+      "subject": "[R-gui] OpenOffice.org and R",
+      "message_count": 1,
+      "participants": [
+        "Ian Laurenson"
+      ],
+      "started": "2005-03-06T23:52:56+00:00",
+      "last_reply": "2005-03-06T23:52:56+00:00",
+      "root_message_id": "msg-4ca80132c08a"
+    },
+    {
+      "id": "thread-8bd37421b947",
+      "subject": "[R-gui] pmg -- another try",
+      "message_count": 1,
+      "participants": [
+        "verzani@math.csi.cuny.edu"
+      ],
+      "started": "2005-03-18T00:21:57+00:00",
+      "last_reply": "2005-03-18T00:21:57+00:00",
+      "root_message_id": "msg-8bd37421b947"
+    }
+  ]
+}

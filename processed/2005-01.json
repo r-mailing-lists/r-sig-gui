@@ -1,0 +1,186 @@
+{
+  "list": "r-sig-gui",
+  "description": "",
+  "month": "2005-01",
+  "messages": [
+    {
+      "id": "msg-f6dabca1cbfe",
+      "message_id": "<41E53162.1050604@zhwin.ch>",
+      "from_name": "Thomas Unternaehrer",
+      "from_email_hash": "85c73171ef3a0e882e0fecd63aa8f28a653e0987aead51fb397a1f2faf112f5a",
+      "date": "2005-01-12T15:17:13Z",
+      "subject": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "subject_clean": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear List,\n\nI try to have a picture in a labeled frame like this example shows it:\nhttp://incrtcl.sourceforge.net/iwidgets/iwidgets/labeledframe.html\n\nAt this point I have the following R-code (An example with the R-Logo \nbased on the example by James Wettenhall):\n\n## R =================\nlibrary(tcltk)\ntclRequire(\"Iwidgets\")\nsetwd(paste(system.file(), \"/../../doc/html\",sep=\"\"))\n.base <- tktoplevel()\ntkwm.title(.base, \"Labeledframe\")\ntkpack(.base.labelframe <- tkwidget(.base, \"iwidgets::labeledframe\",\n                                    labelpos = \"nw\",\n                                    labeltext = \"Labelframe\"),\n       fill = \"both\", expand = TRUE)\n\n.base.labelframe.cs <- .Tk.subwin(.base.labelframe)\n\ntclRequire(\"Img\")\nt.Logo <- tclVar()\ntkcmd(\"image\", \"create\", \"photo\", t.Logo,\n      file = \"logo.jpg\")\ntkpack(tklabel(.base.labelframe.cs, image = t.Logo, bg = \"white\"),\n       fill = \"both\", expand = TRUE, padx = 5, pady = 5)\n ##===================\n\nWith the following errormessage:\nError in structure(.External(\"dotTclObjv\", objv, PACKAGE = \"tcltk\"), \nclass = \"tclObj\") :\n    [tcl] bad window path name \".10.1.2\".\n\nAs I understand it right the problem has to do with the fact that \n\"...cs\" needs to be a child/sub - window.\nSee the following pure tcl-code:\n\n## Tcl/Tk===============\n\n##\tNeed to get the childsite so that\n##\twe can properly pack other widgets\n##\tinside\n\nset cs [.lf childsite]\n\n##====================\n\n.Tk.subwin seems not to be the right way. I also tried it with \n.Tcl(\"pure Tcl commands\") and tkcmd but faild.\nHas anybody an idea how to solve my problem?\n\nThanks a lot\n\nThomas\n\n\nps: and sorry for my poor english\n\n > version\nplatform i386-pc-mingw32\narch     i386          \nos       mingw32       \nsystem   i386, mingw32 \nstatus                 \nmajor    2             \nminor    0.1           \nyear     2004          \nmonth    11            \nday      15            \nlanguage R",
+      "body_snippet": "Dear List,\n\nI try to have a picture in a labeled frame like this example shows it:\nhttp://incrtcl.sourceforge.net/iwidgets/iwidgets/labeledframe.html\n\nAt this point I have the following R-code (An exa",
+      "thread_id": "thread-f6dabca1cbfe",
+      "thread_depth": 0,
+      "month": "2005-01"
+    },
+    {
+      "id": "msg-92a8b70b69dc",
+      "message_id": "<x2y8eyg03s.fsf@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard",
+      "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
+      "date": "2005-01-12T16:06:59Z",
+      "subject": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "subject_clean": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "in_reply_to": "<41E53162.1050604@zhwin.ch>",
+      "references": [
+        "<41E53162.1050604@zhwin.ch>"
+      ],
+      "body_plain": "Thomas Unternaehrer <uth@zhwin.ch> writes:\n\n> Dear List,\n> \n> I try to have a picture in a labeled frame like this example shows it:\n> http://incrtcl.sourceforge.net/iwidgets/iwidgets/labeledframe.html\n> \n> At this point I have the following R-code (An example with the R-Logo\n> based on the example by James Wettenhall):\n> \n> ## R =================\n> library(tcltk)\n> tclRequire(\"Iwidgets\")\n> setwd(paste(system.file(), \"/../../doc/html\",sep=\"\"))\n> .base <- tktoplevel()\n> tkwm.title(.base, \"Labeledframe\")\n> tkpack(.base.labelframe <- tkwidget(.base, \"iwidgets::labeledframe\",\n>                                     labelpos = \"nw\",\n>                                     labeltext = \"Labelframe\"),\n>        fill = \"both\", expand = TRUE)\n> \n> .base.labelframe.cs <- .Tk.subwin(.base.labelframe)\n> \n> tclRequire(\"Img\")\n> t.Logo <- tclVar()\n> tkcmd(\"image\", \"create\", \"photo\", t.Logo,\n>       file = \"logo.jpg\")\n> tkpack(tklabel(.base.labelframe.cs, image = t.Logo, bg = \"white\"),\n>        fill = \"both\", expand = TRUE, padx = 5, pady = 5)\n>  ##===================\n> \n> With the following errormessage:\n> Error in structure(.External(\"dotTclObjv\", objv, PACKAGE = \"tcltk\"),\n> class = \"tclObj\") :\n>     [tcl] bad window path name \".10.1.2\".\n> \n> As I understand it right the problem has to do with the fact that\n> \"...cs\" needs to be a child/sub - window.\n> See the following pure tcl-code:\n> \n> ## Tcl/Tk===============\n> \n> ##\tNeed to get the childsite so that\n> ##\twe can properly pack other widgets\n> ##\tinside\n> \n> set cs [.lf childsite]\n> \n> ##====================\n> \n> .Tk.subwin seems not to be the right way. I also tried it with\n> .Tcl(\"pure Tcl commands\") and tkcmd but faild.\n> Has anybody an idea how to solve my problem?\n\nThe problem is a generic one: If a Tcl extension package generates a\nwidget with internal subwidgets, these are not readily available to\nthe R side of the interface. .Tk.subwin is not going to help because\nthat invents a *new* name.\n\nWhat I presume is going on in your example is that\niwidgets::labeledframe creates a widget called \".10.1\" and then\n.Tk.subwin() sets up .10.1.2 (Why 2? Did you run it twice?) which\ncould be OK as an argument to a further widget creation call, but\nwill not help you get at the subwidgets that have already been created\nand named according to the likings of iwidgets::labeledframe. I would\nguess that the name you are looking for is \".10.1.cs\" (I don't have\nIwidgets to hand on this system).\n\nSo what to do about it? You might try passing the the raw ID instead\nof the widget, but things like tklabel(\".10.1.cs\",...) is not going to\nwork because something will expect it to be an object of class\n\"tkwin\". One fairly obvious idea is to modify .Tk.subwin to take a\nname argument, like this:\n\n.Tk.subwin <- \nfunction (parent, name=evalq(num.subwin <- num.subwin + 1, parent$env))\n{\n    ID <- paste(parent$ID, name,\n        parent$env), sep = \".\")\n    win <- .Tk.newwin(ID)\n    assign(ID, win, envir = parent$env)\n    assign(\"parent\", parent, envir = win$env)\n    win\n}\n\nso that .base.labelname.cs <- .Tk.subwin(.base.labelname, \"cs\") would\nwork. \n\n\n\n> Thanks a lot\n> \n> Thomas\n> \n> \n> ps: and sorry for my poor english\n\nThat's not a problem. However, a couple of programming issues caught\nmy eye:\n\n(1) There's really no need to use Tcl style names like\n    .base.labelframe in R. In fact the R interface is designed to\n    enable you to avoid that.\n\n(2) tkcmd() has been renamed to tcl() (since it was never specific to\n    Tk) and if people would stop piling new issues on top of me, I\n    might actually get around to deprecating the old name.\n \n-- \n   O__  ---- Peter Dalgaard             Blegdamsvej 3  \n  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   \n (*) \\(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907",
+      "body_snippet": "Thomas Unternaehrer <uth@zhwin.ch> writes:\n\n> Dear List,\n> \n> I try to have a picture in a labeled frame like this example shows it:\n> http://incrtcl.sourceforge.net/iwidgets/iwidgets/labeledframe.htm",
+      "thread_id": "thread-f6dabca1cbfe",
+      "thread_depth": 1,
+      "month": "2005-01"
+    },
+    {
+      "id": "msg-2cd141be77b0",
+      "message_id": "<41E64573.8030502@zhwin.ch>",
+      "from_name": "Thomas Unternaehrer",
+      "from_email_hash": "85c73171ef3a0e882e0fecd63aa8f28a653e0987aead51fb397a1f2faf112f5a",
+      "date": "2005-01-13T10:55:07Z",
+      "subject": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "subject_clean": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "in_reply_to": "<x2y8eyg03s.fsf@biostat.ku.dk>",
+      "references": [
+        "<41E53162.1050604@zhwin.ch>",
+        "<x2y8eyg03s.fsf@biostat.ku.dk>"
+      ],
+      "body_plain": "Dear Peter Dalgaard\n\n\nPeter Dalgaard wrote:\n\n>Thomas Unternaehrer <uth@zhwin.ch> writes:\n>\n>  \n>\n>>Dear List,\n>>\n>>I try to have a picture in a labeled frame like this example shows it:\n>>http://incrtcl.sourceforge.net/iwidgets/iwidgets/labeledframe.html\n>>\n>>At this point I have the following R-code (An example with the R-Logo\n>>based on the example by James Wettenhall):\n>>\n>>## R =================\n>>library(tcltk)\n>>tclRequire(\"Iwidgets\")\n>>setwd(paste(system.file(), \"/../../doc/html\",sep=\"\"))\n>>.base <- tktoplevel()\n>>tkwm.title(.base, \"Labeledframe\")\n>>tkpack(.base.labelframe <- tkwidget(.base, \"iwidgets::labeledframe\",\n>>                                    labelpos = \"nw\",\n>>                                    labeltext = \"Labelframe\"),\n>>       fill = \"both\", expand = TRUE)\n>>\n>>.base.labelframe.cs <- .Tk.subwin(.base.labelframe)\n>>\n>>tclRequire(\"Img\")\n>>t.Logo <- tclVar()\n>>tkcmd(\"image\", \"create\", \"photo\", t.Logo,\n>>      file = \"logo.jpg\")\n>>tkpack(tklabel(.base.labelframe.cs, image = t.Logo, bg = \"white\"),\n>>       fill = \"both\", expand = TRUE, padx = 5, pady = 5)\n>> ##===================\n>>\n>>With the following errormessage:\n>>Error in structure(.External(\"dotTclObjv\", objv, PACKAGE = \"tcltk\"),\n>>class = \"tclObj\") :\n>>    [tcl] bad window path name \".10.1.2\".\n>>\n>>As I understand it right the problem has to do with the fact that\n>>\"...cs\" needs to be a child/sub - window.\n>>See the following pure tcl-code:\n>>\n>>## Tcl/Tk===============\n>>\n>>##\tNeed to get the childsite so that\n>>##\twe can properly pack other widgets\n>>##\tinside\n>>\n>>set cs [.lf childsite]\n>>\n>>##====================\n>>\n>>.Tk.subwin seems not to be the right way. I also tried it with\n>>.Tcl(\"pure Tcl commands\") and tkcmd but faild.\n>>Has anybody an idea how to solve my problem?\n>>    \n>>\n>\n>The problem is a generic one: If a Tcl extension package generates a\n>widget with internal subwidgets, these are not readily available to\n>the R side of the interface. .Tk.subwin is not going to help because\n>that invents a *new* name.\n>\n>  \n>\nOk, this is the same \"problem\" in all of that Megawidgets, isn't it?\n\n>What I presume is going on in your example is that\n>iwidgets::labeledframe creates a widget called \".10.1\" and then\n>.Tk.subwin() sets up .10.1.2 (Why 2? Did you run it twice?) which\n>could be OK as an argument to a further widget creation call, but\n>will not help you get at the subwidgets that have already been created\n>and named according to the likings of iwidgets::labeledframe. I would\n>guess that the name you are looking for is \".10.1.cs\" (I don't have\n>Iwidgets to hand on this system).\n>\n>So what to do about it? You might try passing the the raw ID instead\n>of the widget, but things like tklabel(\".10.1.cs\",...) is not going to\n>work because something will expect it to be an object of class\n>\"tkwin\". One fairly obvious idea is to modify .Tk.subwin to take a\n>name argument, like this:\n>\n>.Tk.subwin <- \n>function (parent, name=evalq(num.subwin <- num.subwin + 1, parent$env))\n>{\n>    ID <- paste(parent$ID, name,\n>        parent$env), sep = \".\")\n>    win <- .Tk.newwin(ID)\n>    assign(ID, win, envir = parent$env)\n>    assign(\"parent\", parent, envir = win$env)\n>    win\n>}\n>\n>so that .base.labelname.cs <- .Tk.subwin(.base.labelname, \"cs\") would\n>work. \n>\n>\n>  \n>\nIf I use your function I get the following error:\n\n....\n.Tk.subwin2 <- function (parent, name=evalq(num.subwin <- num.subwin + 1,\n                                   parent$env)) {\n  ID <- paste(c(parent$ID, name, parent$env), sep = \".\")\n  win <- .Tk.newwin(ID)\n  assign(ID, win, envir = parent$env)\n  assign(\"parent\", parent, envir = win$env)\n  win\n}\n\n.base.labelframe.cs <- .Tk.subwin2(.base.labelframe, \"cs\")\ntclRequire(\"Img\")\nt.Logo <- tclVar()\ntcl(\"image\", \"create\", \"photo\", t.Logo, file = \"logo.jpg\")\ntkpack(tklabel(.base.labelframe.cs, image = t.Logo, bg = \"white\"),\n       fill = \"both\", expand = TRUE, padx = 5, pady = 5)\n\nError in structure(.External(\"dotTclObjv\", objv, PACKAGE = \"tcltk\"), \nclass = \"tclObj\") :\n    [tcl] bad window path name \".1.1.1 cs.1 <environment>\".\n\n\nI've seen that you use the same trick in the tabbed notebook example. \nMaybe I have to study that part again.\n\n\n>  \n>\n>>Thanks a lot\n>>\n>>Thomas\n>>\n>>\n>>ps: and sorry for my poor english\n>>    \n>>\n>\n>That's not a problem. However, a couple of programming issues caught\n>my eye:\n>\n>(1) There's really no need to use Tcl style names like\n>    .base.labelframe in R. In fact the R interface is designed to\n>    enable you to avoid that.\n>\n>  \n>\nYes I know, but the name .base.labelframe.image tells me that image (or \nwhat ever) is on top of base and labelframe.\nI find it just usefull.\n\n>(2) tkcmd() has been renamed to tcl() (since it was never specific to\n>    Tk) and if people would stop piling new issues on top of me, I\n>    might actually get around to deprecating the old name.\n> \n>  \n>\nOk, last time I used tcl/tk there was just the tkcmd, I think. I have to \nread the CHANGES/NEWS-files next time again before posting.\nThanks for that correction.\n\nJust to understand what happend I've tried these two examples\n\n## 1\n.base <- tktoplevel()\ntkwm.title(.base, \"Labelframe\")\ntkpack(.base.labelframe <- tkwidget(.base, \"iwidgets::labeledframe\",\n                                    labelpos = \"nw\",\n                                    labeltext = \"Labelframe\"),\n       fill = \"both\", expand = TRUE)\n\ncs <- tclVar()\ntcl(\"set\", cs, paste(\"[\", .Tk.ID(.base.labelframe), \"childsite]\"))\nt.Logo <- tclVar()\ntcl(\"image\", \"create\", \"photo\", t.Logo, file = \"logo.jpg\")\n.Tcl(paste(\"label $cs.l -image \", .Tk.ID(t.Logo)))\n\n[tcl] can't read \"cs\": no such variable.\n\nThis is what you said above I think. The variable \"cs\" can't be passed \nfrom R to Tcl and back.\n\n ## 2    \n## what I can't understand is that\n.Tk.ID(cs) ## is NULL\n\nIf I give it an ID by hand it gives me the following:\n...\ncs$ID <- \".2.1.cs\"\n.Tcl(paste(\"label $\",.Tk.ID(cs),\".l -image \", .Tk.ID(t.Logo), sep = \"\"))\n\nbad window path name \"$.2.1.cs\"\n\nThat it does not work is not really surprising, but there is maybe more \nthan just set the path name correctly, isn't it?\n\n\nThanks for your help. I'll try to get it work, but if you have a hint \nagain... would be great.\nAnd thanks for writing that great package.\n\nThomas",
+      "body_snippet": "Dear Peter Dalgaard\n\n\nPeter Dalgaard wrote:\n\n>Thomas Unternaehrer <uth@zhwin.ch> writes:\n>\n>  \n>\n>>Dear List,\n>>\n>>I try to have a picture in a labeled frame like this example shows it:\n>>http://incrt",
+      "thread_id": "thread-f6dabca1cbfe",
+      "thread_depth": 2,
+      "month": "2005-01"
+    },
+    {
+      "id": "msg-723ba7f7c9bc",
+      "message_id": "<x2u0plegw9.fsf@biostat.ku.dk>",
+      "from_name": "Peter Dalgaard",
+      "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
+      "date": "2005-01-13T11:59:30Z",
+      "subject": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "subject_clean": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "in_reply_to": "<41E64573.8030502@zhwin.ch>",
+      "references": [
+        "<41E53162.1050604@zhwin.ch>",
+        "<x2y8eyg03s.fsf@biostat.ku.dk>",
+        "<41E64573.8030502@zhwin.ch>"
+      ],
+      "body_plain": "Thomas Unternaehrer <uth@zhwin.ch> writes:\n\n> Dear Peter Dalgaard\n....\n> >The problem is a generic one: If a Tcl extension package generates a\n> >widget with internal subwidgets, these are not readily available to\n> >the R side of the interface. .Tk.subwin is not going to help because\n> >that invents a *new* name.\n> >\n> >\n> Ok, this is the same \"problem\" in all of that Megawidgets, isn't it?\n\nA common problem, certainly. Not sure it is in all of them.\n \n> > .Tk.subwin <-\n> >function (parent, name=evalq(num.subwin <- num.subwin + 1, parent$env))\n> >{\n> >    ID <- paste(parent$ID, name,\n> >        parent$env), sep = \".\")\n> >    win <- .Tk.newwin(ID)\n> >    assign(ID, win, envir = parent$env)\n> >    assign(\"parent\", parent, envir = win$env)\n> >    win\n> >}\n> >\n> >so that .base.labelname.cs <- .Tk.subwin(.base.labelname, \"cs\") would\n> > work.\n> If I use your function I get the following error:\n> \n> ....\n> .Tk.subwin2 <- function (parent, name=evalq(num.subwin <- num.subwin + 1,\n>                                    parent$env)) {\n>   ID <- paste(c(parent$ID, name, parent$env), sep = \".\")\n                                   ^^^^^^^^^^\n\nOops, that's not right. Do what I mean, not what I say...\n\nShould be\n\n ID <- paste(parent$ID, name, sep = \".\")\n\n\n>   win <- .Tk.newwin(ID)\n>   assign(ID, win, envir = parent$env)\n>   assign(\"parent\", parent, envir = win$env)\n>   win\n> }\n> \n> .base.labelframe.cs <- .Tk.subwin2(.base.labelframe, \"cs\")\n> tclRequire(\"Img\")\n> t.Logo <- tclVar()\n> tcl(\"image\", \"create\", \"photo\", t.Logo, file = \"logo.jpg\")\n> tkpack(tklabel(.base.labelframe.cs, image = t.Logo, bg = \"white\"),\n>        fill = \"both\", expand = TRUE, padx = 5, pady = 5)\n> \n> Error in structure(.External(\"dotTclObjv\", objv, PACKAGE = \"tcltk\"),\n> class = \"tclObj\") :\n>     [tcl] bad window path name \".1.1.1 cs.1 <environment>\".\n> \n> \n> I've seen that you use the same trick in the tabbed notebook example.\n> Maybe I have to study that part again.\n\nMmm, I recall discussing that, but not putting up a complete example.\nMight have been James Wettenhall. In which context is that?\n \n> >(1) There's really no need to use Tcl style names like\n> >    .base.labelframe in R. In fact the R interface is designed to\n> >    enable you to avoid that.\n> >\n> Yes I know, but the name .base.labelframe.image tells me that image\n> (or what ever) is on top of base and labelframe.\n> I find it just usefull.\n\nOK. As long as it works... If you get 10 levels deep you get in\ntrouble though, because R doesn't have Tcl's macro-like $win.sub\nexpansion (with $win expanding to a 9 level window name).\n \n> Just to understand what happend I've tried these two examples\n> \n> ## 1\n> .base <- tktoplevel()\n> tkwm.title(.base, \"Labelframe\")\n> tkpack(.base.labelframe <- tkwidget(.base, \"iwidgets::labeledframe\",\n>                                     labelpos = \"nw\",\n>                                     labeltext = \"Labelframe\"),\n>        fill = \"both\", expand = TRUE)\n> \n> cs <- tclVar()\n> tcl(\"set\", cs, paste(\"[\", .Tk.ID(.base.labelframe), \"childsite]\"))\n> t.Logo <- tclVar()\n> tcl(\"image\", \"create\", \"photo\", t.Logo, file = \"logo.jpg\")\n> .Tcl(paste(\"label $cs.l -image \", .Tk.ID(t.Logo)))\n> \n> [tcl] can't read \"cs\": no such variable.\n> \n> This is what you said above I think. The variable \"cs\" can't be passed\n> from R to Tcl and back.\n\nIt's not quite the same, the above relates to variable names, which\nwill be \"::RTcl1\",\"::RTcl2\" on the Tcl side. I was talking about\nwindow names, but the issue is the same; there is no obvious relation\nbetween the names that R knows and the ones that Tcl knows. \n\n \n>  ## 2    ## what I can't understand is that\n> .Tk.ID(cs) ## is NULL\n> \n> If I give it an ID by hand it gives me the following:\n> ...\n> cs$ID <- \".2.1.cs\"\n> .Tcl(paste(\"label $\",.Tk.ID(cs),\".l -image \", .Tk.ID(t.Logo), sep = \"\"))\n> \n> bad window path name \"$.2.1.cs\"\n> \n> That it does not work is not really surprising, but there is maybe\n> more than just set the path name correctly, isn't it?\n\nI don't think you want the \"$\" in there... \n\nIf cs is still meant as a variable here, then you need to understand\nthe difference between tclVar and tkwin. If you want cs to be a Tcl\nvariable containing the name of a window, you would have\n\ntclvalue(cs) <- \".2.1.cs\"\n\nthen you could get the name of cs as \n\nname <- as.character(cs) \n\n(although I'm not really happy about that construction)\n\nand then do this sort of thing:\n\n.Tcl(paste(\"label $\", name, \".l -image \", .Tk.ID(t.Logo), sep = \"\")\n\n-- for instructional use only, of course. I don't think it has a place\n   in good programming practice!\n\n-- \n   O__  ---- Peter Dalgaard             Blegdamsvej 3  \n  c/ /'_ --- Dept. of Biostatistics     2200 Cph. N   \n (*) \\(*) -- University of Copenhagen   Denmark      Ph: (+45) 35327918\n~~~~~~~~~~ - (p.dalgaard@biostat.ku.dk)             FAX: (+45) 35327907",
+      "body_snippet": "Thomas Unternaehrer <uth@zhwin.ch> writes:\n\n> Dear Peter Dalgaard\n....\n> >The problem is a generic one: If a Tcl extension package generates a\n> >widget with internal subwidgets, these are not readily",
+      "thread_id": "thread-f6dabca1cbfe",
+      "thread_depth": 3,
+      "month": "2005-01"
+    },
+    {
+      "id": "msg-e005d8a0a713",
+      "message_id": "<20050116203746.77654.qmail@web25304.mail.ukl.yahoo.com>",
+      "from_name": "Kubong Mbah",
+      "from_email_hash": "58fb72269eab7c39872bc3b12672b2eb9b9bd275fd3c47d26243b48776bc31b4",
+      "date": "2005-01-16T21:37:49Z",
+      "subject": "[R-gui] Help with my data",
+      "subject_clean": "[R-gui] Help with my data",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear sir, \nI am working on record values (lower record values). I\nhave the following dataset\n5.8, 6.8, 4.8, 6.0, 7.0, 3.5, 4.6, 2.6, 4.5, 3.2, 1.6,\n1.8, 4.9, 6.2, 0.9, 5.4, 3.8, 2.9\nand wish to obtain a subset (lower recods) from the\nabove dataset i.e.\n5.8, 4.8, 3.5, 2.6, 1.6, 0.9\nHow can I do this in R?\nYours sincerely\nAlfred Mbah",
+      "body_snippet": "Dear sir, \nI am working on record values (lower record values). I\nhave the following dataset\n5.8, 6.8, 4.8, 6.0, 7.0, 3.5, 4.6, 2.6, 4.5, 3.2, 1.6,\n1.8, 4.9, 6.2, 0.9, 5.4, 3.8, 2.9\nand wish to obtain",
+      "thread_id": "thread-e005d8a0a713",
+      "thread_depth": 0,
+      "month": "2005-01"
+    },
+    {
+      "id": "msg-71f55efea1a5",
+      "message_id": "<16D9B0726718374CB9A6883FA118F43A3A1F29@msgcawpg05>",
+      "from_name": "HigdonJ@DFO-MPO.GC.CA",
+      "from_email_hash": "9011018f629e3f9c054603643c852c435772e0a1fade9a80b131cbf6eec23f7e",
+      "date": "2005-01-17T19:06:50Z",
+      "subject": "[R-gui] easy to use beginner GUI",
+      "subject_clean": "[R-gui] easy to use beginner GUI",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hello all, I am interested in using r for statistical analysis, but have no\nexperience with it yet. My experience with stats programs has been limited\nto those with a GUI, and I've never done any command line-based analysis.\nWhile I would like to learn the command line version, I think it would be\nbest if I started using r with a GUI. To that end, could someone kindly\nrecommend a good GUI to start with? Thanks in advance,\n\n \n\nCheers,\n\n \n\nJeff Higdon\n\n \n\n************************************************************\n\nJeff Higdon, MSc\n\nCentral and Arctic Region\n\nDepartment of Fisheries and Oceans Canada\n\n501 University Crescent\n\nWinnipeg, MB\n\nR3T 2N6\n\nEmail: higdonj@dfo-mpo.gc.ca <mailto:higdonj@dfo-mpo.gc.ca> \n\nPhone: (204) 984-5541\n\nFax: (204) 984-2403\n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello all, I am interested in using r for statistical analysis, but have no\nexperience with it yet. My experience with stats programs has been limited\nto those with a GUI, and I've never done any comm",
+      "thread_id": "thread-71f55efea1a5",
+      "thread_depth": 0,
+      "month": "2005-01"
+    },
+    {
+      "id": "msg-d3a18b309a16",
+      "message_id": "<1105989942.8050.15.camel@ha667-1.commerce.ubc.ca>",
+      "from_name": "Dan Putler",
+      "from_email_hash": "2ecbf92948ac5a7048c7043e0adad890b39fd24eff16a6ff4a1bda9cc23f6503",
+      "date": "2005-01-17T20:26:07Z",
+      "subject": "[R-gui] easy to use beginner GUI",
+      "subject_clean": "[R-gui] easy to use beginner GUI",
+      "in_reply_to": "<16D9B0726718374CB9A6883FA118F43A3A1F29@msgcawpg05>",
+      "references": [
+        "<16D9B0726718374CB9A6883FA118F43A3A1F29@msgcawpg05>"
+      ],
+      "body_plain": "Hi Jeff,\n\nThe \"beginner GUI\" is John Fox's R Commander\n(http://socserv.mcmaster.ca/jfox/Misc/Rcmdr). In addition, the R\nCommander dialog boxes can be accessed within SciViews-R\n(http://www.sciviews.org/SciViews-R/index.html).\n\nDan Putler\n\nOn Mon, 2005-01-17 at 10:06, HigdonJ@dfo-mpo.gc.ca wrote:\n> Hello all, I am interested in using r for statistical analysis, but have no\n> experience with it yet. My experience with stats programs has been limited\n> to those with a GUI, and I've never done any command line-based analysis.\n> While I would like to learn the command line version, I think it would be\n> best if I started using r with a GUI. To that end, could someone kindly\n> recommend a good GUI to start with? Thanks in advance,\n> \n>  \n> \n> Cheers,\n> \n>  \n> \n> Jeff Higdon\n> \n>  \n> \n> ************************************************************\n> \n> Jeff Higdon, MSc\n> \n> Central and Arctic Region\n> \n> Department of Fisheries and Oceans Canada\n> \n> 501 University Crescent\n> \n> Winnipeg, MB\n> \n> R3T 2N6\n> \n> Email: higdonj@dfo-mpo.gc.ca <mailto:higdonj@dfo-mpo.gc.ca> \n> \n> Phone: (204) 984-5541\n> \n> Fax: (204) 984-2403\n> \n>  \n> \n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI@stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui",
+      "body_snippet": "Hi Jeff,\n\nThe \"beginner GUI\" is John Fox's R Commander\n(http://socserv.mcmaster.ca/jfox/Misc/Rcmdr). In addition, the R\nCommander dialog boxes can be accessed within SciViews-R\n(http://www.sciviews.or",
+      "thread_id": "thread-71f55efea1a5",
+      "thread_depth": 1,
+      "month": "2005-01"
+    },
+    {
+      "id": "msg-af53a4243809",
+      "message_id": "<16876.51403.350558.674295@stat.math.ethz.ch>",
+      "from_name": "Martin Maechler",
+      "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
+      "date": "2005-01-18T09:29:01Z",
+      "subject": "[R-gui] Help with my data",
+      "subject_clean": "[R-gui] Help with my data",
+      "in_reply_to": "<20050116203746.77654.qmail@web25304.mail.ukl.yahoo.com>",
+      "references": [
+        "<20050116203746.77654.qmail@web25304.mail.ukl.yahoo.com>"
+      ],
+      "body_plain": "Hello Kubong,\n\nthis question was addressed to \"R-SIG-gui\" a special interest\nmailing list to which it definitely does *NOT* belong.\n\nPlease use R-help for questions like yours and\nLEASE do read the posting guide! http://www.R-project.org/posting-guide.html\n\nMartin Maechler\n\n>>>>> \"Kubong\" == Kubong Mbah <kubong20@yahoo.co.uk>\n>>>>>     on Sun, 16 Jan 2005 20:37:46 +0000 (GMT) writes:\n\n    Kubong> Dear sir, \n    Kubong> I am working on record values (lower record values). I\n    Kubong> have the following dataset\n    Kubong> 5.8, 6.8, 4.8, 6.0, 7.0, 3.5, 4.6, 2.6, 4.5, 3.2, 1.6,\n    Kubong> 1.8, 4.9, 6.2, 0.9, 5.4, 3.8, 2.9\n    Kubong> and wish to obtain a subset (lower recods) from the\n    Kubong> above dataset i.e.\n    Kubong> 5.8, 4.8, 3.5, 2.6, 1.6, 0.9\n    Kubong> How can I do this in R?\n    Kubong> Yours sincerely\n    Kubong> Alfred Mbah",
+      "body_snippet": "Hello Kubong,\n\nthis question was addressed to \"R-SIG-gui\" a special interest\nmailing list to which it definitely does *NOT* belong.\n\nPlease use R-help for questions like yours and\nLEASE do read the po",
+      "thread_id": "thread-e005d8a0a713",
+      "thread_depth": 1,
+      "month": "2005-01"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-f6dabca1cbfe",
+      "subject": "[R-gui] pure tcl/tk to R-tcltk / labeled frame and image",
+      "message_count": 4,
+      "participants": [
+        "Peter Dalgaard",
+        "Thomas Unternaehrer"
+      ],
+      "started": "2005-01-12T15:17:13+00:00",
+      "last_reply": "2005-01-13T11:59:30+00:00",
+      "root_message_id": "msg-f6dabca1cbfe"
+    },
+    {
+      "id": "thread-e005d8a0a713",
+      "subject": "[R-gui] Help with my data",
+      "message_count": 2,
+      "participants": [
+        "Kubong Mbah",
+        "Martin Maechler"
+      ],
+      "started": "2005-01-16T21:37:49+00:00",
+      "last_reply": "2005-01-18T09:29:01+00:00",
+      "root_message_id": "msg-e005d8a0a713"
+    },
+    {
+      "id": "thread-71f55efea1a5",
+      "subject": "[R-gui] easy to use beginner GUI",
+      "message_count": 2,
+      "participants": [
+        "Dan Putler",
+        "HigdonJ@DFO-MPO.GC.CA"
+      ],
+      "started": "2005-01-17T19:06:50+00:00",
+      "last_reply": "2005-01-17T20:26:07+00:00",
+      "root_message_id": "msg-71f55efea1a5"
+    }
+  ]
+}
