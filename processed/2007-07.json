@@ -195,17 +195,6 @@
     {
       "id": "thread-c28dfe9c3384",
       "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
-      "message_count": 1,
-      "participants": [
-        "morphwj at comcast.net"
-      ],
-      "started": "2007-07-28T14:06:24+00:00",
-      "last_reply": "2007-07-28T14:06:24+00:00",
-      "root_message_id": "msg-c28dfe9c3384"
-    },
-    {
-      "id": "thread-c28dfe9c3384",
-      "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
       "message_count": 3,
       "participants": [
         "Michael Lawrence",
@@ -214,6 +203,17 @@
       ],
       "started": "2007-07-28T14:06:24+00:00",
       "last_reply": "2007-07-31T17:54:29+02:00",
+      "root_message_id": "msg-c28dfe9c3384"
+    },
+    {
+      "id": "thread-c28dfe9c3384",
+      "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
+      "message_count": 1,
+      "participants": [
+        "morphwj at comcast.net"
+      ],
+      "started": "2007-07-28T14:06:24+00:00",
+      "last_reply": "2007-07-28T14:06:24+00:00",
       "root_message_id": "msg-c28dfe9c3384"
     },
     {
