@@ -221,24 +221,6 @@
       "thread_id": "thread-aa43381e3593",
       "thread_depth": 1,
       "month": "2003-10"
-    },
-    {
-      "id": "msg-eb17ca147ce5",
-      "message_id": "<5.1.0.14.2.20031014093641.02015d10@127.0.0.1>",
-      "from_name": "John Fox",
-      "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
-      "date": "2003-10-15T01:46:48Z",
-      "subject": "[R-gui] Re: R-SIG-GUI Digest, Vol 8, Issue 3",
-      "subject_clean": "[R-gui] Re: R-SIG-GUI Digest, Vol 8, Issue 3",
-      "in_reply_to": "<20031013181317.57032.qmail@web12404.mail.yahoo.com>",
-      "references": [
-        "<200310131000.h9DA0pq7008583@stat.math.ethz.ch>"
-      ],
-      "body_plain": "Dear Nathan,\n\nPerhaps this has already been said in this thread (if so, please excuse the \nrepetition), but the tcltk package, which is one of the recommended \npackages in R, provides a basis for building cross-platform GUIs. Take a \nlook at my Rcmdr basic-statistics package (if you haven't already seen it, \nof course), for example.\n\nRegards,\nJohn\n\nAt 11:13 AM 10/13/2003 -0700, Nathan Whitehouse wrote:\n> >\n> > How good is Java these days for that sort of thing?\n> > I\n> > remember playing around with the original Swing JDK\n> > and wasn't particularly impressed (this was a long\n> > time ago obviously).\n>   It's become more possible to do serious Java GUI\n>development.  Good examples of pretty nice all Java\n>stuff is the NetBeans(/Sun Forte) java development\n>environment, or Poseidon, a kindof community UML\n>editor.\n>   Of course, it's not as quick or easy to implement as\n>some other languages.\n>\n> > I am also somewhat interested\n> > in\n> > a serious R GUI development effort. I think it would\n> > be nice to have some sort of GUI for R which would\n> > make R accessible to a wider audience.\n> >\n>\n>   I've known a few people who use sciviews., and they\n>seem to like it.\n>   I'm interested in a gui that allows more than a\n>GUIfied command line interface.  I'm interested in\n>something that allowed you to \"layer\" other\n>representations of the R code.  for example, a MDI\n>window might have two tabs, one of which was a\n>workspace with R objects(as icons) ordered by class.\n>You can then associate them, perform operations, etc.\n>which would call macros, etc. and apply on the CLI.\n>That way the actions would be transparent to the user\n>but also easily applied.\n>\n>   Many of the investigators we work with would like to\n>use R-based analysis but just don't have the time to\n>learn the CLI.  Maybe these 'mods,' so to speak, would\n>encourage them to switch platforms.\n>\n>   We're interested in a java-based GUI because we do\n>mostly java development.  But if Sciviews or something\n>else could do this, we're pretty interested.\n>\n>   Best,\n>   Nathan Whitehouse\n>   Shaw lab\n>\n>_______________________________________________\n>R-SIG-GUI mailing list\n>R-SIG-GUI@stat.math.ethz.ch\n>https://www.stat.math.ethz.ch/mailman/listinfo/r-sig-gui\n\n-----------------------------------------------------\nJohn Fox\nDepartment of Sociology\nMcMaster University\nHamilton, Ontario, Canada L8S 4M4\nemail: jfox@mcmaster.ca\nphone: 905-525-9140x23604\nweb: www.socsci.mcmaster.ca/jfox",
-      "body_snippet": "Dear Nathan,\n\nPerhaps this has already been said in this thread (if so, please excuse the \nrepetition), but the tcltk package, which is one of the recommended \npackages in R, provides a basis for buil",
-      "thread_id": "thread-aa43381e3593",
-      "thread_depth": 1,
-      "month": "2003-10"
     }
   ],
   "threads": [
@@ -306,13 +288,13 @@
     {
       "id": "thread-aa43381e3593",
       "subject": "[R-gui] Re: R-SIG-GUI Digest, Vol 8, Issue 3",
-      "message_count": 3,
+      "message_count": 2,
       "participants": [
         "John Fox",
         "Nathan Whitehouse"
       ],
       "started": "2003-10-14T14:26:25+00:00",
-      "last_reply": "2003-10-15T01:46:48+00:00",
+      "last_reply": "2003-10-14T15:48:42+00:00",
       "root_message_id": "msg-aa43381e3593"
     }
   ]
