@@ -4,6 +4,40 @@
   "month": "2005-06",
   "messages": [
     {
+      "id": "msg-584493e31aba",
+      "message_id": "<80b75b6f05060908547c50d438@mail.gmail.com>",
+      "from_name": "Neha Sinha",
+      "from_email_hash": "c79e027e281efa57c95b75139b2b5049fae0b6a1ed8dbea6caea0c5c3d4438a9",
+      "date": "2005-06-09T17:54:20Z",
+      "subject": "[R-gui] Plots not generating or running in web-browser",
+      "subject_clean": "[R-gui] Plots not generating or running in web-browser",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nI am a beginner in R (using it for about 2-3 days now) and I have a couple \nof problems I am encountering.\n\nI am working on a windows machine and using putty to ssh into the \"box\" \nwhere R is installed (I think Unix is running on the box I ssh into). The \nproblem I am facing is that when I try to plot using the plot function in R \n(after invoking x11), nothing shows up - no window pops up with the plot. \nBut when I use the startx command in cygwin and ssh, the graph pops up.\n\nMy project is to graph a couple of points and display it on the web, so that \nother users in my group can view it. The code I am using just to generate a \ngraph of random numbers is as follows:\n\n#! /bin/sh /usr/bin/setR\n\ncat(\"Content-type: text/html\", '\\n\\n')\n\nlibrary(grDevices)\nlibrary(graphics)\n\ncat(\"<html><head><title> 1st test page </title></head>\",'\\n')\ncat(\"<body>\",'\\n')\n\nr <- sample(1:20, 5)\ncat(\"Random plot: \", r,'<br/>\\n')\n\nx11(\"192.9.200.232:0 <http://192.9.200.232:0>.0\")\npng(file=\"/tmp/R-web/random.png\")\nplot( r, type=\"b\" )\ndev.off()\ncat(\"<img src='http://splustest/plots/random.png'/>\",'\\n')\n\ncat(\"</body>\",'\\n')\nq(save=\"no\")\n\nNow when I open a webbrowser on my machine and load this html/.R code, the \ngraph is not generated (as I checked in the random.png file) nor does it \nshow up. Clearly, this is happening because some x11 settings on my machine \nis missing. I am stuck at a point where I do not know how to fix this \nproblem. I would be thankful for some helpful advice.\n\nRegards,\n\nNeha Sinha\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI am a beginner in R (using it for about 2-3 days now) and I have a couple \nof problems I am encountering.\n\nI am working on a windows machine and using putty to ssh into the \"box\" \nwhere R is ins",
+      "thread_id": "thread-584493e31aba",
+      "thread_depth": 0,
+      "month": "2005-06"
+    },
+    {
+      "id": "msg-90640cc45d35",
+      "message_id": "<42A913C7.6030904@sciviews.org>",
+      "from_name": "Philippe Grosjean",
+      "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
+      "date": "2005-06-10T06:15:34Z",
+      "subject": "[R-gui] Plots not generating or running in web-browser",
+      "subject_clean": "[R-gui] Plots not generating or running in web-browser",
+      "in_reply_to": "<80b75b6f05060908547c50d438@mail.gmail.com>",
+      "references": [
+        "<80b75b6f05060908547c50d438@mail.gmail.com>"
+      ],
+      "body_plain": "Neha Sinha wrote:\n> Hi,\n> \n> I am a beginner in R (using it for about 2-3 days now) and I have a couple \n> of problems I am encountering.\n> \n> I am working on a windows machine and using putty to ssh into the \"box\" \n> where R is installed (I think Unix is running on the box I ssh into). The \n> problem I am facing is that when I try to plot using the plot function in R \n> (after invoking x11), nothing shows up - no window pops up with the plot. \n> But when I use the startx command in cygwin and ssh, the graph pops up.\n\nWell, the X11 graph device needs a graphic system that you start with \nstartx... isn't it logical?\n\n> My project is to graph a couple of points and display it on the web, so that \n> other users in my group can view it. The code I am using just to generate a \n> graph of random numbers is as follows:\n> \n> #! /bin/sh /usr/bin/setR\n> \n> cat(\"Content-type: text/html\", '\\n\\n')\n> \n> library(grDevices)\n> library(graphics)\n> \n> cat(\"<html><head><title> 1st test page </title></head>\",'\\n')\n> cat(\"<body>\",'\\n')\n> \n> r <- sample(1:20, 5)\n> cat(\"Random plot: \", r,'<br/>\\n')\n> \n> x11(\"192.9.200.232:0 <http://192.9.200.232:0>.0\")\n> png(file=\"/tmp/R-web/random.png\")\n> plot( r, type=\"b\" )\n> dev.off()\n> cat(\"<img src='http://splustest/plots/random.png'/>\",'\\n')\n> \n> cat(\"</body>\",'\\n')\n> q(save=\"no\")\n> \n> Now when I open a webbrowser on my machine and load this html/.R code, the \n> graph is not generated (as I checked in the random.png file) nor does it \n> show up. Clearly, this is happening because some x11 settings on my machine \n> is missing. I am stuck at a point where I do not know how to fix this \n> problem. I would be thankful for some helpful advice.\n> \n> Regards,\n\nI work on a Windows system. So, I cannot check this. I though that png() \nwas independent from X11, i.e., it generates graphs on files directly?\n\nIf you don't have better answer on this list, you should better post it \nto R-help. This is a general question, not related with GUI aspects.\nBest,\n\nPhilippe Grosjean\n\n> Neha Sinha\n> \n> \t[[alternative HTML version deleted]]\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI@stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n>",
+      "body_snippet": "Neha Sinha wrote:\n> Hi,\n> \n> I am a beginner in R (using it for about 2-3 days now) and I have a couple \n> of problems I am encountering.\n> \n> I am working on a windows machine and using putty to ssh ",
+      "thread_id": "thread-584493e31aba",
+      "thread_depth": 1,
+      "month": "2005-06"
+    },
+    {
       "id": "msg-c258341362a3",
       "message_id": "<200506201959.j5KJxB5L001194@gator.dt.uh.edu>",
       "from_name": "Erin Hodgess",
@@ -37,6 +71,18 @@
     }
   ],
   "threads": [
+    {
+      "id": "thread-584493e31aba",
+      "subject": "[R-gui] Plots not generating or running in web-browser",
+      "message_count": 2,
+      "participants": [
+        "Neha Sinha",
+        "Philippe Grosjean"
+      ],
+      "started": "2005-06-09T17:54:20+00:00",
+      "last_reply": "2005-06-10T06:15:34+00:00",
+      "root_message_id": "msg-584493e31aba"
+    },
     {
       "id": "thread-c258341362a3",
       "subject": "[R-gui] [RGui] Iwidget feedback",
