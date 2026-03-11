@@ -616,8 +616,8 @@
         "James Wettenhall",
         "John Fox"
       ],
-      "started": "2004-06-04T16:23:58+00:00",
-      "last_reply": "2004-06-04T17:34:01+00:00",
+      "started": "2004-06-04T16:23:58Z",
+      "last_reply": "2004-06-04T17:34:01Z",
       "root_message_id": "msg-ebe1d3f2ce75"
     },
     {
@@ -627,8 +627,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2004-06-04T16:53:21+00:00",
-      "last_reply": "2004-06-04T16:53:21+00:00",
+      "started": "2004-06-04T16:53:21Z",
+      "last_reply": "2004-06-04T16:53:21Z",
       "root_message_id": "msg-c7442b27cac6"
     },
     {
@@ -639,8 +639,8 @@
         "Eric Lecoutre",
         "Vaidotas Zemlys"
       ],
-      "started": "2004-06-14T06:41:40+00:00",
-      "last_reply": "2004-06-14T08:52:59+00:00",
+      "started": "2004-06-14T06:41:40Z",
+      "last_reply": "2004-06-14T08:52:59Z",
       "root_message_id": "msg-147cb66646de"
     },
     {
@@ -652,8 +652,8 @@
         "Philippe Grosjean",
         "Vaidotas Zemlys"
       ],
-      "started": "2004-06-14T09:06:07+00:00",
-      "last_reply": "2004-06-15T11:30:03+00:00",
+      "started": "2004-06-14T09:06:07Z",
+      "last_reply": "2004-06-15T11:30:03Z",
       "root_message_id": "msg-e37a1541b685"
     },
     {
@@ -669,8 +669,8 @@
         "Peter Dalgaard",
         "Vaidotas Zemlys"
       ],
-      "started": "2004-06-14T09:13:07+00:00",
-      "last_reply": "2004-06-28T11:03:35+00:00",
+      "started": "2004-06-14T09:13:07Z",
+      "last_reply": "2004-06-28T11:03:35Z",
       "root_message_id": "msg-b346eebdf266"
     },
     {
@@ -681,8 +681,8 @@
         "James Wettenhall",
         "Vaidotas Zemlys"
       ],
-      "started": "2004-06-23T14:47:58+00:00",
-      "last_reply": "2004-06-23T16:12:21+00:00",
+      "started": "2004-06-23T14:47:58Z",
+      "last_reply": "2004-06-23T16:12:21Z",
       "root_message_id": "msg-efc4eacccd47"
     }
   ]

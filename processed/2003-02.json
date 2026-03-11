@@ -8,7 +8,7 @@
       "message_id": "<3AE86C86-4576-11D7-A90A-00039391E298@zedshaw.com>",
       "from_name": "Zed A. Shaw",
       "from_email_hash": "818f5267c73d76f40a5c166259a6fa77e92aedc14ccbaf3e3c67b2fdf8b495fb",
-      "date": "2003-02-21T00:26:52-08:00",
+      "date": "2003-02-21T08:26:52Z",
       "subject": "[R-gui] [ANN] ObveRsive WoRkbench MS1 Release",
       "subject_clean": "[R-gui] [ANN] ObveRsive WoRkbench MS1 Release",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<F3ECEC1A-49B6-11D7-9DCB-000393BB6D36@stat.ucla.edu>",
       "from_name": "Jan de Leeuw",
       "from_email_hash": "59a1e3d24a4d17014651921c954560da2e7ad5132d0ea3d38e11e0c3e1dd9a92",
-      "date": "2003-02-26T10:20:15-08:00",
+      "date": "2003-02-26T18:20:15Z",
       "subject": "[R-gui] Re: [R-SIG-Mac]compiling r-devel on Darwin",
       "subject_clean": "[R-gui] Re: [R-SIG-Mac]compiling r-devel on Darwin",
       "in_reply_to": "<p05200f00ba82ac40e0c7@[134.214.34.24]>",
@@ -40,7 +40,7 @@
       "message_id": "<EE913B7F-49F9-11D7-9DCB-000393BB6D36@stat.ucla.edu>",
       "from_name": "Jan de Leeuw",
       "from_email_hash": "59a1e3d24a4d17014651921c954560da2e7ad5132d0ea3d38e11e0c3e1dd9a92",
-      "date": "2003-02-26T18:19:42-08:00",
+      "date": "2003-02-27T02:19:42Z",
       "subject": "[R-gui] nice combo on os x",
       "subject_clean": "[R-gui] nice combo on os x",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<20030228200335.86916.qmail@web41202.mail.yahoo.com>",
       "from_name": "Tom Smith",
       "from_email_hash": "c946446cb6e4654375abf3d18a3ca45c3a7547bc7fd347fd615dfaac056c82e8",
-      "date": "2003-02-28T12:03:35-08:00",
+      "date": "2003-02-28T20:03:35Z",
       "subject": "[R-gui] Texmacs as an R gui",
       "subject_clean": "[R-gui] Texmacs as an R gui",
       "in_reply_to": null,
@@ -76,8 +76,8 @@
       "participants": [
         "Zed A. Shaw"
       ],
-      "started": "2003-02-21T00:26:52-08:00",
-      "last_reply": "2003-02-21T00:26:52-08:00",
+      "started": "2003-02-21T08:26:52Z",
+      "last_reply": "2003-02-21T08:26:52Z",
       "root_message_id": "msg-3bd386737adb"
     },
     {
@@ -87,8 +87,8 @@
       "participants": [
         "Jan de Leeuw"
       ],
-      "started": "2003-02-26T10:20:15-08:00",
-      "last_reply": "2003-02-26T10:20:15-08:00",
+      "started": "2003-02-26T18:20:15Z",
+      "last_reply": "2003-02-26T18:20:15Z",
       "root_message_id": "msg-dedcb00bab49"
     },
     {
@@ -98,8 +98,8 @@
       "participants": [
         "Jan de Leeuw"
       ],
-      "started": "2003-02-26T18:19:42-08:00",
-      "last_reply": "2003-02-26T18:19:42-08:00",
+      "started": "2003-02-27T02:19:42Z",
+      "last_reply": "2003-02-27T02:19:42Z",
       "root_message_id": "msg-3f2e3cba3af6"
     },
     {
@@ -109,8 +109,8 @@
       "participants": [
         "Tom Smith"
       ],
-      "started": "2003-02-28T12:03:35-08:00",
-      "last_reply": "2003-02-28T12:03:35-08:00",
+      "started": "2003-02-28T20:03:35Z",
+      "last_reply": "2003-02-28T20:03:35Z",
       "root_message_id": "msg-17441cde9f0a"
     }
   ]

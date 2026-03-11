@@ -8,7 +8,7 @@
       "message_id": "<000301c87e19$3908a850$ab19f8f0$@com>",
       "from_name": "Phil Rack",
       "from_email_hash": "710120aeb1eda56678f108094acc3b951c58b9cc51e414b43c0932f7fb0ca478",
-      "date": "2008-03-04T12:00:16-05:00",
+      "date": "2008-03-04T17:00:16Z",
       "subject": "[R-gui] Announcement: WPS to R Bridge",
       "subject_clean": "[R-gui] Announcement: WPS to R Bridge",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<23277cfb0803141608t24addc05p3b14b93d04a36850@mail.gmail.com>",
       "from_name": "eduardo san miguel",
       "from_email_hash": "b9d7f59a5cdb39b0e8f2b5268c2ec5227bac869ebaee1d28b7e72ec774eb67ee",
-      "date": "2008-03-15T00:08:37+01:00",
+      "date": "2008-03-14T23:08:37Z",
       "subject": "[R-gui] tk2menubutton command",
       "subject_clean": "[R-gui] tk2menubutton command",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<47DB9CE2.9010905@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2008-03-15T10:54:42+01:00",
+      "date": "2008-03-15T09:54:42Z",
       "subject": "[R-gui] tk2menubutton command",
       "subject_clean": "[R-gui] tk2menubutton command",
       "in_reply_to": "<23277cfb0803141608t24addc05p3b14b93d04a36850@mail.gmail.com>",
@@ -58,7 +58,7 @@
       "message_id": "<23277cfb0803290822t78f839c2m6ee17e4563af7efa@mail.gmail.com>",
       "from_name": "eduardo san miguel",
       "from_email_hash": "b9d7f59a5cdb39b0e8f2b5268c2ec5227bac869ebaee1d28b7e72ec774eb67ee",
-      "date": "2008-03-29T16:22:00+01:00",
+      "date": "2008-03-29T15:22:00Z",
       "subject": "[R-gui] one-column tk2mclistbox",
       "subject_clean": "[R-gui] one-column tk2mclistbox",
       "in_reply_to": null,
@@ -74,7 +74,7 @@
       "message_id": "<47EEC56D.1050006@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2008-03-29T23:40:45+01:00",
+      "date": "2008-03-29T22:40:45Z",
       "subject": "[R-gui] one-column tk2mclistbox",
       "subject_clean": "[R-gui] one-column tk2mclistbox",
       "in_reply_to": "<23277cfb0803290822t78f839c2m6ee17e4563af7efa@mail.gmail.com>",
@@ -96,8 +96,8 @@
       "participants": [
         "Phil Rack"
       ],
-      "started": "2008-03-04T12:00:16-05:00",
-      "last_reply": "2008-03-04T12:00:16-05:00",
+      "started": "2008-03-04T17:00:16Z",
+      "last_reply": "2008-03-04T17:00:16Z",
       "root_message_id": "msg-2dadb394b8ab"
     },
     {
@@ -108,8 +108,8 @@
         "Philippe Grosjean",
         "eduardo san miguel"
       ],
-      "started": "2008-03-15T00:08:37+01:00",
-      "last_reply": "2008-03-15T10:54:42+01:00",
+      "started": "2008-03-14T23:08:37Z",
+      "last_reply": "2008-03-15T09:54:42Z",
       "root_message_id": "msg-39b5ccf7cf97"
     },
     {
@@ -120,8 +120,8 @@
         "Philippe Grosjean",
         "eduardo san miguel"
       ],
-      "started": "2008-03-29T16:22:00+01:00",
-      "last_reply": "2008-03-29T23:40:45+01:00",
+      "started": "2008-03-29T15:22:00Z",
+      "last_reply": "2008-03-29T22:40:45Z",
       "root_message_id": "msg-d5adb1be7254"
     }
   ]

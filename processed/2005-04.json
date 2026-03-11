@@ -65,8 +65,8 @@
       "participants": [
         "Short, Tom"
       ],
-      "started": "2005-04-15T14:47:48+00:00",
-      "last_reply": "2005-04-15T14:47:48+00:00",
+      "started": "2005-04-15T14:47:48Z",
+      "last_reply": "2005-04-15T14:47:48Z",
       "root_message_id": "msg-44a502f1e4a8"
     },
     {
@@ -77,8 +77,8 @@
         "James Wettenhall",
         "Philippe Grosjean"
       ],
-      "started": "2005-04-27T04:45:33+00:00",
-      "last_reply": "2005-04-27T14:15:50+00:00",
+      "started": "2005-04-27T04:45:33Z",
+      "last_reply": "2005-04-27T14:15:50Z",
       "root_message_id": "msg-d4989392723d"
     }
   ]

@@ -8,7 +8,7 @@
       "message_id": "<SANTANARhyzJeQeqGFK000066fe@santana.lemond.3rdmill.com>",
       "from_name": "eNews at 3rdmill.com",
       "from_email_hash": "5c62506aae61dc789515db417fe0efc8d3f6dd8bcfa28b669e9da9350e204e52",
-      "date": "2006-05-19T16:56:22-04:00",
+      "date": "2006-05-19T20:56:22Z",
       "subject": "[R-gui] Innovative Enterprise Microarray Software",
       "subject_clean": "[R-gui] Innovative Enterprise Microarray Software",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<446FD0BA.6070008@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-05-20T23:30:18-03:00",
+      "date": "2006-05-21T02:30:18Z",
       "subject": "[R-gui] Tinn-R 1.18.5.1 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.1 released",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<4471A6C3.3020601@ufz.de>",
       "from_name": "Ingo Fetzer",
       "from_email_hash": "514c618903ed31ae4e3103031dbe117818db3c3a4b641704397d2d625132edf0",
-      "date": "2006-05-22T13:55:47+02:00",
+      "date": "2006-05-22T11:55:47Z",
       "subject": "[R-gui] How to assign value from tlctk window to variable ?",
       "subject_clean": "[R-gui] How to assign value from tlctk window to variable ?",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<x2r72mxn9y.fsf@viggo.kubism.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
-      "date": "2006-05-22T14:22:01+02:00",
+      "date": "2006-05-22T12:22:01Z",
       "subject": "[R-gui] How to assign value from tlctk window to variable ?",
       "subject_clean": "[R-gui] How to assign value from tlctk window to variable ?",
       "in_reply_to": "<4471A6C3.3020601@ufz.de>",
@@ -74,7 +74,7 @@
       "message_id": "<4471CABA.2060800@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-05-22T11:29:14-03:00",
+      "date": "2006-05-22T14:29:14Z",
       "subject": "[R-gui] Tinn-R 1.18.5.2 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.2 released",
       "in_reply_to": null,
@@ -90,7 +90,7 @@
       "message_id": "<4473AE2F.4010902@iastate.edu>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2006-05-23T19:51:59-05:00",
+      "date": "2006-05-24T00:51:59Z",
       "subject": "[R-gui] RGtk2 2.8.4 and cairoDevice 1.0.0 released",
       "subject_clean": "[R-gui] RGtk2 2.8.4 and cairoDevice 1.0.0 released",
       "in_reply_to": null,
@@ -106,7 +106,7 @@
       "message_id": "<576452c40605251211m78e43028j118da6dd7d874d88@mail.gmail.com>",
       "from_name": "j verzani",
       "from_email_hash": "a029675bf9462719f336b4ef9bb1441ceba180f1ffd7e0365f6802832a6ad84e",
-      "date": "2006-05-25T15:11:04-04:00",
+      "date": "2006-05-25T19:11:04Z",
       "subject": "[R-gui] New version of iWIdgetsRGtk and pmg",
       "subject_clean": "[R-gui] New version of iWIdgetsRGtk and pmg",
       "in_reply_to": null,
@@ -122,7 +122,7 @@
       "message_id": "<200605281645.05678.adi@roda.ro>",
       "from_name": "Adrian DUSA",
       "from_email_hash": "c7eb80271393ed831f0ae78107a15bf2f527ce148e6d2808ba6b98398c1130f7",
-      "date": "2006-05-28T16:45:05+03:00",
+      "date": "2006-05-28T13:45:05Z",
       "subject": "[R-gui] pseudo radiobutton from check boxes",
       "subject_clean": "[R-gui] pseudo radiobutton from check boxes",
       "in_reply_to": null,
@@ -138,7 +138,7 @@
       "message_id": "<200605281704.49035.adi@roda.ro>",
       "from_name": "Adrian DUSA",
       "from_email_hash": "c7eb80271393ed831f0ae78107a15bf2f527ce148e6d2808ba6b98398c1130f7",
-      "date": "2006-05-28T17:04:48+03:00",
+      "date": "2006-05-28T14:04:48Z",
       "subject": "[R-gui] pseudo radiobutton from check boxes",
       "subject_clean": "[R-gui] pseudo radiobutton from check boxes",
       "in_reply_to": "<200605281645.05678.adi@roda.ro>",
@@ -156,7 +156,7 @@
       "message_id": "<4479BD77.20305@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-05-28T12:10:47-03:00",
+      "date": "2006-05-28T15:10:47Z",
       "subject": "[R-gui] Tinn-R 1.18.5.3 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.3 released",
       "in_reply_to": null,
@@ -172,7 +172,7 @@
       "message_id": "<136415410459.XAA13898Forward_Contract_tacked@gmail.com>",
       "from_name": "Karina Lovett",
       "from_email_hash": "5a2a24cf3a69af53216025eda7402c15e44be3b7208fd4b59ba190c7e0f38885",
-      "date": "2006-05-30T08:06:50-06:00",
+      "date": "2006-05-30T14:06:50Z",
       "subject": "[R-gui] CTBG Deploys World's Only Fully Rotating Well Fishing Tools - Ref. msq3115",
       "subject_clean": "[R-gui] CTBG Deploys World's Only Fully Rotating Well Fishing Tools - Ref. msq3115",
       "in_reply_to": null,
@@ -192,8 +192,8 @@
       "participants": [
         "eNews at 3rdmill.com"
       ],
-      "started": "2006-05-19T16:56:22-04:00",
-      "last_reply": "2006-05-19T16:56:22-04:00",
+      "started": "2006-05-19T20:56:22Z",
+      "last_reply": "2006-05-19T20:56:22Z",
       "root_message_id": "msg-1414d72a41c4"
     },
     {
@@ -203,20 +203,9 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-05-20T23:30:18-03:00",
-      "last_reply": "2006-05-20T23:30:18-03:00",
+      "started": "2006-05-21T02:30:18Z",
+      "last_reply": "2006-05-21T02:30:18Z",
       "root_message_id": "msg-4d72799a1dfd"
-    },
-    {
-      "id": "thread-02664547b55f",
-      "subject": "[R-gui] Tinn-R 1.18.5.2 released",
-      "message_count": 1,
-      "participants": [
-        "Jose Claudio Faria"
-      ],
-      "started": "2006-05-22T11:29:14-03:00",
-      "last_reply": "2006-05-22T11:29:14-03:00",
-      "root_message_id": "msg-02664547b55f"
     },
     {
       "id": "thread-2a9ef220467d",
@@ -226,9 +215,20 @@
         "Ingo Fetzer",
         "Peter Dalgaard"
       ],
-      "started": "2006-05-22T13:55:47+02:00",
-      "last_reply": "2006-05-22T14:22:01+02:00",
+      "started": "2006-05-22T11:55:47Z",
+      "last_reply": "2006-05-22T12:22:01Z",
       "root_message_id": "msg-2a9ef220467d"
+    },
+    {
+      "id": "thread-02664547b55f",
+      "subject": "[R-gui] Tinn-R 1.18.5.2 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-05-22T14:29:14Z",
+      "last_reply": "2006-05-22T14:29:14Z",
+      "root_message_id": "msg-02664547b55f"
     },
     {
       "id": "thread-730637f30471",
@@ -237,8 +237,8 @@
       "participants": [
         "Michael Lawrence"
       ],
-      "started": "2006-05-23T19:51:59-05:00",
-      "last_reply": "2006-05-23T19:51:59-05:00",
+      "started": "2006-05-24T00:51:59Z",
+      "last_reply": "2006-05-24T00:51:59Z",
       "root_message_id": "msg-730637f30471"
     },
     {
@@ -248,20 +248,9 @@
       "participants": [
         "j verzani"
       ],
-      "started": "2006-05-25T15:11:04-04:00",
-      "last_reply": "2006-05-25T15:11:04-04:00",
+      "started": "2006-05-25T19:11:04Z",
+      "last_reply": "2006-05-25T19:11:04Z",
       "root_message_id": "msg-dc011c786782"
-    },
-    {
-      "id": "thread-05ce223024c8",
-      "subject": "[R-gui] Tinn-R 1.18.5.3 released",
-      "message_count": 1,
-      "participants": [
-        "Jose Claudio Faria"
-      ],
-      "started": "2006-05-28T12:10:47-03:00",
-      "last_reply": "2006-05-28T12:10:47-03:00",
-      "root_message_id": "msg-05ce223024c8"
     },
     {
       "id": "thread-0e065dceed1f",
@@ -270,9 +259,20 @@
       "participants": [
         "Adrian DUSA"
       ],
-      "started": "2006-05-28T16:45:05+03:00",
-      "last_reply": "2006-05-28T17:04:48+03:00",
+      "started": "2006-05-28T13:45:05Z",
+      "last_reply": "2006-05-28T14:04:48Z",
       "root_message_id": "msg-0e065dceed1f"
+    },
+    {
+      "id": "thread-05ce223024c8",
+      "subject": "[R-gui] Tinn-R 1.18.5.3 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-05-28T15:10:47Z",
+      "last_reply": "2006-05-28T15:10:47Z",
+      "root_message_id": "msg-05ce223024c8"
     },
     {
       "id": "thread-291064385252",
@@ -281,8 +281,8 @@
       "participants": [
         "Karina Lovett"
       ],
-      "started": "2006-05-30T08:06:50-06:00",
-      "last_reply": "2006-05-30T08:06:50-06:00",
+      "started": "2006-05-30T14:06:50Z",
+      "last_reply": "2006-05-30T14:06:50Z",
       "root_message_id": "msg-291064385252"
     }
   ]

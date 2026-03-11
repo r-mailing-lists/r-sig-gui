@@ -8,7 +8,7 @@
       "message_id": "<0JVV006F72PAYT20@l-daemon>",
       "from_name": "Iqbal Jamal",
       "from_email_hash": "a169d2a3af4644cb37e7a1e4dd9598f7dfd0cf097beb77e4506aac0a595380ab",
-      "date": "2008-02-07T02:13:30-07:00",
+      "date": "2008-02-07T09:13:30Z",
       "subject": "[R-gui] Rcmdr and Subsets",
       "subject_clean": "[R-gui] Rcmdr and Subsets",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<0JVV00DV22TTYT10@l-daemon>",
       "from_name": "Iqbal Jamal",
       "from_email_hash": "a169d2a3af4644cb37e7a1e4dd9598f7dfd0cf097beb77e4506aac0a595380ab",
-      "date": "2008-02-07T02:16:13-07:00",
+      "date": "2008-02-07T09:16:13Z",
       "subject": "[R-gui] Rcmdr and Calls to Other Programs",
       "subject_clean": "[R-gui] Rcmdr and Calls to Other Programs",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<001401c86998$04b86d00$0e294700$@ca>",
       "from_name": "John Fox",
       "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
-      "date": "2008-02-07T09:45:01-05:00",
+      "date": "2008-02-07T14:45:01Z",
       "subject": "[R-gui] Rcmdr and Subsets",
       "subject_clean": "[R-gui] Rcmdr and Subsets",
       "in_reply_to": "<0JVV006F72PAYT20@l-daemon>",
@@ -58,7 +58,7 @@
       "message_id": "<001501c86998$695ae850$3c10b8f0$@ca>",
       "from_name": "John Fox",
       "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
-      "date": "2008-02-07T09:47:50-05:00",
+      "date": "2008-02-07T14:47:50Z",
       "subject": "[R-gui] Rcmdr and Calls to Other Programs",
       "subject_clean": "[R-gui] Rcmdr and Calls to Other Programs",
       "in_reply_to": "<0JVV00DV22TTYT10@l-daemon>",
@@ -76,7 +76,7 @@
       "message_id": "<000601c869cd$2dd22ca0$897685e0$@ca>",
       "from_name": "John Fox",
       "from_email_hash": "26b3c2bfbc5587a1119fc93e98ed6834f6847804a317ae5707e7442251474735",
-      "date": "2008-02-07T16:05:33-05:00",
+      "date": "2008-02-07T21:05:33Z",
       "subject": "[R-gui] Rcmdr and Calls to Other Programs",
       "subject_clean": "[R-gui] Rcmdr and Calls to Other Programs",
       "in_reply_to": "<0JVV00CKTW5HKS20@l-daemon>",
@@ -112,7 +112,7 @@
       "message_id": "<6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>",
       "from_name": "Kshattry, Indra",
       "from_email_hash": "2a0abf6289269208a364943a7e58e0934fdf9764c19576a6b7d25ae9bee6826d",
-      "date": "2008-02-28T14:56:43-07:00",
+      "date": "2008-02-28T21:56:43Z",
       "subject": "[R-gui]  Request for users of my R-Tcl/Tk examples,",
       "subject_clean": "[R-gui]  Request for users of my R-Tcl/Tk examples,",
       "in_reply_to": null,
@@ -128,7 +128,7 @@
       "message_id": "<20080229110347.M91659@centroin.com.br>",
       "from_name": "Alberto Monteiro",
       "from_email_hash": "7394f9b194e85b3f1a50534d3ad39bdb25ef337757a8ab0f8b74237fd4738526",
-      "date": "2008-02-29T09:05:59-02:00",
+      "date": "2008-02-29T11:05:59Z",
       "subject": "[R-gui] Request for users of my R-Tcl/Tk examples,",
       "subject_clean": "[R-gui] Request for users of my R-Tcl/Tk examples,",
       "in_reply_to": "<6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>",
@@ -162,7 +162,7 @@
       "message_id": "<68b1e2610802290523h5b891bbre841960f526cda4e@mail.gmail.com>",
       "from_name": "Liviu Andronic",
       "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
-      "date": "2008-02-29T14:23:34+01:00",
+      "date": "2008-02-29T13:23:34Z",
       "subject": "[R-gui] Request for users of my R-Tcl/Tk examples,",
       "subject_clean": "[R-gui] Request for users of my R-Tcl/Tk examples,",
       "in_reply_to": "<6F9116F14B4E30498FE9721B913CDCE703590423@rangadexc01.cncc.ccofc.edu>",
@@ -185,8 +185,8 @@
         "Iqbal Jamal",
         "John Fox"
       ],
-      "started": "2008-02-07T02:13:30-07:00",
-      "last_reply": "2008-02-07T09:45:01-05:00",
+      "started": "2008-02-07T09:13:30Z",
+      "last_reply": "2008-02-07T14:45:01Z",
       "root_message_id": "msg-2975990ad4cd"
     },
     {
@@ -198,8 +198,8 @@
         "John Fox",
         "Wayne.W.Jones at shell.com"
       ],
-      "started": "2008-02-07T02:16:13-07:00",
-      "last_reply": "2008-02-19T07:33:18+00:00",
+      "started": "2008-02-07T09:16:13Z",
+      "last_reply": "2008-02-19T07:33:18Z",
       "root_message_id": "msg-087f3a48a4ba"
     },
     {
@@ -209,8 +209,8 @@
       "participants": [
         "John Fox"
       ],
-      "started": "2008-02-07T16:05:33-05:00",
-      "last_reply": "2008-02-07T16:05:33-05:00",
+      "started": "2008-02-07T21:05:33Z",
+      "last_reply": "2008-02-07T21:05:33Z",
       "root_message_id": "msg-d6015f4971af"
     },
     {
@@ -223,8 +223,8 @@
         "Liviu Andronic",
         "Wayne.W.Jones at shell.com"
       ],
-      "started": "2008-02-28T14:56:43-07:00",
-      "last_reply": "2008-02-29T14:23:34+01:00",
+      "started": "2008-02-28T21:56:43Z",
+      "last_reply": "2008-02-29T13:23:34Z",
       "root_message_id": "msg-43150f878bca"
     }
   ]

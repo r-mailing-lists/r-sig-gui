@@ -199,8 +199,8 @@
       "participants": [
         "TB"
       ],
-      "started": "2004-01-12T08:19:40+00:00",
-      "last_reply": "2004-01-12T08:19:40+00:00",
+      "started": "2004-01-12T08:19:40Z",
+      "last_reply": "2004-01-12T08:19:40Z",
       "root_message_id": "msg-2b552c29fa44"
     },
     {
@@ -211,8 +211,8 @@
         "\"Unternährer Thomas, uth\"",
         "Peter Dalgaard"
       ],
-      "started": "2004-01-16T11:18:04+00:00",
-      "last_reply": "2004-01-16T12:28:31+00:00",
+      "started": "2004-01-16T11:18:04Z",
+      "last_reply": "2004-01-16T12:28:31Z",
       "root_message_id": "msg-6cc7f1f4e275"
     },
     {
@@ -223,8 +223,8 @@
         "\"Unternährer Thomas, uth\"",
         "Peter Dalgaard"
       ],
-      "started": "2004-01-16T14:19:43+00:00",
-      "last_reply": "2004-01-16T14:36:28+00:00",
+      "started": "2004-01-16T14:19:43Z",
+      "last_reply": "2004-01-16T14:36:28Z",
       "root_message_id": "msg-0bd606db18be"
     },
     {
@@ -238,8 +238,8 @@
         "John Fox",
         "Philippe Grosjean"
       ],
-      "started": "2004-01-17T19:34:10+00:00",
-      "last_reply": "2004-01-20T02:35:04+00:00",
+      "started": "2004-01-17T19:34:10Z",
+      "last_reply": "2004-01-20T02:35:04Z",
       "root_message_id": "msg-6ef9145e171e"
     }
   ]

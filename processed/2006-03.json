@@ -8,7 +8,7 @@
       "message_id": "<440A6AA1.8030903@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-03-05T01:35:45-03:00",
+      "date": "2006-03-05T04:35:45Z",
       "subject": "[R-gui] Tinn-R 1.18.2.0 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.2.0 released",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<440F8C5C.8030708@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-03-08T23:01:00-03:00",
+      "date": "2006-03-09T02:01:00Z",
       "subject": "[R-gui] Tinn-R 1.18.2.0 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.2.0 released",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<4419C87C.1070600@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-03-16T17:20:12-03:00",
+      "date": "2006-03-16T20:20:12Z",
       "subject": "[R-gui] Tinn-R 1.18.3.0 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.3.0 released",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<17441.42692.388670.47533@markov.math.csi.cuny.edu>",
       "from_name": "verzani at math.csi.cuny.edu",
       "from_email_hash": "b807e48d46a4dd62c3f942d742ee2674ab86ebefa69a6e8a05f6abb119c12cdb",
-      "date": "2006-03-22T14:34:28-05:00",
+      "date": "2006-03-22T19:34:28Z",
       "subject": "[R-gui] New version of pmg using RGtk2 package",
       "subject_clean": "[R-gui] New version of pmg using RGtk2 package",
       "in_reply_to": null,
@@ -72,7 +72,7 @@
       "message_id": "<442442DA.604@iastate.edu>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2006-03-24T13:04:58-06:00",
+      "date": "2006-03-24T19:04:58Z",
       "subject": "[R-gui] Cairo graphics device for Windows and RGtk2 2.8.2 released",
       "subject_clean": "[R-gui] Cairo graphics device for Windows and RGtk2 2.8.2 released",
       "in_reply_to": null,
@@ -88,7 +88,7 @@
       "message_id": "<4429C26D.3040605@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-03-28T20:10:37-03:00",
+      "date": "2006-03-28T23:10:37Z",
       "subject": "[R-gui] Tinn-R 1.18.4.3 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.4.3 released",
       "in_reply_to": null,
@@ -108,8 +108,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-03-05T01:35:45-03:00",
-      "last_reply": "2006-03-05T01:35:45-03:00",
+      "started": "2006-03-05T04:35:45Z",
+      "last_reply": "2006-03-05T04:35:45Z",
       "root_message_id": "msg-1cfbe2f62f2a"
     },
     {
@@ -119,8 +119,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-03-08T23:01:00-03:00",
-      "last_reply": "2006-03-08T23:01:00-03:00",
+      "started": "2006-03-09T02:01:00Z",
+      "last_reply": "2006-03-09T02:01:00Z",
       "root_message_id": "msg-1354512eb73f"
     },
     {
@@ -130,8 +130,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-03-16T17:20:12-03:00",
-      "last_reply": "2006-03-16T17:20:12-03:00",
+      "started": "2006-03-16T20:20:12Z",
+      "last_reply": "2006-03-16T20:20:12Z",
       "root_message_id": "msg-96106ae40b9e"
     },
     {
@@ -141,8 +141,8 @@
       "participants": [
         "verzani at math.csi.cuny.edu"
       ],
-      "started": "2006-03-22T14:34:28-05:00",
-      "last_reply": "2006-03-22T14:34:28-05:00",
+      "started": "2006-03-22T19:34:28Z",
+      "last_reply": "2006-03-22T19:34:28Z",
       "root_message_id": "msg-d3e781ca7e31"
     },
     {
@@ -152,8 +152,8 @@
       "participants": [
         "Michael Lawrence"
       ],
-      "started": "2006-03-24T13:04:58-06:00",
-      "last_reply": "2006-03-24T13:04:58-06:00",
+      "started": "2006-03-24T19:04:58Z",
+      "last_reply": "2006-03-24T19:04:58Z",
       "root_message_id": "msg-46b28e9bac5f"
     },
     {
@@ -163,8 +163,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-03-28T20:10:37-03:00",
-      "last_reply": "2006-03-28T20:10:37-03:00",
+      "started": "2006-03-28T23:10:37Z",
+      "last_reply": "2006-03-28T23:10:37Z",
       "root_message_id": "msg-896a0f5d3272"
     }
   ]

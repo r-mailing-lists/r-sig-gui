@@ -8,7 +8,7 @@
       "message_id": "<44323365.3080804@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-04-04T05:50:45-03:00",
+      "date": "2006-04-04T08:50:45Z",
       "subject": "[R-gui] Tinn-R 1.18.4.4 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.4.4 released",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<1145354414.4444b8aede542@webmail.dds.nl>",
       "from_name": "wvdgraaf at dds.nl",
       "from_email_hash": "f4e8f55fc4b93fc7a2933b4baf44e29b5d34c5148ff19e8604db97957d00caa7",
-      "date": "2006-04-18T12:00:14+02:00",
+      "date": "2006-04-18T10:00:14Z",
       "subject": "[R-gui] Installing SciViews",
       "subject_clean": "[R-gui] Installing SciViews",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<4446068B.3050209@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2006-04-19T11:44:43+02:00",
+      "date": "2006-04-19T09:44:43Z",
       "subject": "[R-gui] Installing SciViews",
       "subject_clean": "[R-gui] Installing SciViews",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<444C95E3.4020805@sbcglobal.net>",
       "from_name": "Neil E. Klepeis",
       "from_email_hash": "a46c8a7d7ce3b279e25fac7ccc701c0196a72f544998289d6ecedc3b8a0bf7a1",
-      "date": "2006-04-24T02:09:55-07:00",
+      "date": "2006-04-24T09:09:55Z",
       "subject": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
       "subject_clean": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
       "in_reply_to": "<mailman.13.1142593203.31627.r-sig-gui@stat.math.ethz.ch>",
@@ -74,7 +74,7 @@
       "message_id": "<444CAFC3.2060900@iastate.edu>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2006-04-24T06:00:19-05:00",
+      "date": "2006-04-24T11:00:19Z",
       "subject": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
       "subject_clean": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
       "in_reply_to": "<444C95E3.4020805@sbcglobal.net>",
@@ -93,7 +93,7 @@
       "message_id": "<444D3A14.9010505@sbcglobal.net>",
       "from_name": "Neil E. Klepeis",
       "from_email_hash": "a46c8a7d7ce3b279e25fac7ccc701c0196a72f544998289d6ecedc3b8a0bf7a1",
-      "date": "2006-04-24T13:50:28-07:00",
+      "date": "2006-04-24T20:50:28Z",
       "subject": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
       "subject_clean": "[R-gui] Automatic Widget Creation and Callbacks in RGtk",
       "in_reply_to": "<444CAFC3.2060900@iastate.edu>",
@@ -113,7 +113,7 @@
       "message_id": "<b1a669cc0604250838j78803107tf6510d9c675ecf6b@mail.gmail.com>",
       "from_name": "j verzani",
       "from_email_hash": "a6a1200a231be5378c9dcfeda609f69229e627084135d087c77352452f162633",
-      "date": "2006-04-25T11:38:18-04:00",
+      "date": "2006-04-25T15:38:18Z",
       "subject": "[R-gui]  Automatic Widget Creation and Callbacks in RGtk",
       "subject_clean": "[R-gui]  Automatic Widget Creation and Callbacks in RGtk",
       "in_reply_to": null,
@@ -133,8 +133,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-04-04T05:50:45-03:00",
-      "last_reply": "2006-04-04T05:50:45-03:00",
+      "started": "2006-04-04T08:50:45Z",
+      "last_reply": "2006-04-04T08:50:45Z",
       "root_message_id": "msg-d31875ab6e45"
     },
     {
@@ -144,8 +144,8 @@
       "participants": [
         "wvdgraaf at dds.nl"
       ],
-      "started": "2006-04-18T12:00:14+02:00",
-      "last_reply": "2006-04-18T12:00:14+02:00",
+      "started": "2006-04-18T10:00:14Z",
+      "last_reply": "2006-04-18T10:00:14Z",
       "root_message_id": "msg-daa45c664b32"
     },
     {
@@ -155,8 +155,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2006-04-19T11:44:43+02:00",
-      "last_reply": "2006-04-19T11:44:43+02:00",
+      "started": "2006-04-19T09:44:43Z",
+      "last_reply": "2006-04-19T09:44:43Z",
       "root_message_id": "msg-d1ba2d8713b7"
     },
     {
@@ -167,8 +167,8 @@
         "Michael Lawrence",
         "Neil E. Klepeis"
       ],
-      "started": "2006-04-24T02:09:55-07:00",
-      "last_reply": "2006-04-24T13:50:28-07:00",
+      "started": "2006-04-24T09:09:55Z",
+      "last_reply": "2006-04-24T20:50:28Z",
       "root_message_id": "msg-41b9013ddbbb"
     },
     {
@@ -178,8 +178,8 @@
       "participants": [
         "j verzani"
       ],
-      "started": "2006-04-25T11:38:18-04:00",
-      "last_reply": "2006-04-25T11:38:18-04:00",
+      "started": "2006-04-25T15:38:18Z",
+      "last_reply": "2006-04-25T15:38:18Z",
       "root_message_id": "msg-1787d6d3aa35"
     }
   ]

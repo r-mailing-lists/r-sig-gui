@@ -8,7 +8,7 @@
       "message_id": "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>",
       "from_name": "Naveen Verma",
       "from_email_hash": "6893bd78d570f6b592e2ed6d4b47d7b720979cc917a76ee4aa43b61e575d7fcf",
-      "date": "2012-04-09T23:43:22+05:30",
+      "date": "2012-04-09T18:13:22Z",
       "subject": "[R-gui] GUI",
       "subject_clean": "[R-gui] GUI",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>",
       "from_name": "Liviu Andronic",
       "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
-      "date": "2012-04-09T21:40:06+02:00",
+      "date": "2012-04-09T19:40:06Z",
       "subject": "[R-gui] GUI",
       "subject_clean": "[R-gui] GUI",
       "in_reply_to": "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>",
@@ -42,7 +42,7 @@
       "message_id": "<CAPJsq9=4O1GNRde5pcwdkWPoXFftyBTfddWqCCB27=AZXb9UvQ@mail.gmail.com>",
       "from_name": "Tengfei Yin",
       "from_email_hash": "d82ce0360c2ed5f8b64163b2810014be97163e92b83c00a740a5621e077a8a18",
-      "date": "2012-04-09T14:47:34-05:00",
+      "date": "2012-04-09T19:47:34Z",
       "subject": "[R-gui] GUI",
       "subject_clean": "[R-gui] GUI",
       "in_reply_to": "<CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>",
@@ -61,7 +61,7 @@
       "message_id": "<4F833FD1.4040500@statconn.com>",
       "from_name": "Thomas Baier",
       "from_email_hash": "5762e69a13d03708a4103e221968abd4bec529ad783ffdcb4c065a9f7a1c7e1d",
-      "date": "2012-04-09T22:00:17+02:00",
+      "date": "2012-04-09T20:00:17Z",
       "subject": "[R-gui] GUI",
       "subject_clean": "[R-gui] GUI",
       "in_reply_to": "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>",
@@ -79,7 +79,7 @@
       "message_id": "<CAMwHe11_1kP8GAp44XgCSk2eRwFCY9NaeRzhSyTQPH=vxkhL+g@mail.gmail.com>",
       "from_name": "Naveen Verma",
       "from_email_hash": "b073b3681be2d85f00fda6290d768fd9d63fa087bb920a1dc22a523bc4866940",
-      "date": "2012-04-10T16:05:11+05:30",
+      "date": "2012-04-10T10:35:11Z",
       "subject": "[R-gui] R-SIG-GUI Digest, Vol 96, Issue 1",
       "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 96, Issue 1",
       "in_reply_to": "<mailman.13.1334052004.19777.r-sig-gui@r-project.org>",
@@ -104,8 +104,8 @@
         "Tengfei Yin",
         "Thomas Baier"
       ],
-      "started": "2012-04-09T23:43:22+05:30",
-      "last_reply": "2012-04-09T22:00:17+02:00",
+      "started": "2012-04-09T18:13:22Z",
+      "last_reply": "2012-04-09T20:00:17Z",
       "root_message_id": "msg-0b8fbbf07183"
     },
     {
@@ -115,8 +115,8 @@
       "participants": [
         "Naveen Verma"
       ],
-      "started": "2012-04-10T16:05:11+05:30",
-      "last_reply": "2012-04-10T16:05:11+05:30",
+      "started": "2012-04-10T10:35:11Z",
+      "last_reply": "2012-04-10T10:35:11Z",
       "root_message_id": "msg-948c0e9c59e1"
     }
   ]

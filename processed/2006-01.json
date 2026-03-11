@@ -8,7 +8,7 @@
       "message_id": "<43B90ADA.6080000@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-01-02T08:13:30-03:00",
+      "date": "2006-01-02T11:13:30Z",
       "subject": "[R-gui] Tinn-R 1.18.1.5 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.1.5 released",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<43C80EFE.90503@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-01-13T17:35:10-03:00",
+      "date": "2006-01-13T20:35:10Z",
       "subject": "[R-gui] Tinn-R 1.18.1.6 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.1.6 released",
       "in_reply_to": null,
@@ -72,7 +72,7 @@
       "message_id": "<43C90483.5060804@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-01-14T11:02:43-03:00",
+      "date": "2006-01-14T14:02:43Z",
       "subject": "[R-gui] Tinn-R 1.18.1.7 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.1.7 released",
       "in_reply_to": null,
@@ -92,8 +92,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-01-02T08:13:30-03:00",
-      "last_reply": "2006-01-02T08:13:30-03:00",
+      "started": "2006-01-02T11:13:30Z",
+      "last_reply": "2006-01-02T11:13:30Z",
       "root_message_id": "msg-ea3bdf4fef16"
     },
     {
@@ -103,8 +103,8 @@
       "participants": [
         "Zhesi He"
       ],
-      "started": "2006-01-12T04:09:05+00:00",
-      "last_reply": "2006-01-12T04:09:05+00:00",
+      "started": "2006-01-12T04:09:05Z",
+      "last_reply": "2006-01-12T04:09:05Z",
       "root_message_id": "msg-8142f134a7d2"
     },
     {
@@ -114,8 +114,8 @@
       "participants": [
         "Zhesi He"
       ],
-      "started": "2006-01-13T09:13:52+00:00",
-      "last_reply": "2006-01-13T09:13:52+00:00",
+      "started": "2006-01-13T09:13:52Z",
+      "last_reply": "2006-01-13T09:13:52Z",
       "root_message_id": "msg-fd3aa187d49c"
     },
     {
@@ -125,8 +125,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-01-13T17:35:10-03:00",
-      "last_reply": "2006-01-13T17:35:10-03:00",
+      "started": "2006-01-13T20:35:10Z",
+      "last_reply": "2006-01-13T20:35:10Z",
       "root_message_id": "msg-acfbdb63d004"
     },
     {
@@ -136,8 +136,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-01-14T11:02:43-03:00",
-      "last_reply": "2006-01-14T11:02:43-03:00",
+      "started": "2006-01-14T14:02:43Z",
+      "last_reply": "2006-01-14T14:02:43Z",
       "root_message_id": "msg-d83291162e95"
     }
   ]

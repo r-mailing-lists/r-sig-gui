@@ -8,7 +8,7 @@
       "message_id": "<4CAFA08D.4010900@uw.edu>",
       "from_name": "Hana Sevcikova",
       "from_email_hash": "fb682fb5a0b5dfea1eeacf5a8cbb2579e779cfa608f18329f1e361d748ccfe14",
-      "date": "2010-10-08T15:51:57-07:00",
+      "date": "2010-10-08T22:51:57Z",
       "subject": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
       "subject_clean": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
       "in_reply_to": null,
@@ -42,7 +42,7 @@
       "message_id": "<4CB0D54E.1080708@uw.edu>",
       "from_name": "Hana Sevcikova",
       "from_email_hash": "fb682fb5a0b5dfea1eeacf5a8cbb2579e779cfa608f18329f1e361d748ccfe14",
-      "date": "2010-10-09T13:49:18-07:00",
+      "date": "2010-10-09T20:49:18Z",
       "subject": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
       "subject_clean": "[R-gui] Preventing gdf from adding rows and columns to a data frame",
       "in_reply_to": "<loom.20101009T015828-314@post.gmane.org>",
@@ -61,7 +61,7 @@
       "message_id": "<AANLkTinpha76wnDXs1qxTQs6XgHzWfzGPh2_Nn5Zhfwu@mail.gmail.com>",
       "from_name": "Liviu Andronic",
       "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
-      "date": "2010-10-26T07:13:03+02:00",
+      "date": "2010-10-26T05:13:03Z",
       "subject": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
       "subject_clean": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
       "in_reply_to": null,
@@ -77,7 +77,7 @@
       "message_id": "<201010261047.07310.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
       "from_name": "Thomas Friedrichsmeier",
       "from_email_hash": "5788a71988abb9472ec6ea7525cade7538b3cb3d32178ced51c7b1e82ef11760",
-      "date": "2010-10-26T10:47:02+02:00",
+      "date": "2010-10-26T08:47:02Z",
       "subject": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
       "subject_clean": "[R-gui] your favourite spreadsheet-like data viewer or editor?",
       "in_reply_to": null,
@@ -116,8 +116,8 @@
         "Hana Sevcikova",
         "jverzani"
       ],
-      "started": "2010-10-08T15:51:57-07:00",
-      "last_reply": "2010-10-09T13:49:18-07:00",
+      "started": "2010-10-08T22:51:57Z",
+      "last_reply": "2010-10-09T20:49:18Z",
       "root_message_id": "msg-be95a71150a8"
     },
     {
@@ -128,8 +128,8 @@
         "Liviu Andronic",
         "j verzani"
       ],
-      "started": "2010-10-26T07:13:03+02:00",
-      "last_reply": "2010-10-26T20:29:29+00:00",
+      "started": "2010-10-26T05:13:03Z",
+      "last_reply": "2010-10-26T20:29:29Z",
       "root_message_id": "msg-638f1b57d79f"
     },
     {
@@ -139,8 +139,8 @@
       "participants": [
         "Thomas Friedrichsmeier"
       ],
-      "started": "2010-10-26T10:47:02+02:00",
-      "last_reply": "2010-10-26T10:47:02+02:00",
+      "started": "2010-10-26T08:47:02Z",
+      "last_reply": "2010-10-26T08:47:02Z",
       "root_message_id": "msg-11bf04f8b691"
     }
   ]

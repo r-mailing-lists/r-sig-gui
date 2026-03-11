@@ -8,7 +8,7 @@
       "message_id": "<4D99C21B.10307@yahoo.com.br>",
       "from_name": "Cleber N. Borges",
       "from_email_hash": "0b8bcead7baccf2b0076ea176ba18d3d66b73de88c9e56149b6ac78c2f7e6170",
-      "date": "2011-04-04T10:05:31-03:00",
+      "date": "2011-04-04T13:05:31Z",
       "subject": "[R-gui] RGtk2: How to populate an GtkListStore data model?",
       "subject_clean": "[R-gui] RGtk2: How to populate an GtkListStore data model?",
       "in_reply_to": null,
@@ -28,8 +28,8 @@
       "participants": [
         "Cleber N. Borges"
       ],
-      "started": "2011-04-04T10:05:31-03:00",
-      "last_reply": "2011-04-04T10:05:31-03:00",
+      "started": "2011-04-04T13:05:31Z",
+      "last_reply": "2011-04-04T13:05:31Z",
       "root_message_id": "msg-0d8e09433a05"
     }
   ]

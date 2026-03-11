@@ -8,7 +8,7 @@
       "message_id": "<200612041805.40468.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
       "from_name": "Thomas Friedrichsmeier",
       "from_email_hash": "5788a71988abb9472ec6ea7525cade7538b3cb3d32178ced51c7b1e82ef11760",
-      "date": "2006-12-04T18:05:36+01:00",
+      "date": "2006-12-04T17:05:36Z",
       "subject": "[R-gui] RKWard 0.4.2",
       "subject_clean": "[R-gui] RKWard 0.4.2",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<200612041819.27588.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
       "from_name": "Thomas Friedrichsmeier",
       "from_email_hash": "5788a71988abb9472ec6ea7525cade7538b3cb3d32178ced51c7b1e82ef11760",
-      "date": "2006-12-04T18:19:24+01:00",
+      "date": "2006-12-04T17:19:24Z",
       "subject": "[R-gui] RKWard 0.4.2",
       "subject_clean": "[R-gui] RKWard 0.4.2",
       "in_reply_to": "<200612041805.40468.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
@@ -42,7 +42,7 @@
       "message_id": "<4576033E.9060700@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-12-05T20:39:42-03:00",
+      "date": "2006-12-05T23:39:42Z",
       "subject": "[R-gui] Tinn-R 1.19.0.14 released",
       "subject_clean": "[R-gui] Tinn-R 1.19.0.14 released",
       "in_reply_to": null,
@@ -62,8 +62,8 @@
       "participants": [
         "Thomas Friedrichsmeier"
       ],
-      "started": "2006-12-04T18:05:36+01:00",
-      "last_reply": "2006-12-04T18:19:24+01:00",
+      "started": "2006-12-04T17:05:36Z",
+      "last_reply": "2006-12-04T17:19:24Z",
       "root_message_id": "msg-69c47a747a1a"
     },
     {
@@ -73,8 +73,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-12-05T20:39:42-03:00",
-      "last_reply": "2006-12-05T20:39:42-03:00",
+      "started": "2006-12-05T23:39:42Z",
+      "last_reply": "2006-12-05T23:39:42Z",
       "root_message_id": "msg-f58c8f152828"
     }
   ]

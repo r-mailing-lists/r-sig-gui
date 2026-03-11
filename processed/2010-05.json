@@ -8,7 +8,7 @@
       "message_id": "<20100504161930.aa8924c5d28ca71e2a043bb294e795eb.f08feec33f.wbe@mobilemail.secureserver.net>",
       "from_name": "sue at xlsolutions-corp.com",
       "from_email_hash": "83b03cf4c7189b037a71645b6a2b812e376c4a3259e7206d8e5d6f136948677b",
-      "date": "2010-05-04T16:19:30-07:00",
+      "date": "2010-05-04T23:19:30Z",
       "subject": "[R-gui] Openings in the Consulting Department of XLSolutions Corp",
       "subject_clean": "[R-gui] Openings in the Consulting Department of XLSolutions Corp",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<a0385d82e61b8f7f0d47f6139d19f723.squirrel@mail.stat.ucla.edu>",
       "from_name": "ian.fellows at stat.ucla.edu",
       "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
-      "date": "2010-05-04T17:45:21-07:00",
+      "date": "2010-05-05T00:45:21Z",
       "subject": "[R-gui] Deducer 0.3-1",
       "subject_clean": "[R-gui] Deducer 0.3-1",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<4BE1937A.2060106@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2010-05-05T17:49:14+02:00",
+      "date": "2010-05-05T15:49:14Z",
       "subject": "[R-gui] New SciViews version 0.9.16",
       "subject_clean": "[R-gui] New SciViews version 0.9.16",
       "in_reply_to": null,
@@ -60,8 +60,8 @@
       "participants": [
         "sue at xlsolutions-corp.com"
       ],
-      "started": "2010-05-04T16:19:30-07:00",
-      "last_reply": "2010-05-04T16:19:30-07:00",
+      "started": "2010-05-04T23:19:30Z",
+      "last_reply": "2010-05-04T23:19:30Z",
       "root_message_id": "msg-dc21591f1a6f"
     },
     {
@@ -71,8 +71,8 @@
       "participants": [
         "ian.fellows at stat.ucla.edu"
       ],
-      "started": "2010-05-04T17:45:21-07:00",
-      "last_reply": "2010-05-04T17:45:21-07:00",
+      "started": "2010-05-05T00:45:21Z",
+      "last_reply": "2010-05-05T00:45:21Z",
       "root_message_id": "msg-943690695c75"
     },
     {
@@ -82,8 +82,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2010-05-05T17:49:14+02:00",
-      "last_reply": "2010-05-05T17:49:14+02:00",
+      "started": "2010-05-05T15:49:14Z",
+      "last_reply": "2010-05-05T15:49:14Z",
       "root_message_id": "msg-f0c1cb315909"
     }
   ]

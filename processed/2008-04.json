@@ -8,7 +8,7 @@
       "message_id": "<47FDA464.8030104@ornl.gov>",
       "from_name": "George Ostrouchov",
       "from_email_hash": "9080d52958959c83b81a189c9cdf0d2d87e68ade72613c46dbc212f344428698",
-      "date": "2008-04-10T01:23:48-04:00",
+      "date": "2008-04-10T05:23:48Z",
       "subject": "[R-gui] client-server R over sockets",
       "subject_clean": "[R-gui] client-server R over sockets",
       "in_reply_to": "<mailman.13.1205578803.20716.r-sig-gui@stat.math.ethz.ch>",
@@ -26,7 +26,7 @@
       "message_id": "<4804738D.8040000@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2008-04-15T11:21:17+02:00",
+      "date": "2008-04-15T09:21:17Z",
       "subject": "[R-gui] client-server R over sockets",
       "subject_clean": "[R-gui] client-server R over sockets",
       "in_reply_to": "<47FDA464.8030104@ornl.gov>",
@@ -50,8 +50,8 @@
         "George Ostrouchov",
         "Philippe Grosjean"
       ],
-      "started": "2008-04-10T01:23:48-04:00",
-      "last_reply": "2008-04-15T11:21:17+02:00",
+      "started": "2008-04-10T05:23:48Z",
+      "last_reply": "2008-04-15T09:21:17Z",
       "root_message_id": "msg-21f76d56cde6"
     }
   ]

@@ -8,7 +8,7 @@
       "message_id": "<EAB1A589-20D5-11D7-9038-000393BB6D36@stat.ucla.edu>",
       "from_name": "Jan de Leeuw",
       "from_email_hash": "59a1e3d24a4d17014651921c954560da2e7ad5132d0ea3d38e11e0c3e1dd9a92",
-      "date": "2003-01-05T09:48:36-08:00",
+      "date": "2003-01-05T17:48:36Z",
       "subject": "[R-gui] Rpy in Pycrust/Pyshell",
       "subject_clean": "[R-gui] Rpy in Pycrust/Pyshell",
       "in_reply_to": null,
@@ -28,8 +28,8 @@
       "participants": [
         "Jan de Leeuw"
       ],
-      "started": "2003-01-05T09:48:36-08:00",
-      "last_reply": "2003-01-05T09:48:36-08:00",
+      "started": "2003-01-05T17:48:36Z",
+      "last_reply": "2003-01-05T17:48:36Z",
       "root_message_id": "msg-93df76757728"
     }
   ]

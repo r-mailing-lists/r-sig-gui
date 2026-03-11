@@ -8,7 +8,7 @@
       "message_id": "<bd27195cb539a9f82317852a91e1b7d5.squirrel@mail.stat.ucla.edu>",
       "from_name": "ian.fellows at stat.ucla.edu",
       "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
-      "date": "2009-12-02T16:19:36-08:00",
+      "date": "2009-12-03T00:19:36Z",
       "subject": "[R-gui] Deducer: An R data analysis GUI",
       "subject_clean": "[R-gui] Deducer: An R data analysis GUI",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>",
       "from_name": "Mark Heckmann",
       "from_email_hash": "326ab8408fdb6ffa799b5f40426ff3e2eaa77572838a8fd5f4aeaedeaa611a65",
-      "date": "2009-12-06T14:24:45+01:00",
+      "date": "2009-12-06T13:24:45Z",
       "subject": "[R-gui] tk2mclistbox problem",
       "subject_clean": "[R-gui] tk2mclistbox problem",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<4B1C1047.1080209@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2009-12-06T21:12:55+01:00",
+      "date": "2009-12-06T20:12:55Z",
       "subject": "[R-gui] tk2mclistbox problem",
       "subject_clean": "[R-gui] tk2mclistbox problem",
       "in_reply_to": "<9BB05135-BF06-432C-B101-0662D2C0FB5C@gmx.de>",
@@ -58,7 +58,7 @@
       "message_id": "<4B220CE8.1010404@imbe.med.uni-erlangen.de>",
       "from_name": "Christiane Raemsch",
       "from_email_hash": "c8d99184c6c4daea2d1fcaa248f47bdf39a190ac8deaf0831565278311e7798e",
-      "date": "2009-12-11T10:12:08+01:00",
+      "date": "2009-12-11T09:12:08Z",
       "subject": "[R-gui] tk2mclistbox problem",
       "subject_clean": "[R-gui] tk2mclistbox problem",
       "in_reply_to": "<4B1C1047.1080209@sciviews.org>",
@@ -93,7 +93,7 @@
       "message_id": "<4B237896.7040604@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2009-12-12T12:03:50+01:00",
+      "date": "2009-12-12T11:03:50Z",
       "subject": "[R-gui] tk2mclistbox problem",
       "subject_clean": "[R-gui] tk2mclistbox problem",
       "in_reply_to": "<4B220CE8.1010404@imbe.med.uni-erlangen.de>",
@@ -113,7 +113,7 @@
       "message_id": "<CB9702E9-A523-44DA-A2B7-55171BF667F6@gmx.de>",
       "from_name": "Mark Heckmann",
       "from_email_hash": "326ab8408fdb6ffa799b5f40426ff3e2eaa77572838a8fd5f4aeaedeaa611a65",
-      "date": "2009-12-12T13:57:18+01:00",
+      "date": "2009-12-12T12:57:18Z",
       "subject": "[R-gui] gwidgets drag and drop basic question",
       "subject_clean": "[R-gui] gwidgets drag and drop basic question",
       "in_reply_to": null,
@@ -147,7 +147,7 @@
       "message_id": "<7A14A9AE-5FF2-45C4-81D0-7369F3C31A44@ulg.ac.be>",
       "from_name": "Yan ALPEROVYCH",
       "from_email_hash": "c936d3e4b55b34ea035ef3f2b424e049ae70a3b79a5dacc604ebc27ad1d238b8",
-      "date": "2009-12-15T18:26:41+01:00",
+      "date": "2009-12-15T17:26:41Z",
       "subject": "[R-gui] R GUI editor window - help field does not return the help topic.",
       "subject_clean": "[R-gui] R GUI editor window - help field does not return the help topic.",
       "in_reply_to": null,
@@ -163,7 +163,7 @@
       "message_id": "<4B27D56D.3060207@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2009-12-15T19:29:01+01:00",
+      "date": "2009-12-15T18:29:01Z",
       "subject": "[R-gui] R GUI editor window - help field does not return the help\ttopic.",
       "subject_clean": "[R-gui] R GUI editor window - help field does not return the help\ttopic.",
       "in_reply_to": "<7A14A9AE-5FF2-45C4-81D0-7369F3C31A44@ulg.ac.be>",
@@ -181,7 +181,7 @@
       "message_id": "<DCF3076A-4754-4891-A1F6-1CC49BC82611@gmx.de>",
       "from_name": "Mark Heckmann",
       "from_email_hash": "326ab8408fdb6ffa799b5f40426ff3e2eaa77572838a8fd5f4aeaedeaa611a65",
-      "date": "2009-12-18T12:17:39+01:00",
+      "date": "2009-12-18T11:17:39Z",
       "subject": "[R-gui] gwidgets  - what arguments are possible?",
       "subject_clean": "[R-gui] gwidgets  - what arguments are possible?",
       "in_reply_to": null,
@@ -215,7 +215,7 @@
       "message_id": "<1261393358.3984.76.camel@druidaiii.nuevegen.net>",
       "from_name": "Hector Lopez",
       "from_email_hash": "fb960e8bddaae79a16f72fd06482a5882d185e69ebbb03b921a63a37a6c0ded7",
-      "date": "2009-12-21T12:02:38+01:00",
+      "date": "2009-12-21T11:02:38Z",
       "subject": "[R-gui] EclipseR - a GUI for R in the shadow",
       "subject_clean": "[R-gui] EclipseR - a GUI for R in the shadow",
       "in_reply_to": null,
@@ -231,7 +231,7 @@
       "message_id": "<1B278F48-454A-4C0D-B8CD-39F1736EFAA6@gmx.de>",
       "from_name": "Mark Heckmann",
       "from_email_hash": "326ab8408fdb6ffa799b5f40426ff3e2eaa77572838a8fd5f4aeaedeaa611a65",
-      "date": "2009-12-23T04:07:25+01:00",
+      "date": "2009-12-23T03:07:25Z",
       "subject": "[R-gui] ggraphics and retrieving mouse coordinate as npc coordinates",
       "subject_clean": "[R-gui] ggraphics and retrieving mouse coordinate as npc coordinates",
       "in_reply_to": null,
@@ -269,8 +269,8 @@
       "participants": [
         "ian.fellows at stat.ucla.edu"
       ],
-      "started": "2009-12-02T16:19:36-08:00",
-      "last_reply": "2009-12-02T16:19:36-08:00",
+      "started": "2009-12-03T00:19:36Z",
+      "last_reply": "2009-12-03T00:19:36Z",
       "root_message_id": "msg-fcfabd21395f"
     },
     {
@@ -282,8 +282,8 @@
         "Mark Heckmann",
         "Philippe Grosjean"
       ],
-      "started": "2009-12-06T14:24:45+01:00",
-      "last_reply": "2009-12-12T12:03:50+01:00",
+      "started": "2009-12-06T13:24:45Z",
+      "last_reply": "2009-12-12T11:03:50Z",
       "root_message_id": "msg-15833d4f047a"
     },
     {
@@ -293,8 +293,8 @@
       "participants": [
         "Liviu Andronic"
       ],
-      "started": "2009-12-12T10:15:06+00:00",
-      "last_reply": "2009-12-12T10:15:06+00:00",
+      "started": "2009-12-12T10:15:06Z",
+      "last_reply": "2009-12-12T10:15:06Z",
       "root_message_id": "msg-86977fd83961"
     },
     {
@@ -305,8 +305,8 @@
         "Mark Heckmann",
         "j verzani"
       ],
-      "started": "2009-12-12T13:57:18+01:00",
-      "last_reply": "2009-12-13T03:00:20+00:00",
+      "started": "2009-12-12T12:57:18Z",
+      "last_reply": "2009-12-13T03:00:20Z",
       "root_message_id": "msg-ac1672002ffa"
     },
     {
@@ -317,8 +317,8 @@
         "Philippe Grosjean",
         "Yan ALPEROVYCH"
       ],
-      "started": "2009-12-15T18:26:41+01:00",
-      "last_reply": "2009-12-15T19:29:01+01:00",
+      "started": "2009-12-15T17:26:41Z",
+      "last_reply": "2009-12-15T18:29:01Z",
       "root_message_id": "msg-9d97fde44cd2"
     },
     {
@@ -329,8 +329,8 @@
         "Mark Heckmann",
         "john verzani"
       ],
-      "started": "2009-12-18T12:17:39+01:00",
-      "last_reply": "2009-12-18T19:20:04+00:00",
+      "started": "2009-12-18T11:17:39Z",
+      "last_reply": "2009-12-18T19:20:04Z",
       "root_message_id": "msg-f817b949374a"
     },
     {
@@ -340,8 +340,8 @@
       "participants": [
         "Hector Lopez"
       ],
-      "started": "2009-12-21T12:02:38+01:00",
-      "last_reply": "2009-12-21T12:02:38+01:00",
+      "started": "2009-12-21T11:02:38Z",
+      "last_reply": "2009-12-21T11:02:38Z",
       "root_message_id": "msg-53ef5a060f58"
     },
     {
@@ -352,8 +352,8 @@
         "Mark Heckmann",
         "john verzani"
       ],
-      "started": "2009-12-23T04:07:25+01:00",
-      "last_reply": "2009-12-28T02:44:37+00:00",
+      "started": "2009-12-23T03:07:25Z",
+      "last_reply": "2009-12-28T02:44:37Z",
       "root_message_id": "msg-c2ebafe7a902"
     }
   ]

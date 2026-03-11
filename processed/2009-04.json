@@ -8,7 +8,7 @@
       "message_id": "<1240301090982-2668568.post@n2.nabble.com>",
       "from_name": "Claudio82",
       "from_email_hash": "2f7dfeaaae8839c46b73f8ccfb9480e7789a053c999c7bfc883b85b5ccbde933",
-      "date": "2009-04-21T01:04:50-07:00",
+      "date": "2009-04-21T08:04:50Z",
       "subject": "[R-gui]  Tinn-R and JGR issues under Vista",
       "subject_clean": "[R-gui]  Tinn-R and JGR issues under Vista",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<COL102-W383BDF6D980E13DBDE682D5730@phx.gbl>",
       "from_name": "ibtesam al_sagaf",
       "from_email_hash": "3221f77ea046c029e52491d12e7218cf26a68e9a2658a2d88748ccf5a02dc5a8",
-      "date": "2009-04-26T00:02:23+03:00",
+      "date": "2009-04-25T21:02:23Z",
       "subject": "[R-gui] rank function problem",
       "subject_clean": "[R-gui] rank function problem",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<49F4885F.4070709@bht-berlin.de>",
       "from_name": "Ulrike Grömping",
       "from_email_hash": "99e1e46e1e0d7b77c1611da747e86cd6a4102b778c9e34ec69a028711516dbf9",
-      "date": "2009-04-26T18:14:23+02:00",
+      "date": "2009-04-26T16:14:23Z",
       "subject": "[R-gui] rank function problem",
       "subject_clean": "[R-gui] rank function problem",
       "in_reply_to": "<COL102-W383BDF6D980E13DBDE682D5730@phx.gbl>",
@@ -58,7 +58,7 @@
       "message_id": "<49F77C96.3020600@waddell.ch>",
       "from_name": "Adrian Waddell",
       "from_email_hash": "afd6ae43637c0691d909168b5aa7407cdbf975683ad29c432cf4cd72092f8fda",
-      "date": "2009-04-28T18:00:54-04:00",
+      "date": "2009-04-28T22:00:54Z",
       "subject": "[R-gui] tcltk: change the parent of a widget",
       "subject_clean": "[R-gui] tcltk: change the parent of a widget",
       "in_reply_to": null,
@@ -78,8 +78,8 @@
       "participants": [
         "Claudio82"
       ],
-      "started": "2009-04-21T01:04:50-07:00",
-      "last_reply": "2009-04-21T01:04:50-07:00",
+      "started": "2009-04-21T08:04:50Z",
+      "last_reply": "2009-04-21T08:04:50Z",
       "root_message_id": "msg-6b5accfcd725"
     },
     {
@@ -90,8 +90,8 @@
         "Ulrike Grömping",
         "ibtesam al_sagaf"
       ],
-      "started": "2009-04-26T00:02:23+03:00",
-      "last_reply": "2009-04-26T18:14:23+02:00",
+      "started": "2009-04-25T21:02:23Z",
+      "last_reply": "2009-04-26T16:14:23Z",
       "root_message_id": "msg-f159a8f408c1"
     },
     {
@@ -101,8 +101,8 @@
       "participants": [
         "Adrian Waddell"
       ],
-      "started": "2009-04-28T18:00:54-04:00",
-      "last_reply": "2009-04-28T18:00:54-04:00",
+      "started": "2009-04-28T22:00:54Z",
+      "last_reply": "2009-04-28T22:00:54Z",
       "root_message_id": "msg-69096c62fc54"
     }
   ]

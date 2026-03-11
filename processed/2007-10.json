@@ -8,7 +8,7 @@
       "message_id": "<87y7eni9pa.fsf@ens-lsh.fr>",
       "from_name": "Julien Barnier",
       "from_email_hash": "ac261936814eda5c9d461060091be5647051497c5660885c3cb04b5355f3680f",
-      "date": "2007-10-01T09:18:57+02:00",
+      "date": "2007-10-01T07:18:57Z",
       "subject": "[R-gui] build your own gui",
       "subject_clean": "[R-gui] build your own gui",
       "in_reply_to": null,
@@ -27,7 +27,7 @@
       "message_id": "<001101c8041b$ce85ea50$1401a8c0@nostalgia>",
       "from_name": "Ken Latta",
       "from_email_hash": "f03a1185ea2de3afde015ea3354a8ba5909d2bb3a6721fd0db60c6f4e3061d75",
-      "date": "2007-10-01T07:11:25-04:00",
+      "date": "2007-10-01T11:11:25Z",
       "subject": "[R-gui] R-SIG-GUI Digest, Vol 52, Issue 1",
       "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 52, Issue 1",
       "in_reply_to": null,
@@ -45,7 +45,7 @@
       "message_id": "<1F724548E253BD49BA9BB000E9525F79682BEB@usknxex01.epri.com>",
       "from_name": "Short, Tom",
       "from_email_hash": "30214adcec6732aa34028b29af2953d6525cec9556bec0741795b5f334fe82ac",
-      "date": "2007-10-01T08:01:19-04:00",
+      "date": "2007-10-01T12:01:19Z",
       "subject": "[R-gui] R-SIG-GUI Digest, Vol 52, Issue 1",
       "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 52, Issue 1",
       "in_reply_to": "<001101c8041b$ce85ea50$1401a8c0@nostalgia>",
@@ -80,7 +80,7 @@
       "message_id": "<cfcfdb9e33482.471e3732@shaw.ca>",
       "from_name": "Iqbal Jamal",
       "from_email_hash": "a169d2a3af4644cb37e7a1e4dd9598f7dfd0cf097beb77e4506aac0a595380ab",
-      "date": "2007-10-23T18:02:26-06:00",
+      "date": "2007-10-24T00:02:26Z",
       "subject": "[R-gui] RPad and Security",
       "subject_clean": "[R-gui] RPad and Security",
       "in_reply_to": null,
@@ -96,7 +96,7 @@
       "message_id": "<471E8E3C.7040307@wehi.edu.au>",
       "from_name": "Keith Satterley",
       "from_email_hash": "76db1ee900961338dabfa6110de856031861d416050f04f1577a77475dee6838",
-      "date": "2007-10-24T10:13:48+10:00",
+      "date": "2007-10-24T00:13:48Z",
       "subject": "[R-gui] tcltk: help with tkmenubutton",
       "subject_clean": "[R-gui] tcltk: help with tkmenubutton",
       "in_reply_to": "<200710232008.18463.albmont@centroin.com.br>",
@@ -149,7 +149,7 @@
       "message_id": "<f8e6ff050710240630g4a0c2f8fid7b3ad31ddda714a@mail.gmail.com>",
       "from_name": "hadley wickham",
       "from_email_hash": "78ed178a2a834406115d2917490a5d6eb6217493116357bc9bb8ae3e96968152",
-      "date": "2007-10-24T08:30:06-05:00",
+      "date": "2007-10-24T13:30:06Z",
       "subject": "[R-gui] RPad and Security",
       "subject_clean": "[R-gui] RPad and Security",
       "in_reply_to": "<cfcfdb9e33482.471e3732@shaw.ca>",
@@ -167,7 +167,7 @@
       "message_id": "<1F724548E253BD49BA9BB000E9525F797271C4@usknxex01.epri.com>",
       "from_name": "Short, Tom",
       "from_email_hash": "30214adcec6732aa34028b29af2953d6525cec9556bec0741795b5f334fe82ac",
-      "date": "2007-10-24T09:50:54-04:00",
+      "date": "2007-10-24T13:50:54Z",
       "subject": "[R-gui] RPad and Security",
       "subject_clean": "[R-gui] RPad and Security",
       "in_reply_to": "<f8e6ff050710240630g4a0c2f8fid7b3ad31ddda714a@mail.gmail.com>",
@@ -186,7 +186,7 @@
       "message_id": "<0JQH00CR28EN7C10@l-daemon>",
       "from_name": "Iqbal Jamal",
       "from_email_hash": "a169d2a3af4644cb37e7a1e4dd9598f7dfd0cf097beb77e4506aac0a595380ab",
-      "date": "2007-10-25T11:00:11-06:00",
+      "date": "2007-10-25T17:00:11Z",
       "subject": "[R-gui] RPad and Security",
       "subject_clean": "[R-gui] RPad and Security",
       "in_reply_to": "<1F724548E253BD49BA9BB000E9525F797271C4@usknxex01.epri.com>",
@@ -206,7 +206,7 @@
       "message_id": "<D8C95B444AD6EE4AAD638D818A9CFD34C00506@RINNYCSE000.rth.ad.rothschild.com>",
       "from_name": "Bos, Roger",
       "from_email_hash": "10478ee608b65d457f99d40c620f1ed364be662f5b3ef3a404dd083d142695e6",
-      "date": "2007-10-26T10:03:19-04:00",
+      "date": "2007-10-26T14:03:19Z",
       "subject": "[R-gui] How to remove non-UTF-8 characters from a string",
       "subject_clean": "[R-gui] How to remove non-UTF-8 characters from a string",
       "in_reply_to": null,
@@ -222,7 +222,7 @@
       "message_id": "<47224B5A.5070208@ualr.edu>",
       "from_name": "shweta",
       "from_email_hash": "ef08c080347486e407ed29d818851edd6193aea90e32c43e0eb0f8a8cce90776",
-      "date": "2007-10-26T15:17:30-05:00",
+      "date": "2007-10-26T20:17:30Z",
       "subject": "[R-gui] Taking user input in R",
       "subject_clean": "[R-gui] Taking user input in R",
       "in_reply_to": null,
@@ -238,7 +238,7 @@
       "message_id": "<f658d8d97762.4722f04d@ualr.edu>",
       "from_name": "sschavan at ualr.edu",
       "from_email_hash": "ef08c080347486e407ed29d818851edd6193aea90e32c43e0eb0f8a8cce90776",
-      "date": "2007-10-27T08:01:17-07:00",
+      "date": "2007-10-27T15:01:17Z",
       "subject": "[R-gui] function for user input",
       "subject_clean": "[R-gui] function for user input",
       "in_reply_to": null,
@@ -254,7 +254,7 @@
       "message_id": "<200710271833.45131.dusa.adrian@gmail.com>",
       "from_name": "Adrian Dusa",
       "from_email_hash": "6a403e8d36067b9a5490b33c3f9b771c8b9fb11b65319c8b0ebbaa42146b32c8",
-      "date": "2007-10-27T18:33:44+03:00",
+      "date": "2007-10-27T15:33:44Z",
       "subject": "[R-gui] function for user input",
       "subject_clean": "[R-gui] function for user input",
       "in_reply_to": "<f658d8d97762.4722f04d@ualr.edu>",
@@ -272,7 +272,7 @@
       "message_id": "<509e0620710271531rd3ae02es575daf9a4285b69e@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2007-10-27T17:31:23-05:00",
+      "date": "2007-10-27T22:31:23Z",
       "subject": "[R-gui] Taking user input in R",
       "subject_clean": "[R-gui] Taking user input in R",
       "in_reply_to": "<47224B5A.5070208@ualr.edu>",
@@ -290,7 +290,7 @@
       "message_id": "<be5487e70710271731g3ce49f8ex8255380aa956cf72@mail.gmail.com>",
       "from_name": "Adrian Dusa",
       "from_email_hash": "6a403e8d36067b9a5490b33c3f9b771c8b9fb11b65319c8b0ebbaa42146b32c8",
-      "date": "2007-10-28T03:31:44+03:00",
+      "date": "2007-10-28T00:31:44Z",
       "subject": "[R-gui] function for user input",
       "subject_clean": "[R-gui] function for user input",
       "in_reply_to": "<4723C7BD.5020202@ualr.edu>",
@@ -308,6 +308,17 @@
   ],
   "threads": [
     {
+      "id": "thread-16657ed2ecc2",
+      "subject": "[R-gui] build your own gui",
+      "message_count": 1,
+      "participants": [
+        "Julien Barnier"
+      ],
+      "started": "2007-10-01T07:18:57Z",
+      "last_reply": "2007-10-01T07:18:57Z",
+      "root_message_id": "msg-16657ed2ecc2"
+    },
+    {
       "id": "thread-d59333e4e1f1",
       "subject": "[R-gui] R-SIG-GUI Digest, Vol 52, Issue 1",
       "message_count": 2,
@@ -315,20 +326,21 @@
         "Ken Latta",
         "Short, Tom"
       ],
-      "started": "2007-10-01T07:11:25-04:00",
-      "last_reply": "2007-10-01T08:01:19-04:00",
+      "started": "2007-10-01T11:11:25Z",
+      "last_reply": "2007-10-01T12:01:19Z",
       "root_message_id": "msg-d59333e4e1f1"
     },
     {
-      "id": "thread-16657ed2ecc2",
-      "subject": "[R-gui] build your own gui",
-      "message_count": 1,
+      "id": "thread-ea42f8a5e820",
+      "subject": "[R-gui] tcltk: help with tkmenubutton",
+      "message_count": 3,
       "participants": [
-        "Julien Barnier"
+        "Alberto Vieira Ferreira Monteiro",
+        "Keith Satterley"
       ],
-      "started": "2007-10-01T09:18:57+02:00",
-      "last_reply": "2007-10-01T09:18:57+02:00",
-      "root_message_id": "msg-16657ed2ecc2"
+      "started": "2007-10-23T20:08:17Z",
+      "last_reply": "2007-10-24T00:33:30Z",
+      "root_message_id": "msg-ea42f8a5e820"
     },
     {
       "id": "thread-312b2d3c46d4",
@@ -339,21 +351,9 @@
         "Short, Tom",
         "hadley wickham"
       ],
-      "started": "2007-10-23T18:02:26-06:00",
-      "last_reply": "2007-10-25T11:00:11-06:00",
+      "started": "2007-10-24T00:02:26Z",
+      "last_reply": "2007-10-25T17:00:11Z",
       "root_message_id": "msg-312b2d3c46d4"
-    },
-    {
-      "id": "thread-ea42f8a5e820",
-      "subject": "[R-gui] tcltk: help with tkmenubutton",
-      "message_count": 3,
-      "participants": [
-        "Alberto Vieira Ferreira Monteiro",
-        "Keith Satterley"
-      ],
-      "started": "2007-10-23T20:08:17+00:00",
-      "last_reply": "2007-10-24T00:33:30+00:00",
-      "root_message_id": "msg-ea42f8a5e820"
     },
     {
       "id": "thread-3684e6e06f0e",
@@ -362,8 +362,8 @@
       "participants": [
         "Alberto Vieira Ferreira Monteiro"
       ],
-      "started": "2007-10-24T01:56:27+00:00",
-      "last_reply": "2007-10-24T01:56:27+00:00",
+      "started": "2007-10-24T01:56:27Z",
+      "last_reply": "2007-10-24T01:56:27Z",
       "root_message_id": "msg-3684e6e06f0e"
     },
     {
@@ -373,8 +373,8 @@
       "participants": [
         "Bos, Roger"
       ],
-      "started": "2007-10-26T10:03:19-04:00",
-      "last_reply": "2007-10-26T10:03:19-04:00",
+      "started": "2007-10-26T14:03:19Z",
+      "last_reply": "2007-10-26T14:03:19Z",
       "root_message_id": "msg-2ee6943b8082"
     },
     {
@@ -385,8 +385,8 @@
         "Michael Lawrence",
         "shweta"
       ],
-      "started": "2007-10-26T15:17:30-05:00",
-      "last_reply": "2007-10-27T17:31:23-05:00",
+      "started": "2007-10-26T20:17:30Z",
+      "last_reply": "2007-10-27T22:31:23Z",
       "root_message_id": "msg-8832e8f82d06"
     },
     {
@@ -397,8 +397,8 @@
         "Adrian Dusa",
         "sschavan at ualr.edu"
       ],
-      "started": "2007-10-27T08:01:17-07:00",
-      "last_reply": "2007-10-27T18:33:44+03:00",
+      "started": "2007-10-27T15:01:17Z",
+      "last_reply": "2007-10-27T15:33:44Z",
       "root_message_id": "msg-23e6acf9b3d2"
     },
     {
@@ -408,8 +408,8 @@
       "participants": [
         "Adrian Dusa"
       ],
-      "started": "2007-10-28T03:31:44+03:00",
-      "last_reply": "2007-10-28T03:31:44+03:00",
+      "started": "2007-10-28T00:31:44Z",
+      "last_reply": "2007-10-28T00:31:44Z",
       "root_message_id": "msg-118ca01eae59"
     }
   ]

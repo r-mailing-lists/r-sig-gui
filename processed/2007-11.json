@@ -8,7 +8,7 @@
       "message_id": "<4733423F.2030803@ualr.edu>",
       "from_name": "shweta",
       "from_email_hash": "ef08c080347486e407ed29d818851edd6193aea90e32c43e0eb0f8a8cce90776",
-      "date": "2007-11-08T11:07:11-06:00",
+      "date": "2007-11-08T17:07:11Z",
       "subject": "[R-gui] runif function",
       "subject_clean": "[R-gui] runif function",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<47334ACC.6050707@ualr.edu>",
       "from_name": "shweta",
       "from_email_hash": "ef08c080347486e407ed29d818851edd6193aea90e32c43e0eb0f8a8cce90776",
-      "date": "2007-11-08T11:43:40-06:00",
+      "date": "2007-11-08T17:43:40Z",
       "subject": "[R-gui] Using runif function in R",
       "subject_clean": "[R-gui] Using runif function in R",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<8D934154-3BFE-4FA6-914B-3887426A553F@gmail.com>",
       "from_name": "Charilaos Skiadas",
       "from_email_hash": "983c2b1003be35a5cf23d12111c3d21cfa275576566eb9cb10c2d0ec255221bf",
-      "date": "2007-11-08T17:47:09-05:00",
+      "date": "2007-11-08T22:47:09Z",
       "subject": "[R-gui] runif function",
       "subject_clean": "[R-gui] runif function",
       "in_reply_to": "<4733423F.2030803@ualr.edu>",
@@ -58,7 +58,7 @@
       "message_id": "<18231.13840.92362.529835@ron.nulle.part>",
       "from_name": "Dirk Eddelbuettel",
       "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
-      "date": "2007-11-11T11:04:16-06:00",
+      "date": "2007-11-11T17:04:16Z",
       "subject": "[R-gui] Using runif function in R",
       "subject_clean": "[R-gui] Using runif function in R",
       "in_reply_to": "<47334ACC.6050707@ualr.edu>",
@@ -76,7 +76,7 @@
       "message_id": "<4737C834.4060602@ualr.edu>",
       "from_name": "shweta",
       "from_email_hash": "ef08c080347486e407ed29d818851edd6193aea90e32c43e0eb0f8a8cce90776",
-      "date": "2007-11-11T21:27:48-06:00",
+      "date": "2007-11-12T03:27:48Z",
       "subject": "[R-gui] Using runif function in R",
       "subject_clean": "[R-gui] Using runif function in R",
       "in_reply_to": "<18231.13840.92362.529835@ron.nulle.part>",
@@ -95,7 +95,7 @@
       "message_id": "<47381FCE.3000600@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2007-11-12T10:41:34+01:00",
+      "date": "2007-11-12T09:41:34Z",
       "subject": "[R-gui] Using runif function in R",
       "subject_clean": "[R-gui] Using runif function in R",
       "in_reply_to": "<4737C834.4060602@ualr.edu>",
@@ -115,7 +115,7 @@
       "message_id": "<c86bda880711170705n2ea3736wfe697680e4e6eab2@mail.gmail.com>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "1c617eddedb86787eb21c0f1fea6ae273f7a339d35a851ebdf1c616666990248",
-      "date": "2007-11-17T13:05:49-02:00",
+      "date": "2007-11-17T15:05:49Z",
       "subject": "[R-gui] Tinn-R 1.19.3.1 released",
       "subject_clean": "[R-gui] Tinn-R 1.19.3.1 released",
       "in_reply_to": null,
@@ -131,7 +131,7 @@
       "message_id": "<2264.132.166.74.140.1196429915.squirrel@webmail.lsce.ipsl.fr>",
       "from_name": "T. Marthews",
       "from_email_hash": "f4764415130c3871840a46afc22d544dd4c6dcd1dc81a796f1f7ee5869b83a38",
-      "date": "2007-11-30T14:38:35+01:00",
+      "date": "2007-11-30T13:38:35Z",
       "subject": "[R-gui] Something odd about Windows GUI with the menu command",
       "subject_clean": "[R-gui] Something odd about Windows GUI with the menu command",
       "in_reply_to": null,
@@ -152,8 +152,8 @@
         "Charilaos Skiadas",
         "shweta"
       ],
-      "started": "2007-11-08T11:07:11-06:00",
-      "last_reply": "2007-11-08T17:47:09-05:00",
+      "started": "2007-11-08T17:07:11Z",
+      "last_reply": "2007-11-08T22:47:09Z",
       "root_message_id": "msg-016ace4e19af"
     },
     {
@@ -165,8 +165,8 @@
         "Philippe Grosjean",
         "shweta"
       ],
-      "started": "2007-11-08T11:43:40-06:00",
-      "last_reply": "2007-11-12T10:41:34+01:00",
+      "started": "2007-11-08T17:43:40Z",
+      "last_reply": "2007-11-12T09:41:34Z",
       "root_message_id": "msg-c71e256c71cd"
     },
     {
@@ -176,8 +176,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2007-11-17T13:05:49-02:00",
-      "last_reply": "2007-11-17T13:05:49-02:00",
+      "started": "2007-11-17T15:05:49Z",
+      "last_reply": "2007-11-17T15:05:49Z",
       "root_message_id": "msg-a8f1c5b4f990"
     },
     {
@@ -187,8 +187,8 @@
       "participants": [
         "T. Marthews"
       ],
-      "started": "2007-11-30T14:38:35+01:00",
-      "last_reply": "2007-11-30T14:38:35+01:00",
+      "started": "2007-11-30T13:38:35Z",
+      "last_reply": "2007-11-30T13:38:35Z",
       "root_message_id": "msg-1d9431875875"
     }
   ]

@@ -8,7 +8,7 @@
       "message_id": "<4826E465.5030909@optusnet.com.au>",
       "from_name": "Serge Merzliakov",
       "from_email_hash": "e0e67c1a46892857e11189d017615903aa501ded585b37784001eb300c233165",
-      "date": "2008-05-11T22:19:49+10:00",
+      "date": "2008-05-11T12:19:49Z",
       "subject": "[R-gui] GPL licensing issues with a commercial R GUI",
       "subject_clean": "[R-gui] GPL licensing issues with a commercial R GUI",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<509e0620805130205k767e1002oa97200428f253d37@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2008-05-13T02:05:56-07:00",
+      "date": "2008-05-13T09:05:56Z",
       "subject": "[R-gui] GPL licensing issues with a commercial R GUI",
       "subject_clean": "[R-gui] GPL licensing issues with a commercial R GUI",
       "in_reply_to": "<4826E465.5030909@optusnet.com.au>",
@@ -42,7 +42,7 @@
       "message_id": "<1210677340.19967.5.camel@prometheus.geog.ucl.ac.uk>",
       "from_name": "Gavin Simpson",
       "from_email_hash": "de29578fbbb79e6883c8203a1faebef3fddd10c08cc122f35e5ad109dc250099",
-      "date": "2008-05-13T12:15:40+01:00",
+      "date": "2008-05-13T11:15:40Z",
       "subject": "[R-gui] GPL licensing issues with a commercial R GUI",
       "subject_clean": "[R-gui] GPL licensing issues with a commercial R GUI",
       "in_reply_to": "<509e0620805130205k767e1002oa97200428f253d37@mail.gmail.com>",
@@ -61,7 +61,7 @@
       "message_id": "<509e0620805130430o151781fbr878298b9c5f01699@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2008-05-13T04:30:17-07:00",
+      "date": "2008-05-13T11:30:17Z",
       "subject": "[R-gui] GPL licensing issues with a commercial R GUI",
       "subject_clean": "[R-gui] GPL licensing issues with a commercial R GUI",
       "in_reply_to": "<1210677340.19967.5.camel@prometheus.geog.ucl.ac.uk>",
@@ -81,7 +81,7 @@
       "message_id": "<48297F84.8000005@optusnet.com.au>",
       "from_name": "Serge Merzliakov",
       "from_email_hash": "e0e67c1a46892857e11189d017615903aa501ded585b37784001eb300c233165",
-      "date": "2008-05-13T21:46:12+10:00",
+      "date": "2008-05-13T11:46:12Z",
       "subject": "[R-gui] GPL licensing issues with a commercial R GUI",
       "subject_clean": "[R-gui] GPL licensing issues with a commercial R GUI",
       "in_reply_to": "<1210677340.19967.5.camel@prometheus.geog.ucl.ac.uk>",
@@ -101,7 +101,7 @@
       "message_id": "<482998AA.5000703@gmail.com>",
       "from_name": "Karim Chine",
       "from_email_hash": "a5ad61d603eb667a065d2618ffdaab84eaa3bb16722f077ef7e245c123ba26db",
-      "date": "2008-05-13T14:33:30+01:00",
+      "date": "2008-05-13T13:33:30Z",
       "subject": "[R-gui] GPL licensing issues with a commercial R GUI",
       "subject_clean": "[R-gui] GPL licensing issues with a commercial R GUI",
       "in_reply_to": "<509e0620805130430o151781fbr878298b9c5f01699@mail.gmail.com>",
@@ -122,7 +122,7 @@
       "message_id": "<200805131643.46451.dusa.adrian@gmail.com>",
       "from_name": "Adrian Dusa",
       "from_email_hash": "6a403e8d36067b9a5490b33c3f9b771c8b9fb11b65319c8b0ebbaa42146b32c8",
-      "date": "2008-05-13T16:43:46+03:00",
+      "date": "2008-05-13T13:43:46Z",
       "subject": "[R-gui] GPL licensing issues with a commercial R GUI",
       "subject_clean": "[R-gui] GPL licensing issues with a commercial R GUI",
       "in_reply_to": "<509e0620805130430o151781fbr878298b9c5f01699@mail.gmail.com>",
@@ -142,7 +142,7 @@
       "message_id": "<200805131658.51875.dusa.adrian@gmail.com>",
       "from_name": "Adrian Dusa",
       "from_email_hash": "6a403e8d36067b9a5490b33c3f9b771c8b9fb11b65319c8b0ebbaa42146b32c8",
-      "date": "2008-05-13T16:58:50+03:00",
+      "date": "2008-05-13T13:58:50Z",
       "subject": "[R-gui] jEdit and R [was: GPL licensing issues with a commercial R GUI]",
       "subject_clean": "[R-gui] jEdit and R [was: GPL licensing issues with a commercial R GUI]",
       "in_reply_to": "<482998AA.5000703@gmail.com>",
@@ -162,7 +162,7 @@
       "message_id": "<4829AAA7.7090903@stats.uwo.ca>",
       "from_name": "Duncan Murdoch",
       "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
-      "date": "2008-05-13T10:50:15-04:00",
+      "date": "2008-05-13T14:50:15Z",
       "subject": "[R-gui] GPL licensing issues with a commercial R GUI",
       "subject_clean": "[R-gui] GPL licensing issues with a commercial R GUI",
       "in_reply_to": "<48297F84.8000005@optusnet.com.au>",
@@ -183,7 +183,7 @@
       "message_id": "<4829B494.2050007@gmail.com>",
       "from_name": "Karim Chine",
       "from_email_hash": "a5ad61d603eb667a065d2618ffdaab84eaa3bb16722f077ef7e245c123ba26db",
-      "date": "2008-05-13T16:32:36+01:00",
+      "date": "2008-05-13T15:32:36Z",
       "subject": "[R-gui] jEdit and R [was: GPL licensing issues with a commercial R GUI]",
       "subject_clean": "[R-gui] jEdit and R [was: GPL licensing issues with a commercial R GUI]",
       "in_reply_to": "<200805131658.51875.dusa.adrian@gmail.com>",
@@ -204,7 +204,7 @@
       "message_id": "<509e0620805131720y5f66b549wd5c28ebe0cd463@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2008-05-13T17:20:15-07:00",
+      "date": "2008-05-14T00:20:15Z",
       "subject": "[R-gui] jEdit and R [was: GPL licensing issues with a commercial R GUI]",
       "subject_clean": "[R-gui] jEdit and R [was: GPL licensing issues with a commercial R GUI]",
       "in_reply_to": "<4829B494.2050007@gmail.com>",
@@ -226,7 +226,7 @@
       "message_id": "<200805141046.52510.dusa.adrian@gmail.com>",
       "from_name": "Adrian Dusa",
       "from_email_hash": "6a403e8d36067b9a5490b33c3f9b771c8b9fb11b65319c8b0ebbaa42146b32c8",
-      "date": "2008-05-14T10:46:50+03:00",
+      "date": "2008-05-14T07:46:50Z",
       "subject": "[R-gui] jEdit and R [was: GPL licensing issues with a commercial R GUI]",
       "subject_clean": "[R-gui] jEdit and R [was: GPL licensing issues with a commercial R GUI]",
       "in_reply_to": "<509e0620805131720y5f66b549wd5c28ebe0cd463@mail.gmail.com>",
@@ -246,7 +246,7 @@
       "message_id": "<482A9B7E.10409@mango-solutions.com>",
       "from_name": "Romain Francois",
       "from_email_hash": "b9d2e46d3033f07ff80e5a76fd7ec7d72d03566990f3afa71d2947985c4eb48d",
-      "date": "2008-05-14T08:57:50+01:00",
+      "date": "2008-05-14T07:57:50Z",
       "subject": "[R-gui] jEdit and R [was: GPL licensing issues with a\tcommercial R GUI]",
       "subject_clean": "[R-gui] jEdit and R [was: GPL licensing issues with a\tcommercial R GUI]",
       "in_reply_to": "<200805141046.52510.dusa.adrian@gmail.com>",
@@ -267,7 +267,7 @@
       "message_id": "<004301c8b730$95d9eee0$3065a8c0@meralyay>",
       "from_name": "Meral Yay (Findikli)",
       "from_email_hash": "5ec4b61fe19e789e54b0e809507fa45ce2946190487fef3811844af13ce5a7ed",
-      "date": "2008-05-16T11:41:07+03:00",
+      "date": "2008-05-16T08:41:07Z",
       "subject": "[R-gui] (no subject)",
       "subject_clean": "[R-gui] (no subject)",
       "in_reply_to": null,
@@ -283,7 +283,7 @@
       "message_id": "<483274D0.4000101@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2008-05-20T08:50:56+02:00",
+      "date": "2008-05-20T06:50:56Z",
       "subject": "[R-gui] Listing all possible samples of size two from very large populations",
       "subject_clean": "[R-gui] Listing all possible samples of size two from very large populations",
       "in_reply_to": "<BLU146-DAV31FF6C4EA2AB7C181BA72DDC40@phx.gbl>",
@@ -301,7 +301,7 @@
       "message_id": "<BLU146-DAV31FF6C4EA2AB7C181BA72DDC40@phx.gbl>",
       "from_name": "Nadeem",
       "from_email_hash": "f8d46875179b17b3482a3f89c6c6ed7e29460cbd000d2f014b82b430ed200dd5",
-      "date": "2008-05-20T11:13:41+01:00",
+      "date": "2008-05-20T10:13:41Z",
       "subject": "[R-gui] Listing all possible samples of size two from very large populations",
       "subject_clean": "[R-gui] Listing all possible samples of size two from very large populations",
       "in_reply_to": null,
@@ -317,7 +317,7 @@
       "message_id": "<61135.193.170.163.3.1211350943.squirrel@www.jabberoo.net>",
       "from_name": "bernhard at jabberoo.net",
       "from_email_hash": "fcbc65517ebbce8a8d6c58c342f114f2b116e3f797fba030c57edefe133033b2",
-      "date": "2008-05-21T08:22:23+02:00",
+      "date": "2008-05-21T06:22:23Z",
       "subject": "[R-gui] loading an RData File using gWidgets",
       "subject_clean": "[R-gui] loading an RData File using gWidgets",
       "in_reply_to": null,
@@ -333,7 +333,7 @@
       "message_id": "<509e0620805202348i4196cb4ev371591f9c6f265aa@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2008-05-20T23:48:39-07:00",
+      "date": "2008-05-21T06:48:39Z",
       "subject": "[R-gui] loading an RData File using gWidgets",
       "subject_clean": "[R-gui] loading an RData File using gWidgets",
       "in_reply_to": "<4833c422.14b48c0a.2aef.3677SMTPIN_ADDED@mx.google.com>",
@@ -351,7 +351,7 @@
       "message_id": "<77693D6263D9B94AA3C6384F1474E26A02CE5961@wyt-s-019.europe.shell.com>",
       "from_name": "Wayne.W.Jones at shell.com",
       "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
-      "date": "2008-05-21T09:17:38+01:00",
+      "date": "2008-05-21T08:17:38Z",
       "subject": "[R-gui] loading an RData File using gWidgets",
       "subject_clean": "[R-gui] loading an RData File using gWidgets",
       "in_reply_to": "<61135.193.170.163.3.1211350943.squirrel@www.jabberoo.net>",
@@ -367,7 +367,7 @@
       "message_id": "<483451DB.6010103@free.fr>",
       "from_name": "NOEL Yvonnick",
       "from_email_hash": "4a8e8356a36785813382f2b1e51a112dac54d5364f1a8d6900043564f32f62ed",
-      "date": "2008-05-21T18:46:19+02:00",
+      "date": "2008-05-21T16:46:19Z",
       "subject": "[R-gui] ghelp in gWidgets",
       "subject_clean": "[R-gui] ghelp in gWidgets",
       "in_reply_to": null,
@@ -383,7 +383,7 @@
       "message_id": "<1211600702.48378f3e7dfae@webmail.usm.edu>",
       "from_name": "w607258 at mail.usm.edu",
       "from_email_hash": "96dabf7ebbc9818c05622672a4c0ecb2bef1be95a41a470da2e19c4c500e28f5",
-      "date": "2008-05-23T22:45:02-05:00",
+      "date": "2008-05-24T03:45:02Z",
       "subject": "[R-gui] how to edit TclPath",
       "subject_clean": "[R-gui] how to edit TclPath",
       "in_reply_to": null,
@@ -427,8 +427,8 @@
         "Romain Francois",
         "Serge Merzliakov"
       ],
-      "started": "2008-05-11T22:19:49+10:00",
-      "last_reply": "2008-05-14T08:57:50+01:00",
+      "started": "2008-05-11T12:19:49Z",
+      "last_reply": "2008-05-14T07:57:50Z",
       "root_message_id": "msg-7cb351b0a9f7"
     },
     {
@@ -438,8 +438,8 @@
       "participants": [
         "Meral Yay (Findikli)"
       ],
-      "started": "2008-05-16T11:41:07+03:00",
-      "last_reply": "2008-05-16T11:41:07+03:00",
+      "started": "2008-05-16T08:41:07Z",
+      "last_reply": "2008-05-16T08:41:07Z",
       "root_message_id": "msg-7929467ffcd0"
     },
     {
@@ -450,20 +450,9 @@
         "Nadeem",
         "Philippe Grosjean"
       ],
-      "started": "2008-05-20T11:13:41+01:00",
-      "last_reply": "2008-05-20T11:13:41+01:00",
+      "started": "2008-05-20T10:13:41Z",
+      "last_reply": "2008-05-20T10:13:41Z",
       "root_message_id": "msg-bbf47cfea0ab"
-    },
-    {
-      "id": "thread-4859064b8f4e",
-      "subject": "[R-gui] loading an RData File using gWidgets",
-      "message_count": 1,
-      "participants": [
-        "Michael Lawrence"
-      ],
-      "started": "2008-05-20T23:48:39-07:00",
-      "last_reply": "2008-05-20T23:48:39-07:00",
-      "root_message_id": "msg-4859064b8f4e"
     },
     {
       "id": "thread-a9df7876039e",
@@ -473,9 +462,20 @@
         "Wayne.W.Jones at shell.com",
         "bernhard at jabberoo.net"
       ],
-      "started": "2008-05-21T08:22:23+02:00",
-      "last_reply": "2008-05-21T09:17:38+01:00",
+      "started": "2008-05-21T06:22:23Z",
+      "last_reply": "2008-05-21T08:17:38Z",
       "root_message_id": "msg-a9df7876039e"
+    },
+    {
+      "id": "thread-4859064b8f4e",
+      "subject": "[R-gui] loading an RData File using gWidgets",
+      "message_count": 1,
+      "participants": [
+        "Michael Lawrence"
+      ],
+      "started": "2008-05-21T06:48:39Z",
+      "last_reply": "2008-05-21T06:48:39Z",
+      "root_message_id": "msg-4859064b8f4e"
     },
     {
       "id": "thread-304c97e2e710",
@@ -485,8 +485,8 @@
         "NOEL Yvonnick",
         "jverzani"
       ],
-      "started": "2008-05-21T18:46:19+02:00",
-      "last_reply": "2008-05-27T02:23:59+00:00",
+      "started": "2008-05-21T16:46:19Z",
+      "last_reply": "2008-05-27T02:23:59Z",
       "root_message_id": "msg-304c97e2e710"
     },
     {
@@ -496,8 +496,8 @@
       "participants": [
         "w607258 at mail.usm.edu"
       ],
-      "started": "2008-05-23T22:45:02-05:00",
-      "last_reply": "2008-05-23T22:45:02-05:00",
+      "started": "2008-05-24T03:45:02Z",
+      "last_reply": "2008-05-24T03:45:02Z",
       "root_message_id": "msg-953772bb5510"
     }
   ]

@@ -79,8 +79,8 @@
         "James Wettenhall",
         "Peter Dalgaard BSA"
       ],
-      "started": "2003-08-08T09:08:54+00:00",
-      "last_reply": "2003-08-08T10:26:39+00:00",
+      "started": "2003-08-08T09:08:54Z",
+      "last_reply": "2003-08-08T10:26:39Z",
       "root_message_id": "msg-315befe06073"
     },
     {
@@ -90,8 +90,8 @@
       "participants": [
         "James Wettenhall"
       ],
-      "started": "2003-08-11T10:01:51+00:00",
-      "last_reply": "2003-08-11T10:01:51+00:00",
+      "started": "2003-08-11T10:01:51Z",
+      "last_reply": "2003-08-11T10:01:51Z",
       "root_message_id": "msg-f1653c22226d"
     },
     {
@@ -101,8 +101,8 @@
       "participants": [
         "Peter Dalgaard BSA"
       ],
-      "started": "2003-08-24T23:35:15+00:00",
-      "last_reply": "2003-08-24T23:35:15+00:00",
+      "started": "2003-08-24T23:35:15Z",
+      "last_reply": "2003-08-24T23:35:15Z",
       "root_message_id": "msg-437217f98b09"
     }
   ]

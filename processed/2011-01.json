@@ -8,7 +8,7 @@
       "message_id": "<D814F59C-3B1F-426C-BD7A-CD21B1B82A9B@stat.ucla.edu>",
       "from_name": "Ian Fellows",
       "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
-      "date": "2011-01-03T22:26:30-08:00",
+      "date": "2011-01-04T06:26:30Z",
       "subject": "[R-gui] New version of the JGR R Console released",
       "subject_clean": "[R-gui] New version of the JGR R Console released",
       "in_reply_to": null,
@@ -58,7 +58,7 @@
       "message_id": "<AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>",
       "from_name": "Harshad Shrikhande",
       "from_email_hash": "65da83c2d7e1a260a8582297d161fa68aad4969cbacc3a605e30932d90718e52",
-      "date": "2011-01-17T10:54:39+05:30",
+      "date": "2011-01-17T05:24:39Z",
       "subject": "[R-gui] Reg help in using SciViews R!",
       "subject_clean": "[R-gui] Reg help in using SciViews R!",
       "in_reply_to": null,
@@ -74,7 +74,7 @@
       "message_id": "<4D3405E3.3070106@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2011-01-17T10:03:31+01:00",
+      "date": "2011-01-17T09:03:31Z",
       "subject": "[R-gui] Reg help in using SciViews R!",
       "subject_clean": "[R-gui] Reg help in using SciViews R!",
       "in_reply_to": "<AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>",
@@ -92,7 +92,7 @@
       "message_id": "<AANLkTi=Wf4SJABjHHBjXCcRzCVZ-0ruVBYhycqzyDkfC@mail.gmail.com>",
       "from_name": "Harshad Shrikhande",
       "from_email_hash": "65da83c2d7e1a260a8582297d161fa68aad4969cbacc3a605e30932d90718e52",
-      "date": "2011-01-17T15:13:47+05:30",
+      "date": "2011-01-17T09:43:47Z",
       "subject": "[R-gui] Reg help in using SciViews R!",
       "subject_clean": "[R-gui] Reg help in using SciViews R!",
       "in_reply_to": "<4D3405E3.3070106@sciviews.org>",
@@ -111,7 +111,7 @@
       "message_id": "<127B60EF19BB9F4FB94D157AA8BF3D0A93323B0E6A@EMAIL06.pnl.gov>",
       "from_name": "Taverner, Thomas",
       "from_email_hash": "b1f366bba8e9c729f28d1e1aedd63126a9c927930c7cd42ffa1d692907e72bf0",
-      "date": "2011-01-25T14:06:51-08:00",
+      "date": "2011-01-25T22:06:51Z",
       "subject": "[R-gui] RGtk2Extras package for dataframe editing and easy dialog creation",
       "subject_clean": "[R-gui] RGtk2Extras package for dataframe editing and easy dialog creation",
       "in_reply_to": "<4D2AE9C1.3090700@compserv.gla.ac.uk>",
@@ -134,8 +134,8 @@
       "participants": [
         "Ian Fellows"
       ],
-      "started": "2011-01-03T22:26:30-08:00",
-      "last_reply": "2011-01-03T22:26:30-08:00",
+      "started": "2011-01-04T06:26:30Z",
+      "last_reply": "2011-01-04T06:26:30Z",
       "root_message_id": "msg-cf684eed8163"
     },
     {
@@ -146,8 +146,8 @@
         "Colin Farrow",
         "Taverner, Thomas"
       ],
-      "started": "2011-01-06T11:54:01+00:00",
-      "last_reply": "2011-01-25T14:06:51-08:00",
+      "started": "2011-01-06T11:54:01Z",
+      "last_reply": "2011-01-25T22:06:51Z",
       "root_message_id": "msg-15388b1af4ce"
     },
     {
@@ -158,8 +158,8 @@
         "Harshad Shrikhande",
         "Philippe Grosjean"
       ],
-      "started": "2011-01-17T10:54:39+05:30",
-      "last_reply": "2011-01-17T15:13:47+05:30",
+      "started": "2011-01-17T05:24:39Z",
+      "last_reply": "2011-01-17T09:43:47Z",
       "root_message_id": "msg-94cdc2e597ec"
     }
   ]

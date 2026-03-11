@@ -8,7 +8,7 @@
       "message_id": "<20100302184228.aa8924c5d28ca71e2a043bb294e795eb.893346b4ea.wbe@email.secureserver.net>",
       "from_name": "sue at xlsolutions-corp.com",
       "from_email_hash": "83b03cf4c7189b037a71645b6a2b812e376c4a3259e7206d8e5d6f136948677b",
-      "date": "2010-03-02T18:42:28-07:00",
+      "date": "2010-03-03T01:42:28Z",
       "subject": "[R-gui] R / R+ Webminar *** R-PLUS Rocks: Interactive, Comprehensible and Highly Visual. March 12th @ 12PM ET (USA Time)",
       "subject_clean": "[R-gui] R / R+ Webminar *** R-PLUS Rocks: Interactive, Comprehensible and Highly Visual. March 12th @ 12PM ET (USA Time)",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<24019E41-3EE3-4951-994A-FDE29489EDED@stat.ucla.edu>",
       "from_name": "ian fellows",
       "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
-      "date": "2010-03-14T23:55:20-07:00",
+      "date": "2010-03-15T06:55:20Z",
       "subject": "[R-gui] Deducer 0.2-3 and DeducerPlugInExample released",
       "subject_clean": "[R-gui] Deducer 0.2-3 and DeducerPlugInExample released",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>",
       "from_name": "Mark D. Habana",
       "from_email_hash": "60f9c76b4cc6e7a6e9cb83da9dfd828c8851398354691ca0c9a6aa2df21a5cdd",
-      "date": "2010-03-17T11:51:37-06:00",
+      "date": "2010-03-17T17:51:37Z",
       "subject": "[R-gui] \"Print\" Widget",
       "subject_clean": "[R-gui] \"Print\" Widget",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<B0E6AF197EEBA9488CA99E67DB73B5EA1668631D@denexmb01.venocoinc.local>",
       "from_name": "Mark D. Habana",
       "from_email_hash": "60f9c76b4cc6e7a6e9cb83da9dfd828c8851398354691ca0c9a6aa2df21a5cdd",
-      "date": "2010-03-17T11:56:03-06:00",
+      "date": "2010-03-17T17:56:03Z",
       "subject": "[R-gui] \"Print\" Widget",
       "subject_clean": "[R-gui] \"Print\" Widget",
       "in_reply_to": "<B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>",
@@ -74,7 +74,7 @@
       "message_id": "<89b6b8c91003202132y73169196td26ed5cf020aaea7@mail.gmail.com>",
       "from_name": "Yihui Xie",
       "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
-      "date": "2010-03-20T23:32:17-05:00",
+      "date": "2010-03-21T04:32:17Z",
       "subject": "[R-gui] Font specification of gtext() in gWidgets",
       "subject_clean": "[R-gui] Font specification of gtext() in gWidgets",
       "in_reply_to": null,
@@ -108,7 +108,7 @@
       "message_id": "<89b6b8c91003281408w7ac44379ia17a782a833c6665@mail.gmail.com>",
       "from_name": "Yihui Xie",
       "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
-      "date": "2010-03-28T16:08:26-05:00",
+      "date": "2010-03-28T21:08:26Z",
       "subject": "[R-gui] ghelp() and ghelpbrowser() under R 2.10.1",
       "subject_clean": "[R-gui] ghelp() and ghelpbrowser() under R 2.10.1",
       "in_reply_to": null,
@@ -146,8 +146,8 @@
       "participants": [
         "sue at xlsolutions-corp.com"
       ],
-      "started": "2010-03-02T18:42:28-07:00",
-      "last_reply": "2010-03-02T18:42:28-07:00",
+      "started": "2010-03-03T01:42:28Z",
+      "last_reply": "2010-03-03T01:42:28Z",
       "root_message_id": "msg-9fc556205aad"
     },
     {
@@ -157,8 +157,8 @@
       "participants": [
         "ian fellows"
       ],
-      "started": "2010-03-14T23:55:20-07:00",
-      "last_reply": "2010-03-14T23:55:20-07:00",
+      "started": "2010-03-15T06:55:20Z",
+      "last_reply": "2010-03-15T06:55:20Z",
       "root_message_id": "msg-9aeceed1326d"
     },
     {
@@ -168,8 +168,8 @@
       "participants": [
         "Mark D. Habana"
       ],
-      "started": "2010-03-17T11:51:37-06:00",
-      "last_reply": "2010-03-17T11:56:03-06:00",
+      "started": "2010-03-17T17:51:37Z",
+      "last_reply": "2010-03-17T17:56:03Z",
       "root_message_id": "msg-35c0832f3164"
     },
     {
@@ -180,8 +180,8 @@
         "Yihui Xie",
         "j verzani"
       ],
-      "started": "2010-03-20T23:32:17-05:00",
-      "last_reply": "2010-03-22T03:01:49+00:00",
+      "started": "2010-03-21T04:32:17Z",
+      "last_reply": "2010-03-22T03:01:49Z",
       "root_message_id": "msg-366705a1d749"
     },
     {
@@ -192,8 +192,8 @@
         "Yihui Xie",
         "j verzani"
       ],
-      "started": "2010-03-28T16:08:26-05:00",
-      "last_reply": "2010-03-29T00:28:50+00:00",
+      "started": "2010-03-28T21:08:26Z",
+      "last_reply": "2010-03-29T00:28:50Z",
       "root_message_id": "msg-3cf13d2a6bed"
     }
   ]

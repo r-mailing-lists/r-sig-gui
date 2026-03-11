@@ -8,7 +8,7 @@
       "message_id": "<45547F7D.3030400@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-11-10T10:32:45-03:00",
+      "date": "2006-11-10T13:32:45Z",
       "subject": "[R-gui] Tinn-R 1.19.0.2 released",
       "subject_clean": "[R-gui] Tinn-R 1.19.0.2 released",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<A6C04FE4-69DB-4DBC-A078-AA19C733C3C8@eva.mpg.de>",
       "from_name": "Mehmet Somel",
       "from_email_hash": "22ecd37dcf1d5eb6ab117ffb6f1566b492b99cab87b77814b0984c949421535e",
-      "date": "2006-11-15T00:13:30+08:00",
+      "date": "2006-11-14T16:13:30Z",
       "subject": "[R-gui] replace all",
       "subject_clean": "[R-gui] replace all",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<4559FD8E.6000203@stats.uwo.ca>",
       "from_name": "Duncan Murdoch",
       "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
-      "date": "2006-11-14T12:31:58-05:00",
+      "date": "2006-11-14T17:31:58Z",
       "subject": "[R-gui] replace all",
       "subject_clean": "[R-gui] replace all",
       "in_reply_to": "<A6C04FE4-69DB-4DBC-A078-AA19C733C3C8@eva.mpg.de>",
@@ -78,8 +78,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-11-10T10:32:45-03:00",
-      "last_reply": "2006-11-10T10:32:45-03:00",
+      "started": "2006-11-10T13:32:45Z",
+      "last_reply": "2006-11-10T13:32:45Z",
       "root_message_id": "msg-59d5b81ad63e"
     },
     {
@@ -89,8 +89,8 @@
       "participants": [
         "Darius Harris"
       ],
-      "started": "2006-11-12T15:15:31+00:00",
-      "last_reply": "2006-11-12T15:15:31+00:00",
+      "started": "2006-11-12T15:15:31Z",
+      "last_reply": "2006-11-12T15:15:31Z",
       "root_message_id": "msg-78e9a601a456"
     },
     {
@@ -101,8 +101,8 @@
         "Duncan Murdoch",
         "Mehmet Somel"
       ],
-      "started": "2006-11-15T00:13:30+08:00",
-      "last_reply": "2006-11-14T12:31:58-05:00",
+      "started": "2006-11-14T16:13:30Z",
+      "last_reply": "2006-11-14T17:31:58Z",
       "root_message_id": "msg-517ffa7fb287"
     }
   ]

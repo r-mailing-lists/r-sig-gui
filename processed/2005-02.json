@@ -195,8 +195,8 @@
       "participants": [
         "Corinna"
       ],
-      "started": "2005-02-03T17:51:48+00:00",
-      "last_reply": "2005-02-03T17:51:48+00:00",
+      "started": "2005-02-03T17:51:48Z",
+      "last_reply": "2005-02-03T17:51:48Z",
       "root_message_id": "msg-8c3520664491"
     },
     {
@@ -211,8 +211,8 @@
         "Peter Dalgaard",
         "Philippe Grosjean"
       ],
-      "started": "2005-02-24T09:33:29+00:00",
-      "last_reply": "2005-02-24T16:33:53+00:00",
+      "started": "2005-02-24T09:33:29Z",
+      "last_reply": "2005-02-24T16:33:53Z",
       "root_message_id": "msg-f7a6ea27a2a6"
     },
     {
@@ -222,8 +222,8 @@
       "participants": [
         "Short, Tom"
       ],
-      "started": "2005-02-24T15:39:52+00:00",
-      "last_reply": "2005-02-24T15:39:52+00:00",
+      "started": "2005-02-24T15:39:52Z",
+      "last_reply": "2005-02-24T15:39:52Z",
       "root_message_id": "msg-61b1dc8d7fc4"
     }
   ]

@@ -8,7 +8,7 @@
       "message_id": "<45040510.6070803@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-09-10T09:29:04-03:00",
+      "date": "2006-09-10T12:29:04Z",
       "subject": "[R-gui] Tinn-R 1.18.5.9 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.9 released",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<00016730709870.1AFD1E7116@LGU8F9>",
       "from_name": "continent",
       "from_email_hash": "e38ab02fe3807e85547e4246b24e1c5da8325e801500c171b426d6d15c06cbca",
-      "date": "2006-09-11T15:20:47+08:00",
+      "date": "2006-09-11T07:20:47Z",
       "subject": "[R-gui] bantam",
       "subject_clean": "[R-gui] bantam",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<45054734.5020200@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-09-11T08:23:32-03:00",
+      "date": "2006-09-11T11:23:32Z",
       "subject": "[R-gui] Tinn-R 1.18.5.10 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.10 released",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<45080159.5070606@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-09-13T10:02:17-03:00",
+      "date": "2006-09-13T13:02:17Z",
       "subject": "[R-gui] Tinn-R 1.18.5.12 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.12 released",
       "in_reply_to": null,
@@ -88,7 +88,7 @@
       "message_id": "<576452c40609181417x26c0067bi2d4378e6c616bf38@mail.gmail.com>",
       "from_name": "j verzani",
       "from_email_hash": "a029675bf9462719f336b4ef9bb1441ceba180f1ffd7e0365f6802832a6ad84e",
-      "date": "2006-09-18T17:17:34-04:00",
+      "date": "2006-09-18T21:17:34Z",
       "subject": "[R-gui] New version of pmg, introducing gWidgets and gWidgetsRGtk2",
       "subject_clean": "[R-gui] New version of pmg, introducing gWidgets and gWidgetsRGtk2",
       "in_reply_to": null,
@@ -104,7 +104,7 @@
       "message_id": "<450F1001.8060900@iastate.edu>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2006-09-18T16:30:41-05:00",
+      "date": "2006-09-18T21:30:41Z",
       "subject": "[R-gui] Information about wxPython",
       "subject_clean": "[R-gui] Information about wxPython",
       "in_reply_to": "<a55593730609181346w518e208bu6b8a3ebf773f3160@mail.gmail.com>",
@@ -122,7 +122,7 @@
       "message_id": "<20060918214917.GB27484@wald.ucdavis.edu>",
       "from_name": "Duncan Temple Lang",
       "from_email_hash": "9d03780d47037d8f601edb4b35f661951beebebd29d56c8466e2d23fd126f621",
-      "date": "2006-09-18T14:49:17-07:00",
+      "date": "2006-09-18T21:49:17Z",
       "subject": "[R-gui] Information about wxPython",
       "subject_clean": "[R-gui] Information about wxPython",
       "in_reply_to": "<a55593730609181346w518e208bu6b8a3ebf773f3160@mail.gmail.com>",
@@ -140,7 +140,7 @@
       "message_id": "<45128922.9010801@iastate.edu>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2006-09-21T07:44:18-05:00",
+      "date": "2006-09-21T12:44:18Z",
       "subject": "[R-gui] cairoDevice 1.2 released",
       "subject_clean": "[R-gui] cairoDevice 1.2 released",
       "in_reply_to": null,
@@ -156,7 +156,7 @@
       "message_id": "<a695148b0609251417g42e50439t1c41dbab5f382b65@mail.gmail.com>",
       "from_name": "G. Jay Kerns",
       "from_email_hash": "50e93b09ae5eba7f3237d0e4291e3a6b8825a6fb21853bb3678551306330b319",
-      "date": "2006-09-25T17:17:13-04:00",
+      "date": "2006-09-25T21:17:13Z",
       "subject": "[R-gui] the IPSUR package",
       "subject_clean": "[R-gui] the IPSUR package",
       "in_reply_to": null,
@@ -172,7 +172,7 @@
       "message_id": "<a695148b0609251528g36b60911g670bda67cdf6197b@mail.gmail.com>",
       "from_name": "G. Jay Kerns",
       "from_email_hash": "50e93b09ae5eba7f3237d0e4291e3a6b8825a6fb21853bb3678551306330b319",
-      "date": "2006-09-25T18:28:58-04:00",
+      "date": "2006-09-25T22:28:58Z",
       "subject": "[R-gui] the IPSUR package (ii)",
       "subject_clean": "[R-gui] the IPSUR package (ii)",
       "in_reply_to": null,
@@ -188,7 +188,7 @@
       "message_id": "<451B4F27.9040101@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-09-28T01:27:19-03:00",
+      "date": "2006-09-28T04:27:19Z",
       "subject": "[R-gui] Tinn-R 1.18.6.0 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.6.0 released",
       "in_reply_to": null,
@@ -204,7 +204,7 @@
       "message_id": "<451BDA6C.8080300@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-09-28T11:21:32-03:00",
+      "date": "2006-09-28T14:21:32Z",
       "subject": "[R-gui] Tinn-R 1.18.6.1 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.6.1 released",
       "in_reply_to": null,
@@ -220,7 +220,7 @@
       "message_id": "<451DB475.1080004@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-09-29T21:04:05-03:00",
+      "date": "2006-09-30T00:04:05Z",
       "subject": "[R-gui] Tinn-R 1.18.6.3 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.6.3 released",
       "in_reply_to": null,
@@ -240,20 +240,9 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-09-10T09:29:04-03:00",
-      "last_reply": "2006-09-10T09:29:04-03:00",
+      "started": "2006-09-10T12:29:04Z",
+      "last_reply": "2006-09-10T12:29:04Z",
       "root_message_id": "msg-0bbad95b7519"
-    },
-    {
-      "id": "thread-73bdeb6e1505",
-      "subject": "[R-gui] Tinn-R 1.18.5.10 released",
-      "message_count": 1,
-      "participants": [
-        "Jose Claudio Faria"
-      ],
-      "started": "2006-09-11T08:23:32-03:00",
-      "last_reply": "2006-09-11T08:23:32-03:00",
-      "root_message_id": "msg-73bdeb6e1505"
     },
     {
       "id": "thread-65b86c55dee4",
@@ -262,9 +251,20 @@
       "participants": [
         "continent"
       ],
-      "started": "2006-09-11T15:20:47+08:00",
-      "last_reply": "2006-09-11T15:20:47+08:00",
+      "started": "2006-09-11T07:20:47Z",
+      "last_reply": "2006-09-11T07:20:47Z",
       "root_message_id": "msg-65b86c55dee4"
+    },
+    {
+      "id": "thread-73bdeb6e1505",
+      "subject": "[R-gui] Tinn-R 1.18.5.10 released",
+      "message_count": 1,
+      "participants": [
+        "Jose Claudio Faria"
+      ],
+      "started": "2006-09-11T11:23:32Z",
+      "last_reply": "2006-09-11T11:23:32Z",
+      "root_message_id": "msg-73bdeb6e1505"
     },
     {
       "id": "thread-eb526c9e2471",
@@ -273,20 +273,9 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-09-13T10:02:17-03:00",
-      "last_reply": "2006-09-13T10:02:17-03:00",
+      "started": "2006-09-13T13:02:17Z",
+      "last_reply": "2006-09-13T13:02:17Z",
       "root_message_id": "msg-eb526c9e2471"
-    },
-    {
-      "id": "thread-bdb056d23cfe",
-      "subject": "[R-gui] New version of pmg, introducing gWidgets and gWidgetsRGtk2",
-      "message_count": 1,
-      "participants": [
-        "j verzani"
-      ],
-      "started": "2006-09-18T17:17:34-04:00",
-      "last_reply": "2006-09-18T17:17:34-04:00",
-      "root_message_id": "msg-bdb056d23cfe"
     },
     {
       "id": "thread-c037f8749466",
@@ -297,9 +286,20 @@
         "Marcelo Damasceno",
         "Michael Lawrence"
       ],
-      "started": "2006-09-18T20:46:23+00:00",
-      "last_reply": "2006-09-18T14:49:17-07:00",
+      "started": "2006-09-18T20:46:23Z",
+      "last_reply": "2006-09-18T21:49:17Z",
       "root_message_id": "msg-c037f8749466"
+    },
+    {
+      "id": "thread-bdb056d23cfe",
+      "subject": "[R-gui] New version of pmg, introducing gWidgets and gWidgetsRGtk2",
+      "message_count": 1,
+      "participants": [
+        "j verzani"
+      ],
+      "started": "2006-09-18T21:17:34Z",
+      "last_reply": "2006-09-18T21:17:34Z",
+      "root_message_id": "msg-bdb056d23cfe"
     },
     {
       "id": "thread-ae9d65c99cd3",
@@ -308,8 +308,8 @@
       "participants": [
         "Michael Lawrence"
       ],
-      "started": "2006-09-21T07:44:18-05:00",
-      "last_reply": "2006-09-21T07:44:18-05:00",
+      "started": "2006-09-21T12:44:18Z",
+      "last_reply": "2006-09-21T12:44:18Z",
       "root_message_id": "msg-ae9d65c99cd3"
     },
     {
@@ -319,8 +319,8 @@
       "participants": [
         "G. Jay Kerns"
       ],
-      "started": "2006-09-25T17:17:13-04:00",
-      "last_reply": "2006-09-25T17:17:13-04:00",
+      "started": "2006-09-25T21:17:13Z",
+      "last_reply": "2006-09-25T21:17:13Z",
       "root_message_id": "msg-9c0b5fb3f854"
     },
     {
@@ -330,8 +330,8 @@
       "participants": [
         "G. Jay Kerns"
       ],
-      "started": "2006-09-25T18:28:58-04:00",
-      "last_reply": "2006-09-25T18:28:58-04:00",
+      "started": "2006-09-25T22:28:58Z",
+      "last_reply": "2006-09-25T22:28:58Z",
       "root_message_id": "msg-62ff0dce629d"
     },
     {
@@ -341,8 +341,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-09-28T01:27:19-03:00",
-      "last_reply": "2006-09-28T01:27:19-03:00",
+      "started": "2006-09-28T04:27:19Z",
+      "last_reply": "2006-09-28T04:27:19Z",
       "root_message_id": "msg-2390f8480829"
     },
     {
@@ -352,8 +352,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-09-28T11:21:32-03:00",
-      "last_reply": "2006-09-28T11:21:32-03:00",
+      "started": "2006-09-28T14:21:32Z",
+      "last_reply": "2006-09-28T14:21:32Z",
       "root_message_id": "msg-f6e904a62d94"
     },
     {
@@ -363,8 +363,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-09-29T21:04:05-03:00",
-      "last_reply": "2006-09-29T21:04:05-03:00",
+      "started": "2006-09-30T00:04:05Z",
+      "last_reply": "2006-09-30T00:04:05Z",
       "root_message_id": "msg-07e8072e2dda"
     }
   ]

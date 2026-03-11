@@ -8,7 +8,7 @@
       "message_id": "<29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>",
       "from_name": "Bhavana Belsare",
       "from_email_hash": "1b27fdb647ec4aba2bed30e0846956a35030b5d5d0acdbcb14f55e3d6c2873d1",
-      "date": "2007-05-01T18:42:49+05:30",
+      "date": "2007-05-01T13:12:49Z",
       "subject": "[R-gui] query regarding jri",
       "subject_clean": "[R-gui] query regarding jri",
       "in_reply_to": "<29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>",
@@ -26,7 +26,7 @@
       "message_id": "<509e0620705020335n667586f1qeefbd3a7923d727a@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2007-05-02T05:35:43-05:00",
+      "date": "2007-05-02T10:35:43Z",
       "subject": "[R-gui] query regarding jri",
       "subject_clean": "[R-gui] query regarding jri",
       "in_reply_to": "<29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>",
@@ -45,7 +45,7 @@
       "message_id": "<464B1FBB.8000206@stats.uwo.ca>",
       "from_name": "Duncan Murdoch",
       "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
-      "date": "2007-05-16T11:14:03-04:00",
+      "date": "2007-05-16T15:14:03Z",
       "subject": "[R-gui] Configuring tools in Tinn-R",
       "subject_clean": "[R-gui] Configuring tools in Tinn-R",
       "in_reply_to": null,
@@ -61,7 +61,7 @@
       "message_id": "<464DD4CD.8090709@terra.com.br>",
       "from_name": "terra",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2007-05-18T13:31:09-03:00",
+      "date": "2007-05-18T16:31:09Z",
       "subject": "[R-gui] Configuring tools in Tinn-R",
       "subject_clean": "[R-gui] Configuring tools in Tinn-R",
       "in_reply_to": null,
@@ -77,7 +77,7 @@
       "message_id": "<jio353hjpb87ehnnku3nlo012b74oqpb70@4ax.com>",
       "from_name": "Mike Prager",
       "from_email_hash": "7617f62e932d92ae8fb18467cd95630ee1a910d05df9ff7b5c7a508078124e40",
-      "date": "2007-05-21T14:21:50-04:00",
+      "date": "2007-05-21T18:21:50Z",
       "subject": "[R-gui] Configuring tools in Tinn-R",
       "subject_clean": "[R-gui] Configuring tools in Tinn-R",
       "in_reply_to": null,
@@ -95,7 +95,7 @@
       "message_id": "<29cba4c60705301051o18838398j3d4306f9e078b871@mail.gmail.com>",
       "from_name": "Bhavana Belsare",
       "from_email_hash": "1b27fdb647ec4aba2bed30e0846956a35030b5d5d0acdbcb14f55e3d6c2873d1",
-      "date": "2007-05-30T23:21:49+05:30",
+      "date": "2007-05-30T17:51:49Z",
       "subject": "[R-gui] regarding graph plots..",
       "subject_clean": "[R-gui] regarding graph plots..",
       "in_reply_to": null,
@@ -116,8 +116,8 @@
         "Bhavana Belsare",
         "Michael Lawrence"
       ],
-      "started": "2007-05-01T18:42:49+05:30",
-      "last_reply": "2007-05-02T05:35:43-05:00",
+      "started": "2007-05-01T13:12:49Z",
+      "last_reply": "2007-05-02T10:35:43Z",
       "root_message_id": "msg-0d9f26c75e9d"
     },
     {
@@ -127,8 +127,8 @@
       "participants": [
         "Duncan Murdoch"
       ],
-      "started": "2007-05-16T11:14:03-04:00",
-      "last_reply": "2007-05-16T11:14:03-04:00",
+      "started": "2007-05-16T15:14:03Z",
+      "last_reply": "2007-05-16T15:14:03Z",
       "root_message_id": "msg-529978159453"
     },
     {
@@ -139,8 +139,8 @@
         "Mike Prager",
         "terra"
       ],
-      "started": "2007-05-18T13:31:09-03:00",
-      "last_reply": "2007-05-21T14:21:50-04:00",
+      "started": "2007-05-18T16:31:09Z",
+      "last_reply": "2007-05-21T18:21:50Z",
       "root_message_id": "msg-0972e2b0f7ac"
     },
     {
@@ -150,8 +150,8 @@
       "participants": [
         "Bhavana Belsare"
       ],
-      "started": "2007-05-30T23:21:49+05:30",
-      "last_reply": "2007-05-30T23:21:49+05:30",
+      "started": "2007-05-30T17:51:49Z",
+      "last_reply": "2007-05-30T17:51:49Z",
       "root_message_id": "msg-dd5d8072529c"
     }
   ]

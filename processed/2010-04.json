@@ -8,7 +8,7 @@
       "message_id": "<4BC6BF7B.9010708@exposurescience.org>",
       "from_name": "N K",
       "from_email_hash": "9f6efdd5109795fc7940cbfc7609b7f1a8f500f02fb650456edfca951d1570f7",
-      "date": "2010-04-15T00:25:47-07:00",
+      "date": "2010-04-15T07:25:47Z",
       "subject": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
       "subject_clean": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
       "in_reply_to": "<loom.20100329T022447-843@post.gmane.org>",
@@ -27,7 +27,7 @@
       "message_id": "<m2zacbd1aed1004150458ube850ab7m16ff74f3406b91cf@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
-      "date": "2010-04-15T04:58:41-07:00",
+      "date": "2010-04-15T11:58:41Z",
       "subject": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
       "subject_clean": "[R-gui] Drawing on embedded RGtk2 plotting area with Cairo",
       "in_reply_to": "<4BC6BF7B.9010708@exposurescience.org>",
@@ -47,7 +47,7 @@
       "message_id": "<4BC82248.3050600@netzkonstrukte.de>",
       "from_name": "Christian Gadder",
       "from_email_hash": "9784de072b6ee3d59b5f79733f763e412e4ec204712dbfe7df0fa9ddf53d918d",
-      "date": "2010-04-16T10:39:36+02:00",
+      "date": "2010-04-16T08:39:36Z",
       "subject": "[R-gui] start rgtk2 script",
       "subject_clean": "[R-gui] start rgtk2 script",
       "in_reply_to": null,
@@ -63,7 +63,7 @@
       "message_id": "<4BCB1F00.7000407@hotmail.com>",
       "from_name": "chris",
       "from_email_hash": "838d93d278e2a8992c6739c401fd573f8e1597fee289f85b548b5d79a47378a2",
-      "date": "2010-04-18T17:02:24+02:00",
+      "date": "2010-04-18T15:02:24Z",
       "subject": "[R-gui] Rgtk2 and rgui.exe",
       "subject_clean": "[R-gui] Rgtk2 and rgui.exe",
       "in_reply_to": null,
@@ -79,7 +79,7 @@
       "message_id": "<o2yacbd1aed1004180831qbb1d67c3y6af2e6023aec7b77@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
-      "date": "2010-04-18T08:31:41-07:00",
+      "date": "2010-04-18T15:31:41Z",
       "subject": "[R-gui] Rgtk2 and rgui.exe",
       "subject_clean": "[R-gui] Rgtk2 and rgui.exe",
       "in_reply_to": "<4BCB1F00.7000407@hotmail.com>",
@@ -97,7 +97,7 @@
       "message_id": "<u2z89b6b8c91004181242r777f2f2eo804f5c2ee03d8c84@mail.gmail.com>",
       "from_name": "Yihui Xie",
       "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
-      "date": "2010-04-18T14:42:32-05:00",
+      "date": "2010-04-18T19:42:32Z",
       "subject": "[R-gui] start rgtk2 script",
       "subject_clean": "[R-gui] start rgtk2 script",
       "in_reply_to": "<4BC82248.3050600@netzkonstrukte.de>",
@@ -115,7 +115,7 @@
       "message_id": "<i2k89b6b8c91004181245me19e19a7u4a61a32bc471dba5@mail.gmail.com>",
       "from_name": "Yihui Xie",
       "from_email_hash": "233321ed9815f7d81a1c5f64502dfaacb2b6f3570ae39ee0e7d761f5b987e884",
-      "date": "2010-04-18T14:45:12-05:00",
+      "date": "2010-04-18T19:45:12Z",
       "subject": "[R-gui] Rgtk2 and rgui.exe",
       "subject_clean": "[R-gui] Rgtk2 and rgui.exe",
       "in_reply_to": "<o2yacbd1aed1004180831qbb1d67c3y6af2e6023aec7b77@mail.gmail.com>",
@@ -139,8 +139,8 @@
         "Michael Lawrence",
         "N K"
       ],
-      "started": "2010-04-15T00:25:47-07:00",
-      "last_reply": "2010-04-15T04:58:41-07:00",
+      "started": "2010-04-15T07:25:47Z",
+      "last_reply": "2010-04-15T11:58:41Z",
       "root_message_id": "msg-9d98b274e536"
     },
     {
@@ -151,8 +151,8 @@
         "Christian Gadder",
         "Yihui Xie"
       ],
-      "started": "2010-04-16T10:39:36+02:00",
-      "last_reply": "2010-04-18T14:42:32-05:00",
+      "started": "2010-04-16T08:39:36Z",
+      "last_reply": "2010-04-18T19:42:32Z",
       "root_message_id": "msg-ee9f193e5be5"
     },
     {
@@ -164,8 +164,8 @@
         "Yihui Xie",
         "chris"
       ],
-      "started": "2010-04-18T17:02:24+02:00",
-      "last_reply": "2010-04-18T14:45:12-05:00",
+      "started": "2010-04-18T15:02:24Z",
+      "last_reply": "2010-04-18T19:45:12Z",
       "root_message_id": "msg-3f4fb6dc2feb"
     }
   ]

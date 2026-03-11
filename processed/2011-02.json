@@ -8,7 +8,7 @@
       "message_id": "<C98ABA8D.14DEF%proebuck@mdanderson.org>",
       "from_name": "Roebuck,Paul L",
       "from_email_hash": "ef0e57f0bb056c7f3f42f0e63a2d5a56aad5435f894d1b6af3943f2a4f40021d",
-      "date": "2011-02-23T13:22:21-06:00",
+      "date": "2011-02-23T19:22:21Z",
       "subject": "[R-gui] Good Tcl/Tk widget reference?",
       "subject_clean": "[R-gui] Good Tcl/Tk widget reference?",
       "in_reply_to": "<586A4828D7AAA04CA9B258C50A28DA20016C71D3@BALI.uhd.campus>",
@@ -24,7 +24,7 @@
       "message_id": "<C98AC0FB.14DF4%proebuck@mdanderson.org>",
       "from_name": "Roebuck,Paul L",
       "from_email_hash": "ef0e57f0bb056c7f3f42f0e63a2d5a56aad5435f894d1b6af3943f2a4f40021d",
-      "date": "2011-02-23T13:49:47-06:00",
+      "date": "2011-02-23T19:49:47Z",
       "subject": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
       "subject_clean": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<4D656775.7020803@waddell.ch>",
       "from_name": "Adrian Waddell",
       "from_email_hash": "afd6ae43637c0691d909168b5aa7407cdbf975683ad29c432cf4cd72092f8fda",
-      "date": "2011-02-23T15:00:53-05:00",
+      "date": "2011-02-23T20:00:53Z",
       "subject": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
       "subject_clean": "[R-gui] Tcl/Tk Binding % Substitutions.for Callbacks",
       "in_reply_to": "<C98AC0FB.14DF4%proebuck@mdanderson.org>",
@@ -62,8 +62,8 @@
       "participants": [
         "Roebuck,Paul L"
       ],
-      "started": "2011-02-23T13:22:21-06:00",
-      "last_reply": "2011-02-23T13:22:21-06:00",
+      "started": "2011-02-23T19:22:21Z",
+      "last_reply": "2011-02-23T19:22:21Z",
       "root_message_id": "msg-e4222995ef07"
     },
     {
@@ -74,8 +74,8 @@
         "Adrian Waddell",
         "Roebuck,Paul L"
       ],
-      "started": "2011-02-23T13:49:47-06:00",
-      "last_reply": "2011-02-23T15:00:53-05:00",
+      "started": "2011-02-23T19:49:47Z",
+      "last_reply": "2011-02-23T20:00:53Z",
       "root_message_id": "msg-90ff1022d11b"
     }
   ]

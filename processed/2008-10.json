@@ -8,7 +8,7 @@
       "message_id": "<Pine.OSF.4.58.0810071646350.107259@wotan.mdacc.tmc.edu>",
       "from_name": "Paul Roebuck",
       "from_email_hash": "1b3e6087e7415e8e462be861f058a65225f65b17e14d7e3ecc0990e56652a06f",
-      "date": "2008-10-07T17:16:47-05:00",
+      "date": "2008-10-07T22:16:47Z",
       "subject": "[R-gui] Need Advice on Tcl/Tk Translation",
       "subject_clean": "[R-gui] Need Advice on Tcl/Tk Translation",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<8E3590214E4380489D2F8BF129B939F30B7B8C@amsdc1-s-03371.europe.shell.com>",
       "from_name": "Wayne.W.Jones at shell.com",
       "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
-      "date": "2008-10-08T08:48:11+02:00",
+      "date": "2008-10-08T06:48:11Z",
       "subject": "[R-gui] Need Advice on Tcl/Tk Translation",
       "subject_clean": "[R-gui] Need Advice on Tcl/Tk Translation",
       "in_reply_to": "<Pine.OSF.4.58.0810071646350.107259@wotan.mdacc.tmc.edu>",
@@ -40,7 +40,7 @@
       "message_id": "<Pine.OSF.4.58.0810101320130.217081@wotan.mdacc.tmc.edu>",
       "from_name": "Paul Roebuck",
       "from_email_hash": "1b3e6087e7415e8e462be861f058a65225f65b17e14d7e3ecc0990e56652a06f",
-      "date": "2008-10-10T13:22:31-05:00",
+      "date": "2008-10-10T18:22:31Z",
       "subject": "[R-gui] Example using 'after'",
       "subject_clean": "[R-gui] Example using 'after'",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<Pine.OSF.4.58.0810101322400.217081@wotan.mdacc.tmc.edu>",
       "from_name": "Paul Roebuck",
       "from_email_hash": "1b3e6087e7415e8e462be861f058a65225f65b17e14d7e3ecc0990e56652a06f",
-      "date": "2008-10-10T13:44:07-05:00",
+      "date": "2008-10-10T18:44:07Z",
       "subject": "[R-gui] Example of validating entry contents",
       "subject_clean": "[R-gui] Example of validating entry contents",
       "in_reply_to": null,
@@ -72,7 +72,7 @@
       "message_id": "<48EFAEDC.9070303@biostat.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
-      "date": "2008-10-10T21:37:00+02:00",
+      "date": "2008-10-10T19:37:00Z",
       "subject": "[R-gui] Example using 'after'",
       "subject_clean": "[R-gui] Example using 'after'",
       "in_reply_to": "<Pine.OSF.4.58.0810101320130.217081@wotan.mdacc.tmc.edu>",
@@ -90,7 +90,7 @@
       "message_id": "<Pine.OSF.4.58.0810121724360.425213@wotan.mdacc.tmc.edu>",
       "from_name": "Paul Roebuck",
       "from_email_hash": "1b3e6087e7415e8e462be861f058a65225f65b17e14d7e3ecc0990e56652a06f",
-      "date": "2008-10-12T18:12:20-05:00",
+      "date": "2008-10-12T23:12:20Z",
       "subject": "[R-gui] Example using 'after'",
       "subject_clean": "[R-gui] Example using 'after'",
       "in_reply_to": "<48EFAEDC.9070303@biostat.ku.dk>",
@@ -109,7 +109,7 @@
       "message_id": "<48F2F90F.1050305@biostat.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
-      "date": "2008-10-13T09:30:23+02:00",
+      "date": "2008-10-13T07:30:23Z",
       "subject": "[R-gui] Example using 'after'",
       "subject_clean": "[R-gui] Example using 'after'",
       "in_reply_to": "<Pine.OSF.4.58.0810121724360.425213@wotan.mdacc.tmc.edu>",
@@ -129,7 +129,7 @@
       "message_id": "<68b1e2610810260618o20c41cbdj4da8cb7a9b620400@mail.gmail.com>",
       "from_name": "Liviu Andronic",
       "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
-      "date": "2008-10-26T14:18:26+01:00",
+      "date": "2008-10-26T13:18:26Z",
       "subject": "[R-gui] alternative to Crystal Ball ?",
       "subject_clean": "[R-gui] alternative to Crystal Ball ?",
       "in_reply_to": null,
@@ -145,7 +145,7 @@
       "message_id": "<68b1e2610810291029m2da096aeo97a19c20d3774402@mail.gmail.com>",
       "from_name": "Liviu Andronic",
       "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
-      "date": "2008-10-29T18:29:16+01:00",
+      "date": "2008-10-29T17:29:16Z",
       "subject": "[R-gui] RExcel and Rcmdr view/edit buttons",
       "subject_clean": "[R-gui] RExcel and Rcmdr view/edit buttons",
       "in_reply_to": null,
@@ -161,7 +161,7 @@
       "message_id": "<49097886.70000@univie.ac.at>",
       "from_name": "Erich Neuwirth",
       "from_email_hash": "178c9665decd09e76ed713e123ba2a6b2ed2ac166995047eb6dc12c5ab93e7ac",
-      "date": "2008-10-30T10:04:06+01:00",
+      "date": "2008-10-30T09:04:06Z",
       "subject": "[R-gui] RExcel and Rcmdr view/edit buttons",
       "subject_clean": "[R-gui] RExcel and Rcmdr view/edit buttons",
       "in_reply_to": null,
@@ -177,7 +177,7 @@
       "message_id": "<Pine.OSF.4.58.0810301426560.93237@wotan.mdacc.tmc.edu>",
       "from_name": "Paul Roebuck",
       "from_email_hash": "1b3e6087e7415e8e462be861f058a65225f65b17e14d7e3ecc0990e56652a06f",
-      "date": "2008-10-30T14:59:17-05:00",
+      "date": "2008-10-30T19:59:17Z",
       "subject": "[R-gui] [Rd] using yscrollcommand in tkcanvas crashes R (PR#13231)",
       "subject_clean": "[R-gui] [Rd] using yscrollcommand in tkcanvas crashes R (PR#13231)",
       "in_reply_to": "<20081030051005.4800E282EFC1@mail.pubhealth.ku.dk>",
@@ -200,8 +200,8 @@
         "Paul Roebuck",
         "Wayne.W.Jones at shell.com"
       ],
-      "started": "2008-10-07T17:16:47-05:00",
-      "last_reply": "2008-10-08T08:48:11+02:00",
+      "started": "2008-10-07T22:16:47Z",
+      "last_reply": "2008-10-08T06:48:11Z",
       "root_message_id": "msg-a1137dd0047e"
     },
     {
@@ -212,8 +212,8 @@
         "Paul Roebuck",
         "Peter Dalgaard"
       ],
-      "started": "2008-10-10T13:22:31-05:00",
-      "last_reply": "2008-10-13T09:30:23+02:00",
+      "started": "2008-10-10T18:22:31Z",
+      "last_reply": "2008-10-13T07:30:23Z",
       "root_message_id": "msg-b32792e33a08"
     },
     {
@@ -223,8 +223,8 @@
       "participants": [
         "Paul Roebuck"
       ],
-      "started": "2008-10-10T13:44:07-05:00",
-      "last_reply": "2008-10-10T13:44:07-05:00",
+      "started": "2008-10-10T18:44:07Z",
+      "last_reply": "2008-10-10T18:44:07Z",
       "root_message_id": "msg-335a79b9596e"
     },
     {
@@ -234,8 +234,8 @@
       "participants": [
         "Liviu Andronic"
       ],
-      "started": "2008-10-26T14:18:26+01:00",
-      "last_reply": "2008-10-26T14:18:26+01:00",
+      "started": "2008-10-26T13:18:26Z",
+      "last_reply": "2008-10-26T13:18:26Z",
       "root_message_id": "msg-5918abc80b96"
     },
     {
@@ -245,8 +245,8 @@
       "participants": [
         "Liviu Andronic"
       ],
-      "started": "2008-10-29T18:29:16+01:00",
-      "last_reply": "2008-10-29T18:29:16+01:00",
+      "started": "2008-10-29T17:29:16Z",
+      "last_reply": "2008-10-29T17:29:16Z",
       "root_message_id": "msg-cc4ce322c192"
     },
     {
@@ -256,8 +256,8 @@
       "participants": [
         "Erich Neuwirth"
       ],
-      "started": "2008-10-30T10:04:06+01:00",
-      "last_reply": "2008-10-30T10:04:06+01:00",
+      "started": "2008-10-30T09:04:06Z",
+      "last_reply": "2008-10-30T09:04:06Z",
       "root_message_id": "msg-81c15b1ba09a"
     },
     {
@@ -267,8 +267,8 @@
       "participants": [
         "Paul Roebuck"
       ],
-      "started": "2008-10-30T14:59:17-05:00",
-      "last_reply": "2008-10-30T14:59:17-05:00",
+      "started": "2008-10-30T19:59:17Z",
+      "last_reply": "2008-10-30T19:59:17Z",
       "root_message_id": "msg-aba0f96a1731"
     }
   ]

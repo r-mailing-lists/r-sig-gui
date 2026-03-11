@@ -8,7 +8,7 @@
       "message_id": "<CALtXcnVZCXvu-QVu9Eh72pvF5PtaZB7RuA98pwYHC91p+vFOJg@mail.gmail.com>",
       "from_name": "Leonid Landsman",
       "from_email_hash": "21ae7f885ebab4a52de89695e503e69fdb9e76a4ce21a1e6417ec4f335a52bd7",
-      "date": "2011-07-18T11:28:32-04:00",
+      "date": "2011-07-18T15:28:32Z",
       "subject": "[R-gui] GUI Builder for R",
       "subject_clean": "[R-gui] GUI Builder for R",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<CAOyiOQGzPQ-hNuseKaDycHzSekK6RAn+Qcy2PWJmosZ6j2GTCg@mail.gmail.com>",
       "from_name": "Sebastian Mellor",
       "from_email_hash": "0b77b72327df036a820c76c75ac727d5f511f7ad66f2aac56d9760974d042867",
-      "date": "2011-07-19T14:20:41+01:00",
+      "date": "2011-07-19T13:20:41Z",
       "subject": "[R-gui] Return value from gWidgets",
       "subject_clean": "[R-gui] Return value from gWidgets",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<CAOyiOQEwy3ge6xbbbapDmO5OXrmQfyKWVAKTBFMze_QTu2Gsog@mail.gmail.com>",
       "from_name": "Sebastian Mellor",
       "from_email_hash": "0b77b72327df036a820c76c75ac727d5f511f7ad66f2aac56d9760974d042867",
-      "date": "2011-07-19T15:28:32+01:00",
+      "date": "2011-07-19T14:28:32Z",
       "subject": "[R-gui] Fwd: Return value from gWidgets",
       "subject_clean": "[R-gui] Fwd: Return value from gWidgets",
       "in_reply_to": "<CADx-4xCUhUQOO+VnwcvZLUM7ymPH2Ub=oR_KJm8RJq7R3eVhLg@mail.gmail.com>",
@@ -59,7 +59,7 @@
       "message_id": "<4E2EE248.4030004@earthlink.net>",
       "from_name": "Jim Burke",
       "from_email_hash": "aedd48a61869f13bd70427910e60451b199d87cc9caf6e33381b742ac5526937",
-      "date": "2011-07-26T10:50:32-05:00",
+      "date": "2011-07-26T15:50:32Z",
       "subject": "[R-gui] R for a historical timeline chart?",
       "subject_clean": "[R-gui] R for a historical timeline chart?",
       "in_reply_to": null,
@@ -75,7 +75,7 @@
       "message_id": "<OFB5BB16F1.C6693979-ON862578D9.0058B915-862578D9.0058FD98@usgs.gov>",
       "from_name": "David L Lorenz",
       "from_email_hash": "a16484f3e79ec693c259d867c374fd5e832a01e253da18a065716c0e7b30ee46",
-      "date": "2011-07-26T11:12:00-05:00",
+      "date": "2011-07-26T16:12:00Z",
       "subject": "[R-gui] R for a historical timeline chart?",
       "subject_clean": "[R-gui] R for a historical timeline chart?",
       "in_reply_to": "<4E2EE248.4030004@earthlink.net>",
@@ -93,7 +93,7 @@
       "message_id": "<8E3590214E4380489D2F8BF129B939F301BC49C0@amsdc1-s-03371.europe.shell.com>",
       "from_name": "Wayne.W.Jones at shell.com",
       "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
-      "date": "2011-07-27T09:17:11+02:00",
+      "date": "2011-07-27T07:17:11Z",
       "subject": "[R-gui] R for a historical timeline chart?",
       "subject_clean": "[R-gui] R for a historical timeline chart?",
       "in_reply_to": "<OFB5BB16F1.C6693979-ON862578D9.0058B915-862578D9.0058FD98@usgs.gov>",
@@ -116,8 +116,8 @@
       "participants": [
         "Leonid Landsman"
       ],
-      "started": "2011-07-18T11:28:32-04:00",
-      "last_reply": "2011-07-18T11:28:32-04:00",
+      "started": "2011-07-18T15:28:32Z",
+      "last_reply": "2011-07-18T15:28:32Z",
       "root_message_id": "msg-9b8f02af4ac3"
     },
     {
@@ -127,8 +127,8 @@
       "participants": [
         "Sebastian Mellor"
       ],
-      "started": "2011-07-19T14:20:41+01:00",
-      "last_reply": "2011-07-19T14:20:41+01:00",
+      "started": "2011-07-19T13:20:41Z",
+      "last_reply": "2011-07-19T13:20:41Z",
       "root_message_id": "msg-8425cac9409a"
     },
     {
@@ -138,8 +138,8 @@
       "participants": [
         "Sebastian Mellor"
       ],
-      "started": "2011-07-19T15:28:32+01:00",
-      "last_reply": "2011-07-19T15:28:32+01:00",
+      "started": "2011-07-19T14:28:32Z",
+      "last_reply": "2011-07-19T14:28:32Z",
       "root_message_id": "msg-9cfcaf40ead4"
     },
     {
@@ -151,8 +151,8 @@
         "Jim Burke",
         "Wayne.W.Jones at shell.com"
       ],
-      "started": "2011-07-26T10:50:32-05:00",
-      "last_reply": "2011-07-27T09:17:11+02:00",
+      "started": "2011-07-26T15:50:32Z",
+      "last_reply": "2011-07-27T07:17:11Z",
       "root_message_id": "msg-c1e4f6fc8e3e"
     }
   ]

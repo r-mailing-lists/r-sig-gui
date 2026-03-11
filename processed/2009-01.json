@@ -8,7 +8,7 @@
       "message_id": "<19811401A1D8174CB3EAD7F6072E9B5001DB2CE3@chsa1025.share.beluni.net>",
       "from_name": "Bengoechea Bartolomé Enrique (SIES 73)",
       "from_email_hash": "867c96515f3a620c9951603a510be56a57f731c55dd06a62929d63c3ceec7a59",
-      "date": "2009-01-15T10:28:45+01:00",
+      "date": "2009-01-15T09:28:45Z",
       "subject": "[R-gui] About biocep",
       "subject_clean": "[R-gui] About biocep",
       "in_reply_to": null,
@@ -42,7 +42,7 @@
       "message_id": "<19811401A1D8174CB3EAD7F6072E9B5001DB2DBA@chsa1025.share.beluni.net>",
       "from_name": "Bengoechea Bartolomé Enrique (SIES 73)",
       "from_email_hash": "867c96515f3a620c9951603a510be56a57f731c55dd06a62929d63c3ceec7a59",
-      "date": "2009-01-15T14:00:05+01:00",
+      "date": "2009-01-15T13:00:05Z",
       "subject": "[R-gui] About biocep",
       "subject_clean": "[R-gui] About biocep",
       "in_reply_to": "<mailman.13.1232017203.4419.r-sig-gui@stat.math.ethz.ch>",
@@ -58,7 +58,7 @@
       "message_id": "<509e0620901150539r1cbcc231y64a397ff6ae410f9@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2009-01-15T05:39:14-08:00",
+      "date": "2009-01-15T13:39:14Z",
       "subject": "[R-gui] About biocep",
       "subject_clean": "[R-gui] About biocep",
       "in_reply_to": "<19811401A1D8174CB3EAD7F6072E9B5001DB2CE3@chsa1025.share.beluni.net>",
@@ -76,7 +76,7 @@
       "message_id": "<8b5938320901191313w59ac91bdja420a828688c2ce0@mail.gmail.com>",
       "from_name": "Volkan Kepoglu",
       "from_email_hash": "dfa28a6ec41c85d7c751e87cc012f817908a1830dfb6d63ccc53fc6b0fdef6c3",
-      "date": "2009-01-19T23:13:33+02:00",
+      "date": "2009-01-19T21:13:33Z",
       "subject": "[R-gui] conversion from tessellation in spatstat package to sp classes ???",
       "subject_clean": "[R-gui] conversion from tessellation in spatstat package to sp classes ???",
       "in_reply_to": null,
@@ -92,7 +92,7 @@
       "message_id": "<6304EFF28480498BB18BD6C0717F32ED@yannis2>",
       "from_name": "Yannis Tzamouranis",
       "from_email_hash": "5072b400ddf3bcdfecf3035575bf5df42de6f878af68604a741ec5e138b2a02f",
-      "date": "2009-01-28T05:49:14-05:00",
+      "date": "2009-01-28T10:49:14Z",
       "subject": "[R-gui] Splitting lines of a csv file without affecting substrings in double quotes",
       "subject_clean": "[R-gui] Splitting lines of a csv file without affecting substrings in double quotes",
       "in_reply_to": null,
@@ -108,7 +108,7 @@
       "message_id": "<971536df0901280314p2a1c1ffdh48d9d5502133279e@mail.gmail.com>",
       "from_name": "Gabor Grothendieck",
       "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
-      "date": "2009-01-28T06:14:24-05:00",
+      "date": "2009-01-28T11:14:24Z",
       "subject": "[R-gui] Splitting lines of a csv file without affecting substrings in double quotes",
       "subject_clean": "[R-gui] Splitting lines of a csv file without affecting substrings in double quotes",
       "in_reply_to": "<6304EFF28480498BB18BD6C0717F32ED@yannis2>",
@@ -126,7 +126,7 @@
       "message_id": "<18619.1233180943@rh5testlx1.rsma.frb.gov>",
       "from_name": "jhallman at frb.gov",
       "from_email_hash": "3c9aa378b99e7dbe3417470446aa9a3ede8124c8afd3617731696c93b4731d5e",
-      "date": "2009-01-28T17:15:43-05:00",
+      "date": "2009-01-28T22:15:43Z",
       "subject": "[R-gui] Font size in gWidgetsRGtk2",
       "subject_clean": "[R-gui] Font size in gWidgetsRGtk2",
       "in_reply_to": null,
@@ -142,7 +142,7 @@
       "message_id": "<80ACC59B3A1541C9B62A80470CE3635B@yannis2>",
       "from_name": "Yannis Tzamouranis",
       "from_email_hash": "5072b400ddf3bcdfecf3035575bf5df42de6f878af68604a741ec5e138b2a02f",
-      "date": "2009-01-28T19:32:12-05:00",
+      "date": "2009-01-29T00:32:12Z",
       "subject": "[R-gui] Splitting lines of a csv file without affecting substrings in double quotes",
       "subject_clean": "[R-gui] Splitting lines of a csv file without affecting substrings in double quotes",
       "in_reply_to": "<971536df0901280314p2a1c1ffdh48d9d5502133279e@mail.gmail.com>",
@@ -179,7 +179,7 @@
       "message_id": "<980670.35289.qm@web90401.mail.mud.yahoo.com>",
       "from_name": "Yannis Tzamouranis",
       "from_email_hash": "5072b400ddf3bcdfecf3035575bf5df42de6f878af68604a741ec5e138b2a02f",
-      "date": "2009-01-30T05:21:01-08:00",
+      "date": "2009-01-30T13:21:01Z",
       "subject": "[R-gui] Lengthening a data frame by repeating it",
       "subject_clean": "[R-gui] Lengthening a data frame by repeating it",
       "in_reply_to": null,
@@ -195,7 +195,7 @@
       "message_id": "<971536df0901300532p45584957rce8ac58d35c371f0@mail.gmail.com>",
       "from_name": "Gabor Grothendieck",
       "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
-      "date": "2009-01-30T08:32:31-05:00",
+      "date": "2009-01-30T13:32:31Z",
       "subject": "[R-gui] Lengthening a data frame by repeating it",
       "subject_clean": "[R-gui] Lengthening a data frame by repeating it",
       "in_reply_to": "<980670.35289.qm@web90401.mail.mud.yahoo.com>",
@@ -213,7 +213,7 @@
       "message_id": "<23394.40848.qm@web90402.mail.mud.yahoo.com>",
       "from_name": "Yannis Tzamouranis",
       "from_email_hash": "5072b400ddf3bcdfecf3035575bf5df42de6f878af68604a741ec5e138b2a02f",
-      "date": "2009-01-30T06:52:00-08:00",
+      "date": "2009-01-30T14:52:00Z",
       "subject": "[R-gui] Lengthening a data frame by repeating it",
       "subject_clean": "[R-gui] Lengthening a data frame by repeating it",
       "in_reply_to": null,
@@ -238,8 +238,8 @@
         "Karim Chine",
         "Michael Lawrence"
       ],
-      "started": "2009-01-15T10:28:45+01:00",
-      "last_reply": "2009-01-15T05:39:14-08:00",
+      "started": "2009-01-15T09:28:45Z",
+      "last_reply": "2009-01-15T13:39:14Z",
       "root_message_id": "msg-43826a1dc75a"
     },
     {
@@ -249,8 +249,8 @@
       "participants": [
         "Bengoechea Bartolomé Enrique (SIES 73)"
       ],
-      "started": "2009-01-15T14:00:05+01:00",
-      "last_reply": "2009-01-15T14:00:05+01:00",
+      "started": "2009-01-15T13:00:05Z",
+      "last_reply": "2009-01-15T13:00:05Z",
       "root_message_id": "msg-9c9533c65d50"
     },
     {
@@ -260,8 +260,8 @@
       "participants": [
         "Volkan Kepoglu"
       ],
-      "started": "2009-01-19T23:13:33+02:00",
-      "last_reply": "2009-01-19T23:13:33+02:00",
+      "started": "2009-01-19T21:13:33Z",
+      "last_reply": "2009-01-19T21:13:33Z",
       "root_message_id": "msg-c06926cc98e7"
     },
     {
@@ -272,8 +272,8 @@
         "Gabor Grothendieck",
         "Yannis Tzamouranis"
       ],
-      "started": "2009-01-28T05:49:14-05:00",
-      "last_reply": "2009-01-28T19:32:12-05:00",
+      "started": "2009-01-28T10:49:14Z",
+      "last_reply": "2009-01-29T00:32:12Z",
       "root_message_id": "msg-ea48ffc99b38"
     },
     {
@@ -284,8 +284,8 @@
         "j verzani",
         "jhallman at frb.gov"
       ],
-      "started": "2009-01-28T17:15:43-05:00",
-      "last_reply": "2009-01-29T00:40:26+00:00",
+      "started": "2009-01-28T22:15:43Z",
+      "last_reply": "2009-01-29T00:40:26Z",
       "root_message_id": "msg-89ca9ec9a4f3"
     },
     {
@@ -296,8 +296,8 @@
         "Gabor Grothendieck",
         "Yannis Tzamouranis"
       ],
-      "started": "2009-01-30T05:21:01-08:00",
-      "last_reply": "2009-01-30T06:52:00-08:00",
+      "started": "2009-01-30T13:21:01Z",
+      "last_reply": "2009-01-30T14:52:00Z",
       "root_message_id": "msg-3629c8f71bb7"
     }
   ]

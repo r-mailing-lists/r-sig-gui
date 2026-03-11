@@ -8,7 +8,7 @@
       "message_id": "<CAGQ++V0QU=jxSRsOfKdRPDoN9_Rz1NqJZX8GBfExcNoXuzmqsA@mail.gmail.com>",
       "from_name": "Jodi Jhouranda Siregar",
       "from_email_hash": "6f2441c73c48e3ffded39f6644e316b491ce0256e0abb80277683c5eb29d8765",
-      "date": "2014-12-20T17:55:37+07:00",
+      "date": "2014-12-20T10:55:37Z",
       "subject": "[R-gui] Embedding r",
       "subject_clean": "[R-gui] Embedding r",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<DE8B90B9-5532-4F0A-94A6-0838966AB8F7@r-project.org>",
       "from_name": "Simon Urbanek",
       "from_email_hash": "4b8015e605c1e8a78e0fc166d7f94d0bc9cab6230366ee1dfdd8a0de17b4b371",
-      "date": "2014-12-21T00:51:47-05:00",
+      "date": "2014-12-21T05:51:47Z",
       "subject": "[R-gui] Embedding r",
       "subject_clean": "[R-gui] Embedding r",
       "in_reply_to": "<CAGQ++V0QU=jxSRsOfKdRPDoN9_Rz1NqJZX8GBfExcNoXuzmqsA@mail.gmail.com>",
@@ -42,7 +42,7 @@
       "message_id": "<CAGQ++V3-91ixA0nduQxe=2Y=pa2kdc4J=T7zAgCOMv4uLdkY-Q@mail.gmail.com>",
       "from_name": "Jodi Jhouranda Siregar",
       "from_email_hash": "6f2441c73c48e3ffded39f6644e316b491ce0256e0abb80277683c5eb29d8765",
-      "date": "2014-12-22T13:06:11+07:00",
+      "date": "2014-12-22T06:06:11Z",
       "subject": "[R-gui] Embedding R",
       "subject_clean": "[R-gui] Embedding R",
       "in_reply_to": null,
@@ -63,8 +63,8 @@
         "Jodi Jhouranda Siregar",
         "Simon Urbanek"
       ],
-      "started": "2014-12-20T17:55:37+07:00",
-      "last_reply": "2014-12-21T00:51:47-05:00",
+      "started": "2014-12-20T10:55:37Z",
+      "last_reply": "2014-12-21T05:51:47Z",
       "root_message_id": "msg-6c19f9f2b41e"
     },
     {
@@ -74,8 +74,8 @@
       "participants": [
         "Jodi Jhouranda Siregar"
       ],
-      "started": "2014-12-22T13:06:11+07:00",
-      "last_reply": "2014-12-22T13:06:11+07:00",
+      "started": "2014-12-22T06:06:11Z",
+      "last_reply": "2014-12-22T06:06:11Z",
       "root_message_id": "msg-ae7f012c6e44"
     }
   ]

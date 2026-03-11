@@ -8,7 +8,7 @@
       "message_id": "<43E118D2.2090807@iastate.edu>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2006-02-01T14:23:46-06:00",
+      "date": "2006-02-01T20:23:46Z",
       "subject": "[R-gui] RGtk2 release details",
       "subject_clean": "[R-gui] RGtk2 release details",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<22723.61.9.148.22.1138884800.squirrel@homebase.wehi.edu.au>",
       "from_name": "James Wettenhall",
       "from_email_hash": "6c9048b7065d6feb8346424527c6f8ea23d265f948d2f9d540f6f233db6b4025",
-      "date": "2006-02-02T23:53:20+11:00",
+      "date": "2006-02-02T12:53:20Z",
       "subject": "[R-gui] Request for users of my R-Tcl/Tk examples, limmaGUI or affylmGUI",
       "subject_clean": "[R-gui] Request for users of my R-Tcl/Tk examples, limmaGUI or affylmGUI",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<200602022202.AA30212368@comb.es>",
       "from_name": "Manel Salamero",
       "from_email_hash": "dbd2b360016cb9ce0f2a0501ec4ac1d7f382af0816b25d341d5db21ba67eafb2",
-      "date": "2006-02-02T22:02:04+01:00",
+      "date": "2006-02-02T21:02:04Z",
       "subject": "[R-gui] tcl/tc examples",
       "subject_clean": "[R-gui] tcl/tc examples",
       "in_reply_to": null,
@@ -109,7 +109,7 @@
       "message_id": "<43EF5912.7050402@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-02-12T12:49:38-03:00",
+      "date": "2006-02-12T15:49:38Z",
       "subject": "[R-gui] Tinn-R 1.18.1.8 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.1.8 released",
       "in_reply_to": null,
@@ -125,7 +125,7 @@
       "message_id": "<17397.56811.596915.685215@paperino.local>",
       "from_name": "Luca Manini",
       "from_email_hash": "0e0ce0d66c8c4e3a3f28be216ffbf9828a5428819897b303f2db07f0c6b9f57b",
-      "date": "2006-02-17T15:30:03+01:00",
+      "date": "2006-02-17T14:30:03Z",
       "subject": "[R-gui] R GUI question from new member",
       "subject_clean": "[R-gui] R GUI question from new member",
       "in_reply_to": null,
@@ -141,7 +141,7 @@
       "message_id": "<1db726800602170652h658f5c11o65c3a4cf6058584b@mail.gmail.com>",
       "from_name": "roger bos",
       "from_email_hash": "0ea9d0b748ae3ca539a95b232b50ab6357806ed2938d51cb132598641fb9b417",
-      "date": "2006-02-17T09:52:28-05:00",
+      "date": "2006-02-17T14:52:28Z",
       "subject": "[R-gui] R GUI question from new member",
       "subject_clean": "[R-gui] R GUI question from new member",
       "in_reply_to": "<17397.56811.596915.685215@paperino.local>",
@@ -159,7 +159,7 @@
       "message_id": "<43F7B277.1090704@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-02-18T20:49:11-03:00",
+      "date": "2006-02-18T23:49:11Z",
       "subject": "[R-gui] Tinn-R 1.18.1.9 was released",
       "subject_clean": "[R-gui] Tinn-R 1.18.1.9 was released",
       "in_reply_to": null,
@@ -175,7 +175,7 @@
       "message_id": "<43F8BEDB.2040908@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2006-02-19T19:54:19+01:00",
+      "date": "2006-02-19T18:54:19Z",
       "subject": "[R-gui] R GUI question from new member",
       "subject_clean": "[R-gui] R GUI question from new member",
       "in_reply_to": "<17397.56811.596915.685215@paperino.local>",
@@ -193,7 +193,7 @@
       "message_id": "<f8e6ff050602191109w4f2d883k9f236a36780a2b14@mail.gmail.com>",
       "from_name": "hadley wickham",
       "from_email_hash": "78ed178a2a834406115d2917490a5d6eb6217493116357bc9bb8ae3e96968152",
-      "date": "2006-02-19T13:09:16-06:00",
+      "date": "2006-02-19T19:09:16Z",
       "subject": "[R-gui] R GUI question from new member",
       "subject_clean": "[R-gui] R GUI question from new member",
       "in_reply_to": "<43F8BEDB.2040908@sciviews.org>",
@@ -212,7 +212,7 @@
       "message_id": "<43F8C6C0.7050300@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2006-02-19T20:28:00+01:00",
+      "date": "2006-02-19T19:28:00Z",
       "subject": "[R-gui] R GUI question from new member",
       "subject_clean": "[R-gui] R GUI question from new member",
       "in_reply_to": "<f8e6ff050602191109w4f2d883k9f236a36780a2b14@mail.gmail.com>",
@@ -232,7 +232,7 @@
       "message_id": "<43F90737.1080608@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-02-19T21:03:03-03:00",
+      "date": "2006-02-20T00:03:03Z",
       "subject": "[R-gui] Tinn-R 1.18.1.10 was released",
       "subject_clean": "[R-gui] Tinn-R 1.18.1.10 was released",
       "in_reply_to": null,
@@ -248,7 +248,7 @@
       "message_id": "<4404518A.6020501@iastate.edu>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2006-02-28T07:35:06-06:00",
+      "date": "2006-02-28T13:35:06Z",
       "subject": "[R-gui] RGtk2 2.8.1 released",
       "subject_clean": "[R-gui] RGtk2 2.8.1 released",
       "in_reply_to": null,
@@ -264,7 +264,7 @@
       "message_id": "<4404574F.7050503@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2006-02-28T14:59:43+01:00",
+      "date": "2006-02-28T13:59:43Z",
       "subject": "[R-gui] RGtk2 2.8.1 released",
       "subject_clean": "[R-gui] RGtk2 2.8.1 released",
       "in_reply_to": "<4404518A.6020501@iastate.edu>",
@@ -286,20 +286,9 @@
       "participants": [
         "Michael Lawrence"
       ],
-      "started": "2006-02-01T14:23:46-06:00",
-      "last_reply": "2006-02-01T14:23:46-06:00",
+      "started": "2006-02-01T20:23:46Z",
+      "last_reply": "2006-02-01T20:23:46Z",
       "root_message_id": "msg-c4cce7d120d5"
-    },
-    {
-      "id": "thread-0a279fcc7388",
-      "subject": "[R-gui] tcl/tc examples",
-      "message_count": 1,
-      "participants": [
-        "Manel Salamero"
-      ],
-      "started": "2006-02-02T22:02:04+01:00",
-      "last_reply": "2006-02-02T22:02:04+01:00",
-      "root_message_id": "msg-0a279fcc7388"
     },
     {
       "id": "thread-6011c5b8c392",
@@ -308,9 +297,20 @@
       "participants": [
         "James Wettenhall"
       ],
-      "started": "2006-02-02T23:53:20+11:00",
-      "last_reply": "2006-02-02T23:53:20+11:00",
+      "started": "2006-02-02T12:53:20Z",
+      "last_reply": "2006-02-02T12:53:20Z",
       "root_message_id": "msg-6011c5b8c392"
+    },
+    {
+      "id": "thread-0a279fcc7388",
+      "subject": "[R-gui] tcl/tc examples",
+      "message_count": 1,
+      "participants": [
+        "Manel Salamero"
+      ],
+      "started": "2006-02-02T21:02:04Z",
+      "last_reply": "2006-02-02T21:02:04Z",
+      "root_message_id": "msg-0a279fcc7388"
     },
     {
       "id": "thread-d7d312b03267",
@@ -320,8 +320,8 @@
         "Prof Brian Ripley",
         "Roger Levy"
       ],
-      "started": "2006-02-07T16:11:03+00:00",
-      "last_reply": "2006-02-07T18:03:43+00:00",
+      "started": "2006-02-07T16:11:03Z",
+      "last_reply": "2006-02-07T18:03:43Z",
       "root_message_id": "msg-d7d312b03267"
     },
     {
@@ -331,8 +331,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-02-12T12:49:38-03:00",
-      "last_reply": "2006-02-12T12:49:38-03:00",
+      "started": "2006-02-12T15:49:38Z",
+      "last_reply": "2006-02-12T15:49:38Z",
       "root_message_id": "msg-dbe54ad229d9"
     },
     {
@@ -345,8 +345,8 @@
         "hadley wickham",
         "roger bos"
       ],
-      "started": "2006-02-17T15:30:03+01:00",
-      "last_reply": "2006-02-19T20:28:00+01:00",
+      "started": "2006-02-17T14:30:03Z",
+      "last_reply": "2006-02-19T19:28:00Z",
       "root_message_id": "msg-334cfba352f9"
     },
     {
@@ -356,8 +356,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-02-18T20:49:11-03:00",
-      "last_reply": "2006-02-18T20:49:11-03:00",
+      "started": "2006-02-18T23:49:11Z",
+      "last_reply": "2006-02-18T23:49:11Z",
       "root_message_id": "msg-3718200d7e79"
     },
     {
@@ -367,8 +367,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-02-19T21:03:03-03:00",
-      "last_reply": "2006-02-19T21:03:03-03:00",
+      "started": "2006-02-20T00:03:03Z",
+      "last_reply": "2006-02-20T00:03:03Z",
       "root_message_id": "msg-5b2c330c0d5a"
     },
     {
@@ -379,8 +379,8 @@
         "Michael Lawrence",
         "Philippe Grosjean"
       ],
-      "started": "2006-02-28T07:35:06-06:00",
-      "last_reply": "2006-02-28T14:59:43+01:00",
+      "started": "2006-02-28T13:35:06Z",
+      "last_reply": "2006-02-28T13:59:43Z",
       "root_message_id": "msg-d0e05bbb14b8"
     }
   ]

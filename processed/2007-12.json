@@ -8,7 +8,7 @@
       "message_id": "<4750F593.4010502@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2007-12-01T06:48:03+01:00",
+      "date": "2007-12-01T05:48:03Z",
       "subject": "[R-gui] Something odd about Windows GUI with the menu command",
       "subject_clean": "[R-gui] Something odd about Windows GUI with the menu command",
       "in_reply_to": "<2264.132.166.74.140.1196429915.squirrel@webmail.lsce.ipsl.fr>",
@@ -26,7 +26,7 @@
       "message_id": "<F2F0B4F4D798D1499DC8D3AFE36E1D4408D22C@mbzajhb02.za.corp.investec.com>",
       "from_name": "Ruvashen Padayachee",
       "from_email_hash": "ded9f0ce8cc819f10f09ddd4c7f721f9be8d5bffd7d6e161ed55ea3dac335b0b",
-      "date": "2007-12-04T16:53:03+02:00",
+      "date": "2007-12-04T14:53:03Z",
       "subject": "[R-gui] tktoplevel issues",
       "subject_clean": "[R-gui] tktoplevel issues",
       "in_reply_to": null,
@@ -42,7 +42,7 @@
       "message_id": "<4755852F.9040505@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2007-12-04T17:49:51+01:00",
+      "date": "2007-12-04T16:49:51Z",
       "subject": "[R-gui] tktoplevel issues",
       "subject_clean": "[R-gui] tktoplevel issues",
       "in_reply_to": "<F2F0B4F4D798D1499DC8D3AFE36E1D4408D22C@mbzajhb02.za.corp.investec.com>",
@@ -60,7 +60,7 @@
       "message_id": "<CA561A6D-D0E4-4D3A-888D-6D40853554D1@gmail.com>",
       "from_name": "Charilaos Skiadas",
       "from_email_hash": "983c2b1003be35a5cf23d12111c3d21cfa275576566eb9cb10c2d0ec255221bf",
-      "date": "2007-12-21T19:38:34-05:00",
+      "date": "2007-12-22T00:38:34Z",
       "subject": "[R-gui] tcltk problem using \"in\"",
       "subject_clean": "[R-gui] tcltk problem using \"in\"",
       "in_reply_to": null,
@@ -76,7 +76,7 @@
       "message_id": "<1AC95160-38CD-4BB5-8EF8-A42E245A6283@gmail.com>",
       "from_name": "Charilaos Skiadas",
       "from_email_hash": "983c2b1003be35a5cf23d12111c3d21cfa275576566eb9cb10c2d0ec255221bf",
-      "date": "2007-12-22T00:27:36-05:00",
+      "date": "2007-12-22T05:27:36Z",
       "subject": "[R-gui] tcltk problem using \"in\"",
       "subject_clean": "[R-gui] tcltk problem using \"in\"",
       "in_reply_to": "<CA561A6D-D0E4-4D3A-888D-6D40853554D1@gmail.com>",
@@ -98,8 +98,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2007-12-01T06:48:03+01:00",
-      "last_reply": "2007-12-01T06:48:03+01:00",
+      "started": "2007-12-01T05:48:03Z",
+      "last_reply": "2007-12-01T05:48:03Z",
       "root_message_id": "msg-c4182ee4fec8"
     },
     {
@@ -110,8 +110,8 @@
         "Philippe Grosjean",
         "Ruvashen Padayachee"
       ],
-      "started": "2007-12-04T16:53:03+02:00",
-      "last_reply": "2007-12-04T17:49:51+01:00",
+      "started": "2007-12-04T14:53:03Z",
+      "last_reply": "2007-12-04T16:49:51Z",
       "root_message_id": "msg-848ab0869d71"
     },
     {
@@ -121,8 +121,8 @@
       "participants": [
         "Charilaos Skiadas"
       ],
-      "started": "2007-12-21T19:38:34-05:00",
-      "last_reply": "2007-12-22T00:27:36-05:00",
+      "started": "2007-12-22T00:38:34Z",
+      "last_reply": "2007-12-22T05:27:36Z",
       "root_message_id": "msg-0650a9d1c7c9"
     }
   ]

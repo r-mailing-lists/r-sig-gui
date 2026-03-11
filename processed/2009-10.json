@@ -8,7 +8,7 @@
       "message_id": "<839dbb3f0910140723t6114bb6biecaaaf76fba2171e@mail.gmail.com>",
       "from_name": "Adrián Catón Oteiza",
       "from_email_hash": "89a66440136c3c9d8a0143cf79ec2ee8be98cc96fd70552c94a5e23da1336190",
-      "date": "2009-10-14T16:23:07+02:00",
+      "date": "2009-10-14T14:23:07Z",
       "subject": "[R-gui] Web based GUI",
       "subject_clean": "[R-gui] Web based GUI",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<94730b8a0910150517s175aaee0ued6ea8a65982d8ea@mail.gmail.com>",
       "from_name": "Felix Andrews",
       "from_email_hash": "ab8be5753adb1cfce5e50bf8235dddc08e38086328727de3f965639ec7b93f1d",
-      "date": "2009-10-15T23:17:17+11:00",
+      "date": "2009-10-15T12:17:17Z",
       "subject": "[R-gui] Web based GUI",
       "subject_clean": "[R-gui] Web based GUI",
       "in_reply_to": "<839dbb3f0910140723t6114bb6biecaaaf76fba2171e@mail.gmail.com>",
@@ -42,7 +42,7 @@
       "message_id": "<8E3590214E4380489D2F8BF129B939F3B53352@amsdc1-s-03371.europe.shell.com>",
       "from_name": "Wayne.W.Jones at shell.com",
       "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
-      "date": "2009-10-15T14:23:33+02:00",
+      "date": "2009-10-15T12:23:33Z",
       "subject": "[R-gui] Web based GUI",
       "subject_clean": "[R-gui] Web based GUI",
       "in_reply_to": "<94730b8a0910150517s175aaee0ued6ea8a65982d8ea@mail.gmail.com>",
@@ -61,7 +61,7 @@
       "message_id": "<A3FB06B4-CA69-4E6E-A1E1-80FEE2AF6861@biomserv.univ-lyon1.fr>",
       "from_name": "Jean Thioulouse",
       "from_email_hash": "a2e55291bd63fe9c6d5100fe97a96b6321b2e575d22dd23bdf7cc71c3f883fba",
-      "date": "2009-10-15T17:03:55+02:00",
+      "date": "2009-10-15T15:03:55Z",
       "subject": "[R-gui] Web based GUI",
       "subject_clean": "[R-gui] Web based GUI",
       "in_reply_to": "<8E3590214E4380489D2F8BF129B939F3B53352@amsdc1-s-03371.europe.shell.com>",
@@ -81,7 +81,7 @@
       "message_id": "<4ADD6ED3.6060009@it.uu.se>",
       "from_name": "Virgil Stokes",
       "from_email_hash": "b6befdd31db58d8ca98bc491c3d0a7c4348d2320d7fa1da14df4802620c8f9f4",
-      "date": "2009-10-20T10:03:31+02:00",
+      "date": "2009-10-20T08:03:31Z",
       "subject": "[R-gui] Workspace files",
       "subject_clean": "[R-gui] Workspace files",
       "in_reply_to": null,
@@ -97,7 +97,7 @@
       "message_id": "<4ADD77A9.8020409@biostat.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "6970d38b63c93ff8b781d9787948d92fe2e7b4240149faca590409068c44b75c",
-      "date": "2009-10-20T10:41:13+02:00",
+      "date": "2009-10-20T08:41:13Z",
       "subject": "[R-gui] Workspace files",
       "subject_clean": "[R-gui] Workspace files",
       "in_reply_to": "<4ADD6ED3.6060009@it.uu.se>",
@@ -115,7 +115,7 @@
       "message_id": "<90306.63377.qm@web95415.mail.in2.yahoo.com>",
       "from_name": "sanket janewoo",
       "from_email_hash": "f3c3062841ea0e9d035be6f256cc2b6225a7400189a89334470be2d548072c55",
-      "date": "2009-10-22T21:08:28+05:30",
+      "date": "2009-10-22T15:38:28Z",
       "subject": "[R-gui] creating package for GUI",
       "subject_clean": "[R-gui] creating package for GUI",
       "in_reply_to": "<mailman.401.1256225544.4166.r-sig-gui@stat.math.ethz.ch>",
@@ -131,7 +131,7 @@
       "message_id": "<4AE4D832.4040401@wehi.edu.au>",
       "from_name": "Keith Satterley",
       "from_email_hash": "76db1ee900961338dabfa6110de856031861d416050f04f1577a77475dee6838",
-      "date": "2009-10-26T09:58:58+11:00",
+      "date": "2009-10-25T22:58:58Z",
       "subject": "[R-gui] creating package for GUI",
       "subject_clean": "[R-gui] creating package for GUI",
       "in_reply_to": "<90306.63377.qm@web95415.mail.in2.yahoo.com>",
@@ -149,7 +149,7 @@
       "message_id": "<4AE4D976.3080703@wehi.edu.au>",
       "from_name": "Keith Satterley",
       "from_email_hash": "76db1ee900961338dabfa6110de856031861d416050f04f1577a77475dee6838",
-      "date": "2009-10-26T10:04:22+11:00",
+      "date": "2009-10-25T23:04:22Z",
       "subject": "[R-gui] creating package for GUI",
       "subject_clean": "[R-gui] creating package for GUI",
       "in_reply_to": "<90306.63377.qm@web95415.mail.in2.yahoo.com>",
@@ -174,8 +174,8 @@
         "Jean Thioulouse",
         "Wayne.W.Jones at shell.com"
       ],
-      "started": "2009-10-14T16:23:07+02:00",
-      "last_reply": "2009-10-15T17:03:55+02:00",
+      "started": "2009-10-14T14:23:07Z",
+      "last_reply": "2009-10-15T15:03:55Z",
       "root_message_id": "msg-3db999e41a9f"
     },
     {
@@ -186,8 +186,8 @@
         "Peter Dalgaard",
         "Virgil Stokes"
       ],
-      "started": "2009-10-20T10:03:31+02:00",
-      "last_reply": "2009-10-20T10:41:13+02:00",
+      "started": "2009-10-20T08:03:31Z",
+      "last_reply": "2009-10-20T08:41:13Z",
       "root_message_id": "msg-9fe379ec49ed"
     },
     {
@@ -198,8 +198,8 @@
         "Keith Satterley",
         "sanket janewoo"
       ],
-      "started": "2009-10-22T21:08:28+05:30",
-      "last_reply": "2009-10-26T10:04:22+11:00",
+      "started": "2009-10-22T15:38:28Z",
+      "last_reply": "2009-10-25T23:04:22Z",
       "root_message_id": "msg-78d9eee26c26"
     }
   ]

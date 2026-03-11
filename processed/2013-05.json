@@ -24,7 +24,7 @@
       "message_id": "<68D81175-6283-4B7A-840A-EF2FD5DF7835@gmail.com>",
       "from_name": "peter dalgaard",
       "from_email_hash": "d2573f0c0a474184a9d96c815fc6bf37ff7c6392082069d810139c562d5a6f71",
-      "date": "2013-05-11T14:36:09+02:00",
+      "date": "2013-05-11T12:36:09Z",
       "subject": "[R-gui] Tktable colours",
       "subject_clean": "[R-gui] Tktable colours",
       "in_reply_to": "<F9C83CCA5A739048B168C5AFDF627A6B2B51791F@cscmlbe4.csc.es>",
@@ -58,7 +58,7 @@
       "message_id": "<CAOQ5Nyc3opo4GGAkWA0c-dUC-POCYHEAh392J2MJtB37aCtAdg@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
-      "date": "2013-05-14T13:28:56-07:00",
+      "date": "2013-05-14T20:28:56Z",
       "subject": "[R-gui] Creating a DataFrame object when you open a file",
       "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
       "in_reply_to": "<8DE1414EF7543642ADDDC14F7BAEB47B0CB534DC@SPMBMR006.frxntnyc.frx2.com>",
@@ -92,7 +92,7 @@
       "message_id": "<CAOQ5NyfBp7pR7tB=3D2VS53fOBM7XDfAd-GVqt1Xre6X0t7B-A@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
-      "date": "2013-05-14T14:21:10-07:00",
+      "date": "2013-05-14T21:21:10Z",
       "subject": "[R-gui] Creating a DataFrame object when you open a file",
       "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
       "in_reply_to": "<8DE1414EF7543642ADDDC14F7BAEB47B0CB53605@SPMBMR006.frxntnyc.frx2.com>",
@@ -131,8 +131,8 @@
         "SALAMERO at clinic.ub.es",
         "peter dalgaard"
       ],
-      "started": "2013-05-08T13:01:11+00:00",
-      "last_reply": "2013-05-11T14:36:09+02:00",
+      "started": "2013-05-08T13:01:11Z",
+      "last_reply": "2013-05-11T12:36:09Z",
       "root_message_id": "msg-b285be088f90"
     },
     {
@@ -143,8 +143,8 @@
         "Michael Lawrence",
         "Thames, Chandra"
       ],
-      "started": "2013-05-14T15:13:59+00:00",
-      "last_reply": "2013-05-14T13:28:56-07:00",
+      "started": "2013-05-14T15:13:59Z",
+      "last_reply": "2013-05-14T20:28:56Z",
       "root_message_id": "msg-ea72e69ff1d0"
     },
     {
@@ -155,8 +155,8 @@
         "Michael Lawrence",
         "Thames, Chandra"
       ],
-      "started": "2013-05-14T21:10:57+00:00",
-      "last_reply": "2013-05-14T14:21:10-07:00",
+      "started": "2013-05-14T21:10:57Z",
+      "last_reply": "2013-05-14T21:21:10Z",
       "root_message_id": "msg-b9be8d81dd9b"
     },
     {
@@ -166,8 +166,8 @@
       "participants": [
         "Thames, Chandra"
       ],
-      "started": "2013-05-14T21:51:39+00:00",
-      "last_reply": "2013-05-14T21:51:39+00:00",
+      "started": "2013-05-14T21:51:39Z",
+      "last_reply": "2013-05-14T21:51:39Z",
       "root_message_id": "msg-75ac5e957f68"
     }
   ]

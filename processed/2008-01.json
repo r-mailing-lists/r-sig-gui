@@ -8,7 +8,7 @@
       "message_id": "<001a01c85c63$29da4ff0$7d8eefd0$@ac.za>",
       "from_name": "La Grange, AM",
       "from_email_hash": "a5fdc870628b4589c10fb21f8cccaf6157dd2cf1f86e42f869061b97898a7282",
-      "date": "2008-01-21T21:23:54+02:00",
+      "date": "2008-01-21T19:23:54Z",
       "subject": "[R-gui] MainFrame widget",
       "subject_clean": "[R-gui] MainFrame widget",
       "in_reply_to": null,
@@ -28,8 +28,8 @@
       "participants": [
         "La Grange, AM"
       ],
-      "started": "2008-01-21T21:23:54+02:00",
-      "last_reply": "2008-01-21T21:23:54+02:00",
+      "started": "2008-01-21T19:23:54Z",
+      "last_reply": "2008-01-21T19:23:54Z",
       "root_message_id": "msg-aa9ae565a28b"
     }
   ]

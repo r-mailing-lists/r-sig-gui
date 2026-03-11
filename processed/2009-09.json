@@ -8,7 +8,7 @@
       "message_id": "<4AA6FCBB.7020502@cs.washington.edu>",
       "from_name": "Hana Sevcikova",
       "from_email_hash": "bb1f67ba3bb063409b69cbc8556f14f42710c1dd58d8d71308075eb6f4e3db89",
-      "date": "2009-09-08T17:54:19-07:00",
+      "date": "2009-09-09T00:54:19Z",
       "subject": "[R-gui] gfilebrowse questions",
       "subject_clean": "[R-gui] gfilebrowse questions",
       "in_reply_to": null,
@@ -42,7 +42,7 @@
       "message_id": "<ce6b4d120909090554k799d2842j379c4a1c1c945acf@mail.gmail.com>",
       "from_name": "Ilhami Visne",
       "from_email_hash": "324021f6667f61f578115d7b9f07a8e22c929fc93ab2e029ea7f69c6dd7f29cf",
-      "date": "2009-09-09T14:54:44+02:00",
+      "date": "2009-09-09T12:54:44Z",
       "subject": "[R-gui] RGG help",
       "subject_clean": "[R-gui] RGG help",
       "in_reply_to": "<4A95300F.DFDF.006E.0@resbank.co.za>",
@@ -60,7 +60,7 @@
       "message_id": "<c0fbb8790909110115w15bfc393m2bf11be0711694ee@mail.gmail.com>",
       "from_name": "MERAL YAY",
       "from_email_hash": "f3ba4590ab7b6703c07c3c4d3bf3d40f48ba59c722324f160a8ad003140d95f3",
-      "date": "2009-09-11T12:45:34+04:30",
+      "date": "2009-09-11T08:15:34Z",
       "subject": "[R-gui] (no subject)",
       "subject_clean": "[R-gui] (no subject)",
       "in_reply_to": null,
@@ -76,7 +76,7 @@
       "message_id": "<c0fbb8790909110118m42d6f4a5uf6624cb95c077702@mail.gmail.com>",
       "from_name": "MERAL YAY",
       "from_email_hash": "f3ba4590ab7b6703c07c3c4d3bf3d40f48ba59c722324f160a8ad003140d95f3",
-      "date": "2009-09-11T12:48:31+04:30",
+      "date": "2009-09-11T08:18:31Z",
       "subject": "[R-gui] header intact",
       "subject_clean": "[R-gui] header intact",
       "in_reply_to": null,
@@ -92,7 +92,7 @@
       "message_id": "<4AAA089F.2030008@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2009-09-11T10:21:51+02:00",
+      "date": "2009-09-11T08:21:51Z",
       "subject": "[R-gui] (no subject)",
       "subject_clean": "[R-gui] (no subject)",
       "in_reply_to": "<c0fbb8790909110115w15bfc393m2bf11be0711694ee@mail.gmail.com>",
@@ -110,7 +110,7 @@
       "message_id": "<5c8bd49c0909250646v471978e4g1fe287f30ff39d1d@mail.gmail.com>",
       "from_name": "Anup Parikh",
       "from_email_hash": "6418cea15d2cbe0a891aec3e3e378a2c9f75d98b44eac119dabc1f13c84c678e",
-      "date": "2009-09-25T08:46:12-05:00",
+      "date": "2009-09-25T13:46:12Z",
       "subject": "[R-gui] Red-R: a visual interface for R",
       "subject_clean": "[R-gui] Red-R: a visual interface for R",
       "in_reply_to": null,
@@ -131,8 +131,8 @@
         "Hana Sevcikova",
         "jverzani"
       ],
-      "started": "2009-09-08T17:54:19-07:00",
-      "last_reply": "2009-09-09T01:50:31+00:00",
+      "started": "2009-09-09T00:54:19Z",
+      "last_reply": "2009-09-09T01:50:31Z",
       "root_message_id": "msg-fa5c03c83edf"
     },
     {
@@ -142,8 +142,8 @@
       "participants": [
         "Ilhami Visne"
       ],
-      "started": "2009-09-09T14:54:44+02:00",
-      "last_reply": "2009-09-09T14:54:44+02:00",
+      "started": "2009-09-09T12:54:44Z",
+      "last_reply": "2009-09-09T12:54:44Z",
       "root_message_id": "msg-47ecbb2595c8"
     },
     {
@@ -154,8 +154,8 @@
         "MERAL YAY",
         "Philippe Grosjean"
       ],
-      "started": "2009-09-11T12:45:34+04:30",
-      "last_reply": "2009-09-11T10:21:51+02:00",
+      "started": "2009-09-11T08:15:34Z",
+      "last_reply": "2009-09-11T08:21:51Z",
       "root_message_id": "msg-9cee7aadf558"
     },
     {
@@ -165,8 +165,8 @@
       "participants": [
         "MERAL YAY"
       ],
-      "started": "2009-09-11T12:48:31+04:30",
-      "last_reply": "2009-09-11T12:48:31+04:30",
+      "started": "2009-09-11T08:18:31Z",
+      "last_reply": "2009-09-11T08:18:31Z",
       "root_message_id": "msg-fd97d157ceae"
     },
     {
@@ -176,8 +176,8 @@
       "participants": [
         "Anup Parikh"
       ],
-      "started": "2009-09-25T08:46:12-05:00",
-      "last_reply": "2009-09-25T08:46:12-05:00",
+      "started": "2009-09-25T13:46:12Z",
+      "last_reply": "2009-09-25T13:46:12Z",
       "root_message_id": "msg-10962bb297b4"
     }
   ]

@@ -219,8 +219,8 @@
       "participants": [
         "James Wettenhall"
       ],
-      "started": "2003-09-01T16:15:09+00:00",
-      "last_reply": "2003-09-01T16:15:09+00:00",
+      "started": "2003-09-01T16:15:09Z",
+      "last_reply": "2003-09-01T16:15:09Z",
       "root_message_id": "msg-9f89ce09efe6"
     },
     {
@@ -230,8 +230,8 @@
       "participants": [
         "Ernesto Jardim"
       ],
-      "started": "2003-09-08T13:58:09+00:00",
-      "last_reply": "2003-09-08T13:58:09+00:00",
+      "started": "2003-09-08T13:58:09Z",
+      "last_reply": "2003-09-08T13:58:09Z",
       "root_message_id": "msg-0aab9c52d06b"
     },
     {
@@ -242,8 +242,8 @@
         "Ernesto Jardim",
         "Mark Myatt"
       ],
-      "started": "2003-09-09T13:13:20+00:00",
-      "last_reply": "2003-09-09T13:49:26+00:00",
+      "started": "2003-09-09T13:13:20Z",
+      "last_reply": "2003-09-09T13:49:26Z",
       "root_message_id": "msg-00b67d822db8"
     },
     {
@@ -254,8 +254,8 @@
         "Carter Cheng",
         "Dirk Eddelbuettel"
       ],
-      "started": "2003-09-10T11:30:55+00:00",
-      "last_reply": "2003-09-10T14:29:22+00:00",
+      "started": "2003-09-10T11:30:55Z",
+      "last_reply": "2003-09-10T14:29:22Z",
       "root_message_id": "msg-44a57f2d4df4"
     },
     {
@@ -265,8 +265,8 @@
       "participants": [
         "Mark Myatt"
       ],
-      "started": "2003-09-11T13:27:38+00:00",
-      "last_reply": "2003-09-11T13:27:38+00:00",
+      "started": "2003-09-11T13:27:38Z",
+      "last_reply": "2003-09-11T13:27:38Z",
       "root_message_id": "msg-204e104eea08"
     },
     {
@@ -279,8 +279,8 @@
         "James Wettenhall",
         "John Fox"
       ],
-      "started": "2003-09-11T17:27:24+00:00",
-      "last_reply": "2003-09-14T07:38:29+00:00",
+      "started": "2003-09-11T17:27:24Z",
+      "last_reply": "2003-09-14T07:38:29Z",
       "root_message_id": "msg-87f96e3d0da9"
     }
   ]

@@ -8,7 +8,7 @@
       "message_id": "<1234448162351-2315072.post@n2.nabble.com>",
       "from_name": "joe85",
       "from_email_hash": "a6b51108c55a6598ef59678e48b4c867b4c8e047e1c8c76c70a5248b6c377c94",
-      "date": "2009-02-12T06:16:02-08:00",
+      "date": "2009-02-12T14:16:02Z",
       "subject": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
       "subject_clean": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<18837.12972.516713.856473@stat.math.ethz.ch>",
       "from_name": "Martin Maechler",
       "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
-      "date": "2009-02-13T09:43:24+01:00",
+      "date": "2009-02-13T08:43:24Z",
       "subject": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
       "subject_clean": "[R-gui] extracting parts of words or extraxting letter to use in ifelse-func.",
       "in_reply_to": "<1234448162351-2315072.post@n2.nabble.com>",
@@ -42,7 +42,7 @@
       "message_id": "<499DBE51.4080409@gmx.de>",
       "from_name": "M. Tempelhagen",
       "from_email_hash": "caa3cd6044da4aa88bf40f4b36c99086d0f8193fdff360e8116789e4795185af",
-      "date": "2009-02-19T21:17:21+01:00",
+      "date": "2009-02-19T20:17:21Z",
       "subject": "[R-gui] tk2mclistbox problem",
       "subject_clean": "[R-gui] tk2mclistbox problem",
       "in_reply_to": null,
@@ -58,7 +58,7 @@
       "message_id": "<499DBF26.5060002@googlemail.com>",
       "from_name": "M. Tempelhagen",
       "from_email_hash": "23a3a04f26db2df476f5ea21946596dc971c544df546918db3c67d631e4f60bd",
-      "date": "2009-02-19T21:20:54+01:00",
+      "date": "2009-02-19T20:20:54Z",
       "subject": "[R-gui] tk2mclistbox problem",
       "subject_clean": "[R-gui] tk2mclistbox problem",
       "in_reply_to": null,
@@ -74,7 +74,7 @@
       "message_id": "<499E642E.8020506@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2009-02-20T09:05:02+01:00",
+      "date": "2009-02-20T08:05:02Z",
       "subject": "[R-gui] tk2mclistbox problem",
       "subject_clean": "[R-gui] tk2mclistbox problem",
       "in_reply_to": "<499DBE51.4080409@gmx.de>",
@@ -92,7 +92,7 @@
       "message_id": "<84DE52FA33C843C58A2183633282B0C9@heinser001>",
       "from_name": "Felix Heinser",
       "from_email_hash": "36e28aa21374caf2d9d73d8a324053df4cbd69c276857b0dfeb2ebdbad253fcd",
-      "date": "2009-02-20T16:35:19+01:00",
+      "date": "2009-02-20T15:35:19Z",
       "subject": "[R-gui] Tinn-R Error message",
       "subject_clean": "[R-gui] Tinn-R Error message",
       "in_reply_to": null,
@@ -108,7 +108,7 @@
       "message_id": "<18850.28714.116952.186460@stat.math.ethz.ch>",
       "from_name": "Martin Maechler",
       "from_email_hash": "c2c86f22f78a4ecfe6d0e6b4e2be505a3f5beb0470ea88c903688ac536018a98",
-      "date": "2009-02-23T10:45:14+01:00",
+      "date": "2009-02-23T09:45:14Z",
       "subject": "[R-gui] Tinn-R Error message",
       "subject_clean": "[R-gui] Tinn-R Error message",
       "in_reply_to": "<84DE52FA33C843C58A2183633282B0C9@heinser001>",
@@ -131,8 +131,8 @@
         "Martin Maechler",
         "joe85"
       ],
-      "started": "2009-02-12T06:16:02-08:00",
-      "last_reply": "2009-02-13T09:43:24+01:00",
+      "started": "2009-02-12T14:16:02Z",
+      "last_reply": "2009-02-13T08:43:24Z",
       "root_message_id": "msg-b7bcef5cd73d"
     },
     {
@@ -143,8 +143,8 @@
         "M. Tempelhagen",
         "Philippe Grosjean"
       ],
-      "started": "2009-02-19T21:17:21+01:00",
-      "last_reply": "2009-02-20T09:05:02+01:00",
+      "started": "2009-02-19T20:17:21Z",
+      "last_reply": "2009-02-20T08:05:02Z",
       "root_message_id": "msg-e277d15eae86"
     },
     {
@@ -154,8 +154,8 @@
       "participants": [
         "M. Tempelhagen"
       ],
-      "started": "2009-02-19T21:20:54+01:00",
-      "last_reply": "2009-02-19T21:20:54+01:00",
+      "started": "2009-02-19T20:20:54Z",
+      "last_reply": "2009-02-19T20:20:54Z",
       "root_message_id": "msg-8031ac1f5c9f"
     },
     {
@@ -166,8 +166,8 @@
         "Felix Heinser",
         "Martin Maechler"
       ],
-      "started": "2009-02-20T16:35:19+01:00",
-      "last_reply": "2009-02-23T10:45:14+01:00",
+      "started": "2009-02-20T15:35:19Z",
+      "last_reply": "2009-02-23T09:45:14Z",
       "root_message_id": "msg-eba7735c1ba4"
     }
   ]

@@ -8,7 +8,7 @@
       "message_id": "<4A76AD6C.4070107@dbmail.com>",
       "from_name": "Romain Francois",
       "from_email_hash": "59e39d3ea92dfd200ae594261b1588764b0f983f395cce1fc006e71efaf2c073",
-      "date": "2009-08-03T11:27:08+02:00",
+      "date": "2009-08-03T09:27:08Z",
       "subject": "[R-gui] R GUI page on R wiki",
       "subject_clean": "[R-gui] R GUI page on R wiki",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<3D68FC5B6BD945DB8A93F70E439A5BC9@gpbdmx>",
       "from_name": "Ian Fellows",
       "from_email_hash": "d12bb521d01a14c5c9364007086c61200d7898178507ef5d276c14223c822c6b",
-      "date": "2009-08-03T10:22:38-07:00",
+      "date": "2009-08-03T17:22:38Z",
       "subject": "[R-gui] Deducer 0.1 Released",
       "subject_clean": "[R-gui] Deducer 0.1 Released",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<554cd6450908060626n6ab5601dg86ca908e5bf0f913@mail.gmail.com>",
       "from_name": "Etienne Laliberté",
       "from_email_hash": "00e279a650bf2cb3cba9358398c4d14a2ff31fa3dafc8b5bb893f9bee376c52c",
-      "date": "2009-08-06T09:26:33-04:00",
+      "date": "2009-08-06T13:26:33Z",
       "subject": "[R-gui] 100% CPU when running (cran2deb) JGR on Debian",
       "subject_clean": "[R-gui] 100% CPU when running (cran2deb) JGR on Debian",
       "in_reply_to": null,
@@ -72,7 +72,7 @@
       "message_id": "<68b1e2610908090236h1a64f5b3w499ccc36d96a79a@mail.gmail.com>",
       "from_name": "Liviu Andronic",
       "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
-      "date": "2009-08-09T12:36:20+03:00",
+      "date": "2009-08-09T09:36:20Z",
       "subject": "[R-gui] Deducer 0.1 Released",
       "subject_clean": "[R-gui] Deducer 0.1 Released",
       "in_reply_to": "<3D68FC5B6BD945DB8A93F70E439A5BC9@gpbdmx>",
@@ -91,7 +91,7 @@
       "message_id": "<8e894a540908091139w5bbef81ai5f00ecf4a4654836@mail.gmail.com>",
       "from_name": "Ian Fellows",
       "from_email_hash": "0329cd2a58ea892522828f533df4a4330de8cc5a920438bfa95c334f191e0d2f",
-      "date": "2009-08-09T11:39:42-07:00",
+      "date": "2009-08-09T18:39:42Z",
       "subject": "[R-gui] Deducer 0.1 Released",
       "subject_clean": "[R-gui] Deducer 0.1 Released",
       "in_reply_to": "<68b1e2610908090236h1a64f5b3w499ccc36d96a79a@mail.gmail.com>",
@@ -110,7 +110,7 @@
       "message_id": "<4A7F47C2.7060209@cs.washington.edu>",
       "from_name": "Hana Sevcikova",
       "from_email_hash": "bb1f67ba3bb063409b69cbc8556f14f42710c1dd58d8d71308075eb6f4e3db89",
-      "date": "2009-08-09T15:03:46-07:00",
+      "date": "2009-08-09T22:03:46Z",
       "subject": "[R-gui] Process control in gWidgets",
       "subject_clean": "[R-gui] Process control in gWidgets",
       "in_reply_to": null,
@@ -144,7 +144,7 @@
       "message_id": "<4A810FCC.8090107@cs.washington.edu>",
       "from_name": "Hana Sevcikova",
       "from_email_hash": "bb1f67ba3bb063409b69cbc8556f14f42710c1dd58d8d71308075eb6f4e3db89",
-      "date": "2009-08-10T23:29:32-07:00",
+      "date": "2009-08-11T06:29:32Z",
       "subject": "[R-gui] Process control in gWidgets",
       "subject_clean": "[R-gui] Process control in gWidgets",
       "in_reply_to": "<loom.20090810T161147-104@post.gmane.org>",
@@ -163,7 +163,7 @@
       "message_id": "<8E3590214E4380489D2F8BF129B939F38B39CB@amsdc1-s-03371.europe.shell.com>",
       "from_name": "Wayne.W.Jones at shell.com",
       "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
-      "date": "2009-08-11T12:02:00+02:00",
+      "date": "2009-08-11T10:02:00Z",
       "subject": "[R-gui] Process control in gWidgets",
       "subject_clean": "[R-gui] Process control in gWidgets",
       "in_reply_to": "<4A810FCC.8090107@cs.washington.edu>",
@@ -179,7 +179,7 @@
       "message_id": "<AC6F23A2BA13C347A59BDCBCFF41E27B5E039E5A44@UFEXCH-MBXCL03.ad.ufl.edu>",
       "from_name": "Myers,David Brent",
       "from_email_hash": "a48bc3d196b6ca6b9f723c86cccf022e19878532c71b2099bc41511c8423ca14",
-      "date": "2009-08-20T17:56:51-04:00",
+      "date": "2009-08-20T21:56:51Z",
       "subject": "[R-gui] Trouble Configuring SciViews and Komodo",
       "subject_clean": "[R-gui] Trouble Configuring SciViews and Komodo",
       "in_reply_to": null,
@@ -195,7 +195,7 @@
       "message_id": "<4A8E5265.1090509@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2009-08-21T09:53:09+02:00",
+      "date": "2009-08-21T07:53:09Z",
       "subject": "[R-gui] Trouble Configuring SciViews and Komodo",
       "subject_clean": "[R-gui] Trouble Configuring SciViews and Komodo",
       "in_reply_to": "<AC6F23A2BA13C347A59BDCBCFF41E27B5E039E5A44@UFEXCH-MBXCL03.ad.ufl.edu>",
@@ -213,7 +213,7 @@
       "message_id": "<4A92C272.DFDF.006E.0@resbank.co.za>",
       "from_name": "Stefan JansevanRensburg",
       "from_email_hash": "7cdc3bafdf7fe7f7c02eb4d7c6b61e1e54ce23396d4743b093c890aa24dbd464",
-      "date": "2009-08-24T16:40:06+02:00",
+      "date": "2009-08-24T14:40:06Z",
       "subject": "[R-gui] gWidgets update certain arguments",
       "subject_clean": "[R-gui] gWidgets update certain arguments",
       "in_reply_to": null,
@@ -247,7 +247,7 @@
       "message_id": "<4A95300F.DFDF.006E.0@resbank.co.za>",
       "from_name": "Stefan JansevanRensburg",
       "from_email_hash": "7cdc3bafdf7fe7f7c02eb4d7c6b61e1e54ce23396d4743b093c890aa24dbd464",
-      "date": "2009-08-26T12:52:12+02:00",
+      "date": "2009-08-26T10:52:12Z",
       "subject": "[R-gui] RGG help",
       "subject_clean": "[R-gui] RGG help",
       "in_reply_to": null,
@@ -261,6 +261,17 @@
   ],
   "threads": [
     {
+      "id": "thread-e5190f492810",
+      "subject": "[R-gui] R GUI page on R wiki",
+      "message_count": 1,
+      "participants": [
+        "Romain Francois"
+      ],
+      "started": "2009-08-03T09:27:08Z",
+      "last_reply": "2009-08-03T09:27:08Z",
+      "root_message_id": "msg-e5190f492810"
+    },
+    {
       "id": "thread-f41e34a04d64",
       "subject": "[R-gui] Deducer 0.1 Released",
       "message_count": 3,
@@ -268,20 +279,9 @@
         "Ian Fellows",
         "Liviu Andronic"
       ],
-      "started": "2009-08-03T10:22:38-07:00",
-      "last_reply": "2009-08-09T11:39:42-07:00",
+      "started": "2009-08-03T17:22:38Z",
+      "last_reply": "2009-08-09T18:39:42Z",
       "root_message_id": "msg-f41e34a04d64"
-    },
-    {
-      "id": "thread-e5190f492810",
-      "subject": "[R-gui] R GUI page on R wiki",
-      "message_count": 1,
-      "participants": [
-        "Romain Francois"
-      ],
-      "started": "2009-08-03T11:27:08+02:00",
-      "last_reply": "2009-08-03T11:27:08+02:00",
-      "root_message_id": "msg-e5190f492810"
     },
     {
       "id": "thread-7be7b02f0946",
@@ -290,8 +290,8 @@
       "participants": [
         "Etienne Laliberté"
       ],
-      "started": "2009-08-06T09:26:33-04:00",
-      "last_reply": "2009-08-06T09:26:33-04:00",
+      "started": "2009-08-06T13:26:33Z",
+      "last_reply": "2009-08-06T13:26:33Z",
       "root_message_id": "msg-7be7b02f0946"
     },
     {
@@ -301,8 +301,8 @@
       "participants": [
         "jverzani"
       ],
-      "started": "2009-08-07T20:29:00+00:00",
-      "last_reply": "2009-08-07T20:29:00+00:00",
+      "started": "2009-08-07T20:29:00Z",
+      "last_reply": "2009-08-07T20:29:00Z",
       "root_message_id": "msg-c6876bab498f"
     },
     {
@@ -314,8 +314,8 @@
         "Wayne.W.Jones at shell.com",
         "jverzani"
       ],
-      "started": "2009-08-09T15:03:46-07:00",
-      "last_reply": "2009-08-11T12:02:00+02:00",
+      "started": "2009-08-09T22:03:46Z",
+      "last_reply": "2009-08-11T10:02:00Z",
       "root_message_id": "msg-c2a0550f72b6"
     },
     {
@@ -326,8 +326,8 @@
         "Myers,David Brent",
         "Philippe Grosjean"
       ],
-      "started": "2009-08-20T17:56:51-04:00",
-      "last_reply": "2009-08-21T09:53:09+02:00",
+      "started": "2009-08-20T21:56:51Z",
+      "last_reply": "2009-08-21T07:53:09Z",
       "root_message_id": "msg-537b74093c8e"
     },
     {
@@ -338,8 +338,8 @@
         "Stefan JansevanRensburg",
         "john verzani"
       ],
-      "started": "2009-08-24T16:40:06+02:00",
-      "last_reply": "2009-08-26T01:20:38+00:00",
+      "started": "2009-08-24T14:40:06Z",
+      "last_reply": "2009-08-26T01:20:38Z",
       "root_message_id": "msg-6447fe80aa84"
     },
     {
@@ -349,8 +349,8 @@
       "participants": [
         "Stefan JansevanRensburg"
       ],
-      "started": "2009-08-26T12:52:12+02:00",
-      "last_reply": "2009-08-26T12:52:12+02:00",
+      "started": "2009-08-26T10:52:12Z",
+      "last_reply": "2009-08-26T10:52:12Z",
       "root_message_id": "msg-49e103962f31"
     }
   ]

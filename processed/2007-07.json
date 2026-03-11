@@ -8,7 +8,7 @@
       "message_id": "<AA321E76FB83BF4ABF4AA55E30540C1412BBC3@HOLLY.ads.warwick.ac.uk>",
       "from_name": "Robson, Samuel",
       "from_email_hash": "be8aafb0cb03c80891b3c433e009238724776dd909c9ed74f8295b3c85580b5c",
-      "date": "2007-07-03T18:14:30+01:00",
+      "date": "2007-07-03T17:14:30Z",
       "subject": "[R-gui] tkbutton() function call problem",
       "subject_clean": "[R-gui] tkbutton() function call problem",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<468A9034.50607@biostat.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "6970d38b63c93ff8b781d9787948d92fe2e7b4240149faca590409068c44b75c",
-      "date": "2007-07-03T20:06:44+02:00",
+      "date": "2007-07-03T18:06:44Z",
       "subject": "[R-gui] tkbutton() function call problem",
       "subject_clean": "[R-gui] tkbutton() function call problem",
       "in_reply_to": "<AA321E76FB83BF4ABF4AA55E30540C1412BBC3@HOLLY.ads.warwick.ac.uk>",
@@ -42,7 +42,7 @@
       "message_id": "<000401c7cf53$600e3ed0$ad04d30a@backoffice>",
       "from_name": "Alexander Wurzer",
       "from_email_hash": "1691f71d57f8fa71e1380b9b32509d8cf4ccdfdf7969754bc941ab57752aa90a",
-      "date": "2007-07-26T09:05:40+02:00",
+      "date": "2007-07-26T07:05:40Z",
       "subject": "[R-gui] TCLTK Radiobutton-Problem",
       "subject_clean": "[R-gui] TCLTK Radiobutton-Problem",
       "in_reply_to": null,
@@ -58,7 +58,7 @@
       "message_id": "<000901c7cf60$74d49f50$ad04d30a@backoffice>",
       "from_name": "Alexander Wurzer",
       "from_email_hash": "1691f71d57f8fa71e1380b9b32509d8cf4ccdfdf7969754bc941ab57752aa90a",
-      "date": "2007-07-26T10:39:18+02:00",
+      "date": "2007-07-26T08:39:18Z",
       "subject": "[R-gui] FW: TCLTK Radiobutton-Problem",
       "subject_clean": "[R-gui] FW: TCLTK Radiobutton-Problem",
       "in_reply_to": null,
@@ -90,7 +90,7 @@
       "message_id": "<509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2007-07-30T13:12:50-05:00",
+      "date": "2007-07-30T18:12:50Z",
       "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
       "subject_clean": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
       "in_reply_to": "<072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>",
@@ -108,7 +108,7 @@
       "message_id": "<46AE9068.1060201@vanderbilt.edu>",
       "from_name": "Frank E Harrell Jr",
       "from_email_hash": "aac2104e568f1b4bc608deccefed75168aaf244b4de06a96ffe1c917f66b7853",
-      "date": "2007-07-30T20:29:12-05:00",
+      "date": "2007-07-31T01:29:12Z",
       "subject": "[R-gui] RKWard 0.4.2",
       "subject_clean": "[R-gui] RKWard 0.4.2",
       "in_reply_to": "<200612041805.40468.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
@@ -126,7 +126,7 @@
       "message_id": "<46AF5B35.30404@biostat.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
-      "date": "2007-07-31T17:54:29+02:00",
+      "date": "2007-07-31T15:54:29Z",
       "subject": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
       "subject_clean": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
       "in_reply_to": "<509e0620707301112x143a8d77tadbe1f295acec19d@mail.gmail.com>",
@@ -150,8 +150,8 @@
         "Peter Dalgaard",
         "Robson, Samuel"
       ],
-      "started": "2007-07-03T18:14:30+01:00",
-      "last_reply": "2007-07-03T20:06:44+02:00",
+      "started": "2007-07-03T17:14:30Z",
+      "last_reply": "2007-07-03T18:06:44Z",
       "root_message_id": "msg-563285c40209"
     },
     {
@@ -161,8 +161,8 @@
       "participants": [
         "Alexander Wurzer"
       ],
-      "started": "2007-07-26T09:05:40+02:00",
-      "last_reply": "2007-07-26T09:05:40+02:00",
+      "started": "2007-07-26T07:05:40Z",
+      "last_reply": "2007-07-26T07:05:40Z",
       "root_message_id": "msg-8c570c660fd6"
     },
     {
@@ -172,8 +172,8 @@
       "participants": [
         "Alexander Wurzer"
       ],
-      "started": "2007-07-26T10:39:18+02:00",
-      "last_reply": "2007-07-26T10:39:18+02:00",
+      "started": "2007-07-26T08:39:18Z",
+      "last_reply": "2007-07-26T08:39:18Z",
       "root_message_id": "msg-4ed132537797"
     },
     {
@@ -185,8 +185,8 @@
         "Peter Dalgaard",
         "morphwj at comcast.net"
       ],
-      "started": "2007-07-28T14:06:24+00:00",
-      "last_reply": "2007-07-31T17:54:29+02:00",
+      "started": "2007-07-28T14:06:24Z",
+      "last_reply": "2007-07-31T15:54:29Z",
       "root_message_id": "msg-c28dfe9c3384"
     },
     {
@@ -196,8 +196,8 @@
       "participants": [
         "Frank E Harrell Jr"
       ],
-      "started": "2007-07-30T20:29:12-05:00",
-      "last_reply": "2007-07-30T20:29:12-05:00",
+      "started": "2007-07-31T01:29:12Z",
+      "last_reply": "2007-07-31T01:29:12Z",
       "root_message_id": "msg-8249514f6c6b"
     }
   ]

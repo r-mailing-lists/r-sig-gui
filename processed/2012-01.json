@@ -8,7 +8,7 @@
       "message_id": "<CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>",
       "from_name": "Brett Magill",
       "from_email_hash": "ccc7a7d22d9c9a314e460d7b958640cb28ef0b3652e915f5f6385b2afbe12041",
-      "date": "2012-01-03T00:54:00-06:00",
+      "date": "2012-01-03T06:54:00Z",
       "subject": "[R-gui] R Model Building and Evaluation Tool",
       "subject_clean": "[R-gui] R Model Building and Evaluation Tool",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<418D4C3D-569C-4554-B424-F32D5ABA616E@stat.ucla.edu>",
       "from_name": "Ian Fellows",
       "from_email_hash": "aa2c780fbe5343d29316529dbad2b61e2a8735d64e323f572a06de636ac36465",
-      "date": "2012-01-02T23:33:55-08:00",
+      "date": "2012-01-03T07:33:55Z",
       "subject": "[R-gui] R Model Building and Evaluation Tool",
       "subject_clean": "[R-gui] R Model Building and Evaluation Tool",
       "in_reply_to": "<CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>",
@@ -42,7 +42,7 @@
       "message_id": "<4F04185E.2040101@free.fr>",
       "from_name": "Yvonnick Noel",
       "from_email_hash": "4a8e8356a36785813382f2b1e51a112dac54d5364f1a8d6900043564f32f62ed",
-      "date": "2012-01-04T10:14:06+01:00",
+      "date": "2012-01-04T09:14:06Z",
       "subject": "[R-gui] R Model Building and Evaluation Tool",
       "subject_clean": "[R-gui] R Model Building and Evaluation Tool",
       "in_reply_to": "<mailman.13.1325588404.12217.r-sig-gui@r-project.org>",
@@ -60,7 +60,7 @@
       "message_id": "<4F1E8AFC.3050606@gmail.com>",
       "from_name": "Rainer M Krug",
       "from_email_hash": "e11b90edace280d0de30dfc4fa9de87a9a079d3f2c2f179123fa9e4ae628223d",
-      "date": "2012-01-24T11:42:04+01:00",
+      "date": "2012-01-24T10:42:04Z",
       "subject": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
       "subject_clean": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
       "in_reply_to": null,
@@ -76,7 +76,7 @@
       "message_id": "<4F1E97F4.2050002@gmail.com>",
       "from_name": "Rainer M Krug",
       "from_email_hash": "e11b90edace280d0de30dfc4fa9de87a9a079d3f2c2f179123fa9e4ae628223d",
-      "date": "2012-01-24T12:37:24+01:00",
+      "date": "2012-01-24T11:37:24Z",
       "subject": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
       "subject_clean": "[R-gui] Looking for specific GUI - know it exists but can't remember the name....",
       "in_reply_to": "<4F1E9249.8060605@univie.ac.at>",
@@ -95,7 +95,7 @@
       "message_id": "<02BF89F8F8F5434281FB674D2BC513C3742238D192@SBKMXSMB09.win.dowjones.net>",
       "from_name": "Alpert, William",
       "from_email_hash": "28541db3112cebcd377990bb6409aac403e2619037d67aad2d2838ed1bb64cc8",
-      "date": "2012-01-24T09:17:59-05:00",
+      "date": "2012-01-24T14:17:59Z",
       "subject": "[R-gui] R-SIG-GUI Digest, Vol 95, Issue 3",
       "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 95, Issue 3",
       "in_reply_to": "<mailman.15.1327402804.19300.r-sig-gui@r-project.org>",
@@ -118,8 +118,8 @@
         "Brett Magill",
         "Ian Fellows"
       ],
-      "started": "2012-01-03T00:54:00-06:00",
-      "last_reply": "2012-01-02T23:33:55-08:00",
+      "started": "2012-01-03T06:54:00Z",
+      "last_reply": "2012-01-03T07:33:55Z",
       "root_message_id": "msg-dd74a458e6a3"
     },
     {
@@ -129,20 +129,9 @@
       "participants": [
         "Yvonnick Noel"
       ],
-      "started": "2012-01-04T10:14:06+01:00",
-      "last_reply": "2012-01-04T10:14:06+01:00",
+      "started": "2012-01-04T09:14:06Z",
+      "last_reply": "2012-01-04T09:14:06Z",
       "root_message_id": "msg-ec9f0a1b5d51"
-    },
-    {
-      "id": "thread-f3de00f5d323",
-      "subject": "[R-gui] R-SIG-GUI Digest, Vol 95, Issue 3",
-      "message_count": 1,
-      "participants": [
-        "Alpert, William"
-      ],
-      "started": "2012-01-24T09:17:59-05:00",
-      "last_reply": "2012-01-24T09:17:59-05:00",
-      "root_message_id": "msg-f3de00f5d323"
     },
     {
       "id": "thread-22328ba89fcb",
@@ -151,8 +140,8 @@
       "participants": [
         "Rainer M Krug"
       ],
-      "started": "2012-01-24T11:42:04+01:00",
-      "last_reply": "2012-01-24T11:42:04+01:00",
+      "started": "2012-01-24T10:42:04Z",
+      "last_reply": "2012-01-24T10:42:04Z",
       "root_message_id": "msg-22328ba89fcb"
     },
     {
@@ -162,9 +151,20 @@
       "participants": [
         "Rainer M Krug"
       ],
-      "started": "2012-01-24T12:37:24+01:00",
-      "last_reply": "2012-01-24T12:37:24+01:00",
+      "started": "2012-01-24T11:37:24Z",
+      "last_reply": "2012-01-24T11:37:24Z",
       "root_message_id": "msg-f91121e21701"
+    },
+    {
+      "id": "thread-f3de00f5d323",
+      "subject": "[R-gui] R-SIG-GUI Digest, Vol 95, Issue 3",
+      "message_count": 1,
+      "participants": [
+        "Alpert, William"
+      ],
+      "started": "2012-01-24T14:17:59Z",
+      "last_reply": "2012-01-24T14:17:59Z",
+      "root_message_id": "msg-f3de00f5d323"
     }
   ]
 }

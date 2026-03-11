@@ -397,8 +397,8 @@
         "Byron Ellis",
         "Frank E Harrell Jr"
       ],
-      "started": "2003-05-01T02:24:26+00:00",
-      "last_reply": "2003-05-01T02:39:21+00:00",
+      "started": "2003-05-01T02:24:26Z",
+      "last_reply": "2003-05-01T02:39:21Z",
       "root_message_id": "msg-6b48c4e2568c"
     },
     {
@@ -411,8 +411,8 @@
         "Philippe Grosjean",
         "Thomas Friedrichsmeier"
       ],
-      "started": "2003-05-05T14:15:33+00:00",
-      "last_reply": "2003-05-06T16:43:47+00:00",
+      "started": "2003-05-05T14:15:33Z",
+      "last_reply": "2003-05-06T16:43:47Z",
       "root_message_id": "msg-62bca16ee664"
     },
     {
@@ -423,8 +423,8 @@
         "John Fox",
         "Martin Maechler"
       ],
-      "started": "2003-05-13T02:31:54+00:00",
-      "last_reply": "2003-05-14T09:14:32+00:00",
+      "started": "2003-05-13T02:31:54Z",
+      "last_reply": "2003-05-14T09:14:32Z",
       "root_message_id": "msg-0f4ee42e07ec"
     },
     {
@@ -435,8 +435,8 @@
         "John Fox",
         "Xavier Solé"
       ],
-      "started": "2003-05-15T18:06:09+00:00",
-      "last_reply": "2003-05-15T18:43:55+00:00",
+      "started": "2003-05-15T18:06:09Z",
+      "last_reply": "2003-05-15T18:43:55Z",
       "root_message_id": "msg-335ee848e6e7"
     },
     {
@@ -446,8 +446,8 @@
       "participants": [
         "John Fox"
       ],
-      "started": "2003-05-16T13:53:49+00:00",
-      "last_reply": "2003-05-16T13:53:49+00:00",
+      "started": "2003-05-16T13:53:49Z",
+      "last_reply": "2003-05-16T13:53:49Z",
       "root_message_id": "msg-168890f5710b"
     },
     {
@@ -458,8 +458,8 @@
         "Dirk Eddelbuettel",
         "John Fox"
       ],
-      "started": "2003-05-18T18:06:58+00:00",
-      "last_reply": "2003-05-18T18:55:29+00:00",
+      "started": "2003-05-18T18:06:58Z",
+      "last_reply": "2003-05-18T18:55:29Z",
       "root_message_id": "msg-f3143ee337a0"
     },
     {
@@ -471,8 +471,8 @@
         "John Fox",
         "Peter Dalgaard BSA"
       ],
-      "started": "2003-05-20T03:05:36+00:00",
-      "last_reply": "2003-05-22T03:24:43+00:00",
+      "started": "2003-05-20T03:05:36Z",
+      "last_reply": "2003-05-22T03:24:43Z",
       "root_message_id": "msg-99b194ca029e"
     },
     {
@@ -483,8 +483,8 @@
         "John Fox",
         "Philippe Grosjean"
       ],
-      "started": "2003-05-20T08:52:12+00:00",
-      "last_reply": "2003-05-20T14:49:25+00:00",
+      "started": "2003-05-20T08:52:12Z",
+      "last_reply": "2003-05-20T14:49:25Z",
       "root_message_id": "msg-afbabe730bcf"
     }
   ]

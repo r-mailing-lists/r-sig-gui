@@ -8,7 +8,7 @@
       "message_id": "<1135788427.29796.250668861@webmail.messagingengine.com>",
       "from_name": "Nicholas Lewin-Koh",
       "from_email_hash": "ce1a5dad09cdf256c2a72906ae1e563f0d7ec3457957c4a1a53c9b3862a71eac",
-      "date": "2005-12-28T11:47:07-05:00",
+      "date": "2005-12-28T16:47:07Z",
       "subject": "[R-gui] tcl-tk color chooser (sucks on unix)",
       "subject_clean": "[R-gui] tcl-tk color chooser (sucks on unix)",
       "in_reply_to": null,
@@ -28,8 +28,8 @@
       "participants": [
         "Nicholas Lewin-Koh"
       ],
-      "started": "2005-12-28T11:47:07-05:00",
-      "last_reply": "2005-12-28T11:47:07-05:00",
+      "started": "2005-12-28T16:47:07Z",
+      "last_reply": "2005-12-28T16:47:07Z",
       "root_message_id": "msg-be6d18d5f656"
     }
   ]

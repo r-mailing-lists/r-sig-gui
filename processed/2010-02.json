@@ -8,7 +8,7 @@
       "message_id": "<BF0E8767E3B02C4F889D344FA2BD5447F6B8AE@S-DC-EXM34.net1.cec.eu.int>",
       "from_name": "Alexis-Michel.MUGABUSHAKA at ec.europa.eu",
       "from_email_hash": "d8bd8f651266ad602f1893b7b9debf1afaa81a4586809d4b6124f1b5eb70ba57",
-      "date": "2010-02-05T10:38:33+01:00",
+      "date": "2010-02-05T09:38:33Z",
       "subject": "[R-gui] mailing list functional ?",
       "subject_clean": "[R-gui] mailing list functional ?",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<4B6BE845.6010903@statistik.tu-dortmund.de>",
       "from_name": "Uwe Ligges",
       "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
-      "date": "2010-02-05T10:43:33+01:00",
+      "date": "2010-02-05T09:43:33Z",
       "subject": "[R-gui] mailing list functional ?",
       "subject_clean": "[R-gui] mailing list functional ?",
       "in_reply_to": "<BF0E8767E3B02C4F889D344FA2BD5447F6B8AE@S-DC-EXM34.net1.cec.eu.int>",
@@ -42,7 +42,7 @@
       "message_id": "<4B6BE9B2.9060107@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2010-02-05T10:49:38+01:00",
+      "date": "2010-02-05T09:49:38Z",
       "subject": "[R-gui] mailing list functional ?",
       "subject_clean": "[R-gui] mailing list functional ?",
       "in_reply_to": "<BF0E8767E3B02C4F889D344FA2BD5447F6B8AE@S-DC-EXM34.net1.cec.eu.int>",
@@ -60,7 +60,7 @@
       "message_id": "<127B60EF19BB9F4FB94D157AA8BF3D0A91B22A4C5C@EMAIL06.pnl.gov>",
       "from_name": "Taverner, Thomas",
       "from_email_hash": "b1f366bba8e9c729f28d1e1aedd63126a9c927930c7cd42ffa1d692907e72bf0",
-      "date": "2010-02-17T13:20:45-08:00",
+      "date": "2010-02-17T21:20:45Z",
       "subject": "[R-gui] New package RGtk2DfEdit: a spreadsheet for RGtk2",
       "subject_clean": "[R-gui] New package RGtk2DfEdit: a spreadsheet for RGtk2",
       "in_reply_to": null,
@@ -76,7 +76,7 @@
       "message_id": "<ff91746c1002180531r3bbdab0fl4dfb88ab745feda3@mail.gmail.com>",
       "from_name": "Sankalp Upadhyay",
       "from_email_hash": "0c5e1a6b2e84ac6ac3c950d45d2f1f6aa532ab84a96d42218458fb1363479a95",
-      "date": "2010-02-18T21:31:55+08:00",
+      "date": "2010-02-18T13:31:55Z",
       "subject": "[R-gui] Netbeans and R",
       "subject_clean": "[R-gui] Netbeans and R",
       "in_reply_to": null,
@@ -108,7 +108,7 @@
       "message_id": "<acbd1aed1002260551m7f96eb0do7dddb1663c5c6b1a@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
-      "date": "2010-02-26T05:51:15-08:00",
+      "date": "2010-02-26T13:51:15Z",
       "subject": "[R-gui] gWidgets: multiple handlers using a loop?",
       "subject_clean": "[R-gui] gWidgets: multiple handlers using a loop?",
       "in_reply_to": "<68b1e2611002260515y36e07700oce370d27a16ed246@mail.gmail.com>",
@@ -161,7 +161,7 @@
       "message_id": "<4B884428.9020901@uv.es>",
       "from_name": "Pedro Valero-Mora",
       "from_email_hash": "0758f9daab59a052d57a16e90465aa042312cf77e5349eeb363b3bbbbb8f23b9",
-      "date": "2010-02-26T22:59:04+01:00",
+      "date": "2010-02-26T21:59:04Z",
       "subject": "[R-gui] Announce: Speicial issue of the JSS on Graphical User Interfaces for R",
       "subject_clean": "[R-gui] Announce: Speicial issue of the JSS on Graphical User Interfaces for R",
       "in_reply_to": null,
@@ -214,7 +214,7 @@
       "message_id": "<4B897825.8050509@uv.es>",
       "from_name": "Pedro Valero-Mora",
       "from_email_hash": "0758f9daab59a052d57a16e90465aa042312cf77e5349eeb363b3bbbbb8f23b9",
-      "date": "2010-02-27T20:53:09+01:00",
+      "date": "2010-02-27T19:53:09Z",
       "subject": "[R-gui] Deadline for Special issue of the JSS on Graphical User Interfaces for R",
       "subject_clean": "[R-gui] Deadline for Special issue of the JSS on Graphical User Interfaces for R",
       "in_reply_to": null,
@@ -236,8 +236,8 @@
         "Philippe Grosjean",
         "Uwe Ligges"
       ],
-      "started": "2010-02-05T10:38:33+01:00",
-      "last_reply": "2010-02-05T10:49:38+01:00",
+      "started": "2010-02-05T09:38:33Z",
+      "last_reply": "2010-02-05T09:49:38Z",
       "root_message_id": "msg-d289c2946f49"
     },
     {
@@ -247,8 +247,8 @@
       "participants": [
         "Taverner, Thomas"
       ],
-      "started": "2010-02-17T13:20:45-08:00",
-      "last_reply": "2010-02-17T13:20:45-08:00",
+      "started": "2010-02-17T21:20:45Z",
+      "last_reply": "2010-02-17T21:20:45Z",
       "root_message_id": "msg-e4df22df7162"
     },
     {
@@ -258,8 +258,8 @@
       "participants": [
         "Sankalp Upadhyay"
       ],
-      "started": "2010-02-18T21:31:55+08:00",
-      "last_reply": "2010-02-18T21:31:55+08:00",
+      "started": "2010-02-18T13:31:55Z",
+      "last_reply": "2010-02-18T13:31:55Z",
       "root_message_id": "msg-205662024392"
     },
     {
@@ -270,8 +270,8 @@
         "Liviu Andronic",
         "Michael Lawrence"
       ],
-      "started": "2010-02-26T13:15:58+00:00",
-      "last_reply": "2010-02-26T14:37:57+00:00",
+      "started": "2010-02-26T13:15:58Z",
+      "last_reply": "2010-02-26T14:37:57Z",
       "root_message_id": "msg-e3fdbb9360e6"
     },
     {
@@ -282,8 +282,8 @@
         "Liviu Andronic",
         "j verzani"
       ],
-      "started": "2010-02-26T15:10:02+00:00",
-      "last_reply": "2010-02-27T19:00:20+00:00",
+      "started": "2010-02-26T15:10:02Z",
+      "last_reply": "2010-02-27T19:00:20Z",
       "root_message_id": "msg-3a0a8409eed6"
     },
     {
@@ -293,8 +293,8 @@
       "participants": [
         "Pedro Valero-Mora"
       ],
-      "started": "2010-02-26T22:59:04+01:00",
-      "last_reply": "2010-02-26T22:59:04+01:00",
+      "started": "2010-02-26T21:59:04Z",
+      "last_reply": "2010-02-26T21:59:04Z",
       "root_message_id": "msg-5b28f197f9d8"
     },
     {
@@ -304,8 +304,8 @@
       "participants": [
         "Pedro Valero-Mora"
       ],
-      "started": "2010-02-27T20:53:09+01:00",
-      "last_reply": "2010-02-27T20:53:09+01:00",
+      "started": "2010-02-27T19:53:09Z",
+      "last_reply": "2010-02-27T19:53:09Z",
       "root_message_id": "msg-27b05a72fc05"
     }
   ]

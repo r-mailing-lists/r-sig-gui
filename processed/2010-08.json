@@ -8,7 +8,7 @@
       "message_id": "<1282570811.4c727a3b8dd90@webmail.dnet.it>",
       "from_name": "Thomas Tschager",
       "from_email_hash": "8111d7fc8cb8dcbea804e069e3dd14299c559b4be6deef3ffcdc846b05d27b1d",
-      "date": "2010-08-23T15:40:11+02:00",
+      "date": "2010-08-23T13:40:11Z",
       "subject": "[R-gui] ttkentry background doesnt work",
       "subject_clean": "[R-gui] ttkentry background doesnt work",
       "in_reply_to": null,
@@ -42,7 +42,7 @@
       "message_id": "<4C7401AE.6030002@gmail.com>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "d2573f0c0a474184a9d96c815fc6bf37ff7c6392082069d810139c562d5a6f71",
-      "date": "2010-08-24T19:30:22+02:00",
+      "date": "2010-08-24T17:30:22Z",
       "subject": "[R-gui] ttkentry background doesnt work",
       "subject_clean": "[R-gui] ttkentry background doesnt work",
       "in_reply_to": "<loom.20100824T165754-331@post.gmane.org>",
@@ -61,7 +61,7 @@
       "message_id": "<AANLkTinFWu1-63=8tMsf527eADPfq0gZXLOn4DRC_d5k@mail.gmail.com>",
       "from_name": "Gabor Grothendieck",
       "from_email_hash": "2252aad0894f89a900da56345b1c4e0414e3b441d448c40b473f7149e06e5a05",
-      "date": "2010-08-24T20:31:34-04:00",
+      "date": "2010-08-25T00:31:34Z",
       "subject": "[R-gui] ttkentry background doesnt work",
       "subject_clean": "[R-gui] ttkentry background doesnt work",
       "in_reply_to": "<4C7401AE.6030002@gmail.com>",
@@ -81,7 +81,7 @@
       "message_id": "<1282833208.4c767b38b7bfb@webmail.dnet.it>",
       "from_name": "Thomas Tschager",
       "from_email_hash": "8111d7fc8cb8dcbea804e069e3dd14299c559b4be6deef3ffcdc846b05d27b1d",
-      "date": "2010-08-26T16:33:28+02:00",
+      "date": "2010-08-26T14:33:28Z",
       "subject": "[R-gui] ttkentry background doesnt work",
       "subject_clean": "[R-gui] ttkentry background doesnt work",
       "in_reply_to": null,
@@ -104,8 +104,8 @@
         "Thomas Tschager",
         "jverzani"
       ],
-      "started": "2010-08-23T15:40:11+02:00",
-      "last_reply": "2010-08-24T20:31:34-04:00",
+      "started": "2010-08-23T13:40:11Z",
+      "last_reply": "2010-08-25T00:31:34Z",
       "root_message_id": "msg-de8e4384c90f"
     },
     {
@@ -115,8 +115,8 @@
       "participants": [
         "Thomas Tschager"
       ],
-      "started": "2010-08-26T16:33:28+02:00",
-      "last_reply": "2010-08-26T16:33:28+02:00",
+      "started": "2010-08-26T14:33:28Z",
+      "last_reply": "2010-08-26T14:33:28Z",
       "root_message_id": "msg-2766265ce8f1"
     }
   ]

@@ -8,7 +8,7 @@
       "message_id": "<CAJESSmZbiUBzrpoOThu9pAFhXeesLm=sCth1NPR5LeqjrMU3uA@mail.gmail.com>",
       "from_name": "christiaan pauw",
       "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
-      "date": "2011-12-02T15:49:40+02:00",
+      "date": "2011-12-02T13:49:40Z",
       "subject": "[R-gui] Post hoc tweeking of ggenericwidget?",
       "subject_clean": "[R-gui] Post hoc tweeking of ggenericwidget?",
       "in_reply_to": null,
@@ -42,7 +42,7 @@
       "message_id": "<CAJESSmZtRoEvFPcwUJ5gAfZP76u4P5n70XPrcMDXs1fVGezBHQ@mail.gmail.com>",
       "from_name": "christiaan pauw",
       "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
-      "date": "2011-12-03T14:02:10+02:00",
+      "date": "2011-12-03T12:02:10Z",
       "subject": "[R-gui] Post hoc tweeking of ggenericwidget?",
       "subject_clean": "[R-gui] Post hoc tweeking of ggenericwidget?",
       "in_reply_to": "<loom.20111202T214810-816@post.gmane.org>",
@@ -77,7 +77,7 @@
       "message_id": "<4EF2E384.4020300@statistik.tu-dortmund.de>",
       "from_name": "Uwe Ligges",
       "from_email_hash": "41041d76fae21a8bc18fe19d38def92b3b630abfb7abf4acf41a0734d8851d24",
-      "date": "2011-12-22T09:00:04+01:00",
+      "date": "2011-12-22T08:00:04Z",
       "subject": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
       "subject_clean": "[R-gui] Any script to package a built R binary to a Mac OS X installer?",
       "in_reply_to": "<5A791953-3AF4-45F7-A83E-935EA2BA3FD1@cornell.edu>",
@@ -119,8 +119,8 @@
         "christiaan pauw",
         "j verzani"
       ],
-      "started": "2011-12-02T15:49:40+02:00",
-      "last_reply": "2011-12-03T14:02:10+02:00",
+      "started": "2011-12-02T13:49:40Z",
+      "last_reply": "2011-12-03T12:02:10Z",
       "root_message_id": "msg-c5c9bc1d471d"
     },
     {
@@ -131,8 +131,8 @@
         "Sang Chul Choi",
         "Uwe Ligges"
       ],
-      "started": "2011-12-21T19:36:55+00:00",
-      "last_reply": "2011-12-22T13:39:32+00:00",
+      "started": "2011-12-21T19:36:55Z",
+      "last_reply": "2011-12-22T13:39:32Z",
       "root_message_id": "msg-a2d758019206"
     }
   ]

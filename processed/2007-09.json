@@ -8,7 +8,7 @@
       "message_id": "<3a5596550709120502xf5c8c56i487b037ba2bf236b@mail.gmail.com>",
       "from_name": "Samuel Kemp",
       "from_email_hash": "5eb34edf0de5c2ffe1f69f34221aca6ffe1a67be8315460bae29667c6700497b",
-      "date": "2007-09-12T13:02:30+01:00",
+      "date": "2007-09-12T12:02:30Z",
       "subject": "[R-gui] unknown color name \"systemWindowBody\"",
       "subject_clean": "[R-gui] unknown color name \"systemWindowBody\"",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<46E84A24.1010903@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2007-09-12T22:20:52+02:00",
+      "date": "2007-09-12T20:20:52Z",
       "subject": "[R-gui] unknown color name \"systemWindowBody\"",
       "subject_clean": "[R-gui] unknown color name \"systemWindowBody\"",
       "in_reply_to": "<3a5596550709120502xf5c8c56i487b037ba2bf236b@mail.gmail.com>",
@@ -42,7 +42,7 @@
       "message_id": "<46E8D233.6070604@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2007-09-13T08:01:23+02:00",
+      "date": "2007-09-13T06:01:23Z",
       "subject": "[R-gui] unknown color name \"systemWindowBody\"",
       "subject_clean": "[R-gui] unknown color name \"systemWindowBody\"",
       "in_reply_to": "<3435EA17-67F2-4380-A4AF-E2D4327A09C6@googlemail.com>",
@@ -62,7 +62,7 @@
       "message_id": "<200709141622.18483.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
       "from_name": "Thomas Friedrichsmeier",
       "from_email_hash": "5788a71988abb9472ec6ea7525cade7538b3cb3d32178ced51c7b1e82ef11760",
-      "date": "2007-09-14T16:22:18+02:00",
+      "date": "2007-09-14T14:22:18Z",
       "subject": "[R-gui] RKWard 0.4.2",
       "subject_clean": "[R-gui] RKWard 0.4.2",
       "in_reply_to": "<46AE9068.1060201@vanderbilt.edu>",
@@ -81,7 +81,7 @@
       "message_id": "<46EABBF9.9070805@vanderbilt.edu>",
       "from_name": "Frank E Harrell Jr",
       "from_email_hash": "aac2104e568f1b4bc608deccefed75168aaf244b4de06a96ffe1c917f66b7853",
-      "date": "2007-09-14T11:51:05-05:00",
+      "date": "2007-09-14T16:51:05Z",
       "subject": "[R-gui] RKWard 0.4.2",
       "subject_clean": "[R-gui] RKWard 0.4.2",
       "in_reply_to": "<200709141622.18483.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
@@ -101,7 +101,7 @@
       "message_id": "<1190628458.23174.30.camel@binky>",
       "from_name": "Gordon Bergling",
       "from_email_hash": "62bdf2d8b4a697519205738f690d40eb4c8360aba12275175f2abd5e7085514f",
-      "date": "2007-09-24T12:07:38+02:00",
+      "date": "2007-09-24T10:07:38Z",
       "subject": "[R-gui] rgnome-0.1.9-alpha released",
       "subject_clean": "[R-gui] rgnome-0.1.9-alpha released",
       "in_reply_to": null,
@@ -117,7 +117,7 @@
       "message_id": "<6699922FABDD9145A5C94569C2B438EB01163A72@MA-EXCL02.konzern.mvvcorp.de>",
       "from_name": "thomas.schwander at mvv.de",
       "from_email_hash": "39228aa40c1e030bcb0a4314378188234e1f1d900565f7ddb38f521e88a3b16b",
-      "date": "2007-09-25T12:02:29+02:00",
+      "date": "2007-09-25T10:02:29Z",
       "subject": "[R-gui] build your own gui",
       "subject_clean": "[R-gui] build your own gui",
       "in_reply_to": null,
@@ -133,7 +133,7 @@
       "message_id": "<20070927094200.GD5627@snow107.ncl.ac.uk>",
       "from_name": "David Whiting",
       "from_email_hash": "6a38560279489ee6f81024b884b61ee6791a860415e66765ab09e0bf5bb33846",
-      "date": "2007-09-27T10:42:00+01:00",
+      "date": "2007-09-27T09:42:00Z",
       "subject": "[R-gui] build your own gui",
       "subject_clean": "[R-gui] build your own gui",
       "in_reply_to": "<6699922FABDD9145A5C94569C2B438EB01163A72@MA-EXCL02.konzern.mvvcorp.de>",
@@ -151,7 +151,7 @@
       "message_id": "<D8C95B444AD6EE4AAD638D818A9CFD34BFFBD4@RINNYCSE000.rth.ad.rothschild.com>",
       "from_name": "Bos, Roger",
       "from_email_hash": "10478ee608b65d457f99d40c620f1ed364be662f5b3ef3a404dd083d142695e6",
-      "date": "2007-09-27T08:03:22-04:00",
+      "date": "2007-09-27T12:03:22Z",
       "subject": "[R-gui] build your own gui",
       "subject_clean": "[R-gui] build your own gui",
       "in_reply_to": "<6699922FABDD9145A5C94569C2B438EB01163A72@MA-EXCL02.konzern.mvvcorp.de>",
@@ -169,7 +169,7 @@
       "message_id": "<509e0620709270509w25ec76f1mb9477a16cf29eec8@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2007-09-27T07:09:41-05:00",
+      "date": "2007-09-27T12:09:41Z",
       "subject": "[R-gui] build your own gui",
       "subject_clean": "[R-gui] build your own gui",
       "in_reply_to": "<20070927094200.GD5627@snow107.ncl.ac.uk>",
@@ -188,7 +188,7 @@
       "message_id": "<200709271555.50653.dusa.adrian@gmail.com>",
       "from_name": "Adrian Dusa",
       "from_email_hash": "6a403e8d36067b9a5490b33c3f9b771c8b9fb11b65319c8b0ebbaa42146b32c8",
-      "date": "2007-09-27T15:55:50+03:00",
+      "date": "2007-09-27T12:55:50Z",
       "subject": "[R-gui] build your own gui",
       "subject_clean": "[R-gui] build your own gui",
       "in_reply_to": "<509e0620709270509w25ec76f1mb9477a16cf29eec8@mail.gmail.com>",
@@ -213,8 +213,8 @@
         "Philippe Grosjean",
         "Samuel Kemp"
       ],
-      "started": "2007-09-12T13:02:30+01:00",
-      "last_reply": "2007-09-12T22:20:52+02:00",
+      "started": "2007-09-12T12:02:30Z",
+      "last_reply": "2007-09-12T20:20:52Z",
       "root_message_id": "msg-d376d2671e81"
     },
     {
@@ -224,8 +224,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2007-09-13T08:01:23+02:00",
-      "last_reply": "2007-09-13T08:01:23+02:00",
+      "started": "2007-09-13T06:01:23Z",
+      "last_reply": "2007-09-13T06:01:23Z",
       "root_message_id": "msg-c005be815301"
     },
     {
@@ -236,8 +236,8 @@
         "Frank E Harrell Jr",
         "Thomas Friedrichsmeier"
       ],
-      "started": "2007-09-14T16:22:18+02:00",
-      "last_reply": "2007-09-14T11:51:05-05:00",
+      "started": "2007-09-14T14:22:18Z",
+      "last_reply": "2007-09-14T16:51:05Z",
       "root_message_id": "msg-5405cf126167"
     },
     {
@@ -247,8 +247,8 @@
       "participants": [
         "Gordon Bergling"
       ],
-      "started": "2007-09-24T12:07:38+02:00",
-      "last_reply": "2007-09-24T12:07:38+02:00",
+      "started": "2007-09-24T10:07:38Z",
+      "last_reply": "2007-09-24T10:07:38Z",
       "root_message_id": "msg-d7c0165f92dc"
     },
     {
@@ -262,8 +262,8 @@
         "Michael Lawrence",
         "thomas.schwander at mvv.de"
       ],
-      "started": "2007-09-25T12:02:29+02:00",
-      "last_reply": "2007-09-27T15:55:50+03:00",
+      "started": "2007-09-25T10:02:29Z",
+      "last_reply": "2007-09-27T12:55:50Z",
       "root_message_id": "msg-c5cf6a605bc4"
     }
   ]

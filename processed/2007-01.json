@@ -24,7 +24,7 @@
       "message_id": "<45A29EFD.7000305@biostat.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
-      "date": "2007-01-08T20:43:57+01:00",
+      "date": "2007-01-08T19:43:57Z",
       "subject": "[R-gui] Idle/timer callbacks in tk widgets",
       "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
       "in_reply_to": "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>",
@@ -42,7 +42,7 @@
       "message_id": "<509e0620701081250w7e3feafauca71a908fd98d9a8@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2007-01-08T14:50:01-06:00",
+      "date": "2007-01-08T20:50:01Z",
       "subject": "[R-gui] Idle/timer callbacks in tk widgets",
       "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
       "in_reply_to": "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>",
@@ -99,7 +99,7 @@
       "message_id": "<45A3A0DD.5000409@stats.uwo.ca>",
       "from_name": "Duncan Murdoch",
       "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
-      "date": "2007-01-09T09:04:13-05:00",
+      "date": "2007-01-09T14:04:13Z",
       "subject": "[R-gui] Idle/timer callbacks in tk widgets",
       "subject_clean": "[R-gui] Idle/timer callbacks in tk widgets",
       "in_reply_to": "<17827.37823.462228.474366@notch.damtp.cam.ac.uk>",
@@ -120,7 +120,7 @@
       "message_id": "<200701191811.51369.santos@supagro.inra.fr>",
       "from_name": "Filipe Santos",
       "from_email_hash": "adf1ae6f6322111cdf1df8cd41cde3c4af70ea01ec10842fde4118f904eb9b20",
-      "date": "2007-01-19T18:11:48+01:00",
+      "date": "2007-01-19T17:11:48Z",
       "subject": "[R-gui] Refreshing the GUI and packing images",
       "subject_clean": "[R-gui] Refreshing the GUI and packing images",
       "in_reply_to": null,
@@ -136,7 +136,7 @@
       "message_id": "<244933.16127.qm@web32410.mail.mud.yahoo.com>",
       "from_name": "as ming",
       "from_email_hash": "0f5d927213f24d0d559c170e5301e7b206113060fb42ac70861cbc2a38b277d7",
-      "date": "2007-01-20T23:57:09-08:00",
+      "date": "2007-01-21T07:57:09Z",
       "subject": "[R-gui] copy graphs from tabbed notebook widget",
       "subject_clean": "[R-gui] copy graphs from tabbed notebook widget",
       "in_reply_to": null,
@@ -152,7 +152,7 @@
       "message_id": "<45B7AECA.7070108@uhb.fr>",
       "from_name": "NOEL Yvonnick",
       "from_email_hash": "6b0c1beb7700ad7ed9305cad83d011377781980ebe20349aefdf56be0114ff43",
-      "date": "2007-01-24T20:08:58+01:00",
+      "date": "2007-01-24T19:08:58Z",
       "subject": "[R-gui] as.numeric(\".1\") under RGtk2",
       "subject_clean": "[R-gui] as.numeric(\".1\") under RGtk2",
       "in_reply_to": "<Pine.LNX.4.64.0701241735170.28321@gannet.stats.ox.ac.uk>",
@@ -173,7 +173,7 @@
       "message_id": "<509e0620701241838u39d4fe5bt20b0015b7dce21f5@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2007-01-24T20:38:55-06:00",
+      "date": "2007-01-25T02:38:55Z",
       "subject": "[R-gui] as.numeric(\".1\") under RGtk2",
       "subject_clean": "[R-gui] as.numeric(\".1\") under RGtk2",
       "in_reply_to": "<45B7AECA.7070108@uhb.fr>",
@@ -202,8 +202,8 @@
         "Peter Dalgaard",
         "Stephen Eglen"
       ],
-      "started": "2007-01-08T17:46:33+00:00",
-      "last_reply": "2007-01-09T09:04:13-05:00",
+      "started": "2007-01-08T17:46:33Z",
+      "last_reply": "2007-01-09T14:04:13Z",
       "root_message_id": "msg-e079500c0e4e"
     },
     {
@@ -213,8 +213,8 @@
       "participants": [
         "Filipe Santos"
       ],
-      "started": "2007-01-19T18:11:48+01:00",
-      "last_reply": "2007-01-19T18:11:48+01:00",
+      "started": "2007-01-19T17:11:48Z",
+      "last_reply": "2007-01-19T17:11:48Z",
       "root_message_id": "msg-672881cbecd6"
     },
     {
@@ -224,8 +224,8 @@
       "participants": [
         "as ming"
       ],
-      "started": "2007-01-20T23:57:09-08:00",
-      "last_reply": "2007-01-20T23:57:09-08:00",
+      "started": "2007-01-21T07:57:09Z",
+      "last_reply": "2007-01-21T07:57:09Z",
       "root_message_id": "msg-ec5f47572967"
     },
     {
@@ -236,8 +236,8 @@
         "Michael Lawrence",
         "NOEL Yvonnick"
       ],
-      "started": "2007-01-24T20:08:58+01:00",
-      "last_reply": "2007-01-24T20:38:55-06:00",
+      "started": "2007-01-24T19:08:58Z",
+      "last_reply": "2007-01-25T02:38:55Z",
       "root_message_id": "msg-331d10754ef0"
     }
   ]

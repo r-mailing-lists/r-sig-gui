@@ -8,7 +8,7 @@
       "message_id": "<68b1e2610903190128oa5f46bak128c086c98a5f99d@mail.gmail.com>",
       "from_name": "Liviu Andronic",
       "from_email_hash": "ac80690a74d8c96bf595dc6f08afe02e887e0cd6871b17eb78f91be112f8f2e3",
-      "date": "2009-03-19T09:28:40+01:00",
+      "date": "2009-03-19T08:28:40Z",
       "subject": "[R-gui] system() fails in JGR",
       "subject_clean": "[R-gui] system() fails in JGR",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<8BA495B9B6774D739755C435E5ECE47B@gpbdmx>",
       "from_name": "Ian Fellows",
       "from_email_hash": "d12bb521d01a14c5c9364007086c61200d7898178507ef5d276c14223c822c6b",
-      "date": "2009-03-19T09:50:05-07:00",
+      "date": "2009-03-19T16:50:05Z",
       "subject": "[R-gui] system() fails in JGR",
       "subject_clean": "[R-gui] system() fails in JGR",
       "in_reply_to": "<68b1e2610903190128oa5f46bak128c086c98a5f99d@mail.gmail.com>",
@@ -40,7 +40,7 @@
       "message_id": "<D5FEF59F-6CA6-45E3-B47C-CB072A6F46BD@r-project.org>",
       "from_name": "Simon Urbanek",
       "from_email_hash": "4b8015e605c1e8a78e0fc166d7f94d0bc9cab6230366ee1dfdd8a0de17b4b371",
-      "date": "2009-03-19T18:24:18-04:00",
+      "date": "2009-03-19T22:24:18Z",
       "subject": "[R-gui] [stats-rosuda-devel]  system() fails in JGR",
       "subject_clean": "[R-gui] [stats-rosuda-devel]  system() fails in JGR",
       "in_reply_to": "<8BA495B9B6774D739755C435E5ECE47B@gpbdmx>",
@@ -58,7 +58,7 @@
       "message_id": "<49CA28DC.80006@waddell.ch>",
       "from_name": "Adrian Waddell",
       "from_email_hash": "afd6ae43637c0691d909168b5aa7407cdbf975683ad29c432cf4cd72092f8fda",
-      "date": "2009-03-25T08:51:40-04:00",
+      "date": "2009-03-25T12:51:40Z",
       "subject": "[R-gui] tkcanvas: resize window",
       "subject_clean": "[R-gui] tkcanvas: resize window",
       "in_reply_to": null,
@@ -74,7 +74,7 @@
       "message_id": "<87ocvmg12c.fsf@jonasstein.de>",
       "from_name": "Jonas Stein",
       "from_email_hash": "0a6644a809a2f4383b1421fe4dfc123bfeeef567ae971f9ac65a0526e993e49a",
-      "date": "2009-03-27T21:31:23+01:00",
+      "date": "2009-03-27T20:31:23Z",
       "subject": "[R-gui] Emacs ESS automatic start with split windows",
       "subject_clean": "[R-gui] Emacs ESS automatic start with split windows",
       "in_reply_to": null,
@@ -96,8 +96,8 @@
         "Liviu Andronic",
         "Simon Urbanek"
       ],
-      "started": "2009-03-19T09:28:40+01:00",
-      "last_reply": "2009-03-19T18:24:18-04:00",
+      "started": "2009-03-19T08:28:40Z",
+      "last_reply": "2009-03-19T22:24:18Z",
       "root_message_id": "msg-17671299ae87"
     },
     {
@@ -107,8 +107,8 @@
       "participants": [
         "Adrian Waddell"
       ],
-      "started": "2009-03-25T08:51:40-04:00",
-      "last_reply": "2009-03-25T08:51:40-04:00",
+      "started": "2009-03-25T12:51:40Z",
+      "last_reply": "2009-03-25T12:51:40Z",
       "root_message_id": "msg-29a83f5365fa"
     },
     {
@@ -118,8 +118,8 @@
       "participants": [
         "Jonas Stein"
       ],
-      "started": "2009-03-27T21:31:23+01:00",
-      "last_reply": "2009-03-27T21:31:23+01:00",
+      "started": "2009-03-27T20:31:23Z",
+      "last_reply": "2009-03-27T20:31:23Z",
       "root_message_id": "msg-06cbfb12ea21"
     }
   ]

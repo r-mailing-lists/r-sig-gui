@@ -8,7 +8,7 @@
       "message_id": "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>",
       "from_name": "christiaan pauw",
       "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
-      "date": "2011-11-23T09:31:34+02:00",
+      "date": "2011-11-23T07:31:34Z",
       "subject": "[R-gui] Mixing GUI packages",
       "subject_clean": "[R-gui] Mixing GUI packages",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<4ECCA866.7070005@sauder.ubc.ca>",
       "from_name": "Dan Putler",
       "from_email_hash": "9a2942c99196d0544b3517efc9390a2ad9988031ef34a782b6be64725b046bd4",
-      "date": "2011-11-23T00:01:42-08:00",
+      "date": "2011-11-23T08:01:42Z",
       "subject": "[R-gui] Mixing GUI packages",
       "subject_clean": "[R-gui] Mixing GUI packages",
       "in_reply_to": "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>",
@@ -42,7 +42,7 @@
       "message_id": "<CAOQ5NyenprmwvBGEwfuJwZC-mLWKPSSvqLzGarg-WBp5np2rWA@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
-      "date": "2011-11-23T03:42:13-08:00",
+      "date": "2011-11-23T11:42:13Z",
       "subject": "[R-gui] Mixing GUI packages",
       "subject_clean": "[R-gui] Mixing GUI packages",
       "in_reply_to": "<CAJESSmYL22831QNA6CbnQFfYWqs4vE_vp8Uc+BP=FrLhfg1pmQ@mail.gmail.com>",
@@ -60,7 +60,7 @@
       "message_id": "<CAJESSmbv+t705Hz+L-GLpZDpJ5f0Xjp4y43N+3Up_Mg0g3Y76g@mail.gmail.com>",
       "from_name": "christiaan pauw",
       "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
-      "date": "2011-11-23T19:49:08+02:00",
+      "date": "2011-11-23T17:49:08Z",
       "subject": "[R-gui] Mixing GUI packages",
       "subject_clean": "[R-gui] Mixing GUI packages",
       "in_reply_to": "<4ECCA866.7070005@sauder.ubc.ca>",
@@ -79,7 +79,7 @@
       "message_id": "<CAOQ5Nyfow4v2R154J5kOAt6vn0EGsFR9p-M4E-AE94GbDZ2yzQ@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "bfe89466f88aa4e170d0a66a4e53638a9e527ae59f6b2639e8267ad3421950bf",
-      "date": "2011-11-23T09:54:40-08:00",
+      "date": "2011-11-23T17:54:40Z",
       "subject": "[R-gui] Mixing GUI packages",
       "subject_clean": "[R-gui] Mixing GUI packages",
       "in_reply_to": "<CAJESSmbv+t705Hz+L-GLpZDpJ5f0Xjp4y43N+3Up_Mg0g3Y76g@mail.gmail.com>",
@@ -99,7 +99,7 @@
       "message_id": "<CAJESSmaGoMA4FzXnRe+OmTjAMhy3c+CVq7ai6EFiCgwjg7q34A@mail.gmail.com>",
       "from_name": "christiaan pauw",
       "from_email_hash": "7895bb4d817a785a04237247ae117cd0cedd4c10c5189731af41112a937d64be",
-      "date": "2011-11-28T22:35:47+02:00",
+      "date": "2011-11-28T20:35:47Z",
       "subject": "[R-gui] file load dialog with traitr",
       "subject_clean": "[R-gui] file load dialog with traitr",
       "in_reply_to": null,
@@ -139,8 +139,8 @@
         "Michael Lawrence",
         "christiaan pauw"
       ],
-      "started": "2011-11-23T09:31:34+02:00",
-      "last_reply": "2011-11-23T09:54:40-08:00",
+      "started": "2011-11-23T07:31:34Z",
+      "last_reply": "2011-11-23T17:54:40Z",
       "root_message_id": "msg-a3ef287d6758"
     },
     {
@@ -151,8 +151,8 @@
         "christiaan pauw",
         "j verzani"
       ],
-      "started": "2011-11-28T22:35:47+02:00",
-      "last_reply": "2011-11-28T23:10:55+00:00",
+      "started": "2011-11-28T20:35:47Z",
+      "last_reply": "2011-11-28T23:10:55Z",
       "root_message_id": "msg-0e4e173c514e"
     }
   ]

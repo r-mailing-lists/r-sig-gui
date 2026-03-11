@@ -8,7 +8,7 @@
       "message_id": "<42F49C14.7030404@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2005-08-06T08:16:36-03:00",
+      "date": "2005-08-06T11:16:36Z",
       "subject": "[R-gui] Tinn-R 1.16.1.7 stable released",
       "subject_clean": "[R-gui] Tinn-R 1.16.1.7 stable released",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<1359.70.50.231.221.1123963237.squirrel@homebase.wehi.edu.au>",
       "from_name": "James Wettenhall",
       "from_email_hash": "6c9048b7065d6feb8346424527c6f8ea23d265f948d2f9d540f6f233db6b4025",
-      "date": "2005-08-14T06:00:37+10:00",
+      "date": "2005-08-13T20:00:37Z",
       "subject": "[R-gui] How are Code Generated Names implemented in R tcltk",
       "subject_clean": "[R-gui] How are Code Generated Names implemented in R tcltk",
       "in_reply_to": "<081320051910.8538.42FE4591000F202F0000215A22007348300699089F9D0103@co mcast.net>",
@@ -74,7 +74,7 @@
       "message_id": "<43117794.5000409@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2005-08-28T10:36:36+02:00",
+      "date": "2005-08-28T08:36:36Z",
       "subject": "[R-gui] \"...\" in R tcltk example List Box With A Scroll Bar",
       "subject_clean": "[R-gui] \"...\" in R tcltk example List Box With A Scroll Bar",
       "in_reply_to": "<082720052330.23955.4310F792000D7CF000005D9322073007930699089F9D0103@comcast.net>",
@@ -92,7 +92,7 @@
       "message_id": "<x2vf1qtnup.fsf@turmalin.kubism.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
-      "date": "2005-08-28T11:25:18+02:00",
+      "date": "2005-08-28T09:25:18Z",
       "subject": "[R-gui] \"...\" in R tcltk example List Box With A Scroll Bar",
       "subject_clean": "[R-gui] \"...\" in R tcltk example List Box With A Scroll Bar",
       "in_reply_to": "<082720052330.23955.4310F792000D7CF000005D9322073007930699089F9D0103@comcast.net>",
@@ -126,7 +126,7 @@
       "message_id": "<431424A4.2020909@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2005-08-30T11:19:32+02:00",
+      "date": "2005-08-30T09:19:32Z",
       "subject": "[R-gui] tkrplots not affected by tkpack with fill option",
       "subject_clean": "[R-gui] tkrplots not affected by tkpack with fill option",
       "in_reply_to": "<083020050112.28618.4313B269000BE26000006FCA22069984990699089F9D0103@comcast.net>",
@@ -160,7 +160,7 @@
       "message_id": "<43155158.9050909@statistik.uni-dortmund.de>",
       "from_name": "Uwe Ligges",
       "from_email_hash": "2d61b878ddbd8cb498eaad13e213f45e20da358dea7c063799b1b3934f86a26c",
-      "date": "2005-08-31T08:42:32+02:00",
+      "date": "2005-08-31T06:42:32Z",
       "subject": "[R-gui] R2.1.1, tkWidgets, and DynDoc",
       "subject_clean": "[R-gui] R2.1.1, tkWidgets, and DynDoc",
       "in_reply_to": "<083120050302.27809.43151DCC0004CCBB00006CA122073007930699089F9D0103@comcast.net>",
@@ -178,7 +178,7 @@
       "message_id": "<2933.192.168.65.113.1125480842.squirrel@homebase.wehi.edu.au>",
       "from_name": "James Wettenhall",
       "from_email_hash": "6c9048b7065d6feb8346424527c6f8ea23d265f948d2f9d540f6f233db6b4025",
-      "date": "2005-08-31T19:34:02+10:00",
+      "date": "2005-08-31T09:34:02Z",
       "subject": "[R-gui] R2.1.1, tkWidgets, and DynDoc",
       "subject_clean": "[R-gui] R2.1.1, tkWidgets, and DynDoc",
       "in_reply_to": "<43155158.9050909@statistik.uni-dortmund.de>",
@@ -197,7 +197,7 @@
       "message_id": "<20050831200140.33F5A53585@mail.rsma.frb.gov>",
       "from_name": "jhallman@frb.gov",
       "from_email_hash": "3c9aa378b99e7dbe3417470446aa9a3ede8124c8afd3617731696c93b4731d5e",
-      "date": "2005-08-31T16:01:40-04:00",
+      "date": "2005-08-31T20:01:40Z",
       "subject": "[R-gui] tkStartGUI and on.exit",
       "subject_clean": "[R-gui] tkStartGUI and on.exit",
       "in_reply_to": null,
@@ -217,8 +217,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2005-08-06T08:16:36-03:00",
-      "last_reply": "2005-08-06T08:16:36-03:00",
+      "started": "2005-08-06T11:16:36Z",
+      "last_reply": "2005-08-06T11:16:36Z",
       "root_message_id": "msg-bc1e9633b520"
     },
     {
@@ -229,8 +229,8 @@
         "James Wettenhall",
         "morphwj@comcast.net"
       ],
-      "started": "2005-08-13T19:10:10+00:00",
-      "last_reply": "2005-08-14T06:00:37+10:00",
+      "started": "2005-08-13T19:10:10Z",
+      "last_reply": "2005-08-13T20:00:37Z",
       "root_message_id": "msg-0af3691dfd0c"
     },
     {
@@ -242,8 +242,8 @@
         "Philippe Grosjean",
         "morphwj@comcast.net"
       ],
-      "started": "2005-08-27T23:30:26+00:00",
-      "last_reply": "2005-08-28T11:25:18+02:00",
+      "started": "2005-08-27T23:30:26Z",
+      "last_reply": "2005-08-28T09:25:18Z",
       "root_message_id": "msg-47b2704f5ef9"
     },
     {
@@ -254,8 +254,8 @@
         "Philippe Grosjean",
         "morphwj@comcast.net"
       ],
-      "started": "2005-08-30T01:12:10+00:00",
-      "last_reply": "2005-08-30T11:19:32+02:00",
+      "started": "2005-08-30T01:12:10Z",
+      "last_reply": "2005-08-30T09:19:32Z",
       "root_message_id": "msg-3f1e56f8bcd2"
     },
     {
@@ -267,8 +267,8 @@
         "Uwe Ligges",
         "morphwj@comcast.net"
       ],
-      "started": "2005-08-31T03:02:36+00:00",
-      "last_reply": "2005-08-31T19:34:02+10:00",
+      "started": "2005-08-31T03:02:36Z",
+      "last_reply": "2005-08-31T09:34:02Z",
       "root_message_id": "msg-47b504b26744"
     },
     {
@@ -278,8 +278,8 @@
       "participants": [
         "jhallman@frb.gov"
       ],
-      "started": "2005-08-31T16:01:40-04:00",
-      "last_reply": "2005-08-31T16:01:40-04:00",
+      "started": "2005-08-31T20:01:40Z",
+      "last_reply": "2005-08-31T20:01:40Z",
       "root_message_id": "msg-6b123f9e9bf4"
     }
   ]

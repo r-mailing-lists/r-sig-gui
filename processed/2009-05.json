@@ -8,7 +8,7 @@
       "message_id": "<bcaa950d0905011407o2a6dea4au668ca5fe7f89d2e3@mail.gmail.com>",
       "from_name": "David Katz",
       "from_email_hash": "34f6e476a1ea6bd9ca3bed8f097885d6f43859bcd834af3060f418cf23ae34d6",
-      "date": "2009-05-01T14:07:05-07:00",
+      "date": "2009-05-01T21:07:05Z",
       "subject": "[R-gui] tktable or similar - highlight selected cells using color background",
       "subject_clean": "[R-gui] tktable or similar - highlight selected cells using color background",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<49FB6846.5080907@biostat.ku.dk>",
       "from_name": "Peter Dalgaard",
       "from_email_hash": "409845b1de856be3139032f02f06e223e8f42c55644c877caf44ca15af9ebff1",
-      "date": "2009-05-01T23:23:18+02:00",
+      "date": "2009-05-01T21:23:18Z",
       "subject": "[R-gui] tktable or similar - highlight selected cells using color background",
       "subject_clean": "[R-gui] tktable or similar - highlight selected cells using color background",
       "in_reply_to": "<bcaa950d0905011407o2a6dea4au668ca5fe7f89d2e3@mail.gmail.com>",
@@ -42,7 +42,7 @@
       "message_id": "<49FEE36E.30307@bht-berlin.de>",
       "from_name": "Ulrike Grömping",
       "from_email_hash": "99e1e46e1e0d7b77c1611da747e86cd6a4102b778c9e34ec69a028711516dbf9",
-      "date": "2009-05-04T14:45:34+02:00",
+      "date": "2009-05-04T12:45:34Z",
       "subject": "[R-gui] Simple way to ask user for text string with R-commander plugin ?",
       "subject_clean": "[R-gui] Simple way to ask user for text string with R-commander plugin ?",
       "in_reply_to": null,
@@ -58,7 +58,7 @@
       "message_id": "<B37C0A15B8FB3C468B5BC7EBC7DA14CC61D19A18B6@LP-EXMBVS10.CO.IHC.COM>",
       "from_name": "Greg Snow",
       "from_email_hash": "d2f9bb4886b25a9f732759fe05a19061c499befbba553fe79bba4cc9f00cec28",
-      "date": "2009-05-04T13:55:16-06:00",
+      "date": "2009-05-04T19:55:16Z",
       "subject": "[R-gui] Simple way to ask user for text string with R-commander\tplugin ?",
       "subject_clean": "[R-gui] Simple way to ask user for text string with R-commander\tplugin ?",
       "in_reply_to": "<49FEE36E.30307@bht-berlin.de>",
@@ -76,7 +76,7 @@
       "message_id": "<49FF4E43.7070407@bht-berlin.de>",
       "from_name": "Ulrike Grömping",
       "from_email_hash": "99e1e46e1e0d7b77c1611da747e86cd6a4102b778c9e34ec69a028711516dbf9",
-      "date": "2009-05-04T22:21:23+02:00",
+      "date": "2009-05-04T20:21:23Z",
       "subject": "[R-gui] Simple way to ask user for text string with R-commander plugin ?",
       "subject_clean": "[R-gui] Simple way to ask user for text string with R-commander plugin ?",
       "in_reply_to": "<B37C0A15B8FB3C468B5BC7EBC7DA14CC61D19A18B6@LP-EXMBVS10.CO.IHC.COM>",
@@ -95,7 +95,7 @@
       "message_id": "<49FF4FAB.3000900@bht-berlin.de>",
       "from_name": "Ulrike Grömping",
       "from_email_hash": "99e1e46e1e0d7b77c1611da747e86cd6a4102b778c9e34ec69a028711516dbf9",
-      "date": "2009-05-04T22:27:23+02:00",
+      "date": "2009-05-04T20:27:23Z",
       "subject": "[R-gui] tcltk notebook question: Accessing tabs in ttknotebooks",
       "subject_clean": "[R-gui] tcltk notebook question: Accessing tabs in ttknotebooks",
       "in_reply_to": null,
@@ -129,7 +129,7 @@
       "message_id": "<4A00785A.7080502@bht-berlin.de>",
       "from_name": "Ulrike Grömping",
       "from_email_hash": "99e1e46e1e0d7b77c1611da747e86cd6a4102b778c9e34ec69a028711516dbf9",
-      "date": "2009-05-05T19:33:14+02:00",
+      "date": "2009-05-05T17:33:14Z",
       "subject": "[R-gui] tcltk notebook question: Accessing tabs in ttknotebooks",
       "subject_clean": "[R-gui] tcltk notebook question: Accessing tabs in ttknotebooks",
       "in_reply_to": "<loom.20090505T004109-176@post.gmane.org>",
@@ -168,7 +168,7 @@
       "message_id": "<20090505221935.M64033@beuth-hochschule.de>",
       "from_name": "groemping at bht-berlin.de",
       "from_email_hash": "99e1e46e1e0d7b77c1611da747e86cd6a4102b778c9e34ec69a028711516dbf9",
-      "date": "2009-05-06T00:36:22+02:00",
+      "date": "2009-05-05T22:36:22Z",
       "subject": "[R-gui] tcltk notebook question: Accessing tabs in ttknotebooks",
       "subject_clean": "[R-gui] tcltk notebook question: Accessing tabs in ttknotebooks",
       "in_reply_to": "<loom.20090505T215212-139@post.gmane.org>",
@@ -189,7 +189,7 @@
       "message_id": "<554cd6450905051747l44a0e937rab48823eb4e69b6@mail.gmail.com>",
       "from_name": "Etienne Laliberté",
       "from_email_hash": "00e279a650bf2cb3cba9358398c4d14a2ff31fa3dafc8b5bb893f9bee376c52c",
-      "date": "2009-05-06T12:47:11+12:00",
+      "date": "2009-05-06T00:47:11Z",
       "subject": "[R-gui] problem with printing a question on R console after plotting with JGR",
       "subject_clean": "[R-gui] problem with printing a question on R console after plotting with JGR",
       "in_reply_to": null,
@@ -205,7 +205,7 @@
       "message_id": "<bcaa950d0905060726m1e16e220jc57dd24e3c46ea6c@mail.gmail.com>",
       "from_name": "David Katz",
       "from_email_hash": "34f6e476a1ea6bd9ca3bed8f097885d6f43859bcd834af3060f418cf23ae34d6",
-      "date": "2009-05-06T07:26:05-07:00",
+      "date": "2009-05-06T14:26:05Z",
       "subject": "[R-gui] vtcl",
       "subject_clean": "[R-gui] vtcl",
       "in_reply_to": null,
@@ -239,7 +239,7 @@
       "message_id": "<7B10A514B0D44803B25C5822467E1D3E@gpbdmx>",
       "from_name": "Ian Fellows",
       "from_email_hash": "d12bb521d01a14c5c9364007086c61200d7898178507ef5d276c14223c822c6b",
-      "date": "2009-05-06T16:41:47-07:00",
+      "date": "2009-05-06T23:41:47Z",
       "subject": "[R-gui] problem with printing a question on R console afterplotting with JGR",
       "subject_clean": "[R-gui] problem with printing a question on R console afterplotting with JGR",
       "in_reply_to": "<554cd6450905051747l44a0e937rab48823eb4e69b6@mail.gmail.com>",
@@ -255,7 +255,7 @@
       "message_id": "<C629BB83.5F8%smootwy@u.washington.edu>",
       "from_name": "Donovan Anderson",
       "from_email_hash": "22b9d6ed24891b3ead395f9a303b0e0c0aec6341e12839756202950aa82bab4e",
-      "date": "2009-05-08T10:35:47-07:00",
+      "date": "2009-05-08T17:35:47Z",
       "subject": "[R-gui] GUI error message (EXC_BAD_ACCESS (SIGBUS).",
       "subject_clean": "[R-gui] GUI error message (EXC_BAD_ACCESS (SIGBUS).",
       "in_reply_to": "<C6288215.575%smootwy@u.washington.edu>",
@@ -271,7 +271,7 @@
       "message_id": "<bcaa950d0905090639s7138e244j3269617cf826ca06@mail.gmail.com>",
       "from_name": "David Katz",
       "from_email_hash": "34f6e476a1ea6bd9ca3bed8f097885d6f43859bcd834af3060f418cf23ae34d6",
-      "date": "2009-05-09T06:39:57-07:00",
+      "date": "2009-05-09T13:39:57Z",
       "subject": "[R-gui] ttktreeview",
       "subject_clean": "[R-gui] ttktreeview",
       "in_reply_to": null,
@@ -287,7 +287,7 @@
       "message_id": "<1241894238.6776.3.camel@whitebox>",
       "from_name": "Dan Putler",
       "from_email_hash": "9a2942c99196d0544b3517efc9390a2ad9988031ef34a782b6be64725b046bd4",
-      "date": "2009-05-09T11:37:18-07:00",
+      "date": "2009-05-09T18:37:18Z",
       "subject": "[R-gui] GUI error message (EXC_BAD_ACCESS (SIGBUS).",
       "subject_clean": "[R-gui] GUI error message (EXC_BAD_ACCESS (SIGBUS).",
       "in_reply_to": "<6795_1241855515_1241855515_C629BB83.5F8%smootwy@u.washington.edu>",
@@ -305,7 +305,7 @@
       "message_id": "<bcaa950d0905141205ve97c7a7p2aefdfd12317827d@mail.gmail.com>",
       "from_name": "David Katz",
       "from_email_hash": "34f6e476a1ea6bd9ca3bed8f097885d6f43859bcd834af3060f418cf23ae34d6",
-      "date": "2009-05-14T12:05:56-07:00",
+      "date": "2009-05-14T19:05:56Z",
       "subject": "[R-gui] glade with RGtk2 newbie question",
       "subject_clean": "[R-gui] glade with RGtk2 newbie question",
       "in_reply_to": null,
@@ -321,7 +321,7 @@
       "message_id": "<509e0620905141420p106f9b47m5c8a608f9aab23a@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2009-05-14T14:20:22-07:00",
+      "date": "2009-05-14T21:20:22Z",
       "subject": "[R-gui] glade with RGtk2 newbie question",
       "subject_clean": "[R-gui] glade with RGtk2 newbie question",
       "in_reply_to": "<bcaa950d0905141205ve97c7a7p2aefdfd12317827d@mail.gmail.com>",
@@ -339,7 +339,7 @@
       "message_id": "<bcaa950d0905150943v27dc6625x9b4fc12fa2279303@mail.gmail.com>",
       "from_name": "David Katz",
       "from_email_hash": "34f6e476a1ea6bd9ca3bed8f097885d6f43859bcd834af3060f418cf23ae34d6",
-      "date": "2009-05-15T09:43:22-07:00",
+      "date": "2009-05-15T16:43:22Z",
       "subject": "[R-gui] tktable topleft",
       "subject_clean": "[R-gui] tktable topleft",
       "in_reply_to": null,
@@ -373,7 +373,7 @@
       "message_id": "<bcaa950d0905290920i712023b7s422a017ee0dcf234@mail.gmail.com>",
       "from_name": "David Katz",
       "from_email_hash": "34f6e476a1ea6bd9ca3bed8f097885d6f43859bcd834af3060f418cf23ae34d6",
-      "date": "2009-05-29T09:20:33-07:00",
+      "date": "2009-05-29T16:20:33Z",
       "subject": "[R-gui] rGtkDataFrame - determine selection",
       "subject_clean": "[R-gui] rGtkDataFrame - determine selection",
       "in_reply_to": null,
@@ -389,7 +389,7 @@
       "message_id": "<509e0620905291049u5115a3d4i55d969e0a3bb1102@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2009-05-29T10:49:42-07:00",
+      "date": "2009-05-29T17:49:42Z",
       "subject": "[R-gui] rGtkDataFrame - determine selection",
       "subject_clean": "[R-gui] rGtkDataFrame - determine selection",
       "in_reply_to": "<bcaa950d0905290920i712023b7s422a017ee0dcf234@mail.gmail.com>",
@@ -412,8 +412,8 @@
         "David Katz",
         "Peter Dalgaard"
       ],
-      "started": "2009-05-01T14:07:05-07:00",
-      "last_reply": "2009-05-01T23:23:18+02:00",
+      "started": "2009-05-01T21:07:05Z",
+      "last_reply": "2009-05-01T21:23:18Z",
       "root_message_id": "msg-acd7d1693861"
     },
     {
@@ -424,8 +424,8 @@
         "Greg Snow",
         "Ulrike Grömping"
       ],
-      "started": "2009-05-04T14:45:34+02:00",
-      "last_reply": "2009-05-04T22:21:23+02:00",
+      "started": "2009-05-04T12:45:34Z",
+      "last_reply": "2009-05-04T20:21:23Z",
       "root_message_id": "msg-27b3010be1db"
     },
     {
@@ -437,21 +437,9 @@
         "groemping at bht-berlin.de",
         "jverzani"
       ],
-      "started": "2009-05-04T22:27:23+02:00",
-      "last_reply": "2009-05-06T00:36:22+02:00",
+      "started": "2009-05-04T20:27:23Z",
+      "last_reply": "2009-05-05T22:36:22Z",
       "root_message_id": "msg-bc74ebe75d3f"
-    },
-    {
-      "id": "thread-65a50d06e4a8",
-      "subject": "[R-gui] vtcl",
-      "message_count": 2,
-      "participants": [
-        "David Katz",
-        "jverzani"
-      ],
-      "started": "2009-05-06T07:26:05-07:00",
-      "last_reply": "2009-05-06T20:14:42+00:00",
-      "root_message_id": "msg-65a50d06e4a8"
     },
     {
       "id": "thread-61a9459cf128",
@@ -461,9 +449,21 @@
         "Etienne Laliberté",
         "Ian Fellows"
       ],
-      "started": "2009-05-06T12:47:11+12:00",
-      "last_reply": "2009-05-06T16:41:47-07:00",
+      "started": "2009-05-06T00:47:11Z",
+      "last_reply": "2009-05-06T23:41:47Z",
       "root_message_id": "msg-61a9459cf128"
+    },
+    {
+      "id": "thread-65a50d06e4a8",
+      "subject": "[R-gui] vtcl",
+      "message_count": 2,
+      "participants": [
+        "David Katz",
+        "jverzani"
+      ],
+      "started": "2009-05-06T14:26:05Z",
+      "last_reply": "2009-05-06T20:14:42Z",
+      "root_message_id": "msg-65a50d06e4a8"
     },
     {
       "id": "thread-3da9c6813023",
@@ -472,8 +472,8 @@
       "participants": [
         "Donovan Anderson"
       ],
-      "started": "2009-05-08T10:35:47-07:00",
-      "last_reply": "2009-05-08T10:35:47-07:00",
+      "started": "2009-05-08T17:35:47Z",
+      "last_reply": "2009-05-08T17:35:47Z",
       "root_message_id": "msg-3da9c6813023"
     },
     {
@@ -483,8 +483,8 @@
       "participants": [
         "David Katz"
       ],
-      "started": "2009-05-09T06:39:57-07:00",
-      "last_reply": "2009-05-09T06:39:57-07:00",
+      "started": "2009-05-09T13:39:57Z",
+      "last_reply": "2009-05-09T13:39:57Z",
       "root_message_id": "msg-d67b1f0cd903"
     },
     {
@@ -494,8 +494,8 @@
       "participants": [
         "Dan Putler"
       ],
-      "started": "2009-05-09T11:37:18-07:00",
-      "last_reply": "2009-05-09T11:37:18-07:00",
+      "started": "2009-05-09T18:37:18Z",
+      "last_reply": "2009-05-09T18:37:18Z",
       "root_message_id": "msg-4acc8ff5cc03"
     },
     {
@@ -506,8 +506,8 @@
         "David Katz",
         "Michael Lawrence"
       ],
-      "started": "2009-05-14T12:05:56-07:00",
-      "last_reply": "2009-05-14T14:20:22-07:00",
+      "started": "2009-05-14T19:05:56Z",
+      "last_reply": "2009-05-14T21:20:22Z",
       "root_message_id": "msg-40f97feefdab"
     },
     {
@@ -518,8 +518,8 @@
         "David Katz",
         "jverzani"
       ],
-      "started": "2009-05-15T09:43:22-07:00",
-      "last_reply": "2009-05-17T15:24:42+00:00",
+      "started": "2009-05-15T16:43:22Z",
+      "last_reply": "2009-05-17T15:24:42Z",
       "root_message_id": "msg-074840438515"
     },
     {
@@ -530,8 +530,8 @@
         "David Katz",
         "Michael Lawrence"
       ],
-      "started": "2009-05-29T09:20:33-07:00",
-      "last_reply": "2009-05-29T10:49:42-07:00",
+      "started": "2009-05-29T16:20:33Z",
+      "last_reply": "2009-05-29T17:49:42Z",
       "root_message_id": "msg-75954b0befd2"
     }
   ]

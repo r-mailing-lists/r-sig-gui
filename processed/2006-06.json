@@ -8,7 +8,7 @@
       "message_id": "<576452c40606061110i74ee9ad2ja53c1033c12974dc@mail.gmail.com>",
       "from_name": "j verzani",
       "from_email_hash": "a029675bf9462719f336b4ef9bb1441ceba180f1ffd7e0365f6802832a6ad84e",
-      "date": "2006-06-06T14:10:56-04:00",
+      "date": "2006-06-06T18:10:56Z",
       "subject": "[R-gui] New versions of pmg and iWIdgetsRGtk",
       "subject_clean": "[R-gui] New versions of pmg and iWIdgetsRGtk",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<448B923E.30801@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-06-11T00:47:10-03:00",
+      "date": "2006-06-11T03:47:10Z",
       "subject": "[R-gui] Tinn-R 1.18.5.5 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.5 released",
       "in_reply_to": null,
@@ -40,7 +40,7 @@
       "message_id": "<449B5720.9010009@iastate.edu>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "c36bf863fc6ce4c956c531e3be3c380a9dea26d6f0cbee8fa9df0b1b13a51f2d",
-      "date": "2006-06-22T21:51:12-05:00",
+      "date": "2006-06-23T02:51:12Z",
       "subject": "[R-gui] rgtk2 on cran",
       "subject_clean": "[R-gui] rgtk2 on cran",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<pan.2006.06.23.07.49.31.906568@troefpunt.nl>",
       "from_name": "JeeBee",
       "from_email_hash": "258eec85a12bdf27abe681a2799ab393351db65e04cd56007245b4b7cf1de7f7",
-      "date": "2006-06-23T09:49:31+02:00",
+      "date": "2006-06-23T07:49:31Z",
       "subject": "[R-gui] Some R-Tcl/Tk-BWidget newbie questions.",
       "subject_clean": "[R-gui] Some R-Tcl/Tk-BWidget newbie questions.",
       "in_reply_to": null,
@@ -72,7 +72,7 @@
       "message_id": "<6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>",
       "from_name": "Gunther Maier",
       "from_email_hash": "dba85fabd69b20401e90a168981333318f02eec9349f04ef49e01bc52df6104d",
-      "date": "2006-06-23T12:48:28+02:00",
+      "date": "2006-06-23T10:48:28Z",
       "subject": "[R-gui] SimpleR, a Windows GUI to R",
       "subject_clean": "[R-gui] SimpleR, a Windows GUI to R",
       "in_reply_to": null,
@@ -88,7 +88,7 @@
       "message_id": "<15f8e67d0606230357p30a6f684id1c6fc3b8322e370@mail.gmail.com>",
       "from_name": "Xiaohua Dai",
       "from_email_hash": "65c983421f7a572226a98aa3e149f474e06d608a5e5d710e95a0fd14533602ea",
-      "date": "2006-06-23T12:57:24+02:00",
+      "date": "2006-06-23T10:57:24Z",
       "subject": "[R-gui] SimpleR, a Windows GUI to R",
       "subject_clean": "[R-gui] SimpleR, a Windows GUI to R",
       "in_reply_to": "<6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>",
@@ -106,7 +106,7 @@
       "message_id": "<44A014F6.2060308@statistik.uni-dortmund.de>",
       "from_name": "Uwe Ligges",
       "from_email_hash": "2d61b878ddbd8cb498eaad13e213f45e20da358dea7c063799b1b3934f86a26c",
-      "date": "2006-06-26T19:10:14+02:00",
+      "date": "2006-06-26T17:10:14Z",
       "subject": "[R-gui] rgtk2 on cran",
       "subject_clean": "[R-gui] rgtk2 on cran",
       "in_reply_to": "<449B5720.9010009@iastate.edu>",
@@ -124,7 +124,7 @@
       "message_id": "<44A10897.5010709@umh.ac.be>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "59ba6d77954f91c1a4c44c37f8744ecd38bec50e93323a77f525e96f2cf31206",
-      "date": "2006-06-27T12:29:43+02:00",
+      "date": "2006-06-27T10:29:43Z",
       "subject": "[R-gui] New developers section on the R Wiki",
       "subject_clean": "[R-gui] New developers section on the R Wiki",
       "in_reply_to": null,
@@ -140,7 +140,7 @@
       "message_id": "<p06210200c0c992ffbac5@[134.214.34.24]>",
       "from_name": "Jean Thioulouse",
       "from_email_hash": "b20a674eb42804a87b064b390e04515db85d2871dd7105ba54500899f94dfe16",
-      "date": "2006-06-30T16:40:25+02:00",
+      "date": "2006-06-30T14:40:25Z",
       "subject": "[R-gui] ade4 package GUI",
       "subject_clean": "[R-gui] ade4 package GUI",
       "in_reply_to": null,
@@ -160,8 +160,8 @@
       "participants": [
         "j verzani"
       ],
-      "started": "2006-06-06T14:10:56-04:00",
-      "last_reply": "2006-06-06T14:10:56-04:00",
+      "started": "2006-06-06T18:10:56Z",
+      "last_reply": "2006-06-06T18:10:56Z",
       "root_message_id": "msg-0bc89477fe75"
     },
     {
@@ -171,8 +171,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-06-11T00:47:10-03:00",
-      "last_reply": "2006-06-11T00:47:10-03:00",
+      "started": "2006-06-11T03:47:10Z",
+      "last_reply": "2006-06-11T03:47:10Z",
       "root_message_id": "msg-53e1d4f78f50"
     },
     {
@@ -183,8 +183,8 @@
         "Michael Lawrence",
         "Uwe Ligges"
       ],
-      "started": "2006-06-22T21:51:12-05:00",
-      "last_reply": "2006-06-26T19:10:14+02:00",
+      "started": "2006-06-23T02:51:12Z",
+      "last_reply": "2006-06-26T17:10:14Z",
       "root_message_id": "msg-2fada0b31bf0"
     },
     {
@@ -194,8 +194,8 @@
       "participants": [
         "JeeBee"
       ],
-      "started": "2006-06-23T09:49:31+02:00",
-      "last_reply": "2006-06-23T09:49:31+02:00",
+      "started": "2006-06-23T07:49:31Z",
+      "last_reply": "2006-06-23T07:49:31Z",
       "root_message_id": "msg-3c2256bc8b22"
     },
     {
@@ -206,8 +206,8 @@
         "Gunther Maier",
         "Xiaohua Dai"
       ],
-      "started": "2006-06-23T12:48:28+02:00",
-      "last_reply": "2006-06-23T12:57:24+02:00",
+      "started": "2006-06-23T10:48:28Z",
+      "last_reply": "2006-06-23T10:57:24Z",
       "root_message_id": "msg-fb19b9153c08"
     },
     {
@@ -217,8 +217,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2006-06-27T12:29:43+02:00",
-      "last_reply": "2006-06-27T12:29:43+02:00",
+      "started": "2006-06-27T10:29:43Z",
+      "last_reply": "2006-06-27T10:29:43Z",
       "root_message_id": "msg-71b4606de98c"
     },
     {
@@ -228,8 +228,8 @@
       "participants": [
         "Jean Thioulouse"
       ],
-      "started": "2006-06-30T16:40:25+02:00",
-      "last_reply": "2006-06-30T16:40:25+02:00",
+      "started": "2006-06-30T14:40:25Z",
+      "last_reply": "2006-06-30T14:40:25Z",
       "root_message_id": "msg-3bfc90691fa7"
     }
   ]

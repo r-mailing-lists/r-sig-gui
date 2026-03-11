@@ -8,7 +8,7 @@
       "message_id": "<001201c6b502$4f6d19f0$6401a8c0@DESKTOP>",
       "from_name": "Jerry Pressnell",
       "from_email_hash": "c17070d6b586fecdf18b0bf7efdfe162dcb5716139e65f1a20a68697edf5ae47",
-      "date": "2006-08-01T10:34:54+10:00",
+      "date": "2006-08-01T00:34:54Z",
       "subject": "[R-gui]  [ANN] New version of Rpad -- a web-based interface to R",
       "subject_clean": "[R-gui]  [ANN] New version of Rpad -- a web-based interface to R",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<EA46353C4E0C944895590C266B96A3AF1018D0@uspalpf02.epri.com>",
       "from_name": "Short, Tom",
       "from_email_hash": "503204ef6fe47e47669217b4db6a41d60d212fdaa5629a73cba79917db374ea9",
-      "date": "2006-08-01T06:54:35-07:00",
+      "date": "2006-08-01T13:54:35Z",
       "subject": "[R-gui] [ANN] New version of Rpad -- a web-based interface to R",
       "subject_clean": "[R-gui] [ANN] New version of Rpad -- a web-based interface to R",
       "in_reply_to": "<001201c6b502$4f6d19f0$6401a8c0@DESKTOP>",
@@ -40,7 +40,7 @@
       "message_id": "<ccfee0c50608021443x3d3ec3a4nc73e9371bff74a86@mail.gmail.com>",
       "from_name": "j verzani",
       "from_email_hash": "e20704472bc61a02d77ea3e9265cfa5063fc7f96ca96eb6da92d78c740c413c1",
-      "date": "2006-08-02T17:43:25-04:00",
+      "date": "2006-08-02T21:43:25Z",
       "subject": "[R-gui] New version of pmg, 0.9-18, based on new gWidgetsRGtk package",
       "subject_clean": "[R-gui] New version of pmg, 0.9-18, based on new gWidgetsRGtk package",
       "in_reply_to": null,
@@ -56,7 +56,7 @@
       "message_id": "<44D78D8B.8090909@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-08-07T15:59:23-03:00",
+      "date": "2006-08-07T18:59:23Z",
       "subject": "[R-gui] Tinn-R 1.18.5.5 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.5 released",
       "in_reply_to": null,
@@ -72,7 +72,7 @@
       "message_id": "<44D7906D.4020606@terra.com.br>",
       "from_name": "Jose Claudio Faria",
       "from_email_hash": "192275b8f9b2352ee8b797a0ae80a4d45e80ec26612b63f5082f7a637bc052e2",
-      "date": "2006-08-07T16:11:41-03:00",
+      "date": "2006-08-07T19:11:41Z",
       "subject": "[R-gui] Tinn-R 1.18.5.8 released",
       "subject_clean": "[R-gui] Tinn-R 1.18.5.8 released",
       "in_reply_to": null,
@@ -88,7 +88,7 @@
       "message_id": "<200608222120.AA31523088@comb.es>",
       "from_name": "Manel Salamero",
       "from_email_hash": "dbd2b360016cb9ce0f2a0501ec4ac1d7f382af0816b25d341d5db21ba67eafb2",
-      "date": "2006-08-22T21:20:27+02:00",
+      "date": "2006-08-22T19:20:27Z",
       "subject": "[R-gui] tktoplevel & tkgetSaveFile options",
       "subject_clean": "[R-gui] tktoplevel & tkgetSaveFile options",
       "in_reply_to": null,
@@ -104,7 +104,7 @@
       "message_id": "<17655.14328.717788.448765@basebud.nulle.part>",
       "from_name": "Dirk Eddelbuettel",
       "from_email_hash": "447d8de83a7b9c5d61116890bacb6dc0c76aee31b3011a41fb7d3c62dac9042f",
-      "date": "2006-08-31T14:26:48-05:00",
+      "date": "2006-08-31T19:26:48Z",
       "subject": "[R-gui] tktoplevel & tkgetSaveFile options",
       "subject_clean": "[R-gui] tktoplevel & tkgetSaveFile options",
       "in_reply_to": "<200608222120.AA31523088@comb.es>",
@@ -127,8 +127,8 @@
         "Jerry Pressnell",
         "Short, Tom"
       ],
-      "started": "2006-08-01T10:34:54+10:00",
-      "last_reply": "2006-08-01T06:54:35-07:00",
+      "started": "2006-08-01T00:34:54Z",
+      "last_reply": "2006-08-01T13:54:35Z",
       "root_message_id": "msg-a41a2cb58f90"
     },
     {
@@ -138,8 +138,8 @@
       "participants": [
         "j verzani"
       ],
-      "started": "2006-08-02T17:43:25-04:00",
-      "last_reply": "2006-08-02T17:43:25-04:00",
+      "started": "2006-08-02T21:43:25Z",
+      "last_reply": "2006-08-02T21:43:25Z",
       "root_message_id": "msg-5be3ab2c1bab"
     },
     {
@@ -149,8 +149,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-08-07T15:59:23-03:00",
-      "last_reply": "2006-08-07T15:59:23-03:00",
+      "started": "2006-08-07T18:59:23Z",
+      "last_reply": "2006-08-07T18:59:23Z",
       "root_message_id": "msg-476724e4d8c4"
     },
     {
@@ -160,8 +160,8 @@
       "participants": [
         "Jose Claudio Faria"
       ],
-      "started": "2006-08-07T16:11:41-03:00",
-      "last_reply": "2006-08-07T16:11:41-03:00",
+      "started": "2006-08-07T19:11:41Z",
+      "last_reply": "2006-08-07T19:11:41Z",
       "root_message_id": "msg-b2a913954794"
     },
     {
@@ -172,8 +172,8 @@
         "Dirk Eddelbuettel",
         "Manel Salamero"
       ],
-      "started": "2006-08-22T21:20:27+02:00",
-      "last_reply": "2006-08-31T14:26:48-05:00",
+      "started": "2006-08-22T19:20:27Z",
+      "last_reply": "2006-08-31T19:26:48Z",
       "root_message_id": "msg-91325b22383f"
     }
   ]

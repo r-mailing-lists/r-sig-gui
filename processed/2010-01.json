@@ -8,7 +8,7 @@
       "message_id": "<c40522e31001060518g1aa2cf92mb78414940d6e58ce@mail.gmail.com>",
       "from_name": "zeljko krizek",
       "from_email_hash": "21cb7f780c987c126eb8d4558918593a1df6f7b9e22d908035426e03df94db46",
-      "date": "2010-01-06T14:18:16+01:00",
+      "date": "2010-01-06T13:18:16Z",
       "subject": "[R-gui] rJava- Question about a building R-GUI and Buttons Event",
       "subject_clean": "[R-gui] rJava- Question about a building R-GUI and Buttons Event",
       "in_reply_to": null,
@@ -42,7 +42,7 @@
       "message_id": "<c40522e31001111428p6a5fc06cib534bc767c3f84b5@mail.gmail.com>",
       "from_name": "zeljko krizek",
       "from_email_hash": "21cb7f780c987c126eb8d4558918593a1df6f7b9e22d908035426e03df94db46",
-      "date": "2010-01-11T23:28:38+01:00",
+      "date": "2010-01-11T22:28:38Z",
       "subject": "[R-gui] Question about a gTable in r package \"gWidgets\"",
       "subject_clean": "[R-gui] Question about a gTable in r package \"gWidgets\"",
       "in_reply_to": null,
@@ -97,8 +97,8 @@
         "john verzani",
         "zeljko krizek"
       ],
-      "started": "2010-01-06T14:18:16+01:00",
-      "last_reply": "2010-01-06T14:02:09+00:00",
+      "started": "2010-01-06T13:18:16Z",
+      "last_reply": "2010-01-06T14:02:09Z",
       "root_message_id": "msg-a81936cba654"
     },
     {
@@ -109,8 +109,8 @@
         "john verzani",
         "zeljko krizek"
       ],
-      "started": "2010-01-11T23:28:38+01:00",
-      "last_reply": "2010-01-12T15:52:57+00:00",
+      "started": "2010-01-11T22:28:38Z",
+      "last_reply": "2010-01-12T15:52:57Z",
       "root_message_id": "msg-d055d842dc02"
     },
     {
@@ -120,8 +120,8 @@
       "participants": [
         "john verzani"
       ],
-      "started": "2010-01-15T21:03:37+00:00",
-      "last_reply": "2010-01-15T21:03:37+00:00",
+      "started": "2010-01-15T21:03:37Z",
+      "last_reply": "2010-01-15T21:03:37Z",
       "root_message_id": "msg-b8fe4177e585"
     }
   ]

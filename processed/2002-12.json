@@ -8,7 +8,7 @@
       "message_id": "<200212011333.32836.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
       "from_name": "Thomas Friedrichsmeier",
       "from_email_hash": "ee937b434486ed9032c3a334c49c9d5605e120dffa3d619066cf1ab46afd9dd4",
-      "date": "2002-12-01T13:33:32+01:00",
+      "date": "2002-12-01T12:33:32Z",
       "subject": "[R-gui]  (renamed) What do we do?",
       "subject_clean": "[R-gui]  (renamed) What do we do?",
       "in_reply_to": "<MABBLJDICACNFOLGIHJOOEGEDBAA.phgrosjean@sciviews.org>",
@@ -26,7 +26,7 @@
       "message_id": "<87adjp1tsq.fsf@jeeves.blindglobe.net>",
       "from_name": "A.J. Rossini",
       "from_email_hash": "e38e01ad6ef7554feaf1446fbf732417739f2726ef60f5377d3a8dfe80e4b2ad",
-      "date": "2002-12-01T10:24:37-08:00",
+      "date": "2002-12-01T18:24:37Z",
       "subject": "[R-gui]  (renamed) What do we do?",
       "subject_clean": "[R-gui]  (renamed) What do we do?",
       "in_reply_to": "<200212011333.32836.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
@@ -45,7 +45,7 @@
       "message_id": "<permail-2002120120423924630-friedtcb@ruhr-uni-bochum.de>",
       "from_name": "Thomas Friedrichsmeier",
       "from_email_hash": "c80ea4ab5d54ba92d46df0ae2a6cb18c4f3196f17defcae70f2f3c4410749a27",
-      "date": "2002-12-01T21:42:39+01:00",
+      "date": "2002-12-01T20:42:39Z",
       "subject": "[R-gui] (renamed) What do we do?",
       "subject_clean": "[R-gui] (renamed) What do we do?",
       "in_reply_to": "<87adjp1tsq.fsf@jeeves.blindglobe.net>",
@@ -61,7 +61,7 @@
       "message_id": "<87u1hxzao0.fsf@jeeves.blindglobe.net>",
       "from_name": "A.J. Rossini",
       "from_email_hash": "e38e01ad6ef7554feaf1446fbf732417739f2726ef60f5377d3a8dfe80e4b2ad",
-      "date": "2002-12-01T13:33:51-08:00",
+      "date": "2002-12-01T21:33:51Z",
       "subject": "[R-gui] (renamed) What do we do?",
       "subject_clean": "[R-gui] (renamed) What do we do?",
       "in_reply_to": "<permail-2002120120423924630-friedtcb@ruhr-uni-bochum.de>",
@@ -79,7 +79,7 @@
       "message_id": "<x265uduy6g.fsf@biostat.ku.dk>",
       "from_name": "Peter Dalgaard BSA",
       "from_email_hash": "d79f7f7aadaa643f3d84d8044fae63a21eadaad807f7baf741671876cecc5fab",
-      "date": "2002-12-02T00:17:11+01:00",
+      "date": "2002-12-01T23:17:11Z",
       "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
       "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
       "in_reply_to": "<zYhkOWA3c059EwC4@myatt.demon.co.uk>",
@@ -100,7 +100,7 @@
       "message_id": "<87hedxuwry.fsf@jeeves.blindglobe.net>",
       "from_name": "A.J. Rossini",
       "from_email_hash": "e38e01ad6ef7554feaf1446fbf732417739f2726ef60f5377d3a8dfe80e4b2ad",
-      "date": "2002-12-01T15:47:29-08:00",
+      "date": "2002-12-01T23:47:29Z",
       "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
       "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
       "in_reply_to": "<x265uduy6g.fsf@biostat.ku.dk>",
@@ -122,7 +122,7 @@
       "message_id": "<200212020118.01268.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
       "from_name": "Thomas Friedrichsmeier",
       "from_email_hash": "ee937b434486ed9032c3a334c49c9d5605e120dffa3d619066cf1ab46afd9dd4",
-      "date": "2002-12-02T01:18:01+01:00",
+      "date": "2002-12-02T00:18:01Z",
       "subject": "[R-gui] (renamed) What do we do?",
       "subject_clean": "[R-gui] (renamed) What do we do?",
       "in_reply_to": "<87u1hxzao0.fsf@jeeves.blindglobe.net>",
@@ -141,7 +141,7 @@
       "message_id": "<200212020141.14047.thomas.friedrichsmeier@ruhr-uni-bochum.de>",
       "from_name": "Thomas Friedrichsmeier",
       "from_email_hash": "ee937b434486ed9032c3a334c49c9d5605e120dffa3d619066cf1ab46afd9dd4",
-      "date": "2002-12-02T01:41:14+01:00",
+      "date": "2002-12-02T00:41:14Z",
       "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
       "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
       "in_reply_to": "<x265uduy6g.fsf@biostat.ku.dk>",
@@ -179,7 +179,7 @@
       "message_id": "<MABBLJDICACNFOLGIHJOCEGPDBAA.philippe.grosjean@ifremer.fr>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "049ac2b8efcf881dbbcca11f142148e8aa6327ee2862d95deb5adcbe051ac10e",
-      "date": "2002-12-03T11:21:40+01:00",
+      "date": "2002-12-03T10:21:40Z",
       "subject": "[R-gui] R GUI developer's page",
       "subject_clean": "[R-gui] R GUI developer's page",
       "in_reply_to": null,
@@ -195,7 +195,7 @@
       "message_id": "<3DEE559C.1000809@almaden.ibm.com>",
       "from_name": "Johnny Accot",
       "from_email_hash": "69db4e3638e2d4bf48e87a62414a579ccd40dc2359da1ef673958e11c54609d8",
-      "date": "2002-12-04T11:21:00-08:00",
+      "date": "2002-12-04T19:21:00Z",
       "subject": "[R-gui] R and DirectFB",
       "subject_clean": "[R-gui] R and DirectFB",
       "in_reply_to": null,
@@ -211,7 +211,7 @@
       "message_id": "<MABBLJDICACNFOLGIHJOIEFJDBAA.philippe.grosjean@ifremer.fr>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "049ac2b8efcf881dbbcca11f142148e8aa6327ee2862d95deb5adcbe051ac10e",
-      "date": "2002-12-28T11:22:42+01:00",
+      "date": "2002-12-28T10:22:42Z",
       "subject": "[R-gui] XML specifs for R GUIs dialog boxes",
       "subject_clean": "[R-gui] XML specifs for R GUIs dialog boxes",
       "in_reply_to": null,
@@ -227,7 +227,7 @@
       "message_id": "<MABBLJDICACNFOLGIHJOAEFPDBAA.phgrosjean@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "3c424dd553515be1310de610ed58358afe0689b16c81c3f5aef1648a8bc7eb30",
-      "date": "2002-12-29T10:02:07+01:00",
+      "date": "2002-12-29T09:02:07Z",
       "subject": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
       "subject_clean": "[R-gui] Re: R-SIG-GUI digest, Vol 1 #18 - 5 msgs",
       "in_reply_to": "<x28yzd4pyk.fsf@biostat.ku.dk>",
@@ -243,7 +243,7 @@
       "message_id": "<MABBLJDICACNFOLGIHJOOEGEDBAA.phgrosjean@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "3c424dd553515be1310de610ed58358afe0689b16c81c3f5aef1648a8bc7eb30",
-      "date": "2002-12-29T14:19:19+01:00",
+      "date": "2002-12-29T13:19:19Z",
       "subject": "[R-gui]  (renamed) What do we do?",
       "subject_clean": "[R-gui]  (renamed) What do we do?",
       "in_reply_to": "<aPxeLGA2xz59EwWm@myatt.demon.co.uk>",
@@ -265,8 +265,8 @@
         "Peter Dalgaard BSA",
         "Thomas Friedrichsmeier"
       ],
-      "started": "2002-12-02T00:17:11+01:00",
-      "last_reply": "2002-12-02T01:41:14+01:00",
+      "started": "2002-12-01T23:17:11Z",
+      "last_reply": "2002-12-02T00:41:14Z",
       "root_message_id": "msg-fcba25e35323"
     },
     {
@@ -276,8 +276,8 @@
       "participants": [
         "Mark Myatt"
       ],
-      "started": "2002-12-02T11:35:45+00:00",
-      "last_reply": "2002-12-02T11:35:45+00:00",
+      "started": "2002-12-02T11:35:45Z",
+      "last_reply": "2002-12-02T11:35:45Z",
       "root_message_id": "msg-4e386db3b732"
     },
     {
@@ -287,8 +287,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2002-12-03T11:21:40+01:00",
-      "last_reply": "2002-12-03T11:21:40+01:00",
+      "started": "2002-12-03T10:21:40Z",
+      "last_reply": "2002-12-03T10:21:40Z",
       "root_message_id": "msg-91743d250e4c"
     },
     {
@@ -298,8 +298,8 @@
       "participants": [
         "Johnny Accot"
       ],
-      "started": "2002-12-04T11:21:00-08:00",
-      "last_reply": "2002-12-04T11:21:00-08:00",
+      "started": "2002-12-04T19:21:00Z",
+      "last_reply": "2002-12-04T19:21:00Z",
       "root_message_id": "msg-47a0406ce5b6"
     },
     {
@@ -309,8 +309,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2002-12-28T11:22:42+01:00",
-      "last_reply": "2002-12-28T11:22:42+01:00",
+      "started": "2002-12-28T10:22:42Z",
+      "last_reply": "2002-12-28T10:22:42Z",
       "root_message_id": "msg-7a127f729cfa"
     },
     {
@@ -320,8 +320,8 @@
       "participants": [
         "Philippe Grosjean"
       ],
-      "started": "2002-12-29T10:02:07+01:00",
-      "last_reply": "2002-12-29T10:02:07+01:00",
+      "started": "2002-12-29T09:02:07Z",
+      "last_reply": "2002-12-29T09:02:07Z",
       "root_message_id": "msg-c136e26dab93"
     },
     {
@@ -333,8 +333,8 @@
         "Philippe Grosjean",
         "Thomas Friedrichsmeier"
       ],
-      "started": "2002-12-29T14:19:19+01:00",
-      "last_reply": "2002-12-29T14:19:19+01:00",
+      "started": "2002-12-29T13:19:19Z",
+      "last_reply": "2002-12-29T13:19:19Z",
       "root_message_id": "msg-b7160772a4ae"
     }
   ]

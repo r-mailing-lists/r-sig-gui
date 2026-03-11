@@ -8,7 +8,7 @@
       "message_id": "<200806052101.AA149160092@comb.es>",
       "from_name": "Manel Salamero",
       "from_email_hash": "dbd2b360016cb9ce0f2a0501ec4ac1d7f382af0816b25d341d5db21ba67eafb2",
-      "date": "2008-06-05T21:01:17+02:00",
+      "date": "2008-06-05T19:01:17Z",
       "subject": "[R-gui] always on top",
       "subject_clean": "[R-gui] always on top",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<48490129.7040407@sciviews.org>",
       "from_name": "Philippe Grosjean",
       "from_email_hash": "71b9dd5d435dd797c88b6e8e80adcc63b4c2764c443f0ceca36f80f3ecda8d9a",
-      "date": "2008-06-06T11:19:37+02:00",
+      "date": "2008-06-06T09:19:37Z",
       "subject": "[R-gui] always on top",
       "subject_clean": "[R-gui] always on top",
       "in_reply_to": "<200806052101.AA149160092@comb.es>",
@@ -42,7 +42,7 @@
       "message_id": "<8763sef2mk.fsf@patagonia.sebmags.homelinux.org>",
       "from_name": "Sebastian P. Luque",
       "from_email_hash": "2cd4815ed8883e0c35c16bacf1be9d88d662c4a9f03492384d48d7b9ac92a1d5",
-      "date": "2008-06-12T22:13:55-05:00",
+      "date": "2008-06-13T03:13:55Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": null,
@@ -58,7 +58,7 @@
       "message_id": "<509e0620806122046kd9d0d15ifd9d6c079d75546a@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2008-06-12T20:46:34-07:00",
+      "date": "2008-06-13T03:46:34Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": "<8763sef2mk.fsf@patagonia.sebmags.homelinux.org>",
@@ -76,7 +76,7 @@
       "message_id": "<87wskudlo8.fsf@patagonia.sebmags.homelinux.org>",
       "from_name": "Sebastian P. Luque",
       "from_email_hash": "2cd4815ed8883e0c35c16bacf1be9d88d662c4a9f03492384d48d7b9ac92a1d5",
-      "date": "2008-06-12T23:05:27-05:00",
+      "date": "2008-06-13T04:05:27Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": null,
@@ -95,7 +95,7 @@
       "message_id": "<509e0620806122127x19ff2ea7me43282cf14b9d7b9@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2008-06-12T21:27:16-07:00",
+      "date": "2008-06-13T04:27:16Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": "<87wskudlo8.fsf@patagonia.sebmags.homelinux.org>",
@@ -115,7 +115,7 @@
       "message_id": "<94730b8a0806122220x19993900qf7f6cf03cd0d55d3@mail.gmail.com>",
       "from_name": "Felix Andrews",
       "from_email_hash": "ab8be5753adb1cfce5e50bf8235dddc08e38086328727de3f965639ec7b93f1d",
-      "date": "2008-06-13T15:20:24+10:00",
+      "date": "2008-06-13T05:20:24Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": "<87wskudlo8.fsf@patagonia.sebmags.homelinux.org>",
@@ -135,7 +135,7 @@
       "message_id": "<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>",
       "from_name": "Wayne.W.Jones at shell.com",
       "from_email_hash": "1cd10b8bfe5aac632f20f853155bc1d62999d41e49692b8a9fac68a161b85efa",
-      "date": "2008-06-13T08:37:32+01:00",
+      "date": "2008-06-13T07:37:32Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": "<8763sef2mk.fsf@patagonia.sebmags.homelinux.org>",
@@ -151,7 +151,7 @@
       "message_id": "<94730b8a0806130124j263a03a5t9aad4048707fa478@mail.gmail.com>",
       "from_name": "Felix Andrews",
       "from_email_hash": "ab8be5753adb1cfce5e50bf8235dddc08e38086328727de3f965639ec7b93f1d",
-      "date": "2008-06-13T18:24:30+10:00",
+      "date": "2008-06-13T08:24:30Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": "<77693D6263D9B94AA3C6384F1474E26A02CE5A3E@wyt-s-019.europe.shell.com>",
@@ -170,7 +170,7 @@
       "message_id": "<f2d5ac830806130233h55d34450s3fdff4f19b943419@mail.gmail.com>",
       "from_name": "giovanni martin",
       "from_email_hash": "e9a9bf54c9cac147c5b88ecfbac36a0f10e273fdf9277f756d31490936fef7ec",
-      "date": "2008-06-13T11:33:47+02:00",
+      "date": "2008-06-13T09:33:47Z",
       "subject": "[R-gui] delete me",
       "subject_clean": "[R-gui] delete me",
       "in_reply_to": null,
@@ -186,7 +186,7 @@
       "message_id": "<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>",
       "from_name": "Sebastian P. Luque",
       "from_email_hash": "2cd4815ed8883e0c35c16bacf1be9d88d662c4a9f03492384d48d7b9ac92a1d5",
-      "date": "2008-06-13T14:50:51-05:00",
+      "date": "2008-06-13T19:50:51Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": null,
@@ -206,7 +206,7 @@
       "message_id": "<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>",
       "from_name": "Felix Andrews",
       "from_email_hash": "ab8be5753adb1cfce5e50bf8235dddc08e38086328727de3f965639ec7b93f1d",
-      "date": "2008-06-14T11:55:36+10:00",
+      "date": "2008-06-14T01:55:36Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": "<87k5gtdsh0.fsf@patagonia.sebmags.homelinux.org>",
@@ -227,7 +227,7 @@
       "message_id": "<509e0620806131917t2168f616pf42ab56a0b267c2a@mail.gmail.com>",
       "from_name": "Michael Lawrence",
       "from_email_hash": "e9ff4b3acc925189bce61741d9f30f26f996837e9604d7ac3a80794d259750a9",
-      "date": "2008-06-13T19:17:12-07:00",
+      "date": "2008-06-14T02:17:12Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": "<94730b8a0806131855h54f2aa9ei6f42701e475e7e17@mail.gmail.com>",
@@ -249,7 +249,7 @@
       "message_id": "<87abhllf51.fsf@patagonia.sebmags.homelinux.org>",
       "from_name": "Sebastian P. Luque",
       "from_email_hash": "2cd4815ed8883e0c35c16bacf1be9d88d662c4a9f03492384d48d7b9ac92a1d5",
-      "date": "2008-06-16T07:48:26-05:00",
+      "date": "2008-06-16T12:48:26Z",
       "subject": "[R-gui] embedding R graphics in Tk widgets",
       "subject_clean": "[R-gui] embedding R graphics in Tk widgets",
       "in_reply_to": null,
@@ -296,7 +296,7 @@
       "message_id": "<486216D4.1000702@free.fr>",
       "from_name": "NOEL Yvonnick",
       "from_email_hash": "4a8e8356a36785813382f2b1e51a112dac54d5364f1a8d6900043564f32f62ed",
-      "date": "2008-06-25T11:58:44+02:00",
+      "date": "2008-06-25T09:58:44Z",
       "subject": "[R-gui] svalue(gtable)",
       "subject_clean": "[R-gui] svalue(gtable)",
       "in_reply_to": null,
@@ -330,7 +330,7 @@
       "message_id": "<200806271757.m5RHvSh2024332@zebra.us.udel.edu>",
       "from_name": "H. Lawrence Hotchkiss",
       "from_email_hash": "1e708c4d1c1e2667370e78920d49f0c31dfa308d6955255c817abc6e59bd0a61",
-      "date": "2008-06-27T13:55:47-04:00",
+      "date": "2008-06-27T17:55:47Z",
       "subject": "[R-gui] Lattice graphics",
       "subject_clean": "[R-gui] Lattice graphics",
       "in_reply_to": null,
@@ -351,8 +351,8 @@
         "Manel Salamero",
         "Philippe Grosjean"
       ],
-      "started": "2008-06-05T21:01:17+02:00",
-      "last_reply": "2008-06-06T11:19:37+02:00",
+      "started": "2008-06-05T19:01:17Z",
+      "last_reply": "2008-06-06T09:19:37Z",
       "root_message_id": "msg-081f4fb8a636"
     },
     {
@@ -366,8 +366,8 @@
         "Wayne.W.Jones at shell.com",
         "jverzani"
       ],
-      "started": "2008-06-12T22:13:55-05:00",
-      "last_reply": "2008-06-19T02:14:18+00:00",
+      "started": "2008-06-13T03:13:55Z",
+      "last_reply": "2008-06-19T02:14:18Z",
       "root_message_id": "msg-4df383fc591d"
     },
     {
@@ -377,8 +377,8 @@
       "participants": [
         "giovanni martin"
       ],
-      "started": "2008-06-13T11:33:47+02:00",
-      "last_reply": "2008-06-13T11:33:47+02:00",
+      "started": "2008-06-13T09:33:47Z",
+      "last_reply": "2008-06-13T09:33:47Z",
       "root_message_id": "msg-4ec625bb0d59"
     },
     {
@@ -389,8 +389,8 @@
         "NOEL Yvonnick",
         "jverzani"
       ],
-      "started": "2008-06-25T11:58:44+02:00",
-      "last_reply": "2008-06-26T02:43:51+00:00",
+      "started": "2008-06-25T09:58:44Z",
+      "last_reply": "2008-06-26T02:43:51Z",
       "root_message_id": "msg-e8782f65f30c"
     },
     {
@@ -400,8 +400,8 @@
       "participants": [
         "H. Lawrence Hotchkiss"
       ],
-      "started": "2008-06-27T13:55:47-04:00",
-      "last_reply": "2008-06-27T13:55:47-04:00",
+      "started": "2008-06-27T17:55:47Z",
+      "last_reply": "2008-06-27T17:55:47Z",
       "root_message_id": "msg-7236ef298b44"
     }
   ]

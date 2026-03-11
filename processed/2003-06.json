@@ -44,8 +44,8 @@
       "participants": [
         "Steve Chen"
       ],
-      "started": "2003-06-11T23:38:57+00:00",
-      "last_reply": "2003-06-11T23:38:57+00:00",
+      "started": "2003-06-11T23:38:57Z",
+      "last_reply": "2003-06-11T23:38:57Z",
       "root_message_id": "msg-4ce2942d2561"
     },
     {
@@ -55,8 +55,8 @@
       "participants": [
         "Vytautas M."
       ],
-      "started": "2003-06-30T15:30:56+00:00",
-      "last_reply": "2003-06-30T15:30:56+00:00",
+      "started": "2003-06-30T15:30:56Z",
+      "last_reply": "2003-06-30T15:30:56Z",
       "root_message_id": "msg-19e845b69205"
     }
   ]

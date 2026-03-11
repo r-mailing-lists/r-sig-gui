@@ -42,7 +42,7 @@
       "message_id": "<CAE5kS0xXkjn7-X2iXTTFQXGuX+pOraG926efMO-FfwnrSQ4KTg@mail.gmail.com>",
       "from_name": "Sasha Goodman",
       "from_email_hash": "5feaa3a63be846a0d1b7983251b920517372e0d4945adda5cafb73370194455b",
-      "date": "2016-04-13T17:33:57-07:00",
+      "date": "2016-04-14T00:33:57Z",
       "subject": "[R-gui] R-SIG-GUI Digest, Vol 107, Issue 1",
       "subject_clean": "[R-gui] R-SIG-GUI Digest, Vol 107, Issue 1",
       "in_reply_to": "<mailman.13.1460455203.7932.r-sig-gui@r-project.org>",
@@ -65,8 +65,8 @@
         "Joshua Ulrich",
         "Mike Deanza"
       ],
-      "started": "2016-04-11T15:03:27+00:00",
-      "last_reply": "2016-04-11T15:11:26+00:00",
+      "started": "2016-04-11T15:03:27Z",
+      "last_reply": "2016-04-11T15:11:26Z",
       "root_message_id": "msg-0753af086f4b"
     },
     {
@@ -76,8 +76,8 @@
       "participants": [
         "Sasha Goodman"
       ],
-      "started": "2016-04-13T17:33:57-07:00",
-      "last_reply": "2016-04-13T17:33:57-07:00",
+      "started": "2016-04-14T00:33:57Z",
+      "last_reply": "2016-04-14T00:33:57Z",
       "root_message_id": "msg-1a14302d0b00"
     }
   ]

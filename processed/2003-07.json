@@ -163,8 +163,8 @@
       "participants": [
         "John Fox"
       ],
-      "started": "2003-07-01T16:47:24+00:00",
-      "last_reply": "2003-07-01T16:47:24+00:00",
+      "started": "2003-07-01T16:47:24Z",
+      "last_reply": "2003-07-01T16:47:24Z",
       "root_message_id": "msg-51315c3538d9"
     },
     {
@@ -175,8 +175,8 @@
         "John Fox",
         "Vytautas M."
       ],
-      "started": "2003-07-02T15:25:58+00:00",
-      "last_reply": "2003-07-02T16:19:48+00:00",
+      "started": "2003-07-02T15:25:58Z",
+      "last_reply": "2003-07-02T16:19:48Z",
       "root_message_id": "msg-8427d9e547e8"
     },
     {
@@ -186,8 +186,8 @@
       "participants": [
         "Vytautas M."
       ],
-      "started": "2003-07-02T18:33:40+00:00",
-      "last_reply": "2003-07-02T18:33:40+00:00",
+      "started": "2003-07-02T18:33:40Z",
+      "last_reply": "2003-07-02T18:33:40Z",
       "root_message_id": "msg-0d8078312ec1"
     },
     {
@@ -198,8 +198,8 @@
         "Dirk Eddelbuettel",
         "Peter Dalgaard BSA"
       ],
-      "started": "2003-07-09T18:11:19+00:00",
-      "last_reply": "2003-07-10T03:19:31+00:00",
+      "started": "2003-07-09T18:11:19Z",
+      "last_reply": "2003-07-10T03:19:31Z",
       "root_message_id": "msg-4491e2701cb6"
     },
     {
@@ -210,8 +210,8 @@
         "James Wettenhall",
         "Peter Dalgaard BSA"
       ],
-      "started": "2003-07-17T07:18:58+00:00",
-      "last_reply": "2003-07-17T11:34:03+00:00",
+      "started": "2003-07-17T07:18:58Z",
+      "last_reply": "2003-07-17T11:34:03Z",
       "root_message_id": "msg-ce66f02a263e"
     }
   ]

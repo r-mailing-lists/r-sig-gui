@@ -8,7 +8,7 @@
       "message_id": "<785CC9D2-746F-4392-BA4B-E087EAC458A4@mac.com>",
       "from_name": "Aaike De Wever",
       "from_email_hash": "673d33eb5f790151bb9e1722c81803f2ebd2a651ed33830989ae036c1d595625",
-      "date": "2005-11-28T21:58:24+01:00",
+      "date": "2005-11-28T20:58:24Z",
       "subject": "[R-gui] Dutch localisation file",
       "subject_clean": "[R-gui] Dutch localisation file",
       "in_reply_to": null,
@@ -24,7 +24,7 @@
       "message_id": "<438CCF39.7050407@stats.uwo.ca>",
       "from_name": "Duncan Murdoch",
       "from_email_hash": "f10e1920504dfef879061667fbcfa0823bbc832410cad04707fb294db3bd8d83",
-      "date": "2005-11-29T16:59:21-05:00",
+      "date": "2005-11-29T21:59:21Z",
       "subject": "[R-gui] Dutch localisation file",
       "subject_clean": "[R-gui] Dutch localisation file",
       "in_reply_to": "<785CC9D2-746F-4392-BA4B-E087EAC458A4@mac.com>",
@@ -47,8 +47,8 @@
         "Aaike De Wever",
         "Duncan Murdoch"
       ],
-      "started": "2005-11-28T21:58:24+01:00",
-      "last_reply": "2005-11-29T16:59:21-05:00",
+      "started": "2005-11-28T20:58:24Z",
+      "last_reply": "2005-11-29T21:59:21Z",
       "root_message_id": "msg-f14cd38a82a6"
     }
   ]

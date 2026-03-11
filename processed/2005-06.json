@@ -42,7 +42,7 @@
       "message_id": "<200506201959.j5KJxB5L001194@gator.dt.uh.edu>",
       "from_name": "Erin Hodgess",
       "from_email_hash": "d57f94693d0809113e792ca27982834cda2afc4b24c715ebd82aefc501c59b4a",
-      "date": "2005-06-20T14:59:11-05:00",
+      "date": "2005-06-20T19:59:11Z",
       "subject": "[R-gui] [RGui] Iwidget feedback",
       "subject_clean": "[R-gui] [RGui] Iwidget feedback",
       "in_reply_to": null,
@@ -58,7 +58,7 @@
       "message_id": "<42BA8145.2090805@envt.fr>",
       "from_name": "Faouzi LYAZRHI",
       "from_email_hash": "f2ebf2a7e5259605cdd093d1ab8c3ab8025f1441b278437f371312cbb983cb80",
-      "date": "2005-06-23T11:30:45+02:00",
+      "date": "2005-06-23T09:30:45Z",
       "subject": "[R-gui] (pas de sujet)",
       "subject_clean": "[R-gui] (pas de sujet)",
       "in_reply_to": null,
@@ -79,8 +79,8 @@
         "Neha Sinha",
         "Philippe Grosjean"
       ],
-      "started": "2005-06-09T17:54:20+00:00",
-      "last_reply": "2005-06-10T06:15:34+00:00",
+      "started": "2005-06-09T17:54:20Z",
+      "last_reply": "2005-06-10T06:15:34Z",
       "root_message_id": "msg-584493e31aba"
     },
     {
@@ -90,8 +90,8 @@
       "participants": [
         "Erin Hodgess"
       ],
-      "started": "2005-06-20T14:59:11-05:00",
-      "last_reply": "2005-06-20T14:59:11-05:00",
+      "started": "2005-06-20T19:59:11Z",
+      "last_reply": "2005-06-20T19:59:11Z",
       "root_message_id": "msg-c258341362a3"
     },
     {
@@ -101,8 +101,8 @@
       "participants": [
         "Faouzi LYAZRHI"
       ],
-      "started": "2005-06-23T11:30:45+02:00",
-      "last_reply": "2005-06-23T11:30:45+02:00",
+      "started": "2005-06-23T09:30:45Z",
+      "last_reply": "2005-06-23T09:30:45Z",
       "root_message_id": "msg-606f16639af4"
     }
   ]

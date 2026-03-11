@@ -274,8 +274,8 @@
         "Philippe Grosjean",
         "Thomas Friedrichsmeier"
       ],
-      "started": "2004-08-01T20:03:59+00:00",
-      "last_reply": "2004-08-03T01:18:46+00:00",
+      "started": "2004-08-01T20:03:59Z",
+      "last_reply": "2004-08-03T01:18:46Z",
       "root_message_id": "msg-745968c6052f"
     },
     {
@@ -285,8 +285,8 @@
       "participants": [
         "John Fox"
       ],
-      "started": "2004-08-04T19:40:15+00:00",
-      "last_reply": "2004-08-04T19:40:15+00:00",
+      "started": "2004-08-04T19:40:15Z",
+      "last_reply": "2004-08-04T19:40:15Z",
       "root_message_id": "msg-c7af99b3f68f"
     },
     {
@@ -296,8 +296,8 @@
       "participants": [
         "José Cláudio Faria"
       ],
-      "started": "2004-08-06T11:13:31+00:00",
-      "last_reply": "2004-08-06T11:13:31+00:00",
+      "started": "2004-08-06T11:13:31Z",
+      "last_reply": "2004-08-06T11:13:31Z",
       "root_message_id": "msg-af2363be9f00"
     },
     {
@@ -308,8 +308,8 @@
         "Duncan Murdoch",
         "Philippe Grosjean"
       ],
-      "started": "2004-08-13T16:14:59+00:00",
-      "last_reply": "2004-08-14T14:33:53+00:00",
+      "started": "2004-08-13T16:14:59Z",
+      "last_reply": "2004-08-14T14:33:53Z",
       "root_message_id": "msg-b1878a2e1718"
     },
     {
@@ -321,8 +321,8 @@
         "James Wettenhall",
         "John Fox"
       ],
-      "started": "2004-08-29T18:39:33+00:00",
-      "last_reply": "2004-08-30T14:49:48+00:00",
+      "started": "2004-08-29T18:39:33Z",
+      "last_reply": "2004-08-30T14:49:48Z",
       "root_message_id": "msg-e48a95effd93"
     },
     {
@@ -332,8 +332,8 @@
       "participants": [
         "Duncan Murdoch"
       ],
-      "started": "2004-08-29T23:04:03+00:00",
-      "last_reply": "2004-08-29T23:04:03+00:00",
+      "started": "2004-08-29T23:04:03Z",
+      "last_reply": "2004-08-29T23:04:03Z",
       "root_message_id": "msg-c81cc4987751"
     }
   ]
