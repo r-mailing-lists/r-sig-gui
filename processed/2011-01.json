@@ -63,11 +63,14 @@
       "subject_clean": "[R-gui] Reg help in using SciViews R!",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/91873898/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/91873898/attachment.pl>",
+      "body_plain": "Hi Guys,\n\n    I am a newbie at using Project-R for my analysis work. Till now, I have\nbeen using the command-line interface of R. But now, I want some help\nregarding using SciViews - the GUI API for Project R. Though I installed the\npackages in SciViews, I can't find a way to start the GUI and program in S\nlanguage.\n\n   I would like your help in this regard. Please revert back as soon as\npossible.\n\nThank You.\nHarshad Shrikhande\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi Guys,\n\n    I am a newbie at using Project-R for my analysis work. Till now, I have\nbeen using the command-line interface of R. But now, I want some help\nregarding using SciViews - the GUI API for P",
       "thread_id": "thread-94cdc2e597ec",
       "thread_depth": 0,
-      "month": "2011-01"
+      "month": "2011-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/91873898/attachment.pl"
+      ]
     },
     {
       "id": "msg-ebf0fad80c51",
@@ -100,11 +103,14 @@
         "<AANLkTim-+B=3Okmzn9T3GYc7Ttqa8mmNhfOaenvRJ_9d@mail.gmail.com>",
         "<4D3405E3.3070106@sciviews.org>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/43d31109/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/43d31109/attachment.pl>",
+      "body_plain": "Hi,\n   Thank you very much Philippe for the help. It worked. The GUI for R is\nworking superb!\n\nBye\nHarshad Shrikhande\n\nOn Mon, Jan 17, 2011 at 2:33 PM, Philippe Grosjean\n<phgrosjean at sciviews.org>wrote:\n\n> Harshad,\n>\n> The R packages are just one side of the GUI. You have also to install\n> Komodo Edit and SciViews-K, see http://www.sciviews.org/SciViews-K.\n> Best,\n>\n> Philippe Grosjean\n>\n> ..............................................<陣))><........\n>  ) ) ) ) )\n> ( ( ( ( (    Prof. Philippe Grosjean\n>  ) ) ) ) )\n> ( ( ( ( (    Numerical Ecology of Aquatic Systems\n>  ) ) ) ) )   Mons University, Belgium\n> ( ( ( ( (\n> ..............................................................\n>\n>\n> On 17/01/11 06:24, Harshad Shrikhande wrote:\n>\n>> Hi Guys,\n>>\n>>     I am a newbie at using Project-R for my analysis work. Till now, I\n>> have\n>> been using the command-line interface of R. But now, I want some help\n>> regarding using SciViews - the GUI API for Project R. Though I installed\n>> the\n>> packages in SciViews, I can't find a way to start the GUI and program in S\n>> language.\n>>\n>>    I would like your help in this regard. Please revert back as soon as\n>> possible.\n>>\n>> Thank You.\n>> Harshad Shrikhande\n>>\n>>        [[alternative HTML version deleted]]\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>>\n>>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n   Thank you very much Philippe for the help. It worked. The GUI for R is\nworking superb!\n\nBye\nHarshad Shrikhande\n\nOn Mon, Jan 17, 2011 at 2:33 PM, Philippe Grosjean\n<phgrosjean at sciviews.org>wr",
       "thread_id": "thread-94cdc2e597ec",
       "thread_depth": 2,
-      "month": "2011-01"
+      "month": "2011-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110117/43d31109/attachment.pl"
+      ]
     },
     {
       "id": "msg-92b064efd09e",

@@ -31,11 +31,14 @@
       "references": [
         "<4826E465.5030909@optusnet.com.au>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/b1ef1101/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/b1ef1101/attachment.pl>",
+      "body_plain": "Well, there's a big question as to whether non-GPL can link to GPL code.\nIt's never been really tested in court. If I were you, I'd just make it\nopen-source and sell your support for it.\n\nOn Sun, May 11, 2008 at 5:19 AM, Serge Merzliakov <smerzlia at optusnet.com.au>\nwrote:\n\n> All,\n>  I am interested in devloping a commercial java-based (why the language is\n> important is discussed later) GUI for R. The app would allow the GUI to edit\n> R commands and the results displayed in varios means. I have investigated\n> various java based libraries to invoke R and they follow the apache license\n> model (friendlier to commercial software developers). I understand the that\n> R is released under the GPL license, which I have a reasonable understanding\n> of.  SO my question is simple, Can I develop a a commerical GUI for R (which\n> would require R to be isntalled separately on the machine) without having to\n> also release my source code ?\n>\n> I am hoping that some of core R development team see this and can provide\n> useful feedback.\n>\n> Regards,\n> Serge\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Well, there's a big question as to whether non-GPL can link to GPL code.\nIt's never been really tested in court. If I were you, I'd just make it\nopen-source and sell your support for it.\n\nOn Sun, May ",
       "thread_id": "thread-7cb351b0a9f7",
       "thread_depth": 1,
-      "month": "2008-05"
+      "month": "2008-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/b1ef1101/attachment.pl"
+      ]
     },
     {
       "id": "msg-1e7947f79304",
@@ -70,11 +73,14 @@
         "<509e0620805130205k767e1002oa97200428f253d37@mail.gmail.com>",
         "<1210677340.19967.5.camel@prometheus.geog.ucl.ac.uk>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/d70b1e6d/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/d70b1e6d/attachment.pl>",
+      "body_plain": "Rserve would be a convenient means to get around dynamic linking.\n\nThe \"derivative work\" clause of the GPL has never been clear to me. Where to\ndraw the line? Why should piping data between processes be treated any\ndifferent from dynamic linking? They're just different interfaces to achieve\napproximately the same effect.\n\nOn Tue, May 13, 2008 at 4:15 AM, Gavin Simpson <gavin.simpson at ucl.ac.uk>\nwrote:\n\n> I am not a lawyer, but at important distinction here is what one means\n> by \"linked\". You're not linking against R if you just run some R code\n> through it and capture the output for example. This is how Brodgar, for\n> example, does what Serge wants to achieve --- see their statement on R,\n> Brodgar and the GPL:\n>\n> www.brodgar.com\n>\n> http://www.brodgar.com/brodgar.htm#2.%20Brodgar%20and%20R\n>\n> Whilst, from a personal point of view agree with Michael's statement\n> about producing an open source app and then sell support, we all don;t\n> have to follow that moral.\n>\n> G\n>\n> On Tue, 2008-05-13 at 02:05 -0700, Michael Lawrence wrote:\n> > Well, there's a big question as to whether non-GPL can link to GPL code.\n> > It's never been really tested in court. If I were you, I'd just make it\n> > open-source and sell your support for it.\n> >\n> > On Sun, May 11, 2008 at 5:19 AM, Serge Merzliakov <\n> smerzlia at optusnet.com.au>\n> > wrote:\n> >\n> > > All,\n> > >  I am interested in devloping a commercial java-based (why the\n> language is\n> > > important is discussed later) GUI for R. The app would allow the GUI\n> to edit\n> > > R commands and the results displayed in varios means. I have\n> investigated\n> > > various java based libraries to invoke R and they follow the apache\n> license\n> > > model (friendlier to commercial software developers). I understand the\n> that\n> > > R is released under the GPL license, which I have a reasonable\n> understanding\n> > > of.  SO my question is simple, Can I develop a a commerical GUI for R\n> (which\n> > > would require R to be isntalled separately on the machine) without\n> having to\n> > > also release my source code ?\n> > >\n> > > I am hoping that some of core R development team see this and can\n> provide\n> > > useful feedback.\n> > >\n> > > Regards,\n> > > Serge\n> > >\n> > > _______________________________________________\n> > > R-SIG-GUI mailing list\n> > > R-SIG-GUI at stat.math.ethz.ch\n> > > https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> > >\n> >\n> >       [[alternative HTML version deleted]]\n> >\n> > _______________________________________________\n> > R-SIG-GUI mailing list\n> > R-SIG-GUI at stat.math.ethz.ch\n> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> --\n> %~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%\n>  Dr. Gavin Simpson             [t] +44 (0)20 7679 0522\n>  ECRC, UCL Geography,          [f] +44 (0)20 7679 0565\n>  Pearson Building,             [e] gavin.simpsonATNOSPAMucl.ac.uk\n>  Gower Street, London          [w] http://www.ucl.ac.uk/~ucfagls/<http://www.ucl.ac.uk/%7Eucfagls/>\n>  UK. WC1E 6BT.                 [w] http://www.freshwaters.org.uk\n> %~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%~%\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Rserve would be a convenient means to get around dynamic linking.\n\nThe \"derivative work\" clause of the GPL has never been clear to me. Where to\ndraw the line? Why should piping data between processes ",
       "thread_id": "thread-7cb351b0a9f7",
       "thread_depth": 3,
-      "month": "2008-05"
+      "month": "2008-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/d70b1e6d/attachment.pl"
+      ]
     },
     {
       "id": "msg-5d955b96ac9c",
@@ -215,11 +221,14 @@
         "<200805131658.51875.dusa.adrian@gmail.com>",
         "<4829B494.2050007@gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/b7321775/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/b7321775/attachment.pl>",
+      "body_plain": "If you search the R help list, you'll find a thread about jEdit and R.\nRomain Francois at Mango Solutions had created a very nice jEdit plugin for\nR. It integrated R with the Console and SideKick plugins and a lot more.\n\nHe posted something here:\nhttp://addictedtor.free.fr/jedit/jeditr.tar.gz\n\nI hope Romain does not mind me posting that link. It's probably a very old\nversion.\n\nHope that's of interest\nMichael\n\nOn Tue, May 13, 2008 at 8:32 AM, Karim Chine <karim.chine at gmail.com> wrote:\n\n> Dear Adrian\n>\n> Apart from the Virtual R Workbench  I've written, I am not aware of a\n> software/plugin that enables the use of R from  jEdit (you have only\n> extensions for enabling R syntax highlighting). The workbench embeds a\n> patched version of jEdit as a view. I have added to the jEdit ToolBar\n> buttons for sourcing the script beeing edited to your R Server or to the\n> jython / Groovy  interpreters available on client and on server sides. The\n> spreadsheet view has a similar feature + data import/export to R + use of R\n> functions in computed cells .\n> the workbench is available:\n> -as an applet :\n> http://biocep-distrib.r-forge.r-project.org/rworkbench_applet.html\n> -as a Java Web Start application :\n> http://biocep-distrib.r-forge.r-project.org/rworkbench.jnlp\n> -as a desktop application : java -jar biocep.jar     (\n> http://biocep-distrib.r-forge.r-project.org/appletlibs/biocep.jar)\n> you've got a \"Getting Started\" for runnig and connecting to R Servers here\n> : http://biocep-distrib.r-forge.r-project.org/doc.html#Deliverables\n>\n> you may also want to have a look the flollowing eclipse plugin :\n> http://www.walware.de/goto/statet\n> it will probably in the near future embed biocep-core to run and control R\n> Servers from eclipse.\n>\n> Best wishes,\n>\n> Karim\n>\n>\n> Adrian Dusa wrote:\n>\n> > Dear Karim,\n> >\n> > I am currently using jEdit for writing R code, and I find your R\n> > integration highly useful. What should one do in order to link jEdit and R,\n> > is there a jEdit plugin or something?\n> >\n> > Thank you,\n> > Adrian\n> >\n> > On Tuesday 13 May 2008, Karim Chine wrote:\n> >\n> >\n> > > Michael, All,\n> > >\n> > > You may want to check the following link: www.biocep.net ,\n> > > it's about a general unified open source (Apache 2.0) solution for\n> > > integrating R.\n> > > I have been working on it for about a year and a half, it's still work\n> > > in progress but most of the announced features are in full working\n> > > order.\n> > > I should release it before the tutorial I will be giving during useR!\n> > > 2008 (\n> > > http://www.statistik.uni-dortmund.de/useR-2008/tutorials/chine.html)\n> > > Biocep use cases include : run R as a Server (RMI,HTTP,SOAP) ,\n> > > generate\n> > > Web Services for R functions (stateful/stateless), deploy an R\n> > > virtualization infrastructure,\n> > > use a highly-productive workbench to control R Servers  (\n> > > multi-platform\n> > > GUI for R, most advanced one currently available with spreadsheet\n> > > views,\n> > > embedded jEdit,\n> > > interactive Zoom/Scroll on R graphics, extensibility with plugins,..)\n> > > and more..\n> > > Slides can be found here :\n> > > http://biocep-distrib.r-forge.r-project.org/distR.pdf\n> > >\n> > > Best wishes,\n> > >\n> > > Karim\n> > >\n> > >\n> >\n> >\n> >\n> >\n> >\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "If you search the R help list, you'll find a thread about jEdit and R.\nRomain Francois at Mango Solutions had created a very nice jEdit plugin for\nR. It integrated R with the Console and SideKick plug",
       "thread_id": "thread-7cb351b0a9f7",
       "thread_depth": 7,
-      "month": "2008-05"
+      "month": "2008-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080513/b7321775/attachment.pl"
+      ]
     },
     {
       "id": "msg-3e0506098e66",
@@ -272,11 +281,14 @@
       "subject_clean": "[R-gui] (no subject)",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080516/2469db52/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080516/2469db52/attachment.pl>",
+      "body_plain": "Hi,\n\nI m trying to do \"censboot\" in R project. i m using \"aml\" data in archive. But I have a problem. Whwnwvwr I do censboot, I see this message: \n\n\" In min(surv$time[inds[1 - surv$surv[inds] >= 0.5]]) ... :\n  no non-missing arguments to min; returning Inf\"\n\nIf you help me about this problem, I will be pleasure.\n\nThank you..\n\nMeral YAY\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI m trying to do \"censboot\" in R project. i m using \"aml\" data in archive. But I have a problem. Whwnwvwr I do censboot, I see this message: \n\n\" In min(surv$time[inds[1 - surv$surv[inds] >= 0.5]]",
       "thread_id": "thread-7929467ffcd0",
       "thread_depth": 0,
-      "month": "2008-05"
+      "month": "2008-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080516/2469db52/attachment.pl"
+      ]
     },
     {
       "id": "msg-284f0da66e50",
@@ -306,11 +318,14 @@
       "subject_clean": "[R-gui] Listing all possible samples of size two from very large populations",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080520/d1f74178/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080520/d1f74178/attachment.pl>",
+      "body_plain": "Respected All,\n\n \n\nI need some efficient program or package to draw all possible samples of\nsize two without replacement. I am using \"combinat\" package to list all\npossible samples but it hangs my computer for larger populations say 10,000\n(i.e. 49995000 all possible samples). I wish to even work for larger\npopulations then this and replicate this procedure for many times. Kindly\ncan anyone figure out the possibilities and let me know.\n\n \n\nBest Regards,\n\n \n\nNadeem Shafique Butt\n\nPlanning and Development Officer\n\nPlanning and Development Cell, \n\nUniversity of the Punjab, Lahore\n\nPhone: +92(42)9231118\n\nCell:+92(333)4311501\n\nemail: pdo at pnd.pu.edu.pk\n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Respected All,\n\n \n\nI need some efficient program or package to draw all possible samples of\nsize two without replacement. I am using \"combinat\" package to list all\npossible samples but it hangs my com",
       "thread_id": "thread-bbf47cfea0ab",
       "thread_depth": 0,
-      "month": "2008-05"
+      "month": "2008-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080520/d1f74178/attachment.pl"
+      ]
     },
     {
       "id": "msg-a9df7876039e",
@@ -340,11 +355,14 @@
       "references": [
         "<4833c422.14b48c0a.2aef.3677SMTPIN_ADDED@mx.google.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080520/b2326cc9/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080520/b2326cc9/attachment.pl>",
+      "body_plain": "You just need to specify the environment you want to load it into (as the\nsecond argument to load()).\n\nSo maybe .GlobalEnv..\n\nOn Tue, May 20, 2008 at 11:22 PM, <bernhard at jabberoo.net> wrote:\n\n> Hello everyone. This is probably a very easy problem, however I wasn't\n> able to find any solution in the documentation and examples of gWidgets.\n>\n> I want to open a file selection dialog (gfile()) and if the user selects\n> an .Rdata file, it should be loaded. So I wrote the following function\n> that is executed when someone clicks an \"load RData file\" button:\n>\n> fOpen= function(h,...) {\n>    filepath <- as.character(gfile(filter = list(\"R files\" = list(patterns\n> = c(\"*.Rdata\")))))\n>    load(file=filepath)\n> }\n>\n> \"filepath\" is the correct path to the RData file that should be loaded.\n> However, the file does not get loaded into the workspace. What elementary\n> thing am I missing here?\n>\n> Thank you very much for your help in advance,\n> Bernhard\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "You just need to specify the environment you want to load it into (as the\nsecond argument to load()).\n\nSo maybe .GlobalEnv..\n\nOn Tue, May 20, 2008 at 11:22 PM, <bernhard at jabberoo.net> wrote:\n\n> Hel",
       "thread_id": "thread-4859064b8f4e",
       "thread_depth": 0,
-      "month": "2008-05"
+      "month": "2008-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080520/b2326cc9/attachment.pl"
+      ]
     },
     {
       "id": "msg-d07cf24be6dd",

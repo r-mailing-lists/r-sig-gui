@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] Help with Using gtext in gWidgetsWWW for Outputting Results to Webpage",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110507/37fe9753/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110507/37fe9753/attachment.pl>",
+      "body_plain": "All:  Using gWidgetsWWW, I'm in the process of designing a website that will provide users with a GUI to interact with various datasets.  As part of that, I want to provide users the ability select particular variables (via combo boxes) that will then result in summary (text) output being returned to the webpage.  Think of it as their choices ultimately result in a one- or two-way table being returned from the R table() function.\n\nThe way I have implemented it is with a series of comboboxes that users use to make selections and that ultimately return table() output to a gtext widget.  In so doing, I was essentially following the example at the end of \"Examples for gWidgets\" (Section 17.2, An alternative to ggenericwidget).  Right now I'm testing the code on my local PC using localServerOpen().\n\nThe problem is not with the function, but with the output.  Specifically, in the output the formatting (particularly newline returns) are stripped out and my table turns into a long string of numbers.  Similarly, any text that I add to the gtext widget is just appended.  So, I just get a long string of text and numbers that is essentially unintelligible.\n\nWhat I want is output similar to what I would see in the R Console were I to generate a table there.  In an attempt to correct this, I have tried all manner of font options such as font.attr=c(\"monospace\"), etc., and it seems that no matter what I try I can neither affect the displayed font (it's some sort of proportional Arial-like font) nor the exclusion of line returns.  (When I include \\n in the text, it's simply stripped out/ignored.  However, \\t works.)\n\nNow, when I run the same code under gWidgets, I get a Courier-style font and the line returns show up.  That is, the output in the gtext widget looks much like I would see in the R Console.  So, my guess is that the browser is overriding the gWidgetsWWW output.  I'm running this in the latest version of Firefox.  (When I ran the same code using IE 9.0, the gtext widget does not even show up, but that's a different issue...)\n\nWith all that as background, two questions:\n\n(1) Is the use of the gtext widget a good approach for what I want to do, or is there a better approach?\n\n(2) If the gtext widget is the way to go, any suggestions for solving the above problem?\n\nMany thanks,\nRon\nAssociate Professor\nOperations Research Dept.\nNaval Postgraduate School\nMonterey, CA, USA\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "All:  Using gWidgetsWWW, I'm in the process of designing a website that will provide users with a GUI to interact with various datasets.  As part of that, I want to provide users the ability select pa",
       "thread_id": "thread-ec2b2de11907",
       "thread_depth": 0,
-      "month": "2011-05"
+      "month": "2011-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110507/37fe9753/attachment.pl"
+      ]
     },
     {
       "id": "msg-a65e065bd498",
@@ -122,11 +125,14 @@
         "<4DCCD1B6.2070901@uhb.fr>",
         "<BANLkTikkphm_pPgGB=J42_YTOGizd_bL=w@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/1d0d4cd5/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/1d0d4cd5/attachment.pl>",
+      "body_plain": "Dear Yvonnick and Gabor,\n\nI use a different implementation for each, but this gave me some place to\nlook. For gradio for gWidgetsRGtk2 I decoupled the handler call from the\nwidget so replacing radio buttons was easier. The R5 class I made, for some\nreason, doesn't play nicely with this proto object. Here is a simplified\nexample:\n\nlibrary(proto)\na <- setRefClass(\"Test\",\n                 fields=list(\n                   o = \"function\"\n                   ),\n                 methods=list(\n                   initialize=function(o) {\n                     o <<- o\n                   }))\n\nexample = proto(\n create = function(.) {\n   a$new(.$onChoice)\n },\n onChoice = function(.,h,...) {\n   print(\"hi\")\n }\n)\n\n\nWhen setting the \"o\" property R tries coercion to a function and you get\nthis error.\n\nGabor, any thoughts? This deep dark magic is one of your many specialities.\n\n--John\n\nOn Fri, May 13, 2011 at 7:30 AM, Gabor Grothendieck <ggrothendieck at gmail.com\n> wrote:\n\n> On Fri, May 13, 2011 at 2:37 AM, Yvonnick Noel <yvonnick.noel at uhb.fr>\n> wrote:\n> > Hello John,\n> >\n> > Hope you are doing well.\n> >\n> > I note the following problem with the last version of gWidgetsRGtk2.\n> > Defining a gradio handler as a function embedded in a proto class leads\n> to\n> > an error :\n> >\n> > library(proto)\n> > library(gWidgetsRGtk2)\n> >\n> > example = proto(\n> >  create = function(.) {\n> >\n> >    .$window = gwindow(visible=FALSE)\n> >    .$choice = gradio(1:3,cont=.$window,handler=.$onChoice)\n> >    visible(.$window)=TRUE\n> >  },\n> >  onChoice = function(.,h,...) {\n> >    cat(\"You clicked\",svalue(.$choice),\"\\n\")\n> >  },\n> >  window = NULL,\n> >  choice = NULL\n> > )\n> >\n> > example$create()\n> >\n> > Error in as(value, \"function\") :\n> >  internal problem in as(): \"instantiatedProtoMethod\" is(object,\n> \"function\")\n> > is TRUE, but the metadata asserts that the 'is' relation is FALSE\n> >\n> > Note that is works if I define the onChoice function outside the proto\n> > object, and it also works if a replace the gradio by a gdroplist, so it\n> > seems specific to gradio.\n> >\n> > Thank you in advance for your help.\n> >\n> > Best wishes,\n> >\n> > Yvonnick Noel\n> > University of Brittany, Rennes\n> > France\n> >\n>\n> On my system it works even with gradio if gWidgetsRGtk2 is replaced by\n> gWidgetstcltk.\n>\n> > packageVersion(\"gWidgets\")\n> [1] ‘0.0.44’\n> > packageVersion(\"gWidgetstcltk\")\n> [1] ‘0.0.43’\n> > packageVersion(\"proto\")\n> [1] ‘0.3.9.2’\n> > R.version.string\n> [1] \"R version 2.13.0 Patched (2011-04-25 r55638)\"\n> > win.version()\n> [1] \"Windows Vista (build 6002) Service Pack 2\"\n>\n>\n> --\n> Statistics & Software Consulting\n> GKX Group, GKX Associates Inc.\n> tel: 1-877-GKX-GROUP\n> email: ggrothendieck at gmail.com\n>\n\n\n\n-- \nJohn Verzani\nChair, Department of Mathematics\nCollege of Staten Island, CUNY\nverzani at math.csi.cuny.edu\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Yvonnick and Gabor,\n\nI use a different implementation for each, but this gave me some place to\nlook. For gradio for gWidgetsRGtk2 I decoupled the handler call from the\nwidget so replacing radio b",
       "thread_id": "thread-4673a6437647",
       "thread_depth": 2,
-      "month": "2011-05"
+      "month": "2011-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/1d0d4cd5/attachment.pl"
+      ]
     },
     {
       "id": "msg-121691691188",
@@ -163,11 +169,14 @@
         "<BANLkTikQbeUPnJYwcyD7E+FJMEWNBXsmYQ@mail.gmail.com>",
         "<BANLkTikVKvbcUc4XY4w6P4d9Hn+s-XcXxg@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/be2fd170/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/be2fd170/attachment.pl>",
+      "body_plain": "Thanks Gabor!\n\nI changed the class to \"ANY\" and it works now. Should there be an \"as\"\nmethod for coercing instantiatedProtoMethod to function, or would that lose\nthe \"proto\" nature of the object?\n\n(Yvonnick, I checked in the change to r-forge\nhttps://r-forge.r-project.org/R/?group_id=761)\n\n--John\n\nOn Fri, May 13, 2011 at 9:33 AM, Gabor Grothendieck <ggrothendieck at gmail.com\n> wrote:\n\n> On Fri, May 13, 2011 at 7:52 AM, John Verzani <verzani at math.csi.cuny.edu>\n> wrote:\n> > Dear Yvonnick and Gabor,\n> > I use a different implementation for each, but this gave me some place to\n> > look. For gradio for gWidgetsRGtk2 I decoupled the handler call from the\n> > widget so replacing radio buttons was easier. The R5 class I made, for\n> some\n> > reason, doesn't play nicely with this proto object. Here is a simplified\n> > example:\n> > library(proto)\n> > a <- setRefClass(\"Test\",\n> >                  fields=list(\n> >                    o = \"function\"\n> >                    ),\n> >                  methods=list(\n> >                    initialize=function(o) {\n> >                      o <<- o\n> >                    }))\n> > example = proto(\n> >  create = function(.) {\n> >    a$new(.$onChoice)\n> >  },\n> >  onChoice = function(.,h,...) {\n> >    print(\"hi\")\n> >  }\n> > )\n> >\n> > When setting the \"o\" property R tries coercion to a function and you get\n> > this error.\n> > Gabor, any thoughts? This deep dark magic is one of your many\n> specialities.\n>\n> The class vector of .$onChoice is c(\"instantiatedProtoMethod\",\n> \"function\").  It seems the reference class mechanism won't let you\n> refer to it as \"function\".  Also, the initialize method needs to have\n> an appropriate return value.\n>\n> This seems to work for me where the ## lines are new or modified:\n>\n> library(proto)\n> setClass(\"instantiatedProtoMethod\")\n> a <- setRefClass(\"Test\",\n>                 fields=list(\n>                    o = \"instantiatedProtoMethod\" ##\n>                    ),\n>                 methods=list(\n>                   initialize=function(o) {\n>                      initFields(o = o) ##\n>                    }))\n>\n> example = proto(\n>  create = function(.) {\n>   a$new(.$onChoice)\n>  },\n>  onChoice = function(.,h,...) {\n>   print(\"hi\")\n>  }\n> )\n> example$create()$o() ##\n>\n> --\n> Statistics & Software Consulting\n> GKX Group, GKX Associates Inc.\n> tel: 1-877-GKX-GROUP\n> email: ggrothendieck at gmail.com\n>\n\n\n\n-- \nJohn Verzani\nChair, Department of Mathematics\nCollege of Staten Island, CUNY\nverzani at math.csi.cuny.edu\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Thanks Gabor!\n\nI changed the class to \"ANY\" and it works now. Should there be an \"as\"\nmethod for coercing instantiatedProtoMethod to function, or would that lose\nthe \"proto\" nature of the object?\n\n(Yv",
       "thread_id": "thread-4673a6437647",
       "thread_depth": 4,
-      "month": "2011-05"
+      "month": "2011-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110513/be2fd170/attachment.pl"
+      ]
     },
     {
       "id": "msg-b74706f2f5f5",
@@ -207,11 +216,14 @@
         "<BANLkTikVKvbcUc4XY4w6P4d9Hn+s-XcXxg@mail.gmail.com>",
         "<BANLkTikfnJznznkJdfbFbZ1Zz6NRrY3J9g@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110514/ff21ed23/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110514/ff21ed23/attachment.pl>",
+      "body_plain": "John, Gabor,\n> Thanks Gabor!\n>\n> I changed the class to \"ANY\" and it works now. Should there be an \"as\" \n> method for coercing instantiatedProtoMethod to function, or would that \n> lose the \"proto\" nature of the object?\n>\n> (Yvonnick, I checked in the change to r-forge \n> https://r-forge.r-project.org/R/?group_id=761)\n\nThank you so much for your prompt reaction!\n\nBest wishes,\n\nYvonnick\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "John, Gabor,\n> Thanks Gabor!\n>\n> I changed the class to \"ANY\" and it works now. Should there be an \"as\" \n> method for coercing instantiatedProtoMethod to function, or would that \n> lose the \"proto\" na",
       "thread_id": "thread-4673a6437647",
       "thread_depth": 5,
-      "month": "2011-05"
+      "month": "2011-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110514/ff21ed23/attachment.pl"
+      ]
     },
     {
       "id": "msg-56999b8d4815",
@@ -223,11 +235,14 @@
       "subject_clean": "[R-gui] Best GUI?",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110521/3cc82166/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110521/3cc82166/attachment.pl>",
+      "body_plain": "So I'm wondering what might be a recommended R front-end for my undergraduate college students who are first learning statistics?  I'm tired of paying for SPSS but I can't ask them to learn the command lines.\n\nThanks\n\nCharles Stangor\nProfessor and Associate Chair\nDepartment of Psychology\nUniversity of Maryland\nExecutive Officer, Society of Experimental Social Psychology\nhttp://sites.google.com/site/charlesstangor/\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "So I'm wondering what might be a recommended R front-end for my undergraduate college students who are first learning statistics?  I'm tired of paying for SPSS but I can't ask them to learn the comman",
       "thread_id": "thread-56999b8d4815",
       "thread_depth": 0,
-      "month": "2011-05"
+      "month": "2011-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110521/3cc82166/attachment.pl"
+      ]
     },
     {
       "id": "msg-7634d47fb1bb",

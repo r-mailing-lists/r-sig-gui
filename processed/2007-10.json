@@ -85,11 +85,14 @@
       "subject_clean": "[R-gui] RPad and Security",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071023/af6bfdff/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071023/af6bfdff/attachment.pl",
+      "body_plain": "Greetings:\n\nI am looking at using Rpad but concerned about security and access to files on our server.\nAny suggestions/pointers/experiences from the list would be very helpful.\n\nIqbal Jamal\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Greetings:\n\nI am looking at using Rpad but concerned about security and access to files on our server.\nAny suggestions/pointers/experiences from the list would be very helpful.\n\nIqbal Jamal\n\n\n\t[[alter",
       "thread_id": "thread-312b2d3c46d4",
       "thread_depth": 0,
-      "month": "2007-10"
+      "month": "2007-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071023/af6bfdff/attachment.pl"
+      ]
     },
     {
       "id": "msg-c3f2a838a57e",
@@ -243,11 +246,14 @@
       "subject_clean": "[R-gui] function for user input",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071027/4c936850/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071027/4c936850/attachment.pl",
+      "body_plain": "Hi,\n\nI was working on R-gui and I was wondering if there is any way to take \ninput from user the way we take in perl using <STDIN>.\nAll I need is to get the user input from a R-gui and save/process the \ndata values entered by the user.\n\nI will be glad if anyone can let me know about taking user input in R.\n\nThanks,\nShweta.\n\n---------------------------------\nShweta S. Chavan\nBioinformatics Graduate Student,\nUALR\n1-501-569-8031 (Lab) \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI was working on R-gui and I was wondering if there is any way to take \ninput from user the way we take in perl using <STDIN>.\nAll I need is to get the user input from a R-gui and save/process th",
       "thread_id": "thread-23e6acf9b3d2",
       "thread_depth": 0,
-      "month": "2007-10"
+      "month": "2007-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071027/4c936850/attachment.pl"
+      ]
     },
     {
       "id": "msg-92b5f60ada8e",
@@ -279,11 +285,14 @@
       "references": [
         "<47224B5A.5070208@ualr.edu>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071027/fffa8cf2/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071027/fffa8cf2/attachment.pl",
+      "body_plain": "You mean something like an input dialog?\n\nlibrary(gWidgets)\nginput(\"Please enter your name\")\n\nOn 10/26/07, shweta <sschavan at ualr.edu> wrote:\n>\n> Hi,\n>\n> I was working on R-gui and I was wondering if there is any way to take\n> input from user the way we take in perl using <STDIN>.\n> All I need is to get the user input from a R-gui and save/process the\n> data values entered by the user.\n>\n> I will be glad if anyone can let me know about taking user input in R.\n>\n> Thanks,\n> Shweta.\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "You mean something like an input dialog?\n\nlibrary(gWidgets)\nginput(\"Please enter your name\")\n\nOn 10/26/07, shweta <sschavan at ualr.edu> wrote:\n>\n> Hi,\n>\n> I was working on R-gui and I was wondering i",
       "thread_id": "thread-8832e8f82d06",
       "thread_depth": 1,
-      "month": "2007-10"
+      "month": "2007-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071027/fffa8cf2/attachment.pl"
+      ]
     },
     {
       "id": "msg-118ca01eae59",

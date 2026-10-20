@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] Building a R-application using gWidgets",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/a366b519/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/a366b519/attachment.pl>",
+      "body_plain": "LIst:\n\nThe other day I ask for some advice and I got some very helpful comments\nfrom Michael Lawrence (thanks), and off-list from John Verzani. Thanks to\nboth.\n\nIt looks like I will be able to build my application using tcktl, with 95 %\nof the code in gWidgets. I will have to use some tool-kit level code for\nsome special purposes, at least for now. For the record, here is a trick\nthat helped me see how gWidgets was interacting with tcltk: I added \"trace\n(tcl)\" and \"trace (tkconfigure)\" in my test scripts. I also looked at the\nsources for gWidgets. Both helped a lot.\n\nHere is another question for the list:\n\nI want to set up my \"system\" so that it starts from a desktop icon and\ncloses when the user hits the \"close\" button on a window. That means that R\nwould be started from the icon and the script that is my application runs\nfrom there. What I need is an R command that tells R to wait until the\ngWidgets \"window\" closes and then it can exit (actually, I'd set it up so\nthat \"q()\" is run from a call back function). If I run R --no-save (or\n--save) < myScript.R, R exits as soon as EOF is reached on the script file.\n\nI've seen questions like this on the web but it seems like this should be\neasier than suggested in the replies to those questions (and some of the\nsuggestions did not work). Am I missing a trick or do I need to get very\ntricky?\n\nBTW: As an experiment I tried the following: I made a new .Rprofile file\nthat contains one command: source (\"myGUI.R\")   ... and this approach gets\nme what I want: the gui starts, the event loop works fine (this on Windows,\nstarting from a cmd.exe window using R.exe  (not Rgui.exe).  So, what I'm\nafter is something along the lines of running a script (like .Rprofile),\nbut not ending when EOF is hit. This was an experiment, I do not intend to\n\"field\" the idea of hijacking the .Rprofile. Howerver the test shows more\nor less what I need.\n\nComments?\n\nCheers, Nick.\n\nPS: (I see I need to catch up my Windows box!)\n> sessionInfo()\nR version 2.15.1 (2012-06-22)\nPlatform: x86_64-pc-mingw32/x64 (64-bit)\n\nlocale:\n[1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United\nStates.1252\n[3] LC_MONETARY=English_United States.1252 LC_NUMERIC=C\n\n[5] LC_TIME=English_United States.1252\n\nattached base packages:\n[1] tcltk     stats     graphics  grDevices utils     datasets  methods\nbase\n\nother attached packages:\n[1] gWidgetstcltk_0.0-54 digest_0.5.2         gWidgets_0.0-52\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "LIst:\n\nThe other day I ask for some advice and I got some very helpful comments\nfrom Michael Lawrence (thanks), and off-list from John Verzani. Thanks to\nboth.\n\nIt looks like I will be able to build m",
       "thread_id": "thread-c0dbf35cc439",
       "thread_depth": 0,
-      "month": "2013-02"
+      "month": "2013-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/a366b519/attachment.pl"
+      ]
     },
     {
       "id": "msg-20e32777d2c4",
@@ -31,11 +34,14 @@
       "references": [
         "<CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/35672bcc/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/35672bcc/attachment.pl>",
+      "body_plain": "I think you just want a loop contingent on some global condition that your\nprogram sets to FALSE when it needs to quit. If you were using RGtk2, it\nwould just be gtkMain() and then gtkMainQuit(). Easy enough to do directly\nin R, though.\n\nMichael\n\n\n\nOn Thu, Feb 14, 2013 at 4:14 PM, Nicholas Crookston <ncrookston.fs at gmail.com\n> wrote:\n\n> LIst:\n>\n> The other day I ask for some advice and I got some very helpful comments\n> from Michael Lawrence (thanks), and off-list from John Verzani. Thanks to\n> both.\n>\n> It looks like I will be able to build my application using tcktl, with 95 %\n> of the code in gWidgets. I will have to use some tool-kit level code for\n> some special purposes, at least for now. For the record, here is a trick\n> that helped me see how gWidgets was interacting with tcltk: I added \"trace\n> (tcl)\" and \"trace (tkconfigure)\" in my test scripts. I also looked at the\n> sources for gWidgets. Both helped a lot.\n>\n> Here is another question for the list:\n>\n> I want to set up my \"system\" so that it starts from a desktop icon and\n> closes when the user hits the \"close\" button on a window. That means that R\n> would be started from the icon and the script that is my application runs\n> from there. What I need is an R command that tells R to wait until the\n> gWidgets \"window\" closes and then it can exit (actually, I'd set it up so\n> that \"q()\" is run from a call back function). If I run R --no-save (or\n> --save) < myScript.R, R exits as soon as EOF is reached on the script file.\n>\n> I've seen questions like this on the web but it seems like this should be\n> easier than suggested in the replies to those questions (and some of the\n> suggestions did not work). Am I missing a trick or do I need to get very\n> tricky?\n>\n> BTW: As an experiment I tried the following: I made a new .Rprofile file\n> that contains one command: source (\"myGUI.R\")   ... and this approach gets\n> me what I want: the gui starts, the event loop works fine (this on Windows,\n> starting from a cmd.exe window using R.exe  (not Rgui.exe).  So, what I'm\n> after is something along the lines of running a script (like .Rprofile),\n> but not ending when EOF is hit. This was an experiment, I do not intend to\n> \"field\" the idea of hijacking the .Rprofile. Howerver the test shows more\n> or less what I need.\n>\n> Comments?\n>\n> Cheers, Nick.\n>\n> PS: (I see I need to catch up my Windows box!)\n> > sessionInfo()\n> R version 2.15.1 (2012-06-22)\n> Platform: x86_64-pc-mingw32/x64 (64-bit)\n>\n> locale:\n> [1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United\n> States.1252\n> [3] LC_MONETARY=English_United States.1252 LC_NUMERIC=C\n>\n> [5] LC_TIME=English_United States.1252\n>\n> attached base packages:\n> [1] tcltk     stats     graphics  grDevices utils     datasets  methods\n> base\n>\n> other attached packages:\n> [1] gWidgetstcltk_0.0-54 digest_0.5.2         gWidgets_0.0-52\n> >\n>\n>         [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I think you just want a loop contingent on some global condition that your\nprogram sets to FALSE when it needs to quit. If you were using RGtk2, it\nwould just be gtkMain() and then gtkMainQuit(). Easy",
       "thread_id": "thread-c0dbf35cc439",
       "thread_depth": 1,
-      "month": "2013-02"
+      "month": "2013-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/35672bcc/attachment.pl"
+      ]
     },
     {
       "id": "msg-361d35336924",
@@ -50,11 +56,14 @@
         "<CAAk+MXwjB2-R51sN=izTa+mEzzm+kY97-XVCzaZD_=GOK=8hsA@mail.gmail.com>",
         "<CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/ce8c981d/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/ce8c981d/attachment.pl>",
+      "body_plain": "So, its just a simple as this:\n\nquite <- FALSE\nrepeat if (quite) break else Sys.sleep(.5)\n\nAnd then have quite set to TRUE in the GUI code....\n\n\n\n\nOn Thu, Feb 14, 2013 at 4:22 PM, Michael Lawrence <lawrence.michael at gene.com\n> wrote:\n\n> I think you just want a loop contingent on some global condition that your\n> program sets to FALSE when it needs to quit. If you were using RGtk2, it\n> would just be gtkMain() and then gtkMainQuit(). Easy enough to do directly\n> in R, though.\n>\n> Michael\n>\n>\n>\n> On Thu, Feb 14, 2013 at 4:14 PM, Nicholas Crookston <\n> ncrookston.fs at gmail.com> wrote:\n>\n>> LIst:\n>>\n>> The other day I ask for some advice and I got some very helpful comments\n>> from Michael Lawrence (thanks), and off-list from John Verzani. Thanks to\n>> both.\n>>\n>> It looks like I will be able to build my application using tcktl, with 95\n>> %\n>> of the code in gWidgets. I will have to use some tool-kit level code for\n>> some special purposes, at least for now. For the record, here is a trick\n>> that helped me see how gWidgets was interacting with tcltk: I added \"trace\n>> (tcl)\" and \"trace (tkconfigure)\" in my test scripts. I also looked at the\n>> sources for gWidgets. Both helped a lot.\n>>\n>> Here is another question for the list:\n>>\n>> I want to set up my \"system\" so that it starts from a desktop icon and\n>> closes when the user hits the \"close\" button on a window. That means that\n>> R\n>> would be started from the icon and the script that is my application runs\n>> from there. What I need is an R command that tells R to wait until the\n>> gWidgets \"window\" closes and then it can exit (actually, I'd set it up so\n>> that \"q()\" is run from a call back function). If I run R --no-save (or\n>> --save) < myScript.R, R exits as soon as EOF is reached on the script\n>> file.\n>>\n>> I've seen questions like this on the web but it seems like this should be\n>> easier than suggested in the replies to those questions (and some of the\n>> suggestions did not work). Am I missing a trick or do I need to get very\n>> tricky?\n>>\n>> BTW: As an experiment I tried the following: I made a new .Rprofile file\n>> that contains one command: source (\"myGUI.R\")   ... and this approach gets\n>> me what I want: the gui starts, the event loop works fine (this on\n>> Windows,\n>> starting from a cmd.exe window using R.exe  (not Rgui.exe).  So, what I'm\n>> after is something along the lines of running a script (like .Rprofile),\n>> but not ending when EOF is hit. This was an experiment, I do not intend to\n>> \"field\" the idea of hijacking the .Rprofile. Howerver the test shows more\n>> or less what I need.\n>>\n>> Comments?\n>>\n>> Cheers, Nick.\n>>\n>> PS: (I see I need to catch up my Windows box!)\n>> > sessionInfo()\n>> R version 2.15.1 (2012-06-22)\n>> Platform: x86_64-pc-mingw32/x64 (64-bit)\n>>\n>> locale:\n>> [1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United\n>> States.1252\n>> [3] LC_MONETARY=English_United States.1252 LC_NUMERIC=C\n>>\n>> [5] LC_TIME=English_United States.1252\n>>\n>> attached base packages:\n>> [1] tcltk     stats     graphics  grDevices utils     datasets  methods\n>> base\n>>\n>> other attached packages:\n>> [1] gWidgetstcltk_0.0-54 digest_0.5.2         gWidgets_0.0-52\n>> >\n>>\n>>         [[alternative HTML version deleted]]\n>>\n>> _______________________________________________\n>> R-SIG-GUI mailing list\n>> R-SIG-GUI at r-project.org\n>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "So, its just a simple as this:\n\nquite <- FALSE\nrepeat if (quite) break else Sys.sleep(.5)\n\nAnd then have quite set to TRUE in the GUI code....\n\n\n\n\nOn Thu, Feb 14, 2013 at 4:22 PM, Michael Lawrence <la",
       "thread_id": "thread-c0dbf35cc439",
       "thread_depth": 2,
-      "month": "2013-02"
+      "month": "2013-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/ce8c981d/attachment.pl"
+      ]
     },
     {
       "id": "msg-436578552c44",
@@ -70,11 +79,14 @@
         "<CAOQ5NyfS8BWD7OsMkUNNE1jGhwNKm0rxu++te7hCwzZZzZtXKw@mail.gmail.com>",
         "<CAAk+MXxd=_WX3XvZqhUwMiVqAmSm4vzn+JCr3LCgFEUMgk5V9g@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/36750f32/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/36750f32/attachment.pl>",
+      "body_plain": "That's the most direct approach; though I would probably use a while().\n\nMichael\n\n\nOn Thu, Feb 14, 2013 at 4:38 PM, Nicholas Crookston <ncrookston.fs at gmail.com\n> wrote:\n\n> So, its just a simple as this:\n>\n> quite <- FALSE\n> repeat if (quite) break else Sys.sleep(.5)\n>\n> And then have quite set to TRUE in the GUI code....\n>\n>\n>\n>\n> On Thu, Feb 14, 2013 at 4:22 PM, Michael Lawrence <\n> lawrence.michael at gene.com> wrote:\n>\n>> I think you just want a loop contingent on some global condition that\n>> your program sets to FALSE when it needs to quit. If you were using RGtk2,\n>> it would just be gtkMain() and then gtkMainQuit(). Easy enough to do\n>> directly in R, though.\n>>\n>> Michael\n>>\n>>\n>>\n>> On Thu, Feb 14, 2013 at 4:14 PM, Nicholas Crookston <\n>> ncrookston.fs at gmail.com> wrote:\n>>\n>>> LIst:\n>>>\n>>> The other day I ask for some advice and I got some very helpful comments\n>>> from Michael Lawrence (thanks), and off-list from John Verzani. Thanks to\n>>> both.\n>>>\n>>> It looks like I will be able to build my application using tcktl, with\n>>> 95 %\n>>> of the code in gWidgets. I will have to use some tool-kit level code for\n>>> some special purposes, at least for now. For the record, here is a trick\n>>> that helped me see how gWidgets was interacting with tcltk: I added\n>>> \"trace\n>>> (tcl)\" and \"trace (tkconfigure)\" in my test scripts. I also looked at the\n>>> sources for gWidgets. Both helped a lot.\n>>>\n>>> Here is another question for the list:\n>>>\n>>> I want to set up my \"system\" so that it starts from a desktop icon and\n>>> closes when the user hits the \"close\" button on a window. That means\n>>> that R\n>>> would be started from the icon and the script that is my application runs\n>>> from there. What I need is an R command that tells R to wait until the\n>>> gWidgets \"window\" closes and then it can exit (actually, I'd set it up so\n>>> that \"q()\" is run from a call back function). If I run R --no-save (or\n>>> --save) < myScript.R, R exits as soon as EOF is reached on the script\n>>> file.\n>>>\n>>> I've seen questions like this on the web but it seems like this should be\n>>> easier than suggested in the replies to those questions (and some of the\n>>> suggestions did not work). Am I missing a trick or do I need to get very\n>>> tricky?\n>>>\n>>> BTW: As an experiment I tried the following: I made a new .Rprofile file\n>>> that contains one command: source (\"myGUI.R\")   ... and this approach\n>>> gets\n>>> me what I want: the gui starts, the event loop works fine (this on\n>>> Windows,\n>>> starting from a cmd.exe window using R.exe  (not Rgui.exe).  So, what I'm\n>>> after is something along the lines of running a script (like .Rprofile),\n>>> but not ending when EOF is hit. This was an experiment, I do not intend\n>>> to\n>>> \"field\" the idea of hijacking the .Rprofile. Howerver the test shows more\n>>> or less what I need.\n>>>\n>>> Comments?\n>>>\n>>> Cheers, Nick.\n>>>\n>>> PS: (I see I need to catch up my Windows box!)\n>>> > sessionInfo()\n>>> R version 2.15.1 (2012-06-22)\n>>> Platform: x86_64-pc-mingw32/x64 (64-bit)\n>>>\n>>> locale:\n>>> [1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United\n>>> States.1252\n>>> [3] LC_MONETARY=English_United States.1252 LC_NUMERIC=C\n>>>\n>>> [5] LC_TIME=English_United States.1252\n>>>\n>>> attached base packages:\n>>> [1] tcltk     stats     graphics  grDevices utils     datasets  methods\n>>> base\n>>>\n>>> other attached packages:\n>>> [1] gWidgetstcltk_0.0-54 digest_0.5.2         gWidgets_0.0-52\n>>> >\n>>>\n>>>         [[alternative HTML version deleted]]\n>>>\n>>> _______________________________________________\n>>> R-SIG-GUI mailing list\n>>> R-SIG-GUI at r-project.org\n>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>>\n>>\n>>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "That's the most direct approach; though I would probably use a while().\n\nMichael\n\n\nOn Thu, Feb 14, 2013 at 4:38 PM, Nicholas Crookston <ncrookston.fs at gmail.com\n> wrote:\n\n> So, its just a simple as ",
       "thread_id": "thread-c0dbf35cc439",
       "thread_depth": 3,
-      "month": "2013-02"
+      "month": "2013-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130214/36750f32/attachment.pl"
+      ]
     },
     {
       "id": "msg-c3889fd28745",
@@ -86,11 +98,14 @@
       "subject_clean": "[R-gui] Changing default fonts in gwidgets",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130221/057138a0/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130221/057138a0/attachment.pl>",
+      "body_plain": "Hi:\n\nConsider this example:\n\nrequire(gWidgets)\noptions(guiToolkit=\"tcltk\")\nw <- gwindow(\"Test\")\nb <- gbutton(container=w,text=\"Button\")\n\nQuestion 1:\nHow do I change the font on the button (color, weight, etc)?\nHow do I change the default so that all widgets in the window (and any\nadditional windows I create) use a different default font?\n\nThanks!\n\nCheers, Nick\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi:\n\nConsider this example:\n\nrequire(gWidgets)\noptions(guiToolkit=\"tcltk\")\nw <- gwindow(\"Test\")\nb <- gbutton(container=w,text=\"Button\")\n\nQuestion 1:\nHow do I change the font on the button (color, weig",
       "thread_id": "thread-c3889fd28745",
       "thread_depth": 0,
-      "month": "2013-02"
+      "month": "2013-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130221/057138a0/attachment.pl"
+      ]
     },
     {
       "id": "msg-6b29729874ee",
@@ -104,11 +119,14 @@
       "references": [
         "<CAAk+MXzT2UZQHUVu9mkxTqGJF8wBU7D9aODXnxrB1xj+aau19A@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130222/ff7a7a82/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130222/ff7a7a82/attachment.pl>",
+      "body_plain": "A bit more information:\n\nLets add a text or label (here is a label:\n\nlb <- glabel(container=gw,text=\"Label\")\n\nThis works fine on a label or text object (and I knew before I posted my\nquestion):\n\nfont(lb) <- c(family=\"times\",size=24,weight=\"bold\",style=\"italic\")\n\nWhen the font() function is called on the \"button\" object, it has no\neffect. In addition, setting additional options as in:\nbt <- gbutton (container=gw,text=\"Button\", fg=\"red\")\nare ignored.\n\ncomments on the original post would be helpful!\n\nCheers, Nick\n\n\n\n\nOn Thu, Feb 21, 2013 at 4:37 PM, Nicholas Crookston <ncrookston.fs at gmail.com\n> wrote:\n\n> Hi:\n>\n> Consider this example:\n>\n> require(gWidgets)\n> options(guiToolkit=\"tcltk\")\n> w <- gwindow(\"Test\")\n> b <- gbutton(container=w,text=\"Button\")\n>\n> Question 1:\n> How do I change the font on the button (color, weight, etc)?\n> How do I change the default so that all widgets in the window (and any\n> additional windows I create) use a different default font?\n>\n> Thanks!\n>\n> Cheers, Nick\n>\n>\n>\n>\n>\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "A bit more information:\n\nLets add a text or label (here is a label:\n\nlb <- glabel(container=gw,text=\"Label\")\n\nThis works fine on a label or text object (and I knew before I posted my\nquestion):\n\nfont(",
       "thread_id": "thread-c3889fd28745",
       "thread_depth": 1,
-      "month": "2013-02"
+      "month": "2013-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130222/ff7a7a82/attachment.pl"
+      ]
     },
     {
       "id": "msg-747d0712c2b5",

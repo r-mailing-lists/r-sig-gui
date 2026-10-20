@@ -97,11 +97,14 @@
       "subject_clean": "[R-gui] Tinn-R Error message",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090220/4e457e83/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090220/4e457e83/attachment.pl>",
+      "body_plain": "Dear Claudio Faria\n\n \n\nI have installed R and Tinn R on a new computer with windows XP\n\n \n\nI start R and Tinn R version 2.2.02\n\nWhen I try to send commands to R I get an error message:\n\n \n\n\"Fehler in source(.trPath[5], echo=TRUE,  max.deparse.length = 150):\n\nObjekt \"tr.Path\" nicht gefunden\"\n\n \n\nWhat can I do to avoid this error.\n\n \n\nMany thanks and best regards\n\n \n\nFelix Heinser\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Claudio Faria\n\n \n\nI have installed R and Tinn R on a new computer with windows XP\n\n \n\nI start R and Tinn R version 2.2.02\n\nWhen I try to send commands to R I get an error message:\n\n \n\n\"Fehler in ",
       "thread_id": "thread-eba7735c1ba4",
       "thread_depth": 0,
-      "month": "2009-02"
+      "month": "2009-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090220/4e457e83/attachment.pl"
+      ]
     },
     {
       "id": "msg-002363916017",

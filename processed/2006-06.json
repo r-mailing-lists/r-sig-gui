@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] New versions of pmg and iWIdgetsRGtk",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060606/1311f26e/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060606/1311f26e/attachment.pl",
+      "body_plain": "I've released new versions of pmg and iWIdgetsRGtk. They can be installed\nwith a variant of\n\n> install.packages(c(\"iWIdgetsRGtk\",\"pmg\"), repos=\"\nhttp://www.math.csi.cuny.edu/pmg\")\n\nOnce installed, the GUI is loaded when the pmg package is.\n\nThis release adds some dynamic widgets to the mix. These allow one to link a\nplot or dialog to a column in a data frame viewer and have that update when\nthe data is edited. Or, the user can drag and drop variable names onto the\nwidgets and they automatically update.\n\nPMG is a GUI built using the RGtk2 package of Michael Lawrence. The\niWidgetsRGtk package is an interface to RGTk2, which simplifies the building\nof dialogs etc. It can be used in isolation to create GUI elements within R.\nInstallation of RGtk2 is detailed at http://www.ggobi.org/RGtk2\n\n\nIf anybody tries it out, I'd appreciate your comments: pmgRgui at gmail.com.\n\n--John\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I've released new versions of pmg and iWIdgetsRGtk. They can be installed\nwith a variant of\n\n> install.packages(c(\"iWIdgetsRGtk\",\"pmg\"), repos=\"\nhttp://www.math.csi.cuny.edu/pmg\")\n\nOnce installed, the",
       "thread_id": "thread-0bc89477fe75",
       "thread_depth": 0,
-      "month": "2006-06"
+      "month": "2006-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060606/1311f26e/attachment.pl"
+      ]
     },
     {
       "id": "msg-53e1d4f78f50",
@@ -95,11 +98,14 @@
       "references": [
         "<6.2.0.14.0.20060623124233.037ed560@sslmail.wu-wien.ac.at>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060623/31dd2278/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060623/31dd2278/attachment.pl",
+      "body_plain": "Great. But the link below in your page is wrong:\n\nhttp://www-sre.wu-wien.ac.at/SimpleR/useR-Maier-SimpleR.ppd\n\nshould be:\n\nhttp://www-sre.wu-wien.ac.at/SimpleR/useR-Maier-SimpleR.ppt\n\nCheers\nXiaohua\n\nOn 6/23/06, Gunther Maier <gunther.maier at wu-wien.ac.at> wrote:\n>\n> Dear colleagues,\n> I would like to inform you that SimpleR, a Windows-based GUI for R is\n> available for inspection and testing now at\n> http://www-sre.wu-wien.ac.at/SimpleR . I have presented SimpleR at the\n> useR! conference last week in Vienna, Austria. You can find the slides from\n> this presentation, a short handbook and the installable program at the url\n> given above. Please note that SimpleR is in very early development and that\n> it does NOT intend to cover all of R nor to be OS independent.\n> Your suggestions and comments will be welcome. If you are interested in\n> joining the development of SimpleR, please let me know.\n>\n> Kind regards\n> Gunther Maier\n> <gunther.maier at wu-wien.ac.at>\n>\n> -----------------------------------------------------------------------\n> *  Gunther Maier, University of Economics and Business Administration *\n> *     Augasse 2-6, Vienna, Austria. (Gunther.Maier at wu-wien.ac.at)     *\n> *      Newsletter Editor, European Regional Science Association       *\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\n\n-- \nXiaohua Dai, Dr.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Great. But the link below in your page is wrong:\n\nhttp://www-sre.wu-wien.ac.at/SimpleR/useR-Maier-SimpleR.ppd\n\nshould be:\n\nhttp://www-sre.wu-wien.ac.at/SimpleR/useR-Maier-SimpleR.ppt\n\nCheers\nXiaohua\n\n",
       "thread_id": "thread-fb19b9153c08",
       "thread_depth": 1,
-      "month": "2006-06"
+      "month": "2006-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060623/31dd2278/attachment.pl"
+      ]
     },
     {
       "id": "msg-eb5b1633f730",

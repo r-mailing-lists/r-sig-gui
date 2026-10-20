@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] package to open as GUI in R",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120704/f2014c9c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120704/f2014c9c/attachment.pl>",
+      "body_plain": "hello sir,\nMy name is Naveen Verma and i am doin my M.S.(Pharm.) from NIPER(Mohali,\nIndia). I am working on the building of a R based GUI. I read your research\ntip for making R package for functions and i succeded in that. So can you\nplz tell the way to make a package which should open as a GUI when called\nas library in R.\nI am facing the under defined problems:\n1) where and how to use the fgui library function to create a function for\nGUI\n2) how to open the package as a GUI when called through R\n\n*Naveen Verma,*\n\n*Department of Pharmacoinformatics,*\n\n*NIPER Mohali (Punjab,India)*\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "hello sir,\nMy name is Naveen Verma and i am doin my M.S.(Pharm.) from NIPER(Mohali,\nIndia). I am working on the building of a R based GUI. I read your research\ntip for making R package for functions a",
       "thread_id": "thread-877f1c680669",
       "thread_depth": 0,
-      "month": "2012-07"
+      "month": "2012-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120704/f2014c9c/attachment.pl"
+      ]
     },
     {
       "id": "msg-d08301777531",

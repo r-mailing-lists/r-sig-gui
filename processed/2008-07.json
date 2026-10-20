@@ -66,11 +66,14 @@
         "<loom.20080619T020819-746@post.gmane.org>",
         "<87tzf76jtg.fsf@patagonia.sebmags.homelinux.org>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/e94629c7/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/e94629c7/attachment.pl>",
+      "body_plain": "On Thu, Jul 3, 2008 at 8:58 AM, Sebastian P. Luque <spluque at gmail.com>\nwrote:\n\n> [...]\n>\n> > The handlers in the various toolkits have several different arguments,\n> > none of course being standard. The ... is to accommodate\n> > these. Whereas, the first argument for a handler, called \"h\" from the\n> > iWidgets background of gWidgets, is a list containing components \"obj\"\n> > to refer to the object that the handler is called on, such as the\n> > slider in your example, and \"action\" which just passes along the\n> > action= argument. (Some widgets have additional components, such as\n> > \"dropdata\" or \"x\" and \"y\".) The h$obj construction allows you to avoid\n> > global variables. So the following are equivalent:\n>\n> > sl = gslider(cont=gwindow(), handler = function(h,...)\n> > print(svalue(sl)))\n>\n> > and\n>\n> > sl = gslider(cont=gwindow(), handler = function(h,...)\n> > print(svalue(h$obj)))\n>\n>\n> Thanks for the explanation!\n>\n> On another note, I got a bit confused the other day trying to learn more\n> about layout from the density example given in the vignette.  I was\n> trying to get the following layout:\n>\n>\n> Basically, move the bandwidth slider below the graph and spanning the\n> whole width of the window.  Modifying the layout section of the code as:\n>\n> ---<---------------cut here---------------start-------------->---\n> window <- gwindow(\"gWidgetsDensity\")\n> bigGroup <- ggroup(container=window)\n>\n> vGroup <- ggroup(horizontal=FALSE, container=bigGroup)\n> hGroup <- ggroup(horizontal=FALSE, container=bigGroup)\n>\n> tmp <- gframe(\"Distribution\", container=vGroup)\n> add(tmp, distribution)\n>\n> tmp  <- gframe(\"Sample size\", container=vGroup)\n> add(tmp,sampleSize)\n>\n> tmp <- gframe(\"Kernel\", container=vGroup)\n> add(tmp,kernel)\n>\n> add(bigGroup, ggraphics())\n>\n> tmp <- gframe(\"Bandwidth adjust\", container=hGroup)\n> add(tmp,bandwidthAdjust, expand=TRUE)\n> ---<---------------cut here---------------end---------------->---\n>\n> Why is the slider still packed side by side, when I'm specifying\n> 'horizontal=FALSE' in hGroup?\n>\n> I also notice that one needs to do something in a widget to produce the\n> initial plot, i.e. a default initial the plot is not produced.\n>\n\nIt sounds like you want a top-level vertical group that contains two\nhorizontal groups. The first contains the vertical controls and graph and\nthe second contains your horizontal controls.\n\nDoes this help?\nMichael\n\n\n>\n>\n> Thanks for any further pointers,\n> --\n> Seb\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Thu, Jul 3, 2008 at 8:58 AM, Sebastian P. Luque <spluque at gmail.com>\nwrote:\n\n> [...]\n>\n> > The handlers in the various toolkits have several different arguments,\n> > none of course being standard",
       "thread_id": "thread-87fe5e577153",
       "thread_depth": 1,
-      "month": "2008-07"
+      "month": "2008-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/e94629c7/attachment.pl"
+      ]
     },
     {
       "id": "msg-6851f5637cbd",
@@ -127,11 +130,14 @@
       "references": [
         "<8F897BD2B0EB714CB79B96D84911B3023803D1@EXCHV1.lj.ad.scripps.edu>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4839077f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4839077f/attachment.pl>",
+      "body_plain": "On Thu, Jul 3, 2008 at 9:49 AM, Lana Schaffer <schaffer at scripps.edu> wrote:\n\n> Hi,\n> I have written a new package for Bioconductor\n> and need a GUI for users with no experience using\n> R.  Am I able to adapt an already existing GUI for\n> this purpose?  What would you recommend?\n>\n\nYou might be able to, depending on the application. I would suggest looking\nover the existing GUIs. The problem is that most GUIs are written using\ntcl/tk. I would recommend using the gWidgets package instead. It has a\nhigh-level interface that's great for prototyping simple GUIs.\n\n\n> Lana Schaffer\n> Biostatistics/Informatics\n> The Scripps Research Institute\n> DNA Array Core Facility\n> La Jolla, CA 92037\n> (858) 784-2263\n> (858) 784-2994\n> schaffer at scripps.edu\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Thu, Jul 3, 2008 at 9:49 AM, Lana Schaffer <schaffer at scripps.edu> wrote:\n\n> Hi,\n> I have written a new package for Bioconductor\n> and need a GUI for users with no experience using\n> R.  Am I abl",
       "thread_id": "thread-c5c534cc6dc6",
       "thread_depth": 1,
-      "month": "2008-07"
+      "month": "2008-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4839077f/attachment.pl"
+      ]
     },
     {
       "id": "msg-93e9996ed7ce",
@@ -154,11 +160,14 @@
         "<509e0620807030920h6d023b08r6dd6d397011ad95e@mail.gmail.com>",
         "<87prpu7w21.fsf@patagonia.sebmags.homelinux.org>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4e9723e2/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4e9723e2/attachment.pl>",
+      "body_plain": "On Thu, Jul 3, 2008 at 9:48 AM, Sebastian P. Luque <spluque at gmail.com>\nwrote:\n\n> On Thu, 3 Jul 2008 09:20:58 -0700,\n> \"Michael Lawrence\" <mflawren at fhcrc.org> wrote:\n>\n> [...]\n>\n> > It sounds like you want a top-level vertical group that contains two\n> > horizontal groups. The first contains the vertical controls and graph\n> > and the second contains your horizontal controls.\n>\n> If I try something along those lines:\n>\n> ---<---------------cut here---------------start-------------->---\n> window <- gwindow(\"gWidgetsDensity\")\n> bigGroup <- ggroup(container=window)\n>\n> vGroup <- ggroup(horizontal=FALSE, container=bigGroup)\n> hGroup <- ggroup(horizontal=FALSE, container=bigGroup)\n>\n> tmp <- gframe(\"Distribution\", container=vGroup)\n> add(tmp, distribution)\n>\n> tmp  <- gframe(\"Sample size\", container=vGroup)\n> add(tmp,sampleSize)\n>\n> tmp <- gframe(\"Kernel\", container=vGroup)\n> add(tmp,kernel)\n>\n> add(hGroup, ggraphics())\n>\n> tmp <- gframe(\"Bandwidth adjust\", container=hGroup)\n> add(tmp,bandwidthAdjust, expand=TRUE)\n> ---<---------------cut here---------------end---------------->---\n>\n> does get me closer, but then the graph does not get resized along with\n> window size.\n>\n\nJust pack the ggraphics widget to expand (= TRUE).\n\n\n>\n> How about the initial plot not being produced?\n>\n\nI don't see enough of your code to tell why - where you are you plotting the\ndata?\n\n>\n>\n> Thanks,\n>\n> --\n> Seb\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Thu, Jul 3, 2008 at 9:48 AM, Sebastian P. Luque <spluque at gmail.com>\nwrote:\n\n> On Thu, 3 Jul 2008 09:20:58 -0700,\n> \"Michael Lawrence\" <mflawren at fhcrc.org> wrote:\n>\n> [...]\n>\n> > It sounds lik",
       "thread_id": "thread-87fe5e577153",
       "thread_depth": 3,
-      "month": "2008-07"
+      "month": "2008-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/4e9723e2/attachment.pl"
+      ]
     },
     {
       "id": "msg-d0abdb06d942",
@@ -198,11 +207,14 @@
       "subject_clean": "[R-gui] recommend a GUI fornew  bioconductor package",
       "in_reply_to": "<8F897BD2B0EB714CB79B96D84911B3023803D1@EXCHV1.lj.ad.scripps.edu>",
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/5dbc4f8a/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/5dbc4f8a/attachment.pl>",
+      "body_plain": "Depending on the user base, you may want to consider the RExcel package \nand make Excel your \"GUI\". We find this to be a very easy way to delver R \nanalytics to people in a familiar environment.\n\nOtherwise consider the R(D)COM package and the .NET interface to write \nyour GUI in a .NET language.\n\n\n\n\n\"Lana Schaffer\" <schaffer at scripps.edu> \nSent by: r-sig-gui-bounces at stat.math.ethz.ch\n07/03/2008 12:49 PM\n\nTo\n<R-SIG-GUI at stat.math.ethz.ch>\ncc\n\nSubject\n[R-gui] recommend a GUI fornew  bioconductor package\n\n\n\n\n\nHi,\nI have written a new package for Bioconductor\nand need a GUI for users with no experience using\nR.  Am I able to adapt an already existing GUI for\nthis purpose?  What would you recommend?\n\nLana Schaffer\nBiostatistics/Informatics\nThe Scripps Research Institute\nDNA Array Core Facility\nLa Jolla, CA 92037\n(858) 784-2263\n(858) 784-2994\nschaffer at scripps.edu \n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at stat.math.ethz.ch\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Depending on the user base, you may want to consider the RExcel package \nand make Excel your \"GUI\". We find this to be a very easy way to delver R \nanalytics to people in a familiar environment.\n\nOthe",
       "thread_id": "thread-c5c534cc6dc6",
       "thread_depth": 1,
-      "month": "2008-07"
+      "month": "2008-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080703/5dbc4f8a/attachment.pl"
+      ]
     },
     {
       "id": "msg-5504b38c5a2a",

@@ -45,11 +45,14 @@
       "subject_clean": "[R-gui] new version IPSUR_0.1-1 now available on CRAN",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061008/75b9e80c/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061008/75b9e80c/attachment.pl",
+      "body_plain": "Dear All,\n\nThe latest version of IPSUR (last one for awhile) is\nnow available on CRAN.\n\nWhat's New in 0.1-1:\n\n1. Important bug fixes\n2. Test of equality for several proportions...\n3. Enter table for single proportion test...\n4. Enter table for multiple proportions test...\n5. Bar graph plot by groups (stacked and side-by side)\n6. Enter table for bar graphs...\n\nVisit the IPSUR website for the latest bug fixes, updates, and new features:\n\nhttp://www.cc.ysu.edu/~gjkerns/IPSUR/package<http://www.cc.ysu.edu/%7Egjkerns/IPSUR/package>\n\nRegards,\nJay\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear All,\n\nThe latest version of IPSUR (last one for awhile) is\nnow available on CRAN.\n\nWhat's New in 0.1-1:\n\n1. Important bug fixes\n2. Test of equality for several proportions...\n3. Enter table for s",
       "thread_id": "thread-26b2fd83e7f1",
       "thread_depth": 0,
-      "month": "2006-10"
+      "month": "2006-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061008/75b9e80c/attachment.pl"
+      ]
     },
     {
       "id": "msg-19e08d81eff7",
@@ -257,11 +260,14 @@
         "<4544EE7C.6010402@cesmail.net>",
         "<17732.62291.210619.430331@basebud.nulle.part>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061029/132020a8/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061029/132020a8/attachment.pl",
+      "body_plain": "On 10/29/06, Dirk Eddelbuettel <edd at debian.org> wrote:\n>\n>\n> On 29 October 2006 at 10:10, M. Edward (Ed) Borasky wrote:\n>\n> | I can certainly test this all out and get it working on Gentoo. I have\n> | both 1.4 and 1.5 JDK, but I'm using the \"stock\" R-2.4.0 and don't plan\n> | to go beyond that until the next version gets into alpha testing.\n>\n> I think 1.4 is fine but I am not sure. 1.5 works for me, and is\n> pre-packaged\n> by Sun and Ubuntu/Debian.\n\n\nI am pretty sure 1.5 is required due to a bug in 1.4 that affects JRI (Java\nto R Interface, on which JGR relies) on Linux (but not other platforms,\napparently).\n\nMichael\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On 10/29/06, Dirk Eddelbuettel <edd at debian.org> wrote:\n>\n>\n> On 29 October 2006 at 10:10, M. Edward (Ed) Borasky wrote:\n>\n> | I can certainly test this all out and get it working on Gentoo. I have\n",
       "thread_id": "thread-a873e7892c8d",
       "thread_depth": 4,
-      "month": "2006-10"
+      "month": "2006-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20061029/132020a8/attachment.pl"
+      ]
     },
     {
       "id": "msg-bb701cf2448b",

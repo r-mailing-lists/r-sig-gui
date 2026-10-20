@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] About biocep",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090115/e3daaa48/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090115/e3daaa48/attachment.pl>",
+      "body_plain": "Hi all,\n \nI'm surprised of not reading much about the biocep-R project ( http://biocep-distrib.r-forge.r-project.org/ ) on this list. I don't even see it listed on the \"R GUI Projects\" page at http://www.sciviews.org/_rgui/index.html \n \nI saw a presentation about it last year and it looked to me like one of the most promising GUI projects for R around. Are people already using it? Sadly it still has less-than-minimal documentation...\n \nBest regards,\n \nEnrique\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi all,\n \nI'm surprised of not reading much about the biocep-R project ( http://biocep-distrib.r-forge.r-project.org/ ) on this list. I don't even see it listed on the \"R GUI Projects\" page at http://",
       "thread_id": "thread-43826a1dc75a",
       "thread_depth": 0,
-      "month": "2009-01"
+      "month": "2009-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090115/e3daaa48/attachment.pl"
+      ]
     },
     {
       "id": "msg-af3c8fa3af5c",
@@ -65,11 +68,14 @@
       "references": [
         "<19811401A1D8174CB3EAD7F6072E9B5001DB2CE3@chsa1025.share.beluni.net>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090115/c4bf6540/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090115/c4bf6540/attachment.pl>",
+      "body_plain": "On Thu, Jan 15, 2009 at 1:28 AM, Bengoechea Bartolomé Enrique (SIES 73) <\nenrique.bengoechea at credit-suisse.com> wrote:\n\n> Hi all,\n>\n> I'm surprised of not reading much about the biocep-R project (\n> http://biocep-distrib.r-forge.r-project.org/ ) on this list. I don't even\n> see it listed on the \"R GUI Projects\" page at\n> http://www.sciviews.org/_rgui/index.html\n>\n\nThis GUI project list is largely obsolete.\n\n\n>\n> I saw a presentation about it last year and it looked to me like one of the\n> most promising GUI projects for R around. Are people already using it? Sadly\n> it still has less-than-minimal documentation...\n>\n> Best regards,\n>\n> Enrique\n>\n>        [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Thu, Jan 15, 2009 at 1:28 AM, Bengoechea Bartolomé Enrique (SIES 73) <\nenrique.bengoechea at credit-suisse.com> wrote:\n\n> Hi all,\n>\n> I'm surprised of not reading much about the biocep-R project (\n",
       "thread_id": "thread-43826a1dc75a",
       "thread_depth": 1,
-      "month": "2009-01"
+      "month": "2009-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090115/c4bf6540/attachment.pl"
+      ]
     },
     {
       "id": "msg-c06926cc98e7",
@@ -97,11 +103,14 @@
       "subject_clean": "[R-gui] Splitting lines of a csv file without affecting substrings in double quotes",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090128/3139b833/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090128/3139b833/attachment.pl>",
+      "body_plain": "Hello,\n \nMy question pertains to splitting a string which contains a substring\nenclosed in double-quotes.  The substring should not be split by strsplit.\nThe whole point is to read in a csv file just like Excel would do on its\nown.\nSo I have a csv file that looks like this (small snippet):\nTrial,Parameter,0,0.5,1.5,2.5\n1,ESG.Economies.CNY.NominalYieldCurve.CashTotalReturnIndex,0.98,1,1.0367,1.0\n66\n1,\"ESG.Economies.CNY.NominalSpotRate(Govt, 1)\",0.025,0.0367,0.0281,0.0215\n1,\"ESG.Economies.CNY.NominalSpotRate(Govt, 2)\",0.029,0.0392,0.0294,0.0227\n1,\"ESG.Economies.CNY.NominalSpotRate(Swap, 3)\",0.037,0.0405,0.029,0.0238\n1,\"ESG.Economies.CNY.NominalSpotRate(Govt, 4)\",0.036,0.0414,0.0304,0.02\n1,\"ESG.Economies.CNY.NominalSpotRate(Swap, 5)\",0.038,0.042,0.031,0.026\n...\n \nI read it in with readLines, then try to split it with strsplit.\n \nThe desired result is this (which is how Excel reads it in automatically).\nNotice that what is in the double quotes should remain unaffected by the\nsplitting:\nTrial   Parameter 0    0.5     1.5     2.5\n1       ESG.Economies.CNY.NominalYieldCurve.CashTotalReturnIndex     0.98\n1       1.0367        1.066\n1       ESG.Economies.CNY.NominalSpotRate(Govt, 1)    0.025   0.0367  0.0281\n0.0215\n1       ESG.Economies.CNY.NominalSpotRate(Govt, 2)    0.029   0.0392  0.0294\n0.0227\n1       ESG.Economies.CNY.NominalSpotRate(Govt, 3)    0.037   0.0405  0.029\n0.0238\n1       ESG.Economies.CNY.NominalSpotRate(Govt, 4)    0.036   0.0414  0.0304\n0.02\n1       ESG.Economies.CNY.NominalSpotRate(Govt, 5)    0.038   0.042   0.031\n0.026\n \nMy efforts went like this:\nbridgeCSV <- \"myfile.csv\";              \ncon.B <- file(description=bridgeCSV, open=\"rt\", blocking = FALSE)\nbridgeheader <- readLines(con.B, n=1)\nthe.bridge <- readLines(con.B, n=-1) \nthe.bridge.1 <- strsplit(the.bridge, \",\")\nthe.bridge.2 <- strsplit(unlist(the.bridge.1), \"\\\"\")\n \nI tried a few ways along these lines but did not manage to get the text in\ncaps as a single field.\nFor example:\n> the.bridge.1 <- strsplit(the.bridge[2], \",\")\n> the.bridge.1\n[[1]]\n[1] \"1\"\n\"\\\"ESG.Economies.CNY.NominalSpotRate(Govt\" \" 1)\\\"\"\n\n[4] \"0.025\"                                    \"0.0367\"\n\"0.0281\"                                  \n[7] \"0.0215\"                                  \n \nMaybe I am missing something obvious? Does anyone have an idea how I can\nsuccessfully parse this to look as the desired result above?\n \nYannis\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n \nMy question pertains to splitting a string which contains a substring\nenclosed in double-quotes.  The substring should not be split by strsplit.\nThe whole point is to read in a csv file just ",
       "thread_id": "thread-ea48ffc99b38",
       "thread_depth": 0,
-      "month": "2009-01"
+      "month": "2009-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090128/3139b833/attachment.pl"
+      ]
     },
     {
       "id": "msg-84cdc45b11e4",
@@ -184,11 +193,14 @@
       "subject_clean": "[R-gui] Lengthening a data frame by repeating it",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090130/3dfb3a8e/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090130/3dfb3a8e/attachment.pl>",
+      "body_plain": "Hello,\n \nthis initially seemed to me like a pretty simple thing to do with rbind/cbind but did not manage to do it without looping.\n \nI have a simple data frame such as x:\nx<-cbind(c(1,2),c(3,4))\n> x\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n \nAnd a longer data frame, such as y:\n> y<-cbind(c(11,12,13,14,15,16),c(21,22,23,24,25,26))\n> y\n     [,1] [,2]\n[1,]   11   21\n[2,]   12   22\n[3,]   13   23\n[4,]   14   24\n[5,]   15   25\n[6,]   16   26\n\nI would like to merge them like this:\n     [,1] [,2] [,3] [,4]\n[1,]    1    3   11   21\n[2,]    2    4   12   22\n[3,]    1    3   13   23\n[4,]    2    4   14   24\n[5,]    1    3   15   25\n[6,]    2    4   16   26\n\n(ie by repeating the short frame as many times as necessary (a known number) and inserting it before the y columns.\nThe need to not loop comes from the large number of times it would have to be repeated(thousands) before merged with another table of the longer, new length.\n \nAny ideas?\n \nThank you,\nYannis Tzamouranis\n\nI tried lengthening x (as then merging them would be easy through cbind) but could not do it without looping.  I wonder if there would be another way to go about this...\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n \nthis initially seemed to me like a pretty simple thing to do with rbind/cbind but did not manage to do it without looping.\n \nI have a simple data frame such as x:\nx<-cbind(c(1,2),c(3,4))\n> x\n",
       "thread_id": "thread-3629c8f71bb7",
       "thread_depth": 0,
-      "month": "2009-01"
+      "month": "2009-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090130/3dfb3a8e/attachment.pl"
+      ]
     },
     {
       "id": "msg-b3b9ae1ee4f2",
@@ -221,11 +233,14 @@
         "<980670.35289.qm@web90401.mail.mud.yahoo.com>",
         "<971536df0901300532p45584957rce8ac58d35c371f0@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090130/c136e1f4/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090130/c136e1f4/attachment.pl>",
+      "body_plain": "Thank you, Gabor.  This does the job.\n\nY\n\n\n\n________________________________\nFrom: Gabor Grothendieck <ggrothendieck at gmail.com>\n\nCc: r-sig-gui at stat.math.ethz.ch\nSent: Friday, January 30, 2009 8:32:31 AM\nSubject: Re: [R-gui] Lengthening a data frame by repeating it\n\nIn the post x and y are matrices, not data frames.  Converting them to\ndata frames, try:\n\n> x.df <- as.data.frame(x); y.df <- as.data.frame(y)\n> data.frame(x.df[1], x.df[2], y.df)\n  V1 V2 V1.1 V2.1\n1  1  3  11  21\n2  2  4  12  22\n3  1  3  13  23\n4  2  4  14  24\n5  1  3  15  25\n6  2  4  16  26\n\n\nOn Fri, Jan 30, 2009 at 8:21 AM, Yannis Tzamouranis\n\n> Hello,\n>\n> this initially seemed to me like a pretty simple thing to do with rbind/cbind but did not manage to do it without looping.\n>\n> I have a simple data frame such as x:\n> x<-cbind(c(1,2),c(3,4))\n>> x\n>      [,1] [,2]\n> [1,]    1    3\n> [2,]    2    4\n>\n> And a longer data frame, such as y:\n>> y<-cbind(c(11,12,13,14,15,16),c(21,22,23,24,25,26))\n>> y\n>      [,1] [,2]\n> [1,]  11  21\n> [2,]  12  22\n> [3,]  13  23\n> [4,]  14  24\n> [5,]  15  25\n> [6,]  16  26\n>\n> I would like to merge them like this:\n>      [,1] [,2] [,3] [,4]\n> [1,]    1    3  11  21\n> [2,]    2    4  12  22\n> [3,]    1    3  13  23\n> [4,]    2    4  14  24\n> [5,]    1    3  15  25\n> [6,]    2    4  16  26\n>\n> (ie by repeating the short frame as many times as necessary (a known number) and inserting it before the y columns.\n> The need to not loop comes from the large number of times it would have to be repeated(thousands) before merged with another table of the longer, new length.\n>\n> Any ideas?\n>\n> Thank you,\n> Yannis Tzamouranis\n>\n> I tried lengthening x (as then merging them would be easy through cbind) but could not do it without looping.  I wonder if there would be another way to go about this...\n>\n>        [[alternative HTML version deleted]]\n>\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Thank you, Gabor.  This does the job.\n\nY\n\n\n\n________________________________\nFrom: Gabor Grothendieck <ggrothendieck at gmail.com>\n\nCc: r-sig-gui at stat.math.ethz.ch\nSent: Friday, January 30, 2009 8:",
       "thread_id": "thread-3629c8f71bb7",
       "thread_depth": 2,
-      "month": "2009-01"
+      "month": "2009-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090130/c136e1f4/attachment.pl"
+      ]
     }
   ],
   "threads": [

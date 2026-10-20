@@ -84,11 +84,14 @@
         "<47334ACC.6050707@ualr.edu>",
         "<18231.13840.92362.529835@ron.nulle.part>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071111/b5265ddb/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071111/b5265ddb/attachment.pl",
+      "body_plain": "Dirk,\n\nThe first time I sent the mail , I got a mail saying that the list \nmoderator has to review it for approval and was not posted. Thats the \nreason why I sent the mail again (3 days ago) which was posted (and I \ndid get a answer from Charilaos and I also replied apologizing for \nsending it to R-GUI list instead of a R-general list).\n\nBut now, it seems that after 3 days the moderator has approved the \nearlier mail and posted it. I guess I should have canceled the previous \nposting to avoid this.\n\nI hope that now it is clear that I am not making the same mistake again \nand its the same mail send 3 days ago that is being posted now.\n\nAlso, I would like to apologize to the members in the R-GUI mailing \nlist, since they all must be getting the same mail 2 times and causing a \ninconvenience.\n\n\nRegards,\nShweta.\n\n\nDirk Eddelbuettel wrote:\n> Shweta,\n>\n> Just three days ago, in a random act of kindness, Charilaos told you in no\n> uncertain terms \n>\n>    PS: Not sure what this has to do with GUI though, isn't that more  \n>    appropriate to R-help instead of r-sig-gui?\n>\n> Which part of this was unclear?\n>\n> Charilaos also told you what you were doing wrong with your call to runif.\n> You are still making the same mistake.\n>\n> Please go back and read his reply.  And please stop posting material that has\n> nothing to do with R and GUIs to the list devoted to R and GUIs.  \n>\n> Thanks, Dirk\n>\n>   \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dirk,\n\nThe first time I sent the mail , I got a mail saying that the list \nmoderator has to review it for approval and was not posted. Thats the \nreason why I sent the mail again (3 days ago) which wa",
       "thread_id": "thread-c71e256c71cd",
       "thread_depth": 2,
-      "month": "2007-11"
+      "month": "2007-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071111/b5265ddb/attachment.pl"
+      ]
     },
     {
       "id": "msg-3c17c1c2d863",

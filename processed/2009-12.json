@@ -29,11 +29,14 @@
       "subject_clean": "[R-gui] tk2mclistbox problem",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091206/6db419ce/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091206/6db419ce/attachment.pl>",
+      "body_plain": "Hey Philippe,\n\nI have a question concerning an tk2mclistbox problem.\nI have the same problem as in this post you commented.\n\nhttps://stat.ethz.ch/pipermail/r-sig-gui/2009-February/000911.html\n\nIt was dated Feb.09. The sample code still throws an error.\nAre there any advances? Right now it seems the tk2mclistbox cannot be  \nused?!\nAm I wrong? What can I do?\n\nThanks in advance!!\n\nMark\n\n–––––––––––––––––––––––––––––––––––––––\nMark Heckmann\nDipl. Wirt.-Ing. cand. Psych.\nVorstraße 93 B01\n28359 Bremen\nBlog: www.markheckmann.de\nR-Blog: http://ryouready.wordpress.com\n\n\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hey Philippe,\n\nI have a question concerning an tk2mclistbox problem.\nI have the same problem as in this post you commented.\n\nhttps://stat.ethz.ch/pipermail/r-sig-gui/2009-February/000911.html\n\nIt was ",
       "thread_id": "thread-15833d4f047a",
       "thread_depth": 0,
-      "month": "2009-12"
+      "month": "2009-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091206/6db419ce/attachment.pl"
+      ]
     },
     {
       "id": "msg-430862003ae8",

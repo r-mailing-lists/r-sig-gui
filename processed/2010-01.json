@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] rJava- Question about a building R-GUI and Buttons Event",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100106/ed0364cf/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100106/ed0364cf/attachment.pl>",
+      "body_plain": "Hi there,\n\ncan someone say tome is there a sample of Buling simple GUI Window in R\nusing rJava package. In this window should be also one button with handling\n(in R) of click event.\n\nIf some one press this button in window, that I can catch this event wiht  R\nor Java function\nto start some user code to start simple calculation.\n\nSimilar functionality as in package RPanel but without bugs in with\nlist-object.\n\nOn the Page o rJava Package there is nothing about thta. There are some\nsimple samples, but without Event Handling.\n\nThere was also one Package called sJava but this one isn't developed\nanymore, and I'm not able to install this package.\n\nI'm using at the moment R-project version 10.\n\n\nThanks\nin advance\n\nZak\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi there,\n\ncan someone say tome is there a sample of Buling simple GUI Window in R\nusing rJava package. In this window should be also one button with handling\n(in R) of click event.\n\nIf some one press",
       "thread_id": "thread-a81936cba654",
       "thread_depth": 0,
-      "month": "2010-01"
+      "month": "2010-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100106/ed0364cf/attachment.pl"
+      ]
     },
     {
       "id": "msg-d0350ebc055f",
@@ -47,11 +50,14 @@
       "subject_clean": "[R-gui] Question about a gTable in r package \"gWidgets\"",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100111/59047497/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100111/59047497/attachment.pl>",
+      "body_plain": "Hi there !\n\nCan someone say to me (send a sample) how can I select one value in a\npopulated gTable element without to click in a list.\n\nThe scope is following.\n\nI want to populate such a gTable with a list of entries and to make a kind\nof sugestion to the user, i want to select first element in the list before\nuser can make any action.\n\nI found the method svalue().\nWith this method I can only get already selected value but I cannot select\nanything programmatically in a gTable.\n\nThanks in advance\n\nZak\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi there !\n\nCan someone say to me (send a sample) how can I select one value in a\npopulated gTable element without to click in a list.\n\nThe scope is following.\n\nI want to populate such a gTable with a",
       "thread_id": "thread-d055d842dc02",
       "thread_depth": 0,
-      "month": "2010-01"
+      "month": "2010-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100111/59047497/attachment.pl"
+      ]
     },
     {
       "id": "msg-7729ea1b7c82",

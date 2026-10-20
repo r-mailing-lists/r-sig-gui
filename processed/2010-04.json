@@ -36,11 +36,14 @@
         "<loom.20100329T022447-843@post.gmane.org>",
         "<4BC6BF7B.9010708@exposurescience.org>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100415/bbc5f03b/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100415/bbc5f03b/attachment.pl>",
+      "body_plain": "On Thu, Apr 15, 2010 at 12:25 AM, N K <lists at exposurescience.org> wrote:\n\n> Hi,\n>\n> I'm trying to draw some crosshairs and floating X,Y coordinates in a text\n> box that follow the mouse cursor around on an embedded R plotting area\n> (asCairoDevice).     i.e., I want to have Cairo line and text objects that\n> are updated whenever the mouse moves over an R plot.\n>\n> I used the commands below but the text flickers, like it is being erased\n> immediately after being drawn.      Has anyone solved this problem or have\n> some pointers, demos, examples, etc?      Is there some limitation with the\n> R Cairo device that prevents user interaction like this?    Before calling\n> asCairoDevice I can draw on the gtk drawing area, but not after.      Any\n> help appreciated!\n>\n>\nThere's going to be flicker, because the cairo graphics device will blit\nfrom its off-screen buffer as you move the mouse, erasing what you have\ndrawn. You'll need to combine the two drawing operations into one. Easiest\nway is probably to pass a GdkPixmap to asCairoDevice, and then implement the\nexpose-event of the GtkDrawingArea so that it will blit the pixmap and then\ndraw your text, in the same callback (GTK+ will double buffer). There is a\ndemo in the RGtk2 package that shows how to target cairo device to the\noff-screen pixmap.\n\nGood luck,\nMichael\n\n\n> plotArea <- gtkDrawingArea()\n> gtkWidgetSetSizeRequest(plotArea, 300, 400)\n> #  Receive mouse events....\n> gtkWidgetAddEvents(plotArea, 2)\n> asCairoDevice(plotArea)\n> gtkWidgetShow(plotArea)\n> plotArea$AddCallback(\"motion-notify-event\", function(w,ev) {\n>        x <- ev$x\n>        y <- ev$y\n>        cr$moveTo(x,y)\n>        coor <- win2plot(x, y)   #  Note this converts from screen to user\n> coordinates\n>        cr$showText(paste(coor[1],coor[2], sep=\", \"))\n> })\n> cr <- gdkCairoCreate(plotArea$window)\n> plot(1:10)\n>\n> --Neil\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Thu, Apr 15, 2010 at 12:25 AM, N K <lists at exposurescience.org> wrote:\n\n> Hi,\n>\n> I'm trying to draw some crosshairs and floating X,Y coordinates in a text\n> box that follow the mouse cursor arou",
       "thread_id": "thread-9d98b274e536",
       "thread_depth": 1,
-      "month": "2010-04"
+      "month": "2010-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100415/bbc5f03b/attachment.pl"
+      ]
     },
     {
       "id": "msg-ee9f193e5be5",
@@ -86,11 +89,14 @@
       "references": [
         "<4BCB1F00.7000407@hotmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100418/095ded6f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100418/095ded6f/attachment.pl>",
+      "body_plain": "If you're going to run it in batch mode, then you'll need a gtkMain() to\nkeep the process from exiting. If you want to use rgui.exe, you can place a\n.Rprofile (with your commands) in the directory listed as the \"start in\"\ndirectory of the shortcut. See the R docs for more info on profiles.\n\nMichael\n\nOn Sun, Apr 18, 2010 at 8:02 AM, chris <chgaxx at hotmail.com> wrote:\n\n> Hi all,\n> I want to start a Rgtk2 script under Windows by iconclick. But\n> possibilities like starting rgui.exe -f filename doesn't work.\n> Also a batchfile did not work.  After executing the script. no gtk gui is\n> visible.\n> How can I start a Rscript with rgtk2 library in Windows?\n>\n>\n> greetings, chris\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "If you're going to run it in batch mode, then you'll need a gtkMain() to\nkeep the process from exiting. If you want to use rgui.exe, you can place a\n.Rprofile (with your commands) in the directory lis",
       "thread_id": "thread-3f4fb6dc2feb",
       "thread_depth": 1,
-      "month": "2010-04"
+      "month": "2010-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100418/095ded6f/attachment.pl"
+      ]
     },
     {
       "id": "msg-1298da1d0a0a",

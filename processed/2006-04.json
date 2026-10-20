@@ -118,11 +118,14 @@
       "subject_clean": "[R-gui]  Automatic Widget Creation and Callbacks in RGtk",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060425/f1bd3ce5/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060425/f1bd3ce5/attachment.pl",
+      "body_plain": "Dear Neil,\n\nYou may want to look at my iWidgetsRGtk package (\nhttp://www.math.csi.cuny.edu/pmg). There is a function called igenericwidget\nthat implements most of what you want. The difference being that the\nfunction is evaluated when a button is clicked. If I were implementing your\nrequest in that style I'd try the following.\n\n\nAdding a handler to the mix is really quite easy using Simon Urbanek's\niwidget style. The basic structure could be something like this:\n\n## Your handler, just give the name of the function to call below\ntheHandler = function(h,...) {\n   argList = list()\n   for(i in names(h$action)) { # a list of your widgets\n      argList[[i]] = get.value(h$action[[i]])\n  }\n do.call(youSpecialFunction, argList)\n}\n\n## now set up the widget. Container to hold the widgets\ngroup = igroup(horizontal=FALSE, win=iwindow(\"My special widget\",\nvisible=TRUE)\n\nwidgetList = list()\nfor(i in parseFunctionReturnInstructionsToMakeWidget) {\n  widgetList$i = switch(i, ...)  ## returns an iWidget instance eg. islider,\niradio, ispinbutton, ...\n  add(group, widgetList$i)\n}\nfor(i in names(widgetList))\n  addhandlerchanged(widgetList[[i]], handler = theHandler,\naction=widgetList)\n\nFrom here you just need to add in your parseFunction... routine and you\nshould be good to go. The switch() function would make use of the iwidgets\nsuch as iradio, itext, islider, ...\n\n--John\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear Neil,\n\nYou may want to look at my iWidgetsRGtk package (\nhttp://www.math.csi.cuny.edu/pmg). There is a function called igenericwidget\nthat implements most of what you want. The difference being t",
       "thread_id": "thread-1787d6d3aa35",
       "thread_depth": 0,
-      "month": "2006-04"
+      "month": "2006-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060425/f1bd3ce5/attachment.pl"
+      ]
     }
   ],
   "threads": [

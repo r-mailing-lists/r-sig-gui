@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui]  [ANN] New version of Rpad -- a web-based interface to R",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060801/8e0383f5/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060801/8e0383f5/attachment.pl",
+      "body_plain": "Hi Tom,\n \nI am having difficulties getting onto the following site (I'm sure it was\nthere a couple of weeks ago)\n \n \nhttp://www.rpad.org/Rpad/\n\n \n\n \n\nIs the site still functioning?\n\n \n\nRegards \n\n \n\nJerry Pressnell\n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi Tom,\n \nI am having difficulties getting onto the following site (I'm sure it was\nthere a couple of weeks ago)\n \n \nhttp://www.rpad.org/Rpad/\n\n \n\n \n\nIs the site still functioning?\n\n \n\nRegards \n\n \n\nJe",
       "thread_id": "thread-a41a2cb58f90",
       "thread_depth": 0,
-      "month": "2006-08"
+      "month": "2006-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060801/8e0383f5/attachment.pl"
+      ]
     },
     {
       "id": "msg-82e18d88edc1",
@@ -45,11 +48,14 @@
       "subject_clean": "[R-gui] New version of pmg, 0.9-18, based on new gWidgetsRGtk package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060802/8c2b9b47/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060802/8c2b9b47/attachment.pl",
+      "body_plain": "There is a new version of pmg,  a GUI for R using RGtk2, at\nhttp://www.math.csi.cuny.edu/pmg/. This version uses the new gWidgetsRGtk\npackage  for an interface to RGtk2. The  gWidgets API is meant to be a cross\nplatform means of writing GUIs, The gWidgetsRGtk package is its\nimplementation for RGtk2.\n\nThe gWIdgetsRGtk package contains a vignette with several examples of its\nuse. The gWIdgets API is being worked on and suggestions for improvement are\nwelcome.\n\nFor the time being, I've made a repository for these packages, so that\ninstallation can be done with:\n\ninstall.packages(c(\"gWidgetsRGtk\",\"pmg\"),repos=\"http://www.math.csi.cuny.edu/pmg\")\n\nIf there are no serious bugs found, the next release will be sent to CRAN.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "There is a new version of pmg,  a GUI for R using RGtk2, at\nhttp://www.math.csi.cuny.edu/pmg/. This version uses the new gWidgetsRGtk\npackage  for an interface to RGtk2. The  gWidgets API is meant to ",
       "thread_id": "thread-5be3ab2c1bab",
       "thread_depth": 0,
-      "month": "2006-08"
+      "month": "2006-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060802/8c2b9b47/attachment.pl"
+      ]
     },
     {
       "id": "msg-476724e4d8c4",

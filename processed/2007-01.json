@@ -49,11 +49,14 @@
       "references": [
         "<17826.33657.684851.903979@notch.damtp.cam.ac.uk>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070108/5a52c72a/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070108/5a52c72a/attachment.pl",
+      "body_plain": "On 1/8/07, Stephen Eglen <S.J.Eglen at damtp.cam.ac.uk> wrote:\n>\n> Hi,\n>\n> I have some spatiotemporal data that I currently visualise by doing a\n> simple loop, along the lines of:\n>\n> for (t in 1:100) {\n>   plot.data(t)\n> }\n>\n> plot.data(t) is a simple function that displays a 2-d plot in an R\n> window of the data at time t.\n>\n> This is okay, but quite restrictive (e.g. currently I have to Ctrl-C\n> to break out of the loop); I'd like to build a simple GUI (in tk) that\n> would provide a slider to control where to start showing the data\n> from, and start/stop buttons to control display of the data.\n>\n> I've looked at some of the online resources (including the very useful\n> set of tk scripts at\n> http://bioinf.wehi.edu.au/~wettenhall/RTclTkExamples/ but I can't seem\n> to find anything like this.  Ousterhout's book (Tcl and the Tk\n> Toolkit) mentions on page 400 timer events, such as\n> Tk_CreateTimerHandler, which may be useful.  But has anyone ventured\n> in this direction before?\n\n\nI admit I am not familiar with the tcltk package, but it sounds to me that\nyou want to yield to the GUI event loop and check whether the stop button\nhas been pressed.  Calling Sys.sleep(1) in the loop will allow the button\nhandler to be called. Just have it set some flag that lets you break out of\nthe loop.\n\nMichael\n\nThanks, Stephen\n>\n> p.s. The link to GraspeR on\n>   http://www.sciviews.org/_rgui/projects/TclTk.html is broken; a newer\n> link is http://www.cscf.ch/grasp/grasp-r/index.html\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On 1/8/07, Stephen Eglen <S.J.Eglen at damtp.cam.ac.uk> wrote:\n>\n> Hi,\n>\n> I have some spatiotemporal data that I currently visualise by doing a\n> simple loop, along the lines of:\n>\n> for (t in 1:100)",
       "thread_id": "thread-e079500c0e4e",
       "thread_depth": 1,
-      "month": "2007-01"
+      "month": "2007-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070108/5a52c72a/attachment.pl"
+      ]
     },
     {
       "id": "msg-6a2d4d26116e",
@@ -184,11 +187,14 @@
         "<Pine.LNX.4.64.0701241735170.28321@gannet.stats.ox.ac.uk>",
         "<45B7AECA.7070108@uhb.fr>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070124/c0b767c1/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070124/c0b767c1/attachment.pl",
+      "body_plain": "This seems to be a conflict between GTK+ and R. Apparently, GTK+ sets the\nlocale by itself. There is a way to prevent GTK+ from doing that. I will\nrelease a hotfix for RGtk2 soon and we'll see if it fixes it. I just need to\nrun gtk_disable_setlocale() before gtk_init_check().\n\nThanks for reporting this,\nMichael\n\nOn 1/24/07, NOEL Yvonnick <yvonnick.noel at uhb.fr> wrote:\n>\n> Prof Brian Ripley a écrit :\n> > I can reproduce this via\n> >\n> >> Sys.setlocale(\"LC_NUMERIC\", \"fr_FR\")\n> > [1] \"fr_FR\"\n> > Warning message:\n> > setting 'LC_NUMERIC' may cause R to function strangely in:\n> > setlocale(category, locale)\n> >> as.numeric(\",1\")\n> > [1] 0,1\n> >> as.numeric(\".1\")\n> > [1] NA\n> > Warning message:\n> > NAs introduced by coercion\n> >\n> > Assuming you have not done that anywhere, it should not happen. If you\n> > have, you were warned.  (Have you tried starting R with --vanilla to be\n> > sure?)\n> >\n> > as.numeric() is using strtod which should only be affected by the locale\n> > category LC_NUMERIC, and R itself does not set LC_NUMERIC.  So either\n> > you or some rogue OS function must have, unless there is a pretty major\n> > bug in the OS.  (Just using a UTF-8 fr_FR locale does not do it on\n> > either of the Linux variants I tried.)\n>\n> Thanks for these helpful indications. This seems to be related to the\n> RGtk2 package :\n>\n> # Before loading RGtk2\n> > as.numeric(\".1\")\n> [1] 0.1\n> > as.numeric(\",1\")\n> [1] NA\n> Warning message:\n> NAs introduits lors de la conversion automatique\n> # After library loading\n> > library(\"RGtk2\")\n> > as.numeric(\".1\")\n> [1] NA\n> Warning message:\n> NAs introduits lors de la conversion automatique\n> > as.numeric(\",1\")\n> [1] 0,1\n>\n> I send a copy of this post to the RGtk2 package maintainers.\n>\n> Thanks for your help,\n>\n> Yvonnick Noel, PhD.\n> Dpt of Psychology\n> U. of Rennes\n> France\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "This seems to be a conflict between GTK+ and R. Apparently, GTK+ sets the\nlocale by itself. There is a way to prevent GTK+ from doing that. I will\nrelease a hotfix for RGtk2 soon and we'll see if it f",
       "thread_id": "thread-331d10754ef0",
       "thread_depth": 1,
-      "month": "2007-01"
+      "month": "2007-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070124/c0b767c1/attachment.pl"
+      ]
     }
   ],
   "threads": [

@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] Web based GUI",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091014/21e2a145/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091014/21e2a145/attachment.pl>",
+      "body_plain": "Hello to all.\nFirst of all I want to thank all this community which is makeing me fell\nvery confortable. As you can see this is my first messag, so please forgive\nany possible mistakes or misunderstandings.\nThe thing I want to talk to you is a new project of fully functional GUI\nthat I'm working on. This GUI is, first of all, CROSSPLATFORM as we all\nwant. This is because it is a WEB-BASED GUI. I have decided to implement it\nas a webbased GUI because nowaday everybody wants movility, lightness and so\non. Also we have gadgets such as ebooks, iphones, netbooks... with small\nprocessors and strange OS, therefore I decided to implement a webbased GUI\nfor R wihch will be accesible trough every single device with internet\nconnection and also it is implemented using XHTML+Javascript that is easily\ncomprensible by everyone and can be enhanced with even better graphic\ninterface than the original R.\nSo... I would like that you visit the webpage and write here all your\nsuggestions, thoughts and everything. The URL is:\nhttp://www.r-live.org\n\nThank you.\nAdrián Catón\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello to all.\nFirst of all I want to thank all this community which is makeing me fell\nvery confortable. As you can see this is my first messag, so please forgive\nany possible mistakes or misunderstan",
       "thread_id": "thread-3db999e41a9f",
       "thread_depth": 0,
-      "month": "2009-10"
+      "month": "2009-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091014/21e2a145/attachment.pl"
+      ]
     },
     {
       "id": "msg-2f5f6d91e1d2",
@@ -120,11 +123,14 @@
       "subject_clean": "[R-gui] creating package for GUI",
       "in_reply_to": "<mailman.401.1256225544.4166.r-sig-gui@stat.math.ethz.ch>",
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091022/c0a6bc9e/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091022/c0a6bc9e/attachment.pl>",
+      "body_plain": "Dear brothers and sisters,\n                                     i anyone tell me how to create a package after craeting a GUI using tcltk\n \n\n\n\n      From cricket scores to your friends. Try the Yahoo! India Homepage! http://in.yahoo.com/trynew\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear brothers and sisters,\n                                     i anyone tell me how to create a package after craeting a GUI using tcltk\n \n\n\n\n      From cricket scores to your friends. Try the Yahoo!",
       "thread_id": "thread-78d9eee26c26",
       "thread_depth": 0,
-      "month": "2009-10"
+      "month": "2009-10",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20091022/c0a6bc9e/attachment.pl"
+      ]
     },
     {
       "id": "msg-fa0979c70b68",

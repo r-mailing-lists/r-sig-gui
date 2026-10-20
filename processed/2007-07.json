@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] tkbutton() function call problem",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070703/8901ec62/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070703/8901ec62/attachment.pl",
+      "body_plain": "Dear all,\n\nI have run into a small problem with a GUI that I have been writing in R using the tcltk package, and I was hoping that somebody on this forum may be able to shed some light on it for me. The problem that I have is that when the main function is called by a tkbutton() widget, the GUI window goes a bit funny; all non-widget areas turn see-through. On top of this, a counter that should be updating constantly will only update if the GUI window is moved. It appears that the window is not loading fully, so even though the counter is increasing correctly, it does not update on the window until you manually force it by moving it. \n\nHowever, if the function is called from the command line instead of linking it to a button press, everything works fine. This leads me to believe that the problem lies with the tkbutton(..., command=foo) command.\n\nAs an example, consider the following code:\n\ntt <- tktoplevel()\nframeOverall <- tkframe(tt)\ncounter <- tclVar(\"0\")\n\n## Top frame to contain counter\ntopFrame <- tkframe(frameOverall)\n    progressLabel <- tklabel(topFrame, text=as.character(tclvalue(counter)))\n    tkgrid(tklabel(topFrame, text=\"\t\"))\n    tkgrid(progressLabel)\n    tkgrid(tklabel(topFrame, text=\"\t\"))\ntkgrid(topFrame)\n\n## Function that makes the counter increase from 1 to 1000 when you press OK\nfoo <- function() {\n    for (i in 1:1000) {\n        counter <- tclVar(as.character(as.numeric(tclvalue(counter))+1))\n        tkconfigure(progressLabel, textvariable=counter)\n    }\t\n}\n\n## Bottom frame to contain OK button\nbotFrame <- tkframe(frameOverall)\n    tkgrid(tkbutton(botFrame, text=\"OK\", command=foo))\ntkgrid(botFrame)\n\ntkgrid(frameOverall)\n\nPressing the button should cause the counter to increase. However the problem mentioned above occurs (move the window about to see the counter change. You may also see the window turn see-through). Now run the script again, but instead of pressing OK, run foo() manually in the command line. Everything works fine.\n\nIs anybody able to tell me what is going wrong here? And more importantly, is there a way around it?\n\nMany thanks for your assistance,\n\nSam Robson\nMOAC Doctoral Training Center\nCoventry House\nUniversity of Warwick\nCoventry\nCV4 7AL\n\n\n\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear all,\n\nI have run into a small problem with a GUI that I have been writing in R using the tcltk package, and I was hoping that somebody on this forum may be able to shed some light on it for me. T",
       "thread_id": "thread-563285c40209",
       "thread_depth": 0,
-      "month": "2007-07"
+      "month": "2007-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070703/8901ec62/attachment.pl"
+      ]
     },
     {
       "id": "msg-38e9c6429bbb",
@@ -79,11 +82,14 @@
       "subject_clean": "[R-gui] R tcltk/tcltk2 vs. R GTk2",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070728/a072b560/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070728/a072b560/attachment.pl",
+      "body_plain": "Why use R tcltk/tcltk2 instead of R GTk2, or why use R GTk2 instead of R tcltk/tcltk2?\nBill Morphet\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Why use R tcltk/tcltk2 instead of R GTk2, or why use R GTk2 instead of R tcltk/tcltk2?\nBill Morphet\n\t[[alternative HTML version deleted]]",
       "thread_id": "thread-c28dfe9c3384",
       "thread_depth": 0,
-      "month": "2007-07"
+      "month": "2007-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070728/a072b560/attachment.pl"
+      ]
     },
     {
       "id": "msg-4934bb331e46",
@@ -97,11 +103,14 @@
       "references": [
         "<072820071406.14551.46AB4D6000039002000038D722135285730699089F9D0103@comcast.net>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070730/d57bd04f/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070730/d57bd04f/attachment.pl",
+      "body_plain": "GTK+ has many more features than tcl/tk (tile included), though tcl/tk does\nhave some features that GTK+ lacks, like a canvas widget.\n\nThe API of the underlying toolkits, as well as the R interfaces, are quite\ndifferent. I've heard many people say that they prefer the GTK+/RGtk2 style,\nthough there are probably many people that feel the opposite. The tcltk\npackage is a binding to the Tcl language, while RGtk2 is a binding to a\ncollection of C libraries.\n\nRGtk2 also binds libglade, meaning that one can design a GUI graphically\nusing the Glade tool and display it using R. Glade may or may not be useful,\ndepending on the application. The Rattle tool seems to have used Glade\neffectively, but I personally prefer to construct the interfaces\ndynamically.\n\nSince GTK+ is object-oriented, RGtk2 is able to support the creation of new\nwidget classes that override the functionality of their parents. This is a\nneat feature, but is rarely necessary.\n\nFor graphics, RGtk2 binds several useful libraries, including Cairo (vector\ngraphics) and GdkPixbuf (image manipulation).\n\nYou might also consider the gWidgets package. It is a convenient API for\ncreating simple GUIs in R. It abstracts away the underlying toolkit.\nImplementations exist using RGtk2 and rJava (swing). You could always start\nusing a GUI this way and then convert to RGtk2 or some other toolkit later\nif necessary.\n\nI hope this helps,\nMichael\n\nOn 7/28/07, morphwj at comcast.net <morphwj at comcast.net> wrote:\n>\n> Why use R tcltk/tcltk2 instead of R GTk2, or why use R GTk2 instead of R\n> tcltk/tcltk2?\n> Bill Morphet\n>         [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "GTK+ has many more features than tcl/tk (tile included), though tcl/tk does\nhave some features that GTK+ lacks, like a canvas widget.\n\nThe API of the underlying toolkits, as well as the R interfaces, ",
       "thread_id": "thread-c28dfe9c3384",
       "thread_depth": 1,
-      "month": "2007-07"
+      "month": "2007-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070730/d57bd04f/attachment.pl"
+      ]
     },
     {
       "id": "msg-8249514f6c6b",

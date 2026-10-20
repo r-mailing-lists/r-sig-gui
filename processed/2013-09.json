@@ -31,11 +31,14 @@
       "references": [
         "<522E66CA.2020708@rub.de>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130910/7b8bde0f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130910/7b8bde0f/attachment.pl>",
+      "body_plain": "The objects in RGtk2 (and cairoDevice) are externalptr objects in R. One\napproach would be to create an externalptr in C, and then call some R code\nthat sets the class attribute accordingly, i.e., to the result of\ngTypeGetAncestors(\"GtkDrawingArea\"), and then calls asCairoDevice() on that\nobject.\n\nMichael\n\n\n\nOn Mon, Sep 9, 2013 at 5:24 PM, Thomas Glogowski <thomas.glogowski at rub.de>wrote:\n\n> Greetings,\n>\n> im trying to show a simple plot-window in a GtkDrawingArea of a GTK3+\n> app. I thought it would be possible to use the CairoDevice-Package and\n> hand the DrawingArea generated in my GTK-App via a DLL over to the\n> CairoDeviceDriver, but I was unable to figure out, how.\n> As far as I understand a call to the DLL via \".C\" does not work, because\n> a DrawingArea is not a basic C-Type.\n> Using \".Call\" (even for simple test calls without transferring\n> parameters) always end up in a crash to RGUI. Registering my\n> DLL-transfer-function (I'm not sure wether this is necessary or not)\n> doesn't work either, because I lack the necessary lib-files to compile\n> the register-function (I'm using VS2010). The entire project is based on\n> VS2010 so using the RTools and gcc to build R from source to obtain the\n> lib-files is no option.\n>\n> Any hints are greatly appreciated.\n>\n> kind regards, Thomas\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "The objects in RGtk2 (and cairoDevice) are externalptr objects in R. One\napproach would be to create an externalptr in C, and then call some R code\nthat sets the class attribute accordingly, i.e., to ",
       "thread_id": "thread-74214bf94862",
       "thread_depth": 1,
-      "month": "2013-09"
+      "month": "2013-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130910/7b8bde0f/attachment.pl"
+      ]
     },
     {
       "id": "msg-824d2c184021",
@@ -70,11 +73,14 @@
         "<CAOQ5NydK-uH4GsD1JTd=4ODvHs3=5qw489UdrL82P7v3F6Fe-g@mail.gmail.com>",
         "<loom.20130924T005120-550@post.gmane.org>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130923/698d5174/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130923/698d5174/attachment.pl>",
+      "body_plain": "You can create an R externalptr object, see google and Rinternals.h, i.e.,\nR_MakeExternalPtr. Once you get one of those, it's just a matter of getting\nthe class attribute set correctly and everything should work.\n\n\nOn Mon, Sep 23, 2013 at 4:23 PM, Thomas Glogowski\n<thomas.glogowski at rub.de>wrote:\n\n> Michael Lawrence <lawrence.michael <at> gene.com> writes:\n>\n> >\n> > The objects in RGtk2 (and cairoDevice) are externalptr objects in R. One\n> > approach would be to create an externalptr in C, and then call some R\n> code\n> > that sets the class attribute accordingly, i.e., to the result of\n> > gTypeGetAncestors(\"GtkDrawingArea\"), and then calls asCairoDevice() on\n> that\n> > object.\n> >\n> > Michael\n> >\n>\n> Thank's Michael but I don't understand how to do what you've explained. How\n> can I change an external pointer (created in C) to be an\n> GtkDrawingArea using R?\n>\n> What I've tried so far is:\n>\n> -1-store the existing GtkDrawingArea* from my app in a DLL callable\n> variable\n> -2-set up a DrawingArea in R with: DA <- gtkDrawingArea\n> -3-call the DLL-function with .Call (\"R_Interface_get_da\", DA )\n> -4-the DLL-function R_Interface_get_da takes DA as an SEXP and lets it\n> point\n> to the variable created in step 1 (i.e. my apps DrawingArea).\n>\n> Doing it that way I thought DA would be an object of the correct class\n> allready, because I only let it point to some other DrawingArea. But that\n> doesn't work in conjunction with asCairoDevice.\n>\n>\n>\n> Thomas\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "You can create an R externalptr object, see google and Rinternals.h, i.e.,\nR_MakeExternalPtr. Once you get one of those, it's just a matter of getting\nthe class attribute set correctly and everything ",
       "thread_id": "thread-74214bf94862",
       "thread_depth": 3,
-      "month": "2013-09"
+      "month": "2013-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130923/698d5174/attachment.pl"
+      ]
     }
   ],
   "threads": [

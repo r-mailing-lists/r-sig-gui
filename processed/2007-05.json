@@ -15,11 +15,14 @@
       "references": [
         "<29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070501/ab19444e/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070501/ab19444e/attachment.pl",
+      "body_plain": "hello... i'm trying to develop a gui for R using jri as an interface...but\ni'm facing a problem executing the graphics commands through jri.\nThe graphics engine is instantiated but it somehow does not plot any graph\non the window.\ncan anyone help me out?\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "hello... i'm trying to develop a gui for R using jri as an interface...but\ni'm facing a problem executing the graphics commands through jri.\nThe graphics engine is instantiated but it somehow does not",
       "thread_id": "thread-0d9f26c75e9d",
       "thread_depth": 0,
-      "month": "2007-05"
+      "month": "2007-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070501/ab19444e/attachment.pl"
+      ]
     },
     {
       "id": "msg-051c4fb1bc72",
@@ -34,11 +37,14 @@
         "<29cba4c60704300920t3d4ff0d7k63eb5914d43e01c4@mail.gmail.com>",
         "<29cba4c60705010612m52573ceo9b3785fff4b4bea@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070502/221689e1/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070502/221689e1/attachment.pl",
+      "body_plain": "Are you using the Java graphics device? The package is called JavaGD.\n\nOn 5/1/07, Bhavana Belsare <bhavana.belsare at gmail.com> wrote:\n>\n> hello... i'm trying to develop a gui for R using jri as an interface...but\n> i'm facing a problem executing the graphics commands through jri.\n> The graphics engine is instantiated but it somehow does not plot any graph\n> on the window.\n> can anyone help me out?\n>\n>         [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Are you using the Java graphics device? The package is called JavaGD.\n\nOn 5/1/07, Bhavana Belsare <bhavana.belsare at gmail.com> wrote:\n>\n> hello... i'm trying to develop a gui for R using jri as an i",
       "thread_id": "thread-0d9f26c75e9d",
       "thread_depth": 1,
-      "month": "2007-05"
+      "month": "2007-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070502/221689e1/attachment.pl"
+      ]
     },
     {
       "id": "msg-529978159453",
@@ -100,11 +106,14 @@
       "subject_clean": "[R-gui] regarding graph plots..",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070530/1c091c77/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070530/1c091c77/attachment.pl",
+      "body_plain": "hi, i'm trying to develop a GUI for R in Java. I'm using jri for it. But\nthere is problem with using the plotting functions in R through it. I tried\nusing iplots for the purpose but it can't plot the acf( ) output.. can u\ntell me a solution for initialzing the java graphics device instead of the\none for R....\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "hi, i'm trying to develop a GUI for R in Java. I'm using jri for it. But\nthere is problem with using the plotting functions in R through it. I tried\nusing iplots for the purpose but it can't plot the ",
       "thread_id": "thread-dd5d8072529c",
       "thread_depth": 0,
-      "month": "2007-05"
+      "month": "2007-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070530/1c091c77/attachment.pl"
+      ]
     }
   ],
   "threads": [

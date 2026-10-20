@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] GUI Builder for R",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110718/ae0d6426/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110718/ae0d6426/attachment.pl>",
+      "body_plain": "Hello all,\n\nI'd like to inform the community that I have recently developed a new\nextension for GUI Builder (former Spectcl) purposed to create GUI front end\nfor R scripts. This extension has been created with kind support of Jeff\nHobbs (https://sourceforge.net/users/hobbs/) - one of the primer developers\nof Gui Builder. My solution is totally based on the tcltk package (by Peter\nDalgaard). The code can be found at\nhttp://spectcl.svn.sourceforge.net/viewvc/spectcl/trunk/guib/. The\ndevelopment is done using Komodo IDE 6. You are welcome to download and try\nthis tool.\n\nImportant notes:\n\n1. The tool is not tested deeply and may contain bugs.\n\n2. In order this tool and the generated R script will run,  the Tcl/Tk 8.5\nshould be installed\n\n\n\nRegards,\n\nLeonid\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello all,\n\nI'd like to inform the community that I have recently developed a new\nextension for GUI Builder (former Spectcl) purposed to create GUI front end\nfor R scripts. This extension has been cre",
       "thread_id": "thread-9b8f02af4ac3",
       "thread_depth": 0,
-      "month": "2011-07"
+      "month": "2011-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110718/ae0d6426/attachment.pl"
+      ]
     },
     {
       "id": "msg-8425cac9409a",
@@ -29,11 +32,14 @@
       "subject_clean": "[R-gui] Return value from gWidgets",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/e36923c9/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/e36923c9/attachment.pl>",
+      "body_plain": "Hello all,\n\nI am still working on a GUI for hyperSpec, interactive graphics has also\nbecome a part of my learning.  Right now I am using gWidgets and would like\nto jump back and forth between command line and GUI for individual tasks.\n The problem here is my gWidgets GUI is not modal and cannot return\nresultant data.  This may be a simple fix, `modal=TRUE`, maybe not.  I know\nthat R doesn't pass by reference (environments not included), and so a modal\nGUI wouldn't be a problem here if it is possible to create one with\ngWidgets.\n\nWhat are the usual methods for returning data from a GUI?\n\nAs proof of concept I created a mutaframe with qdata() from cranvas, passed\nthat to the GUI function and attached a handler to a button, this works as\nexpected with the value changing if the button is clicked, clearly I do not\nwant the other columns from qdata, and I don't really want to use a\ndataframe as my original object, but if this is a sensible way to go then\nworking out how to use as.mutaframe (possibly from plumbr) could work. See\nhttps://gist.github.com/1092289.\n\nThought, common solutions..\n\nCheers,\nSeb\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello all,\n\nI am still working on a GUI for hyperSpec, interactive graphics has also\nbecome a part of my learning.  Right now I am using gWidgets and would like\nto jump back and forth between command ",
       "thread_id": "thread-8425cac9409a",
       "thread_depth": 0,
-      "month": "2011-07"
+      "month": "2011-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/e36923c9/attachment.pl"
+      ]
     },
     {
       "id": "msg-9cfcaf40ead4",
@@ -48,11 +54,14 @@
         "<CAOyiOQGzPQ-hNuseKaDycHzSekK6RAn+Qcy2PWJmosZ6j2GTCg@mail.gmail.com>",
         "<CADx-4xCUhUQOO+VnwcvZLUM7ymPH2Ub=oR_KJm8RJq7R3eVhLg@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/a3afafc8/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/a3afafc8/attachment.pl>",
+      "body_plain": "Just forwarding this here in reply to my earlier question.\n\n---------- Forwarded message ----------\nFrom: John Verzani <verzani at math.csi.cuny.edu>\nDate: 19 July 2011 14:42\nSubject: Re: Return value from gWidgets\nTo: Sebastian Mellor <sebble at sebble.com>\n\n\nDear Seb,\n\nA few thoughts. For a modal dialog, look at gbasicdialog. The basic usage\nis:\n\nw = gbasicdialog()\ng = ggroup(cont=w)\n## .. add widgets to g\nout = visible(w, set=TRUE)\n\nThis returns TRUE or FALSE by default, but one can modify this by wrapping\nwithin a function. For example, this is something I was using\n\ncollapseFactor <- function(f, parent=NULL) {\n  out <- character()\n  w <- gbasicdialog(\"Collapse factor levels\", parent=parent,\n                    handler=function(h,...) {\n                      new_f <- relf$get_value()\n                      out <<- factor(new_f)\n                    })\n  g <- ggroup(cont=w)\n  relf <- CollapseFactor$new(f, cont=g)\n  visible(w, set=TRUE)\n  out\n}\n\nwhere the \"CollapseFactor\" bit sets up the GUI and creates the relf object.\n\nThat out <<- factor(new_f) bit sets a variable outside the scope of the call\nback. This can be used within a handler and need not be within a modal\ndialog. Other ways to pass back values are to assign to an environment,\nwhich can be found through scoping or passed in via the action argument of a\nhandler. (That allows you to set a value within a function call).\n\nFinally, the tag(obj, \"key\") <- \"value\" method can be used to set an\nattribute for an object within a callback that persists outside. (It uses an\nenvironment basically). The issue with this, is I use it internally within\ngWidgets and you could overwrite a key. I should have avoided it, but didn't\nso be careful with what keys you use. (eg. prefix with something like\nseb_...)\n\nHope something there helps. --John\n\nOn Tue, Jul 19, 2011 at 1:20 PM, Sebastian Mellor <sebble at sebble.com> wrote:\n\n> Hello all,\n>\n> I am still working on a GUI for hyperSpec, interactive graphics has also\n> become a part of my learning.  Right now I am using gWidgets and would like\n> to jump back and forth between command line and GUI for individual tasks.\n>  The problem here is my gWidgets GUI is not modal and cannot return\n> resultant data.  This may be a simple fix, `modal=TRUE`, maybe not.  I know\n> that R doesn't pass by reference (environments not included), and so a modal\n> GUI wouldn't be a problem here if it is possible to create one with\n> gWidgets.\n>\n> What are the usual methods for returning data from a GUI?\n>\n> As proof of concept I created a mutaframe with qdata() from cranvas, passed\n> that to the GUI function and attached a handler to a button, this works as\n> expected with the value changing if the button is clicked, clearly I do not\n> want the other columns from qdata, and I don't really want to use a\n> dataframe as my original object, but if this is a sensible way to go then\n> working out how to use as.mutaframe (possibly from plumbr) could work. See\n> https://gist.github.com/1092289.\n>\n> Thought, common solutions..\n>\n> Cheers,\n> Seb\n>\n\n\n\n-- \nJohn Verzani\nChair, Department of Mathematics\nCollege of Staten Island, CUNY\nverzani at math.csi.cuny.edu\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Just forwarding this here in reply to my earlier question.\n\n---------- Forwarded message ----------\nFrom: John Verzani <verzani at math.csi.cuny.edu>\nDate: 19 July 2011 14:42\nSubject: Re: Return value",
       "thread_id": "thread-9cfcaf40ead4",
       "thread_depth": 0,
-      "month": "2011-07"
+      "month": "2011-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110719/a3afafc8/attachment.pl"
+      ]
     },
     {
       "id": "msg-c1e4f6fc8e3e",
@@ -82,11 +91,14 @@
       "references": [
         "<4E2EE248.4030004@earthlink.net>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110726/80a6370c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110726/80a6370c/attachment.pl>",
+      "body_plain": "Jim,\n  Are you trying to develop a GUI for such a chart? If so, then this would \nbe the place.\n  If not and your just looking for some software that creates a graph like \nthat, I'd suggest looking for something that produces a Gantt chart. The \n\"Jewelry History Timeline\" looks much like that. Gannt charts are \ntypically used for planning, but could probably be tweaked to fit you \nneeds.\nDave\n\n\n\nFrom:\nJim Burke <j.burke at earthlink.net>\nTo:\nR Sig Gui <r-sig-gui at r-project.org>\nDate:\n07/26/2011 10:52 AM\nSubject:\n[R-gui] R for a historical timeline chart?\nSent by:\nr-sig-gui-bounces at r-project.org\n\n\n\nFirst, I don't know if R Sig Gui is the right list, so feel free to \nredirect me if this is so.\n\nI would like to produce a historical timeline chart.  For a general idea \nof what I want, go to the following web site. Scroll down until you find \nthe \"Jewelry History Timeline\" jpeg. Say we use a variation of this for \nbirth dates to annual birthdays for a family or group of friends.\nhttp://www.allaboutgemstones.com/gem_history.html\n\nAny pointers and example code would be appreciated.\n\nThanks,\nJim\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at r-project.org\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Jim,\n  Are you trying to develop a GUI for such a chart? If so, then this would \nbe the place.\n  If not and your just looking for some software that creates a graph like \nthat, I'd suggest looking for",
       "thread_id": "thread-c1e4f6fc8e3e",
       "thread_depth": 1,
-      "month": "2011-07"
+      "month": "2011-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20110726/80a6370c/attachment.pl"
+      ]
     },
     {
       "id": "msg-ff22ab074759",

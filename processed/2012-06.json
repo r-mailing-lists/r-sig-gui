@@ -31,11 +31,14 @@
       "references": [
         "<CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120619/80a290ad/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120619/80a290ad/attachment.pl>",
+      "body_plain": "Paul,\n\nI may be a bit biased because I have been working with R/Java for quite some time, but I'll put in my two cents. \n\nOne of the major questions that will inform your decision is whether your GUI will be embedded in R (i.e. your user is using R and calls the GUI), or if you have a stand alone program that embeds your program. Which one do you envision?\n\n\nWorking out of the box:\nIf you are creating a GUI to be called from R, you generally can't bundle your toolkit.\n\ntcl/tk - This is probably the most reliable to use out of the box. It just works on most systems, though I believe that it requires a separate install on the Mac.\n\nQT - Every 6 months or so I try to get the R-QT bindings working on my system. So far I have been unsuccessful despite trying to follow the many install steps closely. There is a lot of promise here, but as of now I'd label it as experimental.\n\nGTK2 - Requires a separate install on most systems.\n\nWXwidgets - I'm not aware of any major GUI project using this toolkit, though there seem to be bindings on omegahat.org.\n\nJava - Works out of the box on most systems. Some machines may not have Java or their Java may be old, in which case it needs to be installed.\n\n\nOne thing you may consider is building upon one of the existing general purpose GUI projects. Deducer, R Commander and Rkward all allow for plug-ins. If you build of of these, then your work can fit easily into the user's data analysis work flow rather than having to find, download and install a separate stand alone program. If you go this route, the project you choose will inform your toolkit choice.\n\n\nian\n\nOn Jun 19, 2012, at 1:05 PM, Paul Johnson wrote:\n\n> I'd like to have an R program that allows users to design regression\n> equations by dragging variables around in a canvas, to interactively\n> build path diagrams that lead to regressions. The diagrams would\n> generate code that would run, and then results would somehow be linked\n> to the drawings, perhaps showing coefficients on the edges or such.\n> \n> I'd like this thing to facilitate multilevel modeling if possible, but\n> I'd settle to just have a pallet of variable \"nodes\" that can be\n> pulled out of a box on the side and re-positioned in the canvas, with\n> arrows pointing in and out. If that could generate code to run glm,\n> I'd be happy.\n> \n> Then I'd like to generalize this so that the nodes could represent\n> latent variables in a structural equation model.  Maybe I'd fiddle it\n> up to write code for fitting with lavaan's estimators.\n> \n> Has anybody tried to do such a thing?  Anybody know where to start?\n> \n> If you were doing this, which of the graphical programming\n> environments would you suggest?  I want this to work more-or-less well\n> on all platforms. I've Googled enough to know it is not easy to decide\n> which path to follow.  My first idea was to imitate the design of\n> programs that draw mind maps, but they are mostly based on Java, which\n> in my experience is hard to support for diverse platforms. Still, the\n> JGR project seems to do well with it, so I'm not absolutely opposed.\n> \n> I've been looking at GTK2, QT4, WXwidgets and tcltk. Judging from what\n> I read in the email lists of various development projects, perhaps QT4\n> is the least troublesome multi-platform gui library, but it is not\n> entirely open/free.  QT, of course, is the underlying framework of the\n> KDE desktop.  My favorite editor, LyX, is written with QT, so I am\n> sure it works. The Gambit game theory project chose WX.  It appears to\n> me that tcltk is constantly on the brink of extinction, and yet new\n> versions pop out now and then.\n> \n> In WinBUGS, there's a graphical model designer called Doodle that is\n> quite pleasing to me, but it seems there must be something wrong with\n> it because nobody boasts about it very much :(\n> \n> pj\n> -- \n> Paul E. Johnson\n> Professor, Political Science    Assoc. Director\n> 1541 Lilac Lane, Room 504     Center for Research Methods\n> University of Kansas               University of Kansas\n> http://pj.freefaculty.org            http://quant.ku.edu\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Paul,\n\nI may be a bit biased because I have been working with R/Java for quite some time, but I'll put in my two cents. \n\nOne of the major questions that will inform your decision is whether your GUI ",
       "thread_id": "thread-cadd87d7658e",
       "thread_depth": 1,
-      "month": "2012-06"
+      "month": "2012-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120619/80a290ad/attachment.pl"
+      ]
     },
     {
       "id": "msg-d8b6ddb9a5ab",
@@ -50,11 +53,14 @@
         "<CAErODj_yjkU=5QTddPY_VJd2sG0i5mkKTY1LZoBD6pkDo3NsAg@mail.gmail.com>",
         "<6BB674DA-01D1-49C6-99C8-0731FCCA264C@stat.ucla.edu>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120619/213ac7f1/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120619/213ac7f1/attachment.pl>",
+      "body_plain": "On Tue, Jun 19, 2012 at 1:57 PM, Ian Fellows <ian.fellows at stat.ucla.edu>wrote:\n\n> One of the major questions that will inform your decision is whether your\n> GUI will be embedded in R (i.e. your user is using R and calls the GUI), or\n> if you have a stand alone program that embeds your program. Which one do\n> you envision?\n>\n\nOr another option is to put it on the web, with an HTML5 user interface (or\neven Flash I suppose) and something like OpenCPU, RServe, rApache, etc. on\nthe backend.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Tue, Jun 19, 2012 at 1:57 PM, Ian Fellows <ian.fellows at stat.ucla.edu>wrote:\n\n> One of the major questions that will inform your decision is whether your\n> GUI will be embedded in R (i.e. your us",
       "thread_id": "thread-cadd87d7658e",
       "thread_depth": 2,
-      "month": "2012-06"
+      "month": "2012-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120619/213ac7f1/attachment.pl"
+      ]
     },
     {
       "id": "msg-59b6d5b688d5",
@@ -184,11 +190,14 @@
       "subject_clean": "[R-gui] QSAR development",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120629/5d88ce47/attachment.ksh>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120629/5d88ce47/attachment.ksh>",
+      "body_plain": "hi,\ni am from the pharma sector doing my M.S.(Pharm). and i am working on the\nsoftware development for QSAR studies. For this C++ codes for descriptors\ncalculation of chemical compounds has already been written, which gives\noutput as excel file. Now my task is to make a QSAR model by selected the\nimportant descriptors using correlation and regression methods using R\ncodes. I know very well about these if i want to compile it with R\nsoftware. But the main problem is to run the R compiler in background\nautomatically and to execute R codes with the different front end (visual\nstudio based), So how is it possible to use both C++ as well as R codes in\ncontinuation, by using the data output from C++ codes as input for R\nwithout using R compiler in front.\nWaiting for the response..............\nThanx\n\n-- \n\n*Naveen Verma,*\n\n*Department of Pharmacoinformatics,*\n\n*NIPER Mohali (Punjab,India)*\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "hi,\ni am from the pharma sector doing my M.S.(Pharm). and i am working on the\nsoftware development for QSAR studies. For this C++ codes for descriptors\ncalculation of chemical compounds has already be",
       "thread_id": "thread-26cb6c11fe7f",
       "thread_depth": 0,
-      "month": "2012-06"
+      "month": "2012-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120629/5d88ce47/attachment.ksh"
+      ]
     }
   ],
   "threads": [

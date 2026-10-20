@@ -77,11 +77,14 @@
       "subject_clean": "[R-gui] Information about wxPython",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060918/d1db8f80/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060918/d1db8f80/attachment.pl",
+      "body_plain": "Hello to all,\n\nI wanna know information how to use wxPython, like R packages, IDE's,\nsoftwares.\nI tried to install RSPython, but can't install because this error:\n../inst/include/RPythonModule.h:4:20: error: Python.h: File or Directory did\nnot find.\n\nI searched information about wxPython in this mailing list, any information\nis in this site:  http://bioinf.wehi.edu.au/folders/james/wxPython/, but\nunfortunately this link is out.\n\nThanks for any information.\n\n\n-- \nMarcelo Damasceno de Melo\nGraduando em Ciência da Computação\nDepartamento de Tecnologia da Informação - TCI\nUniversidade Federal de Alagoas - UFAL\nMaceió - Alagoas - Brasil\nProjeto CoCADa - Construção do Conhecimento por Agrupamento de dados\n+55 82 8801-2119\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello to all,\n\nI wanna know information how to use wxPython, like R packages, IDE's,\nsoftwares.\nI tried to install RSPython, but can't install because this error:\n../inst/include/RPythonModule.h:4:20:",
       "thread_id": "thread-c037f8749466",
       "thread_depth": 0,
-      "month": "2006-09"
+      "month": "2006-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060918/d1db8f80/attachment.pl"
+      ]
     },
     {
       "id": "msg-bdb056d23cfe",
@@ -93,11 +96,14 @@
       "subject_clean": "[R-gui] New version of pmg, introducing gWidgets and gWidgetsRGtk2",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060918/c08a38aa/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060918/c08a38aa/attachment.pl",
+      "body_plain": "Dear All,\n\nA new version of pmg, a GUI for R, is available on its website:\nhttp://www.math.csi.cuny.edu/pmg. Installation details are on the website.\n\nA rewritten vignette for pmg illustrates its use and the \"dynamic dialogs\"\nwhich my introductory students are using this term with pretty good\nsuccess.\n\nThis  version uses two new packages to interface with the RGtk2 package of\nMichael Lawrence. These are:\n\n* gWidgets: A toolkit non-specific implementation of a GUI scripting\nlanguage based on Simon Urbanek's iWidgets API with additions by Philippe\nGrosjean.  Michael Lawrence, Simon and myself.  This package basically\nprovides a dispatch mechanism so that calls to a constructor or method can\nbe handled by the desired toolkit specific implementation. A vignette\nillustrating several examples and a vignette illustrating what might be\nrequired to write a toolkit for tcltk are included with the documentation.\n\n* gWidgetsRGtk2: this implements the gWidgets API for the RGtk2 package. A\nsimilar package was used before, but this was rewritten to use S4 methods.\n(As such, it runs much better in the upcoming version of R (2.4.0) which\nwill include a rewrite of the methods package.)\n\nIt is hoped that the gWidgets API is of interest to those who want to write\nrelatively simple GUIs or wish to quickly prototype GUI ideas. Although not\nnearly as powerful as the RGtk2 package, it does provide a sufficiently rich\nset of widgets and actions to make a somewhat sophisticated GUI at the level\nof pmg fairly easy.\n\nJohn\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear All,\n\nA new version of pmg, a GUI for R, is available on its website:\nhttp://www.math.csi.cuny.edu/pmg. Installation details are on the website.\n\nA rewritten vignette for pmg illustrates its use ",
       "thread_id": "thread-bdb056d23cfe",
       "thread_depth": 0,
-      "month": "2006-09"
+      "month": "2006-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060918/c08a38aa/attachment.pl"
+      ]
     },
     {
       "id": "msg-aa009a12e11e",
@@ -161,11 +167,14 @@
       "subject_clean": "[R-gui] the IPSUR package",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060925/a59e52e9/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060925/a59e52e9/attachment.pl",
+      "body_plain": "Dear useRs,\n\n\n\nWe are pleased to announce the preliminary release of the IPSUR package.\n\n\n\nThe primary audience was originally envisioned to be upper-division\nundergraduate mathematics/statistics/engineering majors, but other useRs may\nfind this material useful.\n\n\n\nIn a nutshell, this package slightly modifies and adds selected\nfunctionality to the R Commander by John Fox.  The changes were meant to\ncustomize Rcmdr for our Statistics classes, populated for the most part by\nthe audience above.  Some clever functions written by John Verzani were\ntranslated to IPSUR from UsingR.\n\n\n\nDownloads for the package (while the CRAN submission is pending) are at\n\n\nhttp://www.cc.ysu.edu/~gjkerns/IPSUR/package/index.htm\n\n\nCheck out the \"Features\" page to see what the package offers.\n\n\nhttp://www.cc.ysu.edu/~gjkerns/IPSUR/package/features.htm\n\n\nFull credit must be given to John Fox, together with his diverse team of\ndedicated contributors.  Indeed, without all of their countless hours of\neffort the IPSUR package would not be possible.  Kudos to them for\ncontinually providing excellent software to the R community.\n\n\n\nCheers,\n\nJay\n\n\n\n\n***********************************************\nG. Jay Kerns, Ph.D.\nDepartment of Mathematics & Statistics\nYoungstown State University\nYoungstown, OH 44555-0002 USA\nOffice: 1035 Cushwa Hall\nPhone: (330) 941-3310 Office (voice mail)\n-3302 Department\n-3170 FAX\nE-mail: gkerns at ysu.edu\nhttp://www.cc.ysu.edu/~gjkerns/\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear useRs,\n\n\n\nWe are pleased to announce the preliminary release of the IPSUR package.\n\n\n\nThe primary audience was originally envisioned to be upper-division\nundergraduate mathematics/statistics/engi",
       "thread_id": "thread-9c0b5fb3f854",
       "thread_depth": 0,
-      "month": "2006-09"
+      "month": "2006-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060925/a59e52e9/attachment.pl"
+      ]
     },
     {
       "id": "msg-62ff0dce629d",
@@ -177,11 +186,14 @@
       "subject_clean": "[R-gui] the IPSUR package (ii)",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060925/0bfe3c69/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060925/0bfe3c69/attachment.pl",
+      "body_plain": "Dear useRs,\n\nWe are pleased to announce the preliminary release of the IPSUR package.\n\nThe primary audience was originally envisioned to be upper division\nundergraduate mathematics/statistics/engineering majors, but other useRs may\nfind this material useful.\n\nIn a nutshell, this package slightly modifies and adds selected\nfunctionality to the R Commander by John Fox.  The changes were meant to\ncustomize Rcmdr for our Statistics classes, populated for the most part by\nthe audience above.  Some clever functions written by John Verzani were\ntranslated to IPSUR from UsingR.\n\nDownloads for the package (while the CRAN submission is pending) are at\n\nhttp://www.cc.ysu.edu/~gjkerns/IPSUR/package/index.htm\n\nCheck out the \"Features\" page to see what the package offers.\n\nhttp://www.cc.ysu.edu/~gjkerns/IPSUR/package/features.htm\n\nFull credit must be given to John Fox, together with his diverse team of\ndedicated contributors.  Indeed, without all of their countless hours of\neffort the IPSUR package would not be possible.  Kudos to them for providing\nexcellent software to the R community.\n\nCheers,\nJay\n\n\n\n\n***********************************************\nG. Jay Kerns, Ph.D.\nDepartment of Mathematics & Statistics\nYoungstown State University\nYoungstown, OH 44555-0002 USA\nOffice: 1035 Cushwa Hall\nPhone: (330) 941-3310 Office (voice mail)\n-3302 Department\n-3170 FAX\nE-mail: gkerns at ysu.edu\nhttp://www.cc.ysu.edu/~gjkerns/\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear useRs,\n\nWe are pleased to announce the preliminary release of the IPSUR package.\n\nThe primary audience was originally envisioned to be upper division\nundergraduate mathematics/statistics/engineer",
       "thread_id": "thread-62ff0dce629d",
       "thread_depth": 0,
-      "month": "2006-09"
+      "month": "2006-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060925/0bfe3c69/attachment.pl"
+      ]
     },
     {
       "id": "msg-2390f8480829",

@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] using Microsoft foundation classes with C++ and R",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100906/3288b3a6/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100906/3288b3a6/attachment.pl>",
+      "body_plain": "Dear R GUI People:\n \nHave any of you used the Microsoft foundation classes with C++ and R, please?\n \nThanks,\nErin\n \n \nErin M. Hodgess, PhD\nAssociate Professor\nDepartment of Computer and Mathematical Sciences\nUniversity of Houston - Downtown\nmailto: hodgesse at uhd.edu\n \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear R GUI People:\n \nHave any of you used the Microsoft foundation classes with C++ and R, please?\n \nThanks,\nErin\n \n \nErin M. Hodgess, PhD\nAssociate Professor\nDepartment of Computer and Mathematical S",
       "thread_id": "thread-ee74f7644166",
       "thread_depth": 0,
-      "month": "2010-09"
+      "month": "2010-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100906/3288b3a6/attachment.pl"
+      ]
     },
     {
       "id": "msg-e70391388983",
@@ -45,11 +48,14 @@
       "subject_clean": "[R-gui] Sliders and combo Boxes",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/30fa68c5/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/30fa68c5/attachment.pl>",
+      "body_plain": "Dear R GUI People:\n \nI have 2 questions please:\na. Is there a function for a slider that runs from a sequence of dates, rather than the usual 0 - 100, please?\nb. Is there a combo box which allows for multiple selections, please?  For instance, if you have a list of countries, then you could select several (or all) of the countries.\n \nThanks in advance!\nSincerely,\nErin\n \n \nErin M. Hodgess, PhD\nAssociate Professor\nDepartment of Computer and Mathematical Sciences\nUniversity of Houston - Downtown\nmailto: hodgesse at uhd.edu\n \n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear R GUI People:\n \nI have 2 questions please:\na. Is there a function for a slider that runs from a sequence of dates, rather than the usual 0 - 100, please?\nb. Is there a combo box which allows for ",
       "thread_id": "thread-d206f0d22651",
       "thread_depth": 0,
-      "month": "2010-09"
+      "month": "2010-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/30fa68c5/attachment.pl"
+      ]
     },
     {
       "id": "msg-61d7dfe71b0c",
@@ -102,11 +108,14 @@
         "<4C91CB95.8070702@statistik.tu-dortmund.de>",
         "<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/690716ee/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/690716ee/attachment.pl>",
+      "body_plain": "Hi Wayne and Uwe:\n \nThe rp.slider will be perfect.\n \nThe rp.listbox will only let you select one option.  My ultimate goal is to have something that will let you select several options, if possible\n \nI've been looking in the Tcl/tk options.\n \nThanks,\nErin\n \n \nErin M. Hodgess, PhD\nAssociate Professor\nDepartment of Computer and Mathematical Sciences\nUniversity of Houston - Downtown\nmailto: hodgesse at uhd.edu\n \n\n________________________________\n\nFrom: Wayne.W.Jones at shell.com [mailto:Wayne.W.Jones at shell.com]\nSent: Thu 9/16/2010 3:11 AM\nTo: ligges at statistik.tu-dortmund.de; Hodgess, Erin\nCc: r-sig-gui at stat.math.ethz.ch\nSubject: RE: [R-gui] Sliders and combo Boxes\n\n\n\nHi Erin,\n\nWhy not have a look at the package rpanel.\n\nSee the following examples in the package rpanel:\n\n>library(rpanel)\n>?rp.listbox\n>?rp.slider\n\nYou could very easily modify the slider to display dates rather than a\nnumber from 1:100.\n\nHope this helps,\n\nWayne\n\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at stat.math.ethz.ch\n[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Uwe Ligges\nSent: 16 September 2010 08:48\nTo: Hodgess, Erin\nCc: r-sig-gui at stat.math.ethz.ch\nSubject: Re: [R-gui] Sliders and combo Boxes\n\n\n\nOn 16.09.2010 07:45, Hodgess, Erin wrote:\n> Dear R GUI People:\n>\n> I have 2 questions please:\n> a. Is there a function for a slider that runs from a sequence of\ndates, rather than the usual 0 - 100, please?\n> b. Is there a combo box which allows for multiple selections, please?\nFor instance, if you have a list of countries, then you could select\nseveral (or all) of the countries.\n\n\nErin,\n\nwhich of the hundreds of GUI frameworks are we talking about?\n\n\nUwe\n\n\n> Thanks in advance!\n> Sincerely,\n> Erin\n>\n>\n> Erin M. Hodgess, PhD\n> Associate Professor\n> Department of Computer and Mathematical Sciences\n> University of Houston - Downtown\n> mailto: hodgesse at uhd.edu\n>\n>\n>       [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at stat.math.ethz.ch\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi Wayne and Uwe:\n \nThe rp.slider will be perfect.\n \nThe rp.listbox will only let you select one option.  My ultimate goal is to have something that will let you select several options, if possible\n \n",
       "thread_id": "thread-d206f0d22651",
       "thread_depth": 3,
-      "month": "2010-09"
+      "month": "2010-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/690716ee/attachment.pl"
+      ]
     },
     {
       "id": "msg-01ef4f77ec06",
@@ -157,11 +166,14 @@
       "subject_clean": "[R-gui] Good Tcl/tk widget reference?",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/ef1db347/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/ef1db347/attachment.pl>",
+      "body_plain": "Hello again.\n\n \n\nFirst, thanks for all for the great help on sliders, etc.\n\n \n\nNext, what is a good reference for Tcl/tk that would include the options\nfor widgets, please?\n\n \n\nThanks again very much!!\n\nSincerely,\n\nErin\n\n \n\n \n\nErin M. Hodgess, Ph.D.\n\nAssociate Professor\n\nDepartment of Computer and Mathematical Sciences\n\nUniversity of Houston - Downtown\n\nmailto: hodgesse at uhd.edu\n\n \n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello again.\n\n \n\nFirst, thanks for all for the great help on sliders, etc.\n\n \n\nNext, what is a good reference for Tcl/tk that would include the options\nfor widgets, please?\n\n \n\nThanks again very much!",
       "thread_id": "thread-75f7c5669c74",
       "thread_depth": 0,
-      "month": "2010-09"
+      "month": "2010-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100916/ef1db347/attachment.pl"
+      ]
     },
     {
       "id": "msg-5acf5ccc5147",
@@ -196,11 +208,14 @@
         "<8E3590214E4380489D2F8BF129B939F30146D0DA@amsdc1-s-03371.europe.shell.com>",
         "<586A4828D7AAA04CA9B258C50A28DA206DAE5E@BALI.uhd.campus>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100917/50359cd1/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100917/50359cd1/attachment.pl>",
+      "body_plain": "The rpanel package has a checkbox function. See: \n\n \n\n?rp.checkbox\n\n \n\nRegards, \n\nWayne\n\n \n\n \n\n \n\nFrom: Hodgess, Erin [mailto:HodgessE at uhd.edu] \nSent: 16 September 2010 16:47\nTo: Jones, Wayne R GSUK-PTD/TASE; ligges at statistik.tu-dortmund.de\nCc: r-sig-gui at stat.math.ethz.ch\nSubject: RE: [R-gui] Sliders and combo Boxes\n\n \n\nHi Wayne and Uwe:\n\n \n\nThe rp.slider will be perfect.\n\n \n\nThe rp.listbox will only let you select one option.  My ultimate goal is\nto have something that will let you select several options, if possible\n\n \n\nI've been looking in the Tcl/tk options.\n\n \n\nThanks,\n\nErin\n\n \n\n \n\nErin M. Hodgess, PhD\n\nAssociate Professor\n\nDepartment of Computer and Mathematical Sciences\n\nUniversity of Houston - Downtown\n\nmailto: hodgesse at uhd.edu\n\n \n\n \n\n________________________________\n\nFrom: Wayne.W.Jones at shell.com [mailto:Wayne.W.Jones at shell.com]\nSent: Thu 9/16/2010 3:11 AM\nTo: ligges at statistik.tu-dortmund.de; Hodgess, Erin\nCc: r-sig-gui at stat.math.ethz.ch\nSubject: RE: [R-gui] Sliders and combo Boxes\n\nHi Erin,\n\nWhy not have a look at the package rpanel.\n\nSee the following examples in the package rpanel:\n\n>library(rpanel)\n>?rp.listbox\n>?rp.slider\n\nYou could very easily modify the slider to display dates rather than a\nnumber from 1:100.\n\nHope this helps,\n\nWayne\n\n\n-----Original Message-----\nFrom: r-sig-gui-bounces at stat.math.ethz.ch\n[mailto:r-sig-gui-bounces at stat.math.ethz.ch] On Behalf Of Uwe Ligges\nSent: 16 September 2010 08:48\nTo: Hodgess, Erin\nCc: r-sig-gui at stat.math.ethz.ch\nSubject: Re: [R-gui] Sliders and combo Boxes\n\n\n\nOn 16.09.2010 07:45, Hodgess, Erin wrote:\n> Dear R GUI People:\n>\n> I have 2 questions please:\n> a. Is there a function for a slider that runs from a sequence of\ndates, rather than the usual 0 - 100, please?\n> b. Is there a combo box which allows for multiple selections, please?\nFor instance, if you have a list of countries, then you could select\nseveral (or all) of the countries.\n\n\nErin,\n\nwhich of the hundreds of GUI frameworks are we talking about?\n\n\nUwe\n\n\n> Thanks in advance!\n> Sincerely,\n> Erin\n>\n>\n> Erin M. Hodgess, PhD\n> Associate Professor\n> Department of Computer and Mathematical Sciences\n> University of Houston - Downtown\n> mailto: hodgesse at uhd.edu\n>\n>\n>       [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n_______________________________________________\nR-SIG-GUI mailing list\nR-SIG-GUI at stat.math.ethz.ch\nhttps://stat.ethz.ch/mailman/listinfo/r-sig-gui\n\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "The rpanel package has a checkbox function. See: \n\n \n\n?rp.checkbox\n\n \n\nRegards, \n\nWayne\n\n \n\n \n\n \n\nFrom: Hodgess, Erin [mailto:HodgessE at uhd.edu] \nSent: 16 September 2010 16:47\nTo: Jones, Wayne R GSU",
       "thread_id": "thread-d206f0d22651",
       "thread_depth": 4,
-      "month": "2010-09"
+      "month": "2010-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100917/50359cd1/attachment.pl"
+      ]
     },
     {
       "id": "msg-da861cb7ba8d",
@@ -269,11 +284,14 @@
       "subject_clean": "[R-gui] unsubscribe [SEC=UNCLASSIFIED]",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/e6fe5529/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/e6fe5529/attachment.pl>",
+      "body_plain": "Paul Story\n\nEnvironmental Officer\n\nAustralian Plague Locust Commission\n\nDepartment of Agriculture, Fisheries and Forestry\n\nGPO Box 858\n\nCanberra  ACT  2601\n\nPhone: (02) 6272-5176  Fax (02) 6272-5074  Mobile 0429-469306  \n\nMail to: Paul.Story at daff.gov.au <BLOCKED::mailto:Paul.Story at daff.gov.au>\nor pgs24 at uow.edu.au <BLOCKED::mailto:pgs24 at uow.edu.au> \n\n(ACT area representative: Australian Institute of Biology\nhttp://www.aibiol.org.au <BLOCKED::http://www.aibiol.org.au/> )\n\nP Think B4U print, 1 ream of paper = 6% of a tree and 5.4kg CO2 in the\natmosphere, 3 sheets of A4 paper = 1 litre of water.\n\n\n\n------\nIMPORTANT - This email and any attachments have been issued by the Australian Government Department of Agriculture, Fisheries and Forestry (DAFF).  The material transmitted is for the use of the intended recipient only and may contain confidential, legally privileged, copyright or personal information.  You should not copy, use or disclose it without authorisation from DAFF.  It is your responsibility to check any attachments for viruses and defects before opening or forwarding them.\n\nIf you are not an intended recipient, please contact the sender of this email at once by return email and then delete both messages.  Unintended recipients must not copy, use, disclose, rely on or publish this email or attachments.  DAFF is not liable for any loss or damage resulting from unauthorised use or dissemination of, or any reliance on, this email or attachments. \n\nIf you have received this e-mail as part of a valid mailing list and no longer want to receive a message such as this one, advise the sender by return e-mail accordingly.\n\nThis notice should not be deleted or altered.\n\n\n------\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Paul Story\n\nEnvironmental Officer\n\nAustralian Plague Locust Commission\n\nDepartment of Agriculture, Fisheries and Forestry\n\nGPO Box 858\n\nCanberra  ACT  2601\n\nPhone: (02) 6272-5176  Fax (02) 6272-5074  ",
       "thread_id": "thread-72f9a1eabdf8",
       "thread_depth": 0,
-      "month": "2010-09"
+      "month": "2010-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/e6fe5529/attachment.pl"
+      ]
     },
     {
       "id": "msg-0db95c9ef41b",
@@ -285,11 +303,14 @@
       "subject_clean": "[R-gui] unsubscribe [SEC=UNCLASSIFIED]",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/6a0f0454/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/6a0f0454/attachment.pl>",
+      "body_plain": "Paul Story\n\nEnvironmental Officer\n\nAustralian Plague Locust Commission\n\nDepartment of Agriculture, Fisheries and Forestry\n\nGPO Box 858\n\nCanberra  ACT  2601\n\nPhone: (02) 6272-5176  Fax (02) 6272-5074  Mobile 0429-469306  \n\nMail to: Paul.Story at daff.gov.au <BLOCKED::mailto:Paul.Story at daff.gov.au>\nor pgs24 at uow.edu.au <BLOCKED::mailto:pgs24 at uow.edu.au> \n\n(ACT area representative: Australian Institute of Biology\nhttp://www.aibiol.org.au <BLOCKED::http://www.aibiol.org.au/> )\n\nP Think B4U print, 1 ream of paper = 6% of a tree and 5.4kg CO2 in the\natmosphere, 3 sheets of A4 paper = 1 litre of water.\n\n\n\n------\nIMPORTANT - This email and any attachments have been issued by the Australian Government Department of Agriculture, Fisheries and Forestry (DAFF).  The material transmitted is for the use of the intended recipient only and may contain confidential, legally privileged, copyright or personal information.  You should not copy, use or disclose it without authorisation from DAFF.  It is your responsibility to check any attachments for viruses and defects before opening or forwarding them.\n\nIf you are not an intended recipient, please contact the sender of this email at once by return email and then delete both messages.  Unintended recipients must not copy, use, disclose, rely on or publish this email or attachments.  DAFF is not liable for any loss or damage resulting from unauthorised use or dissemination of, or any reliance on, this email or attachments. \n\nIf you have received this e-mail as part of a valid mailing list and no longer want to receive a message such as this one, advise the sender by return e-mail accordingly.\n\nThis notice should not be deleted or altered.\n\n\n------\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Paul Story\n\nEnvironmental Officer\n\nAustralian Plague Locust Commission\n\nDepartment of Agriculture, Fisheries and Forestry\n\nGPO Box 858\n\nCanberra  ACT  2601\n\nPhone: (02) 6272-5176  Fax (02) 6272-5074  ",
       "thread_id": "thread-0db95c9ef41b",
       "thread_depth": 0,
-      "month": "2010-09"
+      "month": "2010-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100922/6a0f0454/attachment.pl"
+      ]
     },
     {
       "id": "msg-d7def49003bc",

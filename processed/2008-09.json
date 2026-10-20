@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] Tinn-R/Latex output",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080915/30987a79/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080915/30987a79/attachment.pl>",
+      "body_plain": "I find Tinn-R to be an excellent editor for R, but I have one question I\nhave not been able to answer.\n\n \n\nI wish to include some R code in Latex.  Using the Edit/Copy formatted\n(to export)/TeX does provide Latex-type output.  However, there are lots\nof commands such as \\RAIdentifier and \\RAOperator etc. that would appear\nto need either a Latex package to interpret or a list of new commands\nthat describe font attributes etc.\n\n \n\nMy question is whether such a package exists, or is the user expected to\ndefine their own commands to interpret them?\n\n \n\nMany thanks,\n\n \n\nDavid Carslaw\n\n \n\n \n\nInstitute for Transport Studies\nUniversity of Leeds\nLeeds \nLS2 9JT\nTel: 0113 343 7522\nd.c.carslaw at its.leeds.ac.uk <mailto:d.c.carslaw at its.leeds.ac.uk> \n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I find Tinn-R to be an excellent editor for R, but I have one question I\nhave not been able to answer.\n\n \n\nI wish to include some R code in Latex.  Using the Edit/Copy formatted\n(to export)/TeX does p",
       "thread_id": "thread-52fbed0f15d3",
       "thread_depth": 0,
-      "month": "2008-09"
+      "month": "2008-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080915/30987a79/attachment.pl"
+      ]
     },
     {
       "id": "msg-2d0a43320e9d",

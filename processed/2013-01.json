@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] gWidgets gtree update (toolkit: gWidgetsRgtk2)",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130131/8cf781fd/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130131/8cf781fd/attachment.pl>",
+      "body_plain": "Hi:\n\nI'm new to this list (but a long-time R-usrR). I'm considering using\ngWidgets to build (replace) an GUI for an application. A key element of\nthat application is a tree structure and it looks like the gtree object\nprovides the needed basic functionality.\n\nHowever, I need to be able to control the gtree contents from program\nelements besides keyboard and mouse events. For example, in the help pages\nfor gtree, an example is given for how to display a file directory\nstructure. Very cool. But, I need to know the command sequence that would\nbe used to add a row to the tree or to tell the tree to \"open\" a node or\n\"change the text color\" or \"close\" a node or \"delete\" a row from the tree\nand then \"update\".\n\nI've looked and looked and can't see that it is even possible. If this kind\nof manipulation is not possible, then I need to use change to another\napproach that offers that capability. I would like to do this in R as it\nwill be very easy to build functions that manipulate the underlying data\nstructures that would be displayed with the gui.\n\nAny suggestions from this list would be welcome. Maybe I just need to\npurchase \"the magic book\". ... But, which magic book?\n\nThanks for your time,\n\nNick Crookston\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi:\n\nI'm new to this list (but a long-time R-usrR). I'm considering using\ngWidgets to build (replace) an GUI for an application. A key element of\nthat application is a tree structure and it looks like",
       "thread_id": "thread-1c7ade9ef1bd",
       "thread_depth": 0,
-      "month": "2013-01"
+      "month": "2013-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130131/8cf781fd/attachment.pl"
+      ]
     },
     {
       "id": "msg-59c8264788c7",
@@ -31,11 +34,14 @@
       "references": [
         "<CAAk+MXzNYhGfxNxE3gpQinXWKXhE=CoN8D4+0PQKedZr6o0Q_Q@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130131/004a4a78/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130131/004a4a78/attachment.pl>",
+      "body_plain": "I'm not an expert on gWidgets, but my understanding is that the gtree is\npopulated automatically through a callback. Thus, adding/removing rows\nshould be possible by having the callback return a different set of nodes.\nAs for opening and closing nodes, changing the color, etc, you might need\nto make calls to the underlying toolkit like RGtk2 or qtbase. John might\ncorrect me. Those things are certainly possible with the low-level APIs.\n\nFor reference, there is a book named \"Programming Graphical User Interfaces\nin R\" by Lawrence (disclaimer: that's me) and Verzani.\n\nMichael\n\n\n\nOn Thu, Jan 31, 2013 at 7:36 AM, Nicholas Crookston <ncrookston.fs at gmail.com\n> wrote:\n\n> Hi:\n>\n> I'm new to this list (but a long-time R-usrR). I'm considering using\n> gWidgets to build (replace) an GUI for an application. A key element of\n> that application is a tree structure and it looks like the gtree object\n> provides the needed basic functionality.\n>\n> However, I need to be able to control the gtree contents from program\n> elements besides keyboard and mouse events. For example, in the help pages\n> for gtree, an example is given for how to display a file directory\n> structure. Very cool. But, I need to know the command sequence that would\n> be used to add a row to the tree or to tell the tree to \"open\" a node or\n> \"change the text color\" or \"close\" a node or \"delete\" a row from the tree\n> and then \"update\".\n>\n> I've looked and looked and can't see that it is even possible. If this kind\n> of manipulation is not possible, then I need to use change to another\n> approach that offers that capability. I would like to do this in R as it\n> will be very easy to build functions that manipulate the underlying data\n> structures that would be displayed with the gui.\n>\n> Any suggestions from this list would be welcome. Maybe I just need to\n> purchase \"the magic book\". ... But, which magic book?\n>\n> Thanks for your time,\n>\n> Nick Crookston\n>\n>         [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I'm not an expert on gWidgets, but my understanding is that the gtree is\npopulated automatically through a callback. Thus, adding/removing rows\nshould be possible by having the callback return a diffe",
       "thread_id": "thread-1c7ade9ef1bd",
       "thread_depth": 1,
-      "month": "2013-01"
+      "month": "2013-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130131/004a4a78/attachment.pl"
+      ]
     }
   ],
   "threads": [

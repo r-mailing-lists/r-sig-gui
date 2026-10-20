@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] unknown color name \"systemWindowBody\"",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070912/8d737052/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070912/8d737052/attachment.pl",
+      "body_plain": "Hi,\n\nI am trying to use a tk table, with the following code\n\nrequire(tcltk)\ntt <- tktoplevel()\ntclRequire(\"Tktable\")\ntkwm.title(tt,title)\ntable1 <-\ntkwidget(tt,\"table\",rows=nrow,cols=ncol,titlerows=1,titlecols=0,height=height+1,width=width+1,\n                     xscrollcommand=function(...)\ntkset(xscr,...),yscrollcommand=function(...) tkset(yscr,...))\n\nHowever, the last line causes the following error message\n\nunknown color name \"systemWindowBody\"\n\nThis code works fine in Windows XP, but not on my Mac.\n\nDoes anyone have a solution to this problem? Any help would be gratefully\nappreciated.\n\nKind regards,\n\nSam\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi,\n\nI am trying to use a tk table, with the following code\n\nrequire(tcltk)\ntt <- tktoplevel()\ntclRequire(\"Tktable\")\ntkwm.title(tt,title)\ntable1 <-\ntkwidget(tt,\"table\",rows=nrow,cols=ncol,titlerows=1,",
       "thread_id": "thread-d376d2671e81",
       "thread_depth": 0,
-      "month": "2007-09"
+      "month": "2007-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070912/8d737052/attachment.pl"
+      ]
     },
     {
       "id": "msg-7d0cca61a31b",
@@ -122,11 +125,14 @@
       "subject_clean": "[R-gui] build your own gui",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070925/bd569efe/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070925/bd569efe/attachment.pl",
+      "body_plain": "Hi all,\n\nI'm wondering if I'm here in the right list: I'm toying with the idea\nbuilding my own gui: It should be possible to enter some values in the\nfront-end, R does the statistics and returns the result. Is that the\nright group? And if it is so, where can I find some ideas how to program\nsuch an interface, as starting point?\n\nThx,\nThomas\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi all,\n\nI'm wondering if I'm here in the right list: I'm toying with the idea\nbuilding my own gui: It should be possible to enter some values in the\nfront-end, R does the statistics and returns the r",
       "thread_id": "thread-c5cf6a605bc4",
       "thread_depth": 0,
-      "month": "2007-09"
+      "month": "2007-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070925/bd569efe/attachment.pl"
+      ]
     },
     {
       "id": "msg-f19f5642d836",
@@ -177,11 +183,14 @@
         "<6699922FABDD9145A5C94569C2B438EB01163A72@MA-EXCL02.konzern.mvvcorp.de>",
         "<20070927094200.GD5627@snow107.ncl.ac.uk>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070927/67409519/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070927/67409519/attachment.pl",
+      "body_plain": "On 9/27/07, David Whiting <david.whiting at ncl.ac.uk> wrote:\n>\n> Hi Thomas,\n>\n> On Tue, Sep 25, 2007 at 12:02:29PM +0200, thomas.schwander at mvv.de wrote:\n> > Hi all,\n> >\n> > I'm wondering if I'm here in the right list: I'm toying with the idea\n> > building my own gui: It should be possible to enter some values in the\n> > front-end, R does the statistics and returns the result. Is that the\n> > right group? And if it is so, where can I find some ideas how to program\n> > such an interface, as starting point?\n>\n> Try here for a start:\n>\n> http://www.sciviews.org/_rgui/\n\n\nThat's a good list, but includes lots of R GUIs rather than just tools that\nsupport GUI construction from R. I recommend using the gWidgets package.\nIt's a simplified front-end to the low-level GUI toolkits like tcltk and\nRGtk2.\n\nMichael\n\nDavid\n>\n>\n> >\n> > Thx,\n> > Thomas\n> >\n> >       [[alternative HTML version deleted]]\n> >\n> > _______________________________________________\n> > R-SIG-GUI mailing list\n> > R-SIG-GUI at stat.math.ethz.ch\n> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n> --\n> David Whiting, Ph.D.\n> Advancing Research in Chronic Disease Epidemiology (ARCHEPI) programme\n> Institute of Health and Society, The Medical School,\n> Newcastle University, Framlington Place, Newcastle upon Tyne, NE2 4HH.\n> Tel: +44 191 222 7045;  Extn: 7375; Fax: +44 191 222 8211.\n> http://research.ncl.ac.uk/archepi\n> www.ncl.ac.uk/ihs\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On 9/27/07, David Whiting <david.whiting at ncl.ac.uk> wrote:\n>\n> Hi Thomas,\n>\n> On Tue, Sep 25, 2007 at 12:02:29PM +0200, thomas.schwander at mvv.de wrote:\n> > Hi all,\n> >\n> > I'm wondering if I'm he",
       "thread_id": "thread-c5cf6a605bc4",
       "thread_depth": 2,
-      "month": "2007-09"
+      "month": "2007-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20070927/67409519/attachment.pl"
+      ]
     },
     {
       "id": "msg-cd7e9fb9ef31",

@@ -29,11 +29,14 @@
       "subject_clean": "[R-gui] Tree and dendrogram view",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060112/36198ddb/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060112/36198ddb/attachment.pl",
+      "body_plain": "Dear list,\n\nI use RGtk and Rtcltk to build some graphical interface for \nbioinformatics data analysis applications. I'm just wondering why the \ngraphic display is so slow. For example, I tried to build a 2000 rows & \n5 levels tree with both Rgtk and Rtcltk. RGtk cost about 15 seconds and \nRtcltk about 10 seconds to load up...\nAnd I really wanna do is something like 22000 rows.\n\nIs there a fatser way to build such tree view GUI? Is RJava fast \nenough? Haven't tried it yet.\nBTW, I'm using ibook G4 MacOS 10.3, R2.0\n\nAlso, can anyone suggest any R packages that does interactive \ndendrogram displays? The plot.dendrogram is has only identify function \nand is not zoomable and things like that.\n\n\nMany thanks.\n\n___________________________________________________\n\nZhesi He\nComputational Biology Laboratory, University of York\nYork YO10 5YW, U.K.\nPhone:  +44-(0)1904-328279\nEmail:  zh107 at york.ac.uk\n___________________________________________________\n\n\t[[alternative text/enriched version deleted]]",
+      "body_snippet": "Dear list,\n\nI use RGtk and Rtcltk to build some graphical interface for \nbioinformatics data analysis applications. I'm just wondering why the \ngraphic display is so slow. For example, I tried to buil",
       "thread_id": "thread-8142f134a7d2",
       "thread_depth": 0,
-      "month": "2006-01"
+      "month": "2006-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060112/36198ddb/attachment.pl"
+      ]
     },
     {
       "id": "msg-fd3aa187d49c",
@@ -45,11 +48,14 @@
       "subject_clean": "[R-gui] tkrplot load problem",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060113/95d403ac/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060113/95d403ac/attachment.pl",
+      "body_plain": "Dear list,\n\nI have the tkrplot library install problem..\nI know there has been discussion like\n\nfrom Luke Tierney :\n-------------\n     Download, untar, and run R CMD INSTALL\n       cd to the src directory and repeat the final link command with\n       -bundle replaced by -dynamiclib\n\n       Then move the new trkplot.so by hand to the lib directory of the\n       installed package\n\nIf you are offended by a .so extension on a dylib you can change the  \nextension and the R code that load it.\n--------------\n\nI did it all. and found that when i loaded tkrplot\nI got:\nError in structure(.External(\"dotTcl\", ..., PACKAGE = \"tcltk\"), class =  \n\"tclObj\") :\n         tcl error.\nError in library(tkrplot) : .First.lib failed for 'tkrplot'\n\nI went into first.lib and did it from command line :\n > file\n[1]  \n\"/Library/Frameworks/R.framework/Versions/2.0.1/Resources/library/ \ntkrplot/libs/tkrplot.dylib\"\n > .Tcl(paste(\"load\", file, \"Rplot\"))\nError in structure(.External(\"dotTcl\", ..., PACKAGE = \"tcltk\"), class =  \n\"tclObj\") :\n         [tcl] version conflict for package \"Tcl\": have 8.4, need 8.5.\n\nSo is it to do with my tcl installation. I guess I have tcl both 8.4  \nand 8.5 installed in my computer and there has been no problem.\n\nI'm wondering why..\nBTW, I'm using R2.0 on my mac10.3 machine.\n\nPlease help.\n\n\n\n___________________________________________________\n\nZhesi He\nComputational Biology Laboratory, University of York\nYork YO10 5YW, U.K.\nPhone:  +44-(0)1904-328279\nEmail:  zh107 at york.ac.uk\n___________________________________________________\n\n\t[[alternative text/enriched version deleted]]",
+      "body_snippet": "Dear list,\n\nI have the tkrplot library install problem..\nI know there has been discussion like\n\nfrom Luke Tierney :\n-------------\n     Download, untar, and run R CMD INSTALL\n       cd to the src direc",
       "thread_id": "thread-fd3aa187d49c",
       "thread_depth": 0,
-      "month": "2006-01"
+      "month": "2006-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20060113/95d403ac/attachment.pl"
+      ]
     },
     {
       "id": "msg-acfbdb63d004",

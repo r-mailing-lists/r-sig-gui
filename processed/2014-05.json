@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] Question on R X11() on Windows OS",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/e238b841/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/e238b841/attachment.pl>",
+      "body_plain": "Hi everybody,\n\nI used QProcess (Qt C++) to start a R terminal on windows and was able to\ncommunicate with it (e.g. submit R commands and recover R outputs).\nBut when I sent the \"X11()\" command to open a graphic device, the graphic\ndevice did show up but didn't response and crashed.\n\nWhen I opened R.exe in a windows command prompt and type \"X11()\", it\nyielded a functional graphic device (i.e. did not crash).\n\nI first thought that the error came from the fact that R didn't manage to\nfind its .dll when called from my QProcess. I thus looked at RHOME variable\n(using *Rhome(\"bin\")* for example) and it yielded the same result when R\nwas called from QProcess or opened in a windows command prompt.\n\nThe problem is only present on Windows (I don't have any problem with my\nproject developped on Linux, but I have to deploy it for Windows users).\n\nAny idea ?\n\nThank you in advance,\n\nMinh-Nhut\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi everybody,\n\nI used QProcess (Qt C++) to start a R terminal on windows and was able to\ncommunicate with it (e.g. submit R commands and recover R outputs).\nBut when I sent the \"X11()\" command to open",
       "thread_id": "thread-3e5e0e03cea6",
       "thread_depth": 0,
-      "month": "2014-05"
+      "month": "2014-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/e238b841/attachment.pl"
+      ]
     },
     {
       "id": "msg-b66970a6eafd",
@@ -31,11 +34,14 @@
       "references": [
         "<CAK4TpGwqfjLKjrbd5c8Gt5HdtHNqyGX2vzKEfO_=LZJun8LdpQ@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/b7ed85af/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/b7ed85af/attachment.pl>",
+      "body_plain": "Hi again,\n\nI've just found the solution to my problem : I added \"--ess\" to my process\narguments (it enables R interactive mode) and everything worked fine.\n\nSorry to disturb,\n\nMinh-Nhut\n\n\n2014-05-26 16:13 GMT+02:00 Minh-Nhut Huynh <minutestatistique160 at gmail.com>:\n\n> Hi everybody,\n>\n> I used QProcess (Qt C++) to start a R terminal on windows and was able to\n> communicate with it (e.g. submit R commands and recover R outputs).\n> But when I sent the \"X11()\" command to open a graphic device, the graphic\n> device did show up but didn't response and crashed.\n>\n> When I opened R.exe in a windows command prompt and type \"X11()\", it\n> yielded a functional graphic device (i.e. did not crash).\n>\n> I first thought that the error came from the fact that R didn't manage to\n> find its .dll when called from my QProcess. I thus looked at RHOME variable\n> (using *Rhome(\"bin\")* for example) and it yielded the same result when R\n> was called from QProcess or opened in a windows command prompt.\n>\n> The problem is only present on Windows (I don't have any problem with my\n> project developped on Linux, but I have to deploy it for Windows users).\n>\n> Any idea ?\n>\n> Thank you in advance,\n>\n> Minh-Nhut\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi again,\n\nI've just found the solution to my problem : I added \"--ess\" to my process\narguments (it enables R interactive mode) and everything worked fine.\n\nSorry to disturb,\n\nMinh-Nhut\n\n\n2014-05-26 1",
       "thread_id": "thread-3e5e0e03cea6",
       "thread_depth": 1,
-      "month": "2014-05"
+      "month": "2014-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20140526/b7ed85af/attachment.pl"
+      ]
     }
   ],
   "threads": [

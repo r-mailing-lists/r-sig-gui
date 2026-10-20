@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] Announcement: WPS to R Bridge",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080304/fae2619f/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080304/fae2619f/attachment.pl",
+      "body_plain": "I want to announce the release of the first version of the WPS to R Bridge\ncalled WPS2R. The free WPS2R Bridge allows WPS programmers to use the WPS\nWorkbench (the Eclipse IDE) to write and run R code. For those who have yet\nto hear about WPS, WPS is an aggressively priced SAS/Base alternative that\nsupports the SAS language and most of the SAS/Base Procedures. WPS runs on\nthe Windows and z/OS platforms. You can learn more about WPS by following\nthe links at the end of this message.\n\n \n\nThe WPS2R Bridge supports R code in-line with your WPS Code. There are two\nmacros that sandwich the R code, %RSTART and %RSTOP. Essentially, these two\nmacros act as demarcation points for the beginning and end points of your R\ncode and are responsible for routing the R output back to the WPS listing\nwindow and WPS output window respectively. The WPS2R Bridge also allows you\nto call R graphics and view them in the Graph Viewer window.\n\n \n\nI have put together a short Flash based screencast that demonstrates the use\nof the WPS2R Bridge and it can be found at:\n\nhttp://www.minequest.com/downloads/WPS2R_Bridge.html or tinyurl:\n\nhttp://tinyurl.com/yoh7oe\n\n \n\nWPS users can download the WPS2R Bridge from the downloads section of the\nMineQuest website at www.minequest.com/downloads. The WPS2R Bridge is\nspecific to WPS and does not yet support the SAS environment.\n\n \n\nLinks:\n\nWPS2R Bridge installation guide and macro package:\n\nhttp://www.minequest.com/downloads/WPS2RBridgeInstall.pdf\n\nWPS Website: http://www.teamwpc.co.uk/home\n\n \n\nPhil Rack\n\nSAS and WPS Software Development and Consulting\n\nwww.minequest.com\n\n \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I want to announce the release of the first version of the WPS to R Bridge\ncalled WPS2R. The free WPS2R Bridge allows WPS programmers to use the WPS\nWorkbench (the Eclipse IDE) to write and run R code",
       "thread_id": "thread-2dadb394b8ab",
       "thread_depth": 0,
-      "month": "2008-03"
+      "month": "2008-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080304/fae2619f/attachment.pl"
+      ]
     },
     {
       "id": "msg-39b5ccf7cf97",
@@ -29,11 +32,14 @@
       "subject_clean": "[R-gui] tk2menubutton command",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080315/25460e57/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080315/25460e57/attachment.pl",
+      "body_plain": "Hello all,\n\nI´d like a tk2menubutton to display a menu when clicking the 'arrow' and to\ntrigger a function when clicking the text.\n\nI have the following:\n\nrequire(tcltk2)\nwidgetPrincipal <- tktoplevel()\ntipo.busqueda.valores <-  tclVar('Single-Query')\ntipo.busqueda.boton <- tk2menubutton(widgetPrincipal, textvariable =\ntipo.busqueda.valores,\n      width = 15 )\ntipo.busqueda.menu <- tk2menu(tipo.busqueda.boton, tearoff = FALSE)\ntkadd( tipo.busqueda.menu, 'command' , label = 'Tesauro',\n command = function() {tclvalue(tipo.busqueda.valores )<<- 'Tesauro'})\ntkadd( tipo.busqueda.menu, 'command' , label = 'Single-Query',\n command = function() {tclvalue(tipo.busqueda.valores )<<- 'Single-Query'})\ntkconfigure(tipo.busqueda.boton, menu = tipo.busqueda.menu)\ntkpack(tipo.busqueda.boton)\n\n# this being the function I would like to trigger\n\ntipo.busqueda.accion = function(){\n if (as.character(tclvalue(tipo.busqueda.valores)) == 'Tesauro') {\n  # do A\n }else{\n  # do B\n }\n}\n\nAny tips.\n\nThanks\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello all,\n\nI´d like a tk2menubutton to display a menu when clicking the 'arrow' and to\ntrigger a function when clicking the text.\n\nI have the following:\n\nrequire(tcltk2)\nwidgetPrincipal <- tktoplevel",
       "thread_id": "thread-39b5ccf7cf97",
       "thread_depth": 0,
-      "month": "2008-03"
+      "month": "2008-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080315/25460e57/attachment.pl"
+      ]
     },
     {
       "id": "msg-85e822cfe9ec",
@@ -63,11 +69,14 @@
       "subject_clean": "[R-gui] one-column tk2mclistbox",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080329/b3012eea/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080329/b3012eea/attachment.pl",
+      "body_plain": "Hello,\n\nI have a tk2mclistbox displaying some data (a matrix).\nIt works OK while ncol(matrix) > 1; but when matrix is one-columned, only\nthe first row seems to be displayed.\nwhat am I missing?\n\nAnd talking about tk2mclistbox, is there a way to display rows with\ndifferent (alternate) background colors?\n\nThanks.\n Eduardo San Miguel\n\n\nrequire(tcltk2)\n\nfillt <- function() {\n   nCols =   as.numeric(tkget(tl.e1))\n   nRows =   as.numeric(tkget(tl.e2))\n\n   # remove existing columns\n   COLUMNS <- tclvalue(.Tcl( paste( tl.t, 'column names')))\n   for (i in 1:length(COLUMNS)){\n      .Tcl( paste( tl.t, 'column delete', COLUMNS[i]))\n   }\n\n   # generate matrix\n   data = matrix(rnorm(nRows*nCols), nc = nCols)\n\n   # tricky way to display one-column data\n#   auxcol <- matrix(rep(0, dim(data)[1]), ncol = 1)\n#   tk2column(tl.t, 'add', 'auxcol', label = 'auxcol',\n#    width = 20)\n#   tk2column(tl.t,'configure', 'auxcol', visible = 0)\n\n   # insert data\n   for (i in 1:dim(data)[2]){\n      tk2column(tl.t, 'add', paste('col_',i, sep =''),\n                     label = paste('col_',i, sep =''),  width = 20)\n   }\n\n\n   # tricky way to display one-column data\n#   data = cbind(auxcol, data)\n   tk2insert.multi(tl.t, 'end', data)\n\n   tkconfigure(tl.t, columnborderwidth = 1)\n   tkconfigure(tl.t, columnbd = 1)\n}\n\ntl <- tktoplevel()\n\ntl.f1 <- tk2frame(tl)\ntl.l1 <- tk2label(tl.f1, text = 'N Cols:')\ntl.l2 <- tk2label(tl.f1, text = 'N Rows:')\ntl.e1 <- tk2entry(tl.f1 ,'n Cols ', width = 5)\ntl.e2 <- tk2entry(tl.f1 ,'n Rows ', width = 5)\ntl.f1.b <- tk2button(tl.f1, ' ', text = 'Show Matrix',\n     command = fillt)\ntl.f1.b1 <- tk2button(tl.f1, ' ', text = 'Close',\n     command = function() tkdestroy(tl))\n\ntl.f2 <- tk2frame(tl)\ntl.t <- tk2mclistbox(tl.f2, width = 84, resizablecolumns = TRUE)\ntl.scr_1 <- tk2scrollbar(tl.f2, orient = 'vertical')\ntl.scr_2 <- tk2scrollbar(tl.f2, orient = 'horizontal')\n\ntkconfigure(tl.t, yscrollcommand = function(...) tkset(tl.scr_1, ...))\ntkconfigure(tl.scr_1, command = function(...) tkyview(tl.t, ...))\ntkconfigure(tl.t, xscrollcommand = function(...) tkset(tl.scr_2, ...))\ntkconfigure(tl.scr_2, command = function(...) tkxview(tl.t, ...))\n\ntkpack(tl.scr_2, side = 'bottom', fill = 'x')\ntkpack(tl.scr_1, side = 'right', fill = 'y')\ntkpack(tl.t, fill = 'both', expand = 1)\n\ntkgrid(tl.f1)\ntkgrid(tl.l1, row = 0, column = 0)\ntkgrid(tl.e1, row = 0, column = 1)\ntkgrid(tl.l2, row = 0, column = 2)\ntkgrid(tl.e2, row = 0, column = 3)\ntkgrid(tl.f1.b, row = 0, column = 4)\ntkgrid(tl.f1.b1, row = 0, column = 5)\ntkgrid(tl.f2)\n\ntkconfigure(tl.t, relief = 'sunk')\ntkbind(tl.t,'<Enter>',function() tkfocus(tl.t))\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nI have a tk2mclistbox displaying some data (a matrix).\nIt works OK while ncol(matrix) > 1; but when matrix is one-columned, only\nthe first row seems to be displayed.\nwhat am I missing?\n\nAnd ta",
       "thread_id": "thread-d5adb1be7254",
       "thread_depth": 0,
-      "month": "2008-03"
+      "month": "2008-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080329/b3012eea/attachment.pl"
+      ]
     },
     {
       "id": "msg-0d3a57dc906c",

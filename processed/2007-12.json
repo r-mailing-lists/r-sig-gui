@@ -31,11 +31,14 @@
       "subject_clean": "[R-gui] tktoplevel issues",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071204/abe8bd50/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071204/abe8bd50/attachment.pl",
+      "body_plain": "Hi there! I have a little problem regarding the tcltk2 package. I have\ncreated a simple GUI and a button within which, when pressed, opens up\nanother window. The problem I have is that the icon I specify to appear\nin the second window does not appear. Do you have any idea why? \n \nExample code: \n \n \ntt = tktoplevel(background = \"black\")\n# Creates the body of the GUI.\ntktitle(tt) = \"Backtest\"\n# Creates a window title.\nilogo = tk2ico.create(\"H:/GUI/icons/ilogo.ico\")\n# Icon created.\ntk2ico.set(tt,investeclogo)\n# This assigns the icon to the main window.\nmasterframe = tkframe(tt)\ntkgrid(masterframe)\n \n#  Button\ntest.but = tkbutton(masterframe,text = \"Run\",command = openwindow)\ntkpack(test.but, side = \"top\") \n\n \nopenwindow = function(){\n \nruv = tktoplevel()                              \ntktitle(ruv) = \"Test Window\"          \nilogo2 = tk2ico.create(\"H:/GUI/icons/ilogo.ico\")\ntk2ico.set(ruv,ilogo2)         \n \ntopMenu = tk2menu(ruv)\ntkconfigure(ruv,menu = topMenu)\nfileMenu = tk2menu(topMenu, tearoff = FALSE)\ntkadd(fileMenu,\"command\", label = \"Quit\", command =\nfunction()tkdestroy(ruv))\ntkadd(topMenu,\"cascade\",label = \"File\", menu = fileMenu)\n \nMasterFrame2 = tkframe(ruv)                          \ntkgrid(MasterFrame2)\n \n}\n \nThanks and Regards! \n \n \n\n\n\n\n \n \n \n\n \n\nhttp://www.investec.com/EmailDisclaimer/emaildisclaimer.htm\n\nThe disclaimer also provides our corporate information and names of our directors as required by law.\n\nThe disclaimer is deemed to form part of this message in terms of Section 11 of the Electronic Communications and Transactions Act 25 of 2002. \nIf you cannot access the disclaimer, please obtain a copy thereof from us by sending an email to: disclaimer at investec.co.za\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi there! I have a little problem regarding the tcltk2 package. I have\ncreated a simple GUI and a button within which, when pressed, opens up\nanother window. The problem I have is that the icon I spec",
       "thread_id": "thread-848ab0869d71",
       "thread_depth": 0,
-      "month": "2007-12"
+      "month": "2007-12",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20071204/abe8bd50/attachment.pl"
+      ]
     },
     {
       "id": "msg-046a7b2b4481",

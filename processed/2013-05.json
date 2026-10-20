@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] Tktable colours",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130508/25493558/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130508/25493558/attachment.pl>",
+      "body_plain": "Dear list,\n\nIs some way to change the default font color when a cell is selected? By default the font turns to white, which is difficult to see against a pale background.\n\nThanks,\n\nManel Salamero\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear list,\n\nIs some way to change the default font color when a cell is selected? By default the font turns to white, which is difficult to see against a pale background.\n\nThanks,\n\nManel Salamero\n\n\t[[",
       "thread_id": "thread-b285be088f90",
       "thread_depth": 0,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130508/25493558/attachment.pl"
+      ]
     },
     {
       "id": "msg-6396e1cec2cd",
@@ -47,11 +50,14 @@
       "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/8a156cdf/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/8a156cdf/attachment.pl>",
+      "body_plain": "Hello List,\n\nI am creating a GUI application using RGtk2. I have created a window that has three FileChooserButtons that when you click on the button you can choose the file. I am wanted to have the file saved as a data frame when the 'Open' button is clicked after a file has been chosen in dialog window of when each FileChooserButton is clicked. I can't seem to get this to work below is part of the code that I use to create one of the buttons and then save the file as a data frame when the 'Open' button is clicked.\n\n  buttoncount <- gtkFileChooserButtonNew(\"Choose the File Containing the Count Data\",\"clicked\")\n  fileFilter <- gtkFileFilter()\n  fileFilter$setName(\"CSV Files\")\n  fileFilter$addPattern(\"*.csv\")\n  buttoncount$addFilter(fileFilter)\n  hbox$packStart(buttoncount)\n  gSignalConnect(buttoncount,\"file-set\",function(buttoncount){\n              response <- buttoncount$run\n              if (response == GtkResponseType[\"accept\"]) {\n                cdata <- gtkFileChooserGetFilename(buttoncount)}\n              })\n\n\nI don't believe my gSignalConnect statement is correct. Can anyone help me?\n\nThanks!\n\nChandra\n\n**********************************************************************\nThis e-mail and its attachments may contain Forest Laboratories, Inc. proprietary information that is privileged, confidential or subject to copyright belonging to Forest Laboratories, Inc. This e-mail is intended solely for the use of the individual or entity to which it is addressed. If you are not the intended recipient of this e-mail, or the employee or agent responsible for delivering this e-mail to the intended recipient, you are hereby notified that any dissemination, distribution, copying or action taken in relation to the contents of and attachments to this e-mail is strictly prohibited and may be unlawful. If you have received this e-mail in error, please notify the sender immediately and permanently delete the original and any copy of this e-mail and any printout.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello List,\n\nI am creating a GUI application using RGtk2. I have created a window that has three FileChooserButtons that when you click on the button you can choose the file. I am wanted to have the f",
       "thread_id": "thread-ea72e69ff1d0",
       "thread_depth": 0,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/8a156cdf/attachment.pl"
+      ]
     },
     {
       "id": "msg-30712f3719b4",
@@ -65,11 +71,14 @@
       "references": [
         "<8DE1414EF7543642ADDDC14F7BAEB47B0CB534DC@SPMBMR006.frxntnyc.frx2.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/ce50cffc/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/ce50cffc/attachment.pl>",
+      "body_plain": "If you just need to get the filename in your file-set handler, then it is:\n\ngSignalConnect(buttoncount,\"file-set\",function(buttoncount){\n\n                          print(buttoncount$getFilename())\n                          })\n\nNote that there is no need to access the dialog response, because we know\nthat the user picked a file.\n\n\n\nOn Tue, May 14, 2013 at 8:13 AM, Thames, Chandra <Chandra.Thames at frx.com>wrote:\n\n> Hello List,\n>\n> I am creating a GUI application using RGtk2. I have created a window that\n> has three FileChooserButtons that when you click on the button you can\n> choose the file. I am wanted to have the file saved as a data frame when\n> the 'Open' button is clicked after a file has been chosen in dialog window\n> of when each FileChooserButton is clicked. I can't seem to get this to work\n> below is part of the code that I use to create one of the buttons and then\n> save the file as a data frame when the 'Open' button is clicked.\n>\n>   buttoncount <- gtkFileChooserButtonNew(\"Choose the File Containing the\n> Count Data\",\"clicked\")\n>   fileFilter <- gtkFileFilter()\n>   fileFilter$setName(\"CSV Files\")\n>   fileFilter$addPattern(\"*.csv\")\n>   buttoncount$addFilter(fileFilter)\n>   hbox$packStart(buttoncount)\n>   gSignalConnect(buttoncount,\"file-set\",function(buttoncount){\n>               response <- buttoncount$run\n>               if (response == GtkResponseType[\"accept\"]) {\n>                 cdata <- gtkFileChooserGetFilename(buttoncount)}\n>               })\n>\n>\n> I don't believe my gSignalConnect statement is correct. Can anyone help me?\n>\n> Thanks!\n>\n> Chandra\n>\n> **********************************************************************\n> This e-mail and its attachments may contain Forest Laboratories, Inc.\n> proprietary information that is privileged, confidential or subject to\n> copyright belonging to Forest Laboratories, Inc. This e-mail is intended\n> solely for the use of the individual or entity to which it is addressed. If\n> you are not the intended recipient of this e-mail, or the employee or agent\n> responsible for delivering this e-mail to the intended recipient, you are\n> hereby notified that any dissemination, distribution, copying or action\n> taken in relation to the contents of and attachments to this e-mail is\n> strictly prohibited and may be unlawful. If you have received this e-mail\n> in error, please notify the sender immediately and permanently delete the\n> original and any copy of this e-mail and any printout.\n>\n>         [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "If you just need to get the filename in your file-set handler, then it is:\n\ngSignalConnect(buttoncount,\"file-set\",function(buttoncount){\n\n                          print(buttoncount$getFilename())\n   ",
       "thread_id": "thread-ea72e69ff1d0",
       "thread_depth": 1,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/ce50cffc/attachment.pl"
+      ]
     },
     {
       "id": "msg-b9be8d81dd9b",
@@ -81,11 +90,14 @@
       "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7b0147b1/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7b0147b1/attachment.pl>",
+      "body_plain": "Thank you! That did work. But I wanted to create a data frame from the file that is choosen. I used the following code:\ngSignalConnect(buttoncount,\"file-set\",function(buttoncount){\n                          cdata <- read.csv(buttoncount$getFilename())\n                          })\n\nI use the cdata <- read.csv(buttoncount$getFilename()) statement instead of the print(buttoncount$getFilename()). When I do this I don't get an error, but I also the cdata is not created. Am I missing something?\n\nThanks!\n\nChandra\n\n\n\n**********************************************************************\nThis e-mail and its attachments may contain Forest Laboratories, Inc. proprietary information that is privileged, confidential or subject to copyright belonging to Forest Laboratories, Inc. This e-mail is intended solely for the use of the individual or entity to which it is addressed. If you are not the intended recipient of this e-mail, or the employee or agent responsible for delivering this e-mail to the intended recipient, you are hereby notified that any dissemination, distribution, copying or action taken in relation to the contents of and attachments to this e-mail is strictly prohibited and may be unlawful. If you have received this e-mail in error, please notify the sender immediately and permanently delete the original and any copy of this e-mail and any printout.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Thank you! That did work. But I wanted to create a data frame from the file that is choosen. I used the following code:\ngSignalConnect(buttoncount,\"file-set\",function(buttoncount){\n                   ",
       "thread_id": "thread-b9be8d81dd9b",
       "thread_depth": 0,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7b0147b1/attachment.pl"
+      ]
     },
     {
       "id": "msg-3b4cc7bb7156",
@@ -99,11 +111,14 @@
       "references": [
         "<8DE1414EF7543642ADDDC14F7BAEB47B0CB53605@SPMBMR006.frxntnyc.frx2.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7d01b817/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7d01b817/attachment.pl>",
+      "body_plain": "A value will be assigned to 'cdata', but it will happen within the frame of\nthe callback. You'll need to do something with it there, or use the <<-\noperator to assign it to the global workspace (recommended only while you\nprototype). In the context of a larger application, you'll need an\nunderlying mutable data model, perhaps implemented with a reference class\nobject or an environment.\n\nMichael\n\n\nOn Tue, May 14, 2013 at 2:10 PM, Thames, Chandra <Chandra.Thames at frx.com>wrote:\n\n> Thank you! That did work. But I wanted to create a data frame from the\n> file that is choosen. I used the following code:\n> gSignalConnect(buttoncount,\"file-set\",function(buttoncount){\n>                           cdata <- read.csv(buttoncount$getFilename())\n>                           })\n>\n> I use the cdata <- read.csv(buttoncount$getFilename()) statement instead\n> of the print(buttoncount$getFilename()). When I do this I don't get an\n> error, but I also the cdata is not created. Am I missing something?\n>\n> Thanks!\n>\n> Chandra\n>\n>\n>\n> **********************************************************************\n> This e-mail and its attachments may contain Forest Laboratories, Inc.\n> proprietary information that is privileged, confidential or subject to\n> copyright belonging to Forest Laboratories, Inc. This e-mail is intended\n> solely for the use of the individual or entity to which it is addressed. If\n> you are not the intended recipient of this e-mail, or the employee or agent\n> responsible for delivering this e-mail to the intended recipient, you are\n> hereby notified that any dissemination, distribution, copying or action\n> taken in relation to the contents of and attachments to this e-mail is\n> strictly prohibited and may be unlawful. If you have received this e-mail\n> in error, please notify the sender immediately and permanently delete the\n> original and any copy of this e-mail and any printout.\n>\n>         [[alternative HTML version deleted]]\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "A value will be assigned to 'cdata', but it will happen within the frame of\nthe callback. You'll need to do something with it there, or use the <<-\noperator to assign it to the global workspace (recom",
       "thread_id": "thread-b9be8d81dd9b",
       "thread_depth": 1,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/7d01b817/attachment.pl"
+      ]
     },
     {
       "id": "msg-75ac5e957f68",
@@ -115,11 +130,14 @@
       "subject_clean": "[R-gui] Creating a DataFrame object when you open a file",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/31878a77/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/31878a77/attachment.pl>",
+      "body_plain": "Thank you for your help!\n\n**********************************************************************\nThis e-mail and its attachments may contain Forest Laboratories, Inc. proprietary information that is privileged, confidential or subject to copyright belonging to Forest Laboratories, Inc. This e-mail is intended solely for the use of the individual or entity to which it is addressed. If you are not the intended recipient of this e-mail, or the employee or agent responsible for delivering this e-mail to the intended recipient, you are hereby notified that any dissemination, distribution, copying or action taken in relation to the contents of and attachments to this e-mail is strictly prohibited and may be unlawful. If you have received this e-mail in error, please notify the sender immediately and permanently delete the original and any copy of this e-mail and any printout.\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Thank you for your help!\n\n**********************************************************************\nThis e-mail and its attachments may contain Forest Laboratories, Inc. proprietary information that is p",
       "thread_id": "thread-75ac5e957f68",
       "thread_depth": 0,
-      "month": "2013-05"
+      "month": "2013-05",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20130514/31878a77/attachment.pl"
+      ]
     }
   ],
   "threads": [

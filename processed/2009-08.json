@@ -184,11 +184,14 @@
       "subject_clean": "[R-gui] Trouble Configuring SciViews and Komodo",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090820/80da240f/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090820/80da240f/attachment.pl>",
+      "body_plain": "Good Day,\n\nI am unable to get Komodo and R working together following the steps listed on the SciViews website: (http://www.sciviews.org/SciViews-K/index.html)\n\nI get an error in the status bar: 'Rgui -sdi' returned 255. When using Menus>R>Start R>R GUI (Windows)\nA similar error with R terminal.\n\nAny ideas what may be going wrong?\nWhat other information is needed to help answer my question?\nHow does the SciViews-K Komodo extension get configured to the correct R installation (I have 2.8.1 and 2.9.1 installed)? I find no settings for this in Komodo.\n\nSystem details:\nVista 64 bit SP1. Komodo 4.4.1, R 2.9.1, svXXX packages all freshly installed and in place...\n\nRegards,\nBrent\n\n\n\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Good Day,\n\nI am unable to get Komodo and R working together following the steps listed on the SciViews website: (http://www.sciviews.org/SciViews-K/index.html)\n\nI get an error in the status bar: 'Rgui",
       "thread_id": "thread-537b74093c8e",
       "thread_depth": 0,
-      "month": "2009-08"
+      "month": "2009-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090820/80da240f/attachment.pl"
+      ]
     },
     {
       "id": "msg-1c5c539ac5ac",
@@ -218,11 +221,14 @@
       "subject_clean": "[R-gui] gWidgets update certain arguments",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090824/b2d663cf/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090824/b2d663cf/attachment.pl>",
+      "body_plain": "----------------------- *** Disclaimer *** -----------------------\nThis e-mail and its contents are subject to the SA Reserve Bank's\nDisclaimer and Confidentiality Clause, which can be viewed at:\nhttp://www.reservebank.co.za/disclaimer\nShould you be unable to access the link provided, please send a\nblank e-mail to Disclaimer at resbank.co.za \n----------------------- *** Disclaimer *** -----------------------\n\n\nDear list,\n\nUsing gWidgets, I'm trying to construct a simple GUI where a user can select a variable (in a data.frame) from a drop-down list and then set a limit using a spin-button. Additionally, I want the default to, from and value arguments of the spin-button to equal the min, max and mean of the selected variable, respectively.\n\nHow do I get the spin-button to update when the user selects a different variable from the drop-down list?\n\nHere is my amateurish attempt at doing this, but the results are not satisfactory, since it simple keeps adding new spin buttons and it doesn't start up with a spin button.\n\n.simple <- function(x){\n   addSpin <- function(h, ...){\n      data <- eval(parse(text = paste(\"x$\", svalue(varis), sep = \"\")))\n      spin <- gspinbutton(from = min(data), to = max(data), value = mean(data))\n      add(mainG, spin)\n      }\n   win <- gwindow(\"Example\")\n   mainG <- ggroup(horizontal = FALSE, container = win)\n   varis <- gdroplist(names(x), container = mainG)\n   addhandlerchanged(varis, handler = addSpin)\n   }\n\nAny help whatsoever would be most appreciated.\n\nKind regards,\n\n\n\n\n\nStefan Janse van Rensburg\nMacroprudential Division\nFinancial Stability Department\nSARB\nTel : 012-313 4687\nFax : 012 313 4772\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "----------------------- *** Disclaimer *** -----------------------\nThis e-mail and its contents are subject to the SA Reserve Bank's\nDisclaimer and Confidentiality Clause, which can be viewed at:\nhttp",
       "thread_id": "thread-6447fe80aa84",
       "thread_depth": 0,
-      "month": "2009-08"
+      "month": "2009-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090824/b2d663cf/attachment.pl"
+      ]
     },
     {
       "id": "msg-742fef4c4453",
@@ -252,11 +258,14 @@
       "subject_clean": "[R-gui] RGG help",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090826/0f9b5b96/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090826/0f9b5b96/attachment.pl>",
+      "body_plain": "----------------------- *** Disclaimer *** -----------------------\nThis e-mail and its contents are subject to the SA Reserve Bank's\nDisclaimer and Confidentiality Clause, which can be viewed at:\nhttp://www.reservebank.co.za/disclaimer\nShould you be unable to access the link provided, please send a\nblank e-mail to Disclaimer at resbank.co.za \n----------------------- *** Disclaimer *** -----------------------\n\n\nHi,\n\nApart from experimenting with gWidgets, I'm also experimenting with RGG. Very impressed with it so far, especially considering it's pre-alpha status. I have, however, found that the accepted-extensions attribute of filechooser doesn't behave as expected. Despite setting accepted-extension=\".RData\", any file can still be selected.\n\nHere is the basic script I am busy with. It is meant to select the working directory and load the .RData file if that file is selected.\n\nNote that the R script is in a separate file, which the .rgg sourcing that file.\n\nRGG FILE:\n\n<rgg>\n #### First test of RGG. setwd and load .R file\n <filechooser label=\"Path:\" var=\"path\" accepted-extension=\".RData\"/>\n source(\"C:/Documents and Settings/p176435/My Documents/gev_application/rgg_test01.R\")\n dir = tstDir(path)\n setFun(path, dir = dir)\n if(!dir) load(path)\n getwd()\n ls()\n</rgg>\n\nTHE R SCRIPT rgg_test01.R:\n\n#### Function to paste togeth characters\npCh <- function(ch){\n x <- \"\"\n for(i in ch){\n  x <- paste(x, i, sep = \"\")\n  }\n return(x)\n }\n\n#### Function to test if file or directory\ntstDir <- function(path){\n  lch <- unlist(strsplit(path, NULL))\n  sq <- seq(length(lch)-5, length(lch))\n  lch <- pCh(lch[sq])\n  print(lch)\n  dir <- ifelse(lch == \".RData\", FALSE, TRUE)\n  return(dir)\n  }\n\n#### Function to set workspace and / or load prev session.\nsetFun <- function(path, dir = TRUE){\n ifelse(dir, setwd(path), setwd(dirname(path)))\n }\n\nAny help or suggestions whatsoever, would be most appreciated.\n\nKind regards,\n\n\n\n\nStefan Janse van Rensburg\nMacroprudential Division\nFinancial Stability Department\nSARB\nTel : 012-313 4687\nFax : 012 313 4772\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "----------------------- *** Disclaimer *** -----------------------\nThis e-mail and its contents are subject to the SA Reserve Bank's\nDisclaimer and Confidentiality Clause, which can be viewed at:\nhttp",
       "thread_id": "thread-49e103962f31",
       "thread_depth": 0,
-      "month": "2009-08"
+      "month": "2009-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090826/0f9b5b96/attachment.pl"
+      ]
     }
   ],
   "threads": [

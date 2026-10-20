@@ -31,11 +31,14 @@
       "references": [
         "<CACj4GwjMKwqes4D0Fces_Ha=RkoavwBG3ttb=8DxVMRNV6Gu3A@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120102/6bd8a4e3/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120102/6bd8a4e3/attachment.pl>",
+      "body_plain": "Nice work Brett,\n\nYou may want to take a look at Deducer's Model Builder/Explorers for inspiration as they have a similar (identical?) goals. See:\n\nhttp://www.deducer.org/pmwiki/pmwiki.php?n=Main.LinearModel\nhttp://www.deducer.org/pmwiki/pmwiki.php?n=Main.GeneralizedLinearModel\n\nCheers,\nIan\n\n\nOn Jan 2, 2012, at 10:54 PM, Brett Magill wrote:\n\n> Hello all,\n> \n> To anyone who is interested, I'm trying to learn a bit more about\n> developing applications in R with user interfaces. I've been playing\n> around with gWidgets to develop a model building interface.\n> \n> I'd appreciate any comments, suggestions, or guidance on how to better\n> structure my R code and organize the programming task. In addition,\n> any suggestions for features and improvement to this fledgling project\n> would be welcomed.\n> \n> The code and some screenshots are available here...\n> \n> http://r-rime.blogspot.com/\n> \n> Thanks!\n> \n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Nice work Brett,\n\nYou may want to take a look at Deducer's Model Builder/Explorers for inspiration as they have a similar (identical?) goals. See:\n\nhttp://www.deducer.org/pmwiki/pmwiki.php?n=Main.Line",
       "thread_id": "thread-dd74a458e6a3",
       "thread_depth": 1,
-      "month": "2012-01"
+      "month": "2012-01",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120102/6bd8a4e3/attachment.pl"
+      ]
     },
     {
       "id": "msg-ec9f0a1b5d51",

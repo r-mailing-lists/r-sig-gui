@@ -117,11 +117,14 @@
       "subject_clean": "[R-gui]  Request for users of my R-Tcl/Tk examples,",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080228/b3e11956/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080228/b3e11956/attachment.pl",
+      "body_plain": "Dear James\n\n \n\nI am trying to use R-Tcl/TK in my R-code. I want to develop a dialog box\nfor Data Entry. I am trying to make use of \n\nKeyword \"entry\" in your examples, but I could not make it. Could you\nkindly give me a hint to write the code\n\n \n\nMy email address\n\nkshattryindra at hotmail.com\n\n \n\nSincerely yours\n\n \n\nIndra B. Kshattry  \n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Dear James\n\n \n\nI am trying to use R-Tcl/TK in my R-code. I want to develop a dialog box\nfor Data Entry. I am trying to make use of \n\nKeyword \"entry\" in your examples, but I could not make it. Could yo",
       "thread_id": "thread-43150f878bca",
       "thread_depth": 0,
-      "month": "2008-02"
+      "month": "2008-02",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080228/b3e11956/attachment.pl"
+      ]
     },
     {
       "id": "msg-f4cac9c4bf1a",

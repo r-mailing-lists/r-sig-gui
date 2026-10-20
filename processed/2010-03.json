@@ -45,11 +45,14 @@
       "subject_clean": "[R-gui] \"Print\" Widget",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/8c289130/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/8c289130/attachment.pl>",
+      "body_plain": "Hi, I've built a GUI using gWidgets and would like to add a \"Print\" button that would print hard copies of the charts contained in a gnotebook. Any suggestion/advice would be greatly appreciated.\n\nThanks a bunch,\nMark Habana\nDenver, CO\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi, I've built a GUI using gWidgets and would like to add a \"Print\" button that would print hard copies of the charts contained in a gnotebook. Any suggestion/advice would be greatly appreciated.\n\nTha",
       "thread_id": "thread-35c0832f3164",
       "thread_depth": 0,
-      "month": "2010-03"
+      "month": "2010-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/8c289130/attachment.pl"
+      ]
     },
     {
       "id": "msg-5d0d036c3107",
@@ -63,11 +66,14 @@
       "references": [
         "<B0E6AF197EEBA9488CA99E67DB73B5EA1668631B@denexmb01.venocoinc.local>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/d0c0f88a/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/d0c0f88a/attachment.pl>",
+      "body_plain": "Hi, I've built a GUI using gWidgets and would like to add a \"Print\" button that would print hard copies of the charts contained in a gnotebook. Any suggestion/advice would be greatly appreciated.\n\nThanks a bunch,\nMark Habana\nDenver, CO\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi, I've built a GUI using gWidgets and would like to add a \"Print\" button that would print hard copies of the charts contained in a gnotebook. Any suggestion/advice would be greatly appreciated.\n\nTha",
       "thread_id": "thread-35c0832f3164",
       "thread_depth": 1,
-      "month": "2010-03"
+      "month": "2010-03",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100317/d0c0f88a/attachment.pl"
+      ]
     },
     {
       "id": "msg-366705a1d749",

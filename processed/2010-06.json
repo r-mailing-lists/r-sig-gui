@@ -31,11 +31,14 @@
       "references": [
         "<4C06C1DC.3080005@rug.nl>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100602/3d3b0083/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100602/3d3b0083/attachment.pl>",
+      "body_plain": "There is a demo() in the RGtk2 package.\n\nPlease let me know if you can't find it or if anything is unclear.\n\nMichael\n\nOn Wed, Jun 2, 2010 at 1:41 PM, Richard D. Morey <r.d.morey at rug.nl> wrote:\n\n> Hi everyone,\n>\n> I have an treeview backed by an RGtkDataFrame that I would like to be able\n> to copy info from, into the OS clipboard. I've found the documentation for\n> gtk-clipboard here:\n>\n> http://rss.acs.unt.edu/Rdoc/library/RGtk2/html/gtk-Clipboards.html\n>\n> but it isn't clear to me how to copy to the clipboard. Anyone know any good\n> examples using RGtk2 to copy to the OS clipboard?\n>\n> Thanks,\n> Richard Morey\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "There is a demo() in the RGtk2 package.\n\nPlease let me know if you can't find it or if anything is unclear.\n\nMichael\n\nOn Wed, Jun 2, 2010 at 1:41 PM, Richard D. Morey <r.d.morey at rug.nl> wrote:\n\n> H",
       "thread_id": "thread-d35d75accc22",
       "thread_depth": 1,
-      "month": "2010-06"
+      "month": "2010-06",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20100602/3d3b0083/attachment.pl"
+      ]
     },
     {
       "id": "msg-9acd23263b41",

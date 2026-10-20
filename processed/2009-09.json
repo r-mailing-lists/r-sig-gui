@@ -65,11 +65,14 @@
       "subject_clean": "[R-gui] (no subject)",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/f95c7f90/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/f95c7f90/attachment.pl>",
+      "body_plain": "Hello,\n\nI have a question about \"ipred\" package. I am working on a data set which\ncontains 1000 individual swho came from 588 regions.\n\nI calculated misclassification error rate with cross validation and its\nsmooted version \"bootstrap 632\" for different sample sizes in LDF. I am\ndoubting whether error rate and low variance are enough to explain my data.\n\nThanks\n\nMeral\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nI have a question about \"ipred\" package. I am working on a data set which\ncontains 1000 individual swho came from 588 regions.\n\nI calculated misclassification error rate with cross validation ",
       "thread_id": "thread-9cee7aadf558",
       "thread_depth": 0,
-      "month": "2009-09"
+      "month": "2009-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/f95c7f90/attachment.pl"
+      ]
     },
     {
       "id": "msg-fd97d157ceae",
@@ -81,11 +84,14 @@
       "subject_clean": "[R-gui] header intact",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/4046ea8c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/4046ea8c/attachment.pl>",
+      "body_plain": "[[alternative HTML version deleted]]",
+      "body_snippet": "[[alternative HTML version deleted]]",
       "thread_id": "thread-fd97d157ceae",
       "thread_depth": 0,
-      "month": "2009-09"
+      "month": "2009-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090911/4046ea8c/attachment.pl"
+      ]
     },
     {
       "id": "msg-8775933e177e",
@@ -115,11 +121,14 @@
       "subject_clean": "[R-gui] Red-R: a visual interface for R",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090925/999876f9/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090925/999876f9/attachment.pl>",
+      "body_plain": "I'd like to share with you a project that implements a dataflow programming\ninterface for R <http://www.r-project.org/> designed to bring the power of\nthe R statistical environment to the general user. The goal of this project\nis to provide access to the massive library of packages in R without any\nprogramming expertise. RedR is based on Orange (\nhttp://www.ailab.si/orange/) and uses\nthe Python-R interface of rpy <http://rpy.sourceforge.net/index.html> (\nhttp://rpy.sourceforge.net/index.html). The interface is quiet easy for the\nnovice user to understand and still provides a robust interface to R for the\nexpert user. We hope that this will facilitate interaction between the\nexpert user and the novice.\n\nThis framework also allows for instantaneous updating of the pipeline and\nmore interactivity with data. Additionally, the future goals include adding\nthe interactive plotting functionality of QT.\n\nPlease check out this project at http://code.google.com/p/r-orange/ and join\nour group at http://groups.google.com/group/red-r\n\nThis is still in the development phase but as a proof-of-concept we have\nmade several tools that are useful for plotting, subsetting, and comparing\ndata as well as an interface into Bioconductor.\n\nWe would greatly appreciate your feedback.\n\nAnup Parikh\nBaylor College of Medicine\nHouston, TX\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I'd like to share with you a project that implements a dataflow programming\ninterface for R <http://www.r-project.org/> designed to bring the power of\nthe R statistical environment to the general user",
       "thread_id": "thread-10962bb297b4",
       "thread_depth": 0,
-      "month": "2009-09"
+      "month": "2009-09",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20090925/999876f9/attachment.pl"
+      ]
     }
   ],
   "threads": [

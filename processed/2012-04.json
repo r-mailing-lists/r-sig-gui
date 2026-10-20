@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] GUI",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/afa10b0c/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/afa10b0c/attachment.pl>",
+      "body_plain": "requested sir,\n     plz let me know, which package is more suitable to make GUI using R\nwith more features.... waiting for the response\n                thanks\n\n-- \n\n*Naveen Verma,*\n\n*Department of Pharmacoinformatics,*\n\n*NIPER Mohali (Punjab,India)*\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "requested sir,\n     plz let me know, which package is more suitable to make GUI using R\nwith more features.... waiting for the response\n                thanks\n\n-- \n\n*Naveen Verma,*\n\n*Department of Pha",
       "thread_id": "thread-0b8fbbf07183",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/afa10b0c/attachment.pl"
+      ]
     },
     {
       "id": "msg-e400d4f04050",
@@ -50,11 +53,14 @@
         "<CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA@mail.gmail.com>",
         "<CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/b80b5596/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/b80b5596/attachment.pl>",
+      "body_plain": "Hi Naveen,\n\nIf you really want *more* features for development, you could try API\npackages for QT and GTK in R, two packages : qtbase and RGtk2, they are\nvery powerful toolkit to build full-featured  GUI in R.\nbtw: Please check out John and Michael's new book about GUI devlopment in R\nhttp://www.amazon.com/Programming-Graphical-Interfaces-Chapman-Series/dp/1439856826/ref=sr_1_1?ie=UTF8&qid=1334000773&sr=8-1\n\nHTH\n\nTengfei\n\nOn Mon, Apr 9, 2012 at 2:40 PM, Liviu Andronic <landronimirc at gmail.com>wrote:\n\n> On Mon, Apr 9, 2012 at 8:13 PM, Naveen Verma <naveensimla at gmail.com>\n> wrote:\n> > requested sir,\n> >     plz let me know, which package is more suitable to make GUI using R\n> > with more features....\n> >\n> If you want to use a GUI, look into Rcmdr and Deducer (and their\n> plugins) and perhaps RStudio. If you want to build a GUI on top of R,\n> see the plugins just mentioned and packages such as gWidgets, traitr,\n> tcltk2, etc.\n>\n> Liviu\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\n\n-- \nTengfei Yin\nMCDB PhD student\n1620 Howe Hall, 2274,\nIowa State University\nAmes, IA,50011-2274\nHomepage: www.tengfei.name\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hi Naveen,\n\nIf you really want *more* features for development, you could try API\npackages for QT and GTK in R, two packages : qtbase and RGtk2, they are\nvery powerful toolkit to build full-featured  ",
       "thread_id": "thread-0b8fbbf07183",
       "thread_depth": 2,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120409/b80b5596/attachment.pl"
+      ]
     },
     {
       "id": "msg-5c8795504e46",
@@ -86,11 +92,14 @@
       "references": [
         "<mailman.13.1334052004.19777.r-sig-gui@r-project.org>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120410/35252f09/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120410/35252f09/attachment.pl>",
+      "body_plain": "thanks everyone....the knowledge is valuable to me.........\n\nOn 10 April 2012 15:30, <r-sig-gui-request at r-project.org> wrote:\n\n> Send R-SIG-GUI mailing list submissions to\n>        r-sig-gui at r-project.org\n>\n> To subscribe or unsubscribe via the World Wide Web, visit\n>        https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> or, via email, send a message with subject or body 'help' to\n>        r-sig-gui-request at r-project.org\n>\n> You can reach the person managing the list at\n>        r-sig-gui-owner at r-project.org\n>\n> When replying, please edit your Subject line so it is more specific\n> than \"Re: Contents of R-SIG-GUI digest...\"\n>\n>\n> Today's Topics:\n>\n>   1. GUI (Naveen Verma)\n>   2. Re: GUI (Liviu Andronic)\n>   3. Re: GUI (Tengfei Yin)\n>   4. Re: GUI (Thomas Baier)\n>\n>\n> ----------------------------------------------------------------------\n>\n> Message: 1\n> Date: Mon, 9 Apr 2012 23:43:22 +0530\n> From: Naveen Verma <naveensimla at gmail.com>\n> To: r-sig-gui at r-project.org\n> Subject: [R-gui] GUI\n> Message-ID:\n>        <CAAuWHB_gxNK77W9h1ZwH97FC--cnpvLCmAc7bw9HYXdesCoPWA at mail.gmail.com\n> >\n> Content-Type: text/plain\n>\n> requested sir,\n>     plz let me know, which package is more suitable to make GUI using R\n> with more features.... waiting for the response\n>                thanks\n>\n> --\n>\n> *Naveen Verma,*\n>\n> *Department of Pharmacoinformatics,*\n>\n> *NIPER Mohali (Punjab,India)*\n>\n>        [[alternative HTML version deleted]]\n>\n>\n>\n> ------------------------------\n>\n> Message: 2\n> Date: Mon, 9 Apr 2012 21:40:06 +0200\n> From: Liviu Andronic <landronimirc at gmail.com>\n> To: Naveen Verma <naveensimla at gmail.com>\n> Cc: r-sig-gui at r-project.org\n> Subject: Re: [R-gui] GUI\n> Message-ID:\n>        <CABxs9VnGmwMXbDGEKifUkh-D7RmMJ2Lw67Kx88hvYRxKQQ8Xdw at mail.gmail.com\n> >\n> Content-Type: text/plain; charset=UTF-8\n>\n> On Mon, Apr 9, 2012 at 8:13 PM, Naveen Verma <naveensimla at gmail.com>\n> wrote:\n> > requested sir,\n> > ? ? plz let me know, which package is more suitable to make GUI using R\n> > with more features....\n> >\n> If you want to use a GUI, look into Rcmdr and Deducer (and their\n> plugins) and perhaps RStudio. If you want to build a GUI on top of R,\n> see the plugins just mentioned and packages such as gWidgets, traitr,\n> tcltk2, etc.\n>\n> Liviu\n>\n>\n>\n> ------------------------------\n>\n> Message: 3\n> Date: Mon, 9 Apr 2012 14:47:34 -0500\n> From: Tengfei Yin <yintengfei at gmail.com>\n> To: Liviu Andronic <landronimirc at gmail.com>\n> Cc: Naveen Verma <naveensimla at gmail.com>, r-sig-gui at r-project.org\n> Subject: Re: [R-gui] GUI\n> Message-ID:\n>        <CAPJsq9=4O1GNRde5pcwdkWPoXFftyBTfddWqCCB27=AZXb9UvQ at mail.gmail.com\n> >\n> Content-Type: text/plain\n>\n> Hi Naveen,\n>\n> If you really want *more* features for development, you could try API\n> packages for QT and GTK in R, two packages : qtbase and RGtk2, they are\n> very powerful toolkit to build full-featured  GUI in R.\n> btw: Please check out John and Michael's new book about GUI devlopment in R\n>\n> http://www.amazon.com/Programming-Graphical-Interfaces-Chapman-Series/dp/1439856826/ref=sr_1_1?ie=UTF8&qid=1334000773&sr=8-1\n>\n> HTH\n>\n> Tengfei\n>\n> On Mon, Apr 9, 2012 at 2:40 PM, Liviu Andronic <landronimirc at gmail.com\n> >wrote:\n>\n> > On Mon, Apr 9, 2012 at 8:13 PM, Naveen Verma <naveensimla at gmail.com>\n> > wrote:\n> > > requested sir,\n> > >     plz let me know, which package is more suitable to make GUI using R\n> > > with more features....\n> > >\n> > If you want to use a GUI, look into Rcmdr and Deducer (and their\n> > plugins) and perhaps RStudio. If you want to build a GUI on top of R,\n> > see the plugins just mentioned and packages such as gWidgets, traitr,\n> > tcltk2, etc.\n> >\n> > Liviu\n> >\n> > _______________________________________________\n> > R-SIG-GUI mailing list\n> > R-SIG-GUI at r-project.org\n> > https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n> >\n>\n>\n>\n> --\n> Tengfei Yin\n> MCDB PhD student\n> 1620 Howe Hall, 2274,\n> Iowa State University\n> Ames, IA,50011-2274\n> Homepage: www.tengfei.name\n>\n>        [[alternative HTML version deleted]]\n>\n>\n>\n> ------------------------------\n>\n> Message: 4\n> Date: Mon, 09 Apr 2012 22:00:17 +0200\n> From: Thomas Baier <thomas at statconn.com>\n> To: Naveen Verma <naveensimla at gmail.com>\n> Cc: r-sig-gui at r-project.org\n> Subject: Re: [R-gui] GUI\n> Message-ID: <4F833FD1.4040500 at statconn.com>\n> Content-Type: text/plain; charset=ISO-8859-1\n>\n> Naveen,\n>\n> if you are happy with the Windows platform, have a look at statconnDCOM\n> and RExcel (http://rcom.univie.ac.at)\n>\n> Best,\n> Thomas\n>\n> On 09.04.2012 20:13, Naveen Verma wrote:\n> > requested sir,\n> >      plz let me know, which package is more suitable to make GUI using R\n> > with more features.... waiting for the response\n> >                 thanks\n> >\n>\n>\n> --\n> Thomas Baier <mailto:thomas at statconn.com>\n> http://www.statconn.com/\n>\n>\n>\n> ------------------------------\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at r-project.org\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n>\n> End of R-SIG-GUI Digest, Vol 96, Issue 1\n> ****************************************\n>\n\n\n\n-- \nNaveen Verma\nDepartment of Pharmacoinformatics\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "thanks everyone....the knowledge is valuable to me.........\n\nOn 10 April 2012 15:30, <r-sig-gui-request at r-project.org> wrote:\n\n> Send R-SIG-GUI mailing list submissions to\n>        r-sig-gui at r-p",
       "thread_id": "thread-948c0e9c59e1",
       "thread_depth": 0,
-      "month": "2012-04"
+      "month": "2012-04",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20120410/35252f09/attachment.pl"
+      ]
     }
   ],
   "threads": [

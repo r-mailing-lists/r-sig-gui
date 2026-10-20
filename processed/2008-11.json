@@ -13,11 +13,14 @@
       "subject_clean": "[R-gui] integrate Rcmdr into SciViews-K",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081107/e424b129/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081107/e424b129/attachment.pl>",
+      "body_plain": "Hello All  \nI have a question on SciViews-K. In previous versions SciViews it was possible to integrate Rcmdr into SciViews. Now I can't find how to do it in Komodo Edit.  \nCould you please advise on it.  \nBest regards,  \nAndrew\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello All  \nI have a question on SciViews-K. In previous versions SciViews it was possible to integrate Rcmdr into SciViews. Now I can't find how to do it in Komodo Edit.  \nCould you please advise on ",
       "thread_id": "thread-0b85b96d3a5c",
       "thread_depth": 0,
-      "month": "2008-11"
+      "month": "2008-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081107/e424b129/attachment.pl"
+      ]
     },
     {
       "id": "msg-5bd43b4b5e4c",
@@ -157,11 +160,14 @@
       "references": [
         "<8E3590214E4380489D2F8BF129B939F329D3D5@amsdc1-s-03371.europe.shell.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081118/3651b878/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081118/3651b878/attachment.pl>",
+      "body_plain": "On Tuesday 18 November 2008, Wayne.W.Jones at shell.com wrote:\n> Dear fellows,\n>\n> I am looking in to porting an application I have written in R to an R web\n> based application. Can anyone suggest based on their own experiences what\n> may be the best method to accomplish this?\n\nI've had very satisfactory results with Rpad.\nhttp://www.rpad.org/Rpad/\nAdrian\n\n\n-- \nAdrian Dusa\nRomanian Social Data Archive\n1, Schitu Magureanu Bd.\n050025 Bucharest sector 5\nRomania\nTel.:+40 21 3126618 \\\n     +40 21 3120210 / int.101\nFax: +40 21 3158391\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Tuesday 18 November 2008, Wayne.W.Jones at shell.com wrote:\n> Dear fellows,\n>\n> I am looking in to porting an application I have written in R to an R web\n> based application. Can anyone suggest bas",
       "thread_id": "thread-1a462eed3dbf",
       "thread_depth": 5,
-      "month": "2008-11"
+      "month": "2008-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081118/3651b878/attachment.pl"
+      ]
     },
     {
       "id": "msg-e0ac7c02a54b",
@@ -248,11 +254,14 @@
         "<8E3590214E4380489D2F8BF129B939F329D3DA@amsdc1-s-03371.europe.shell.com>",
         "<4923C37C.3050001@telenet.be>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081119/27a86cff/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081119/27a86cff/attachment.pl>",
+      "body_plain": "On Wednesday 19 November 2008, Tobias Verbeke wrote:\n> Hi Waine,\n> <snip>\n> > Has anyone implemneted a web based solution using the package rJAva?\n> No. rJava is a very low-level interface.\n> We currently make use of the biocep framework\n> http://www.biocep.net\n> [...snip...]\n\nI took a look on biocep and it's very handsom. It uses jEdit as a script \neditor, and I noticed it has a couple of very interesting buttons for sourcing \ncode into R.\n\nI wonder (and here I address a question to Wayne), whether this functionality \ncould be released as a kind of general plugin for jEdit, which I also use as s \nscript editor on my computer.\n\nThanks,\nAdrian\n\n\n\n-- \nAdrian Dusa\nRomanian Social Data Archive\n1, Schitu Magureanu Bd.\n050025 Bucharest sector 5\nRomania\nTel.:+40 21 3126618 \\\n     +40 21 3120210 / int.101\nFax: +40 21 3158391\n\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Wednesday 19 November 2008, Tobias Verbeke wrote:\n> Hi Waine,\n> <snip>\n> > Has anyone implemneted a web based solution using the package rJAva?\n> No. rJava is a very low-level interface.\n> We curre",
       "thread_id": "thread-1a462eed3dbf",
       "thread_depth": 8,
-      "month": "2008-11"
+      "month": "2008-11",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20081119/27a86cff/attachment.pl"
+      ]
     },
     {
       "id": "msg-96a72ebcb760",

@@ -281,11 +281,14 @@
       "subject_clean": "[R-gui] seeking R tcltk solution",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20050727/e632743d/attachment.pl",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nUrl: https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20050727/e632743d/attachment.pl",
+      "body_plain": "The following short block of code creates a menu bar with menu item \"graphic\" disabled:\n\nTopWindow <- tktoplevel(parent=.TkRoot)\nTopMenu <- tkmenu(TopWindow)\ntkconfigure(TopWindow,menu=TopMenu)\nFileMenu <- tkmenu(TopMenu)\nGraphicsMenu <- tkmenu(TopMenu)\ntkadd(TopMenu,\"cascade\",label=\"File\", menu=FileMenu)\ntkadd(TopMenu,\"cascade\",label=\"Graphics\", menu=GraphicsMenu, state=\"disabled\")\n\nOther than tkdestroy(TopMenu)and rebuilding the menubar omitting'state=\"disabled\"', is there a way to change the state of the menu item \"Graphics\" to \"normal\"?\n\nBill Morphet, Space Shuttle engineer & PhD statistics student\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "The following short block of code creates a menu bar with menu item \"graphic\" disabled:\n\nTopWindow <- tktoplevel(parent=.TkRoot)\nTopMenu <- tkmenu(TopWindow)\ntkconfigure(TopWindow,menu=TopMenu)\nFileMe",
       "thread_id": "thread-d76c22859e04",
       "thread_depth": 0,
-      "month": "2005-07"
+      "month": "2005-07",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20050727/e632743d/attachment.pl"
+      ]
     },
     {
       "id": "msg-eb18cdaaecf3",

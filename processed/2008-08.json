@@ -70,11 +70,14 @@
         "<1218021349.6216.11.camel@renyi>",
         "<48998F0C.8070601@yahoo.de>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080806/c24bdbd9/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080806/c24bdbd9/attachment.pl>",
+      "body_plain": "On Wed, Aug 6, 2008 at 4:46 AM, Antje <niederlein-rstat at yahoo.de> wrote:\n\n> Hi Tamas,\n>\n> thanks a lot for your answer.\n>\n>> Hi,\n>>\n>> I would recommend to explore\n>> http://wiener.math.csi.cuny.edu/pmg/gWidgets\n>> especially the Examples section:\n>> http://wiener.math.csi.cuny.edu/pmg/gWidgets/Examples\n>> and the useR!2007 presentation:\n>> http://wiener.math.csi.cuny.edu/pmg/gWidgets/useR2007_presentation.pdf\n>> I hope it helps.\n>>\n>\n> These tutorials I already found but still I don't know how to create a\n> flexible layout. For example (simple one), I'd like to have a window with a\n> text field with fixed width on the one side (stretched over the whole\n> height) and on the remaining right side, I'd like to put a button with a\n> fixed height but width adjustet to the remaining space of the window.\n>\n> This code would not give me the layout I'd like to see and I don't know how\n> to do it (even with the tutorials mentioned)\n>\n> <pre>\n> mainwin <- gwindow(title = \"TestApplication\", visible = TRUE, name=title)\n> splitgroup <- ggroup(horizontal=TRUE, container=mainwin)\n>\n> gtext(text = \"Here we go\", width = 150, container=splitgroup)\n> gbutton(\"push me\", container = splitgroup, expand = TRUE)\n> size(mainwin) <- c(500,500)\n> </pre>\n>\n> I don't even know if there is any way to do what I want...\n>\n\nIt looks to me that the thing missing there is the vertical squashing of the\nbutton on the right side. To do that, you'll want to use a vertical group on\nthe right side i.e. ggroup(horizontal=FALSE, container = splitgroup). Then\nmake the button not expand (in a vertical group it will always expand\nhorizontally), gbutton(\"push me\", container = rightgroup, expand = FALSE).\n\nI think that should help. The problem I have with gWidgets is that the\nbutton labels seem misjustified. Does anyone else have this problem?\n\nMichael\n\n\n>\n> Antje\n>\n>\n>\n>> Tamas\n>>\n>>\n>>\n>> On Wed, 2008-08-06 at 08:19 +0200, Antje wrote:\n>>\n>>> Hello everybody,\n>>>\n>>> is there any nice tutorial how to use gwidgets? Of course, I've found how\n>>> to create simple elements like buttons, but I could not figure out for\n>>> example how to create a window with a special size and a gtree on the left\n>>> side (taking the whole height of the window) and some other elements on the\n>>> right side...o especially I'm looking for information about layout design\n>>> possibilities... (or limitations)\n>>>\n>>> Antje\n>>>\n>>> _______________________________________________\n>>> R-SIG-GUI mailing list\n>>> R-SIG-GUI at stat.math.ethz.ch\n>>> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>>\n>>>\n>>\n>>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Wed, Aug 6, 2008 at 4:46 AM, Antje <niederlein-rstat at yahoo.de> wrote:\n\n> Hi Tamas,\n>\n> thanks a lot for your answer.\n>\n>> Hi,\n>>\n>> I would recommend to explore\n>> http://wiener.math.csi.cuny.ed",
       "thread_id": "thread-3892ecbb544b",
       "thread_depth": 1,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080806/c24bdbd9/attachment.pl"
+      ]
     },
     {
       "id": "msg-d0b92bade0ff",
@@ -109,11 +112,14 @@
         "<20080806112655.M39772@centroin.com.br>",
         "<18585.41211.275321.121945@stat.math.ethz.ch>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080806/b6e274ea/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080806/b6e274ea/attachment.pl>",
+      "body_plain": "On Wed, Aug 6, 2008 at 6:02 AM, Martin Maechler\n<maechler at stat.math.ethz.ch>wrote:\n\n> >>>>> \"AM\" == Alberto Monteiro <albmont at centroin.com.br>\n> >>>>>     on Wed, 6 Aug 2008 09:27:46 -0200 writes:\n>\n>    AM> Antje asked:\n>     >>\n>    >> is there any nice tutorial how to use gwidgets? Of course, I've\n>    >> found how to create simple elements like buttons, but I could not\n>    >> figure out for example how to create a window with a special size\n>    >> and a gtree on the left side (taking the whole height of the window)\n>    >> and some other elements on the right side...o especially I'm looking\n>    >> for information about layout design possibilities... (or limitations)\n>    >>\n>     AM> I really would like to suggest the R-Wiki, but it seems that it was\n>    AM> abandoned:\n>\n>    AM> http://wiki.r-project.org/\n>\n> ??? Why do you think the R-Wiki was abandoned?\n>\n\nI think they were referring to the gWidgets page on the wiki.\n\n\n>\n> Regards,\n> Martin Maechler, ETH Zurich\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Wed, Aug 6, 2008 at 6:02 AM, Martin Maechler\n<maechler at stat.math.ethz.ch>wrote:\n\n> >>>>> \"AM\" == Alberto Monteiro <albmont at centroin.com.br>\n> >>>>>     on Wed, 6 Aug 2008 09:27:46 -0200 write",
       "thread_id": "thread-87658bdd23fc",
       "thread_depth": 3,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080806/b6e274ea/attachment.pl"
+      ]
     },
     {
       "id": "msg-ca688955b5e2",
@@ -183,11 +189,14 @@
         "<489AF453.7070603@yahoo.de>",
         "<loom.20080807T192450-886@post.gmane.org>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080807/ffe00d45/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080807/ffe00d45/attachment.pl>",
+      "body_plain": "On Thu, Aug 7, 2008 at 12:32 PM, john verzani <jverzani at gmail.com> wrote:\n\n> Antje <niederlein-rstat <at> yahoo.de> writes:\n>\n> Dear Antje,\n>\n>\n> >\n> > Hello there,\n> >\n> > now that I started with gwidgets, I'll have several question (\n> > I hope not  too\n> > stupid ones).\n> > I've started with a little application which uses a gpanedgroup\n> > to show a gtree\n> > at the left side and something else on the other side.\n> > Gtree works fine except the fact that it produces 3 columns\n> > though my offspring\n> > function returns a data.frame with 1 column only (two columns\n> > then remain\n> > without content).\n> > Is there any way to delete these columns?\n>\n>\n> Thanks for pointing out this issue. I fixed it in a just-uploaded\n> version of gWidgetstcltk and I also found an issue with\n> gWidgetsRGtk2 with your example. Again, this is just fixed.\n>\n> The bug was the number of extra columns was set by the number of\n> words in your column title. In the new version, there is just one\n> extra column and it has a small width.\n>\n\nMaybe a dumb question, but why is there an extra column in the first place?\n\n\n>\n> > And another question:\n> > If I expand my folders in the gtree and go deeper into the file\n> > structure,  it\n> > happens that the filenames are not displayed fully anymore because\n> > of too less\n> > space. Can I make the gtree automatically horizontal scrollable\n> > (it can be\n> > scrolled if I push the columns to a certain width).\n> >\n>\n\nIf you're really just making a file chooser, you might be better off using a\nprefab file chooser widget. I am not sure if one exists in gwidgets, but\nthere is a GtkFileChooserWidget in RGtk2 that will likely solve your\nproblems and give you a lot more functionality for free. I think it's pretty\neasy (and it could be made a lot easier) to embed RGtk2 widgets into\ngWidgetsRGtk2-based interfaces. Of course, you lose cross-toolkit\ncompatibility (but it's still cross platform).\n\n\n\n>\n> I don't have that coded in but can look into it.\n>\n>\n> > Thanks a lot for any help!\n> > Antje\n> >\n>\n> Thanks for the report. --JOhn\n>\n> --code is cut --\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Thu, Aug 7, 2008 at 12:32 PM, john verzani <jverzani at gmail.com> wrote:\n\n> Antje <niederlein-rstat <at> yahoo.de> writes:\n>\n> Dear Antje,\n>\n>\n> >\n> > Hello there,\n> >\n> > now that I started with ",
       "thread_id": "thread-703c970e89b5",
       "thread_depth": 2,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080807/ffe00d45/attachment.pl"
+      ]
     },
     {
       "id": "msg-ea7d33fd9548",
@@ -246,11 +255,14 @@
         "<loom.20080807T205218-48@post.gmane.org>",
         "<94730b8a0808071950s1d3add26nbc23da4af4198784@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080807/cec69735/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080807/cec69735/attachment.pl>",
+      "body_plain": "2008/8/7 Felix Andrews <felix at nfrac.org>\n\n> On Fri, Aug 8, 2008 at 7:20 AM, john verzani <jverzani at gmail.com> wrote:\n>\n> > or as Michael points out, one can put in a RGtk2 object into gWidgets via\n> the\n> > add method:\n> >\n> > w <- ggroup(\"test\")\n> > g <- ggroup(cont = w)\n> > add(g, gtkButton(\"new button\")\n>\n> Is that documented anywhere? I had no idea you could mix gWidgets with\n> RGtk2 widgets.\n>\n>\nI had done it in a hackish way, but this is news to me too. John and I will\nbe working on ironing out and documenting the gwidgets API, so hopefully\ntheir won't be many more secrets like this :) Note that it only works with\ngWidgetsRGtk2, but still a very useful feature.\n\n\n>\n>\n> --\n> Felix Andrews / \u001b$B0BJ!N)\u001b(B\n> PhD candidate\n> Integrated Catchment Assessment and Management Centre\n> The Fenner School of Environment and Society\n> The Australian National University (Building 48A), ACT 0200\n> Beijing Bag, Locked Bag 40, Kingston ACT 2604\n> http://www.neurofractal.org/felix/\n> 3358 543D AAC6 22C2 D336 80D9 360B 72DD 3E4C F5D8\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "2008/8/7 Felix Andrews <felix at nfrac.org>\n\n> On Fri, Aug 8, 2008 at 7:20 AM, john verzani <jverzani at gmail.com> wrote:\n>\n> > or as Michael points out, one can put in a RGtk2 object into gWidgets v",
       "thread_id": "thread-703c970e89b5",
       "thread_depth": 5,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080807/cec69735/attachment.pl"
+      ]
     },
     {
       "id": "msg-8a267f1de653",
@@ -321,11 +333,14 @@
       "references": [
         "<94730b8a0808080035o30ac9363k995d0dea7ab7b951@mail.gmail.com>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080808/008b2634/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080808/008b2634/attachment.pl>",
+      "body_plain": "2008/8/8 Felix Andrews <felix at nfrac.org>\n\n> Hi,\n>\n> Has anyone managed to set up accelerator keys for menus with RGtk2?\n>\n> Looking at ?gtkAccelMapAddEntry it has an argument\n> accel.key [numeric] the accelerator key\n> ...so how do you specify the key if it is numeric?\n>\n\nThat corresponds to the Gdk key code. Use apropos(\"GDK_\") to list all of\nthose constants. Note that if you're not going to be changing the\naccelerator at runtime, it's probably simpler to use gtkWidgetAddAccelerator\non your GtkMenuItem. I admit this could be documented better. But actually,\nthis stuff is really low-level. Why not use GtkUIManager?\n\n\n>\n> Cheers\n> Felix\n>\n> --\n> Felix Andrews / \u001b$B0BJ!N)\u001b(B\n> http://www.neurofractal.org/felix/\n> 3358 543D AAC6 22C2 D336  80D9 360B 72DD 3E4C F5D8\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "2008/8/8 Felix Andrews <felix at nfrac.org>\n\n> Hi,\n>\n> Has anyone managed to set up accelerator keys for menus with RGtk2?\n>\n> Looking at ?gtkAccelMapAddEntry it has an argument\n> accel.key [numeric] ",
       "thread_id": "thread-45ac05c454eb",
       "thread_depth": 1,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080808/008b2634/attachment.pl"
+      ]
     },
     {
       "id": "msg-a0b56d6886d9",
@@ -428,11 +443,14 @@
       "references": [
         "<48A97F95.4020503@yahoo.de>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080818/1b1e4c20/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080818/1b1e4c20/attachment.pl>",
+      "body_plain": "On Mon, Aug 18, 2008 at 6:56 AM, Antje <niederlein-rstat at yahoo.de> wrote:\n\n> Hello,\n>\n> I try to develop a GUI with gWidgets (TclTk) but I guess my little\n> application already starts to be messy...\n>\n> First question: How shall I handle updates of widgets triggered by event\n> handling? So far, I simply took the widget-object I want to update as a\n> global variable but that's not a good style. Any suggestions how to handle\n> this?\n>\n\nIt's possible to specify a \"user\" object when registering the callbacks, I\nthink. The \"user data\" is then passed as the last parameter to the handler.\nAnother good way to control the scoping is nesting environments (e.g.\nthrough closures). That is, your object does not need to be global (in the\nworkspace) but it can be in a parent environment. In fact, global variables\nwon't even work when you put your code into a namespaced pacakge, because\nthe namespace will be locked.\n\n\n> Second question: What are my possibilities to stay flexible? For example: I\n> though it makes sense to use a gpanedgroup for a checkboxgroup with variable\n> number of items (to make it scrollable if it's getting too large). But this\n> does not work like I thought and the items simply disappear at the end of\n> the panel.\n>\n\nI don't think the paned group is what you want here. Split paned widgets are\nto allow the user to control the allocation of space in a GUI, usually in\neither the horizontal or vertical directions. If you're GUI is growing too\nlarge, you'll need to make it so that only a portion of the GUI is visible\nat once. One way to do that is with scrolled windows. See the\nuse.scrollwindow parameter for ggroup().\n\n\n>\n> Third question: How to structure the GUI? Builing, Sizing, Arraging,\n> filling with content (not every object has some initial content). For\n> example, I realized that I have to set the svalue for the gpanedgroup after\n> adding the objects.\n>\n\nWell this is an art and depends on your GUI. Split panes are difficult in\nthat they require one to specify a numeric value for the split position.\nThis is a similar problem to specifying the initial size of a window. The\nsimplest way is just to guess a good initial position. This is usually not\ntoo bad. Adjusting the split automatically might not be a good idea, since\nit should be under the control of the user.\n\n\n>\n> I don't know, but I have the impression to create my GUI quite unstructured\n> and I'm afraid to loose overview soon...\n>\n> The small examples for the usage of different components are very useful\n> but I'm looking for some hints on how to create a more complex application\n> (what to do when and how).\n>\n> Thanks a lot for every tip!\n>\n> Antje\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Mon, Aug 18, 2008 at 6:56 AM, Antje <niederlein-rstat at yahoo.de> wrote:\n\n> Hello,\n>\n> I try to develop a GUI with gWidgets (TclTk) but I guess my little\n> application already starts to be messy..",
       "thread_id": "thread-fefc2d60efce",
       "thread_depth": 1,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080818/1b1e4c20/attachment.pl"
+      ]
     },
     {
       "id": "msg-f14068f56f98",
@@ -467,11 +485,14 @@
         "<509e0620808180722q370eb96bo19c6461af96706cb@mail.gmail.com>",
         "<48AA8696.3070900@yahoo.de>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080819/b5f11759/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080819/b5f11759/attachment.pl>",
+      "body_plain": "On Tue, Aug 19, 2008 at 1:38 AM, Antje <niederlein-rstat at yahoo.de> wrote:\n\n> Hi Michael,\n>\n> thanks a lot for your answer.\n>\n>\n>  On Mon, Aug 18, 2008 at 6:56 AM, Antje <niederlein-rstat at yahoo.de<mailto:\n>> niederlein-rstat at yahoo.de>> wrote:\n>>\n>>    Hello,\n>>\n>>    I try to develop a GUI with gWidgets (TclTk) but I guess my little\n>>    application already starts to be messy...\n>>\n>>    First question: How shall I handle updates of widgets triggered by\n>>    event handling? So far, I simply took the widget-object I want to\n>>    update as a global variable but that's not a good style. Any\n>>    suggestions how to handle this?\n>>\n>>\n>> It's possible to specify a \"user\" object when registering the callbacks, I\n>> think. The \"user data\" is then passed as the last parameter to the handler.\n>> Another good way to control the scoping is nesting environments (e.g.\n>> through closures). That is, your object does not need to be global (in the\n>> workspace) but it can be in a parent environment. In fact, global variables\n>> won't even work when you put your code into a namespaced pacakge, because\n>> the namespace will be locked.\n>>\n>>\n> Can you give me a simple example, please? I'm not sure if I understand\n> correctly how this can work. (Or maybe there is already some kind of\n> documentation I can check for these possibilities...)\n>\n\nThere's documentation and examples in the help for addHandler. It's the\n\"action\" parameter.\n\n\n>\n>\n>>    Second question: What are my possibilities to stay flexible? For\n>>    example: I though it makes sense to use a gpanedgroup for a\n>>    checkboxgroup with variable number of items (to make it scrollable\n>>    if it's getting too large). But this does not work like I thought\n>>    and the items simply disappear at the end of the panel.\n>>\n>>\n>> I don't think the paned group is what you want here. Split paned widgets\n>> are to allow the user to control the allocation of space in a GUI, usually\n>> in either the horizontal or vertical directions. If you're GUI is growing\n>> too large, you'll need to make it so that only a portion of the GUI is\n>> visible at once. One way to do that is with scrolled windows. See the\n>> use.scrollwindow parameter for ggroup().\n>>\n>\n> Oh, thanks a lot. I was not aware of the scrolling opportunity if the\n> ggroup.\n>\n>\n>>\n>>    Third question: How to structure the GUI? Builing, Sizing, Arraging,\n>>    filling with content (not every object has some initial content).\n>>    For example, I realized that I have to set the svalue for the\n>>    gpanedgroup after adding the objects.\n>>\n>>\n>> Well this is an art and depends on your GUI. Split panes are difficult in\n>> that they require one to specify a numeric value for the split position.\n>> This is a similar problem to specifying the initial size of a window.\n>>\n>\n> Is there anything I can do beside, setting a fixed size with pixel values?\n> For example if I'd like to initially maximze the window... (I know that\n> it's possible with TclTk).\n>\n\nI am not that familiar with tcl/tk but in general UI toolkits require you\nspecify pixels for positions of things like that. If it's not so important\nfor the user to be able to adjust the layout, why not just skip the paned\nwidget? They're rarely very helpful.\n\n\n>\n>  The simplest way is just to guess a good initial position. This is usually\n>> not too bad. Adjusting the split automatically might not be a good idea,\n>> since it should be under the control of the user.\n>>\n>\n> Of course, I just set it initially.\n>\n> Ciao,\n> Antje\n>\n>\n>\n>>\n>>    I don't know, but I have the impression to create my GUI quite\n>>    unstructured and I'm afraid to loose overview soon...\n>>\n>>    The small examples for the usage of different components are very\n>>    useful but I'm looking for some hints on how to create a more\n>>    complex application (what to do when and how).\n>>\n>>    Thanks a lot for every tip!\n>>\n>>    Antje\n>>\n>>    _______________________________________________\n>>    R-SIG-GUI mailing list\n>>    R-SIG-GUI at stat.math.ethz.ch <mailto:R-SIG-GUI at stat.math.ethz.ch>\n>>    https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>>\n>>\n>>\n>\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "On Tue, Aug 19, 2008 at 1:38 AM, Antje <niederlein-rstat at yahoo.de> wrote:\n\n> Hi Michael,\n>\n> thanks a lot for your answer.\n>\n>\n>  On Mon, Aug 18, 2008 at 6:56 AM, Antje <niederlein-rstat at yahoo.d",
       "thread_id": "thread-fefc2d60efce",
       "thread_depth": 3,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080819/b5f11759/attachment.pl"
+      ]
     },
     {
       "id": "msg-e220fd908006",
@@ -538,11 +559,14 @@
       "references": [
         "<48B2B2D5.7040808@yahoo.de>"
       ],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080825/85eddf4e/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080825/85eddf4e/attachment.pl>",
+      "body_plain": "I'd be really surprised if the gtable widget did not support scrolling by\nitself.\n\nOn Mon, Aug 25, 2008 at 6:25 AM, Antje <niederlein-rstat at yahoo.de> wrote:\n\n> Hi there,\n>\n> I was looking for a possibilities to display a long list of (long) strings.\n> R tells me that the scrolling option for ggroups is not available for\n> tcl/tk.\n> Is there anything else, I can use (I would need horizontal as well as\n> vertical)???\n>\n> Thank you for any suggestion!\n>\n> Antje\n>\n> _______________________________________________\n> R-SIG-GUI mailing list\n> R-SIG-GUI at stat.math.ethz.ch\n> https://stat.ethz.ch/mailman/listinfo/r-sig-gui\n>\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "I'd be really surprised if the gtable widget did not support scrolling by\nitself.\n\nOn Mon, Aug 25, 2008 at 6:25 AM, Antje <niederlein-rstat at yahoo.de> wrote:\n\n> Hi there,\n>\n> I was looking for a pos",
       "thread_id": "thread-46968bf7eb30",
       "thread_depth": 1,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080825/85eddf4e/attachment.pl"
+      ]
     },
     {
       "id": "msg-da1a63e73dc9",
@@ -627,11 +651,14 @@
       "subject_clean": "[R-gui] R Grammar",
       "in_reply_to": null,
       "references": [],
-      "body_plain": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080826/390f964b/attachment.pl>",
-      "body_snippet": "An embedded and charset-unspecified text was scrubbed...\nName: not available\nURL: <https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080826/390f964b/attachment.pl>",
+      "body_plain": "Hello,\n\nI'm currently working on a Netbeans Platform IDE for R, and i wondered if an\nR grammar is available somewhere on the internet, I need it for syntax\nhighlighting and code completion.\n\nBest regards,\nAurélien\n\n\t[[alternative HTML version deleted]]",
+      "body_snippet": "Hello,\n\nI'm currently working on a Netbeans Platform IDE for R, and i wondered if an\nR grammar is available somewhere on the internet, I need it for syntax\nhighlighting and code completion.\n\nBest rega",
       "thread_id": "thread-fa04b940be65",
       "thread_depth": 0,
-      "month": "2008-08"
+      "month": "2008-08",
+      "restored_from": [
+        "https://stat.ethz.ch/pipermail/r-sig-gui/attachments/20080826/390f964b/attachment.pl"
+      ]
     },
     {
       "id": "msg-6f8e0267e891",
